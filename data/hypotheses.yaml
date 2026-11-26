@@ -50,6 +50,9 @@ ecart_gasoil_agricole_chauffage:
   date: 2026-11-26
   source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
   note: "Écart TVAC entre les moyennes du 1er au 26 novembre 2026 (chauffage 1,4042 €/L, agricole 1,3812 €/L), calculé dans ce projet. Écart observé de 2,5 à 4,2 c€ selon les jours et les mois."
+  scenario: true
+  bas: 0.0252
+  bas_note: "Février 2026 : chauffage 0,7882 €/L TVAC (moyenne officielle) moins agricole 0,7630 €/L TVAC (0,6306 €/L HTVA, prix maximum moyen du SPF Économie), pour que le scénario bas retombe sur le prix agricole de février."
 
 tva:
   libelle: Taux de TVA sur le gasoil
@@ -279,12 +282,12 @@ microbiometh_cout_kw:
 
 ammonitrate_prix:
   libelle: Ammonitrate 33,5 %
-  valeur: 535
+  valeur: 567.5
   unite: €/t
   statut: sourcé
-  date: 2026-11-25
-  source: https://www.terre-net.fr/marche-agricole/ammonitrate-33-5/engrais
-  note: "Prix français, départ usine, 25/11/2026 (Terre-net). Franco : 567,5 €/t (Argus, 19/11/2026). Pas d'ammonitrate 33,5 % coté en Belgique chez Agryco : on y trouve le CAN 27 % à 445 €/t départ Gand (Agryco Belgique, page « Engrais », non datée, consultée le 26/11/2026, https://www.agryco.be/fr_BE/engrais/pc975), soit environ 1 650 €/t d'azote contre 1 600 €/t pour le 33,5 % français. TVA non précisée. Aucun prix belge de février 2026 trouvé."
+  date: 2026-11-19
+  source: https://www.pleinchamp.com/les-cours/intrants/19-ammonitrate-33-5
+  note: "Prix français franco (Argus, Pleinchamp, 19/11/2026), même base que la borne de février (franco distributeur). Départ usine : 535 €/t (Terre-net, 25/11/2026). Seul repère belge : ammonitrate 27 % (CAN) à 445 €/t départ Gand (Agryco, page non datée, consultée le 26/11/2026), soit environ 1,65 €/kg d'azote. À remplacer par un prix belge sur facture."
   scenario: true
   bas: 500
   bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."

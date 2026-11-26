@@ -17,7 +17,7 @@ Le lait sort de la vache à environ 37 °C et doit être refroidi sous 4 °C dan
 
 ## Comment ça marche aujourd'hui
 
-Le tank est une cuve isolée avec un groupe frigorifique : un compresseur électrique extrait la chaleur du lait et la rejette dans l'air par un condenseur. Sans pré-refroidissement, il faut environ 14 kWh d'électricité pour refroidir 1 000 L de lait selon Inagro[^inagro], 15 kWh selon Rundveeloket et une brochure du Département flamand de l'agriculture[^rundveeloket][^ilvo], 13 à 15 kWh selon un manuel néerlandais[^handboek]. Pour une exploitation qui livre {{ v('lait_livre_an') }} (hypothèse), cela fait environ 7 000 kWh par an (14 kWh × 500, ordre de grandeur).
+Le tank est une cuve isolée avec un groupe frigorifique : un compresseur électrique extrait la chaleur du lait et la rejette dans l'air par un condenseur. Sans pré-refroidissement, il faut environ 14 kWh d'électricité pour refroidir 1 000 L de lait selon Inagro[^inagro], 15 kWh selon Rundveeloket et une brochure du Département flamand de l'agriculture[^rundveeloket][^ilvo], 13 à 15 kWh selon un manuel néerlandais[^handboek]. Pour une exploitation qui livre {{ v('lait_livre_an') }} (hypothèse), cela fait environ {{ v('tank_kwh_an', 0) }} (calculé).
 
 L'eau chaude de lavage de la machine à traire et du tank est souvent produite par un chauffe-eau électrique, parfois par la chaudière au mazout.
 

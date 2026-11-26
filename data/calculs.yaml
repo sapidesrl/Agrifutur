@@ -2,15 +2,15 @@
 gasoil_agricole_htva:
   libelle: Gasoil agricole HTVA utilisé dans les calculs
   valeur: 1.141488
-  bas: 0.632397
-  haut: 1.489636
+  bas: 0.630579
+  haut: 1.483934
   unite: €/L
   formule: Prix saisi, sinon (gasoil chauffage TVAC − écart) ÷ (1 + TVA)
 gasoil_kwh_utile:
   libelle: 'Gasoil : coût du kWh utile (à l''arbre)'
   valeur: 0.326139
-  bas: 0.180685
-  haut: 0.42561
+  bas: 0.180165
+  haut: 0.423981
   unite: €/kWh
   formule: Prix du litre ÷ (énergie du litre × rendement du moteur)
 gasoil_kwh_utile_fev2026:
@@ -39,22 +39,22 @@ reseau_kwh_utile:
 ratio_gasoil_pv:
   libelle: Le kWh utile au gasoil coûte … fois celui du PV
   valeur: 4.024138
-  bas: 2.229417
-  haut: 5.251483
+  bas: 2.223007
+  haut: 5.23138
   unite: fois
   formule: Gasoil ÷ PV
 ratio_gasoil_reseau:
   libelle: Le kWh utile au gasoil coûte … fois celui du réseau
   valeur: 0.728181
-  bas: 0.476371
-  haut: 0.730979
+  bas: 0.475002
+  haut: 0.728181
   unite: fois
   formule: Gasoil ÷ réseau
 tracteur_gasoil_eur_h:
   libelle: 'Tracteur compact : énergie par heure au gasoil'
   valeur: 7.990413
-  bas: 4.426777
-  haut: 10.427455
+  bas: 4.41405
+  haut: 10.387537
   unite: €/h
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
@@ -73,8 +73,8 @@ tracteur_reseau_eur_h:
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
   valeur: 4447.232539
-  bas: 1596.323448
-  haut: 6396.865597
+  bas: 1586.14163
+  haut: 6364.931713
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:
@@ -90,16 +90,16 @@ batterie_masse_journee_lourde:
   formule: Énergie ÷ énergie massique du pack
 prix_kg_n:
   libelle: Prix du kg d'azote (ammonitrate)
-  valeur: 1.597015
+  valeur: 1.69403
   bas: 1.492537
-  haut: 2.076119
+  haut: 2.202239
   unite: €/kg N
   formule: Prix de la tonne ÷ kg d'azote par tonne
 valeur_n_fixe:
   libelle: Valeur de l'azote fixé par les légumineuses
-  valeur: 159.701493
+  valeur: 169.402985
   bas: 149.253731
-  haut: 207.61194
+  haut: 220.223881
   unite: €/ha/an
   formule: kg N fixés × prix du kg N
 mazout_kwh:
@@ -277,8 +277,8 @@ microbiometh_retour_ans:
 valet_gasoil_eur_h:
   libelle: 'Chargeur de cour : énergie par heure au gasoil'
   valeur: 3.538612
-  bas: 1.96043
-  haut: 4.617873
+  bas: 1.954793
+  haut: 4.600195
   unite: €/h
   formule: Consommation × prix du gasoil
 valet_pv_eur_h:
@@ -298,15 +298,15 @@ valet_reseau_eur_h:
 valet_economie_an_pv:
   libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur PV)'
   valeur: 931.383471
-  bas: 457.928926
-  haut: 1255.161818
+  bas: 456.238017
+  haut: 1249.858512
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 valet_economie_an_reseau:
   libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur réseau)'
   valeur: 342.060471
-  bas: -21.207074
-  haut: 449.981918
+  bas: -22.897983
+  haut: 444.678612
   unite: €/an
   formule: (Gasoil − réseau) × heures par an, hors surcoût d'achat et entretien
 huile_cout_litre:
@@ -327,8 +327,8 @@ huile_cout_eq_gasoil:
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
   valeur: -0.087895
-  bas: 0.423355
-  haut: -0.13627
+  bas: 0.425173
+  haut: -0.130567
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:
@@ -344,36 +344,36 @@ gasoil_economise_semis_direct:
 valeur_gasoil_economise:
   libelle: Valeur de ce gasoil
   valeur: 33.10314
-  bas: 18.339504
-  haut: 43.199455
+  bas: 18.286777
+  haut: 43.034083
   unite: €/ha/an
   formule: Litres économisés × prix du gasoil
 gasoil_eur_foin_ha:
   libelle: 'Foin récolté au champ : gasoil par hectare'
   valeur: 86.753058
-  bas: 48.062149
-  haut: 113.212364
+  bas: 47.923967
+  haut: 112.778975
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_enrubannage_ha:
   libelle: 'Enrubannage : gasoil par hectare'
   valeur: 139.261488
-  bas: 77.152397
-  haut: 181.735636
+  bas: 76.930579
+  haut: 181.039934
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_ensilage_herbe_ha:
   libelle: 'Ensilage d''herbe : gasoil par hectare'
   valeur: 205.467769
-  bas: 113.831405
-  haut: 268.134545
+  bas: 113.504132
+  haut: 267.108099
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_mais_ensilage_ha:
   libelle: 'Maïs ensilage : gasoil par hectare'
   valeur: 531.933223
-  bas: 294.69686
-  haut: 694.170545
+  bas: 293.849587
+  haut: 691.51319
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 sechage_grange_reseau_tms:
@@ -406,8 +406,8 @@ mais_meca_gasoil_supp_l_ha:
 mais_meca_gasoil_supp_eur_ha:
   libelle: 'Maïs : coût du gasoil en plus pour le désherbage mécanique'
   valeur: 7.944754
-  bas: 4.401481
-  haut: 10.367869
+  bas: 4.388826
+  haut: 10.32818
   unite: €/ha
   formule: Gasoil en plus × prix du gasoil agricole
 glyphosate_energie_kwh_ha:
@@ -423,8 +423,8 @@ glyphosate_eq_gasoil_l_ha:
 sd_sans_glyphosate_gasoil_eur_ha:
   libelle: 'Semis direct sans glyphosate (labour fréquent) : coût du gasoil en plus'
   valeur: 34.872446
-  bas: 19.319719
-  haut: 45.508391
+  bas: 19.264174
+  haut: 45.33418
   unite: €/ha/an
   formule: Gasoil en plus × prix du gasoil agricole
 farmdroid_amort_eur_ha:
@@ -545,22 +545,22 @@ moisson_heures_an:
 moisson_gasoil_eur_ha:
   libelle: 'Moisson : gasoil de la moissonneuse par hectare'
   valeur: 23.800017
-  bas: 13.185471
-  haut: 31.058918
+  bas: 13.147562
+  haut: 30.940021
   unite: €/ha
   formule: Litres par hectare × prix du gasoil agricole
 ensileuse_gasoil_eur_ha:
   libelle: 'Maïs ensilage : gasoil de l''ensileuse par hectare'
   valeur: 33.559736
-  bas: 18.592463
-  haut: 43.795309
+  bas: 18.539008
+  haut: 43.627656
   unite: €/ha
   formule: Litres par hectare × prix du gasoil agricole
 hvo_agricole_htva:
   libelle: HVO100 hors accises, HTVA (estimation)
   valeur: 2.005124
-  bas: 1.847686
-  haut: 2.612364
+  bas: 1.845868
+  haut: 2.606661
   unite: €/L
   formule: 'Diesel XTL HTVA − (diesel B7 HTVA − gasoil agricole HTVA) : on retire
     au prix routier du XTL le même écart que celui qui sépare le diesel routier du
@@ -568,43 +568,43 @@ hvo_agricole_htva:
 hvo_surcout_litre:
   libelle: 'HVO100 : surcoût par litre de gasoil remplacé'
   valeur: 0.933816
-  bas: 1.279958
-  haut: 1.21416
+  bas: 1.279895
+  haut: 1.21396
   unite: €/L
   formule: Prix du HVO × (1 + consommation en plus) − prix du gasoil agricole
 hvo_ratio_gasoil:
   libelle: 'HVO100 : coût par litre de gasoil remplacé, rapporté au gasoil agricole'
   valeur: 1.818069
-  bas: 3.02398
-  haut: 1.815071
+  bas: 3.029715
+  haut: 1.818069
   unite: fois
   formule: Prix du HVO × (1 + consommation en plus) ÷ prix du gasoil agricole
 moisson_hvo_surcout_ha:
   libelle: 'Moisson au HVO100 : surcoût par hectare'
   valeur: 19.470057
-  bas: 26.68713
-  haut: 25.315236
+  bas: 26.685803
+  haut: 25.311075
   unite: €/ha
   formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
 ensileuse_hvo_surcout_ha:
   libelle: 'Maïs ensilage au HVO100 : surcoût de l''ensileuse par hectare'
   valeur: 27.454182
-  bas: 37.630773
-  haut: 35.696304
+  bas: 37.628902
+  haut: 35.690436
   unite: €/ha
   formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
 moisson_hvo_surcout_an:
   libelle: 'Moissonneuse au HVO100 : surcoût par an'
   valeur: 5841.017219
-  bas: 8006.138944
-  haut: 7594.5708
+  bas: 8005.740899
+  haut: 7593.322385
   unite: €/an
   formule: Surcoût par hectare × surface battue par an
 moisson_huile_ecart_ha:
   libelle: 'Moisson à l''huile de colza : écart avec le gasoil par hectare'
   valeur: -1.832603
-  bas: 8.826954
-  haut: -2.841226
+  bas: 8.864863
+  haut: -2.722329
   unite: €/ha
   formule: 'Litres de gasoil par hectare × écart huile − gasoil (négatif : l''huile
     revient moins cher, hors accises)'
@@ -841,8 +841,8 @@ irr_elec_kwh_m3:
 irr_gasoil_eur_ha_mm:
   libelle: 'Irrigation au diesel : coût de l''énergie par hectare et par mm'
   valeur: 1.26832
-  bas: 0.702663
-  haut: 1.655152
+  bas: 0.700643
+  haut: 1.648815
   unite: €/ha/mm
   formule: Gasoil par ha et par mm × prix du gasoil
 irr_reseau_eur_ha_mm:
@@ -862,8 +862,8 @@ irr_pv_eur_ha_mm:
 irr_ratio_reseau_gasoil:
   libelle: 'Irrigation : le m³ pompé sur réseau coûte … fois le m³ pompé au diesel'
   valeur: 1.010643
-  bas: 1.544868
-  haut: 1.006774
+  bas: 1.549323
+  haut: 1.010643
   unite: fois
   formule: Coût réseau ÷ coût diesel, par m³
 irr_volume_an:
@@ -884,8 +884,8 @@ irr_gasoil_l_an:
 irr_gasoil_eur_an:
   libelle: 'Exploitation type : coût du gasoil d''irrigation par an'
   valeur: 1268.319559
-  bas: 702.662994
-  haut: 1655.151515
+  bas: 700.642792
+  haut: 1648.815427
   unite: €/an
   formule: Gasoil par an × prix du gasoil
 irr_elec_kwh_an:
@@ -909,8 +909,8 @@ irr_economie_pv_an:
   libelle: 'Exploitation type : économie d''énergie par an, électropompe sur PV au
     lieu du diesel'
   valeur: 1036.370438
-  bas: 470.713873
-  haut: 1423.202394
+  bas: 468.693671
+  haut: 1416.866306
   unite: €/an
   formule: Coût du gasoil − coût du PV, hors investissement
 irr_puissance_elec_kw:
@@ -936,31 +936,31 @@ tonne_gasoil_l_an:
 tonne_gasoil_eur_an:
   libelle: 'Tonne à eau : coût du gasoil par an'
   valeur: 1438.27438
-  bas: 796.819835
-  haut: 1876.941818
+  bas: 794.528926
+  haut: 1869.756694
   unite: €/an
   formule: Gasoil par an × prix du gasoil
 tonne_cout_an:
   libelle: 'Tonne à eau : gasoil et main-d''œuvre par an'
   valeur: 5938.27438
-  bas: 5296.819835
-  haut: 6376.941818
+  bas: 5294.528926
+  haut: 6369.756694
   unite: €/an
   formule: Heures par an × (consommation × prix du gasoil + coût horaire de la main-d'œuvre),
     hors usure du tracteur et de la tonne
 abreuv_solaire_retour_ans:
   libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour simple'
   valeur: 2.020789
-  bas: 2.26551
-  haut: 1.88178
+  bas: 2.266491
+  haut: 1.883902
   unite: ans
   formule: Investissement ÷ (gasoil + main-d'œuvre de la tonne), sans aide ni entretien
 abreuv_solaire_retour_gasoil_ans:
   libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour sur le seul
     gasoil'
   valeur: 8.343332
-  bas: 15.059866
-  haut: 6.393379
+  bas: 15.103289
+  haut: 6.417947
   unite: ans
   formule: Investissement ÷ coût du gasoil de la tonne
 pdt_part_agriculteur_long:
@@ -1156,8 +1156,8 @@ mildiou_gasoil_evite_l_ha:
 mildiou_gasoil_evite_eur_ha:
   libelle: 'Pomme de terre : valeur du gasoil évité avec une variété résistante'
   valeur: 8.903603
-  bas: 4.932694
-  haut: 11.619164
+  bas: 4.918512
+  haut: 11.574684
   unite: €/ha
   formule: Gasoil évité × prix du gasoil agricole HTVA
 avertissement_passages_evites_eur_ha:
@@ -1229,3 +1229,15 @@ froment_semence_ferme_part_surface:
   valeur: 0.468691
   unite: '%'
   formule: Froment trié à façon ÷ dose de semis ÷ surface de froment
+tank_kwh_an:
+  libelle: 'Tank à lait : électricité du refroidissement par an, sans pré-refroidisseur'
+  valeur: 7000.0
+  unite: kWh/an
+  formule: kWh par 1 000 L × lait livré ÷ 1 000
+froment_perte_equilibre_t_ha:
+  libelle: 'Froment : perte de rendement qui annule l''économie du traitement unique'
+  valeur: 0.385542
+  bas: 0.507937
+  haut: 0.296571
+  unite: t/ha
+  formule: Économie du traitement unique ÷ prix du blé

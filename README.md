@@ -65,5 +65,5 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## État
 
-- Les 19 fiches sont rédigées, au statut « brouillon ». Leurs sources ont été lues sur les pages ; les pages restées inaccessibles et les données manquantes sont listées dans la section « À vérifier » de chaque fiche.
-- Prochaine étape : relecture de chaque fiche (statut « relu »), en priorité le remplacement des prix français par des prix belges.
+- Les 19 fiches sont relues (statut « relu », 26/11/2026) : cohérence entre le texte et les chiffres recalculés, règles de `CLAUDE.md`, sources datées. Les données manquantes sont listées dans la section « À vérifier » de chaque fiche.
+- Plusieurs prix restent français, faute de source belge publique (ammonitrate 33,5 %, colza, tourteaux, pois, semence certifiée, triage, paillages, huile alimentaire). Les remplacer par des prix belges sur facture est la priorité.
