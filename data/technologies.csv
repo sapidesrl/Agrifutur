@@ -1,6 +1,6 @@
 id,technologie_actuelle,domaine,dependance_fossile,alternatives,vague_meilleure_alternative,fiche,statut
 tracteur-diesel,Tracteur diesel,traction,gasoil,Réduction du travail du sol; tracteur électrique compact; tracteur au biométhane; huile de colza pure; gros tracteur électrique,1,traction/tracteur-diesel.md,brouillon
-automoteurs-recolte,Moissonneuse et ensileuse,traction,gasoil,Biométhane; HVO; huile végétale; mutualisation de la récolte,3,traction/automoteurs-recolte.md,à rédiger
+automoteurs-recolte,Moissonneuse et ensileuse,traction,gasoil,mutualisation de la récolte; HVO; huile végétale; moissonneuse hybride ou électrique; biométhane,2,traction/automoteurs-recolte.md,brouillon
 engins-de-cour,Télescopique et chargeur de cour diesel,traction,gasoil,Télescopique ou chargeur électrique; télescopique hybride au biométhane,2,traction/engins-de-cour.md,brouillon
 vehicules-livraison,Utilitaire diesel de livraison,transport,gasoil,Utilitaire électrique; tournées groupées; vélo-cargo en ville,1,transport/vehicules-livraison.md,à rédiger
 electricite-reseau,Électricité du réseau,énergie,gaz naturel (part de la production électrique),Photovoltaïque en autoconsommation; micro-biométhanisation,1,energie/electricite-reseau.md,brouillon

@@ -537,3 +537,74 @@ sechage_economie_plaquettes_an:
   haut: 9104.70544
   unite: €/an
   formule: Économie par tonne × tonnage séché
+moisson_heures_an:
+  libelle: 'Moissonneuse-batteuse : heures de battage par an'
+  valeur: 139.534884
+  unite: h/an
+  formule: Surface battue par an ÷ débit de chantier
+moisson_gasoil_eur_ha:
+  libelle: 'Moisson : gasoil de la moissonneuse par hectare'
+  valeur: 23.800017
+  bas: 13.185471
+  haut: 31.058918
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil agricole
+ensileuse_gasoil_eur_ha:
+  libelle: 'Maïs ensilage : gasoil de l''ensileuse par hectare'
+  valeur: 33.559736
+  bas: 18.592463
+  haut: 43.795309
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil agricole
+hvo_agricole_htva:
+  libelle: HVO100 hors accises, HTVA (estimation)
+  valeur: 2.005124
+  bas: 1.847686
+  haut: 2.612364
+  unite: €/L
+  formule: 'Diesel XTL HTVA − (diesel B7 HTVA − gasoil agricole HTVA) : on retire
+    au prix routier du XTL le même écart que celui qui sépare le diesel routier du
+    gasoil agricole'
+hvo_surcout_litre:
+  libelle: 'HVO100 : surcoût par litre de gasoil remplacé'
+  valeur: 0.933816
+  bas: 1.279958
+  haut: 1.21416
+  unite: €/L
+  formule: Prix du HVO × (1 + consommation en plus) − prix du gasoil agricole
+hvo_ratio_gasoil:
+  libelle: 'HVO100 : coût par litre de gasoil remplacé, rapporté au gasoil agricole'
+  valeur: 1.818069
+  bas: 3.02398
+  haut: 1.815071
+  unite: fois
+  formule: Prix du HVO × (1 + consommation en plus) ÷ prix du gasoil agricole
+moisson_hvo_surcout_ha:
+  libelle: 'Moisson au HVO100 : surcoût par hectare'
+  valeur: 19.470057
+  bas: 26.68713
+  haut: 25.315236
+  unite: €/ha
+  formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
+ensileuse_hvo_surcout_ha:
+  libelle: 'Maïs ensilage au HVO100 : surcoût de l''ensileuse par hectare'
+  valeur: 27.454182
+  bas: 37.630773
+  haut: 35.696304
+  unite: €/ha
+  formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
+moisson_hvo_surcout_an:
+  libelle: 'Moissonneuse au HVO100 : surcoût par an'
+  valeur: 5841.017219
+  bas: 8006.138944
+  haut: 7594.5708
+  unite: €/an
+  formule: Surcoût par hectare × surface battue par an
+moisson_huile_ecart_ha:
+  libelle: 'Moisson à l''huile de colza : écart avec le gasoil par hectare'
+  valeur: -1.832603
+  bas: 8.826954
+  haut: -2.841226
+  unite: €/ha
+  formule: 'Litres de gasoil par hectare × écart huile − gasoil (négatif : l''huile
+    revient moins cher, hors accises)'

@@ -848,3 +848,92 @@ pac_cop_sechage:
   date: ""
   source: ""
   note: "Prudent pour de l'air à 50-60 °C. Un essai en Ontario a mesuré un COP de 6,93 pour un séchage en cellule à basse température (OMAFRA, fiche 20-044, juin 2020)."
+
+# --- Automoteurs de récolte (fiche traction/automoteurs-recolte) ------------
+
+moisson_conso_l_h:
+  libelle: Moissonneuse-batteuse de 290 à 320 ch, consommation horaire de référence
+  valeur: 44.84
+  unite: L/h
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : barème d'entraide 2024-2025 des chambres d'agriculture et fédérations de Cuma (Grand Est, Centre-Val de Loire, Hauts-de-France), p. 33-34, machine « MB 290 à 320 ch M G, 5 ou 6 secoueurs ». Valeur de calcul (0,21 L/ch/h × puissance × taux de charge de 70 %), pas une mesure. Le même barème va de 30,9 L/h (190-220 ch) à 79,4 L/h (plus de 530 ch)."
+
+moisson_debit_ha_h:
+  libelle: Moissonneuse-batteuse de 290 à 320 ch, débit de chantier
+  valeur: 2.15
+  unite: ha/h
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : même barème, même machine (coupe de 6 m à 6,80 m)."
+
+moisson_conso_l_ha:
+  libelle: Moissonneuse-batteuse de 290 à 320 ch, consommation par hectare de céréales
+  valeur: 20.85
+  unite: L/ha
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : même barème, même machine (44,84 L/h ÷ 2,15 ha/h). De 17,3 à 21,1 L/ha selon les machines du barème. À remplacer par la consommation relevée sur l'exploitation."
+
+moisson_surface_an:
+  libelle: Surface battue par an par une moissonneuse-batteuse (valeur centrale du barème)
+  valeur: 300
+  unite: ha/an
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : le barème calcule la machine de 290 à 320 ch pour 230, 300 et 370 ha/an. Moyenne de 448 ha/an sur 576 moissonneuses de Cuma (FNCUMA, Entraid, 18/06/2026)."
+
+ensileuse_conso_l_h:
+  libelle: Ensileuse automotrice de 500 ch, consommation horaire de référence
+  valeur: 73.5
+  unite: L/h
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : barème d'entraide 2024-2025, ensileuses automotrices herbe et maïs. Même méthode de calcul (0,21 L/ch/h, taux de charge de 70 %). De 50 L/h (330-350 ch) à 102,9 L/h (700 ch)."
+
+ensileuse_conso_l_ha:
+  libelle: Ensileuse automotrice de 500 ch, consommation par hectare de maïs
+  valeur: 29.4
+  unite: L/ha
+  statut: sourcé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Données françaises : même barème, débit de 2,5 ha/h en maïs. De 28,6 à 33,3 L/ha selon les machines. L'ensileuse seule : tracteurs de transport et de tassement non compris. Pour l'herbe, le barème renvoie au coût horaire, le débit étant très variable."
+
+diesel_xtl_tvac:
+  libelle: Diesel XTL (paraffinique, dont HVO100), prix maximum officiel à la pompe, TVAC
+  valeur: 3.3963
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
+  note: "Moyenne des prix maximums officiels du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel), calculée dans ce projet : 3,656 €/L le 1er novembre, 3,264 €/L le 26. Prix routier, accises comprises. Le tarif officiel ne distingue pas le HVO100 des autres diesels XTL."
+  scenario: true
+  bas: 3.1996
+  bas_note: "Février 2026 : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+
+diesel_b7_tvac:
+  libelle: Diesel B7, prix maximum officiel à la pompe, TVAC
+  valeur: 2.3513
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
+  note: "Moyenne des prix maximums officiels du 1er au 26 novembre 2026 (SPF Économie, publié par Statbel), calculée dans ce projet : 2,452 €/L le 1er novembre, 2,203 €/L le 26. Sert seulement à estimer le poids des accises routières dans le prix du diesel XTL."
+  scenario: true
+  bas: 1.7291
+  bas_note: "Février 2026 : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+
+hvo_surconsommation:
+  libelle: Consommation en plus, en litres, avec du HVO100 au lieu du diesel
+  valeur: 0.035
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.dlg.org/en/magazine/hvo-in-practical-dlg-testing
+  note: "DLG, essai d'un tracteur Valtra Q 285 au banc de prise de force et au DLG-PowerMix : environ 3 à 4 % de litres en plus, à puissance égale (densité plus faible). Article non daté, lu le 26/11/2026. Un seul tracteur."
