@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. On estime qu'environ la moitié de l'humanité est nourrie grâce à eux[^wef]. Au prix d'avril 2026 en France, l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }} ({{ fourchette('prix_kg_n') }} selon les scénarios de prix).
+L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. Environ la moitié de la population mondiale (3,8 milliards de personnes) est nourrie grâce à eux[^carnegie]. Au prix d'avril 2026 en France, l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }} ({{ fourchette('prix_kg_n') }} selon les scénarios de prix).
 
 Les alternatives rentables existent déjà : les légumineuses, qui fixent l'azote de l'air, et une meilleure valorisation des effluents (vague 1). L'ammoniac « vert » fabriqué localement avec de l'électricité renouvelable reste à préparer (vague 3).
 
@@ -23,7 +23,7 @@ Le procédé Haber-Bosch combine l'azote de l'air avec de l'hydrogène pour form
 
 Le gaz reste le premier facteur de coût de ces engrais[^comparateur]. Quand le prix du gaz en Europe du Nord-Ouest a dépassé 60 €/MWh le 9 mars 2026, le coût de production de l'ammoniac a été estimé autour de 740 $/t[^spglobal]. La guerre en Iran, commencée fin février 2026, a entraîné toute la gamme azotée à la hausse ; l'ammonitrate 33,5 % s'échangeait autour de 550 €/t en avril[^reussir-avril].
 
-S'y ajoute depuis le 1er janvier 2026 le mécanisme d'ajustement carbone aux frontières de l'Union (MACF), qui taxe les engrais importés ; le surcoût pourrait atteindre 150 €/t selon le négoce, et les producteurs européens, soumis aux quotas carbone, ont aussi relevé leurs prix[^reussir-macf].
+S'y ajoute depuis le 1er janvier 2026 le mécanisme d'ajustement carbone aux frontières de l'Union (MACF), qui taxe les engrais importés ; le surcoût était estimé entre 120 et 150 €/t par les organisations syndicales agricoles fin 2025, et les producteurs européens d'ammonitrate, déjà soumis aux quotas carbone, ont aussi relevé leurs prix[^reussir-macf].
 
 ## Où entrent le pétrole et le gaz
 
@@ -42,20 +42,20 @@ Ordre de grandeur (calculé) : si les légumineuses fixent {{ v('azote_fixe_legu
 
 Deux essais sur prairie pâturée :
 
-- en Belgique, sur une prairie permanente pâturée par de jeunes bovins, la fixation symbiotique représentait 41 % des apports d'azote sur six années d'essai[^stilmant] ;
-- dans un essai publié par l'Université de Liège, sur une prairie pâturée en rotation, réduire d'un tiers la fumure azotée minérale n'a pas modifié la production de lait par vache[^dieguez].
+- en Belgique (CRA-W, Libramont), sur une prairie permanente pâturée par de jeunes bovins viandeux, la fixation symbiotique par le trèfle blanc représentait 41 % des apports d'azote utile sur six années d'essai (1995-2000)[^stilmant] ;
+- dans un essai de l'Université de Liège mené six années de suite (1993-1998) en région liégeoise, sur une prairie permanente pâturée en rotation par des vaches laitières, réduire d'un tiers la fertilisation azotée (de 136 à 91 kg N/ha/an), à chargement égal, n'a pas modifié la production de lait par vache[^dieguez].
 
 Conditions : une part suffisante de légumineuses, une rotation adaptée et un débouché pour les protéagineux. Bonus : un fourrage plus riche en protéines réduit les achats de soja importé.
 
 ### 2. Effluents et digestat (vague 1)
 
-Le fumier, le lisier, le compost et le digestat de méthanisation contiennent de l'azote, du phosphore et du potassium. Bien stockés et épandus au bon moment, ils remplacent une partie des engrais achetés. Dans l'essai belge sur prairie pâturée cité plus haut, la fertilisation organique apportait deux fois plus d'azote que la fertilisation minérale (62,4 contre 31,8 kg N/ha)[^stilmant].
+Le fumier, le lisier, le compost et le digestat de méthanisation contiennent de l'azote, du phosphore et du potassium. Bien stockés et épandus au bon moment, ils remplacent une partie des engrais achetés. Dans l'essai belge sur prairie pâturée cité plus haut, la fertilisation organique (compost) apportait deux fois plus d'azote utile que la fertilisation minérale (62,4 contre 31,8 kg N/ha)[^stilmant].
 
 Conditions : analyses d'effluents, capacité de stockage pour épandre au bon moment, respect des plafonds d'épandage, et échanges paille-fumier avec les céréaliers voisins pour les fermes sans élevage.
 
 ### 3. Ammoniac vert produit localement (vague 3)
 
-On peut faire de l'ammoniac sans gaz : l'hydrogène vient alors de l'électrolyse de l'eau, avec de l'électricité renouvelable. Au Kenya, une petite unité solaire installée sur une ferme de noix produit de l'ammoniac sur place (capacité à vérifier, environ une tonne par jour)[^yale]. Une étude publiée dans *Nature Food* estime qu'une production décentralisée à petite échelle pourrait fournir la majorité de l'azote de synthèse d'ici la fin de la décennie[^carnegie].
+On peut faire de l'ammoniac sans gaz : l'hydrogène vient alors de l'électrolyse de l'eau, avec de l'électricité renouvelable. Au Kenya, une petite unité solaire construite par la jeune entreprise Talus Renewables sur une ferme de noix près de Nairobi devait produire une tonne d'ammoniac par jour, sur place (annonce de 2023)[^yale]. Une étude publiée dans *Nature Food* en 2024 estime qu'une production décentralisée à petite échelle pourrait fournir la majorité de l'azote de synthèse d'ici la fin de la décennie[^carnegie].
 
 Limites : forte consommation d'électricité et rendement moindre à petite échelle[^rsc], toxicité de l'ammoniac pour le stockage et le transport[^wef]. L'échelle pertinente est probablement le territoire (coopérative, zone d'activité) plutôt que la ferme.
 
