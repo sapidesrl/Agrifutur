@@ -1174,3 +1174,104 @@ paille_paillage_kg_m2:
   date: 2014-12-31
   source: https://draaf.auvergne-rhone-alpes.agriculture.gouv.fr/IMG/pdf/Fiche_paillage_cle85edc2-2.pdf
   note: "Essai SERAIL 2014 (fiche paillages, DRAAF Auvergne-Rhône-Alpes) : foin apporté à 2 à 3 kg/m². Borne basse appliquée à la paille. Les mulchs végétaux doivent être posés en couche épaisse (GRAB 2015)."
+
+# --- Irrigation et abreuvement (fiche eau/irrigation-pompes) ---------------------
+
+irr_pression_pompe:
+  libelle: Pression en sortie de pompe d'un enrouleur à canon
+  valeur: 8
+  unite: bar
+  statut: estimé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea (Huet, Granier, Molle), essais de six enrouleurs avec 5 bar au canon : 6,4 à 9,6 bar en sortie de pompe (tableau 2). Le SPW indique 4 à 12 bar au canon selon le modèle (fiche « Canon enrouleur », août 2023). Mesure française. Remplacer par le manomètre de la station."
+
+irr_rendement_motopompe_diesel:
+  libelle: Rendement d'un groupe motopompe diesel d'irrigation (énergie hydraulique ÷ énergie du gasoil)
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea, tableau 3 : 18,1 à 22,1 % mesurés sur seize essais (gasoil pesé, débit et pression mesurés). Mesure française."
+
+irr_rendement_electropompe:
+  libelle: Rendement d'une électropompe d'irrigation récente (pompe × moteur)
+  valeur: 0.66
+  unite: "%"
+  statut: estimé
+  date: 2024-05-14
+  source: https://www.reussir.fr/grandes-cultures/des-rendements-superieurs-pour-les-pompes-de-surface
+  note: "Réussir, 14/05/2024 (constructeur Rovatti) : rendement hydraulique des pompes neuves supérieur à 75 % (une pompe usée peut tomber à 50 %, Réussir 07/05/2024) ; moteur électrique 88-89 % en pompe immergée, 95 % en pompe de surface récente. 0,75 × 0,88 retenu. Sources françaises."
+
+irr_debit:
+  libelle: Débit d'un enrouleur à canon
+  valeur: 60
+  unite: m³/h
+  statut: estimé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea : 50 à 100 m³/h mesurés selon la buse (tableau 2). Valeur basse de la fourchette retenue pour une exploitation wallonne (hypothèse)."
+
+irr_surface:
+  libelle: Surface irriguée de l'exploitation type (pommes de terre ou légumes)
+  valeur: 10
+  unite: ha
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Ordre de grandeur d'une parcelle irriguée suivie par le CRA-W dans le projet DuraTechFarm (environ 10 ha)."
+
+irr_dose_an:
+  libelle: Eau apportée par an sur une culture irriguée
+  valeur: 100
+  unite: mm/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "En 2022 (année sèche), l'essai Patat'Up à Gembloux a reçu 9 irrigations de 5 à 25 mm. À remplacer par les relevés du compteur (1 mm sur 1 ha = 10 m³)."
+
+abreuv_ugb:
+  libelle: Bovins au pâturage sur des parcelles sans eau courante
+  valeur: 40
+  unite: UGB
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+abreuv_l_ugb_jour:
+  libelle: Eau bue au pâturage par UGB et par jour
+  valeur: 60
+  unite: L/UGB/jour
+  statut: sourcé
+  date: 2021-07-23
+  source: https://www.reussir.fr/agriculture-massif-central/labreuvement-un-poste-cle
+  note: "Chambre d'agriculture de la Creuse (Réussir, 23/07/2021) : 60 L par UGB et par jour, près de 115 L pour un couple vache-veau par forte chaleur. Une vache laitière : 70 L par jour (Idele, Réussir 11/06/2015). Sources françaises."
+
+abreuv_jours:
+  libelle: Jours de pâturage par an
+  valeur: 180
+  unite: jours/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tonne_heures_jour:
+  libelle: Temps de tracteur et de tonne à eau par jour de pâturage (remplissage, trajet, retour)
+  valeur: 1
+  unite: h/jour
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "À remplacer par le temps réel. La chambre d'agriculture de la Creuse compte 33 € par heure de tonne à eau (main-d'œuvre, tracteur, tonne et carburant, hors eau ; Réussir, 23/07/2021)."
+
+abreuv_solaire_invest:
+  libelle: Puits filtrant, pompe solaire et réseau d'abreuvement (exemple d'élevage)
+  valeur: 12000
+  unite: €
+  statut: sourcé
+  date: 2023-06-06
+  source: https://www.reussir.fr/bovins-viande/une-pompe-solaire-sur-un-puits-filtrant-pour-gagner-en-autonomie-pour-leau-dabreuvement
+  note: "GAEC de la Creuse (Réussir, 06/06/2023) : 12 000 € au total, dont environ 3 000 € pour le puits et 24 buses ; pompe immergée 4,5 m³/h, 8 bar, 600 W sur quatre panneaux, sans batterie ; cuve de 5 000 L, réseau enterré vers le bâtiment et deux îlots de prairies ; 2 500 € d'aide régionale ; un mois de travail des éleveurs non compté. Exemple français, à remplacer par un devis."
