@@ -5,7 +5,7 @@ domaine: transformation
 dependance_fossile: gasoil (transport); gaz (procédés)
 alternatives: [Atelier de découpe, presse à huile, moulin à meules, légumerie-conserverie]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-La plupart des produits de la ferme quittent l'exploitation bruts : grain, graines, carcasses, légumes. Ils sont transformés dans quelques grandes usines, souvent loin de la ferme, parfois hors de Wallonie. Le fossile entre par le transport des matières premières et des produits finis, par les procédés qui chauffent ou refroidissent (séchage, cuisson, stérilisation, froid) et par les emballages. L'industrie alimentaire wallonne a consommé 6 397 GWh d'énergie en 2023 ; dans l'industrie wallonne, le gaz naturel est le premier vecteur d'énergie (38 %)[^indus].
-
-Transformer soi-même, à la ferme ou à plusieurs, raccourcit le trajet et garde la valeur ajoutée sur l'exploitation. La découpe de viande pour la vente en colis est rentable aujourd'hui quand la clientèle existe (vague 1). La presse à huile et le moulin à meules multiplient la valeur de la tonne de graines ou de grain, mais demandent un investissement, du temps et un réseau de clients (vague 2). La légumerie-conserverie se monte surtout en collectif, avec des aides et des contrats avec les cuisines de collectivités (vague 2).
+La plupart des produits de la ferme quittent l'exploitation bruts (grain, graines, carcasses, légumes) et sont transformés dans quelques grandes usines, souvent loin de la ferme, parfois hors de Wallonie. Le fossile entre par le transport, par les procédés qui chauffent ou refroidissent et par les emballages : l'industrie alimentaire wallonne a consommé 6 397 GWh d'énergie en 2023, et le gaz naturel est le premier vecteur d'énergie de l'industrie wallonne (38 %)[^indus]. Transformer soi-même, à la ferme ou à plusieurs, raccourcit le trajet et garde la valeur ajoutée : la découpe de viande pour la vente en colis est rentable aujourd'hui quand la clientèle existe (vague 1). La presse à huile et le moulin à meules rapportent environ {{ v('huile_alim_ecart_tonne', 0) }} et {{ v('farine_ecart_tonne_ble', 0) }} de plus que la vente en vrac (calculé, avant travail et emballages), mais demandent un investissement, du temps et un réseau de clients (vague 2). La légumerie-conserverie se monte surtout en collectif, avec des aides et des contrats avec les cuisines de collectivités (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -25,7 +23,7 @@ Transformer soi-même, à la ferme ou à plusieurs, raccourcit le trajet et gard
 - **Viande.** Peu d'abattoirs wallons acceptent encore de petits lots avec reprise de la carcasse : 10 en 2021 selon le CRA-W, après la fermeture de 3 autres depuis 2018[^craw-viande]. Dans l'échantillon d'éleveurs étudié, la ferme était en moyenne à 49 km de l'abattoir, l'abattoir à 36 km de l'atelier de découpe, et l'atelier à 24 km de la ferme[^craw-viande].
 - **Légumes.** La consommation d'énergie de l'industrie alimentaire wallonne a augmenté de 112 % entre 1990 et 2023, poussée par la transformation de la pomme de terre[^indus].
 
-**Ce que reçoit l'agriculteur.** Le prix de la matière brute. En novembre 2026, le blé tendre vaut environ {{ v('ble_prix') }} (cotation indicative belge de la FEGRA)[^fegra] et la graine de colza environ {{ v('colza_prix') }} (Euronext). En 2020, une carcasse de bovin se payait de 3,37 €/kg (vache de race étrangère) à 4,72 €/kg (jeune taureau Blanc Bleu Belge) HTVA[^craw-viande]. La valeur ajoutée de la mouture, du pressage, de la découpe et de l'emballage revient à l'aval.
+**Ce que reçoit l'agriculteur.** Le prix de la matière brute. Fin novembre 2026, le blé tendre vaut environ {{ v('ble_prix') }} (cotation indicative belge de la FEGRA)[^fegra]. La graine de colza valait environ {{ v('colza_prix') }} fin septembre 2026 sur le marché à terme Euronext (Paris), faute de relevé plus récent[^terrenet-colza]. En 2020, une carcasse de bovin se payait de 3,37 €/kg (vache de race étrangère) à 4,72 €/kg (jeune taureau Blanc Bleu Belge) HTVA[^craw-viande]. La valeur ajoutée de la mouture, du pressage, de la découpe et de l'emballage revient à l'aval.
 
 ## Où entrent le pétrole et le gaz
 
@@ -95,7 +93,7 @@ Limites :
 
 **Le calcul du projet.** Avec ce prix de vente, la tonne de graines pressée rapporte {{ v('huile_alim_valeur_tonne', unite=False) }} € (huile et tourteau, calculé), soit {{ v('huile_alim_ecart_tonne', unite=False) }} € de plus que la graine vendue au prix du marché ({{ v('colza_prix') }}). Ce chiffre bouge peu entre les scénarios ({{ fourchette('huile_alim_ecart_tonne') }}) : c'est le prix de vente de l'huile qui fait tout. Il faut encore payer le travail, les bidons et les étiquettes. L'investissement de l'exemple français revient à {{ v('presse_amortissement_litre', 2, unite=False) }} € par litre vendu, sur {{ v('atelier_duree_amortissement', 0) }} (hypothèse).
 
-À comparer avec l'usage carburant : un litre d'huile revient à {{ v('huile_cout_litre') }} une fois le tourteau déduit (calculé), pour remplacer un gasoil agricole à {{ v('gasoil_agricole_htva') }} HTVA. Vendue en cuisine, la même huile vaut plusieurs fois plus. L'huile carburant est une assurance contre la crise du gasoil ; l'huile alimentaire est un produit qui se vend.
+À comparer avec l'usage carburant : ramenée à l'énergie d'un litre de gasoil, l'huile revient à {{ v('huile_cout_eq_gasoil') }} une fois le tourteau déduit (calculé), contre {{ v('gasoil_agricole_htva') }} HTVA pour le gasoil agricole. Elle n'est moins chère que le gasoil qu'au prix de crise : au prix de février 2026, le gasoil ({{ v('gasoil_agricole_htva', scenario='bas') }}) redevient nettement moins cher que l'huile ({{ v('huile_cout_eq_gasoil', scenario='bas') }}). Vendue en cuisine, la même huile vaut plusieurs fois plus. L'huile carburant est une assurance contre la crise du gasoil ; l'huile alimentaire est un produit qui se vend.
 
 **Conditions :**
 
@@ -170,7 +168,7 @@ Limites : la stérilisation demande beaucoup de chaleur. Pour que le gain soit c
 
 - Part du gaz naturel dans la consommation d'énergie de l'industrie alimentaire wallonne (bilans énergétiques du SPW, devenus inaccessibles à leur ancienne adresse).
 - Consommation de gasoil du transport des matières premières agricoles wallonnes vers les usines (céréales vers la Flandre, animaux vers les abattoirs) : aucune donnée trouvée. À comparer avec les trajets en petites quantités du circuit court, qui ne sont pas toujours plus sobres par kilo.
-- Prix wallon du blé payé départ ferme : le projet utilise une cotation française (Euronext, rendu Rouen).
+- Prix wallon du blé payé départ ferme : le projet utilise la cotation indicative belge de la FEGRA, dont la base de livraison n'est pas précisée. Prix du colza en novembre 2026 (dernier relevé Euronext lu : fin septembre).
 - Prix de vente de la farine sur meule : un seul moulin wallon publie une fourchette ; TVA comprise ou non, à confirmer. Rendement réel en farine d'un moulin à meules à la ferme (le chiffre utilisé est une moyenne de toute la meunerie wallonne, 2011).
 - Prix wallon de l'huile de colza fermière alimentaire et coût d'une presse en Wallonie en 2026 : seul un exemple français a été lu. Les fiches techniques et économiques de Valbiom sur la trituration à la ferme (années 2000) ne sont plus en ligne à leur adresse.
 - Statut AFSCA du pressage d'huile à la ferme et assouplissements actuels : le vade-mecum DiversiFerm lu date de 2019. Le site de l'AFSCA (brochure « vente à la ferme » de juillet 2025, fiche sur les différences entre agrément et autorisation) n'était pas accessible depuis notre outil.
@@ -187,6 +185,7 @@ Limites : la stérilisation demande beaucoup de chaleur. Pour que le gain soit c
 [^belgrains]: « Bel'grains. Repenser la filière céréales alimentaires », fiche de présentation de la coopérative, Province de Liège (non datée, coopérative créée en septembre 2021), consultée le 26 novembre 2026. https://provincedeliege.be/sites/default/files/media/17335/Bel'grains.pdf
 [^craw-viande]: Turlot A. (CRA-W), Jérôme E., Beuve-Mery J. (Accueil Champêtre en Wallonie), « Production et commercialisation de viande bovine en circuits courts. Repères socio-économiques », CRA-W, projet OTEl, avril 2021 (données 2020). https://www.cra.wallonie.be/uploads/2021/04/2021_Production_et_commercialisation_de_viande_bovine_en_circuits_courts_rep%C3%A8res_socio-%C3%A9conomiques.pdf
 [^fegra]: Cotations indicatives des produits agricoles (blé standard certifié), FEGRA (fédération belge du négoce de grains), 26 novembre 2026 ; prix hors TVA, base non précisée, non contraignants. https://fegra.be/home/agriculturalprices?lang=fr
+[^terrenet-colza]: Cotation du colza sur Euronext (échéances novembre 2026 et février 2027), article de Terre-net (France), 30 septembre 2026. https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
 [^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole, coopératives et entreprises de transformation et de commercialisation), articles 13 à 15 et annexes 1 et 3, version consolidée (dernière modification lue : arrêté ministériel du 11 mai 2026), Wallex, consultée le 26 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
 [^hra]: Arrêté du Gouvernement wallon du 30 août 2018 fixant les conditions d'octroi des subventions relatives aux halls relais agricoles et déterminant les modalités de leur mise à disposition, articles 1 à 4, version en vigueur depuis le 9 novembre 2023, Wallex, consultée le 26 novembre 2026. https://wallex.wallonie.be/contents/acts/3/3926.html
 [^vm2019]: « Vade-mecum de la valorisation des produits agricoles et de leur commercialisation en circuit court », édition 2019, DiversiFerm (Gembloux Agro-Bio Tech - ULiège, Accueil Champêtre en Wallonie) pour le SPW. https://culturalite.be/wp-content/uploads/2021/10/vade-mecum-diversiferm-2019.pdf

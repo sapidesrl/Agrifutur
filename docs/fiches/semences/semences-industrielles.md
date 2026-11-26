@@ -5,7 +5,7 @@ domaine: semences
 dependance_fossile: transport; intrants de production
 alternatives: [Semences de ferme, semences paysannes reproductibles, sélection à la ferme]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-La plupart des cultures sont semées chaque année avec des semences achetées : semences certifiées de céréales, hybrides de maïs, de betterave, de chicorée et de beaucoup de légumes, plants de pommes de terre. En Wallonie, les semences coûtaient 199 €/ha de surface agricole en 2024 dans les exploitations de grandes cultures, autant que les engrais[^eaw-gc]. Le fossile entre surtout par la culture qui produit la semence (engrais, phytos, gasoil), puis par le séchage, le tri, l'enrobage, l'emballage et le transport. Pour une céréale, cela reste peu d'énergie par hectare : c'est l'argent et l'autonomie qui sont en jeu, plus que le pétrole. La meilleure alternative, la semence de ferme de céréales et de protéagineux, est rentable aujourd'hui (vague 1) : environ {{ v('semence_ferme_froment_economie_ha', 0) }} d'économie par hectare de froment (calculé). Pour les hybrides (maïs, betterave), il n'existe pas d'alternative rentable à court terme.
+La plupart des cultures sont semées chaque année avec des semences achetées : semences certifiées de céréales, hybrides de maïs, de betterave, de chicorée et de beaucoup de légumes, plants de pommes de terre. En Wallonie, les semences coûtaient 199 €/ha de surface agricole en 2024 dans les exploitations de grandes cultures, autant que les engrais[^eaw-gc]. Le fossile entre surtout par la culture qui produit la semence (engrais, phytos, gasoil), puis par le séchage, le tri, l'enrobage, l'emballage et le transport ; pour une céréale, cela reste peu d'énergie par hectare, et c'est l'argent et l'autonomie qui sont en jeu, plus que le pétrole. La meilleure alternative, la semence de ferme de céréales et de protéagineux, est rentable aujourd'hui (vague 1) : en froment, elle économise environ {{ v('semence_ferme_froment_economie_ha', 0) }} ({{ fourchette('semence_ferme_froment_economie_ha', 0) }} selon le prix du grain, calculé avec des prix de semence et de triage français). Pour les hybrides (maïs, betterave), il n'existe pas d'alternative rentable à court terme.
 
 ## Comment ça marche aujourd'hui
 
@@ -140,8 +140,8 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 - **Matériel hétérogène biologique** : notifications en Belgique, autorité compétente.
 - **Futur règlement sur le matériel de reproduction** : texte final sur les échanges entre agriculteurs et les variétés de conservation de céréales.
 - **Rendement des populations de froment** comparé aux lignées dans les essais belges.
-- « Biosemences » : acteur cité dans la commande, non identifié.
-- Prix départ ferme du froment en Wallonie (le calcul utilise un prix de marché français).
+- « Biosemences » : acteur à identifier (activité, espèces, lien avec la Wallonie).
+- Prix départ ferme du froment en Wallonie : le calcul utilise la cotation indicative belge de la FEGRA, dont la base de livraison n'est pas précisée.
 
 ## Sources
 

@@ -5,7 +5,7 @@ domaine: matériaux
 dependance_fossile: pétrochimie
 alternatives: [Paillages naturels, bâches réutilisables, emballages consignés]
 vague_meilleure_alternative: 2
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Films d'enrubannage et d'ensilage, paillages, ficelles, filets, bâches de tunnel, gaines d'irrigation, bidons et big bags : environ 20 000 t de plastiques agricoles (hors emballages) sont mises chaque année sur le marché belge, et seuls 37 % environ sont collectés puis recyclés[^recydata]. Ces plastiques sont faits de polyéthylène ou de polypropylène, tirés du pétrole ou du gaz, et leur prix a fortement monté avec la crise de 2026[^ti-pe]. Aucune alternative ne remplace tout le plastique à un coût moindre. Les meilleures pistes sont rentables sous conditions (vague 2) : pailler avec de la paille ou du chanvre produits sur place, garder plusieurs années des toiles et des bâches robustes, et rendre les emballages dans des filières de reprise ou de consigne. Le film biodégradable, lui, remplace surtout la corvée de retrait : il reste en partie issu du pétrole.
+Films d'enrubannage et d'ensilage, paillages, ficelles, filets, bâches de tunnel, gaines d'irrigation, bidons et big bags : la ferme utilise beaucoup de plastique. Rien que pour les films, ficelles et filets, environ 20 000 t sont mises chaque année sur le marché belge, et seuls 37 % environ sont collectés puis recyclés[^recydata]. Ces plastiques sont faits de polyéthylène ou de polypropylène, tirés du pétrole ou du gaz, et leur prix a fortement monté avec la crise de 2026[^ti-pe]. Aucune alternative ne remplace tout le plastique à moindre coût : les meilleures pistes sont rentables sous conditions (vague 2), en paillant avec de la paille ou du chanvre produits sur place, ou en gardant plusieurs années des toiles et des bâches robustes. À l'achat, la paille coûte plus cher que le film (plus du double au prix actuel), et la toile reste du plastique ; la consigne des emballages et la responsabilité des fabricants sont encore en préparation (vague 3). Le film biodégradable remplace surtout la corvée de retrait, mais il reste en partie issu du pétrole.
 
 ## Comment ça marche aujourd'hui
 
@@ -61,7 +61,7 @@ On couvre le sol avec une matière végétale au lieu d'un film : paille, foin, 
 
 **Essais wallons.** Le CRA-W et l'asbl Chanvre wallon ont comparé, en pépinière et en asperge, des paillis apportés sur 5 cm d'épaisseur. La chènevotte de chanvre wallon, le miscanthus et les écorces de pin ont été parmi les plus efficaces la première année, puis l'efficacité a baissé la deuxième et est devenue faible la troisième ; seule la bâche plastique anti-enracinement restait excellente en deuxième année[^craw-chanvre]. Dans ces essais, le chanvre revenait à environ 2 € par m² et par an, contre 1 € pour la binette ou la bâche et 0,75 € pour le miscanthus acheté au producteur (prix de 2014)[^craw-chanvre]. Le CRA-W teste depuis 2023 des toiles biodégradables de jute, de chanvre et de laine dans des haies fruitières bio ; les résultats ne sont pas encore publiés[^craw-haies].
 
-**Coût de la paille.** Un paillage de paille ou de foin se pose à 2 à 3 kg par m²[^draaf]. Avec {{ v('paille_paillage_kg_m2', 0) }} (borne basse de cet essai, appliquée à la paille), il faut {{ v('paillage_paille_t_ha', 0) }} de sol couvert (calculé). Au prix de la paille de début novembre 2026, {{ v('paille_prix', 0) }} selon la cotation belge du Boerenbond (base et TVA non précisées)[^boerenbond-paille], l'achat de la paille revient à {{ v('paillage_paille_ha', 0) }} de sol couvert (calculé), sans le transport ni la pose. À comparer avec l'achat du film :
+**Coût de la paille.** Un paillage de paille ou de foin se pose à 2 à 3 kg par m²[^draaf]. Avec {{ v('paille_paillage_kg_m2', 0) }} (borne basse de cet essai, appliquée à la paille), il faut {{ v('paillage_paille_t_ha', 0) }} de sol couvert (calculé). Au prix de la paille de fin novembre 2026, {{ v('paille_prix', 0) }} selon la cotation flamande du Boerenbond (base et TVA non précisées)[^boerenbond-paille], l'achat de la paille revient à {{ v('paillage_paille_ha', 0) }} de sol couvert (calculé), sans le transport ni la pose. À comparer avec l'achat du film :
 
 | Paillage, par hectare de sol couvert | Achat du matériau | Fourchette des scénarios |
 |---|---|---|
@@ -70,13 +70,13 @@ On couvre le sol avec une matière végétale au lieu d'un film : paille, foin, 
 | Toile tissée, par an (durée de {{ v('toile_tissee_duree', 0) }}, hypothèse) | {{ v('paillage_toile_ha_an', 0) }} | {{ fourchette('paillage_toile_ha_an', 0) }} |
 | Paille ({{ v('paillage_paille_t_ha', 0) }}) | {{ v('paillage_paille_ha', 0) }} | fixe |
 
-Les prix des films et de la toile sont des prix français de 2015[^grab] : la crise de 2026 les a probablement relevés, ce que le scénario haut ne reflète qu'en partie. L'achat du matériau ne dit pas tout. Le film polyéthylène doit être retiré, nettoyé et évacué ; la paille reste sur place et rend de la matière organique au sol, mais elle demande beaucoup de manutention et doit être renouvelée tous les un ou deux ans[^biowallonie].
+Les prix des films et de la toile sont des prix français relevés chez un fournisseur en novembre 2026, hors TVA et hors livraison[^terrateck] ; aucun prix belge n'a été trouvé. La paille n'a pas de scénario de prix : elle coûtait plus cher en février 2026, par effet de saison[^boerenbond-paille]. Même dans le scénario haut, la paille achetée reste plus chère que le film. L'achat du matériau ne dit pas tout. Le film polyéthylène doit être retiré, nettoyé et évacué ; la paille reste sur place et rend de la matière organique au sol, mais elle demande beaucoup de manutention et doit être renouvelée tous les un ou deux ans[^biowallonie].
 
 **Et le film biodégradable ?** Les films certifiés selon la norme EN 17033 (« biodégradable dans le sol ») se posent avec les mêmes machines que le polyéthylène, en 15 µm pour des cultures de 2 à 6 mois, et sont broyés et enfouis en fin de culture au lieu d'être retirés[^cpa]. Ils contrôlent les adventices aussi bien qu'un film plastique de même couleur selon le Comité de plasticulture[^cpa]. Le projet français SOPAM (CTIFL, 2022-2024) donne des résultats plus nuancés[^ctifl] :
 
 - la moitié des paillages biodégradables testés ont donné un rendement satisfaisant ;
 - après broyage et enfouissement, ils ne s'étaient dégradés qu'à 25 % en 2 ans, alors que la norme suppose une dégradation complète ;
-- le film coûte deux à trois fois plus cher au m², mais le retrait du polyéthylène coûte cher en main-d'œuvre quand le film est sale.
+- le film coûte deux à trois fois plus cher au m², mais le retrait du polyéthylène coûte cher en main-d'œuvre quand le film est sale. Chez le fournisseur relevé en 2026, l'écart est d'environ 1,8 fois (calculé à partir du tableau ci-dessus).
 
 Sur deux parcelles françaises (lecture du graphique de l'étude), le polyéthylène revenait à environ 910 €/ha tout compris (film posé, dépose, logistique, reprise) contre environ 750 €/ha pour le biodégradable sur la première, et à environ 1 535 €/ha contre 1 630 €/ha sur la seconde[^ctifl]. Le biodégradable n'est donc pas toujours plus cher, mais il ne ferme pas la boucle : il est en partie fabriqué à partir du pétrole (copolyesters)[^grab][^ctifl], et une étude citée par Recydata montre que des films à base de PBAT se fragmentent en microplastiques qui persistent dans le sol[^recydata]. C'est un déplacement de la dépendance, pas une suppression.
 
@@ -93,7 +93,7 @@ Pourquoi vague 2 : en achat de matériau, la paille du commerce coûte plus que 
 
 On remplace un plastique jeté après une saison par un matériau plus robuste, gardé plusieurs années. C'est encore du plastique, mais on en jette beaucoup moins.
 
-- **Toiles tissées en polypropylène.** Plus chères à l'achat, elles se réutilisent plusieurs saisons et laissent passer l'eau de pluie et d'aspersion[^grab][^draaf]. Elles coûtaient 0,60 à 0,80 € HT par m² en 2015, soit huit à dix fois le prix d'un film polyéthylène (prix français)[^grab]. Avec une durée de {{ v('toile_tissee_duree', 0) }} (hypothèse), l'achat revient à {{ v('paillage_toile_ha_an', 0) }} de sol couvert (calculé). Il faut standardiser les longueurs de planches et les densités de plantation, et percer les trous à chaud[^grab]. En fin de vie, le problème d'élimination est le même que pour le film[^grab].
+- **Toiles tissées en polypropylène.** Plus chères à l'achat, elles se réutilisent plusieurs saisons et laissent passer l'eau de pluie et d'aspersion[^grab][^draaf]. Elles coûtaient déjà huit à dix fois le prix d'un film polyéthylène en 2015 (prix français)[^grab]. En novembre 2026, un fournisseur français vend la toile {{ v('toile_tissee_prix_m2', 2) }} HT[^terrateck], soit environ sept fois le film du même fournisseur (calculé). Avec une durée de {{ v('toile_tissee_duree', 0) }} (hypothèse), l'achat revient à {{ v('paillage_toile_ha_an', 0) }} de sol couvert (calculé). Il faut standardiser les longueurs de planches et les densités de plantation, et percer les trous à chaud[^grab]. En fin de vie, le problème d'élimination est le même que pour le film[^grab].
 - **Films de tunnel longue durée.** Des films traités contre les UV durent jusqu'à dix ans[^recydata].
 - **Filets anti-insectes et anti-oiseaux** conçus pour plusieurs saisons[^recydata].
 - **Bâches d'ensilage.** Les films d'ensilage et les filets sont réutilisables jusqu'à 50 % selon l'étude pour le SPW[^recydata]. Pour réduire le film d'enrubannage, voir la fiche [Ensilage et enrubannage](../elevage/fourrages-recoltes.md).
@@ -114,7 +114,7 @@ Pourquoi vague 2 : la toile tissée est un matériel courant, mais son prix au m
 
 **Responsabilité élargie des producteurs (REP).** Pour les plastiques agricoles hors emballages, l'étude réalisée pour le SPW propose un système belge financé par les fabricants de films[^recydata] :
 
-- une contribution des producteurs d'environ 185 €/t, et 50 €/t payés par l'agriculteur au dépôt, contre une moyenne de 150 €/t payée en 2024[^recydata] ;
+- une contribution des producteurs d'environ 185 €/t, et 50 €/t payés par l'agriculteur au dépôt ; l'agriculteur payait en moyenne 150 €/t en 2024, et {{ v('collecte_plastique_agricole_t', 0) }} depuis la fin des subsides[^recydata] ;
 - un taux de recyclage porté de 37 à 47 % en 5 ans, et 15 % de matière recyclée dans les films d'ensilage et d'enrubannage[^recydata] ;
 - d'abord les films d'ensilage et d'enrubannage ; les ficelles, filets, films de tunnel et de paillage plus tard[^recydata].
 
@@ -138,9 +138,9 @@ Pourquoi vague 3 : la reprise des bidons et des sacs fonctionne et ne coûte rie
 
 ## À vérifier
 
-- Prix belges des films de paillage, d'ensilage et d'enrubannage, des toiles tissées et des films biodégradables en novembre 2026, et en février 2026 pour le scénario bas. Les prix utilisés datent de 2015 (France).
+- Prix belges des films de paillage, d'ensilage et d'enrubannage, des toiles tissées et des films biodégradables en novembre 2026, et en février 2026 pour le scénario bas. Les prix utilisés sont ceux d'un fournisseur français, hors livraison.
 - Prix du polyéthylène vierge et recyclé en novembre 2026 (cotations ChemOrbis, Platts, ICIS ou Plastics Information Europe, payantes).
-- Prix de la paille en Belgique en 2026 ; le prix utilisé est français (départ Nord-Est).
+- Prix de la paille en Wallonie, avec sa base (départ ferme ou rendu) et la TVA ; le prix utilisé est une cotation flamande du Boerenbond.
 - Quantité de paille réellement posée en maraîchage sur paille en Wallonie, et temps de pose ; le chiffre utilisé vient d'un essai français sur foin.
 - Durée de vie réelle d'une toile tissée en maraîchage wallon.
 - Résultats des essais de toiles biodégradables du CRA-W en haies fruitières (jute, chanvre, laine).
@@ -161,6 +161,7 @@ Pourquoi vague 3 : la reprise des bidons et des sacs fonctionne et ne coûte rie
 [^biowallonie]: Bertrand J., « Le paillage dans les PAM », Itinéraires BIO n° 85, Biowallonie, novembre-décembre 2025. https://orbi.uliege.be/bitstream/2268/339309/1/IB85.pdf
 [^craw-chanvre]: « Le paillage à base de chanvre industriel cultivé en Wallonie est une réelle alternative », Le Sillon belge, 25 avril 2014 (essais du CRA-W et de l'asbl Chanvre wallon). https://www.cra.wallonie.be/uploads/2014/01/2014_04_25_Article_essais_paillages_Sillon_belge.pdf
 [^craw-haies]: Rondia A., Lateur M., « Projet de diversification de la production par l'exploitation d'une haie fruitière multifonctionnelle en bio », poster, CRA-W, projet WAL 4 FRUITs, 2023. https://www.cra.wallonie.be/uploads/2023/06/poster-haies-fruitieres-bio.pdf
+[^terrateck]: Fiches produits de Terrateck (France) : film de paillage polyéthylène noir 20 µm, film biodégradable 15 µm et toile tissée polypropylène 130 g/m², prix HT, consultées le 26 novembre 2026. https://www.terrateck.com/fr/bache-de-paillage/1566-paillage-plastique-non-perfore-bobine-1500m.html
 [^boerenbond-paille]: « Stro: Tarwestro », marktinformatie, Boerenbond, cotation du 25 novembre 2026. https://www.boerenbond.be/markten/akkerbouw/stro/stro-tarwestro
 [^agrirecover]: Site d'AgriRecover asbl (pages « Accueil », « À propos de nous », « Big bags », « Sacs d'engrais », « FAQ »), consulté le 26 novembre 2026. https://www.agrirecover.eu/fr
 [^vrt]: Verstuyft A., « Herbruikbare champignonbakjes in 7 supermarkten in Mechelen: "30 cent waarborg" », VRT NWS, 28 avril 2026. https://www.vrt.be/vrtnws/nl/2026/04/28/champignons-herbruikbare-bakjes-fost-plus-mechelen/
