@@ -29,7 +29,7 @@ SECTIONS = [
     "## Sources",
 ]
 CHAMPS = ["id", "titre", "domaine", "dependance_fossile", "alternatives", "vague_meilleure_alternative", "statut", "maj"]
-MACRO = re.compile(r"\{\{\s*v\(\s*'([^']+)'")
+MACRO = re.compile(r"\{\{\s*(?:v|fourchette)\(\s*'([^']+)'")
 APPEL_NOTE = re.compile(r"\[\^([^\]]+)\](?!:)")
 DEF_NOTE = re.compile(r"^\[\^([^\]]+)\]:", re.M)
 MONTANT = re.compile(r"\d[\d\s .,]*\s?(?:k€|c€|€|£|\$)")

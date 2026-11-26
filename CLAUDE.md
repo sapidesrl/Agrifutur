@@ -36,6 +36,8 @@ Une fiche par technologie agricole utilisée aujourd'hui qui dépend du pétrole
 - `unite: "%"` signifie que `valeur` est une fraction (0.35 s'affiche 35 %).
 - Un nouveau calcul s'ajoute dans `calc/couts.py` (liste `CALCULS`), jamais à la main dans `data/calculs.yaml`.
 - Macro dans les fiches : `{{ v('cle') }}` (valeur + unité), `{{ v('cle', 1) }}` (1 décimale), `{{ v('cle', unite=False) }}`.
+- **Trois scénarios de prix** : actuel, bas, haut. Une hypothèse qui bouge porte `scenario: true` ; sa borne basse est le prix d'avant-crise (février 2026) si on le connaît (champ `bas` + `bas_note`), sinon valeur × `scenario_bas_facteur`. Même logique pour `haut`. `calc/couts.py` écrit `bas` et `haut` dans `data/calculs.yaml` pour chaque calcul qui en dépend.
+- Macros de scénario : `{{ v('cle', scenario='bas') }}`, `{{ fourchette('cle') }}` (« X à Y unité »). Quand une conclusion de rentabilité change entre scénarios, la fiche le dit (ex. l'huile de colza n'est moins chère que le gasoil qu'au prix de crise).
 
 ## Après chaque modification
 

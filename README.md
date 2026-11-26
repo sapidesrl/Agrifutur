@@ -9,7 +9,7 @@ Contexte : Belgique (Wallonie), prix de novembre 2026. Objectif : un système le
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python calc/couts.py               # recalcule data/calculs.yaml depuis data/hypotheses.yaml
+python calc/couts.py               # recalcule data/calculs.yaml (scénarios actuel, bas, haut)
 python outils/verifier_fiches.py   # contrôle gabarit, clés de prix, chiffres sans source
 mkdocs serve                       # site local sur http://127.0.0.1:8000
 ```

@@ -12,6 +12,18 @@ Chaque fiche part d'une technologie utilisée aujourd'hui (tracteur diesel, engr
 
 Les prix qui bougent (carburant, électricité, engrais, matières premières) ne sont jamais écrits en dur dans les fiches : ils viennent tous d'un seul fichier, `data/hypotheses.yaml`.
 
+## Trois scénarios de prix
+
+Les prix de novembre 2026 sont ceux d'une crise. Chaque calcul est donc fait trois fois :
+
+- **actuel** : prix de novembre 2026 ;
+- **bas** : prix d'avant-crise (février 2026) quand on les connaît, sinon prix actuel − 30 % (hypothèse) ;
+- **haut** : prix actuel + 30 % (hypothèse).
+
+Seules les grandeurs qui bougent changent d'un scénario à l'autre : gasoil et mazout, électricité du réseau, engrais, plaquettes, colza et tourteau. Le prix du photovoltaïque installé et les paramètres techniques restent fixes. Une alternative qui reste rentable dans le scénario bas est solide ; une alternative qui ne l'est que dans le scénario actuel ou haut dépend de la crise.
+
+Les bornes de chaque prix figurent dans [les hypothèses](hypotheses.md), les résultats dans [les calculs](calculs.md).
+
 ## Les vagues
 
 | Vague | Signification |

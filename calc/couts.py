@@ -1,6 +1,8 @@
 """Recalcule les comparaisons de coûts à partir de data/hypotheses.yaml.
 
 Écrit data/calculs.yaml, lu par les fiches via la macro {{ v('cle') }}.
+Chaque calcul est fait pour trois scénarios de prix (actuel, bas, haut) : voir
+l'en-tête de data/hypotheses.yaml.
 Usage : python calc/couts.py
 """
 from pathlib import Path
@@ -12,10 +14,28 @@ HYPOTHESES = RACINE / "data" / "hypotheses.yaml"
 SORTIE = RACINE / "data" / "calculs.yaml"
 
 
-def charger_hypotheses() -> dict:
+SCENARIOS = ("actuel", "bas", "haut")
+
+
+def charger_brut() -> dict:
     with HYPOTHESES.open(encoding="utf-8") as f:
-        brut = yaml.safe_load(f)
-    return {cle: entree.get("valeur") for cle, entree in brut.items()}
+        return yaml.safe_load(f)
+
+
+def valeurs_scenario(brut: dict, scenario: str) -> dict:
+    """Valeurs des hypothèses dans un scénario. Seules les entrées `scenario: true` varient."""
+    h = {cle: e.get("valeur") for cle, e in brut.items()}
+    if scenario == "actuel":
+        return h
+    facteur = h[f"scenario_{scenario}_facteur"]
+    for cle, e in brut.items():
+        if e.get("scenario") and e.get("valeur") is not None:
+            h[cle] = e[scenario] if e.get(scenario) is not None else e["valeur"] * facteur
+    return h
+
+
+def charger_hypotheses() -> dict:
+    return valeurs_scenario(charger_brut(), "actuel")
 
 
 def gasoil_agricole(h: dict) -> float:
@@ -116,20 +136,35 @@ CALCULS = [
 ]
 
 
-def main() -> None:
-    h = charger_hypotheses()
+def calculer(h: dict) -> dict:
     c: dict = {}
+    for cle, _libelle, _unite, _formule, fonction in CALCULS:
+        c[cle] = fonction(h, c)
+    return c
+
+
+def main() -> None:
+    brut = charger_brut()
+    resultats = {s: calculer(valeurs_scenario(brut, s)) for s in SCENARIOS}
     sortie: dict = {}
-    for cle, libelle, unite, formule, fonction in CALCULS:
-        valeur = fonction(h, c)
-        c[cle] = valeur
-        sortie[cle] = {"libelle": libelle, "valeur": round(valeur, 6), "unite": unite, "formule": formule}
+    for cle, libelle, unite, formule, _fonction in CALCULS:
+        e = {"libelle": libelle, "valeur": round(resultats["actuel"][cle], 6)}
+        bas, haut = round(resultats["bas"][cle], 6), round(resultats["haut"][cle], 6)
+        if bas != e["valeur"] or haut != e["valeur"]:
+            e["bas"], e["haut"] = bas, haut
+        e.update({"unite": unite, "formule": formule})
+        sortie[cle] = e
     entete = "# Généré par calc/couts.py : ne pas éditer à la main.\n"
     SORTIE.write_text(entete + yaml.safe_dump(sortie, allow_unicode=True, sort_keys=False), encoding="utf-8")
     largeur = max(len(e["libelle"]) for e in sortie.values())
+    print(f"{'':<{largeur}}  {'actuel':>12}  {'bas':>12}  {'haut':>12}")
     for e in sortie.values():
-        valeur = e["valeur"] * 100 if e["unite"] == "%" else e["valeur"]
-        print(f"{e['libelle']:<{largeur}}  {valeur:>12.4f}  {e['unite']}")
+        k = 100 if e["unite"] == "%" else 1
+        cols = [e["valeur"]] + ([e["bas"], e["haut"]] if "bas" in e else [])
+        texte = "  ".join(f"{x * k:>12.4f}" for x in cols)
+        if "bas" not in e:
+            texte += f"  {'=':>12}  {'=':>12}"
+        print(f"{e['libelle']:<{largeur}}  {texte}  {e['unite']}")
     print(f"\n{len(sortie)} calculs écrits dans {SORTIE.relative_to(RACINE)}")
 
 

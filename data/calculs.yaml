@@ -2,11 +2,15 @@
 gasoil_agricole_htva:
   libelle: Gasoil agricole HTVA utilisé dans les calculs
   valeur: 1.222645
+  bas: 0.630579
+  haut: 1.596876
   unite: €/L
   formule: Prix saisi, sinon (gasoil chauffage TVAC − écart) ÷ (1 + TVA)
 gasoil_kwh_utile:
   libelle: 'Gasoil : coût du kWh utile (à l''arbre)'
   valeur: 0.349327
+  bas: 0.180165
+  haut: 0.45625
   unite: €/kWh
   formule: Prix du litre ÷ (énergie du litre × rendement du moteur)
 gasoil_kwh_utile_fev2026:
@@ -28,21 +32,29 @@ pv_kwh_utile:
 reseau_kwh_utile:
   libelle: 'Réseau : coût du kWh utile'
   valeur: 0.294118
+  bas: 0.205882
+  haut: 0.382353
   unite: €/kWh
   formule: kWh réseau ÷ rendement de la chaîne électrique
 ratio_gasoil_pv:
   libelle: Le kWh utile au gasoil coûte … fois celui du PV
   valeur: 5.344704
+  bas: 2.756529
+  haut: 6.98063
   unite: fois
   formule: Gasoil ÷ PV
 ratio_gasoil_reseau:
   libelle: Le kWh utile au gasoil coûte … fois celui du réseau
   valeur: 1.187712
+  bas: 0.875089
+  haut: 1.19327
   unite: fois
   formule: Gasoil ÷ réseau
 tracteur_gasoil_eur_h:
   libelle: 'Tracteur compact : énergie par heure au gasoil'
   valeur: 8.558512
+  bas: 4.41405
+  haut: 11.178132
   unite: €/h
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
@@ -53,11 +65,15 @@ tracteur_pv_eur_h:
 tracteur_reseau_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur réseau'
   valeur: 7.5
+  bas: 5.25
+  haut: 9.75
   unite: €/h
   formule: Consommation × prix du réseau
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
   valeur: 5513.476584
+  bas: 2197.906336
+  haut: 7609.172452
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:
@@ -74,42 +90,58 @@ batterie_masse_journee_lourde:
 prix_kg_n:
   libelle: Prix du kg d'azote (ammonitrate)
   valeur: 1.641791
+  bas: 1.149254
+  haut: 2.134328
   unite: €/kg N
   formule: Prix de la tonne ÷ kg d'azote par tonne
 valeur_n_fixe:
   libelle: Valeur de l'azote fixé par les légumineuses
   valeur: 164.179104
+  bas: 114.925373
+  haut: 213.432836
   unite: €/ha/an
   formule: kg N fixés × prix du kg N
 mazout_kwh:
   libelle: 'Mazout : prix du kWh'
   valeur: 0.15094
+  bas: 0.0793
+  haut: 0.196222
   unite: €/kWh
   formule: Prix TVAC ÷ énergie du litre
 plaquettes_kwh:
   libelle: 'Plaquettes sèches : prix du kWh'
   valeur: 0.047562
+  bas: 0.033294
+  haut: 0.061831
   unite: €/kWh
   formule: Prix du MAP ÷ énergie du MAP
 ratio_mazout_plaquettes:
   libelle: Le kWh de mazout coûte … fois celui des plaquettes
   valeur: 3.173509
+  bas: 2.381828
+  haut: 3.173509
   unite: fois
   formule: Mazout ÷ plaquettes
 huile_cout_litre:
   libelle: 'Huile de colza : coût d''un litre, tourteau déduit'
   valeur: 1.072222
+  bas: 0.765556
+  haut: 1.378889
   unite: €/L
   formule: (Prix de la graine − valeur du tourteau) ÷ litres d'huile + pressage, hors
     accises
 huile_cout_eq_gasoil:
   libelle: 'Huile de colza : coût ramené à l''énergie d''un litre de gasoil'
   valeur: 1.165459
+  bas: 0.832126
+  haut: 1.498792
   unite: €/L
   formule: Coût du litre × énergie du gasoil ÷ énergie de l'huile
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
   valeur: -0.057186
+  bas: 0.201547
+  haut: -0.098084
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:
@@ -125,5 +157,7 @@ gasoil_economise_semis_direct:
 valeur_gasoil_economise:
   libelle: Valeur de ce gasoil
   valeur: 35.456694
+  bas: 18.286777
+  haut: 46.309405
   unite: €/ha/an
   formule: Litres économisés × prix du gasoil

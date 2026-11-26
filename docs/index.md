@@ -8,6 +8,8 @@ Le contexte est celui de la Belgique, surtout de la Wallonie, avec les prix de n
 
 Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux : {{ v('ratio_gasoil_pv', 1) }} plus cher. Avec l'électricité du réseau, l'écart tombe à {{ v('ratio_gasoil_reseau', 1) }}. On électrifie donc derrière son propre photovoltaïque, et ce qui freine, c'est le prix d'achat du matériel plus que l'énergie.
 
+Cet écart tient même si les prix redescendent : au prix d'avant-crise, le kWh utile au gasoil coûte encore {{ v('ratio_gasoil_pv', 1, scenario='bas') }} celui du photovoltaïque. Selon le scénario, le rapport va de {{ fourchette('ratio_gasoil_pv', 1) }} (voir [les trois scénarios](methode.md#trois-scenarios-de-prix)).
+
 ## Les trois vagues
 
 | Vague | Signification |
