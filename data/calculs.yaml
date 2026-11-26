@@ -784,23 +784,23 @@ utilitaire_prix_max_occasion:
   formule: Surcoût remboursé ÷ écart de prix en occasion de trois ans
 paillage_pe_ha:
   libelle: 'Film de paillage polyéthylène : achat par hectare couvert'
-  valeur: 800.0
-  bas: 560.0
-  haut: 1040.0
+  valeur: 980.0
+  bas: 686.0
+  haut: 1274.0
   unite: €/ha
   formule: Prix au m² × 10 000
 paillage_bio_ha:
   libelle: 'Film de paillage biodégradable : achat par hectare couvert'
-  valeur: 1500.0
-  bas: 1050.0
-  haut: 1950.0
+  valeur: 1800.0
+  bas: 1260.0
+  haut: 2340.0
   unite: €/ha
   formule: Prix au m² × 10 000
 paillage_toile_ha_an:
   libelle: 'Toile tissée réutilisable : achat par hectare couvert et par an'
-  valeur: 1400.0
-  bas: 980.0
-  haut: 1820.0
+  valeur: 1420.0
+  bas: 994.0
+  haut: 1846.0
   unite: €/ha/an
   formule: Prix au m² × 10 000 ÷ durée d'utilisation
 paillage_paille_t_ha:
@@ -810,7 +810,7 @@ paillage_paille_t_ha:
   formule: kg/m² × 10 000 ÷ 1 000
 paillage_paille_ha:
   libelle: 'Paillage de paille : achat de la paille par hectare couvert'
-  valeur: 1600
+  valeur: 2300
   unite: €/ha
   formule: Tonnes par hectare × prix de la paille
 irr_kwh_hydro_m3:
@@ -1006,9 +1006,9 @@ farine_valeur_tonne_ble:
 farine_ecart_tonne_ble:
   libelle: 'Farine sur meule : chiffre d''affaires en plus de la vente du blé, par
     tonne'
-  valeur: 810.0
-  bas: 860.0
-  haut: 738.0
+  valeur: 842.5
+  bas: 892.5
+  haut: 780.25
   unite: €/t de blé
   formule: Chiffre d'affaires de la farine − prix du blé, avant main-d'œuvre, sacs,
     énergie et amortissement
@@ -1041,73 +1041,73 @@ presse_amortissement_litre:
   formule: Investissement ÷ durée d'amortissement ÷ litres vendus par an
 prix_kg_p2o5:
   libelle: Prix du kg de P2O5 (superphosphate triple)
-  valeur: 1.511111
+  valeur: 1.5
   bas: 1.2
-  haut: 1.964444
+  haut: 1.95
   unite: €/kg P2O5
   formule: Prix de la tonne ÷ kg de P2O5 par tonne
 prix_kg_k2o:
   libelle: Prix du kg de K2O (chlorure de potassium)
-  valeur: 0.591667
+  valeur: 0.6
   bas: 0.6
-  haut: 0.769167
+  haut: 0.78
   unite: €/kg K2O
   formule: Prix de la tonne ÷ kg de K2O par tonne
 valeur_pk_fumier:
   libelle: Valeur du P et du K d'une tonne de fumier de bovins
-  valeur: 11.008056
+  valeur: 11.04
   bas: 9.9
-  haut: 14.310472
+  haut: 14.352
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O (coefficient d'équivalence
     1)
 valeur_p_fumier:
   libelle: Part du phosphore dans cette valeur
-  valeur: 5.742222
+  valeur: 5.7
   bas: 4.56
-  haut: 7.464889
+  haut: 7.41
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5
 valeur_k_fumier:
   libelle: Part du potassium dans cette valeur
-  valeur: 5.265833
+  valeur: 5.34
   bas: 5.34
-  haut: 6.845583
+  haut: 6.942
   unite: €/t
   formule: kg K2O × prix du kg K2O
 valeur_pk_fumier_ha:
   libelle: Valeur du P et du K d'un apport de fumier de bovins par hectare
-  valeur: 385.281944
+  valeur: 386.4
   bas: 346.5
-  haut: 500.866528
+  haut: 502.32
   unite: €/ha
   formule: Tonnes épandues × valeur du P et du K d'une tonne
 valeur_pk_lisier:
   libelle: Valeur du P et du K d'un m³ de lisier de bovins
-  valeur: 4.153611
+  valeur: 4.17
   bas: 3.78
-  haut: 5.399694
+  haut: 5.421
   unite: €/m³
   formule: (kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O) × masse du m³
 valeur_pk_compost:
   libelle: Valeur du P et du K d'une tonne de fumier composté
-  valeur: 13.425833
+  valeur: 13.44
   bas: 11.82
-  haut: 17.453583
+  haut: 17.472
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
 valeur_pk_digestat:
   libelle: Valeur du P et du K d'une tonne de digestat complet
-  valeur: 3.783611
+  valeur: 3.8082
   bas: 3.5424
-  haut: 4.918694
+  haut: 4.95066
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
 valeur_pk_cendres:
   libelle: Valeur du P et du K d'une tonne de cendres de plaquettes
-  valeur: 42.500278
+  valeur: 42.6
   bas: 37.98
-  haut: 55.250361
+  haut: 55.38
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
 kcl_evite_t_cendres:
@@ -1180,17 +1180,17 @@ haie_eco_regime_eur_km:
   formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
 semence_ferme_froment_eur_kg:
   libelle: 'Semence de ferme de froment : coût du kg'
-  valeur: 0.408
-  bas: 0.358
-  haut: 0.48
+  valeur: 0.3755
+  bas: 0.3255
+  haut: 0.43775
   unite: €/kg
   formule: Prix du grain ÷ 1 000 + triage et traitement à façon + rémunération de
     l'obtenteur
 semence_ferme_froment_eur_ha:
   libelle: 'Semence de ferme de froment : coût par hectare'
-  valeur: 61.2
-  bas: 53.7
-  haut: 72.0
+  valeur: 56.325
+  bas: 48.825
+  haut: 65.6625
   unite: €/ha
   formule: Dose de semis × coût du kg de semence de ferme
 semence_certifiee_froment_eur_ha:
@@ -1201,16 +1201,16 @@ semence_certifiee_froment_eur_ha:
 semence_ferme_froment_economie_ha:
   libelle: 'Semence de ferme au lieu de semence certifiée (froment) : économie par
     hectare'
-  valeur: 32.55
-  bas: 40.05
-  haut: 21.75
+  valeur: 37.425
+  bas: 44.925
+  haut: 28.0875
   unite: €/ha
   formule: Coût de la semence certifiée − coût de la semence de ferme
 semence_ferme_froment_economie_part:
   libelle: 'Semence de ferme de froment : économie en part du coût de la semence certifiée'
-  valeur: 0.3472
-  bas: 0.4272
-  haut: 0.232
+  valeur: 0.3992
+  bas: 0.4792
+  haut: 0.2996
   unite: '%'
   formule: Économie ÷ coût de la semence certifiée
 semence_froment_energie_kwh_ha:

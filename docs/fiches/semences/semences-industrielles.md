@@ -72,7 +72,7 @@ La dépendance aux semences achetées est donc d'abord **économique et stratég
 **Coût, froment conventionnel** (calculé, avec des prix français faute de prix belges) :
 
 - semence certifiée traitée : {{ v('semence_froment_certifiee_prix') }} (milieu de 55 à 70 €/100 kg en Hauts-de-France en 2021[^staff-2021]), soit {{ v('semence_certifiee_froment_eur_ha', 0) }} ;
-- semence de ferme : grain gardé au prix du marché ({{ v('ble_prix', 0) }}, prix français), triage, traitement et ensachage à façon ({{ v('triage_traitement_facon_froment', 2) }}, prix français de 2019[^terrenet-2019]) et rémunération de l'obtenteur, soit {{ v('semence_ferme_froment_eur_kg') }} et {{ v('semence_ferme_froment_eur_ha', 0) }} ;
+- semence de ferme : grain gardé au prix du marché ({{ v('ble_prix', 0) }}, cotation belge[^fegra]), triage, traitement et ensachage à façon ({{ v('triage_traitement_facon_froment', 2) }}, prix français de 2019[^terrenet-2019]) et rémunération de l'obtenteur, soit {{ v('semence_ferme_froment_eur_kg') }} et {{ v('semence_ferme_froment_eur_ha', 0) }} ;
 - **économie : {{ v('semence_ferme_froment_economie_ha', 0) }}**, soit {{ v('semence_ferme_froment_economie_part', 0) }} du coût de la semence certifiée ; {{ fourchette('semence_ferme_froment_economie_ha', 0) }} selon le prix du grain.
 
 La semence de ferme reste moins chère dans les trois scénarios. L'écart se réduit quand le blé est cher, car le grain gardé vaut alors plus ; le calcul garde le prix de la semence certifiée fixe, alors qu'il suit en partie le prix du grain (hypothèse).
@@ -171,3 +171,4 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 [^conseil-prm]: « Regulation on the production and marketing of plant reproductive material: state of play », note de la présidence, Conseil de l'Union européenne, document 10718/26, 18 juin 2026. https://data.consilium.europa.eu/doc/document/ST-10718-2026-INIT/en/pdf
 [^rsp]: Site du Réseau Semences Paysannes (France), page d'accueil consultée le 26 novembre 2026. https://www.semencespaysannes.org/
 [^infogm-juin]: D. Meshaka, « Veille juridique Inf'OGM du 9 au 23 juin 2026 », Inf'OGM, 22 juin 2026. https://infogm.org/juridique/veille-juridique-infogm-du-9-au-23-juin-2026/
+[^fegra]: Cotations indicatives des produits agricoles (blé standard certifié), FEGRA (fédération belge du négoce de grains), 26 novembre 2026 ; prix hors TVA, base non précisée, non contraignants. https://fegra.be/home/agriculturalprices?lang=fr

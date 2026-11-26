@@ -284,10 +284,10 @@ ammonitrate_prix:
   statut: sourcé
   date: 2026-11-25
   source: https://www.terre-net.fr/marche-agricole/ammonitrate-33-5/engrais
-  note: "Prix français, départ usine, 25/11/2026 (Terre-net). Franco : 567,5 €/t (Argus, 19/11/2026). En avril 2026 : 550 €/t (Réussir). Seul repère belge trouvé : ammonitrate 27 % à 445 €/t départ Gand chez un négociant (non daté). À remplacer par un prix belge sur facture."
+  note: "Prix français, départ usine, 25/11/2026 (Terre-net). Franco : 567,5 €/t (Argus, 19/11/2026). Pas d'ammonitrate 33,5 % coté en Belgique chez Agryco : on y trouve le CAN 27 % à 445 €/t départ Gand (Agryco Belgique, page « Engrais », non datée, consultée le 26/11/2026, https://www.agryco.be/fr_BE/engrais/pc975), soit environ 1 650 €/t d'azote contre 1 600 €/t pour le 33,5 % français. TVA non précisée. Aucun prix belge de février 2026 trouvé."
   scenario: true
   bas: 500
-  bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+  bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
 
 ammonitrate_teneur_n:
   libelle: Teneur en azote de l'ammonitrate
@@ -1119,33 +1119,33 @@ utilitaire_ecart_prix_occasion:
 # La clé collecte_plastique_agricole_t existe déjà et est réutilisée telle quelle.
 
 paillage_pe_prix_m2:
-  libelle: Film de paillage en polyéthylène noir (25 µm), prix d'achat HT
-  valeur: 0.08
+  libelle: Film de paillage en polyéthylène noir (20 à 25 µm), prix d'achat HT
+  valeur: 0.098
   unite: €/m²
-  statut: estimé
-  date: 2015-03-01
-  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
-  note: "Prix français de 2015 : 0,07 à 0,09 € HT/m² (GRAB et chambre régionale d'agriculture PACA, fiche « Désherbage alternatif en maraîchage », mars 2015) ; 0,08 €/m² dans l'essai SERAIL 2014 (fiche paillages DRAAF Auvergne-Rhône-Alpes). Aucun prix belge de 2026 trouvé. La résine de polyéthylène est passée de moins de 1 €/kg à plus de 2,50 €/kg en quelques mois en 2026 selon des plasturgistes français (Techniques de l'Ingénieur, 7 mai 2026) : valeur actuelle probablement plus haute."
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.terrateck.com/fr/bache-de-paillage/1566-paillage-plastique-non-perfore-bobine-1500m.html
+  note: "Prix français : film noir non perforé 20 µm, bobine de 1,20 × 1 500 m (1 800 m²), 176,75 € HT, soit 0,098 € HT/m² (Terrateck, consulté le 26/11/2026 ; 167,91 € HT pendant la promotion Black Friday, −5 % dès 10 bobines). Livraison vers la Belgique non chiffrée. Prix de 2015 : 0,07 à 0,09 € HT/m² (GRAB, 25 µm). Aucun prix belge trouvé."
   scenario: true
 
 paillage_bio_prix_m2:
   libelle: Film de paillage biodégradable (15 µm), prix d'achat HT
-  valeur: 0.15
+  valeur: 0.18
   unite: €/m²
-  statut: estimé
-  date: 2015-03-01
-  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
-  note: "Prix français de 2015 : 0,14 à 0,16 € HT/m² (même fiche GRAB). Le CTIFL (projet SOPAM, 2025) situe le prix au m² du biodégradable à deux à trois fois celui du polyéthylène. Films en partie issus du pétrole (copolyesters) : le prix suit en partie celui des polymères."
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.terrateck.com/fr/bache-de-paillage/1568-paillage-plastique-bio-non-perfore-ep-15-micron-bobine-1500m.html
+  note: "Prix français : film biodégradable 15 µm à base de PLA, non perforé, utilisable en bio, bobine de 1,20 × 1 500 m (1 800 m²), 320,75 € HT, soit 0,178 € HT/m² (Terrateck, consulté le 26/11/2026 ; 304,71 € HT en promotion). Soit environ 1,8 fois le film PE du même fournisseur. Prix de 2015 : 0,14 à 0,16 € HT/m² (GRAB). Aucun prix belge trouvé."
   scenario: true
 
 toile_tissee_prix_m2:
   libelle: Toile tissée en polypropylène (toile hors-sol), prix d'achat HT
-  valeur: 0.70
+  valeur: 0.71
   unite: €/m²
-  statut: estimé
-  date: 2015-03-01
-  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
-  note: "Prix français de 2015 : 0,60 à 0,80 € HT/m² (même fiche GRAB) ; 0,60 €/m² dans l'essai SERAIL 2014 (fiche DRAAF Auvergne-Rhône-Alpes). Polypropylène, issu du pétrole."
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.terrateck.com/fr/bache-de-paillage/1563-toile-de-paillage-tissee-quadrillee-130gm2-noire.html
+  note: "Prix français : toile tissée polypropylène noire 130 g/m², quadrillée, rouleau de 1,05 × 100 m (105 m²), 75 € HT, soit 0,71 € HT/m² (Terrateck, consulté le 26/11/2026 ; 71,25 € HT en promotion, −10 % dès 20 rouleaux). Les largeurs de 2,10 à 5,25 m reviennent moins cher au m². Prix de 2015 : 0,60 à 0,80 € HT/m² (GRAB). Polypropylène, issu du pétrole. Aucun prix belge trouvé."
   scenario: true
 
 toile_tissee_duree:
@@ -1158,13 +1158,17 @@ toile_tissee_duree:
   note: "Aucune source indépendante lue. Les sources disent seulement que la toile tissée est réutilisable plusieurs saisons (GRAB 2015, Recydata 2026). À remplacer par une durée mesurée."
 
 paille_prix:
-  libelle: Paille de blé pressée, départ Nord-Est (France)
-  valeur: 80
+  libelle: Paille de blé (cotation Boerenbond, Belgique)
+  valeur: 115
   unite: €/t
   statut: sourcé
-  date: 2026-11-04
-  source: https://www.reussir.fr/articles/marche-des-oleagineux-et-coproduits-du-28-octobre-au-4-novembre-2026-les-prix-du-colza-ont
-  note: "Prix français : paille de blé et d'orge départ Nord-Est entre 75 et 85 €/t du 28 octobre au 4 novembre 2026 (La Dépêche/Réussir, publié le 6/11/2026). 80 à 100 €/t en blé début septembre 2026. Aucune cotation belge trouvée. Hors transport et pose."
+  date: 2026-11-25
+  source: https://www.boerenbond.be/markten/akkerbouw/stro/stro-tarwestro
+  note: "Boerenbond, marktinformatie « Stro: Tarwestro » : 115 €/t le 25/11/2026 (+5 €/t sur la semaine), 110 €/t du 14/10 au 18/11/2026, lu le 26/11/2026. Le marché porte le code « LOK », que la page n'explique pas. La page ne précise ni le conditionnement, ni la base (départ ferme ou rendu), ni la TVA. La cotation est flamande : la Wallonie n'a pas de cotation publique lisible (Sillon belge bloque l'accès automatique). En février 2026 elle valait plus cher, 135 à 140 €/t (135 le 4/02, 138 le 11/02, 140 les 18 et 25/02/2026), parce que la paille de l'ancienne récolte se fait rare en fin de saison : c'est un effet de saison, pas un effet de crise. Pas de scénario de prix bas proposé, car le prix de février est plus haut que le prix actuel. Remplace l'ancienne valeur française (75 à 85 €/t départ Nord-Est, La Dépêche/Réussir, 28/10-4/11/2026)."
+  # Pour ajouter tout de même un scénario, décommenter. Attention : bas > valeur.
+  # scenario: true
+  # bas: 139
+  # bas_note: "Février 2026 : 135 à 140 €/t (Boerenbond, Tarwestro, LOK, cotations des 4, 11, 18 et 25/02/2026). Moyenne arrondie. Prix de fin de saison, plus haut que le prix actuel."
 
 paille_paillage_kg_m2:
   libelle: Quantité de paille ou de foin apportée en paillage
@@ -1373,16 +1377,16 @@ csa_surface_moyenne_2014:
 # Proposition de la fiche transformation/transformation-industrielle.md (26/11/2026).
 
 ble_prix:
-  libelle: Blé tendre (prix de marché)
-  valeur: 240
+  libelle: Blé tendre standard certifié Vegaplan (cotation indicative FEGRA)
+  valeur: 207.5
   unite: €/t
-  statut: estimé
-  date: 2026-11-25
-  source: https://www.reussir.fr/articles/marche-des-cereales-du-25-novembre-2026-le-prix-du-ble-recule-le-prix-du-mais-franchit-les
-  note: "Prix français. Euronext : 242 €/t sur l'échéance décembre 2026 le 25/11/2026 (La Dépêche-Le Petit Meunier, Réussir) ; rendu Rouen : 225,50 €/t le 6/11/2026 (https://www.reussir.fr/articles/baisse-des-prix-du-ble-en-france-sous-le-poids-de-loffre-mondiale). Valeur arrondie. Le prix payé départ ferme en Wallonie est plus bas : à remplacer par une cotation belge."
+  statut: sourcé
+  date: 2026-11-26
+  source: https://fegra.be/home/agriculturalprices?lang=fr
+  note: "Cotation indicative FEGRA/Synagra du 26/11/2026 (Belgique) : 207,50 €/t en blé standard certifié, 202,50 €/t en non certifié (malus de 5 €/t). Elle reflète les transactions physiques de la veille et ne lie pas les parties : le prix réel est fixé par le négociant. La page ne précise pas la base de livraison. Hors TVA : le Département Landbouw en Visserij reprend ces prix FEGRA comme « beursnotering (excl. btw) » (https://landbouwcijfers.vlaanderen.be/marktinformatie/prijzen-van-granen-voedertarwe-voedergerst-voedermais-triticale-en-haver). Moyenne de novembre 2026 (16 cotations, du 3 au 26/11) : 202,84 €/t (fichier CSV de la page). Remplace l'ancienne valeur française (Euronext 242 €/t le 25/11/2026)."
   scenario: true
-  bas: 190
-  bas_note: "Février 2026 : blé tendre rendu Rouen 187,50 €/t le 16/02/2026 (https://www.reussir.fr/articles/le-prix-du-ble-tendre-gagne-3-eurt-en-une-semaine-le-mais-perd-15-eurt) ; Euronext repassé sous 195 €/t le 25/02/2026. Valeur arrondie (estimé)."
+  bas: 157.5
+  bas_note: "Février 2026 (avant-crise) : moyenne des 18 cotations FEGRA du 3 au 27/02/2026 en blé standard certifié, 157,53 €/t (155,00 à 160,50 €/t ; 157,50 €/t le 26/02 et 158,00 €/t le 27/02). Même source et même base, export CSV de la page lu le 26/11/2026."
 
 farine_ferme_prix:
   libelle: Farine sur meule vendue par un moulin à la ferme wallon
@@ -1436,7 +1440,7 @@ huile_alim_prix:
   statut: sourcé
   date: 2026-05-22
   source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
-  note: "Prix français, ferme de Corrèze-Dordogne (Terre-net, 22/05/2026), prix au client en bidon de 5 L, TVA probablement comprise. À remplacer par un prix wallon."
+  note: "Prix français, ferme de Corrèze-Dordogne (Terre-net, 22/05/2026), prix au client en bidon de 5 L, TVA probablement comprise. Aucun prix wallon en bidon trouvé. Repères belges au détail, en bouteille : huile pressée à froid du Moulin du Stwerdu (Braives), 7,60 € les 500 ml, soit 15,20 €/L (boutique 100 % Liégeois, consultée le 26/11/2026, https://100lg.be/produit/huile-de-colza/) ; huile bio Graines de Curieux, 7,35 € la bouteille de 500 g (Circuits Paysans, Liège, consulté le 26/11/2026). À remplacer par un prix wallon en bidon."
 
 presse_investissement:
   libelle: Atelier de pressage à froid (trieur, presse d'occasion, filtres, équipements), hors stockage
@@ -1461,15 +1465,15 @@ presse_litres_an:
 
 tsp_prix:
   libelle: Superphosphate triple (TSP, 45 % P2O5)
-  valeur: 680
+  valeur: 675
   unite: €/t
   statut: sourcé
-  date: 2026-11-06
-  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
-  note: "Prix français au stade distributeur, départ port vrac : 675-680 €/t en septembre 2026, prix des phosphatés inchangés en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : TSP 45 % à 675 €/t départ Gand chez un négociant en ligne (Agryco, page non datée, consultée le 26/11/2026). Terre-net affichait 567,25 €/t le 26/11/2026, valeur identique à celle de début 2026 : cotation non retenue (probablement pas mise à jour). À remplacer par un prix belge sur facture."
+  date: 2026-11-26
+  source: https://www.agryco.be/fr_BE/engrais/pc975
+  note: "Prix belge, départ Gand, big bag 600 kg ou vrac ; « prix départ, selon disponibilités » ; TVA non précisée (Agryco Belgique, édito marché de la semaine, page non datée, consultée le 26/11/2026 ; prix stable sur la semaine). Prix rendu ferme sur saisie du code postal. Recoupement français : 675-680 €/t départ port vrac en septembre 2026, inchangé en octobre (La Dépêche Le petit meunier via Réussir, 6/11/2026). À confirmer par une facture belge."
   scenario: true
   bas: 540
-  bas_note: "Février 2026, avant-crise : 540 €/t départ direct de bord vrac, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+  bas_note: "Février 2026, avant-crise : 540 €/t départ direct de bord vrac, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
 
 tsp_teneur_p2o5:
   libelle: Teneur en P2O5 du superphosphate triple
@@ -1482,15 +1486,15 @@ tsp_teneur_p2o5:
 
 kcl_prix:
   libelle: Chlorure de potassium (KCl, 60 % K2O)
-  valeur: 355
+  valeur: 360
   unite: €/t
   statut: sourcé
-  date: 2026-11-06
-  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
-  note: "Prix français au stade distributeur, départ vrac compacté : 355-360 €/t en septembre 2026, puis − 5 €/t en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : KCl 60 % à 360 €/t départ Gand (Agryco, page non datée, consultée le 26/11/2026). Prix payé par un agriculteur wallon en juillet 2025 : 420 €/t (Fourrages Mieux). Le prix de la potasse n'a presque pas bougé pendant la crise : le scénario bas (février 2026) est un peu plus haut que le prix actuel."
+  date: 2026-11-26
+  source: https://www.agryco.be/fr_BE/engrais/pc975
+  note: "Prix belge, départ Gand, big bag 600 kg ou vrac ; « prix départ, selon disponibilités » ; TVA non précisée (Agryco Belgique, édito marché de la semaine, page non datée, consultée le 26/11/2026 ; prix inchangé sur la semaine). Recoupement français : 355-360 €/t en septembre 2026, puis − 5 €/t en octobre (La Dépêche Le petit meunier, 6/11/2026). Prix payé par un agriculteur wallon en juillet 2025 : 420 €/t (Fourrages Mieux). La potasse n'a presque pas bougé pendant la crise : le scénario bas (février 2026) est égal au prix actuel."
   scenario: true
   bas: 360
-  bas_note: "Février 2026, avant-crise : environ 360 €/t départ direct de bord, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+  bas_note: "Février 2026, avant-crise : environ 360 €/t départ direct de bord, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
 
 kcl_teneur_k2o:
   libelle: Teneur en K2O du chlorure de potassium
@@ -1769,7 +1773,7 @@ semence_froment_certifiee_prix:
   statut: estimé
   date: 2021-07-13
   source: https://www.reussir.fr/articles/semences-de-ferme-les-trieurs-facon-du-staff-integrent-semae-avec-leurs-conditions
-  note: "Prix français ancien : 55 à 70 €/100 kg selon le traitement, Hauts-de-France (Staff, syndicat des trieurs à façon, Réussir, 13/07/2021) ; milieu de la fourchette. Aucun prix belge trouvé. En bio, le CRA-W compte 1,20 €/kg pour du froment fourrager du commerce (octobre 2025). À remplacer par un prix belge sur facture."
+  note: "Prix français ancien : 55 à 70 €/100 kg selon le traitement, Hauts-de-France (Staff, syndicat des trieurs à façon, Réussir, 13/07/2021) ; milieu de la fourchette. Aucun prix belge public trouvé en novembre 2026 : chez Agryco Belgique, les prix des semences de froment ne s'affichent qu'aux clients connectés. En bio, le CRA-W compte 1,20 €/kg pour du froment fourrager du commerce (octobre 2025). À remplacer par un prix belge sur facture."
 
 triage_traitement_facon_froment:
   libelle: Triage à façon, traitement et ensachage de la semence de ferme de froment
@@ -1778,7 +1782,7 @@ triage_traitement_facon_froment:
   statut: estimé
   date: 2019-06-20
   source: https://www.terre-net.fr/semences/article/149099/les-trieurs-a-facon-defendent-leurs-atouts-pour-la-transition-agricole
-  note: "Prix français : 12 €/100 kg de prestation (travail du grain, traitement, ensachage), Staff, Terre-net, 20/06/2019. Repère belge indirect : le bilan AssoBIO du CRA-W (octobre 2025) compte 0,45 €/kg pour une semence de ferme de froment bio triée par un trieur agréé, redevance comprise, pour un grain valorisé 300 €/t, soit environ 0,10 €/kg de triage sans traitement chimique. À remplacer par un tarif de trieur wallon."
+  note: "Prix français : 12 €/100 kg de prestation (travail du grain, traitement, ensachage), Staff, Terre-net, 20/06/2019. Repère belge indirect : le bilan AssoBIO du CRA-W (octobre 2025) compte 0,45 €/kg pour une semence de ferme de froment bio triée par un trieur agréé, redevance comprise, pour un grain valorisé 300 €/t, soit environ 0,10 €/kg de triage sans traitement chimique. Aucun tarif de trieur wallon publié en ligne trouvé ; 25 trieurs à façon sont agréés en Wallonie pour 2026-2027 (liste SPW du 19/05/2026). À remplacer par un tarif de trieur wallon."
 
 royalties_semence_ferme_cereales:
   libelle: Rémunération de l'obtenteur pour la semence de ferme (froment, orge, seigle, avoine)
