@@ -1275,3 +1275,96 @@ abreuv_solaire_invest:
   date: 2023-06-06
   source: https://www.reussir.fr/bovins-viande/une-pompe-solaire-sur-un-puits-filtrant-pour-gagner-en-autonomie-pour-leau-dabreuvement
   note: "GAEC de la Creuse (Réussir, 06/06/2023) : 12 000 € au total, dont environ 3 000 € pour le puits et 24 buses ; pompe immergée 4,5 m³/h, 8 bar, 600 W sur quatre panneaux, sans batterie ; cuve de 5 000 L, réseau enterré vers le bâtiment et deux îlots de prairies ; 2 500 € d'aide régionale ; un mois de travail des éleveurs non compté. Exemple français, à remplacer par un devis."
+
+# --- Distribution : circuits longs et circuits courts ----------------------
+# Entrées proposées par la fiche distribution/circuits-longs.md (26/11/2026).
+
+part_valeur_agriculteur_be:
+  libelle: Part de la valeur de la chaîne alimentaire qui revient aux agriculteurs en Belgique
+  valeur: 0.11
+  unite: "%"
+  statut: sourcé
+  date: 2024-03-12
+  source: https://www.lalibre.be/economie/entreprises-startup/2024/03/12/crise-agricole-le-consommateur-paye-trop-peu-pour-ses-aliments-PFQ75KO24RG5PCXRQQQUBKMWEY/
+  note: "Brigitte Misonne (DG Agriculture de la Commission européenne), audition en commission Économie de la Chambre le 12 mars 2024, rapportée par Belga dans La Libre : 11 % en Belgique contre 26 % en moyenne dans l'UE. Chiffre agrégé, sans détail de méthode ni d'année. À remplacer par les chiffres de l'Observatoire des prix (SPF Économie) dès qu'ils sont lisibles."
+
+part_valeur_agriculteur_ue:
+  libelle: Part de la valeur de la chaîne alimentaire qui revient aux agriculteurs, moyenne de l'UE
+  valeur: 0.26
+  unite: "%"
+  statut: sourcé
+  date: 2024-03-12
+  source: https://www.lalibre.be/economie/entreprises-startup/2024/03/12/crise-agricole-le-consommateur-paye-trop-peu-pour-ses-aliments-PFQ75KO24RG5PCXRQQQUBKMWEY/
+  note: "Même source que part_valeur_agriculteur_be."
+
+pdt_prix_detail_2022:
+  libelle: Prix moyen des pommes de terre en supermarché en Belgique, 2022
+  valeur: 1.63
+  unite: €/kg
+  statut: sourcé
+  date: 2024-06-01
+  source: https://www.greenpeace.org/static/planet4-belgium-stateless/2024/06/136d1eab-rapport-greenpeace_resume-fr_benefices-records-pour-lindustrie-de-la-pomme-de-terre-les-miettes-pour-le-monde-agricole.pdf
+  note: "Greenpeace Belgique (résumé du rapport, juin 2024), d'après Test-Achats (2024). Frites surgelées : 1,75 €/kg. Valeur de 2022, sert seulement d'exemple de répartition du prix : ne pas utiliser comme prix actuel."
+
+pdt_prix_agriculteur_2022:
+  libelle: Recette moyenne de l'agriculteur par kg de pommes de terre vendu en supermarché, 2022 (estimation)
+  valeur: 0.18
+  unite: €/kg
+  statut: estimé
+  date: 2024-06-01
+  source: https://www.greenpeace.org/static/planet4-belgium-stateless/2024/06/136d1eab-rapport-greenpeace_resume-fr_benefices-records-pour-lindustrie-de-la-pomme-de-terre-les-miettes-pour-le-monde-agricole.pdf
+  note: "Estimation de Greenpeace Belgique (ONG), à partir du revenu des producteurs de pommes de terre (Statbel) et des volumes : ordre de grandeur, pas une mesure. Après déduction des coûts, il resterait 0,02 €/kg pour rémunérer l'agriculteur selon la même source."
+
+marge_coop_en_ligne:
+  libelle: Marge d'une coopérative de circuit court sur la vente en ligne avec retrait en point de dépôt
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2021-12-01
+  source: https://www.alterechos.be/wp-content/uploads/2021/12/AE499_WEB-30-35.pdf
+  note: "Paysans-Artisans (Namur) : le producteur fixe son prix, la coopérative prend 20 % en vente en ligne et 30 % en magasin (Alter Échos n° 499, décembre 2021 ; confirmé par Legrand C., mémoire UNamur, 2021 : marge calculée sur le prix de vente total, 10 % pour la vente aux professionnels)."
+
+marge_coop_magasin:
+  libelle: Marge d'une coopérative de circuit court sur la vente en magasin
+  valeur: 0.30
+  unite: "%"
+  statut: sourcé
+  date: 2021-12-01
+  source: https://www.alterechos.be/wp-content/uploads/2021/12/AE499_WEB-30-35.pdf
+  note: "Paysans-Artisans : 30 % en magasin, dont 10 % pour la logistique et 20 % pour les frais du magasin (Legrand C., mémoire UNamur, 2021)."
+
+marge_plateforme_ruche:
+  libelle: Commission totale d'une plateforme de commande groupée de type La Ruche qui dit Oui
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2020-11-13
+  source: https://www.linfodurable.fr/conso/de-la-fourche-lassiette-le-vaste-reseau-de-circuit-court-de-la-ruche-qui-dit-oui-21287
+  note: "Sur une commande de 100 € : 80 € au producteur, 8,35 € au responsable de Ruche, 11,65 € à la plateforme (L'info durable, 13 novembre 2020, chiffres français). Le service existe en Belgique ; le barème belge n'a pas été lu."
+
+csa_part_adulte_2014:
+  libelle: Prix d'une part de récolte en autocueillette (CSA), par adulte et par an, Flandre 2014
+  valeur: 250
+  unite: €/an
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "Zwaenepoel E. et Van Gijseghem D., « Landbouw in stedelijke omgeving. CSA's en andere initiatieven », Departement Landbouw en Visserij, 2015 : environ 250 € par adulte et par an (220 à 265 €). Prix de 2014. Exemples wallons plus récents : 350 €/an (Gesves, 2024), 520 € par adulte (Jambes, 2025)."
+
+csa_membres_moyen_2014:
+  libelle: Nombre moyen de membres d'une ferme CSA, en équivalents adultes, Flandre 2014
+  valeur: 155
+  unite: équivalents adultes
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "19 fermes CSA actives en Flandre en 2014, 2 947 équivalents adultes au total, de 38 à 311 par ferme."
+
+csa_surface_moyenne_2014:
+  libelle: Surface moyenne d'une ferme CSA, Flandre 2014
+  valeur: 1.61
+  unite: ha
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "30,63 ha pour 19 fermes CSA en 2014."

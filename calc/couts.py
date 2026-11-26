@@ -536,6 +536,25 @@ CALCULS = [
     ("abreuv_solaire_retour_gasoil_ans", "Pompe solaire au lieu de la tonne à eau : temps de retour sur le seul gasoil", "ans",
      "Investissement ÷ coût du gasoil de la tonne",
      lambda h, c: h["abreuv_solaire_invest"] / c["tonne_gasoil_eur_an"]),
+    # Distribution : circuits longs et circuits courts (fiche distribution/circuits-longs.md)
+    ("pdt_part_agriculteur_long", "Pommes de terre en supermarché : part du prix qui revient à l'agriculteur (2022)", "%",
+     "Recette de l'agriculteur ÷ prix en supermarché",
+     lambda h, c: h["pdt_prix_agriculteur_2022"] / h["pdt_prix_detail_2022"]),
+    ("pdt_recette_coop_en_ligne", "Pommes de terre au même prix final, vendues par une coopérative en ligne : recette du producteur", "€/kg",
+     "Prix final × (1 − marge de la coopérative en ligne)",
+     lambda h, c: h["pdt_prix_detail_2022"] * (1 - h["marge_coop_en_ligne"])),
+    ("pdt_recette_coop_magasin", "Pommes de terre au même prix final, vendues dans un magasin coopératif : recette du producteur", "€/kg",
+     "Prix final × (1 − marge du magasin coopératif)",
+     lambda h, c: h["pdt_prix_detail_2022"] * (1 - h["marge_coop_magasin"])),
+    ("pdt_ratio_coop_long", "Recette du producteur en coopérative en ligne face à la chaîne longue, au même prix final", "fois",
+     "Recette en coopérative en ligne ÷ recette en chaîne longue",
+     lambda h, c: c["pdt_recette_coop_en_ligne"] / h["pdt_prix_agriculteur_2022"]),
+    ("csa_recette_ferme", "Ferme CSA moyenne de Flandre (2014) : recette des parts de récolte", "€/an",
+     "Membres (équivalents adultes) × prix de la part",
+     lambda h, c: h["csa_membres_moyen_2014"] * h["csa_part_adulte_2014"]),
+    ("csa_recette_ha", "Ferme CSA moyenne de Flandre (2014) : recette des parts par hectare", "€/ha/an",
+     "Recette des parts ÷ surface",
+     lambda h, c: c["csa_recette_ferme"] / h["csa_surface_moyenne_2014"]),
 ]
 
 

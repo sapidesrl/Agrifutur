@@ -963,3 +963,37 @@ abreuv_solaire_retour_gasoil_ans:
   haut: 6.393379
   unite: ans
   formule: Investissement ÷ coût du gasoil de la tonne
+pdt_part_agriculteur_long:
+  libelle: 'Pommes de terre en supermarché : part du prix qui revient à l''agriculteur
+    (2022)'
+  valeur: 0.110429
+  unite: '%'
+  formule: Recette de l'agriculteur ÷ prix en supermarché
+pdt_recette_coop_en_ligne:
+  libelle: 'Pommes de terre au même prix final, vendues par une coopérative en ligne
+    : recette du producteur'
+  valeur: 1.304
+  unite: €/kg
+  formule: Prix final × (1 − marge de la coopérative en ligne)
+pdt_recette_coop_magasin:
+  libelle: 'Pommes de terre au même prix final, vendues dans un magasin coopératif
+    : recette du producteur'
+  valeur: 1.141
+  unite: €/kg
+  formule: Prix final × (1 − marge du magasin coopératif)
+pdt_ratio_coop_long:
+  libelle: Recette du producteur en coopérative en ligne face à la chaîne longue,
+    au même prix final
+  valeur: 7.244444
+  unite: fois
+  formule: Recette en coopérative en ligne ÷ recette en chaîne longue
+csa_recette_ferme:
+  libelle: 'Ferme CSA moyenne de Flandre (2014) : recette des parts de récolte'
+  valeur: 38750
+  unite: €/an
+  formule: Membres (équivalents adultes) × prix de la part
+csa_recette_ha:
+  libelle: 'Ferme CSA moyenne de Flandre (2014) : recette des parts par hectare'
+  valeur: 24068.322981
+  unite: €/ha/an
+  formule: Recette des parts ÷ surface
