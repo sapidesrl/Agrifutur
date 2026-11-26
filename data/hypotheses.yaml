@@ -477,3 +477,177 @@ collecte_plastique_agricole_t:
   date: 2026-07-15
   source: https://environnement.wallonie.be/files/Publications/Vers-un-systeme-de-gestion-des-dechets-des-plastiques-agricoles.pdf
   note: "Recydata pour le SPW, étude du 15 juillet 2026 : tarif moyen de collecte des intercommunales wallonnes depuis la fin des subsides régionaux en janvier 2025. Poids brut, terre comprise."
+
+# --- Désherbage (fiche protection/herbicides) -------------------------------------
+# Propositions de la fiche herbicides, 26/11/2026. À ajouter à data/hypotheses.yaml.
+
+herbicides_mais_eur_ha:
+  libelle: Herbicides achetés en maïs, Wallonie, moyenne 2023
+  valeur: 109
+  unite: €/ha
+  statut: sourcé
+  date: 2023-12-31
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "Rabier et al., BASE 30(2), 2026, tableau 10, d'après la comptabilité des fermes wallonnes du réseau européen (SPW, Direction de l'Analyse économique agricole). Moyenne pondérée par la surface, écart-type 43 €/ha ; 86 à 95 €/ha de 2020 à 2022. Prix d'avant la crise de 2026 : pas de valeur de 2026 trouvée."
+
+herbicides_betterave_eur_ha:
+  libelle: Herbicides achetés en betterave sucrière, Wallonie, moyenne 2023
+  valeur: 263
+  unite: €/ha
+  statut: sourcé
+  date: 2023-12-31
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "Même source (tableau 10). Écart-type 98 €/ha ; 234 à 258 €/ha de 2020 à 2022. Chicorée : 282 €/ha ; froment : 82 €/ha ; pomme de terre : 167 €/ha (2023)."
+
+cout_passage_pulverisateur:
+  libelle: Coût d'un passage de pulvérisateur traîné 28-30 m (matériel, traction, main-d'œuvre), hors produit
+  valeur: 17
+  unite: €/ha
+  statut: sourcé
+  date: 2026-05-12
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "CRA-W, outil Mecacost (figure 5 de Rabier et al., 2026) : 10 € matériel + 4 € tracteur + 3 € main-d'œuvre (25 €/h). Pulvérisateur de 112 000 € HTVA, 1 000 ha/an, 8,5 ha/h. Prix du carburant non précisé (avant la crise de 2026)."
+
+cout_passage_herse_etrille:
+  libelle: Coût d'un passage de herse étrille 12 m (matériel, traction, main-d'œuvre)
+  valeur: 20
+  unite: €/ha
+  statut: sourcé
+  date: 2026-05-12
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "CRA-W, Mecacost : 11 € matériel + 5 € tracteur + 4 € main-d'œuvre. Herse de 20 000 € HTVA, 100 ha/an."
+
+cout_passage_houe_rotative:
+  libelle: Coût d'un passage de houe rotative 6 m (matériel, traction, main-d'œuvre)
+  valeur: 33
+  unite: €/ha
+  statut: sourcé
+  date: 2026-05-12
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "CRA-W, Mecacost : 21 € matériel + 7 € tracteur + 5 € main-d'œuvre (32,5 € arrondi). Houe de 47 000 € HTVA, 100 ha/an."
+
+cout_passage_bineuse:
+  libelle: Coût d'un passage de bineuse 6 m à guidage caméra (matériel, traction, main-d'œuvre)
+  valeur: 64
+  unite: €/ha
+  statut: sourcé
+  date: 2026-05-12
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "CRA-W, Mecacost : 34 € matériel + 17 € tracteur + 13 € main-d'œuvre. Bineuse de 55 000 € HTVA, 100 ha/an, 2 ha/h. Une bineuse 12 rangs sans caméra mieux utilisée revient beaucoup moins cher : 21 €/ha dans le référentiel des Chambres d'agriculture des Hauts-de-France (2022, prix français)."
+
+main_oeuvre_eur_h:
+  libelle: Coût horaire de la main-d'œuvre agricole
+  valeur: 25
+  unite: €/h
+  statut: sourcé
+  date: 2026-05-12
+  source: https://popups.uliege.be/1780-4507/index.php?id=21943
+  note: "Valeur retenue par le CRA-W dans Mecacost (figure 5 de Rabier et al., 2026). À remplacer par le coût réel (salarié ou rémunération de l'exploitant)."
+
+gasoil_passage_pulverisateur:
+  libelle: Gasoil d'un passage de pulvérisateur traîné 3 200 L, 28 m
+  valeur: 0.78
+  unite: L/ha
+  statut: sourcé
+  date: 2023-03-31
+  source: https://cher.chambres-agriculture.fr/fileadmin/user_upload/FAL_COMMUN/Exemples_Modeles/cout_operation_culturales_2023.pdf
+  note: "Référentiel français « Coûts des opérations culturales 2023 » (Chambres d'agriculture France), tracteur 120 ch, 13 ha/h."
+
+gasoil_passage_herse_etrille:
+  libelle: Gasoil d'un passage de herse étrille 12 m
+  valeur: 2.52
+  unite: L/ha
+  statut: sourcé
+  date: 2023-03-31
+  source: https://cher.chambres-agriculture.fr/fileadmin/user_upload/FAL_COMMUN/Exemples_Modeles/cout_operation_culturales_2023.pdf
+  note: "Même référentiel (français), tracteur 120 ch, 8 ha/h. Herse 6 m : 4,48 L/ha à 3 ha/h."
+
+gasoil_passage_houe_rotative:
+  libelle: Gasoil d'un passage de houe rotative 6 m
+  valeur: 1.68
+  unite: L/ha
+  statut: sourcé
+  date: 2023-03-31
+  source: https://cher.chambres-agriculture.fr/fileadmin/user_upload/FAL_COMMUN/Exemples_Modeles/cout_operation_culturales_2023.pdf
+  note: "Même référentiel (français), tracteur 120 ch, 6 ha/h."
+
+gasoil_passage_bineuse:
+  libelle: Gasoil d'un passage de bineuse 12 rangs (inter-rang 45-55 cm)
+  valeur: 3.0
+  unite: L/ha
+  statut: sourcé
+  date: 2023-03-31
+  source: https://cher.chambres-agriculture.fr/fileadmin/user_upload/FAL_COMMUN/Exemples_Modeles/cout_operation_culturales_2023.pdf
+  note: "Même référentiel (français), tracteur 100 ch, 2,8 ha/h. Bineuse 6 rangs : 4,8 L/ha ; bineuse à céréales 6 m : 5,04 L/ha."
+
+passages_pulverisateur_mais:
+  libelle: Passages de pulvérisateur pour désherber un maïs en chimique
+  valeur: 2
+  unite: passages
+  statut: sourcé
+  date: 2022-11-30
+  source: https://hautsdefrance.chambres-agriculture.fr/fileadmin/user_upload/National/FAL_commun/publications/Hauts-de-France/NOTE_TECHNIQUE_DESHERBAGE_MIXTE_2022_CA60.pdf
+  note: "Référence chimique de la note « Désherbage mixte » des Chambres d'agriculture des Hauts-de-France (novembre 2022), données françaises."
+
+passages_bineuse_mais:
+  libelle: Passages de bineuse dans un maïs désherbé mécaniquement (après un passage de herse étrille)
+  valeur: 2
+  unite: passages
+  statut: hypothèse
+  date: 2022-11-30
+  source: https://hautsdefrance.chambres-agriculture.fr/fileadmin/user_upload/National/FAL_commun/publications/Hauts-de-France/NOTE_TECHNIQUE_DESHERBAGE_MIXTE_2022_CA60.pdf
+  note: "Itinéraire type retenu ici : 1 herse étrille + 2 binages. La note des Hauts-de-France compte 2 à 3 passages pour une stratégie binage, 3 à 4 pour une stratégie herse étrille ou houe."
+
+glyphosate_energie_mj_kg:
+  libelle: Énergie de fabrication d'un kg de glyphosate (matière active)
+  valeur: 474
+  unite: MJ/kg
+  statut: sourcé
+  date: 2026-11-16
+  source: https://sitem.herts.ac.uk/aeru/ppdb/en/Reports/373.htm
+  note: "Pesticide Properties DataBase (université du Hertfordshire, fiche mise à jour le 16/11/2026), qui cite Audsley et al. (2009) : 474 MJ par kg produit, environ 32,7 kg CO2e. Estimation ancienne et incertaine : aucune donnée publique des fabricants."
+
+glyphosate_dose_kg_ha:
+  libelle: Glyphosate épandu par traitement en grandes cultures
+  valeur: 0.8245
+  unite: kg/ha
+  statut: sourcé
+  date: 2020-10-01
+  source: https://www.inrae.fr/sites/default/files/pdf/ExecutiveSummary-Glyphosate%5B1%5D.pdf
+  note: "INRAE, « Alternatives au glyphosate en grandes cultures. Évaluation économique », 2020 : 824,5 g de matière active par hectare traité (enquête Pratiques culturales 2017, France). 773 à 892 g/ha selon la cible."
+
+gasoil_supp_sd_sans_glyphosate:
+  libelle: Gasoil supplémentaire quand une parcelle en semis direct remplace le glyphosate par le labour fréquent
+  valeur: 30.55
+  unite: L/ha/an
+  statut: sourcé
+  date: 2020-10-01
+  source: https://www.inrae.fr/sites/default/files/pdf/ExecutiveSummary-Glyphosate%5B1%5D.pdf
+  note: "INRAE 2020 (données françaises) : +3,3 interventions de travail du sol, +1,43 h/ha, surcoût moyen de 79,83 €/ha/an aux prix de l'époque."
+
+farmdroid_prix:
+  libelle: Prix d'achat d'un robot solaire FarmDroid FD20
+  valeur: 97000
+  unite: €
+  statut: sourcé
+  date: 2025-09-30
+  source: https://agritechobservatory.review.fao.org/en/farmdroid-fd20
+  note: "FAO AgriTech Observatory : 75 000 à 97 000 € HTVA, station RTK en plus. On retient le haut de la fourchette ; « autour de 100 000 € » selon Terre-net (5 janvier 2026, prix français)."
+
+farmdroid_surface:
+  libelle: Surface travaillée par un FarmDroid FD20 sur une saison
+  valeur: 20
+  unite: ha/an
+  statut: sourcé
+  date: 2026-01-05
+  source: https://www.terre-net.fr/betterave/article/891356/betteraves-entre-robotique-et-mecanique-le-desherbage-au-cas-par-cas
+  note: "« Ne peut pas travailler sur plus de 20 ha » (Terre-net, 2026) ; « calibré pour 20 ha » (Pleinchamp, 2020). Davantage si on l'utilise sur deux cultures semées à des dates différentes (betterave au printemps, colza en août)."
+
+farmdroid_duree:
+  libelle: Durée d'amortissement d'un robot de binage
+  valeur: 10
+  unite: ans
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Sans frais financiers ni entretien.

@@ -263,3 +263,52 @@ sechage_grange_pv_tms:
   valeur: 5.388889
   unite: €/t MS
   formule: kWh par tonne × coût de production du kWh PV
+mais_chimique_eur_ha:
+  libelle: 'Maïs : désherbage chimique (herbicides + passages de pulvérisateur)'
+  valeur: 143
+  unite: €/ha
+  formule: Herbicides maïs + passages × coût d'un passage de pulvérisateur
+mais_mecanique_eur_ha:
+  libelle: 'Maïs : désherbage mécanique (1 herse étrille + binages)'
+  valeur: 148
+  unite: €/ha
+  formule: Passage de herse étrille + passages de bineuse × coût d'un binage
+mais_meca_gasoil_supp_l_ha:
+  libelle: 'Maïs : gasoil en plus pour le désherbage mécanique'
+  valeur: 6.96
+  unite: L/ha
+  formule: (Herse + binages) − passages de pulvérisateur
+mais_meca_gasoil_supp_eur_ha:
+  libelle: 'Maïs : coût du gasoil en plus pour le désherbage mécanique'
+  valeur: 7.944754
+  bas: 4.401481
+  haut: 10.367869
+  unite: €/ha
+  formule: Gasoil en plus × prix du gasoil agricole
+glyphosate_energie_kwh_ha:
+  libelle: Énergie de fabrication du glyphosate d'un traitement
+  valeur: 108.559167
+  unite: kWh/ha
+  formule: Énergie par kg × dose ÷ 3,6
+glyphosate_eq_gasoil_l_ha:
+  libelle: Énergie de fabrication du glyphosate d'un traitement, en litres de gasoil
+  valeur: 10.855917
+  unite: L/ha
+  formule: Énergie du traitement ÷ énergie d'un litre de gasoil
+sd_sans_glyphosate_gasoil_eur_ha:
+  libelle: 'Semis direct sans glyphosate (labour fréquent) : coût du gasoil en plus'
+  valeur: 34.872446
+  bas: 19.319719
+  haut: 45.508391
+  unite: €/ha/an
+  formule: Gasoil en plus × prix du gasoil agricole
+farmdroid_amort_eur_ha:
+  libelle: 'Robot FarmDroid : amortissement par hectare et par an'
+  valeur: 485.0
+  unite: €/ha/an
+  formule: Prix ÷ (durée × surface par an), sans frais financiers ni entretien
+farmdroid_eq_heures_ha:
+  libelle: 'Robot FarmDroid : amortissement exprimé en heures de main-d''œuvre'
+  valeur: 19.4
+  unite: h/ha/an
+  formule: Amortissement par hectare ÷ coût horaire de la main-d'œuvre
