@@ -771,3 +771,80 @@ farmdroid_duree:
   date: ""
   source: ""
   note: Sans frais financiers ni entretien.
+
+# --- Séchage des grains (proposé par la fiche energie/sechage-grains.md) -------
+
+propane_vrac_tvac:
+  libelle: Propane en vrac, ≥ 2 000 L, TVAC
+  valeur: 0.9168
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
+  note: "Propane en vrac (à partir de 2 000 L) : moyenne des prix maximums du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel, vue « dernières 365 mises à jour »), calculée dans ce projet. 0,963 €/L du 1er au 6 novembre, 0,887 €/L à partir du 18. Le tarif du 27/11/2026 donne 0,7327 €/L HTVA et 0,8866 €/L TVAC (rapport 1,21)."
+  scenario: true
+  bas: 0.7313
+  bas_note: "Février 2026 (avant-crise) : moyenne des prix maximums journaliers du 1er au 28 février 2026 (0,721 puis 0,739 €/L), même source, calculée dans ce projet. Le propane a beaucoup moins monté que le gasoil de chauffage (+25 % contre +78 %)."
+
+propane_energie_litre:
+  libelle: Énergie d'un litre de propane liquide (PCI)
+  valeur: 6.6
+  unite: kWh/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Valeur usuelle arrondie : environ 12,8 kWh/kg × 0,51 kg/L. Le ministère de l'Agriculture de l'Ontario compte 860 000 kJ pour 34 L, soit environ 7 kWh/L (pouvoir calorifique supérieur, calculé)."
+
+sechage_kwh_kg_eau:
+  libelle: Énergie consommée par un séchoir à air chaud par kg d'eau retiré
+  valeur: 1.0
+  unite: kWh/kg d'eau
+  statut: estimé
+  date: 2024-11-06
+  source: https://www.civam-normands.org/index.php/actualites-elevage/1729-le-mais-grain-humide-un-aliment-energetique-economique
+  note: "Données françaises : 20 L de fioul ou 16 kg de gaz naturel pour sécher 1 t de maïs de 32 à 15 % (Réseau des CIVAM normands, 2024), soit 200 kWh pour 200 kg d'eau (calculé). 0,08 kg de propane par kg d'eau selon le fournisseur Antargaz (Réussir, 9/9/2022), soit environ 1 kWh/kg (calculé). Séchoir à flux croisés en Ontario : 860 000 kJ pour 134 kg d'eau, soit environ 1,8 kWh/kg ; un séchoir à flux mixte consomme en moyenne 30 % de moins (OMAFRA, fiche 24-006, mars 2024). Remplacer par la consommation mesurée du séchoir."
+
+mais_humidite_recolte:
+  libelle: Humidité du maïs grain à la récolte
+  valeur: 0.32
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: https://cipf.be/shared/files/fr/ititecgrain.pdf
+  note: "Valeur centrale. Le CIPF (UCLouvain, 2008) donne 25 % dans les meilleures conditions à 38 % dans les moins favorables, en Belgique ; 30 à 35 % en moyenne en 2007."
+
+grain_humidite_stockage:
+  libelle: Humidité du grain après séchage (norme commerciale)
+  valeur: 0.15
+  unite: "%"
+  statut: sourcé
+  date: 2008-03-10
+  source: https://cipf.be/shared/files/fr/ititecgrain.pdf
+  note: "Le CIPF calcule le poids de maïs sec « aux normes » à 15 % d'humidité. Arvalis recommande de conserver le maïs sous 16 %."
+
+rendement_generateur_biomasse:
+  libelle: Rendement d'un générateur d'air chaud biomasse, relatif à un brûleur au gaz
+  valeur: 0.85
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Le brûleur au gaz chauffe l'air directement ; la chaudière biomasse passe par un échangeur. À remplacer par la donnée du constructeur."
+
+sechage_tonnage_ferme:
+  libelle: Maïs grain humide séché par an sur une exploitation
+  valeur: 500
+  unite: t/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Par exemple 50 ha à 10 t de grain humide par hectare. À remplacer par le tonnage de l'exploitation ou du groupe."
+
+pac_cop_sechage:
+  libelle: Coefficient de performance d'une pompe à chaleur de séchoir
+  valeur: 3
+  unite: kWh chaleur/kWh électrique
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Prudent pour de l'air à 50-60 °C. Un essai en Ontario a mesuré un COP de 6,93 pour un séchage en cellule à basse température (OMAFRA, fiche 20-044, juin 2020)."

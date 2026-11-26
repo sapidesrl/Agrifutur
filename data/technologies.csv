@@ -5,7 +5,7 @@ engins-de-cour,Télescopique et chargeur de cour diesel,traction,gasoil,Télesco
 vehicules-livraison,Utilitaire diesel de livraison,transport,gasoil,Utilitaire électrique; tournées groupées; vélo-cargo en ville,1,transport/vehicules-livraison.md,à rédiger
 electricite-reseau,Électricité du réseau,énergie,gaz naturel (part de la production électrique),Photovoltaïque en autoconsommation; micro-biométhanisation,1,energie/electricite-reseau.md,brouillon
 chauffage-mazout,Chauffage et eau chaude au mazout,énergie,mazout,Chaudière à plaquettes; récupération de chaleur; pompe à chaleur,1,energie/chauffage-mazout.md,brouillon
-sechage-grains,Séchage des grains au gaz ou au fioul,énergie,gaz; fioul,Chaudière biomasse; air chauffé au solaire; pompe à chaleur,2,energie/sechage-grains.md,à rédiger
+sechage-grains,Séchage des grains au gaz ou au fioul,énergie,gaz; fioul,Moins d'eau à retirer (variété; récolte; maïs grain humide); chaudière biomasse; chaleur d'un méthaniseur; air ambiant ou chauffé au solaire; pompe à chaleur,1,energie/sechage-grains.md,brouillon
 tank-a-lait,Refroidissement du lait,élevage,électricité,Pré-refroidisseur; récupérateur de chaleur,1,elevage/tank-a-lait.md,brouillon
 fourrages-recoltes,Ensilage et enrubannage,élevage,gasoil; plastique,Pâturage tournant; séchage du foin en grange,1,elevage/fourrages-recoltes.md,brouillon
 concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Légumineuses fourragères; tourteau de colza fermier; pâturage,1,elevage/concentres-importes.md,à rédiger
