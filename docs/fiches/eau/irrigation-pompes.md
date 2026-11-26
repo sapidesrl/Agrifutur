@@ -5,7 +5,7 @@ domaine: eau
 dependance_fossile: gasoil
 alternatives: [Gravité, pompe à museau, bélier hydraulique, pompe solaire, électropompe d'irrigation sur réseau ou photovoltaïque]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -16,7 +16,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Deux usages de l'eau dépendent du gasoil. L'irrigation des pommes de terre et des légumes, d'abord : un enrouleur à canon est souvent alimenté par une motopompe diesel, qui brûle environ {{ v('irr_gasoil_l_m3', 2) }} de gasoil par m³ d'eau, soit {{ v('irr_gasoil_l_ha_mm', 1) }} par hectare et par millimètre (calculé à partir de mesures françaises). L'abreuvement au pâturage, ensuite, quand on apporte l'eau à la tonne tirée par un tracteur. Pour l'abreuvement, les solutions sans moteur (gravité, pompe à museau, bélier hydraulique) et la pompe solaire sont rentables aujourd'hui dans le bon contexte (vague 1) : elles économisent surtout du temps. Pour l'irrigation, une électropompe ne revient moins cher que le diesel que si elle tourne sur l'électricité de ses propres panneaux ; sur le réseau, le m³ coûte autant qu'au diesel au prix de crise et plus cher avant (vague 2).
+Deux usages de l'eau dépendent du gasoil. L'irrigation des pommes de terre et des légumes, d'abord : un enrouleur à canon est souvent alimenté par une motopompe diesel, qui brûle environ {{ v('irr_gasoil_l_m3', 2, unite=False) }} L de gasoil par m³ d'eau, soit {{ v('irr_gasoil_l_ha_mm', 1, unite=False) }} L par hectare et par millimètre (calculé à partir de mesures françaises). L'abreuvement au pâturage, ensuite, quand on apporte l'eau à la tonne tirée par un tracteur. Pour l'abreuvement, les solutions sans moteur (gravité, pompe à museau, bélier hydraulique) et la pompe solaire sont rentables aujourd'hui dans le bon contexte (vague 1) : elles économisent surtout du temps. Pour l'irrigation, une électropompe ne revient moins cher que le diesel que si elle tourne sur l'électricité de ses propres panneaux ; sur le réseau, le m³ coûte autant qu'au diesel au prix de crise et plus cher avant ; l'économie ne paie l'investissement que sur une grande surface irriguée ou au renouvellement de la pompe (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -97,7 +97,7 @@ Limites : la pompe solaire remplace le gasoil de la tonne, mais ajoute des panne
 
 **D'abord, pomper moins d'eau et à moins de pression.** L'énergie suit le volume et la pression. Dans le projet DuraTechFarm, les chevauchements entre passages de canon ont apporté 11,3 à 15,8 m³/ha de trop par tour d'eau ; une coupure de section, compatible avec le matériel existant, aurait économisé 124 à 174 m³ par tour sur une parcelle d'environ 10 ha[^dtf]. Le CRA-W juge la coupure de section simple à mettre en œuvre, avec des bénéfices immédiats, et voit dans le pilotage par bilan hydrique une base robuste et accessible pour décider quand irriguer[^dtf-synth]. En France, une rampe ou un pivot demande 6 à 7 bars, contre 11 à 12 bars pour un canon sur enrouleur[^arvalis].
 
-**Ensuite, changer de moteur.** Une électropompe récente transforme en énergie hydraulique environ deux tiers de l'électricité : plus de 75 % de rendement pour une pompe neuve, 88 à 89 % pour un moteur immergé, jusqu'à 95 % pour un moteur de surface récent[^rovatti]. Une pompe fatiguée peut tomber à 50 %[^arvalis]. Pour le même enrouleur, il faut {{ v('irr_elec_kwh_m3', 2) }} d'électricité (calculé avec {{ v('irr_rendement_electropompe', 0) }}, estimé), contre {{ v('irr_gasoil_kwh_m3', 2) }} de gasoil. Sur le terrain, Arvalis mesure plutôt 0,6 à 1 kWh/m³ pour un enrouleur en pompage de surface, et environ 0,4 kWh/m³ pour un pivot[^arvalis] : pressions plus fortes, pompes usées, hauteur d'aspiration.
+**Ensuite, changer de moteur.** Une pompe neuve a un rendement de plus de 75 % ; un moteur immergé, 88 à 89 % ; un moteur de surface récent, jusqu'à 95 %[^rovatti]. Pompe et moteur ensemble transforment donc environ deux tiers de l'électricité en énergie hydraulique (calculé). Une pompe fatiguée peut tomber à 50 %[^arvalis]. Pour le même enrouleur, il faut {{ v('irr_elec_kwh_m3', 2) }} d'électricité (calculé avec {{ v('irr_rendement_electropompe', 0) }}, estimé), contre {{ v('irr_gasoil_kwh_m3', 2) }} de gasoil. Sur le terrain, Arvalis mesure plutôt 0,6 à 1 kWh/m³ pour un enrouleur en pompage de surface, et environ 0,4 kWh/m³ pour un pivot[^arvalis] : pressions plus fortes, pompes usées, hauteur d'aspiration.
 
 Coût de l'énergie par hectare et par mm (calculé) :
 
@@ -115,7 +115,7 @@ Conditions :
 - un pompage en journée, ou une réserve d'eau qui se remplit en journée ;
 - un investissement qui se compte en dizaines de milliers d'euros : un agriculteur du Loiret a payé 40 000 € en 2024 une pompe immergée à 40 m avec variateur de fréquence, contre 32 000 € en 2017. Le variateur règle le débit de la pompe sur le besoin de l'enrouleur et a réduit sa consommation d'électricité[^delorme].
 
-Limites : l'économie annuelle d'une petite surface irriguée reste modeste face au prix d'un raccordement, d'une pompe et d'une armoire électrique. Le passage à l'électrique se justifie surtout quand on renouvelle la pompe, que le forage est près de la ferme et que la toiture produit déjà. Des panneaux au sol au bord du champ sont dérogatoires au CoDT en zone agricole (voir la fiche [électricité du réseau](../energie/electricite-reseau.md)). Les pompages longs, de nuit, restent sur le réseau ou sur le diesel.
+Limites : l'économie annuelle d'une petite surface irriguée reste modeste face au prix d'un raccordement, d'une pompe et d'une armoire électrique. Sur l'exemple de {{ v('irr_surface', 0) }}, elle ne rembourserait pas une pompe du prix de celle du Loiret en moins de plusieurs dizaines d'années. Le passage à l'électrique se justifie surtout quand on renouvelle la pompe, que le forage est près de la ferme et que la toiture produit déjà. Des panneaux au sol au bord du champ sont dérogatoires au CoDT en zone agricole (voir la fiche [électricité du réseau](../energie/electricite-reseau.md)). Les pompages longs, de nuit, restent sur le réseau ou sur le diesel.
 
 ## Ce qui ferme la boucle
 
@@ -161,4 +161,4 @@ Limites : l'économie annuelle d'une petite surface irriguée reste modeste face
 [^arvalis]: « Irrigation : réduire sa facture électrique en agissant sur la pompe », Réussir Grandes cultures, 7 mai 2024 (avec Arvalis et le constructeur Rovatti). https://www.reussir.fr/grandes-cultures/irrigation-reduire-sa-facture-electrique-en-agissant-sur-la-pompe
 [^rovatti]: « Irrigation – Des rendements supérieurs pour les pompes de surface », Réussir Grandes cultures, 14 mai 2024. https://www.reussir.fr/grandes-cultures/des-rendements-superieurs-pour-les-pompes-de-surface
 [^delorme]: « J'ai réduit ma facture d'électricité en équipant ma pompe d'irrigation d'un variateur de fréquence », Réussir Machinisme, 9 mai 2024. https://www.reussir.fr/machinisme/jai-reduit-ma-facture-delectricite-en-equipant-ma-pompe-dirrigation-dun-variateur-de-frequence
-[^spw-resil]: Nihoul P., Courtois P., Desmet F., Pochet P., « Rendre ses sols plus résilients face à la sécheresse en grandes cultures », SPW Agriculture, Ressources naturelles et Environnement, Direction de la Recherche et du Développement (non daté, cite des travaux de 2024). https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20grande%20culture/Rendre%20ses%20sols%20plus%20r%c3%a9silients%20face%20%c3%a0%20la%20s%c3%a9cheresse%20en%20grandes%20cultures-1.pdf
+[^spw-resil]: Nihoul P., Courtois P., Desmet F., Pochet P., « Rendre ses sols plus résilients face à la sécheresse en grandes cultures », SPW Agriculture, Ressources naturelles et Environnement, Direction de la Recherche et du Développement (non daté, cite des travaux de 2024 ; consulté le 26 novembre 2026). https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20grande%20culture/Rendre%20ses%20sols%20plus%20r%c3%a9silients%20face%20%c3%a0%20la%20s%c3%a9cheresse%20en%20grandes%20cultures-1.pdf
