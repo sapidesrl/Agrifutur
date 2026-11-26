@@ -21,6 +21,8 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
 ```
 .
 ├── CLAUDE.md                  règles pour Claude Code
+├── LICENSE.md                 CC BY 4.0 (contenu) et MIT (code)
+├── .github/workflows/        contrôles automatiques
 ├── data/
 │   ├── hypotheses.yaml        tous les prix et paramètres, avec source et date
 │   ├── calculs.yaml           généré par calc/couts.py (ne pas éditer à la main)
@@ -44,7 +46,20 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
 3. Rédiger en suivant `CLAUDE.md`. Tout nouveau prix va d'abord dans `data/hypotheses.yaml`.
 4. `python calc/couts.py && python outils/verifier_fiches.py && mkdocs build --strict`
 
+## Licence
+
+Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr), code sous licence MIT. Détails dans `LICENSE.md`.
+
+## Intégration continue
+
+À chaque push et pull request, `.github/workflows/verifier.yml` lance le recalcul, le vérificateur et `mkdocs build --strict`. Il signale aussi quand `data/calculs.yaml` n'a pas été régénéré.
+
+## Chantiers
+
+- Migrer de MkDocs 1.6 vers [Zensical](https://zensical.org/docs/compatibility/mkdocs/migration/), le successeur maintenu par l'équipe de Material for MkDocs. D'ici là, `requirements.txt` plafonne MkDocs sous la version 2.
+- Remplacer les prix français (ammonitrate, gasoil labour / semis direct) par des sources belges.
+
 ## État
 
 - 2 fiches en brouillon : `traction/tracteur-diesel`, `fertilisation/azote-synthese`.
-- 17 fiches à rédiger (voir `data/technologies.csv`).
+- 17 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.

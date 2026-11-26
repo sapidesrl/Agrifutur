@@ -4,7 +4,7 @@ titre: Semences hybrides achetées chaque année
 domaine: semences
 dependance_fossile: transport; intrants de production
 alternatives: [Semences paysannes reproductibles, sélection à la ferme]
-vague_meilleure_alternative: null
+vague_meilleure_alternative: 2
 statut: à rédiger
 maj: 2026-11-26
 ---

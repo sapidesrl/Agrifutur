@@ -33,7 +33,7 @@ tva:
   note: ""
 
 gasoil_agricole_htva_saisi:
-  libelle: Gasoil agricole HTVA lu sur ta facture (laisse vide pour l'estimation)
+  libelle: Gasoil agricole HTVA lu sur la facture (laisser vide pour utiliser l'estimation)
   valeur: null
   unite: €/L
   statut: à saisir
@@ -133,7 +133,7 @@ ammonitrate_prix:
   statut: sourcé
   date: 2026-04-30
   source: https://www.reussir.fr/grandes-cultures/prix-des-engrais-les-achats-des-agriculteurs-sous-tension-pour-la-prochaine-campagne
-  note: Prix d'avril 2026 en France.
+  note: Prix d'avril 2026 en France. À remplacer par un prix belge dès qu'on en trouve un.
 
 ammonitrate_teneur_n:
   libelle: Teneur en azote de l'ammonitrate

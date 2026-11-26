@@ -4,7 +4,7 @@ titre: Séchage des grains au gaz ou au fioul
 domaine: énergie
 dependance_fossile: gaz; fioul
 alternatives: [Chaudière biomasse, air chauffé au solaire, pompe à chaleur]
-vague_meilleure_alternative: null
+vague_meilleure_alternative: 2
 statut: à rédiger
 maj: 2026-11-26
 ---

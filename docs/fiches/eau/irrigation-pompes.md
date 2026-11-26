@@ -4,7 +4,7 @@ titre: Pompes thermiques d'irrigation et d'abreuvement
 domaine: eau
 dependance_fossile: gasoil
 alternatives: [Pompe solaire, bélier hydraulique, gravité]
-vague_meilleure_alternative: null
+vague_meilleure_alternative: 1
 statut: à rédiger
 maj: 2026-11-26
 ---

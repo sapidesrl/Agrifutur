@@ -93,6 +93,8 @@ def define_env(env):
         ]
         for r in lignes_csv:
             vague = f"vague {r['vague_meilleure_alternative']}" if r["vague_meilleure_alternative"] else "à évaluer"
+            if r["vague_meilleure_alternative"] and r["statut"] == "à rédiger":
+                vague += " (provisoire)"
             lignes.append(
                 f"| [{r['technologie_actuelle']}]({r['fiche']}) | {r['domaine']} | {r['dependance_fossile']} "
                 f"| {vague} | {r['statut']} |"

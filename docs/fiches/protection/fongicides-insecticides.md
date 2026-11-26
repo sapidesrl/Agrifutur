@@ -4,7 +4,7 @@ titre: Fongicides et insecticides de synthèse
 domaine: protection des cultures
 dependance_fossile: pétrochimie
 alternatives: [Variétés résistantes, rotations, haies et auxiliaires, biocontrôle]
-vague_meilleure_alternative: null
+vague_meilleure_alternative: 1
 statut: à rédiger
 maj: 2026-11-26
 ---

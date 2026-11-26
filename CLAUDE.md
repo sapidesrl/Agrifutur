@@ -6,7 +6,8 @@ Une fiche par technologie agricole utilisée aujourd'hui qui dépend du pétrole
 
 - Contexte : Belgique, surtout Wallonie. Prix de référence : novembre 2026.
 - But : un système le plus circulaire possible, en gardant la rentabilité.
-- Public : à préciser (réflexion personnelle ou publication). Tant que ce n'est pas tranché, viser un lecteur agriculteur ou conseiller agricole : concret, chiffré, sans jargon inutile.
+- Public : publication ouverte. Lecteur visé : agriculteur ou conseiller agricole. Texte concret, chiffré, sans jargon inutile. Aucune donnée d'une exploitation particulière dans le repo.
+- Licence : contenu sous CC BY 4.0, code sous MIT (voir `LICENSE.md`).
 
 ## Règles de rédaction
 
@@ -26,7 +27,8 @@ Une fiche par technologie agricole utilisée aujourd'hui qui dépend du pétrole
    - 2 = rentable sous conditions précises (taille, usage, aides, collectif) ;
    - 3 = pas encore rentable, à préparer.
 9. **Honnêteté sur les limites** : signaler quand une alternative déplace une dépendance au lieu de la supprimer (ex. semis direct et glyphosate).
-10. Mettre à jour la colonne `statut` de `data/technologies.csv` : `à rédiger` → `brouillon` → `relu`.
+10. La vague d'une fiche « à rédiger » est provisoire. À la rédaction, la confirmer ou la corriger, dans `data/technologies.csv` **et** dans le frontmatter.
+11. Mettre à jour la colonne `statut` de `data/technologies.csv` : `à rédiger` → `brouillon` → `relu`.
 
 ## Prix et calculs
 
@@ -48,7 +50,7 @@ Le vérificateur échoue si une macro appelle une clé inconnue, si une section 
 ## Rédiger une fiche : la marche à suivre
 
 1. Lire la ligne de la technologie dans `data/technologies.csv`, puis la section correspondante de `data/sources-collectees.md` (sources déjà trouvées, à revérifier).
-2. Chercher des sources récentes (de préférence belges, françaises ou européennes ; organismes publics, instituts techniques, presse agricole).
+2. Chercher des sources récentes : **belges ou wallonnes d'abord** (SPF Économie, SPW, CRA-W, Valbiom, Fugea, FWA, presse agricole belge). Une source française ou européenne reste possible en repli, mais la note de l'hypothèse ou le texte le signale (« prix français ») ; on la remplace dès qu'une source belge existe. Organismes publics, instituts techniques et presse agricole avant les blogs commerciaux.
 3. Ajouter les nouveaux prix dans `data/hypotheses.yaml`, avec source et date.
 4. Si un calcul est utile, l'ajouter dans `calc/couts.py`.
 5. Rédiger la fiche, puis lancer les trois commandes ci-dessus.
