@@ -1,0 +1,29 @@
+site_name: L'agriculture après le pétrole
+site_description: Technologies agricoles dépendantes du pétrole et du gaz, et leurs alternatives (Belgique, 2026)
+docs_dir: docs
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - content.footnote.tooltips
+
+plugins:
+  - search:
+      lang: fr
+  - macros:
+      module_name: outils/macros
+      on_error_fail: true
+      on_undefined: strict
+
+markdown_extensions:
+  - footnotes
+  - tables
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true

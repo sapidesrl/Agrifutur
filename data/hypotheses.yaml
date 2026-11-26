@@ -1,0 +1,315 @@
+# Prix et paramètres de référence. Source unique pour les fiches et les calculs.
+# statut : sourcé | estimé | hypothèse | à saisir
+# unite "%" : la valeur est une fraction (0.35 = 35 %).
+# Après modification : python calc/couts.py
+
+# --- Carburants -------------------------------------------------------------
+
+gasoil_chauffage_2000l_tvac:
+  libelle: Gasoil diesel application chauffage, ≥ 2 000 L, TVAC
+  valeur: 1.5094
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-04
+  source: https://www.dhnet.be/dernieres-depeches/2026/11/03/prix-de-lenergie-le-prix-de-lessence-en-baisse-a-la-pompe-7SB24LH4RFF5RNGS5W5K7PINP4/
+  note: Prix maximum SPF Économie. Sert aussi de prix du mazout de chauffage.
+
+ecart_gasoil_agricole_chauffage:
+  libelle: Écart entre gasoil chauffage et gasoil agricole (≥ 2 000 L)
+  valeur: 0.03
+  unite: €/L
+  statut: estimé
+  date: 2026-08-06
+  source: https://www.lavenir.net/actu/conso/2026/04/27/le-prix-du-mazout-de-chauffage-en-hausse-en-belgique-a-partir-de-ce-mardi-YZBTFJ6ZLJADLB4QD5OVBETCKE/
+  note: Écart observé de 2,5 c€ (avril 2026) à 3,2 c€ (août 2026) dans les prix maximums SPF.
+
+tva:
+  libelle: Taux de TVA sur le gasoil
+  valeur: 0.21
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: ""
+  note: ""
+
+gasoil_agricole_htva_saisi:
+  libelle: Gasoil agricole HTVA lu sur ta facture (laisse vide pour l'estimation)
+  valeur: null
+  unite: €/L
+  statut: à saisir
+  date: ""
+  source: ""
+  note: S'il est rempli, il remplace l'estimation dans tous les calculs.
+
+gasoil_agricole_fev2026_htva:
+  libelle: Gasoil agricole ≥ 2 000 L, HTVA, moyenne de février 2026 (avant la guerre)
+  valeur: 0.6306
+  unite: €/L
+  statut: sourcé
+  date: 2026-02-28
+  source: https://economie.fgov.be/sites/default/files/Files/Energy/prices/Pmax-moyens-02-2026.pdf
+  note: Prix maximums moyens SPF Économie.
+
+energie_litre_gasoil:
+  libelle: Énergie d'un litre de gasoil
+  valeur: 10
+  unite: kWh/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Valeur usuelle arrondie.
+
+rendement_moteur_diesel:
+  libelle: Rendement moyen d'un moteur diesel au travail
+  valeur: 0.35
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Électricité ---------------------------------------------------------------
+
+rendement_chaine_electrique:
+  libelle: Rendement de la chaîne électrique (charge, batterie, moteur)
+  valeur: 0.85
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+electricite_reseau_htva:
+  libelle: Électricité du réseau, petit professionnel, tout compris HTVA
+  valeur: 0.25
+  unite: €/kWh
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: Ordre de grandeur. Remplacer par le prix réel de la facture.
+
+pv_prix_installe:
+  libelle: Photovoltaïque installé sur toiture agricole
+  valeur: 1000
+  unite: €/kWc
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://blog.trustup.be/fr/rentabilite-des-panneaux-solaires/
+  note: Environ 1 200 €/kWc à 10 kWc selon la source ; moins sur une toiture de 30 à 100 kWc.
+
+pv_production:
+  libelle: Production photovoltaïque annuelle
+  valeur: 900
+  unite: kWh/kWc/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Belgique.
+
+pv_duree_vie:
+  libelle: Durée de vie d'une installation photovoltaïque
+  valeur: 25
+  unite: ans
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+pv_entretien_part:
+  libelle: Entretien et remplacement d'onduleur, en part du prix installé
+  valeur: 0.25
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Engrais ----------------------------------------------------------------
+
+ammonitrate_prix:
+  libelle: Ammonitrate 33,5 %
+  valeur: 550
+  unite: €/t
+  statut: sourcé
+  date: 2026-04-30
+  source: https://www.reussir.fr/grandes-cultures/prix-des-engrais-les-achats-des-agriculteurs-sous-tension-pour-la-prochaine-campagne
+  note: Prix d'avril 2026 en France.
+
+ammonitrate_teneur_n:
+  libelle: Teneur en azote de l'ammonitrate
+  valeur: 0.335
+  unite: "%"
+  statut: sourcé
+  date: ""
+  source: ""
+  note: ""
+
+azote_fixe_legumineuses:
+  libelle: Azote fixé par les légumineuses
+  valeur: 100
+  unite: kg N/ha/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Dépend fortement de la part de légumineuses dans la prairie ou la rotation.
+
+# --- Chaleur ----------------------------------------------------------------
+
+plaquettes_prix:
+  libelle: Plaquettes de bois sèches
+  valeur: 38.05
+  unite: €/MAP
+  statut: sourcé
+  date: 2026-10-31
+  source: https://callmepower.be/fr/energie/actualites/prix-pellets-sac-7-euros-wallonie
+  note: Relevé Valbiom, Wallonie, octobre 2026.
+
+plaquettes_energie_map:
+  libelle: Énergie d'un mètre cube apparent de plaquettes sèches
+  valeur: 800
+  unite: kWh/MAP
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Tracteurs --------------------------------------------------------------
+
+tracteur_compact_conso_gasoil:
+  libelle: Tracteur compact diesel, consommation moyenne
+  valeur: 7
+  unite: L/h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tracteur_compact_conso_elec:
+  libelle: Tracteur électrique compact, consommation moyenne
+  valeur: 30
+  unite: kWh/h
+  statut: sourcé
+  date: 2017-01-01
+  source: https://t3n.de/news/erster-elektro-traktor-von-fendt-fahrzeug-landwirtschaft-1657809/
+  note: 26 kWh/h en déplacement, ~32 kWh/h avec une herse rotative (étude de 2017).
+
+heures_tracteur_an:
+  libelle: Heures de tracteur par an
+  valeur: 800
+  unite: h/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tracteur_lourd_conso_gasoil:
+  libelle: Gros tracteur en travail lourd, consommation
+  valeur: 25
+  unite: L/h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Ordre de grandeur pour ~200 kW en travail du sol.
+
+heures_journee_lourde:
+  libelle: Durée d'une journée de travail lourd
+  valeur: 10
+  unite: h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+batterie_densite_pack:
+  libelle: Énergie massique d'un pack de batteries
+  valeur: 0.16
+  unite: kWh/kg
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Huile de colza -----------------------------------------------------------
+
+colza_prix:
+  libelle: Colza (Euronext)
+  valeur: 550
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-18
+  source: https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
+  note: Fourchette ~540-560 €/t en octobre-novembre 2026.
+
+huile_par_tonne:
+  libelle: Huile obtenue par tonne de graines (pressage à froid)
+  valeur: 360
+  unite: L/t
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tourteau_par_tonne:
+  libelle: Tourteau obtenu par tonne de graines
+  valeur: 0.65
+  unite: t/t
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tourteau_prix:
+  libelle: Prix du tourteau de colza
+  valeur: 280
+  unite: €/t
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: À vérifier, pèse lourd dans le coût de l'huile.
+
+pressage_cout:
+  libelle: Coût du pressage
+  valeur: 0.05
+  unite: €/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+energie_litre_huile:
+  libelle: Énergie d'un litre d'huile de colza
+  valeur: 9.2
+  unite: kWh/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Valeur usuelle arrondie.
+
+colza_rendement:
+  libelle: Rendement du colza
+  valeur: 3.5
+  unite: t/ha
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Travail du sol -----------------------------------------------------------
+
+gasoil_labour:
+  libelle: Gasoil consommé en itinéraire avec labour
+  valeur: 78
+  unite: L/ha/an
+  statut: sourcé
+  date: ""
+  source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
+  note: ""
+
+gasoil_semis_direct:
+  libelle: Gasoil consommé en semis direct
+  valeur: 49
+  unite: L/ha/an
+  statut: sourcé
+  date: ""
+  source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
+  note: ""

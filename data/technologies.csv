@@ -1,0 +1,20 @@
+id,technologie_actuelle,domaine,dependance_fossile,alternatives,vague_meilleure_alternative,fiche,statut
+tracteur-diesel,Tracteur diesel,traction,gasoil,Réduction du travail du sol; tracteur électrique compact; tracteur au biométhane; huile de colza pure; gros tracteur électrique,1,traction/tracteur-diesel.md,brouillon
+automoteurs-recolte,Moissonneuse et ensileuse,traction,gasoil,Biométhane; HVO; huile végétale; mutualisation de la récolte,3,traction/automoteurs-recolte.md,à rédiger
+engins-de-cour,Télescopique et chargeur de cour diesel,traction,gasoil,Télescopique ou chargeur électrique,1,traction/engins-de-cour.md,à rédiger
+vehicules-livraison,Utilitaire diesel de livraison,transport,gasoil,Utilitaire électrique; tournées groupées; vélo-cargo en ville,1,transport/vehicules-livraison.md,à rédiger
+electricite-reseau,Électricité du réseau,énergie,gaz naturel (part de la production électrique),Photovoltaïque en autoconsommation; micro-biométhanisation,1,energie/electricite-reseau.md,à rédiger
+chauffage-mazout,Chauffage et eau chaude au mazout,énergie,mazout,Chaudière à plaquettes; récupération de chaleur; pompe à chaleur,1,energie/chauffage-mazout.md,à rédiger
+sechage-grains,Séchage des grains au gaz ou au fioul,énergie,gaz; fioul,Chaudière biomasse; air chauffé au solaire; pompe à chaleur,,energie/sechage-grains.md,à rédiger
+tank-a-lait,Refroidissement du lait,élevage,électricité,Pré-refroidisseur; récupérateur de chaleur,1,elevage/tank-a-lait.md,à rédiger
+fourrages-recoltes,Ensilage et enrubannage,élevage,gasoil; plastique,Pâturage tournant; séchage du foin en grange,1,elevage/fourrages-recoltes.md,à rédiger
+concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Légumineuses fourragères; tourteau de colza fermier; pâturage,1,elevage/concentres-importes.md,à rédiger
+azote-synthese,Engrais azoté de synthèse,fertilisation,gaz naturel,Légumineuses; effluents et digestat; ammoniac vert local,1,fertilisation/azote-synthese.md,brouillon
+engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,3,fertilisation/engrais-p-k.md,à rédiger
+herbicides,Herbicides de synthèse,protection des cultures,pétrochimie,Désherbage mécanique; robot solaire de binage,1,protection/herbicides.md,à rédiger
+fongicides-insecticides,Fongicides et insecticides de synthèse,protection des cultures,pétrochimie,Variétés résistantes; rotations; haies et auxiliaires; biocontrôle,,protection/fongicides-insecticides.md,à rédiger
+plastiques-agricoles,Plastiques agricoles,matériaux,pétrochimie,Paillages naturels; bâches réutilisables; emballages consignés,3,materiaux/plastiques-agricoles.md,à rédiger
+irrigation-pompes,Pompes thermiques d'irrigation et d'abreuvement,eau,gasoil,Pompe solaire; bélier hydraulique; gravité,,eau/irrigation-pompes.md,à rédiger
+transformation-industrielle,Transformation industrielle centralisée,transformation,gasoil (transport); gaz (procédés),Presse à huile; moulin à meules; atelier de découpe; légumerie-conserverie,2,transformation/transformation-industrielle.md,à rédiger
+circuits-longs,Logistique longue et grande distribution,distribution,gasoil,Vente directe groupée; points de dépôt; abonnements payés d'avance,2,distribution/circuits-longs.md,à rédiger
+semences-industrielles,Semences hybrides achetées chaque année,semences,transport; intrants de production,Semences paysannes reproductibles; sélection à la ferme,,semences/semences-industrielles.md,à rédiger
