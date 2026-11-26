@@ -10,11 +10,11 @@ tank-a-lait,Refroidissement du lait,élevage,électricité,Pré-refroidisseur; r
 fourrages-recoltes,Ensilage et enrubannage,élevage,gasoil; plastique,Pâturage tournant; séchage du foin en grange,1,elevage/fourrages-recoltes.md,brouillon
 concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Pâturage; légumineuses fourragères; tourteau de colza du commerce; tourteau de colza fermier; féverole et pois,1,elevage/concentres-importes.md,brouillon
 azote-synthese,Engrais azoté de synthèse,fertilisation,gaz naturel,Légumineuses; effluents et digestat; ammoniac vert local,1,fertilisation/azote-synthese.md,brouillon
-engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,3,fertilisation/engrais-p-k.md,à rédiger
+engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,1,fertilisation/engrais-p-k.md,brouillon
 herbicides,Herbicides de synthèse,protection des cultures,pétrochimie,Désherbage mécanique; robot solaire de binage,1,protection/herbicides.md,brouillon
-fongicides-insecticides,Fongicides et insecticides de synthèse,protection des cultures,pétrochimie,Variétés résistantes; rotations; haies et auxiliaires; biocontrôle,1,protection/fongicides-insecticides.md,à rédiger
-plastiques-agricoles,Plastiques agricoles,matériaux,pétrochimie,Paillages naturels; bâches réutilisables; emballages consignés,3,materiaux/plastiques-agricoles.md,à rédiger
-irrigation-pompes,Pompes thermiques d'irrigation et d'abreuvement,eau,gasoil,Pompe solaire; bélier hydraulique; gravité,1,eau/irrigation-pompes.md,à rédiger
-transformation-industrielle,Transformation industrielle centralisée,transformation,gasoil (transport); gaz (procédés),Presse à huile; moulin à meules; atelier de découpe; légumerie-conserverie,2,transformation/transformation-industrielle.md,à rédiger
-circuits-longs,Logistique longue et grande distribution,distribution,gasoil,Vente directe groupée; points de dépôt; abonnements payés d'avance,2,distribution/circuits-longs.md,à rédiger
-semences-industrielles,Semences hybrides achetées chaque année,semences,transport; intrants de production,Semences paysannes reproductibles; sélection à la ferme,2,semences/semences-industrielles.md,à rédiger
+fongicides-insecticides,Fongicides et insecticides de synthèse,protection des cultures,pétrochimie,Variétés résistantes; rotations; haies et auxiliaires; biocontrôle,1,protection/fongicides-insecticides.md,brouillon
+plastiques-agricoles,Plastiques agricoles,matériaux,pétrochimie,Paillages naturels; bâches réutilisables; emballages consignés,2,materiaux/plastiques-agricoles.md,brouillon
+irrigation-pompes,Pompes thermiques d'irrigation et d'abreuvement,eau,gasoil,Gravité; pompe à museau; bélier hydraulique; pompe solaire; électropompe d'irrigation sur réseau ou photovoltaïque,1,eau/irrigation-pompes.md,brouillon
+transformation-industrielle,Transformation industrielle centralisée,transformation,gasoil (transport); gaz (procédés),Atelier de découpe; presse à huile; moulin à meules; légumerie-conserverie,1,transformation/transformation-industrielle.md,brouillon
+circuits-longs,Logistique longue et grande distribution,distribution,gasoil,Vente directe groupée; points de dépôt; abonnements payés d'avance,2,distribution/circuits-longs.md,brouillon
+semences-industrielles,Semences hybrides achetées chaque année,semences,transport; intrants de production,Semences de ferme; semences paysannes reproductibles; sélection à la ferme,1,semences/semences-industrielles.md,brouillon

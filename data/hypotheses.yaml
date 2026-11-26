@@ -1113,3 +1113,705 @@ utilitaire_ecart_prix_occasion:
   date: 2026-02-03
   source: https://www.reussir.fr/bovins-viande/vehicule-utilitaire-electrique-les-cles-pour-trouver-les-bonnes-occasions
   note: "Réussir (3 février 2026, prix français) : l'électrique décote 20 à 25 % plus vite ; après trois ans, l'écart n'est plus que de 10 à 15 %. Haut de fourchette retenu, défavorable à l'électrique."
+
+# --- Plastiques agricoles (fiche materiaux/plastiques-agricoles) ---------------
+# Propositions à ajouter à data/hypotheses.yaml, 26/11/2026.
+# La clé collecte_plastique_agricole_t existe déjà et est réutilisée telle quelle.
+
+paillage_pe_prix_m2:
+  libelle: Film de paillage en polyéthylène noir (25 µm), prix d'achat HT
+  valeur: 0.08
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,07 à 0,09 € HT/m² (GRAB et chambre régionale d'agriculture PACA, fiche « Désherbage alternatif en maraîchage », mars 2015) ; 0,08 €/m² dans l'essai SERAIL 2014 (fiche paillages DRAAF Auvergne-Rhône-Alpes). Aucun prix belge de 2026 trouvé. La résine de polyéthylène est passée de moins de 1 €/kg à plus de 2,50 €/kg en quelques mois en 2026 selon des plasturgistes français (Techniques de l'Ingénieur, 7 mai 2026) : valeur actuelle probablement plus haute."
+  scenario: true
+
+paillage_bio_prix_m2:
+  libelle: Film de paillage biodégradable (15 µm), prix d'achat HT
+  valeur: 0.15
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,14 à 0,16 € HT/m² (même fiche GRAB). Le CTIFL (projet SOPAM, 2025) situe le prix au m² du biodégradable à deux à trois fois celui du polyéthylène. Films en partie issus du pétrole (copolyesters) : le prix suit en partie celui des polymères."
+  scenario: true
+
+toile_tissee_prix_m2:
+  libelle: Toile tissée en polypropylène (toile hors-sol), prix d'achat HT
+  valeur: 0.70
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,60 à 0,80 € HT/m² (même fiche GRAB) ; 0,60 €/m² dans l'essai SERAIL 2014 (fiche DRAAF Auvergne-Rhône-Alpes). Polypropylène, issu du pétrole."
+  scenario: true
+
+toile_tissee_duree:
+  libelle: Durée d'utilisation d'une toile tissée en maraîchage
+  valeur: 5
+  unite: ans
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Aucune source indépendante lue. Les sources disent seulement que la toile tissée est réutilisable plusieurs saisons (GRAB 2015, Recydata 2026). À remplacer par une durée mesurée."
+
+paille_prix:
+  libelle: Paille de blé pressée, départ Nord-Est (France)
+  valeur: 80
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-04
+  source: https://www.reussir.fr/articles/marche-des-oleagineux-et-coproduits-du-28-octobre-au-4-novembre-2026-les-prix-du-colza-ont
+  note: "Prix français : paille de blé et d'orge départ Nord-Est entre 75 et 85 €/t du 28 octobre au 4 novembre 2026 (La Dépêche/Réussir, publié le 6/11/2026). 80 à 100 €/t en blé début septembre 2026. Aucune cotation belge trouvée. Hors transport et pose."
+
+paille_paillage_kg_m2:
+  libelle: Quantité de paille ou de foin apportée en paillage
+  valeur: 2
+  unite: kg/m²
+  statut: estimé
+  date: 2014-12-31
+  source: https://draaf.auvergne-rhone-alpes.agriculture.gouv.fr/IMG/pdf/Fiche_paillage_cle85edc2-2.pdf
+  note: "Essai SERAIL 2014 (fiche paillages, DRAAF Auvergne-Rhône-Alpes) : foin apporté à 2 à 3 kg/m². Borne basse appliquée à la paille. Les mulchs végétaux doivent être posés en couche épaisse (GRAB 2015)."
+
+# --- Irrigation et abreuvement (fiche eau/irrigation-pompes) ---------------------
+
+irr_pression_pompe:
+  libelle: Pression en sortie de pompe d'un enrouleur à canon
+  valeur: 8
+  unite: bar
+  statut: estimé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea (Huet, Granier, Molle), essais de six enrouleurs avec 5 bar au canon : 6,4 à 9,6 bar en sortie de pompe (tableau 2). Le SPW indique 4 à 12 bar au canon selon le modèle (fiche « Canon enrouleur », août 2023). Mesure française. Remplacer par le manomètre de la station."
+
+irr_rendement_motopompe_diesel:
+  libelle: Rendement d'un groupe motopompe diesel d'irrigation (énergie hydraulique ÷ énergie du gasoil)
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea, tableau 3 : 18,1 à 22,1 % mesurés sur seize essais (gasoil pesé, débit et pression mesurés). Mesure française."
+
+irr_rendement_electropompe:
+  libelle: Rendement d'une électropompe d'irrigation récente (pompe × moteur)
+  valeur: 0.66
+  unite: "%"
+  statut: estimé
+  date: 2024-05-14
+  source: https://www.reussir.fr/grandes-cultures/des-rendements-superieurs-pour-les-pompes-de-surface
+  note: "Réussir, 14/05/2024 (constructeur Rovatti) : rendement hydraulique des pompes neuves supérieur à 75 % (une pompe usée peut tomber à 50 %, Réussir 07/05/2024) ; moteur électrique 88-89 % en pompe immergée, 95 % en pompe de surface récente. 0,75 × 0,88 retenu. Sources françaises."
+
+irr_debit:
+  libelle: Débit d'un enrouleur à canon
+  valeur: 60
+  unite: m³/h
+  statut: estimé
+  date: 2010-09-17
+  source: https://hal.inrae.fr/hal-02595057/document
+  note: "Irstea : 50 à 100 m³/h mesurés selon la buse (tableau 2). Valeur basse de la fourchette retenue pour une exploitation wallonne (hypothèse)."
+
+irr_surface:
+  libelle: Surface irriguée de l'exploitation type (pommes de terre ou légumes)
+  valeur: 10
+  unite: ha
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "Ordre de grandeur d'une parcelle irriguée suivie par le CRA-W dans le projet DuraTechFarm (environ 10 ha)."
+
+irr_dose_an:
+  libelle: Eau apportée par an sur une culture irriguée
+  valeur: 100
+  unite: mm/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "En 2022 (année sèche), l'essai Patat'Up à Gembloux a reçu 9 irrigations de 5 à 25 mm. À remplacer par les relevés du compteur (1 mm sur 1 ha = 10 m³)."
+
+abreuv_ugb:
+  libelle: Bovins au pâturage sur des parcelles sans eau courante
+  valeur: 40
+  unite: UGB
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+abreuv_l_ugb_jour:
+  libelle: Eau bue au pâturage par UGB et par jour
+  valeur: 60
+  unite: L/UGB/jour
+  statut: sourcé
+  date: 2021-07-23
+  source: https://www.reussir.fr/agriculture-massif-central/labreuvement-un-poste-cle
+  note: "Chambre d'agriculture de la Creuse (Réussir, 23/07/2021) : 60 L par UGB et par jour, près de 115 L pour un couple vache-veau par forte chaleur. Une vache laitière : 70 L par jour (Idele, Réussir 11/06/2015). Sources françaises."
+
+abreuv_jours:
+  libelle: Jours de pâturage par an
+  valeur: 180
+  unite: jours/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tonne_heures_jour:
+  libelle: Temps de tracteur et de tonne à eau par jour de pâturage (remplissage, trajet, retour)
+  valeur: 1
+  unite: h/jour
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: "À remplacer par le temps réel. La chambre d'agriculture de la Creuse compte 33 € par heure de tonne à eau (main-d'œuvre, tracteur, tonne et carburant, hors eau ; Réussir, 23/07/2021)."
+
+abreuv_solaire_invest:
+  libelle: Puits filtrant, pompe solaire et réseau d'abreuvement (exemple d'élevage)
+  valeur: 12000
+  unite: €
+  statut: sourcé
+  date: 2023-06-06
+  source: https://www.reussir.fr/bovins-viande/une-pompe-solaire-sur-un-puits-filtrant-pour-gagner-en-autonomie-pour-leau-dabreuvement
+  note: "GAEC de la Creuse (Réussir, 06/06/2023) : 12 000 € au total, dont environ 3 000 € pour le puits et 24 buses ; pompe immergée 4,5 m³/h, 8 bar, 600 W sur quatre panneaux, sans batterie ; cuve de 5 000 L, réseau enterré vers le bâtiment et deux îlots de prairies ; 2 500 € d'aide régionale ; un mois de travail des éleveurs non compté. Exemple français, à remplacer par un devis."
+
+# --- Distribution : circuits longs et circuits courts ----------------------
+# Entrées proposées par la fiche distribution/circuits-longs.md (26/11/2026).
+
+part_valeur_agriculteur_be:
+  libelle: Part de la valeur de la chaîne alimentaire qui revient aux agriculteurs en Belgique
+  valeur: 0.11
+  unite: "%"
+  statut: sourcé
+  date: 2024-03-12
+  source: https://www.lalibre.be/economie/entreprises-startup/2024/03/12/crise-agricole-le-consommateur-paye-trop-peu-pour-ses-aliments-PFQ75KO24RG5PCXRQQQUBKMWEY/
+  note: "Brigitte Misonne (DG Agriculture de la Commission européenne), audition en commission Économie de la Chambre le 12 mars 2024, rapportée par Belga dans La Libre : 11 % en Belgique contre 26 % en moyenne dans l'UE. Chiffre agrégé, sans détail de méthode ni d'année. À remplacer par les chiffres de l'Observatoire des prix (SPF Économie) dès qu'ils sont lisibles."
+
+part_valeur_agriculteur_ue:
+  libelle: Part de la valeur de la chaîne alimentaire qui revient aux agriculteurs, moyenne de l'UE
+  valeur: 0.26
+  unite: "%"
+  statut: sourcé
+  date: 2024-03-12
+  source: https://www.lalibre.be/economie/entreprises-startup/2024/03/12/crise-agricole-le-consommateur-paye-trop-peu-pour-ses-aliments-PFQ75KO24RG5PCXRQQQUBKMWEY/
+  note: "Même source que part_valeur_agriculteur_be."
+
+pdt_prix_detail_2022:
+  libelle: Prix moyen des pommes de terre en supermarché en Belgique, 2022
+  valeur: 1.63
+  unite: €/kg
+  statut: sourcé
+  date: 2024-06-01
+  source: https://www.greenpeace.org/static/planet4-belgium-stateless/2024/06/136d1eab-rapport-greenpeace_resume-fr_benefices-records-pour-lindustrie-de-la-pomme-de-terre-les-miettes-pour-le-monde-agricole.pdf
+  note: "Greenpeace Belgique (résumé du rapport, juin 2024), d'après Test-Achats (2024). Frites surgelées : 1,75 €/kg. Valeur de 2022, sert seulement d'exemple de répartition du prix : ne pas utiliser comme prix actuel."
+
+pdt_prix_agriculteur_2022:
+  libelle: Recette moyenne de l'agriculteur par kg de pommes de terre vendu en supermarché, 2022 (estimation)
+  valeur: 0.18
+  unite: €/kg
+  statut: estimé
+  date: 2024-06-01
+  source: https://www.greenpeace.org/static/planet4-belgium-stateless/2024/06/136d1eab-rapport-greenpeace_resume-fr_benefices-records-pour-lindustrie-de-la-pomme-de-terre-les-miettes-pour-le-monde-agricole.pdf
+  note: "Estimation de Greenpeace Belgique (ONG), à partir du revenu des producteurs de pommes de terre (Statbel) et des volumes : ordre de grandeur, pas une mesure. Après déduction des coûts, il resterait 0,02 €/kg pour rémunérer l'agriculteur selon la même source."
+
+marge_coop_en_ligne:
+  libelle: Marge d'une coopérative de circuit court sur la vente en ligne avec retrait en point de dépôt
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2021-12-01
+  source: https://www.alterechos.be/wp-content/uploads/2021/12/AE499_WEB-30-35.pdf
+  note: "Paysans-Artisans (Namur) : le producteur fixe son prix, la coopérative prend 20 % en vente en ligne et 30 % en magasin (Alter Échos n° 499, décembre 2021 ; confirmé par Legrand C., mémoire UNamur, 2021 : marge calculée sur le prix de vente total, 10 % pour la vente aux professionnels)."
+
+marge_coop_magasin:
+  libelle: Marge d'une coopérative de circuit court sur la vente en magasin
+  valeur: 0.30
+  unite: "%"
+  statut: sourcé
+  date: 2021-12-01
+  source: https://www.alterechos.be/wp-content/uploads/2021/12/AE499_WEB-30-35.pdf
+  note: "Paysans-Artisans : 30 % en magasin, dont 10 % pour la logistique et 20 % pour les frais du magasin (Legrand C., mémoire UNamur, 2021)."
+
+marge_plateforme_ruche:
+  libelle: Commission totale d'une plateforme de commande groupée de type La Ruche qui dit Oui
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2020-11-13
+  source: https://www.linfodurable.fr/conso/de-la-fourche-lassiette-le-vaste-reseau-de-circuit-court-de-la-ruche-qui-dit-oui-21287
+  note: "Sur une commande de 100 € : 80 € au producteur, 8,35 € au responsable de Ruche, 11,65 € à la plateforme (L'info durable, 13 novembre 2020, chiffres français). Le service existe en Belgique ; le barème belge n'a pas été lu."
+
+csa_part_adulte_2014:
+  libelle: Prix d'une part de récolte en autocueillette (CSA), par adulte et par an, Flandre 2014
+  valeur: 250
+  unite: €/an
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "Zwaenepoel E. et Van Gijseghem D., « Landbouw in stedelijke omgeving. CSA's en andere initiatieven », Departement Landbouw en Visserij, 2015 : environ 250 € par adulte et par an (220 à 265 €). Prix de 2014. Exemples wallons plus récents : 350 €/an (Gesves, 2024), 520 € par adulte (Jambes, 2025)."
+
+csa_membres_moyen_2014:
+  libelle: Nombre moyen de membres d'une ferme CSA, en équivalents adultes, Flandre 2014
+  valeur: 155
+  unite: équivalents adultes
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "19 fermes CSA actives en Flandre en 2014, 2 947 équivalents adultes au total, de 38 à 311 par ferme."
+
+csa_surface_moyenne_2014:
+  libelle: Surface moyenne d'une ferme CSA, Flandre 2014
+  valeur: 1.61
+  unite: ha
+  statut: sourcé
+  date: 2015-01-01
+  source: https://publicaties.vlaanderen.be/view-file/16343
+  note: "30,63 ha pour 19 fermes CSA en 2014."
+
+# --- Transformation à la ferme ------------------------------------------------
+# Proposition de la fiche transformation/transformation-industrielle.md (26/11/2026).
+
+ble_prix:
+  libelle: Blé tendre (prix de marché)
+  valeur: 240
+  unite: €/t
+  statut: estimé
+  date: 2026-11-25
+  source: https://www.reussir.fr/articles/marche-des-cereales-du-25-novembre-2026-le-prix-du-ble-recule-le-prix-du-mais-franchit-les
+  note: "Prix français. Euronext : 242 €/t sur l'échéance décembre 2026 le 25/11/2026 (La Dépêche-Le Petit Meunier, Réussir) ; rendu Rouen : 225,50 €/t le 6/11/2026 (https://www.reussir.fr/articles/baisse-des-prix-du-ble-en-france-sous-le-poids-de-loffre-mondiale). Valeur arrondie. Le prix payé départ ferme en Wallonie est plus bas : à remplacer par une cotation belge."
+  scenario: true
+  bas: 190
+  bas_note: "Février 2026 : blé tendre rendu Rouen 187,50 €/t le 16/02/2026 (https://www.reussir.fr/articles/le-prix-du-ble-tendre-gagne-3-eurt-en-une-semaine-le-mais-perd-15-eurt) ; Euronext repassé sous 195 €/t le 25/02/2026. Valeur arrondie (estimé)."
+
+farine_ferme_prix:
+  libelle: Farine sur meule vendue par un moulin à la ferme wallon
+  valeur: 1400
+  unite: €/t
+  statut: estimé
+  date: 2026-06-04
+  source: https://goodfood.brussels/sites/default/files/inline-files/Guide%20Moulins%20-%20Gids%20Molens_4.pdf
+  note: "Milieu de la fourchette 1 300 à 1 500 €/t annoncée par Les Cocottes en Ribote (Bousval, moulin sur pierre, céréales de la ferme, franco 200 kg), base de données des moulins belges 2026, Good Food B2B (Bruxelles). TVA comprise ou non : non précisé. Un seul moulin publie un prix : à confirmer auprès d'autres moulins."
+
+farine_rendement:
+  libelle: Farine obtenue par tonne de grain moulu
+  valeur: 0.75
+  unite: t/t
+  statut: sourcé
+  date: 2015-06-13
+  source: https://orbi.uliege.be/bitstream/2268/198657/1/Du%20grain%20au%20pain%20les%20outils%20de%20premi%c3%a8re%20transformation%20-%20Winandy%20S.%202015.pdf
+  note: "Meunerie wallonne : 20 000 t de grain transformées en 15 000 t de farine et 5 000 t de coproduits (Winandy, DiversiFerm, 2015, d'après le rapport ALT-4-CER de 2011). Moyenne de toute la meunerie wallonne ; une farine complète sur meule rend davantage, une farine blanche moins."
+
+moulin_investissement:
+  libelle: Investissement d'un petit moulin à meule de pierre à la ferme (exemple wallon)
+  valeur: 120000
+  unite: €
+  statut: sourcé
+  date: 2023-02-13
+  source: https://www.lalibre.be/planete/2023/02/13/le-fermier-meunier-de-corioule-EYPCH4C3KZBPBP36EREKCMXJU4/
+  note: "Ferme de Corioule (Assesse), La Libre, 13/02/2023. TVA comprise ou non : non précisé."
+
+moulin_tonnage_an:
+  libelle: Grain moulu par an dans ce moulin à la ferme
+  valeur: 80
+  unite: t/an
+  statut: estimé
+  date: 2023-02-13
+  source: https://www.lalibre.be/planete/2023/02/13/le-fermier-meunier-de-corioule-EYPCH4C3KZBPBP36EREKCMXJU4/
+  note: "Estimé : moulin dimensionné pour 20 ha de céréales panifiables ; environ 40 t moulues la première année, soit l'équivalent de 10 ha (environ 4 t/ha)."
+
+atelier_duree_amortissement:
+  libelle: Durée d'amortissement d'un équipement de transformation
+  valeur: 10
+  unite: ans
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Sans frais financiers ni valeur de revente.
+
+huile_alim_prix:
+  libelle: Huile de colza alimentaire pressée à froid, vente directe en bidon de 5 L
+  valeur: 4
+  unite: €/L
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Prix français, ferme de Corrèze-Dordogne (Terre-net, 22/05/2026), prix au client en bidon de 5 L, TVA probablement comprise. À remplacer par un prix wallon."
+
+presse_investissement:
+  libelle: Atelier de pressage à froid (trieur, presse d'occasion, filtres, équipements), hors stockage
+  valeur: 60000
+  unite: €
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Exemple français (Terre-net, 22/05/2026) ; trieur neuf de 24 000 € acheté à deux."
+
+presse_litres_an:
+  libelle: Huile vendue par an par cet atelier
+  valeur: 20000
+  unite: L/an
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Près de 20 000 L par an (colza et tournesol, 20 ha) ; objectif de 100 000 L à terme."
+
+# --- Engrais phosphatés et potassiques (fiche engrais-p-k) ------------------
+# À insérer dans data/hypotheses.yaml, section « Engrais », après azote_fixe_legumineuses.
+
+tsp_prix:
+  libelle: Superphosphate triple (TSP, 45 % P2O5)
+  valeur: 680
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-06
+  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
+  note: "Prix français au stade distributeur, départ port vrac : 675-680 €/t en septembre 2026, prix des phosphatés inchangés en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : TSP 45 % à 675 €/t départ Gand chez un négociant en ligne (Agryco, page non datée, consultée le 26/11/2026). Terre-net affichait 567,25 €/t le 26/11/2026, valeur identique à celle de début 2026 : cotation non retenue (probablement pas mise à jour). À remplacer par un prix belge sur facture."
+  scenario: true
+  bas: 540
+  bas_note: "Février 2026, avant-crise : 540 €/t départ direct de bord vrac, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+
+tsp_teneur_p2o5:
+  libelle: Teneur en P2O5 du superphosphate triple
+  valeur: 0.45
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.agryco.be/fr_BE/engrais/pc975
+  note: "Désignation commerciale « TSP 45 % »."
+
+kcl_prix:
+  libelle: Chlorure de potassium (KCl, 60 % K2O)
+  valeur: 355
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-06
+  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
+  note: "Prix français au stade distributeur, départ vrac compacté : 355-360 €/t en septembre 2026, puis − 5 €/t en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : KCl 60 % à 360 €/t départ Gand (Agryco, page non datée, consultée le 26/11/2026). Prix payé par un agriculteur wallon en juillet 2025 : 420 €/t (Fourrages Mieux). Le prix de la potasse n'a presque pas bougé pendant la crise : le scénario bas (février 2026) est un peu plus haut que le prix actuel."
+  scenario: true
+  bas: 360
+  bas_note: "Février 2026, avant-crise : environ 360 €/t départ direct de bord, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+
+kcl_teneur_k2o:
+  libelle: Teneur en K2O du chlorure de potassium
+  valeur: 0.60
+  unite: "%"
+  statut: sourcé
+  date: 2026-03-09
+  source: https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes
+  note: "Désignation commerciale « potasse KCl 60 % »."
+
+fumier_bovin_p2o5:
+  libelle: Fumier de bovins, teneur moyenne en P2O5
+  valeur: 3.8
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau, fiche « Valeur fertilisante des engrais de ferme » (12/2018), sources PGDA et Requasud. Coefficient d'équivalence engrais : 1. Analyses de fumiers frais du réseau Terraé (2023) : 2,6 kg/t en moyenne (1,8 à 3,5)."
+
+fumier_bovin_k2o:
+  libelle: Fumier de bovins, teneur moyenne en K2O
+  valeur: 8.9
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018). Coefficient d'équivalence engrais : 1. Analyses de fumiers frais du réseau Terraé (2023) : 10,8 kg/t en moyenne (7,6 à 14,8)."
+
+fumier_dose_ha:
+  libelle: Apport de fumier de bovins par hectare (exemple)
+  valeur: 35
+  unite: t/ha
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Exemple de Protect'eau : 35 t de fumier au printemps avant maïs apportent 133 kg de P2O5 et 311 kg de K2O. Apport maximal en respectant 230 kg N/ha (PGDA) : 39 t/ha."
+
+lisier_bovin_p2o5:
+  libelle: Lisier de bovins, teneur moyenne en P2O5
+  valeur: 1.3
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018), sources PGDA et Requasud. Coefficient d'équivalence 1, ou 0,85 pour le phosphore si le sol est pauvre en P."
+
+lisier_bovin_k2o:
+  libelle: Lisier de bovins, teneur moyenne en K2O
+  valeur: 3.7
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018)."
+
+lisier_densite:
+  libelle: Masse d'un m³ de lisier
+  valeur: 1.0
+  unite: t/m³
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Un m³ de lisier est compté comme une tonne."
+
+fumier_composte_p2o5:
+  libelle: Fumier de bovins composté, teneur moyenne en P2O5
+  valeur: 5.4
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018), sources PGDA et Requasud."
+
+fumier_composte_k2o:
+  libelle: Fumier de bovins composté, teneur moyenne en K2O
+  valeur: 8.9
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018)."
+
+digestat_p2o5:
+  libelle: Digestat de biométhanisation complet, teneur moyenne en P2O5
+  valeur: 0.886
+  unite: kg/t
+  statut: sourcé
+  date: 2023-03-01
+  source: https://fiwap.be/wp-content/uploads/2023/03/2303DigestaBiometPdt.pdf
+  note: "Moyenne Requasud 2021 : 886 mg/kg de matière fraîche (FIWAP-Info n° 177, 2023). Le tableau de valorisation du même document utilise 2,35 kg/t : écart à éclaircir."
+
+digestat_k2o:
+  libelle: Digestat de biométhanisation complet, teneur moyenne en K2O
+  valeur: 4.132
+  unite: kg/t
+  statut: sourcé
+  date: 2023-03-01
+  source: https://fiwap.be/wp-content/uploads/2023/03/2303DigestaBiometPdt.pdf
+  note: "Moyenne Requasud 2021 : 4 132 mg/kg de matière fraîche (FIWAP-Info n° 177, 2023)."
+
+cendres_bois_p2o5:
+  libelle: Cendres de plaquettes forestières, teneur moyenne en phosphore (exprimé en P2O5)
+  valeur: 15.4
+  unite: kg/t
+  statut: estimé
+  date: 2005-12-01
+  source: https://www.bioenergie-promotion.fr/wp-content/uploads/2012/03/2-analyses_moyennes_cendres.pdf
+  note: "Source française (ADEME/Solagro/Aquasol, 2005) : moyenne de 9 analyses de cendres de chaufferies à plaquettes forestières, 15,4 g/kg. Le tableau dit « phosphore total » et les graphiques « P2O5 » : forme à confirmer. Très variable selon le bois et la chaudière."
+
+cendres_bois_k2o:
+  libelle: Cendres de plaquettes forestières, teneur moyenne en potassium (exprimé en K2O)
+  valeur: 32.5
+  unite: kg/t
+  statut: estimé
+  date: 2005-12-01
+  source: https://www.bioenergie-promotion.fr/wp-content/uploads/2012/03/2-analyses_moyennes_cendres.pdf
+  note: "Source française (ADEME/Solagro/Aquasol, 2005) : 32,5 g/kg. Le tableau dit « potassium total » et les graphiques « K2O » : forme à confirmer. Les mêmes cendres contiennent environ 328 g/kg de calcium et ont un pH de 12,8."
+
+# --- Fongicides et insecticides (fiche protection/fongicides-insecticides) ---------
+# Propositions de la fiche fongicides-insecticides, 26/11/2026. À ajouter à data/hypotheses.yaml.
+
+phyto_froment_eur_ha:
+  libelle: Produits phytopharmaceutiques achetés en froment d'hiver, Wallonie, 2024
+  valeur: 266
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne (SPW, DAEA), fiche froment d'hiver, mise à jour du 8/12/2025, d'après la comptabilité des exploitations. Tous produits confondus (herbicides, fongicides, insecticides, régulateurs) : 44 % des charges opérationnelles, +6 % par rapport à 2023. Prix d'avant la crise de 2026."
+
+phyto_pdt_eur_ha:
+  libelle: Produits phytopharmaceutiques achetés en pomme de terre de conservation, Wallonie, 2024
+  valeur: 986
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_8.html
+  note: "État de l'agriculture wallonne (SPW, DAEA), fiche pomme de terre. Année humide : moins de 500 €/ha les années favorables, plus de 900 €/ha les années humides (2021, 2024). Tous produits confondus."
+
+fongicides_froment_protection_complete:
+  libelle: Coût d'une protection fongicide complète du froment (produits et passages)
+  valeur: 190
+  unite: €/ha
+  statut: sourcé
+  date: 2026-09-10
+  source: https://livre-blanc-cereales.be/medias/2026/10/II.A-Choix-varietal-Froment-couleur.pdf
+  note: "Livre Blanc Céréales (CePiCOP, CRA-W, CARAH, CPL-Végémar, Gembloux Agro-Bio Tech), septembre 2026, chapitre II.A, tableau 6 : coût retenu pour comparer les conduites. Le traitement unique est compté à 110 €/ha."
+
+fongicides_froment_traitement_unique:
+  libelle: Coût d'un traitement fongicide unique du froment (produit et passage)
+  valeur: 110
+  unite: €/ha
+  statut: sourcé
+  date: 2026-09-10
+  source: https://livre-blanc-cereales.be/medias/2026/10/II.A-Choix-varietal-Froment-couleur.pdf
+  note: "Livre Blanc Céréales, septembre 2026, chapitre II.A, tableau 6."
+
+prothioconazole_energie_mj_kg:
+  libelle: Énergie de fabrication d'un kg de prothioconazole (matière active)
+  valeur: 475
+  unite: MJ/kg
+  statut: sourcé
+  date: 2026-11-23
+  source: https://sitem.herts.ac.uk/aeru/ppdb/en/Reports/559.htm
+  note: "Pesticide Properties DataBase (université du Hertfordshire, fiche mise à jour le 23/11/2026), qui cite Audsley et al. (2009) : 475 MJ/kg, environ 32,8 kg CO2e. Même ordre de grandeur pour les autres fongicides et insecticides de la base : 442 MJ/kg (cymoxanil), 529 (lambda-cyhalothrine), 551 (tébuconazole), 594 (fluazinam), 615 (azoxystrobine), 280 (mancozèbe, retiré)."
+
+prothioconazole_dose_kg_ha:
+  libelle: Prothioconazole apporté par un traitement de froment (Proline à 0,8 L/ha)
+  valeur: 0.2
+  unite: kg/ha
+  statut: sourcé
+  date: 2025-02-28
+  source: https://livre-blanc-cereales.be/wp-content/uploads/2025/04/II.4.-Maladies.pdf
+  note: "Livre Blanc Céréales, février 2025, chapitre « Lutte intégrée contre les maladies », tableau 7 : 200 g/ha de prothioconazole. Les produits du marché apportent 120 à 200 g/ha de cette substance."
+
+mildiou_traitements_sensible:
+  libelle: Traitements contre le mildiou conseillés pour une variété de pomme de terre sensible, saison 2025
+  valeur: 12
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda (ex-PCA), « Terugblik aardappelziektebestrijding 2025 », Boerenbond, 5/11/2025 : 11 à 13 pulvérisations conseillées selon les dates de plantation et de récolte, année à faible pression (13 générations de mildiou contre 19 en 2024). On retient le milieu. Le CRA-W donne 8 à 20 traitements par an en Wallonie."
+
+mildiou_traitements_resistant:
+  libelle: Traitements contre le mildiou nécessaires pour une variété porteuse de gènes de résistance, saison 2025
+  valeur: 2
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda 2025 : 1 à 2 pulvérisations pour Alanis, Beyonce ou Invictus. On retient le haut de la fourchette. En 2024 (forte pression), ces variétés ont reçu moitié moins de traitements que les sensibles."
+
+mildiou_traitements_evites_avertissement:
+  libelle: Traitements contre le mildiou évités en suivant les avertissements plutôt qu'un traitement hebdomadaire, saison 2025
+  valeur: 4
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda 2025 : 4 à 5 pulvérisations économisées par rapport à un traitement chaque semaine (calendrier). On retient le bas de la fourchette."
+
+maec_parcelle_amenagee_eur_ha:
+  libelle: Aide MAEC « Parcelle aménagée » (MC7), Wallonie, à partir de 2025
+  valeur: 1800
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-parcelles-amenagees---mc7.html
+  note: "Portail de l'agriculture wallonne (SPW), page modifiée le 17/04/2026. Engagement de 5 ans, avis d'expert obligatoire, parcelles de 0,02 à 1,5 ha, sans engrais ni produits phytopharmaceutiques ; MB5, MC7 et MB12 ensemble limitées à 25 % des terres arables."
+
+marge_brute_froment_moyenne:
+  libelle: Marge brute moyenne du froment d'hiver en Wallonie (produit principal, hors travaux par tiers), moyenne 2014-2023
+  valeur: 1157
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne, fiche froment d'hiver : « environ 1 157 €/ha » sur les dix dernières années ; 738 €/ha en 2024."
+
+eco_regime_maillage_eur_he:
+  libelle: "Éco-régime « Maillage écologique » : montant prévu par hectare environnemental (HE), campagnes 2026-2027"
+  valeur: 450
+  unite: €/HE
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023 et 2024. Total plafonné à 40 % de la SAU."
+
+eco_regime_haie_he_m:
+  libelle: Coefficient de l'éco-régime « Maillage écologique » pour un mètre de haie
+  valeur: 0.001
+  unite: HE/m
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page : haies et arbres alignés, coefficient 0,001 (0,45 € par mètre sans majoration). Pas de produit phytopharmaceutique à moins d'un mètre du pied de la haie. Bande bordure de champ : 675 € par hectare ; jachère mellifère : 900 € par hectare."
+
+ri_eur_ha:
+  libelle: "Éco-régime « Réduction d'intrants » : montant prévu par hectare"
+  valeur: 80
+  unite: €/ha
+  statut: sourcé
+  date: 2026-07-03
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024. Engagement annuel par parcelle d'au moins 1 ha, non cumulable avec le bio."
+
+soutien_proteines_eur_ha:
+  libelle: Soutien couplé aux cultures de protéines végétales, montant prévu
+  valeur: 375
+  unite: €/ha
+  statut: sourcé
+  date: 2025-11-21
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Récolte après le 15 juin."
+
+# --- Semences -----------------------------------------------------------------
+# Proposition de la fiche semences/semences-industrielles.md (26/11/2026).
+# ble_prix : même entrée que la proposition de la fiche transformation (redac/transformation/hypotheses.yaml),
+# vérifiée sur la même page le 26/11/2026. Ne l'ajouter qu'une fois.
+
+
+semence_froment_dose:
+  libelle: Froment d'hiver, dose de semis
+  valeur: 150
+  unite: kg/ha
+  statut: estimé
+  date: 2016-09-01
+  source: https://orbi.uliege.be/bitstream/2268/206243/1/1_Implantation_LB_09_16.pdf
+  note: "Livre Blanc Céréales (Gembloux), septembre 2016 : 200 à 300 grains/m² en octobre, soit 100 à 170 kg/ha selon le poids de 1 000 grains ; plus en semis tardif. Le bilan AssoBIO du CRA-W (octobre 2025) compte aussi 150 kg/ha de froment. Valeur retenue : haut de la fourchette d'octobre."
+
+semence_froment_certifiee_prix:
+  libelle: Semence certifiée de froment, traitée
+  valeur: 0.625
+  unite: €/kg
+  statut: estimé
+  date: 2021-07-13
+  source: https://www.reussir.fr/articles/semences-de-ferme-les-trieurs-facon-du-staff-integrent-semae-avec-leurs-conditions
+  note: "Prix français ancien : 55 à 70 €/100 kg selon le traitement, Hauts-de-France (Staff, syndicat des trieurs à façon, Réussir, 13/07/2021) ; milieu de la fourchette. Aucun prix belge trouvé. En bio, le CRA-W compte 1,20 €/kg pour du froment fourrager du commerce (octobre 2025). À remplacer par un prix belge sur facture."
+
+triage_traitement_facon_froment:
+  libelle: Triage à façon, traitement et ensachage de la semence de ferme de froment
+  valeur: 0.12
+  unite: €/kg
+  statut: estimé
+  date: 2019-06-20
+  source: https://www.terre-net.fr/semences/article/149099/les-trieurs-a-facon-defendent-leurs-atouts-pour-la-transition-agricole
+  note: "Prix français : 12 €/100 kg de prestation (travail du grain, traitement, ensachage), Staff, Terre-net, 20/06/2019. Repère belge indirect : le bilan AssoBIO du CRA-W (octobre 2025) compte 0,45 €/kg pour une semence de ferme de froment bio triée par un trieur agréé, redevance comprise, pour un grain valorisé 300 €/t, soit environ 0,10 €/kg de triage sans traitement chimique. À remplacer par un tarif de trieur wallon."
+
+royalties_semence_ferme_cereales:
+  libelle: Rémunération de l'obtenteur pour la semence de ferme (froment, orge, seigle, avoine)
+  valeur: 0.048
+  unite: €/kg
+  statut: sourcé
+  date: 2025-10-01
+  source: https://www.cra.wallonie.be/uploads/2026/07/annexe7-assobio-couts-.pdf
+  note: "Belgique, campagne 2025-2026 : 4,80 €/100 kg pour froment, orge, seigle et avoine ; 8,01 € pour le triticale ; 9,60 € pour l'épeautre (CRA-W, bilan AssoBIO, annexe 7, données d'octobre 2025). Compté dans le prix du triage chez un trieur agréé par le SPW, qui la facture pour Seed@bel ; sinon l'agriculteur la verse lui-même. Due seulement pour une variété protégée."
+
+semence_cereales_energie_mj_kg:
+  libelle: Énergie fossile indirecte d'un kg de semence de céréale
+  valeur: 3.5
+  unite: MJ/kg
+  statut: sourcé
+  date: 2022-05-24
+  source: https://www.inrae.fr/sites/default/files/4_grandes_cultures-cc.pdf
+  note: "Coefficients GESTIM 2019, repris par INRAE (Colnenne-David et al., séminaire du 24/05/2022) : 3 à 4 MJ/kg pour les semences d'avoine, de blé et de triticale (8,5 MJ/kg colza, 2,6 MJ/kg pois ; ammonitrate 15,9 MJ/kg). Milieu de la fourchette. Coefficient français."
+
+tri_froment_wallonie_kg:
+  libelle: Froment trié à façon en Wallonie (semences fermières)
+  valeur: 7831826
+  unite: kg/an
+  statut: sourcé
+  date: 2024-12-31
+  source: https://agriculture.wallonie.be/files/20182/42099/Evolution%20des%20quantit%c3%a9s%20de%20semences%20fermi%c3%a8res%20tri%c3%a9es%20en%20Wallonie.pdf
+  note: "SPW Agriculture, « Évolution des quantités de graines triées en Wallonie (kg/an) », année 2024. De 6,1 millions de kg (2021) à 9,0 millions (2022) entre 2020 et 2024. Ne compte pas le grain trié par l'agriculteur lui-même."
+
+surface_froment_wallonie_ha:
+  libelle: Surface de froment d'hiver en Wallonie
+  valeur: 111400
+  unite: ha
+  statut: sourcé
+  date: 2024-12-31
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne, fiche « Froment d'hiver », année 2024 (mise à jour du 08/12/2025)."

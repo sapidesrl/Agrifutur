@@ -65,5 +65,5 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## État
 
-- 12 fiches en brouillon : `traction/tracteur-diesel`, `traction/automoteurs-recolte`, `traction/engins-de-cour`, `transport/vehicules-livraison`, `energie/electricite-reseau`, `energie/chauffage-mazout`, `energie/sechage-grains`, `elevage/tank-a-lait`, `elevage/fourrages-recoltes`, `elevage/concentres-importes`, `fertilisation/azote-synthese`, `protection/herbicides`. Leurs sources ont été lues sur les pages ; les pages restées inaccessibles sont signalées dans chaque fiche.
-- 7 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.
+- Les 19 fiches sont rédigées, au statut « brouillon ». Leurs sources ont été lues sur les pages ; les pages restées inaccessibles et les données manquantes sont listées dans la section « À vérifier » de chaque fiche.
+- Prochaine étape : relecture de chaque fiche (statut « relu »), en priorité le remplacement des prix français par des prix belges.

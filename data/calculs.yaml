@@ -782,3 +782,450 @@ utilitaire_prix_max_occasion:
   haut: 78972.2073
   unite: €
   formule: Surcoût remboursé ÷ écart de prix en occasion de trois ans
+paillage_pe_ha:
+  libelle: 'Film de paillage polyéthylène : achat par hectare couvert'
+  valeur: 800.0
+  bas: 560.0
+  haut: 1040.0
+  unite: €/ha
+  formule: Prix au m² × 10 000
+paillage_bio_ha:
+  libelle: 'Film de paillage biodégradable : achat par hectare couvert'
+  valeur: 1500.0
+  bas: 1050.0
+  haut: 1950.0
+  unite: €/ha
+  formule: Prix au m² × 10 000
+paillage_toile_ha_an:
+  libelle: 'Toile tissée réutilisable : achat par hectare couvert et par an'
+  valeur: 1400.0
+  bas: 980.0
+  haut: 1820.0
+  unite: €/ha/an
+  formule: Prix au m² × 10 000 ÷ durée d'utilisation
+paillage_paille_t_ha:
+  libelle: 'Paillage de paille : quantité par hectare couvert'
+  valeur: 20
+  unite: t/ha
+  formule: kg/m² × 10 000 ÷ 1 000
+paillage_paille_ha:
+  libelle: 'Paillage de paille : achat de la paille par hectare couvert'
+  valeur: 1600
+  unite: €/ha
+  formule: Tonnes par hectare × prix de la paille
+irr_kwh_hydro_m3:
+  libelle: 'Irrigation : énergie hydraulique fournie par m³ d''eau'
+  valeur: 0.222222
+  unite: kWh/m³
+  formule: Pression en sortie de pompe (bar) × 100 ÷ 3 600
+irr_gasoil_kwh_m3:
+  libelle: 'Irrigation au diesel : énergie du gasoil par m³'
+  valeur: 1.111111
+  unite: kWh/m³
+  formule: Énergie hydraulique ÷ rendement du groupe motopompe
+irr_gasoil_l_m3:
+  libelle: 'Irrigation au diesel : gasoil par m³'
+  valeur: 0.111111
+  unite: L/m³
+  formule: Énergie du gasoil par m³ ÷ énergie du litre
+irr_gasoil_l_ha_mm:
+  libelle: 'Irrigation au diesel : gasoil par hectare et par mm'
+  valeur: 1.111111
+  unite: L/ha/mm
+  formule: Gasoil par m³ × 10 m³
+irr_elec_kwh_m3:
+  libelle: 'Irrigation électrique : électricité par m³'
+  valeur: 0.3367
+  unite: kWh/m³
+  formule: Énergie hydraulique ÷ rendement de l'électropompe
+irr_gasoil_eur_ha_mm:
+  libelle: 'Irrigation au diesel : coût de l''énergie par hectare et par mm'
+  valeur: 1.26832
+  bas: 0.702663
+  haut: 1.655152
+  unite: €/ha/mm
+  formule: Gasoil par ha et par mm × prix du gasoil
+irr_reseau_eur_ha_mm:
+  libelle: 'Irrigation électrique sur réseau : coût de l''énergie par hectare et par
+    mm'
+  valeur: 1.281818
+  bas: 1.085522
+  haut: 1.666364
+  unite: €/ha/mm
+  formule: kWh par m³ × 10 m³ × prix du réseau
+irr_pv_eur_ha_mm:
+  libelle: 'Irrigation électrique sur photovoltaïque : coût de l''énergie par hectare
+    et par mm'
+  valeur: 0.231949
+  unite: €/ha/mm
+  formule: kWh par m³ × 10 m³ × coût de production PV
+irr_ratio_reseau_gasoil:
+  libelle: 'Irrigation : le m³ pompé sur réseau coûte … fois le m³ pompé au diesel'
+  valeur: 1.010643
+  bas: 1.544868
+  haut: 1.006774
+  unite: fois
+  formule: Coût réseau ÷ coût diesel, par m³
+irr_volume_an:
+  libelle: 'Exploitation type : eau d''irrigation par an'
+  valeur: 10000
+  unite: m³/an
+  formule: Surface × dose × 10
+irr_heures_an:
+  libelle: 'Exploitation type : heures de pompage par an'
+  valeur: 166.666667
+  unite: h/an
+  formule: Volume ÷ débit
+irr_gasoil_l_an:
+  libelle: 'Exploitation type : gasoil d''irrigation par an'
+  valeur: 1111.111111
+  unite: L/an
+  formule: Volume × gasoil par m³
+irr_gasoil_eur_an:
+  libelle: 'Exploitation type : coût du gasoil d''irrigation par an'
+  valeur: 1268.319559
+  bas: 702.662994
+  haut: 1655.151515
+  unite: €/an
+  formule: Gasoil par an × prix du gasoil
+irr_elec_kwh_an:
+  libelle: 'Exploitation type : électricité d''irrigation par an (électropompe)'
+  valeur: 3367.003367
+  unite: kWh/an
+  formule: Volume × kWh par m³
+irr_reseau_eur_an:
+  libelle: 'Exploitation type : coût de l''électricité d''irrigation par an, réseau'
+  valeur: 1281.818182
+  bas: 1085.521886
+  haut: 1666.363636
+  unite: €/an
+  formule: kWh par an × prix du réseau
+irr_pv_eur_an:
+  libelle: 'Exploitation type : coût de l''électricité d''irrigation par an, photovoltaïque'
+  valeur: 231.949121
+  unite: €/an
+  formule: kWh par an × coût de production PV
+irr_economie_pv_an:
+  libelle: 'Exploitation type : économie d''énergie par an, électropompe sur PV au
+    lieu du diesel'
+  valeur: 1036.370438
+  bas: 470.713873
+  haut: 1423.202394
+  unite: €/an
+  formule: Coût du gasoil − coût du PV, hors investissement
+irr_puissance_elec_kw:
+  libelle: 'Enrouleur type : puissance électrique appelée par l''électropompe'
+  valeur: 20.20202
+  unite: kW
+  formule: Débit × énergie hydraulique par m³ ÷ rendement de l'électropompe
+abreuv_volume_an:
+  libelle: 'Abreuvement au pâturage : eau bue par an'
+  valeur: 432.0
+  unite: m³/an
+  formule: UGB × litres par jour × jours ÷ 1 000
+tonne_heures_an:
+  libelle: 'Tonne à eau : heures de tracteur par an'
+  valeur: 180
+  unite: h/an
+  formule: Heures par jour × jours de pâturage
+tonne_gasoil_l_an:
+  libelle: 'Tonne à eau : gasoil par an'
+  valeur: 1260
+  unite: L/an
+  formule: Heures par an × consommation du tracteur
+tonne_gasoil_eur_an:
+  libelle: 'Tonne à eau : coût du gasoil par an'
+  valeur: 1438.27438
+  bas: 796.819835
+  haut: 1876.941818
+  unite: €/an
+  formule: Gasoil par an × prix du gasoil
+tonne_cout_an:
+  libelle: 'Tonne à eau : gasoil et main-d''œuvre par an'
+  valeur: 5938.27438
+  bas: 5296.819835
+  haut: 6376.941818
+  unite: €/an
+  formule: Heures par an × (consommation × prix du gasoil + coût horaire de la main-d'œuvre),
+    hors usure du tracteur et de la tonne
+abreuv_solaire_retour_ans:
+  libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour simple'
+  valeur: 2.020789
+  bas: 2.26551
+  haut: 1.88178
+  unite: ans
+  formule: Investissement ÷ (gasoil + main-d'œuvre de la tonne), sans aide ni entretien
+abreuv_solaire_retour_gasoil_ans:
+  libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour sur le seul
+    gasoil'
+  valeur: 8.343332
+  bas: 15.059866
+  haut: 6.393379
+  unite: ans
+  formule: Investissement ÷ coût du gasoil de la tonne
+pdt_part_agriculteur_long:
+  libelle: 'Pommes de terre en supermarché : part du prix qui revient à l''agriculteur
+    (2022)'
+  valeur: 0.110429
+  unite: '%'
+  formule: Recette de l'agriculteur ÷ prix en supermarché
+pdt_recette_coop_en_ligne:
+  libelle: 'Pommes de terre au même prix final, vendues par une coopérative en ligne
+    : recette du producteur'
+  valeur: 1.304
+  unite: €/kg
+  formule: Prix final × (1 − marge de la coopérative en ligne)
+pdt_recette_coop_magasin:
+  libelle: 'Pommes de terre au même prix final, vendues dans un magasin coopératif
+    : recette du producteur'
+  valeur: 1.141
+  unite: €/kg
+  formule: Prix final × (1 − marge du magasin coopératif)
+pdt_ratio_coop_long:
+  libelle: Recette du producteur en coopérative en ligne face à la chaîne longue,
+    au même prix final
+  valeur: 7.244444
+  unite: fois
+  formule: Recette en coopérative en ligne ÷ recette en chaîne longue
+csa_recette_ferme:
+  libelle: 'Ferme CSA moyenne de Flandre (2014) : recette des parts de récolte'
+  valeur: 38750
+  unite: €/an
+  formule: Membres (équivalents adultes) × prix de la part
+csa_recette_ha:
+  libelle: 'Ferme CSA moyenne de Flandre (2014) : recette des parts par hectare'
+  valeur: 24068.322981
+  unite: €/ha/an
+  formule: Recette des parts ÷ surface
+farine_valeur_tonne_ble:
+  libelle: 'Farine sur meule : chiffre d''affaires par tonne de blé moulue'
+  valeur: 1050.0
+  unite: €/t de blé
+  formule: Farine obtenue par tonne × prix de la farine, sans le son ni les autres
+    issues
+farine_ecart_tonne_ble:
+  libelle: 'Farine sur meule : chiffre d''affaires en plus de la vente du blé, par
+    tonne'
+  valeur: 810.0
+  bas: 860.0
+  haut: 738.0
+  unite: €/t de blé
+  formule: Chiffre d'affaires de la farine − prix du blé, avant main-d'œuvre, sacs,
+    énergie et amortissement
+moulin_amortissement_t:
+  libelle: 'Moulin à la ferme : amortissement par tonne de grain moulue'
+  valeur: 150.0
+  unite: €/t de blé
+  formule: Investissement ÷ durée d'amortissement ÷ tonnes moulues par an
+huile_alim_valeur_tonne:
+  libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires par tonne de
+    graines'
+  valeur: 1659.05
+  bas: 1593.335
+  haut: 1724.765
+  unite: €/t de graines
+  formule: Litres d'huile × prix de vente + tourteau × prix du tourteau
+huile_alim_ecart_tonne:
+  libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires en plus de
+    la vente des graines, par tonne'
+  valeur: 1109.05
+  bas: 1108.335
+  haut: 1009.765
+  unite: €/t de graines
+  formule: Chiffre d'affaires huile et tourteau − prix du colza, avant main-d'œuvre,
+    emballage et amortissement
+presse_amortissement_litre:
+  libelle: 'Atelier de pressage : amortissement par litre d''huile vendu'
+  valeur: 0.3
+  unite: €/L
+  formule: Investissement ÷ durée d'amortissement ÷ litres vendus par an
+prix_kg_p2o5:
+  libelle: Prix du kg de P2O5 (superphosphate triple)
+  valeur: 1.511111
+  bas: 1.2
+  haut: 1.964444
+  unite: €/kg P2O5
+  formule: Prix de la tonne ÷ kg de P2O5 par tonne
+prix_kg_k2o:
+  libelle: Prix du kg de K2O (chlorure de potassium)
+  valeur: 0.591667
+  bas: 0.6
+  haut: 0.769167
+  unite: €/kg K2O
+  formule: Prix de la tonne ÷ kg de K2O par tonne
+valeur_pk_fumier:
+  libelle: Valeur du P et du K d'une tonne de fumier de bovins
+  valeur: 11.008056
+  bas: 9.9
+  haut: 14.310472
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O (coefficient d'équivalence
+    1)
+valeur_p_fumier:
+  libelle: Part du phosphore dans cette valeur
+  valeur: 5.742222
+  bas: 4.56
+  haut: 7.464889
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5
+valeur_k_fumier:
+  libelle: Part du potassium dans cette valeur
+  valeur: 5.265833
+  bas: 5.34
+  haut: 6.845583
+  unite: €/t
+  formule: kg K2O × prix du kg K2O
+valeur_pk_fumier_ha:
+  libelle: Valeur du P et du K d'un apport de fumier de bovins par hectare
+  valeur: 385.281944
+  bas: 346.5
+  haut: 500.866528
+  unite: €/ha
+  formule: Tonnes épandues × valeur du P et du K d'une tonne
+valeur_pk_lisier:
+  libelle: Valeur du P et du K d'un m³ de lisier de bovins
+  valeur: 4.153611
+  bas: 3.78
+  haut: 5.399694
+  unite: €/m³
+  formule: (kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O) × masse du m³
+valeur_pk_compost:
+  libelle: Valeur du P et du K d'une tonne de fumier composté
+  valeur: 13.425833
+  bas: 11.82
+  haut: 17.453583
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+valeur_pk_digestat:
+  libelle: Valeur du P et du K d'une tonne de digestat complet
+  valeur: 3.783611
+  bas: 3.5424
+  haut: 4.918694
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+valeur_pk_cendres:
+  libelle: Valeur du P et du K d'une tonne de cendres de plaquettes
+  valeur: 42.500278
+  bas: 37.98
+  haut: 55.250361
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+kcl_evite_t_cendres:
+  libelle: Chlorure de potassium remplacé par une tonne de cendres de plaquettes
+  valeur: 54.166667
+  unite: kg
+  formule: kg K2O des cendres ÷ teneur en K2O du KCl
+fongicide_energie_kwh_ha:
+  libelle: Énergie de fabrication du prothioconazole d'un traitement de froment
+  valeur: 26.388889
+  unite: kWh/ha
+  formule: Énergie de fabrication (MJ/kg) × dose (kg/ha) ÷ 3,6
+fongicide_eq_gasoil_l_ha:
+  libelle: Énergie de fabrication du prothioconazole d'un traitement, en litres de
+    gasoil
+  valeur: 2.638889
+  unite: L/ha
+  formule: Énergie de fabrication ÷ énergie d'un litre de gasoil
+froment_economie_traitement_unique:
+  libelle: 'Froment : dépense évitée en passant d''une protection complète à un traitement
+    unique'
+  valeur: 80
+  unite: €/ha
+  formule: Coût de la protection complète − coût du traitement unique
+mildiou_passages_evites:
+  libelle: 'Pomme de terre : traitements anti-mildiou évités avec une variété résistante'
+  valeur: 10
+  unite: traitements
+  formule: Traitements d'une variété sensible − traitements d'une variété résistante
+mildiou_passages_evites_eur_ha:
+  libelle: 'Pomme de terre : coût des passages de pulvérisateur évités avec une variété
+    résistante (hors produit)'
+  valeur: 170
+  unite: €/ha
+  formule: Traitements évités × coût d'un passage de pulvérisateur
+mildiou_gasoil_sensible_l_ha:
+  libelle: 'Pomme de terre : gasoil des traitements anti-mildiou d''une variété sensible'
+  valeur: 9.36
+  unite: L/ha
+  formule: Traitements d'une variété sensible × gasoil d'un passage de pulvérisateur
+mildiou_gasoil_evite_l_ha:
+  libelle: 'Pomme de terre : gasoil évité avec une variété résistante'
+  valeur: 7.8
+  unite: L/ha
+  formule: Traitements évités × gasoil d'un passage de pulvérisateur
+mildiou_gasoil_evite_eur_ha:
+  libelle: 'Pomme de terre : valeur du gasoil évité avec une variété résistante'
+  valeur: 8.903603
+  bas: 4.932694
+  haut: 11.619164
+  unite: €/ha
+  formule: Gasoil évité × prix du gasoil agricole HTVA
+avertissement_passages_evites_eur_ha:
+  libelle: 'Pomme de terre : coût des passages évités en suivant les avertissements
+    mildiou (hors produit)'
+  valeur: 68
+  unite: €/ha
+  formule: Traitements évités × coût d'un passage de pulvérisateur
+parcelle_amenagee_ecart_marge_froment:
+  libelle: Aide « parcelle aménagée » moins la marge brute moyenne du froment qu'elle
+    remplace
+  valeur: 643
+  unite: €/ha/an
+  formule: Aide MC7 − marge brute moyenne du froment
+haie_eco_regime_eur_km:
+  libelle: 'Éco-régime « Maillage écologique » : aide annuelle pour un kilomètre de
+    haie'
+  valeur: 450.0
+  unite: €/km/an
+  formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
+semence_ferme_froment_eur_kg:
+  libelle: 'Semence de ferme de froment : coût du kg'
+  valeur: 0.408
+  bas: 0.358
+  haut: 0.48
+  unite: €/kg
+  formule: Prix du grain ÷ 1 000 + triage et traitement à façon + rémunération de
+    l'obtenteur
+semence_ferme_froment_eur_ha:
+  libelle: 'Semence de ferme de froment : coût par hectare'
+  valeur: 61.2
+  bas: 53.7
+  haut: 72.0
+  unite: €/ha
+  formule: Dose de semis × coût du kg de semence de ferme
+semence_certifiee_froment_eur_ha:
+  libelle: 'Semence certifiée de froment : coût par hectare'
+  valeur: 93.75
+  unite: €/ha
+  formule: Dose de semis × prix de la semence certifiée
+semence_ferme_froment_economie_ha:
+  libelle: 'Semence de ferme au lieu de semence certifiée (froment) : économie par
+    hectare'
+  valeur: 32.55
+  bas: 40.05
+  haut: 21.75
+  unite: €/ha
+  formule: Coût de la semence certifiée − coût de la semence de ferme
+semence_ferme_froment_economie_part:
+  libelle: 'Semence de ferme de froment : économie en part du coût de la semence certifiée'
+  valeur: 0.3472
+  bas: 0.4272
+  haut: 0.232
+  unite: '%'
+  formule: Économie ÷ coût de la semence certifiée
+semence_froment_energie_kwh_ha:
+  libelle: 'Semence de froment : énergie fossile indirecte par hectare'
+  valeur: 145.833333
+  unite: kWh/ha
+  formule: Dose de semis × énergie par kg ÷ 3,6
+semence_froment_eq_gasoil_l_ha:
+  libelle: 'Semence de froment : énergie fossile indirecte, en litres de gasoil'
+  valeur: 14.583333
+  unite: L/ha
+  formule: Énergie par hectare ÷ énergie d'un litre de gasoil
+froment_semence_ferme_part_surface:
+  libelle: 'Wallonie : part de la surface de froment semée avec du grain trié à façon
+    (ordre de grandeur)'
+  valeur: 0.468691
+  unite: '%'
+  formule: Froment trié à façon ÷ dose de semis ÷ surface de froment
