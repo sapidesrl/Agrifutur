@@ -65,5 +65,5 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## État
 
-- 5 fiches en brouillon : `traction/tracteur-diesel`, `fertilisation/azote-synthese`, `traction/engins-de-cour`, `energie/chauffage-mazout`, `elevage/tank-a-lait`. Les trois dernières citent des sources consultées par extraits seulement : à relire avant le statut « relu ».
+- 5 fiches en brouillon : `traction/tracteur-diesel`, `fertilisation/azote-synthese`, `traction/engins-de-cour`, `energie/chauffage-mazout`, `elevage/tank-a-lait`. Leurs sources ont été vérifiées sur les pages le 26/11/2026 ; les quelques pages restées inaccessibles sont signalées dans chaque fiche (avertissement en tête ou « À vérifier »).
 - 14 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.

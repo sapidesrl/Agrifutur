@@ -339,13 +339,13 @@ colza_prix:
   libelle: Colza (Euronext)
   valeur: 550
   unite: €/t
-  statut: sourcé
-  date: 2026-11-18
+  statut: estimé
+  date: 2026-09-30
   source: https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
-  note: Fourchette ~540-560 €/t en octobre-novembre 2026.
+  note: "Euronext : 538,50 €/t (échéance novembre 2026) et 555 €/t (février 2027) le 30/09/2026 ; 557,75 €/t (février 2027) le 09/10/2026 (Terre-net). Aucun relevé de novembre trouvé."
   scenario: true
   bas: 485
-  bas_note: "Février 2026 : clôtures Euronext entre 473,75 et 492,75 €/t, 483 €/t le 25 février (bulletins Réussir/La Dépêche, lus par extraits seulement, à confirmer). Valeur arrondie (estimé)."
+  bas_note: "Février 2026 : clôtures Euronext entre 473,75 et 492,75 €/t, 483 €/t le 25 février (bulletins Réussir/La Dépêche, lus le 26/11/2026). Valeur arrondie (estimé)."
 
 huile_par_tonne:
   libelle: Huile obtenue par tonne de graines (pressage à froid)
@@ -367,12 +367,12 @@ tourteau_par_tonne:
 
 tourteau_prix:
   libelle: Prix du tourteau de colza
-  valeur: 332
+  valeur: 337
   unite: €/t
-  statut: estimé
-  date: 2026-11-19
+  statut: sourcé
+  date: 2026-11-24
   source: https://www.pleinchamp.com/les-cours/aliments-du-betail/43-tourteaux-de-colza
-  note: Départ Rouen (prix français), relevé Argus du 19/11/2026, lu par extrait seulement ; 299 €/t le 3/09/2026. Pèse lourd dans le coût de l'huile.
+  note: Départ Rouen (prix français), relevé Argus du 24/11/2026, lu le 26/11/2026. Pèse lourd dans le coût de l'huile.
   scenario: true
 
 pressage_cout:
@@ -409,15 +409,15 @@ gasoil_labour:
   valeur: 78
   unite: L/ha/an
   statut: sourcé
-  date: ""
+  date: 2009-06-02
   source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
-  note: ""
+  note: "Données françaises : essai de longue durée Arvalis (Boigneville), moyennes 1998-2008, page mise à jour le 12/04/2023."
 
 gasoil_semis_direct:
   libelle: Gasoil consommé en semis direct
   valeur: 49
   unite: L/ha/an
   statut: sourcé
-  date: ""
+  date: 2009-06-02
   source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
-  note: ""
+  note: "Données françaises : essai de longue durée Arvalis (Boigneville), moyennes 1998-2008, page mise à jour le 12/04/2023."

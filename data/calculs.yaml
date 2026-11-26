@@ -186,24 +186,24 @@ valet_economie_an_reseau:
   formule: (Gasoil − réseau) × heures par an, hors surcoût d'achat et entretien
 huile_cout_litre:
   libelle: 'Huile de colza : coût d''un litre, tourteau déduit'
-  valeur: 0.978333
-  bas: 0.977611
-  haut: 1.256833
+  valeur: 0.969306
+  bas: 0.971292
+  haut: 1.245097
   unite: €/L
   formule: (Prix de la graine − valeur du tourteau) ÷ litres d'huile + pressage, hors
     accises
 huile_cout_eq_gasoil:
   libelle: 'Huile de colza : coût ramené à l''énergie d''un litre de gasoil'
-  valeur: 1.063406
-  bas: 1.062621
-  haut: 1.366123
+  valeur: 1.053593
+  bas: 1.055752
+  haut: 1.353367
   unite: €/L
   formule: Coût du litre × énergie du gasoil ÷ énergie de l'huile
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
-  valeur: -0.078082
-  bas: 0.430224
-  haut: -0.123513
+  valeur: -0.087895
+  bas: 0.423355
+  haut: -0.13627
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:
