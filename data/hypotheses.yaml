@@ -1,0 +1,423 @@
+# Prix et paramètres de référence. Source unique pour les fiches et les calculs.
+# statut : sourcé | estimé | hypothèse | à saisir
+# unite "%" : la valeur est une fraction (0.35 = 35 %).
+# Après modification : python calc/couts.py
+#
+# Scénarios de prix : une entrée qui porte `scenario: true` varie entre trois scénarios.
+#   actuel = valeur ; bas = champ `bas` s'il existe (prix d'avant-crise), sinon valeur × scenario_bas_facteur ;
+#   haut = champ `haut` s'il existe, sinon valeur × scenario_haut_facteur.
+#   `bas_note` / `haut_note` expliquent d'où vient une borne donnée explicitement.
+
+# --- Scénarios ---------------------------------------------------------------
+
+scenario_bas_facteur:
+  libelle: "Scénario bas : multiplicateur des prix sans valeur d'avant-crise connue"
+  valeur: 0.7
+  unite: fois
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: Prix actuel − 30 %. Sert seulement quand aucun prix de février 2026 n'est connu.
+
+scenario_haut_facteur:
+  libelle: "Scénario haut : multiplicateur des prix actuels"
+  valeur: 1.3
+  unite: fois
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: Prix actuel + 30 %.
+
+# --- Carburants -------------------------------------------------------------
+
+gasoil_chauffage_2000l_tvac:
+  libelle: Gasoil diesel application chauffage, ≥ 2 000 L, TVAC
+  valeur: 1.4042
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
+  note: "Gasoil chauffage (H0/H7) ≥ 2 000 L : moyenne des prix maximums du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel), calculée dans ce projet. Le prix a baissé pendant le mois : 1,51 €/L le 4 novembre, 1,28 €/L le 26. Sert aussi de prix du mazout de chauffage."
+  scenario: true
+  bas: 0.7882
+  bas_note: "Février 2026 (avant-crise) : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+
+ecart_gasoil_agricole_chauffage:
+  libelle: Écart entre gasoil chauffage et gasoil agricole (≥ 2 000 L)
+  valeur: 0.023
+  unite: €/L
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
+  note: "Écart TVAC entre les moyennes du 1er au 26 novembre 2026 (chauffage 1,4042 €/L, agricole 1,3812 €/L), calculé dans ce projet. Écart observé de 2,5 à 4,2 c€ selon les jours et les mois."
+
+tva:
+  libelle: Taux de TVA sur le gasoil
+  valeur: 0.21
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://bestat.statbel.fgov.be/bestat/api/views/9e9cf394-6c54-4d81-8013-7124a8c4bf15/result/PDF
+  note: "Le tarif officiel du SPF Économie du 26/11/2026 donne les prix HTVA et TVAC du gasoil agricole et du gasoil de chauffage ; leur rapport est exactement 1,21. Le texte légal (AR n° 20, SPF Finances) n'a pas pu être lu."
+
+gasoil_agricole_htva_saisi:
+  libelle: Gasoil agricole HTVA lu sur la facture (laisser vide pour utiliser l'estimation)
+  valeur: null
+  unite: €/L
+  statut: à saisir
+  date: ""
+  source: ""
+  note: S'il est rempli, il remplace l'estimation dans tous les calculs.
+
+gasoil_agricole_fev2026_htva:
+  libelle: Gasoil agricole ≥ 2 000 L, HTVA, moyenne de février 2026 (avant la guerre)
+  valeur: 0.6306
+  unite: €/L
+  statut: sourcé
+  date: 2026-02-28
+  source: https://economie.fgov.be/sites/default/files/Files/Energy/prices/Pmax-moyens-02-2026.pdf
+  note: Prix maximums moyens SPF Économie.
+
+energie_litre_gasoil:
+  libelle: Énergie d'un litre de gasoil
+  valeur: 10
+  unite: kWh/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Valeur usuelle arrondie.
+
+rendement_moteur_diesel:
+  libelle: Rendement moyen d'un moteur diesel au travail
+  valeur: 0.35
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Électricité ---------------------------------------------------------------
+
+rendement_chaine_electrique:
+  libelle: Rendement de la chaîne électrique (charge, batterie, moteur)
+  valeur: 0.85
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+electricite_reseau_htva:
+  libelle: Électricité du réseau, petit professionnel, tout compris HTVA
+  valeur: 0.3807
+  unite: €/kWh
+  statut: sourcé
+  date: 2026-10-31
+  source: https://www.creg.be/sites/default/files/assets/Prices/Dashboard/tableaudebord202610.pdf
+  note: "CREG, tableau de bord d'octobre 2026 : prix moyen « all in » hors TVA (énergie, réseau, surcharges) pour une PME de 50 000 kWh/an en Wallonie, offres des grands fournisseurs. Un contrat négocié peut être moins cher : remplacer par le prix de la facture."
+  scenario: true
+  bas: 0.3224
+  bas_note: "Février 2026, même profil, CREG (https://www.creg.be/sites/default/files/assets/Prices/Dashboard/tableaudebord202602.pdf)."
+
+pv_prix_installe:
+  libelle: Photovoltaïque installé sur toiture agricole
+  valeur: 1000
+  unite: €/kWc
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://blog.trustup.be/fr/rentabilite-des-panneaux-solaires/
+  note: Environ 1 200 €/kWc à 10 kWc selon la source ; moins sur une toiture de 30 à 100 kWc.
+
+pv_production:
+  libelle: Production photovoltaïque annuelle
+  valeur: 900
+  unite: kWh/kWc/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Belgique.
+
+pv_duree_vie:
+  libelle: Durée de vie d'une installation photovoltaïque
+  valeur: 25
+  unite: ans
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+pv_entretien_part:
+  libelle: Entretien et remplacement d'onduleur, en part du prix installé
+  valeur: 0.25
+  unite: "%"
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Engrais ----------------------------------------------------------------
+
+ammonitrate_prix:
+  libelle: Ammonitrate 33,5 %
+  valeur: 535
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-25
+  source: https://www.terre-net.fr/marche-agricole/ammonitrate-33-5/engrais
+  note: "Prix français, départ usine, 25/11/2026 (Terre-net). Franco : 567,5 €/t (Argus, 19/11/2026). En avril 2026 : 550 €/t (Réussir). Seul repère belge trouvé : ammonitrate 27 % à 445 €/t départ Gand chez un négociant (non daté). À remplacer par un prix belge sur facture."
+  scenario: true
+  bas: 500
+  bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+
+ammonitrate_teneur_n:
+  libelle: Teneur en azote de l'ammonitrate
+  valeur: 0.335
+  unite: "%"
+  statut: sourcé
+  date: ""
+  source: ""
+  note: ""
+
+azote_fixe_legumineuses:
+  libelle: Azote fixé par les légumineuses
+  valeur: 100
+  unite: kg N/ha/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Dépend fortement de la part de légumineuses dans la prairie ou la rotation.
+
+# --- Chaleur ----------------------------------------------------------------
+
+plaquettes_prix:
+  libelle: Plaquettes de bois sèches
+  valeur: 38.05
+  unite: €/MAP
+  statut: sourcé
+  date: 2026-10-31
+  source: https://callmepower.be/fr/energie/actualites/prix-pellets-sac-7-euros-wallonie
+  note: Relevé Valbiom, Wallonie, octobre 2026.
+  scenario: true
+  bas: 37.81
+  bas_note: "Octobre 2025, avant-crise (relevé Valbiom cité par la même source). Page Callmepower inaccessible le 26/11/2026, chiffres connus par extraits concordants ; prix de février 2026 non trouvé, valbiom.be injoignable."
+
+plaquettes_energie_map:
+  libelle: Énergie d'un mètre cube apparent de plaquettes sèches
+  valeur: 1000
+  unite: kWh/MAP
+  statut: sourcé
+  date: 2025-06-01
+  source: https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Poele%20chaudiere/installer-une-chaudiere-biomasse-pour-se-chauffer-2025.pdf
+  note: "Valbiom, Carnet n° 5 (juin 2025), p. 8 : 10 MAP de plaquettes à 20 % d'humidité ≈ 1 000 L de mazout ≈ 10 000 kWh. Le même carnet, p. 13, compte environ 115 MAP pour 10 000 L (≈ 870 kWh/MAP). Lu le 26/11/2026."
+
+chauffage_mazout_ferme:
+  libelle: Mazout consommé par une ferme avec laiterie et trois habitations
+  valeur: 8000
+  unite: L/an
+  statut: estimé
+  date: 2024-04-24
+  source: "https://www.febhel.be/sites/default/files/2024-05/version-finale---article-pleinchamps---chaudieres-biomasse-dans-l'agriculture-belge-2-pages.pdf"
+  note: "FEBHEL, « Bois-énergie et agriculture belge, est-ce compatible ? », lu le 26/11/2026 : ferme laitière (province de Luxembourg) avec laiterie et 3 habitations. À remplacer par la consommation de l'exploitation."
+
+# --- Lait ---------------------------------------------------------------------
+
+tank_kwh_1000l:
+  libelle: Électricité du refroidissement du lait sans pré-refroidisseur
+  valeur: 14
+  unite: kWh/1 000 L
+  statut: sourcé
+  date: 2026-08-28
+  source: https://inagro.be/themas/energie/energie-besparen/aanpassingen/melkveebedrijf-voorkoeler
+  note: "Inagro 14 kWh/1 000 L ; Rundveeloket (12/06/2024) et Département L&V/ILVO (2014) 15 ; Handboek Melkveehouderij 2023-2024 13 à 15. Lus le 26/11/2026."
+
+prerefroidisseur_gain:
+  libelle: Électricité du tank économisée par un pré-refroidisseur
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2024-06-12
+  source: https://rundveeloket.be/vraag_antwoord/voorkoelen
+  note: "Rundveeloket 40 % ; Handboek Melkveehouderij environ 40 % ; Inagro jusqu'à 50 % (40 % dans son exemple chiffré). Plus faible l'été, quand l'eau est plus chaude. Lu le 26/11/2026."
+
+lait_livre_an:
+  libelle: Lait livré par an (exploitation type)
+  valeur: 500000
+  unite: L/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Environ 60 à 70 vaches.
+
+# --- Engins de cour -----------------------------------------------------------
+
+valet_conso_gasoil:
+  libelle: Chargeur articulé (valet de ferme) diesel, consommation moyenne
+  valeur: 3.1
+  unite: L/h
+  statut: sourcé
+  date: 2023-10-29
+  source: https://www.wochenblatt-dlv.de/feld-stall/landtechnik/hoflader-test-diesel-elektrisch-574598
+  note: "Moyenne en travail de chargement, essai de la Landwirtschaftskammer Niedersachsen ; 0,78 L/h au ralenti."
+
+valet_conso_elec:
+  libelle: Chargeur articulé électrique, consommation moyenne
+  valeur: 6.3
+  unite: kWh/h
+  statut: sourcé
+  date: 2023-10-29
+  source: https://www.wochenblatt-dlv.de/feld-stall/landtechnik/hoflader-test-diesel-elektrisch-574598
+  note: "Même essai. Mesurée au compteur de la borne de recharge : pertes de charge comprises."
+
+heures_valet_an:
+  libelle: Heures de chargeur de cour par an en élevage
+  valeur: 300
+  unite: h/an
+  statut: estimé
+  date: 2025-07-09
+  source: https://www.topagrar.com/betriebsleitung/news/hoffahrzeuge-mit-strom-oder-diesel-antreiben-20016039.html
+  note: "250 à 300 h/an dans un élevage laitier de Basse-Bavière (J. Neiber, LfL, top agrar) : une seule exploitation. Un télescopique électrique en Autriche : environ 400 h/an prévues."
+
+# --- Tracteurs --------------------------------------------------------------
+
+tracteur_compact_conso_gasoil:
+  libelle: Tracteur compact diesel, consommation moyenne
+  valeur: 7
+  unite: L/h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tracteur_compact_conso_elec:
+  libelle: Tracteur électrique compact, consommation moyenne
+  valeur: 30
+  unite: kWh/h
+  statut: sourcé
+  date: 2017-01-01
+  source: https://t3n.de/news/erster-elektro-traktor-von-fendt-fahrzeug-landwirtschaft-1657809/
+  note: 26 kWh/h en déplacement, ~32 kWh/h avec une herse rotative (étude de 2017).
+
+heures_tracteur_an:
+  libelle: Heures de tracteur par an
+  valeur: 800
+  unite: h/an
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tracteur_lourd_conso_gasoil:
+  libelle: Gros tracteur en travail lourd, consommation
+  valeur: 25
+  unite: L/h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Ordre de grandeur pour ~200 kW en travail du sol.
+
+heures_journee_lourde:
+  libelle: Durée d'une journée de travail lourd
+  valeur: 10
+  unite: h
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+batterie_densite_pack:
+  libelle: Énergie massique d'un pack de batteries
+  valeur: 0.16
+  unite: kWh/kg
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Huile de colza -----------------------------------------------------------
+
+colza_prix:
+  libelle: Colza (Euronext)
+  valeur: 550
+  unite: €/t
+  statut: estimé
+  date: 2026-09-30
+  source: https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
+  note: "Euronext : 538,50 €/t (échéance novembre 2026) et 555 €/t (février 2027) le 30/09/2026 ; 557,75 €/t (février 2027) le 09/10/2026 (Terre-net). Aucun relevé de novembre trouvé."
+  scenario: true
+  bas: 485
+  bas_note: "Février 2026 : clôtures Euronext entre 473,75 et 492,75 €/t, 483 €/t le 25 février (bulletins Réussir/La Dépêche, lus le 26/11/2026). Valeur arrondie (estimé)."
+
+huile_par_tonne:
+  libelle: Huile obtenue par tonne de graines (pressage à froid)
+  valeur: 360
+  unite: L/t
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tourteau_par_tonne:
+  libelle: Tourteau obtenu par tonne de graines
+  valeur: 0.65
+  unite: t/t
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+tourteau_prix:
+  libelle: Prix du tourteau de colza
+  valeur: 337
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-24
+  source: https://www.pleinchamp.com/les-cours/aliments-du-betail/43-tourteaux-de-colza
+  note: Départ Rouen (prix français), relevé Argus du 24/11/2026, lu le 26/11/2026. Pèse lourd dans le coût de l'huile.
+  scenario: true
+
+pressage_cout:
+  libelle: Coût du pressage
+  valeur: 0.05
+  unite: €/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+energie_litre_huile:
+  libelle: Énergie d'un litre d'huile de colza
+  valeur: 9.2
+  unite: kWh/L
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Valeur usuelle arrondie.
+
+colza_rendement:
+  libelle: Rendement du colza
+  valeur: 3.5
+  unite: t/ha
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: ""
+
+# --- Travail du sol -----------------------------------------------------------
+
+gasoil_labour:
+  libelle: Gasoil consommé en itinéraire avec labour
+  valeur: 78
+  unite: L/ha/an
+  statut: sourcé
+  date: 2009-06-02
+  source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
+  note: "Données françaises : essai de longue durée Arvalis (Boigneville), moyennes 1998-2008, page mise à jour le 12/04/2023."
+
+gasoil_semis_direct:
+  libelle: Gasoil consommé en semis direct
+  valeur: 49
+  unite: L/ha/an
+  statut: sourcé
+  date: 2009-06-02
+  source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
+  note: "Données françaises : essai de longue durée Arvalis (Boigneville), moyennes 1998-2008, page mise à jour le 12/04/2023."
