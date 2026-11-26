@@ -5,7 +5,7 @@ domaine: fertilisation
 dependance_fossile: gasoil (mines et transport)
 alternatives: [Effluents, compost, cendres de bois, recyclage urbain]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,9 @@ maj: 2026-11-26
 
 ## En bref
 
-Le phosphore (P) et le potassium (K) des engrais minéraux viennent de mines lointaines : phosphate du Maroc surtout, potasse du Canada, de Russie, de Biélorussie ou de Chine[^eew-engrais]. Le phosphate est attaqué à l'acide sulfurique, fait avec du soufre du Moyen-Orient, puis tout voyage par bateau et camion. Au prix de l'automne 2026, le kg de P2O5 du superphosphate coûte {{ v('prix_kg_p2o5') }} et le kg de K2O du chlorure de potassium {{ v('prix_kg_k2o') }} (prix français, calculés).
+Le phosphore (P) et le potassium (K) des engrais minéraux viennent de mines lointaines : phosphate du Maroc surtout, potasse du Canada, de Russie, de Biélorussie ou de Chine[^eew-engrais]. Le phosphate est attaqué à l'acide sulfurique, fait avec du soufre du Moyen-Orient. Fin novembre 2026, le kg de P2O5 du superphosphate coûte {{ v('prix_kg_p2o5') }} et le kg de K2O du chlorure de potassium {{ v('prix_kg_k2o') }} (prix départ Gand, calculés).
 
-En Wallonie, 80 % du phosphore apporté aux sols vient déjà des effluents d'élevage[^eew-sols-p]. Bien gérés, ils restent la meilleure alternative : le P et le K d'une tonne de fumier de bovins valent {{ v('valeur_pk_fumier', 1) }}, et encore {{ v('valeur_pk_fumier', 1, scenario='bas') }} au prix d'avant-crise (calculé). C'est rentable aujourd'hui, crise ou pas (vague 1). Le compost et les cendres de bois complètent dans certaines fermes (vague 2). Le recyclage du phosphore des eaux usées (struvite, cendres de boues) reste à préparer (vague 3).
+En Wallonie, 80 % du phosphore apporté aux sols vient déjà des effluents d'élevage[^eew-sols-p] : bien gérés, ils restent la meilleure alternative, rentable crise ou pas (vague 1), car le P et le K d'une tonne de fumier de bovins valent {{ v('valeur_pk_fumier', 1) }}, et encore {{ v('valeur_pk_fumier', 1, scenario='bas') }} au prix d'avant-crise (calculé). Le compost, le digestat et les cendres de bois complètent dans certaines fermes (vague 2), et le recyclage du phosphore des eaux usées reste à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -25,16 +25,16 @@ Le phosphore et le potassium sont des éléments majeurs de la nutrition des pla
 - le **chlorure de potassium** (KCl, 60 % de K2O), aussi appelé potasse ;
 - les **binaires** PK (par exemple 0-25-25) et les **ternaires** NPK.
 
-Prix de gros relevés en France (stade distributeur)[^depeche-nov] [^depeche-mars] :
+Prix de référence (février : prix français au stade distributeur[^depeche-mars] ; novembre : prix belge départ Gand[^agryco]) :
 
-| Engrais | Février 2026 (avant-crise) | Septembre-octobre 2026 |
+| Engrais | Février 2026 (avant-crise, France) | Fin novembre 2026 (départ Gand) |
 |---|---|---|
 | Superphosphate triple | {{ v('tsp_prix', scenario='bas') }} | {{ v('tsp_prix') }} |
 | Chlorure de potassium | {{ v('kcl_prix', scenario='bas') }} | {{ v('kcl_prix') }} |
 
-Au départ de Gand, un négociant en ligne affichait fin novembre 2026 des prix du même ordre : TSP à 675 €/t et chlorure de potassium à 360 €/t[^agryco]. Le prix payé à la ferme peut être plus élevé : un essai wallon comptait le chlorure de potassium à 420 €/t en juillet 2025[^fm-bache].
+Les prix de novembre viennent de la page d'un négociant en ligne (non datée, consultée le 26/11/2026)[^agryco]. En France, au stade distributeur, le TSP valait 675 à 680 €/t et le chlorure de potassium 355 à 360 €/t en septembre 2026 : le même niveau[^depeche-nov]. Le prix payé à la ferme peut être plus élevé : un essai wallon comptait le chlorure de potassium à 420 €/t en juillet 2025[^fm-bache].
 
-Le phosphore a suivi la crise, pas la potasse. Le prix du TSP a monté d'environ 26 % depuis février (calculé), alors que celui de la potasse est resté stable, voire a un peu baissé. Le kg de P2O5 coûte {{ fourchette('prix_kg_p2o5') }} selon les scénarios de prix, le kg de K2O {{ fourchette('prix_kg_k2o') }} (calculé).
+Le phosphore a suivi la crise, pas la potasse. Le prix du TSP est passé de {{ v('tsp_prix', scenario='bas') }} en février à {{ v('tsp_prix') }}, une nette hausse, alors que celui de la potasse est resté stable, voire a un peu baissé[^depeche-nov]. Le kg de P2O5 coûte {{ fourchette('prix_kg_p2o5') }} selon les scénarios de prix, le kg de K2O {{ fourchette('prix_kg_k2o') }} (calculé).
 
 Les agriculteurs réagissent en réduisant la fumure de fond. En France, les livraisons d'engrais phosphatés ont reculé d'environ 30 % et celles de potassiques de 17 % au début de la campagne 2026-2027. Les distributeurs s'attendent à une baisse de 50 à 60 % de la demande en phosphore sur l'ensemble de la campagne[^depeche-nov].
 
@@ -49,7 +49,7 @@ Pendant des décennies, jusqu'aux environs de l'an 2000, les apports de phosphor
 - Selon Requasud, les teneurs en P diminuent presque partout, sauf dans les sols déjà pauvres. Le potassium baisse en Région limoneuse et en Ardenne et reste stable ailleurs[^requasud-2023].
 - En prairie, le potassium manque souvent : selon le Centre de Michamps, 40 % des fourrages analysés présentent une carence en potassium[^fm-bache].
 
-Conséquence pratique : dans une terre riche en phosphore, l'analyse de sol peut justifier de réduire ou de suspendre l'engrais phosphaté quelques années. C'est ce qui se passe déjà à l'échelle de la Wallonie : depuis 2000, les cultures puisent dans le stock sans baisse de leurs exportations[^eew-sols-p]. Ce n'est pas une alternative durable : le stock s'épuise, et il faudra le relayer par des apports recyclés.
+Conséquence pratique : dans une terre riche en phosphore, l'analyse de sol peut justifier de réduire ou de suspendre l'engrais phosphaté quelques années. C'est ce qui se passe déjà à l'échelle de la Wallonie depuis 2000 (voir plus haut). Ce n'est pas une alternative durable : le stock s'épuise, et il faudra le relayer par des apports recyclés.
 
 ## Où entrent le pétrole et le gaz
 
@@ -149,9 +149,9 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 
 ## À vérifier
 
-- **Prix belges** : les prix du TSP et du chlorure de potassium utilisés ici sont des prix français au stade distributeur (La Dépêche Le petit meunier). Les seuls repères belges sont une page d'un négociant en ligne non datée (départ Gand) et le prix de 420 €/t de juillet 2025 cité par Fourrages Mieux[^agryco] [^fm-bache]. À remplacer par une cotation belge datée ou une facture.
+- **Prix belges** : les prix actuels du TSP et du chlorure de potassium viennent d'une page de négociant en ligne non datée (départ Gand, TVA non précisée)[^agryco] ; les prix de février 2026 (scénario bas) sont des prix français au stade distributeur[^depeche-mars]. Les deux bases ne sont pas tout à fait comparables. Seul autre repère belge : 420 €/t pour le chlorure de potassium en juillet 2025, cité par Fourrages Mieux[^fm-bache]. À remplacer par une cotation belge datée ou une facture, et chercher un prix belge de février 2026.
 - **Cotations Terre-net** : le 26 novembre 2026, Terre-net affichait le TSP à 567,25 €/t et le binaire PK à 517,25 €/t[^terrenet], soit les niveaux de novembre 2025 (TSP 565-567 €/t, PK 517 €/t)[^depeche-janv], bien en dessous des 675-680 €/t de septembre 2026 pour le TSP. Ces cotations semblent ne pas avoir été mises à jour et n'ont pas été retenues.
-- **Prix de novembre 2026** : le dernier tableau de prix complet lu porte sur septembre 2026 ; pour octobre, l'article ne donne que l'évolution (phosphatés stables, potasse − 5 €/t)[^depeche-nov].
+- **Prix français de novembre 2026** : le dernier tableau de prix complet lu porte sur septembre 2026 ; pour octobre, l'article ne donne que l'évolution (phosphatés stables, potasse − 5 €/t)[^depeche-nov].
 - **Énergie fossile de l'extraction et de la fabrication** : aucune donnée lue sur l'énergie (en MJ ou en litres de gasoil) par kg de P2O5 ou de K2O, ni sur la part du soufre qui vient de la désulfuration du pétrole et du gaz.
 - **Origine des engrais vendus en Belgique** : parts du Maroc, de la Russie, du Canada et de l'Allemagne dans les importations belges de phosphate et de potasse (Statbel).
 - **Teneurs du digestat** : la fiche FIWAP donne 886 mg de P2O5 par kg dans son tableau de composition, mais 2,35 kg/t dans son tableau de valorisation. Les valeurs retenues ici sont celles du tableau de composition.
