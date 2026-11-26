@@ -10,7 +10,7 @@ tank-a-lait,Refroidissement du lait,élevage,électricité,Pré-refroidisseur; r
 fourrages-recoltes,Ensilage et enrubannage,élevage,gasoil; plastique,Pâturage tournant; séchage du foin en grange,1,elevage/fourrages-recoltes.md,brouillon
 concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Pâturage; légumineuses fourragères; tourteau de colza du commerce; tourteau de colza fermier; féverole et pois,1,elevage/concentres-importes.md,brouillon
 azote-synthese,Engrais azoté de synthèse,fertilisation,gaz naturel,Légumineuses; effluents et digestat; ammoniac vert local,1,fertilisation/azote-synthese.md,brouillon
-engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,3,fertilisation/engrais-p-k.md,à rédiger
+engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,1,fertilisation/engrais-p-k.md,brouillon
 herbicides,Herbicides de synthèse,protection des cultures,pétrochimie,Désherbage mécanique; robot solaire de binage,1,protection/herbicides.md,brouillon
 fongicides-insecticides,Fongicides et insecticides de synthèse,protection des cultures,pétrochimie,Variétés résistantes; rotations; haies et auxiliaires; biocontrôle,1,protection/fongicides-insecticides.md,à rédiger
 plastiques-agricoles,Plastiques agricoles,matériaux,pétrochimie,Paillages naturels; bâches réutilisables; emballages consignés,2,materiaux/plastiques-agricoles.md,brouillon

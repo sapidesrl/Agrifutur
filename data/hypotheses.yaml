@@ -1455,3 +1455,156 @@ presse_litres_an:
   date: 2026-05-22
   source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
   note: "Près de 20 000 L par an (colza et tournesol, 20 ha) ; objectif de 100 000 L à terme."
+
+# --- Engrais phosphatés et potassiques (fiche engrais-p-k) ------------------
+# À insérer dans data/hypotheses.yaml, section « Engrais », après azote_fixe_legumineuses.
+
+tsp_prix:
+  libelle: Superphosphate triple (TSP, 45 % P2O5)
+  valeur: 680
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-06
+  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
+  note: "Prix français au stade distributeur, départ port vrac : 675-680 €/t en septembre 2026, prix des phosphatés inchangés en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : TSP 45 % à 675 €/t départ Gand chez un négociant en ligne (Agryco, page non datée, consultée le 26/11/2026). Terre-net affichait 567,25 €/t le 26/11/2026, valeur identique à celle de début 2026 : cotation non retenue (probablement pas mise à jour). À remplacer par un prix belge sur facture."
+  scenario: true
+  bas: 540
+  bas_note: "Février 2026, avant-crise : 540 €/t départ direct de bord vrac, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+
+tsp_teneur_p2o5:
+  libelle: Teneur en P2O5 du superphosphate triple
+  valeur: 0.45
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.agryco.be/fr_BE/engrais/pc975
+  note: "Désignation commerciale « TSP 45 % »."
+
+kcl_prix:
+  libelle: Chlorure de potassium (KCl, 60 % K2O)
+  valeur: 355
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-06
+  source: https://www.reussir.fr/articles/marche-des-engrais-les-prix-de-lazote-continuent-de-progresser-ceux-du-phosphore-se
+  note: "Prix français au stade distributeur, départ vrac compacté : 355-360 €/t en septembre 2026, puis − 5 €/t en octobre (La Dépêche Le petit meunier, 6/11/2026). Repère belge : KCl 60 % à 360 €/t départ Gand (Agryco, page non datée, consultée le 26/11/2026). Prix payé par un agriculteur wallon en juillet 2025 : 420 €/t (Fourrages Mieux). Le prix de la potasse n'a presque pas bougé pendant la crise : le scénario bas (février 2026) est un peu plus haut que le prix actuel."
+  scenario: true
+  bas: 360
+  bas_note: "Février 2026, avant-crise : environ 360 €/t départ direct de bord, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes)."
+
+kcl_teneur_k2o:
+  libelle: Teneur en K2O du chlorure de potassium
+  valeur: 0.60
+  unite: "%"
+  statut: sourcé
+  date: 2026-03-09
+  source: https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes
+  note: "Désignation commerciale « potasse KCl 60 % »."
+
+fumier_bovin_p2o5:
+  libelle: Fumier de bovins, teneur moyenne en P2O5
+  valeur: 3.8
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau, fiche « Valeur fertilisante des engrais de ferme » (12/2018), sources PGDA et Requasud. Coefficient d'équivalence engrais : 1. Analyses de fumiers frais du réseau Terraé (2023) : 2,6 kg/t en moyenne (1,8 à 3,5)."
+
+fumier_bovin_k2o:
+  libelle: Fumier de bovins, teneur moyenne en K2O
+  valeur: 8.9
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018). Coefficient d'équivalence engrais : 1. Analyses de fumiers frais du réseau Terraé (2023) : 10,8 kg/t en moyenne (7,6 à 14,8)."
+
+fumier_dose_ha:
+  libelle: Apport de fumier de bovins par hectare (exemple)
+  valeur: 35
+  unite: t/ha
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Exemple de Protect'eau : 35 t de fumier au printemps avant maïs apportent 133 kg de P2O5 et 311 kg de K2O. Apport maximal en respectant 230 kg N/ha (PGDA) : 39 t/ha."
+
+lisier_bovin_p2o5:
+  libelle: Lisier de bovins, teneur moyenne en P2O5
+  valeur: 1.3
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018), sources PGDA et Requasud. Coefficient d'équivalence 1, ou 0,85 pour le phosphore si le sol est pauvre en P."
+
+lisier_bovin_k2o:
+  libelle: Lisier de bovins, teneur moyenne en K2O
+  valeur: 3.7
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018)."
+
+lisier_densite:
+  libelle: Masse d'un m³ de lisier
+  valeur: 1.0
+  unite: t/m³
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Un m³ de lisier est compté comme une tonne."
+
+fumier_composte_p2o5:
+  libelle: Fumier de bovins composté, teneur moyenne en P2O5
+  valeur: 5.4
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018), sources PGDA et Requasud."
+
+fumier_composte_k2o:
+  libelle: Fumier de bovins composté, teneur moyenne en K2O
+  valeur: 8.9
+  unite: kg/t
+  statut: sourcé
+  date: 2018-12-01
+  source: https://www.protecteau.be/sites/default/files/2022-07/FT_valeur_fertilisante_engrais.pdf
+  note: "Protect'eau (12/2018)."
+
+digestat_p2o5:
+  libelle: Digestat de biométhanisation complet, teneur moyenne en P2O5
+  valeur: 0.886
+  unite: kg/t
+  statut: sourcé
+  date: 2023-03-01
+  source: https://fiwap.be/wp-content/uploads/2023/03/2303DigestaBiometPdt.pdf
+  note: "Moyenne Requasud 2021 : 886 mg/kg de matière fraîche (FIWAP-Info n° 177, 2023). Le tableau de valorisation du même document utilise 2,35 kg/t : écart à éclaircir."
+
+digestat_k2o:
+  libelle: Digestat de biométhanisation complet, teneur moyenne en K2O
+  valeur: 4.132
+  unite: kg/t
+  statut: sourcé
+  date: 2023-03-01
+  source: https://fiwap.be/wp-content/uploads/2023/03/2303DigestaBiometPdt.pdf
+  note: "Moyenne Requasud 2021 : 4 132 mg/kg de matière fraîche (FIWAP-Info n° 177, 2023)."
+
+cendres_bois_p2o5:
+  libelle: Cendres de plaquettes forestières, teneur moyenne en phosphore (exprimé en P2O5)
+  valeur: 15.4
+  unite: kg/t
+  statut: estimé
+  date: 2005-12-01
+  source: https://www.bioenergie-promotion.fr/wp-content/uploads/2012/03/2-analyses_moyennes_cendres.pdf
+  note: "Source française (ADEME/Solagro/Aquasol, 2005) : moyenne de 9 analyses de cendres de chaufferies à plaquettes forestières, 15,4 g/kg. Le tableau dit « phosphore total » et les graphiques « P2O5 » : forme à confirmer. Très variable selon le bois et la chaudière."
+
+cendres_bois_k2o:
+  libelle: Cendres de plaquettes forestières, teneur moyenne en potassium (exprimé en K2O)
+  valeur: 32.5
+  unite: kg/t
+  statut: estimé
+  date: 2005-12-01
+  source: https://www.bioenergie-promotion.fr/wp-content/uploads/2012/03/2-analyses_moyennes_cendres.pdf
+  note: "Source française (ADEME/Solagro/Aquasol, 2005) : 32,5 g/kg. Le tableau dit « potassium total » et les graphiques « K2O » : forme à confirmer. Les mêmes cendres contiennent environ 328 g/kg de calcium et ont un pH de 12,8."

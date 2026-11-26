@@ -1039,3 +1039,79 @@ presse_amortissement_litre:
   valeur: 0.3
   unite: €/L
   formule: Investissement ÷ durée d'amortissement ÷ litres vendus par an
+prix_kg_p2o5:
+  libelle: Prix du kg de P2O5 (superphosphate triple)
+  valeur: 1.511111
+  bas: 1.2
+  haut: 1.964444
+  unite: €/kg P2O5
+  formule: Prix de la tonne ÷ kg de P2O5 par tonne
+prix_kg_k2o:
+  libelle: Prix du kg de K2O (chlorure de potassium)
+  valeur: 0.591667
+  bas: 0.6
+  haut: 0.769167
+  unite: €/kg K2O
+  formule: Prix de la tonne ÷ kg de K2O par tonne
+valeur_pk_fumier:
+  libelle: Valeur du P et du K d'une tonne de fumier de bovins
+  valeur: 11.008056
+  bas: 9.9
+  haut: 14.310472
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O (coefficient d'équivalence
+    1)
+valeur_p_fumier:
+  libelle: Part du phosphore dans cette valeur
+  valeur: 5.742222
+  bas: 4.56
+  haut: 7.464889
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5
+valeur_k_fumier:
+  libelle: Part du potassium dans cette valeur
+  valeur: 5.265833
+  bas: 5.34
+  haut: 6.845583
+  unite: €/t
+  formule: kg K2O × prix du kg K2O
+valeur_pk_fumier_ha:
+  libelle: Valeur du P et du K d'un apport de fumier de bovins par hectare
+  valeur: 385.281944
+  bas: 346.5
+  haut: 500.866528
+  unite: €/ha
+  formule: Tonnes épandues × valeur du P et du K d'une tonne
+valeur_pk_lisier:
+  libelle: Valeur du P et du K d'un m³ de lisier de bovins
+  valeur: 4.153611
+  bas: 3.78
+  haut: 5.399694
+  unite: €/m³
+  formule: (kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O) × masse du m³
+valeur_pk_compost:
+  libelle: Valeur du P et du K d'une tonne de fumier composté
+  valeur: 13.425833
+  bas: 11.82
+  haut: 17.453583
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+valeur_pk_digestat:
+  libelle: Valeur du P et du K d'une tonne de digestat complet
+  valeur: 3.783611
+  bas: 3.5424
+  haut: 4.918694
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+valeur_pk_cendres:
+  libelle: Valeur du P et du K d'une tonne de cendres de plaquettes
+  valeur: 42.500278
+  bas: 37.98
+  haut: 55.250361
+  unite: €/t
+  formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
+kcl_evite_t_cendres:
+  libelle: Chlorure de potassium remplacé par une tonne de cendres de plaquettes
+  valeur: 54.166667
+  unite: kg
+  formule: kg K2O des cendres ÷ teneur en K2O du KCl
