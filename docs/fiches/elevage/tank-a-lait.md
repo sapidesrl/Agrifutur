@@ -42,7 +42,7 @@ Le pré-refroidisseur économise environ {{ v('prerefroidisseur_gain', 0) }} de 
 - électricité économisée : {{ v('prerefroidisseur_kwh_an') }} ;
 - économie : {{ v('prerefroidisseur_eur_an') }} au prix du réseau ({{ fourchette('prerefroidisseur_eur_an') }} selon les scénarios).
 
-Le prix d'un pré-refroidisseur va de 4 000 à 10 000 € selon l'installation (prix français)[^reussir-eco]. Rundveeloket estime l'investissement amorti en 3 à 4 ans sur la plupart des exploitations[^rundveeloket] ; des sources françaises donnent 2 à 7 ans[^reussir-mc]. Avec le calcul ci-dessus, un appareil à 4 000 € se rembourse en 5 à 6 ans au prix actuel, 4 à 8 ans selon les scénarios (ordre de grandeur) : le retour est plus rapide sur les grandes exploitations et quand le tank est petit pour le volume livré.
+Le prix d'un pré-refroidisseur va de 4 000 à 10 000 € selon l'installation (prix français)[^reussir-eco]. Rundveeloket estime l'investissement amorti en 3 à 4 ans sur la plupart des exploitations[^rundveeloket] ; des sources françaises donnent 2 à 7 ans[^reussir-mc]. Avec le calcul ci-dessus, un appareil à 4 000 € se rembourse en 3 à 4 ans au prix actuel de l'électricité, 3 à 5 ans selon les scénarios (ordre de grandeur) : le retour est plus rapide sur les grandes exploitations et quand le tank est petit pour le volume livré.
 
 Conditions :
 

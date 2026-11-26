@@ -33,7 +33,7 @@ Les consommations sont modestes. Dans un essai de la chambre d'agriculture de Ba
 
 La plupart des constructeurs en proposent, par exemple Weidemann, Schäffer, Giant, JCB, Merlo, Dieci et Faresin[^lwk][^pleinchamp][^dieci][^faresin]. Les batteries vont d'environ 14 kWh pour un petit valet de ferme[^weidemann] à 24 kWh pour le télescopique JCB 525-60E[^fwi] et 22 ou 44 kWh pour le télescopique compact Dieci Mini Agri-e[^dieci]. Dans l'essai de Basse-Saxe, la force de poussée des électriques était, selon la marque, égale, supérieure ou inférieure à celle du diesel ; pour le même travail, ils consommaient 79 % d'énergie en moins[^lwk]. Constructeurs et premiers utilisateurs ne constatent pas de différence notable de débit de chantier[^pleinchamp].
 
-Coût de l'énergie par heure pour un valet de ferme (calculé à partir des consommations de l'essai de Basse-Saxe ; l'électricité y était mesurée à la borne de recharge, et le calcul ajoute encore des pertes de charge, ce qui est prudent) :
+Coût de l'énergie par heure pour un valet de ferme (calculé à partir des consommations de l'essai de Basse-Saxe ; l'électricité y était mesurée à la borne de recharge, pertes de charge comprises) :
 
 | Énergie | Prix actuel | Fourchette des scénarios |
 |---|---|---|
@@ -41,7 +41,7 @@ Coût de l'énergie par heure pour un valet de ferme (calculé à partir des con
 | Électricité du réseau | {{ v('valet_reseau_eur_h') }} | {{ fourchette('valet_reseau_eur_h') }} |
 | Photovoltaïque de la ferme | {{ v('valet_pv_eur_h') }} | fixe |
 
-Sur {{ v('heures_valet_an') }}, l'économie d'énergie atteint {{ v('valet_economie_an_pv') }} sur photovoltaïque et {{ v('valet_economie_an_reseau') }} sur le réseau. Au prix d'avant-crise, elle tombe à {{ v('valet_economie_an_pv', scenario='bas') }} sur photovoltaïque. Contrairement au tracteur, l'électrique reste ici moins cher que le gasoil même sur le réseau : le moteur diesel d'un petit engin qui tourne souvent au ralenti a un mauvais rendement[^lwk].
+Sur {{ v('heures_valet_an') }}, l'économie d'énergie atteint {{ v('valet_economie_an_pv') }} sur photovoltaïque et {{ v('valet_economie_an_reseau') }} sur le réseau. Au prix d'avant-crise, elle tombe à {{ v('valet_economie_an_pv', scenario='bas') }} sur photovoltaïque. Contrairement au tracteur, l'électrique reste ici moins cher que le gasoil même sur le réseau au prix actuel, parce que le moteur diesel d'un petit engin qui tourne souvent au ralenti a un mauvais rendement[^lwk]. Au prix d'avant-crise, l'avantage sur le réseau disparaît ({{ v('valet_economie_an_reseau', scenario='bas') }}) : seul le photovoltaïque garde un gain net.
 
 Le frein est le prix d'achat :
 
