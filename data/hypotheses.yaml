@@ -123,19 +123,19 @@ pv_prix_installe:
   libelle: Photovoltaïque installé sur toiture agricole
   valeur: 1000
   unite: €/kWc
-  statut: hypothèse
-  date: 2026-11-26
-  source: https://blog.trustup.be/fr/rentabilite-des-panneaux-solaires/
-  note: Environ 1 200 €/kWc à 10 kWc selon la source ; moins sur une toiture de 30 à 100 kWc.
+  statut: estimé
+  date: 2026-06-23
+  source: https://brugel.brussels/publication/document/propositions/2026/fr/PROPOSITION-37-COEFFICIENT-MULTIPLICATEUR-PV.pdf
+  note: "Brugel, proposition 37 du 23/06/2026 (factures 2025-2026, raccordement, compteur et frais administratifs compris) : 1 289 €/kWc de 5 à 36 kWc, 934 €/kWc de 36 à 100 kWc, 800 €/kWc de 100 à 250 kWc (prix bruxellois ; échantillon réduit au-delà de 36 kWc). Coût simplifié de l'aide wallonne AII : 1 364 €/kWc. Valeur retenue pour 30 à 100 kWc sur toiture agricole. Remplacer par le devis."
 
 pv_production:
   libelle: Production photovoltaïque annuelle
   valeur: 900
   unite: kWh/kWc/an
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: Belgique.
+  statut: estimé
+  date: 2023-04-18
+  source: https://www.cwape.be/sites/default/files/cwape-documents/2023.04.18-Note%20explicative%20tarif%20prosumer-mise%20%C3%A0%20jour.pdf
+  note: "CWaPE (tarif prosumer, 2023) : 910 kWh par kWe et par an. Brugel : 850 kWh/kWc (médiane mesurée à Bruxelles, 2012-2021). Parc wallon fin 2023 : environ 815 kWh/kWc (Energie Commune, cité par le livre blanc de l'agrivoltaïsme, ULiège, juillet 2024), parc ancien compris. Perte de 0,7 %/an non comptée (Brugel)."
 
 pv_duree_vie:
   libelle: Durée de vie d'une installation photovoltaïque
@@ -148,12 +148,132 @@ pv_duree_vie:
 
 pv_entretien_part:
   libelle: Entretien et remplacement d'onduleur, en part du prix installé
-  valeur: 0.25
+  valeur: 0.55
+  unite: "%"
+  statut: estimé
+  date: 2026-01-14
+  source: https://energie.wallonie.be/files/Soutiens%20financiers/%c3%a9lectricit%c3%a9%20verte/Consultations%20publiques%20portant%20sur%20les%20valeurs%20de%20r%c3%a9f%c3%a9rence%20du%20m%c3%a9canisme%20CPMA/2025/251006-Proposition%20nouveau%20r%c3%a9gime.pdf
+  note: "2,2 % du prix par an pendant 25 ans (référence wallonne du SPW pour 10 à 1 000 kW, voir pv_om_annuel_spw) ; Brugel retient 2,5 %/an. Remplace l'ancienne hypothèse non sourcée de 25 %."
+
+pv_injection_prix:
+  libelle: Électricité photovoltaïque injectée sur le réseau, prix payé par le fournisseur
+  valeur: 0.035
+  unite: €/kWh
+  statut: sourcé
+  date: 2026-05-28
+  source: https://www.test-achats.be/maison-energie/energie-renouvelable/news/cout-energie-solaire-injectee
+  note: "Test-Achats, 28 mai 2026 : en moyenne 3 à 4 c€/kWh injecté (contrats résidentiels, Flandre et Wallonie ; de 0,94 à 4,90 c€/kWh selon le fournisseur en mai 2026). Milieu de fourchette retenu. Tarifs presque tous indexés sur le marché de gros, parfois négatifs. Un contrat professionnel peut différer : remplacer par le prix du contrat."
+  scenario: true
+  bas: 0.02
+  bas_note: "Avant-crise : environ 20 €/MWh offerts par les fournisseurs selon la CWaPE (note « Compensation et stockage » du 12/09/2025, annexée à la proposition CD-26c26-CWaPE-0974, https://www.cwape.be/sites/default/files/cwape-documents/2026.03.26-0974-Proposition%20d%27initiative%20batterie%20intelligente%20vs%20compensation%20-%20avec%20annexe.pdf) ; moins de 3 c€/kWh avant fin février 2026 selon Test-Achats."
+
+pv_ferme_kwc:
+  libelle: Puissance de l'installation photovoltaïque de la ferme type
+  valeur: 30
+  unite: kWc
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://www.boerenbond.be/sites/default/files/media/files/2022-08/SAVE%20brochure%20-%20Melkveebedrijven.pdf
+  note: "Taille du cas simulé par le projet SAVE (Boerenbond, ILVO, Inagro…) : 30 kWc sur une ferme laitière de 120 vaches et 36 000 kWh/an."
+
+pv_autoconsommation:
+  libelle: Part de la production photovoltaïque consommée sur place (taux d'autoconsommation)
+  valeur: 0.40
   unite: "%"
   statut: hypothèse
-  date: ""
+  date: 2026-11-26
+  source: https://www.boerenbond.be/sites/default/files/media/files/2022-08/SAVE%20brochure%20-%20Melkveebedrijven.pdf
+  note: "Ferme laitière à deux traites par jour, eau chaude produite en journée. Brochure SAVE (2018) : 13 % si le chauffe-eau tourne la nuit, 41 % s'il tourne de 10 h à 16 h. Brugel retient 45 % pour les installations de 36 à 100 kWc à Bruxelles (tous secteurs, juin 2026). Plus bas en grandes cultures sans séchage ni stockage au froid."
+
+ferme_conso_elec:
+  libelle: Consommation d'électricité de la ferme type
+  valeur: 40000
+  unite: kWh/an
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Ferme laitière moyenne. Repères : 36 000 kWh/an pour 120 vaches et 1 million de litres dans le cas SAVE (2018) ; 40 000 à 50 000 kWh/an pour la ferme de Gozée équipée en micro-biométhanisation (RTBF, 2022). Remplacer par le relevé du compteur."
+
+aii_pv_forfait:
+  libelle: "Aide aux investissements agricoles (AII) : coût simplifié du photovoltaïque"
+  valeur: 1364
+  unite: €/kWc
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 205 « Énergie renouvelable professionnelle : panneaux photovoltaïques », par kWc des panneaux plafonné aux kWc que l'onduleur accepte en entrée (version en vigueur depuis le 01/01/2026). Montant forfaitaire servant de base au calcul de l'aide, pas un prix du marché."
+
+aii_taux_pv:
+  libelle: "Aide AII : taux appliqué au forfait (agriculteur actif, sans autre majoration)"
+  valeur: 0.15
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2 : taux de base 10 %, + 5 % si l'investissement répond à l'architecture verte ou à la résilience économique (cochés pour le photovoltaïque à l'annexe 3, non cumulables). Autres majorations possibles (jeune agriculteur + 10 %, bio, zone à contraintes, herbager…), plafond 40 % (§ 4)."
+
+pv_om_annuel_spw:
+  libelle: Frais annuels d'exploitation et d'entretien du photovoltaïque de 10 à 1 000 kW, référence wallonne
+  valeur: 0.022
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-14
+  source: https://energie.wallonie.be/files/Soutiens%20financiers/%c3%a9lectricit%c3%a9%20verte/Consultations%20publiques%20portant%20sur%20les%20valeurs%20de%20r%c3%a9f%c3%a9rence%20du%20m%c3%a9canisme%20CPMA/2025/251006-Proposition%20nouveau%20r%c3%a9gime.pdf
+  note: "SPW Énergie, consultation sur les valeurs de référence 2026 (régime Cpma), § 31 : ratio OPEX0 de 2,20 % par an de l'investissement pour la catégorie 10-1 000 kW (dossiers de réservation de certificats verts de 2020). Brugel retient 2,5 %/an (juin 2026)."
+
+batterie_prix_kwh:
+  libelle: Batterie stationnaire installée, prix par kWh de capacité
+  valeur: 700
+  unite: €/kWh
+  statut: estimé
+  date: 2026-01-14
+  source: https://www.lavenir.net/actu/2026/01/14/batterie-domestique-et-nouveaux-tarifs-electricite-le-combo-gagnant-PESZX4B27RFPJKBZH773RKVRQM/
+  note: "L'Avenir, 14/01/2026 : une batterie de 13,5 kWh ou de 10 kWh est facturée environ 8 000 €, soit 590 à 800 €/kWh (modèles résidentiels). Milieu arrondi. Une batterie professionnelle plus grande coûte probablement moins par kWh : à vérifier sur devis."
+
+batterie_cycles_an:
+  libelle: Nombre de cycles complets utiles d'une batterie par an
+  valeur: 250
+  unite: cycles/an
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Batterie dimensionnée sur le surplus d'une journée ordinaire : presque un cycle par jour d'avril à septembre, beaucoup moins en hiver."
+
+batterie_rendement:
+  libelle: Rendement aller-retour d'une batterie stationnaire
+  valeur: 0.90
+  unite: "%"
+  statut: hypothèse
+  date: 2026-11-26
   source: ""
   note: ""
+
+microbiometh_kw:
+  libelle: Puissance électrique de l'unité de micro-biométhanisation type
+  valeur: 20
+  unite: kW
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://www.lavenir.net/regions/brabantwallon/villers-la-ville/2024/02/11/le-lisier-produira-de-lelectricite-a-marbais-UJUVTV6G6NHHHND76NN6SMNYUQ/
+  note: "Unité de la ferme du Petit Mont à Marbais : 20 kW sur le seul lisier de 120 vaches laitières (L'Avenir, 2024)."
+
+microbiometh_heures:
+  libelle: Heures de fonctionnement à pleine puissance par an (micro-biométhanisation)
+  valeur: 8000
+  unite: h/an
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://biolectric.com/fr/electricite-et-chaleur-chp/
+  note: "Le constructeur Biolectric annonce environ 100 MWh/an pour 11 kW (environ 9 000 h) et 176 000 kWh/an pour 120 vaches (site commercial). Valeur prudente."
+
+microbiometh_cout_kw:
+  libelle: Micro-biométhanisation, investissement par kW électrique (exemple wallon)
+  valeur: 20000
+  unite: €/kW
+  statut: sourcé
+  date: 2024-02-11
+  source: https://www.lavenir.net/regions/brabantwallon/villers-la-ville/2024/02/11/le-lisier-produira-de-lelectricite-a-marbais-UJUVTV6G6NHHHND76NN6SMNYUQ/
+  note: "Marbais : investissement « à la grosse louche » d'environ 400 000 € pour 20 kW (L'Avenir, 11/02/2024). Repères officiels : coût simplifié AII de 11 484 €/kW pour une unité de 10 kW au plus (AM du 23/02/2023, annexe 3, ligne 203) ; CAPEX de référence 2019 du SPW de 19 000 €/kW (0-10 kW) et 8 500 €/kW (10-200 kW)."
 
 # --- Engrais ----------------------------------------------------------------
 

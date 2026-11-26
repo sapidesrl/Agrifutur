@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. Environ la moitié de la population mondiale (3,8 milliards de personnes) est nourrie grâce à eux[^carnegie]. Au prix d'avril 2026 en France, l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }} ({{ fourchette('prix_kg_n') }} selon les scénarios de prix).
+L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. Environ la moitié de la population mondiale (3,8 milliards de personnes) est nourrie grâce à eux[^carnegie]. Au prix français de fin novembre 2026 ({{ v('ammonitrate_prix') }} départ usine), l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }} ({{ fourchette('prix_kg_n') }} selon les scénarios de prix).
 
 Les alternatives rentables existent déjà : les légumineuses, qui fixent l'azote de l'air, et une meilleure valorisation des effluents (vague 1). L'ammoniac « vert » fabriqué localement avec de l'électricité renouvelable reste à préparer (vague 3).
 
@@ -68,7 +68,7 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 
 ## À vérifier
 
-- Prix de l'ammonitrate en Belgique : le prix utilisé ici reste le prix français d'avril 2026. Un négociant en ligne affichait fin novembre 2026 l'ammonitrate 27 (CAN) autour de 445 €/t départ Gand (page non datée, consultée le 26/11/2026)[^agryco] ; à confirmer par une source belge indépendante ou une facture, puis reporter dans `data/hypotheses.yaml`.
+- Prix de l'ammonitrate en Belgique : le prix utilisé ici est un prix français (départ usine, fin novembre 2026). Un négociant en ligne affichait fin novembre 2026 l'ammonitrate 27 (CAN) autour de 445 €/t départ Gand (page non datée, consultée le 26/11/2026)[^agryco] ; à confirmer par une source belge indépendante ou une facture, puis reporter dans `data/hypotheses.yaml`.
 - Prix de l'ammonitrate en février 2026 : une cotation française existe (environ 500 €/t franco fin février 2026)[^reussir-fevrier] ; à reporter dans `data/hypotheses.yaml` pour remplacer le scénario bas à −30 %.
 - Pages non lues (accès bloqué) : World Economic Forum (toxicité de l'ammoniac), S&P Global (prix du gaz et coût de l'ammoniac en mars 2026) et l'article de *Green Chemistry* (consommation d'électricité et rendement à petite échelle).
 - Suspension éventuelle du MACF sur les engrais : la presse évoquait en mars 2026 une possible suspension rétroactive ; vérifier ce qui s'applique réellement en 2026 et 2027, et son effet sur les prix belges.
