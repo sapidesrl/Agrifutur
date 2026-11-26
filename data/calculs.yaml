@@ -676,3 +676,109 @@ ratio_energie_mat_soja_colza:
   valeur: 2.286066
   unite: fois
   formule: (MJ/kg soja ÷ MAT soja) ÷ (MJ/kg colza ÷ MAT colza)
+diesel_routier_htva:
+  libelle: Diesel routier B7 HTVA (assujetti qui récupère la TVA)
+  valeur: 1.943223
+  bas: 1.429008
+  haut: 2.52619
+  unite: €/L
+  formule: Prix maximum TVAC ÷ (1 + TVA)
+utilitaire_diesel_eur_100km:
+  libelle: 'Utilitaire diesel : carburant aux 100 km, HTVA'
+  valeur: 15.545785
+  bas: 11.432066
+  haut: 20.209521
+  unite: €/100 km
+  formule: Consommation × prix HTVA
+utilitaire_diesel_eur_100km_tvac:
+  libelle: 'Utilitaire diesel : carburant aux 100 km, TVAC (agriculteur au régime
+    forfaitaire)'
+  valeur: 18.8104
+  bas: 13.8328
+  haut: 24.45352
+  unite: €/100 km
+  formule: Consommation × prix TVAC
+utilitaire_reseau_eur_100km:
+  libelle: 'Utilitaire électrique : électricité aux 100 km, recharge sur le réseau,
+    HTVA'
+  valeur: 9.5175
+  bas: 8.06
+  haut: 12.37275
+  unite: €/100 km
+  formule: Consommation à la prise × prix du réseau HTVA
+utilitaire_pv_eur_100km:
+  libelle: 'Utilitaire électrique : électricité aux 100 km, recharge sur le photovoltaïque'
+  valeur: 1.722222
+  unite: €/100 km
+  formule: Consommation à la prise × coût de production du kWh PV
+utilitaire_mix_eur_100km:
+  libelle: 'Utilitaire électrique : électricité aux 100 km, recharge mixte PV et réseau'
+  valeur: 5.619861
+  bas: 4.891111
+  haut: 7.047486
+  unite: €/100 km
+  formule: Consommation × (part PV × kWh PV + (1 − part PV) × kWh réseau)
+utilitaire_diesel_eur_an:
+  libelle: 'Utilitaire diesel : carburant par an, HTVA'
+  valeur: 2331.867769
+  bas: 1714.809917
+  haut: 3031.428099
+  unite: €/an
+  formule: Coût aux 100 km × km par an ÷ 100
+utilitaire_mix_eur_an:
+  libelle: 'Utilitaire électrique : électricité par an, recharge mixte'
+  valeur: 842.979167
+  bas: 733.666667
+  haut: 1057.122917
+  unite: €/an
+  formule: Coût aux 100 km × km par an ÷ 100
+utilitaire_economie_an:
+  libelle: 'Utilitaire électrique : économie d''énergie par an face au diesel (recharge
+    mixte)'
+  valeur: 1488.888602
+  bas: 981.143251
+  haut: 1974.305183
+  unite: €/an
+  formule: Carburant diesel − électricité, hors achat, entretien et assurance
+utilitaire_economie_an_reseau:
+  libelle: 'Utilitaire électrique : économie d''énergie par an, tout sur le réseau'
+  valeur: 904.242769
+  bas: 505.809917
+  haut: 1175.515599
+  unite: €/an
+  formule: (Diesel − réseau) aux 100 km × km par an ÷ 100
+utilitaire_litres_an:
+  libelle: 'Utilitaire diesel : litres consommés par an'
+  valeur: 1200.0
+  unite: L/an
+  formule: Consommation × km par an ÷ 100
+utilitaire_kwh_an:
+  libelle: 'Utilitaire électrique : électricité consommée par an'
+  valeur: 3750.0
+  unite: kWh/an
+  formule: Consommation à la prise × km par an ÷ 100
+utilitaire_surcout_rembourse:
+  libelle: 'Utilitaire électrique : surcoût d''achat que l''économie d''énergie rembourse
+    sur la durée de détention (recharge mixte)'
+  valeur: 8933.331612
+  bas: 5886.859504
+  haut: 11845.831095
+  unite: €
+  formule: Économie d'énergie par an × durée de détention, sans frais financiers,
+    entretien ni écart de revente
+utilitaire_prix_max_neuf:
+  libelle: Prix du diesel neuf équivalent jusqu'auquel l'électrique neuf se rembourse
+    par l'énergie
+  valeur: 25523.804604
+  bas: 16819.598583
+  haut: 33845.2317
+  unite: €
+  formule: Surcoût remboursé ÷ écart de prix en neuf
+utilitaire_prix_max_occasion:
+  libelle: Prix du diesel d'occasion équivalent jusqu'auquel l'électrique d'occasion
+    se rembourse par l'énergie
+  valeur: 59555.544077
+  bas: 39245.730028
+  haut: 78972.2073
+  unite: €
+  formule: Surcoût remboursé ÷ écart de prix en occasion de trois ans

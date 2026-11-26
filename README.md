@@ -65,5 +65,5 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## État
 
-- 8 fiches en brouillon : `traction/tracteur-diesel`, `traction/engins-de-cour`, `fertilisation/azote-synthese`, `energie/chauffage-mazout`, `energie/electricite-reseau`, `elevage/tank-a-lait`, `elevage/fourrages-recoltes`, `protection/herbicides`. Leurs sources ont été lues sur les pages ; les pages restées inaccessibles sont signalées dans chaque fiche.
-- 11 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.
+- 12 fiches en brouillon : `traction/tracteur-diesel`, `traction/automoteurs-recolte`, `traction/engins-de-cour`, `transport/vehicules-livraison`, `energie/electricite-reseau`, `energie/chauffage-mazout`, `energie/sechage-grains`, `elevage/tank-a-lait`, `elevage/fourrages-recoltes`, `elevage/concentres-importes`, `fertilisation/azote-synthese`, `protection/herbicides`. Leurs sources ont été lues sur les pages ; les pages restées inaccessibles sont signalées dans chaque fiche.
+- 7 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.

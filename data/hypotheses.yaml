@@ -1046,3 +1046,70 @@ herbe_mat:
   date: 2026-11-26
   source: https://www.cra.wallonie.be/uploads/2022/09/2022-brochureautonomieproteique-a4-web.pdf
   note: "Valeur prise dans la fourchette de l'herbe fraîche (12 à 22 % de la MS) donnée par le CRA-W ; les meilleurs ensilages d'herbe wallons dépassent 20 % (réseau Requasud), les plus faibles sont sous 10 %."
+
+# --- Transport : utilitaire de livraison -----------------------------------
+# Entrées proposées par la fiche transport/vehicules-livraison.md (26/11/2026).
+
+
+utilitaire_km_an:
+  libelle: Kilométrage annuel d'un utilitaire de livraison en vente directe
+  valeur: 15000
+  unite: km/an
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://orbi.uliege.be/bitstream/2268/198659/1/Couts%20cach%c3%a9s%20de%20la%20logistique%20et%20circuits%20courts%20-%20Winandy%20S.%202016.pdf
+  note: "Deux tournées de 150 km par semaine, 50 semaines par an. Repères : tournées de 40 km (un magasin) à 240 km (six magasins) pour 83 producteurs livrant la grande distribution en Hainaut (Van Den Henden 2014, cité par DiversiFerm, 2016) ; « rarement plus de 100 km par jour » en exploitation agricole (Réussir, 3 février 2026). Remplacer par le relevé du compteur."
+
+utilitaire_conso_diesel:
+  libelle: Consommation d'un fourgon compact diesel en tournée
+  valeur: 8
+  unite: L/100 km
+  statut: hypothèse
+  date: 2024-05-28
+  source: https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/auto/vergleich-vw-t7-vw-id-buzz
+  note: "ADAC Ecotest : 7,1 L/100 km pour un VW T7 Multivan 2.0 TDI (version transport de personnes, à vide, 28 mai 2024). Arrondi vers le haut pour un fourgon chargé, avec arrêts fréquents. Le relevé de la carte carburant remplace cette valeur."
+
+utilitaire_conso_elec:
+  libelle: Consommation d'un fourgon compact électrique, mesurée à la prise
+  valeur: 25
+  unite: kWh/100 km
+  statut: hypothèse
+  date: 2024-05-28
+  source: https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/auto/vergleich-vw-t7-vw-id-buzz
+  note: "ADAC Ecotest : 23,3 kWh/100 km pertes de charge comprises pour le VW ID. Buzz, même gabarit que le T7 (28 mai 2024). L'argus a relevé 18 kWh/100 km à l'ordinateur de bord d'un Ford E-Transit Custom (ville, route, voie express ; 21,3 kWh/100 km homologués ; 3 juillet 2024). Arrondi vers le haut pour la charge et l'hiver. Valeur à la prise : ne pas rediviser par le rendement de la chaîne électrique."
+
+utilitaire_part_recharge_pv:
+  libelle: Part de la recharge de l'utilitaire couverte par le photovoltaïque de la ferme
+  valeur: 0.5
+  unite: "%"
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "L'utilitaire roule le jour, quand les panneaux produisent : il ne se recharge au soleil que les jours sans tournée ou entre deux tournées. Le reste vient du réseau (recharge le soir ou la nuit). Proche de 0 si l'utilitaire roule tous les jours, plus haut avec une batterie stationnaire ou des tournées l'après-midi."
+
+utilitaire_duree_detention:
+  libelle: Durée de détention d'un utilitaire de livraison
+  valeur: 6
+  unite: ans
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Sert à calculer le surcoût d'achat que l'économie d'énergie rembourse. Remplacer par la durée réelle de détention prévue."
+
+utilitaire_ecart_prix_neuf:
+  libelle: Surcoût d'achat d'un utilitaire électrique neuf face au diesel équivalent (bas de fourchette)
+  valeur: 0.35
+  unite: "%"
+  statut: estimé
+  date: 2026-02-03
+  source: https://www.reussir.fr/bovins-viande/vehicule-utilitaire-electrique-les-cles-pour-trouver-les-bonnes-occasions
+  note: "Réussir (3 février 2026, prix français, constat sur les sites de vente en ligne) : 35 à 50 % plus cher neuf. Bas de fourchette retenu, favorable à l'électrique. Remplacer par l'écart entre deux devis belges."
+
+utilitaire_ecart_prix_occasion:
+  libelle: Écart de prix entre un utilitaire électrique et un diesel d'occasion de trois ans (haut de fourchette)
+  valeur: 0.15
+  unite: "%"
+  statut: estimé
+  date: 2026-02-03
+  source: https://www.reussir.fr/bovins-viande/vehicule-utilitaire-electrique-les-cles-pour-trouver-les-bonnes-occasions
+  note: "Réussir (3 février 2026, prix français) : l'électrique décote 20 à 25 % plus vite ; après trois ans, l'écart n'est plus que de 10 à 15 %. Haut de fourchette retenu, défavorable à l'électrique."
