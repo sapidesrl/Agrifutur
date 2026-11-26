@@ -199,25 +199,25 @@ plaquettes_prix:
   note: Relevé Valbiom, Wallonie, octobre 2026.
   scenario: true
   bas: 37.81
-  bas_note: "Octobre 2025, avant-crise (relevé Valbiom cité par la même source, lu par extrait seulement). Prix de février 2026 non trouvé (estimé)."
+  bas_note: "Octobre 2025, avant-crise (relevé Valbiom cité par la même source). Page Callmepower inaccessible le 26/11/2026, chiffres connus par extraits concordants ; prix de février 2026 non trouvé, valbiom.be injoignable."
 
 plaquettes_energie_map:
   libelle: Énergie d'un mètre cube apparent de plaquettes sèches
   valeur: 1000
   unite: kWh/MAP
-  statut: estimé
+  statut: sourcé
   date: 2025-06-01
   source: https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Poele%20chaudiere/installer-une-chaudiere-biomasse-pour-se-chauffer-2025.pdf
-  note: Équivalence Valbiom/SPW (10 MAP ≈ 1 000 L de mazout ≈ 10 000 kWh), lue par extrait seulement. Environ 850 à 1 000 kWh selon la densité et l'humidité. Remplace l'ancienne hypothèse de 800 kWh.
+  note: "Valbiom, Carnet n° 5 (juin 2025), p. 8 : 10 MAP de plaquettes à 20 % d'humidité ≈ 1 000 L de mazout ≈ 10 000 kWh. Le même carnet, p. 13, compte environ 115 MAP pour 10 000 L (≈ 870 kWh/MAP). Lu le 26/11/2026."
 
 chauffage_mazout_ferme:
   libelle: Mazout consommé par une ferme avec laiterie et trois habitations
   valeur: 8000
   unite: L/an
   statut: estimé
-  date: 2024-05-01
+  date: 2024-04-24
   source: "https://www.febhel.be/sites/default/files/2024-05/version-finale---article-pleinchamps---chaudieres-biomasse-dans-l'agriculture-belge-2-pages.pdf"
-  note: Exemple belge (FEBHEL, article paru dans Pleinchamp), lu par extrait seulement. À remplacer par la consommation de l'exploitation.
+  note: "FEBHEL, « Bois-énergie et agriculture belge, est-ce compatible ? », lu le 26/11/2026 : ferme laitière (province de Luxembourg) avec laiterie et 3 habitations. À remplacer par la consommation de l'exploitation."
 
 # --- Lait ---------------------------------------------------------------------
 
