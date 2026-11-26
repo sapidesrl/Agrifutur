@@ -68,24 +68,26 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 
 ## À vérifier
 
-- Prix de l'ammonitrate en Belgique sur facture (ici, prix français d'avril 2026). Les cotations françaises de novembre 2026 sont un peu plus hautes qu'en avril (relevés consultés par extraits seulement, voir `data/sources-collectees.md`).
-- Prix de l'ammonitrate en février 2026, pour remplacer le scénario bas à −30 %.
-- Durée de l'essai Diéguez et al. (« six ans » à confirmer pour les deux essais).
-- Plusieurs sources ne sont pas datées (World Economic Forum, Réussir, Université de Liège, Yale e360, Carnegie Science) : ajouter les dates.
+- Prix de l'ammonitrate en Belgique : le prix utilisé ici reste le prix français d'avril 2026. Un négociant en ligne affichait fin novembre 2026 l'ammonitrate 27 (CAN) autour de 445 €/t départ Gand (page non datée, consultée le 26/11/2026)[^agryco] ; à confirmer par une source belge indépendante ou une facture, puis reporter dans `data/hypotheses.yaml`.
+- Prix de l'ammonitrate en février 2026 : une cotation française existe (environ 500 €/t franco fin février 2026)[^reussir-fevrier] ; à reporter dans `data/hypotheses.yaml` pour remplacer le scénario bas à −30 %.
+- Pages non lues (accès bloqué) : World Economic Forum (toxicité de l'ammoniac), S&P Global (prix du gaz et coût de l'ammoniac en mars 2026) et l'article de *Green Chemistry* (consommation d'électricité et rendement à petite échelle).
+- Suspension éventuelle du MACF sur les engrais : la presse évoquait en mars 2026 une possible suspension rétroactive ; vérifier ce qui s'applique réellement en 2026 et 2027, et son effet sur les prix belges.
 - Quantité d'azote réellement fixée sur l'exploitation, selon la part de trèfle ou de luzerne.
 - Contraintes du Programme de gestion durable de l'azote (PGDA) en Wallonie pour l'épandage des effluents.
-- Effet réel du MACF sur les prix belges en 2026 et 2027.
 - Aides de la PAC pour les cultures protéagineuses en Wallonie.
+- Mise en service effective et production réelle de l'unité d'ammoniac vert au Kenya (la source de 2023 annonce la capacité prévue).
 
 ## Sources
 
-[^wef]: « From fuel to fertilizer, how green ammonia could help curb emissions », World Economic Forum. https://www.weforum.org/stories/nature-and-biodiversity/green-ammonia-climate-change-energy-transition/
-[^comparateur]: « Analyse engrais mai 2026 », Comparateur agricole. https://res.cloudinary.com/comparateuragricole/image/upload/v1777989677/strapi/Analyse_engrais_MAI_2026_a7cff53f79.pdf
-[^spglobal]: « European nitrogen market rallies on gas price hike, Iran conflicts », S&P Global, mars 2026. https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/030926-european-nitrogen-market-rallies-on-gas-price-hike-iran-conflicts
-[^reussir-avril]: « Prix des engrais : les achats des agriculteurs sous tension pour la prochaine campagne », Réussir, 2026. https://www.reussir.fr/grandes-cultures/prix-des-engrais-les-achats-des-agriculteurs-sous-tension-pour-la-prochaine-campagne
-[^reussir-macf]: « Marché des engrais : sous tension avec l'application de la taxe MACF au 1er janvier 2026 », Réussir. https://www.reussir.fr/ladepeche/marche-des-engrais-sous-tension-avec-flambee-des-prix-en-produits-azotes
-[^stilmant]: Stilmant et al., bilan azoté d'une prairie permanente pâturée par de jeunes bovins (synthèse de six années d'essai), Rencontres Recherches Ruminants, 2004. https://journees3r.fr/wp-content/uploads/2006/02/2004_paturage_01_Stilmant-1f6.pdf
-[^dieguez]: Diéguez et al., essai de fertilisation azotée sur prairie pâturée, Université de Liège. https://orbi.uliege.be/bitstream/2268/148127/1/dieguez%5b1%5d.pdf
-[^yale]: « Farm in Kenya First to Produce Fossil-Free Fertilizer On Site », Yale Environment 360. https://e360.yale.edu/digest/small-green-ammonia-plant-farm-kenya
-[^carnegie]: « Green fertilizers could revolutionize agriculture and increase food security », Carnegie Science. https://carnegiescience.edu/green-fertilizers-could-revolutionize-agriculture-and-increase-food-security
-[^rsc]: « Optimal design of decentralized ammonia production via electric Haber–Bosch systems », Green Chemistry, 2026. https://pubs.rsc.org/en/content/articlehtml/2026/gc/d5gc06782k
+[^wef]: « From fuel to fertilizer, how green ammonia could help curb emissions », World Economic Forum, 2023 (année tirée de l'adresse d'origine, page non lue). https://www.weforum.org/stories/nature-and-biodiversity/green-ammonia-climate-change-energy-transition/
+[^comparateur]: « Analyse du marché des engrais – Avril 2026 », Comparateur agricole, 5 mai 2026. https://res.cloudinary.com/comparateuragricole/image/upload/v1777989677/strapi/Analyse_engrais_MAI_2026_a7cff53f79.pdf
+[^spglobal]: « European nitrogen market rallies on gas price hike, Iran conflicts », S&P Global, 9 mars 2026 (page non lue). https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/030926-european-nitrogen-market-rallies-on-gas-price-hike-iran-conflicts
+[^reussir-avril]: V. Charpenet, « Prix des engrais : les achats des agriculteurs sous tension pour la prochaine campagne », Réussir Grandes cultures, 1er juin 2026. https://www.reussir.fr/grandes-cultures/prix-des-engrais-les-achats-des-agriculteurs-sous-tension-pour-la-prochaine-campagne
+[^reussir-macf]: M. Descamps, « Marché des engrais : sous tension avec l'application de la taxe MACF au 1er janvier 2026 », La Dépêche (Réussir), 8 décembre 2025. https://www.reussir.fr/ladepeche/marche-des-engrais-sous-tension-avec-flambee-des-prix-en-produits-azotes
+[^stilmant]: D. Stilmant, V. Decruyenaere, C. Belge, C. Clément, P. Limbourg (CRA-W, Libramont), « Bilan azoté au sein d'une prairie permanente pâturée par des jeunes bovins de type viande : synthèse de 6 années de suivi », Rencontres Recherches Ruminants, 11, 2004. https://journees3r.fr/wp-content/uploads/2006/02/2004_paturage_01_Stilmant-1f6.pdf
+[^dieguez]: F. Diéguez, J.-L. Hornick, V. De Behr, L. Istasse, I. Dufrasne (Université de Liège), « Incidences phytotechniques et zootechniques d'une réduction ou d'une suppression de la fertilisation azotée sur des prairies pâturées par des vaches laitières », Animal Research, 50, 299-314, 2001. https://orbi.uliege.be/bitstream/2268/148127/1/dieguez%5b1%5d.pdf
+[^reussir-fevrier]: D. Jouen, « Marché des engrais : la tension accrue au Moyen-Orient soutient les engrais azotés », La Dépêche (Réussir), 9 mars 2026. https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes
+[^agryco]: « Les tendances des marchés » (page engrais), Agryco Belgique, non datée, consultée le 26 novembre 2026. https://www.agryco.be/fr_BE/engrais/pc975
+[^yale]: « Farm in Kenya First to Produce Fossil-Free Fertilizer On Site », Yale Environment 360, 11 octobre 2023. https://e360.yale.edu/digest/small-green-ammonia-plant-farm-kenya
+[^carnegie]: « Green fertilizers could revolutionize agriculture and increase food security », Carnegie Science, 16 mai 2024 (étude de L. Rosa et D. Tonelli, *Nature Food*). https://carnegiescience.edu/green-fertilizers-could-revolutionize-agriculture-and-increase-food-security
+[^rsc]: L. Rosa et D. Tonelli, « Optimal design of decentralized ammonia production via electric Haber–Bosch systems », Green Chemistry, 28, 2026 (page non lue, références tirées du moteur de recherche). https://pubs.rsc.org/en/content/articlehtml/2026/gc/d5gc06782k
