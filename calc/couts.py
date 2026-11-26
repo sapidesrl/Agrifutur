@@ -162,6 +162,25 @@ CALCULS = [
     ("valeur_gasoil_economise", "Valeur de ce gasoil", "€/ha/an",
      "Litres économisés × prix du gasoil",
      lambda h, c: c["gasoil_economise_semis_direct"] * c["gasoil_agricole_htva"]),
+    # Fourrages récoltés
+    ("gasoil_eur_foin_ha", "Foin récolté au champ : gasoil par hectare", "€/ha",
+     "Litres par hectare × prix du gasoil",
+     lambda h, c: h["gasoil_foin_ha"] * c["gasoil_agricole_htva"]),
+    ("gasoil_eur_enrubannage_ha", "Enrubannage : gasoil par hectare", "€/ha",
+     "Litres par hectare × prix du gasoil",
+     lambda h, c: h["gasoil_enrubannage_ha"] * c["gasoil_agricole_htva"]),
+    ("gasoil_eur_ensilage_herbe_ha", "Ensilage d'herbe : gasoil par hectare", "€/ha",
+     "Litres par hectare × prix du gasoil",
+     lambda h, c: h["gasoil_ensilage_herbe_ha"] * c["gasoil_agricole_htva"]),
+    ("gasoil_eur_mais_ensilage_ha", "Maïs ensilage : gasoil par hectare", "€/ha",
+     "Litres par hectare × prix du gasoil",
+     lambda h, c: h["gasoil_mais_ensilage_ha"] * c["gasoil_agricole_htva"]),
+    ("sechage_grange_reseau_tms", "Séchoir en grange : électricité du réseau par tonne de MS", "€/t MS",
+     "kWh par tonne × prix du kWh réseau",
+     lambda h, c: h["sechage_grange_kwh_tms"] * h["electricite_reseau_htva"]),
+    ("sechage_grange_pv_tms", "Séchoir en grange : électricité photovoltaïque par tonne de MS", "€/t MS",
+     "kWh par tonne × coût de production du kWh PV",
+     lambda h, c: h["sechage_grange_kwh_tms"] * c["pv_kwh_production"]),
 ]
 
 

@@ -223,3 +223,43 @@ valeur_gasoil_economise:
   haut: 43.199455
   unite: €/ha/an
   formule: Litres économisés × prix du gasoil
+gasoil_eur_foin_ha:
+  libelle: 'Foin récolté au champ : gasoil par hectare'
+  valeur: 86.753058
+  bas: 48.062149
+  haut: 113.212364
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_enrubannage_ha:
+  libelle: 'Enrubannage : gasoil par hectare'
+  valeur: 139.261488
+  bas: 77.152397
+  haut: 181.735636
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_ensilage_herbe_ha:
+  libelle: 'Ensilage d''herbe : gasoil par hectare'
+  valeur: 205.467769
+  bas: 113.831405
+  haut: 268.134545
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_mais_ensilage_ha:
+  libelle: 'Maïs ensilage : gasoil par hectare'
+  valeur: 531.933223
+  bas: 294.69686
+  haut: 694.170545
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+sechage_grange_reseau_tms:
+  libelle: 'Séchoir en grange : électricité du réseau par tonne de MS'
+  valeur: 36.9279
+  bas: 31.2728
+  haut: 48.00627
+  unite: €/t MS
+  formule: kWh par tonne × prix du kWh réseau
+sechage_grange_pv_tms:
+  libelle: 'Séchoir en grange : électricité photovoltaïque par tonne de MS'
+  valeur: 5.388889
+  unite: €/t MS
+  formule: kWh par tonne × coût de production du kWh PV

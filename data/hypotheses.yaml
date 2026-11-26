@@ -421,3 +421,59 @@ gasoil_semis_direct:
   date: 2009-06-02
   source: https://www.terre-net.fr/observatoire-technique-culturale/appros-phytosanitaire/article/non-labour-comparatif-economique-semis-direct-travail-simplifie-culture-216-55967.html
   note: "Données françaises : essai de longue durée Arvalis (Boigneville), moyennes 1998-2008, page mise à jour le 12/04/2023."
+
+# --- Fourrages récoltés (fiche elevage/fourrages-recoltes) ------------------
+
+gasoil_foin_ha:
+  libelle: Gasoil par hectare de foin récolté au champ (récolte et distribution)
+  valeur: 76
+  unite: L/ha
+  statut: sourcé
+  date: 2014-12-01
+  source: https://journees3r.fr/wp-content/uploads/2015/01/Texte_4_affiche_Environnement_J-Devun-f12.pdf
+  note: "Données françaises : Devun et al. (Idele, INRA), Rencontres Recherches Ruminants 2014, n° 21. Coefficient d'un modèle ajusté sur 171 exploitations bovin viande du bassin charolais ; 1 ha = 1 ha de 1re coupe ou 2 ha de 2e coupe. Comprend la récolte et la distribution."
+
+gasoil_enrubannage_ha:
+  libelle: Gasoil par hectare d'herbe enrubannée (récolte et distribution)
+  valeur: 122
+  unite: L/ha
+  statut: sourcé
+  date: 2014-12-01
+  source: https://journees3r.fr/wp-content/uploads/2015/01/Texte_4_affiche_Environnement_J-Devun-f12.pdf
+  note: "Données françaises, même modèle que gasoil_foin_ha."
+
+gasoil_ensilage_herbe_ha:
+  libelle: Gasoil par hectare d'ensilage d'herbe (récolte et distribution)
+  valeur: 180
+  unite: L/ha
+  statut: sourcé
+  date: 2014-12-01
+  source: https://journees3r.fr/wp-content/uploads/2015/01/Texte_4_affiche_Environnement_J-Devun-f12.pdf
+  note: "Données françaises, même modèle que gasoil_foin_ha."
+
+gasoil_mais_ensilage_ha:
+  libelle: Gasoil par hectare de maïs ensilage (culture, récolte et distribution)
+  valeur: 466
+  unite: L/ha
+  statut: sourcé
+  date: 2014-12-01
+  source: https://journees3r.fr/wp-content/uploads/2015/01/Texte_4_affiche_Environnement_J-Devun-f12.pdf
+  note: "Données françaises, même modèle que gasoil_foin_ha. Le coefficient du maïs couvre toute la culture (travail du sol, semis, récolte, distribution)."
+
+sechage_grange_kwh_tms:
+  libelle: Électricité consommée par un séchoir en grange (foin en vrac)
+  valeur: 97
+  unite: kWh/t MS
+  statut: sourcé
+  date: 2011-09-01
+  source: https://solagro.org/medias/publications/f16_utilisationrationnellesechagefourrages.pdf
+  note: "Données françaises : enquête ADEME, Coop de France, Arvalis et Solagro, rapport de septembre 2011, 20 répondants. Moyenne de 97 kWh/t MS, de 30 à 230 kWh/t MS selon la conduite du séchoir. Séchoirs avec capteur solaire sous toiture."
+
+collecte_plastique_agricole_t:
+  libelle: Coût moyen payé par l'agriculteur pour la collecte des plastiques agricoles en Wallonie
+  valeur: 184.9
+  unite: €/t
+  statut: sourcé
+  date: 2026-07-15
+  source: https://environnement.wallonie.be/files/Publications/Vers-un-systeme-de-gestion-des-dechets-des-plastiques-agricoles.pdf
+  note: "Recydata pour le SPW, étude du 15 juillet 2026 : tarif moyen de collecte des intercommunales wallonnes depuis la fin des subsides régionaux en janvier 2025. Poids brut, terre comprise."
