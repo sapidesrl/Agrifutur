@@ -1746,3 +1746,72 @@ soutien_proteines_eur_ha:
   date: 2025-11-21
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
   note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Récolte après le 15 juin."
+
+# --- Semences -----------------------------------------------------------------
+# Proposition de la fiche semences/semences-industrielles.md (26/11/2026).
+# ble_prix : même entrée que la proposition de la fiche transformation (redac/transformation/hypotheses.yaml),
+# vérifiée sur la même page le 26/11/2026. Ne l'ajouter qu'une fois.
+
+
+semence_froment_dose:
+  libelle: Froment d'hiver, dose de semis
+  valeur: 150
+  unite: kg/ha
+  statut: estimé
+  date: 2016-09-01
+  source: https://orbi.uliege.be/bitstream/2268/206243/1/1_Implantation_LB_09_16.pdf
+  note: "Livre Blanc Céréales (Gembloux), septembre 2016 : 200 à 300 grains/m² en octobre, soit 100 à 170 kg/ha selon le poids de 1 000 grains ; plus en semis tardif. Le bilan AssoBIO du CRA-W (octobre 2025) compte aussi 150 kg/ha de froment. Valeur retenue : haut de la fourchette d'octobre."
+
+semence_froment_certifiee_prix:
+  libelle: Semence certifiée de froment, traitée
+  valeur: 0.625
+  unite: €/kg
+  statut: estimé
+  date: 2021-07-13
+  source: https://www.reussir.fr/articles/semences-de-ferme-les-trieurs-facon-du-staff-integrent-semae-avec-leurs-conditions
+  note: "Prix français ancien : 55 à 70 €/100 kg selon le traitement, Hauts-de-France (Staff, syndicat des trieurs à façon, Réussir, 13/07/2021) ; milieu de la fourchette. Aucun prix belge trouvé. En bio, le CRA-W compte 1,20 €/kg pour du froment fourrager du commerce (octobre 2025). À remplacer par un prix belge sur facture."
+
+triage_traitement_facon_froment:
+  libelle: Triage à façon, traitement et ensachage de la semence de ferme de froment
+  valeur: 0.12
+  unite: €/kg
+  statut: estimé
+  date: 2019-06-20
+  source: https://www.terre-net.fr/semences/article/149099/les-trieurs-a-facon-defendent-leurs-atouts-pour-la-transition-agricole
+  note: "Prix français : 12 €/100 kg de prestation (travail du grain, traitement, ensachage), Staff, Terre-net, 20/06/2019. Repère belge indirect : le bilan AssoBIO du CRA-W (octobre 2025) compte 0,45 €/kg pour une semence de ferme de froment bio triée par un trieur agréé, redevance comprise, pour un grain valorisé 300 €/t, soit environ 0,10 €/kg de triage sans traitement chimique. À remplacer par un tarif de trieur wallon."
+
+royalties_semence_ferme_cereales:
+  libelle: Rémunération de l'obtenteur pour la semence de ferme (froment, orge, seigle, avoine)
+  valeur: 0.048
+  unite: €/kg
+  statut: sourcé
+  date: 2025-10-01
+  source: https://www.cra.wallonie.be/uploads/2026/07/annexe7-assobio-couts-.pdf
+  note: "Belgique, campagne 2025-2026 : 4,80 €/100 kg pour froment, orge, seigle et avoine ; 8,01 € pour le triticale ; 9,60 € pour l'épeautre (CRA-W, bilan AssoBIO, annexe 7, données d'octobre 2025). Compté dans le prix du triage chez un trieur agréé par le SPW, qui la facture pour Seed@bel ; sinon l'agriculteur la verse lui-même. Due seulement pour une variété protégée."
+
+semence_cereales_energie_mj_kg:
+  libelle: Énergie fossile indirecte d'un kg de semence de céréale
+  valeur: 3.5
+  unite: MJ/kg
+  statut: sourcé
+  date: 2022-05-24
+  source: https://www.inrae.fr/sites/default/files/4_grandes_cultures-cc.pdf
+  note: "Coefficients GESTIM 2019, repris par INRAE (Colnenne-David et al., séminaire du 24/05/2022) : 3 à 4 MJ/kg pour les semences d'avoine, de blé et de triticale (8,5 MJ/kg colza, 2,6 MJ/kg pois ; ammonitrate 15,9 MJ/kg). Milieu de la fourchette. Coefficient français."
+
+tri_froment_wallonie_kg:
+  libelle: Froment trié à façon en Wallonie (semences fermières)
+  valeur: 7831826
+  unite: kg/an
+  statut: sourcé
+  date: 2024-12-31
+  source: https://agriculture.wallonie.be/files/20182/42099/Evolution%20des%20quantit%c3%a9s%20de%20semences%20fermi%c3%a8res%20tri%c3%a9es%20en%20Wallonie.pdf
+  note: "SPW Agriculture, « Évolution des quantités de graines triées en Wallonie (kg/an) », année 2024. De 6,1 millions de kg (2021) à 9,0 millions (2022) entre 2020 et 2024. Ne compte pas le grain trié par l'agriculteur lui-même."
+
+surface_froment_wallonie_ha:
+  libelle: Surface de froment d'hiver en Wallonie
+  valeur: 111400
+  unite: ha
+  statut: sourcé
+  date: 2024-12-31
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne, fiche « Froment d'hiver », année 2024 (mise à jour du 08/12/2025)."

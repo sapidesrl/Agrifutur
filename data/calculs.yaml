@@ -1178,3 +1178,54 @@ haie_eco_regime_eur_km:
   valeur: 450.0
   unite: €/km/an
   formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
+semence_ferme_froment_eur_kg:
+  libelle: 'Semence de ferme de froment : coût du kg'
+  valeur: 0.408
+  bas: 0.358
+  haut: 0.48
+  unite: €/kg
+  formule: Prix du grain ÷ 1 000 + triage et traitement à façon + rémunération de
+    l'obtenteur
+semence_ferme_froment_eur_ha:
+  libelle: 'Semence de ferme de froment : coût par hectare'
+  valeur: 61.2
+  bas: 53.7
+  haut: 72.0
+  unite: €/ha
+  formule: Dose de semis × coût du kg de semence de ferme
+semence_certifiee_froment_eur_ha:
+  libelle: 'Semence certifiée de froment : coût par hectare'
+  valeur: 93.75
+  unite: €/ha
+  formule: Dose de semis × prix de la semence certifiée
+semence_ferme_froment_economie_ha:
+  libelle: 'Semence de ferme au lieu de semence certifiée (froment) : économie par
+    hectare'
+  valeur: 32.55
+  bas: 40.05
+  haut: 21.75
+  unite: €/ha
+  formule: Coût de la semence certifiée − coût de la semence de ferme
+semence_ferme_froment_economie_part:
+  libelle: 'Semence de ferme de froment : économie en part du coût de la semence certifiée'
+  valeur: 0.3472
+  bas: 0.4272
+  haut: 0.232
+  unite: '%'
+  formule: Économie ÷ coût de la semence certifiée
+semence_froment_energie_kwh_ha:
+  libelle: 'Semence de froment : énergie fossile indirecte par hectare'
+  valeur: 145.833333
+  unite: kWh/ha
+  formule: Dose de semis × énergie par kg ÷ 3,6
+semence_froment_eq_gasoil_l_ha:
+  libelle: 'Semence de froment : énergie fossile indirecte, en litres de gasoil'
+  valeur: 14.583333
+  unite: L/ha
+  formule: Énergie par hectare ÷ énergie d'un litre de gasoil
+froment_semence_ferme_part_surface:
+  libelle: 'Wallonie : part de la surface de froment semée avec du grain trié à façon
+    (ordre de grandeur)'
+  valeur: 0.468691
+  unite: '%'
+  formule: Froment trié à façon ÷ dose de semis ÷ surface de froment
