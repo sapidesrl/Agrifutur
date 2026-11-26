@@ -1608,3 +1608,141 @@ cendres_bois_k2o:
   date: 2005-12-01
   source: https://www.bioenergie-promotion.fr/wp-content/uploads/2012/03/2-analyses_moyennes_cendres.pdf
   note: "Source française (ADEME/Solagro/Aquasol, 2005) : 32,5 g/kg. Le tableau dit « potassium total » et les graphiques « K2O » : forme à confirmer. Les mêmes cendres contiennent environ 328 g/kg de calcium et ont un pH de 12,8."
+
+# --- Fongicides et insecticides (fiche protection/fongicides-insecticides) ---------
+# Propositions de la fiche fongicides-insecticides, 26/11/2026. À ajouter à data/hypotheses.yaml.
+
+phyto_froment_eur_ha:
+  libelle: Produits phytopharmaceutiques achetés en froment d'hiver, Wallonie, 2024
+  valeur: 266
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne (SPW, DAEA), fiche froment d'hiver, mise à jour du 8/12/2025, d'après la comptabilité des exploitations. Tous produits confondus (herbicides, fongicides, insecticides, régulateurs) : 44 % des charges opérationnelles, +6 % par rapport à 2023. Prix d'avant la crise de 2026."
+
+phyto_pdt_eur_ha:
+  libelle: Produits phytopharmaceutiques achetés en pomme de terre de conservation, Wallonie, 2024
+  valeur: 986
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_8.html
+  note: "État de l'agriculture wallonne (SPW, DAEA), fiche pomme de terre. Année humide : moins de 500 €/ha les années favorables, plus de 900 €/ha les années humides (2021, 2024). Tous produits confondus."
+
+fongicides_froment_protection_complete:
+  libelle: Coût d'une protection fongicide complète du froment (produits et passages)
+  valeur: 190
+  unite: €/ha
+  statut: sourcé
+  date: 2026-09-10
+  source: https://livre-blanc-cereales.be/medias/2026/10/II.A-Choix-varietal-Froment-couleur.pdf
+  note: "Livre Blanc Céréales (CePiCOP, CRA-W, CARAH, CPL-Végémar, Gembloux Agro-Bio Tech), septembre 2026, chapitre II.A, tableau 6 : coût retenu pour comparer les conduites. Le traitement unique est compté à 110 €/ha."
+
+fongicides_froment_traitement_unique:
+  libelle: Coût d'un traitement fongicide unique du froment (produit et passage)
+  valeur: 110
+  unite: €/ha
+  statut: sourcé
+  date: 2026-09-10
+  source: https://livre-blanc-cereales.be/medias/2026/10/II.A-Choix-varietal-Froment-couleur.pdf
+  note: "Livre Blanc Céréales, septembre 2026, chapitre II.A, tableau 6."
+
+prothioconazole_energie_mj_kg:
+  libelle: Énergie de fabrication d'un kg de prothioconazole (matière active)
+  valeur: 475
+  unite: MJ/kg
+  statut: sourcé
+  date: 2026-11-23
+  source: https://sitem.herts.ac.uk/aeru/ppdb/en/Reports/559.htm
+  note: "Pesticide Properties DataBase (université du Hertfordshire, fiche mise à jour le 23/11/2026), qui cite Audsley et al. (2009) : 475 MJ/kg, environ 32,8 kg CO2e. Même ordre de grandeur pour les autres fongicides et insecticides de la base : 442 MJ/kg (cymoxanil), 529 (lambda-cyhalothrine), 551 (tébuconazole), 594 (fluazinam), 615 (azoxystrobine), 280 (mancozèbe, retiré)."
+
+prothioconazole_dose_kg_ha:
+  libelle: Prothioconazole apporté par un traitement de froment (Proline à 0,8 L/ha)
+  valeur: 0.2
+  unite: kg/ha
+  statut: sourcé
+  date: 2025-02-28
+  source: https://livre-blanc-cereales.be/wp-content/uploads/2025/04/II.4.-Maladies.pdf
+  note: "Livre Blanc Céréales, février 2025, chapitre « Lutte intégrée contre les maladies », tableau 7 : 200 g/ha de prothioconazole. Les produits du marché apportent 120 à 200 g/ha de cette substance."
+
+mildiou_traitements_sensible:
+  libelle: Traitements contre le mildiou conseillés pour une variété de pomme de terre sensible, saison 2025
+  valeur: 12
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda (ex-PCA), « Terugblik aardappelziektebestrijding 2025 », Boerenbond, 5/11/2025 : 11 à 13 pulvérisations conseillées selon les dates de plantation et de récolte, année à faible pression (13 générations de mildiou contre 19 en 2024). On retient le milieu. Le CRA-W donne 8 à 20 traitements par an en Wallonie."
+
+mildiou_traitements_resistant:
+  libelle: Traitements contre le mildiou nécessaires pour une variété porteuse de gènes de résistance, saison 2025
+  valeur: 2
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda 2025 : 1 à 2 pulvérisations pour Alanis, Beyonce ou Invictus. On retient le haut de la fourchette. En 2024 (forte pression), ces variétés ont reçu moitié moins de traitements que les sensibles."
+
+mildiou_traitements_evites_avertissement:
+  libelle: Traitements contre le mildiou évités en suivant les avertissements plutôt qu'un traitement hebdomadaire, saison 2025
+  valeur: 4
+  unite: traitements
+  statut: sourcé
+  date: 2025-11-05
+  source: https://www.boerenbond.be/node/19693
+  note: "Viaverda 2025 : 4 à 5 pulvérisations économisées par rapport à un traitement chaque semaine (calendrier). On retient le bas de la fourchette."
+
+maec_parcelle_amenagee_eur_ha:
+  libelle: Aide MAEC « Parcelle aménagée » (MC7), Wallonie, à partir de 2025
+  valeur: 1800
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-parcelles-amenagees---mc7.html
+  note: "Portail de l'agriculture wallonne (SPW), page modifiée le 17/04/2026. Engagement de 5 ans, avis d'expert obligatoire, parcelles de 0,02 à 1,5 ha, sans engrais ni produits phytopharmaceutiques ; MB5, MC7 et MB12 ensemble limitées à 25 % des terres arables."
+
+marge_brute_froment_moyenne:
+  libelle: Marge brute moyenne du froment d'hiver en Wallonie (produit principal, hors travaux par tiers), moyenne 2014-2023
+  valeur: 1157
+  unite: €/ha
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
+  note: "État de l'agriculture wallonne, fiche froment d'hiver : « environ 1 157 €/ha » sur les dix dernières années ; 738 €/ha en 2024."
+
+eco_regime_maillage_eur_he:
+  libelle: "Éco-régime « Maillage écologique » : montant prévu par hectare environnemental (HE), campagnes 2026-2027"
+  valeur: 450
+  unite: €/HE
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023 et 2024. Total plafonné à 40 % de la SAU."
+
+eco_regime_haie_he_m:
+  libelle: Coefficient de l'éco-régime « Maillage écologique » pour un mètre de haie
+  valeur: 0.001
+  unite: HE/m
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page : haies et arbres alignés, coefficient 0,001 (0,45 € par mètre sans majoration). Pas de produit phytopharmaceutique à moins d'un mètre du pied de la haie. Bande bordure de champ : 675 € par hectare ; jachère mellifère : 900 € par hectare."
+
+ri_eur_ha:
+  libelle: "Éco-régime « Réduction d'intrants » : montant prévu par hectare"
+  valeur: 80
+  unite: €/ha
+  statut: sourcé
+  date: 2026-07-03
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024. Engagement annuel par parcelle d'au moins 1 ha, non cumulable avec le bio."
+
+soutien_proteines_eur_ha:
+  libelle: Soutien couplé aux cultures de protéines végétales, montant prévu
+  valeur: 375
+  unite: €/ha
+  statut: sourcé
+  date: 2025-11-21
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Récolte après le 15 juin."

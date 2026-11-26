@@ -1115,3 +1115,66 @@ kcl_evite_t_cendres:
   valeur: 54.166667
   unite: kg
   formule: kg K2O des cendres ÷ teneur en K2O du KCl
+fongicide_energie_kwh_ha:
+  libelle: Énergie de fabrication du prothioconazole d'un traitement de froment
+  valeur: 26.388889
+  unite: kWh/ha
+  formule: Énergie de fabrication (MJ/kg) × dose (kg/ha) ÷ 3,6
+fongicide_eq_gasoil_l_ha:
+  libelle: Énergie de fabrication du prothioconazole d'un traitement, en litres de
+    gasoil
+  valeur: 2.638889
+  unite: L/ha
+  formule: Énergie de fabrication ÷ énergie d'un litre de gasoil
+froment_economie_traitement_unique:
+  libelle: 'Froment : dépense évitée en passant d''une protection complète à un traitement
+    unique'
+  valeur: 80
+  unite: €/ha
+  formule: Coût de la protection complète − coût du traitement unique
+mildiou_passages_evites:
+  libelle: 'Pomme de terre : traitements anti-mildiou évités avec une variété résistante'
+  valeur: 10
+  unite: traitements
+  formule: Traitements d'une variété sensible − traitements d'une variété résistante
+mildiou_passages_evites_eur_ha:
+  libelle: 'Pomme de terre : coût des passages de pulvérisateur évités avec une variété
+    résistante (hors produit)'
+  valeur: 170
+  unite: €/ha
+  formule: Traitements évités × coût d'un passage de pulvérisateur
+mildiou_gasoil_sensible_l_ha:
+  libelle: 'Pomme de terre : gasoil des traitements anti-mildiou d''une variété sensible'
+  valeur: 9.36
+  unite: L/ha
+  formule: Traitements d'une variété sensible × gasoil d'un passage de pulvérisateur
+mildiou_gasoil_evite_l_ha:
+  libelle: 'Pomme de terre : gasoil évité avec une variété résistante'
+  valeur: 7.8
+  unite: L/ha
+  formule: Traitements évités × gasoil d'un passage de pulvérisateur
+mildiou_gasoil_evite_eur_ha:
+  libelle: 'Pomme de terre : valeur du gasoil évité avec une variété résistante'
+  valeur: 8.903603
+  bas: 4.932694
+  haut: 11.619164
+  unite: €/ha
+  formule: Gasoil évité × prix du gasoil agricole HTVA
+avertissement_passages_evites_eur_ha:
+  libelle: 'Pomme de terre : coût des passages évités en suivant les avertissements
+    mildiou (hors produit)'
+  valeur: 68
+  unite: €/ha
+  formule: Traitements évités × coût d'un passage de pulvérisateur
+parcelle_amenagee_ecart_marge_froment:
+  libelle: Aide « parcelle aménagée » moins la marge brute moyenne du froment qu'elle
+    remplace
+  valeur: 643
+  unite: €/ha/an
+  formule: Aide MC7 − marge brute moyenne du froment
+haie_eco_regime_eur_km:
+  libelle: 'Éco-régime « Maillage écologique » : aide annuelle pour un kilomètre de
+    haie'
+  valeur: 450.0
+  unite: €/km/an
+  formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
