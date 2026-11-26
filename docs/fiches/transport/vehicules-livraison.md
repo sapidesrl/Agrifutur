@@ -5,18 +5,18 @@ domaine: transport
 dependance_fossile: gasoil
 alternatives: [Utilitaire électrique, tournées groupées, vélo-cargo en ville]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
 # Utilitaire diesel de livraison
 
-!!! warning "Sources à relire"
+!!! warning "Limites des sources"
     Les sources ont été lues sur la page d'origine le 26 novembre 2026. Aucun tarif belge HTVA d'un même fourgon en diesel et en électrique n'a pu être lu : l'écart de prix d'achat vient d'un article français. Les consommations viennent d'essais allemands et français. Le texte du Code de la TVA sur la déduction pour les camionnettes n'a pas pu être lu : la règle vient d'un loueur belge.
 
 ## En bref
 
-En vente directe, la camionnette diesel porte les produits de la ferme vers les magasins, les points de dépôt, les marchés et les clients. Elle brûle environ {{ v('utilitaire_litres_an', 0) }} de diesel routier pour {{ v('utilitaire_km_an') }} (hypothèses), soit {{ v('utilitaire_diesel_eur_an') }} HTVA au prix maximum officiel de novembre 2026 ({{ fourchette('utilitaire_diesel_eur_an') }} selon les scénarios). Le même trajet en utilitaire électrique, rechargé pour moitié sur les panneaux de la ferme, coûte {{ v('utilitaire_mix_eur_an') }} d'électricité. L'électrique reste moins cher au kilomètre même au prix d'avant-crise, mais il coûte plus cher à l'achat : il est rentable aujourd'hui en occasion récente ou avec beaucoup de kilomètres (vague 1). Grouper les tournées entre producteurs réduit les kilomètres eux-mêmes, mais demande une organisation collective (vague 2). En ville, le vélo-cargo assure le dernier kilomètre depuis un point de dépôt, là où un service de livraison à vélo tient économiquement (vague 2).
+En vente directe, la camionnette diesel porte les produits de la ferme vers les magasins, les points de dépôt, les marchés et les clients : environ {{ v('utilitaire_litres_an', 0) }} de diesel routier pour {{ v('utilitaire_km_an') }} (hypothèses), soit {{ v('utilitaire_diesel_eur_an') }} HTVA au prix maximum officiel de novembre 2026 ({{ fourchette('utilitaire_diesel_eur_an') }} selon les scénarios). Le même trajet en utilitaire électrique, rechargé pour moitié sur les panneaux de la ferme (hypothèse), coûte {{ v('utilitaire_mix_eur_an') }} d'électricité. L'électrique reste moins cher au kilomètre dans tous les scénarios, même rechargé entièrement sur le réseau, mais il coûte plus cher à l'achat : il est rentable aujourd'hui en occasion récente, et en neuf seulement avec un fourgon bon marché, beaucoup de kilomètres ou une aide (vague 1). Grouper les tournées entre producteurs réduit les kilomètres eux-mêmes, mais demande une organisation collective (vague 2). En ville, le vélo-cargo assure le dernier kilomètre depuis un point de dépôt, là où un service de livraison à vélo tient économiquement (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -68,7 +68,7 @@ Les fourgons compacts électriques existent chez la plupart des constructeurs, a
 
 La consommation électrique retenue s'appuie sur l'ADAC, qui a mesuré 23,3 kWh/100 km pertes de charge comprises pour un VW ID. Buzz, du même gabarit que le T7 diesel[^adac]. L'argus a relevé 18 kWh/100 km à l'ordinateur de bord d'un E-Transit Custom, sur un parcours mêlant ville, route et voie express[^argus].
 
-Contrairement au tracteur électrique, l'utilitaire électrique est moins cher au kilomètre que le diesel même rechargé entièrement sur le réseau, dans tous les scénarios : l'accise du diesel routier pèse lourd. Sur {{ v('utilitaire_km_an') }}, l'économie d'énergie atteint {{ v('utilitaire_economie_an') }} avec la recharge mixte ({{ fourchette('utilitaire_economie_an') }} selon les scénarios), et {{ v('utilitaire_economie_an_reseau') }} tout sur le réseau ({{ fourchette('utilitaire_economie_an_reseau') }}).
+Contrairement au [tracteur électrique](../traction/tracteur-diesel.md#2-tracteur-electrique-compact-vague-2), l'utilitaire électrique est moins cher au kilomètre que le diesel même rechargé entièrement sur le réseau, dans tous les scénarios : l'accise du diesel routier pèse lourd. Sur {{ v('utilitaire_km_an') }}, l'économie d'énergie atteint {{ v('utilitaire_economie_an') }} avec la recharge mixte ({{ fourchette('utilitaire_economie_an') }} selon les scénarios), et {{ v('utilitaire_economie_an_reseau') }} tout sur le réseau ({{ fourchette('utilitaire_economie_an_reseau') }}).
 
 **La recharge sur les panneaux est limitée par l'horaire.** L'utilitaire roule en journée, quand les panneaux produisent. Il ne se recharge au soleil que les jours sans tournée ou entre deux tournées. Ce projet suppose que {{ v('utilitaire_part_recharge_pv', 0) }} de la recharge vient des panneaux (hypothèse). Pour la ferme, la recharge représente {{ v('utilitaire_kwh_an') }}, de quoi relever le taux d'autoconsommation d'une installation photovoltaïque les jours où le véhicule reste à la ferme (voir la fiche [électricité du réseau](../energie/electricite-reseau.md)).
 
@@ -131,7 +131,7 @@ Exemples :
 
 Aides :
 
-- en Wallonie, une prime couvre 50 % du prix HTVA d'un vélo, d'un vélo-cargo ou d'une remorque, neufs ou d'occasion, pour des activités professionnelles de livraison. Le plafond est de 5 000 € pour un vélo-cargo neuf à assistance électrique et de 3 500 € pour une remorque neuve, avec un maximum de 50 000 € par bénéficiaire sur trois exercices. Il faut un siège d'activité en Wallonie, 75 % des activités en Wallonie et garder le matériel trois ans[^prime-velo-w]. 93 primes ont été accordées depuis janvier 2024, pour 79 vélos-cargos, 41 vélos et 15 remorques[^spw-velo] ;
+- en Wallonie, une prime couvre 50 % du prix HTVA d'un vélo, d'un vélo-cargo ou d'une remorque, neufs ou d'occasion, pour des activités professionnelles de livraison. Le plafond est de 5 000 € pour un vélo-cargo neuf à assistance électrique et de 3 500 € pour une remorque neuve, avec un maximum de 50 000 € par bénéficiaire sur trois exercices. Il faut un siège d'activité en Wallonie, 75 % des activités en Wallonie et garder le matériel trois ans[^prime-velo-w]. Selon une fiche du SPW de mars 2026, 93 primes avaient été accordées depuis janvier 2024, pour 79 vélos-cargos, 41 vélos et 15 remorques[^spw-velo] ;
 - à Bruxelles, une PME qui y a un siège d'exploitation peut recevoir de 40 à 70 % du prix, avec un maximum de 4 000 € par vélo-cargo et 2 000 € par remorque[^bee-velo].
 
 Limites : le modèle économique est fragile. À Namur, Coursier wallon a cessé ses activités en juin 2025, après sept ans sur un capital de départ de 200 000 € ; l'un des fondateurs n'a connu qu'un exercice bénéficiaire en douze ans d'activité, faute de volumes suffisants[^lavenir]. Le vélo-cargo a du sens pour un producteur qui livre souvent dans un même centre-ville, en confiant le dernier kilomètre à une coopérative existante ou en déposant ses produits dans un hub. Il gagne du terrain quand les camionnettes ne peuvent plus entrer dans les piétonniers[^lavenir]. Il demande toujours un véhicule pour venir de la ferme.
@@ -173,8 +173,8 @@ Limites : le modèle économique est fragile. À Namur, Coursier wallon a cessé
 [^athlon]: « Quelles sont les règles fiscales pour les véhicules utilitaires légers ? », Athlon Belgique (loueur, site commercial), 7 janvier 2026. https://www.athlon.com/be-fr/actualite-conseils/quelles-sont-les-regles-fiscales-pour-les-vehicules-utilitaires-legers/
 [^ctva]: Projet de loi portant des dispositions diverses en matière de taxe sur la valeur ajoutée, Chambre des représentants, doc. 55 2279/001, 26 octobre 2021 : coordination de l'article 57, § 2, du Code de la TVA (régime forfaitaire agricole). https://www.dekamer.be/FLWB/PDF/55/2279/55K2279001.pdf
 [^aii]: Arrêté ministériel du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole), version consolidée en vigueur depuis le 1er janvier 2026, annexe 3, ligne 462. Wallex, consulté le 26 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-[^bee-util]: « Prime Utilitaire électrique », Bruxelles Économie et Emploi (SPRB), consulté le 26 novembre 2026. https://economie-emploi.brussels/prime-utilitaire-electrique
-[^bee-velo]: « Prime Vélo-cargo ou remorque », Bruxelles Économie et Emploi (SPRB), consulté le 26 novembre 2026. https://economie-emploi.brussels/prime-velo-cargo
+[^bee-util]: « Prime Utilitaire électrique », Bruxelles Économie et Emploi (SPRB), page non datée, consultée le 26 novembre 2026. https://economie-emploi.brussels/prime-utilitaire-electrique
+[^bee-velo]: « Prime Vélo-cargo ou remorque », Bruxelles Économie et Emploi (SPRB), page non datée, consultée le 26 novembre 2026. https://economie-emploi.brussels/prime-velo-cargo
 [^prime-velo-w]: « Obtenir une prime régionale destinée à l'achat d'un vélo, d'un vélo cargo ou d'une remorque de vélo pour des activités de cyclologistique », démarche n° 4091, Wallonie (SPW Mobilité et Infrastructures), mise à jour du 25 novembre 2026. https://www.wallonie.be/fr/demarches/obtenir-une-prime-regionale-destinee-lachat-dun-velo-dun-velo-cargo-ou-dune-remorque-de-velo-pour-des-activites-de-cyclologistique
 [^spw-velo]: « Prime vélo cargo pour les professionnels », fiche du SPW Mobilité et Infrastructures (Direction du Transport et de l'Intermodalité des Marchandises), 19 mars 2026. https://mobilite.wallonie.be/files/Transport%20de%20marchandises/2026_03_19_fiche_prime_velo_cargo_vDEF_web_SPW-DTIM.pdf
 [^rtbf]: « Les vélos cargo, l'avenir de la livraison de colis en ville ? », RTBF, 19 août 2021. https://www.rtbf.be/article/les-velos-cargo-l-avenir-de-la-livraison-de-colis-en-ville-10825376

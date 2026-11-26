@@ -5,7 +5,7 @@ domaine: traction
 dependance_fossile: gasoil
 alternatives: [réduction du travail du sol, tracteur électrique compact, tracteur au biométhane, huile de colza pure, gros tracteur électrique]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,15 +13,13 @@ maj: 2026-11-26
 
 ## En bref
 
-Le tracteur diesel tire, porte et entraîne presque tout sur une exploitation. Le gasoil est son seul carburant, et son prix a presque doublé en 2026 : {{ v('gasoil_agricole_htva') }} HTVA en novembre, contre {{ v('gasoil_agricole_htva', scenario='bas') }} en février (calculé à partir des prix officiels). Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux, soit {{ v('ratio_gasoil_pv', 1) }} plus cher. L'écart tient même au prix d'avant-crise ({{ v('ratio_gasoil_pv', 1, scenario='bas') }}).
-
-La meilleure alternative n'est pas un autre tracteur : c'est d'avoir moins besoin de traction (vague 1). Ensuite, les tracteurs légers passent à l'électrique sur photovoltaïque (vague 2) et les lourds au biométhane ou à l'huile de colza (vague 2). Le gros tracteur électrique à batterie reste à préparer (vague 3).
+Le tracteur diesel tire, porte et entraîne presque tout sur une exploitation, et son seul carburant est le gasoil : {{ v('gasoil_agricole_htva') }} HTVA en novembre 2026, contre {{ v('gasoil_agricole_fev2026_htva') }} en moyenne en février. Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil et {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux, soit {{ v('ratio_gasoil_pv', 1) }} plus cher ; l'écart tient au prix d'avant-crise ({{ v('ratio_gasoil_pv', 1, scenario='bas') }}). La meilleure alternative n'est pas un autre tracteur : c'est d'avoir moins besoin de traction (vague 1). Les tracteurs légers peuvent passer à l'électrique, mais seulement derrière des panneaux photovoltaïques (vague 2) ; les lourds au biométhane, plutôt en collectif, ou à l'huile de colza, qui n'est moins chère que le gasoil qu'au prix de crise (vague 2). Le gros tracteur électrique à batterie reste à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
 Un moteur diesel de quelques dizaines à plus de 300 kW entraîne les roues, la prise de force et l'hydraulique. Au travail, seule une partie de l'énergie du gasoil devient du travail utile : {{ v('rendement_moteur_diesel') }} (hypothèse) d'un litre qui contient environ {{ v('energie_litre_gasoil') }}.
 
-Le poste le plus gourmand est le travail du sol. Dans un essai de longue durée d'Arvalis (moyennes 1998-2008), l'itinéraire avec labour consommait environ 78 L/ha, contre 49 L/ha en semis direct[^tn].
+Le poste le plus gourmand est le travail du sol. Dans un essai de longue durée d'Arvalis, en France (moyennes 1998-2008), l'itinéraire avec labour consommait environ 78 L/ha, contre 49 L/ha en semis direct[^tn].
 
 Le prix du gasoil agricole suit celui du gasoil de chauffage. Le gasoil agricole se vendait autour de 80 centimes TVAC fin février 2026, puis autour de 1,2 € fin avril, après le début de la guerre au Moyen-Orient[^lalibre]. Dans ce projet, on l'estime à {{ v('gasoil_agricole_htva') }} HTVA en novembre 2026, contre {{ v('gasoil_agricole_fev2026_htva') }} en moyenne en février.
 
@@ -58,7 +56,7 @@ Coût de l'énergie par heure de travail (calculé, pertes de charge de la batte
 | Électricité du réseau | {{ v('tracteur_reseau_eur_h') }} | {{ fourchette('tracteur_reseau_eur_h') }} |
 | Photovoltaïque de la ferme | {{ v('tracteur_pv_eur_h') }} | fixe |
 
-Sur {{ v('heures_tracteur_an') }} (hypothèse), l'économie d'énergie atteint {{ v('tracteur_economie_an') }} avec du photovoltaïque, et encore {{ v('tracteur_economie_an', scenario='bas') }} au prix d'avant-crise. Sur le réseau, il n'y a pas d'économie : une fois les pertes de charge comptées, l'électricité du réseau revient au moins aussi cher que le gasoil, dans tous les scénarios. Le tracteur électrique n'a donc de sens que derrière ses propres panneaux. Le frein est le prix d'achat : un e107 d'occasion récente (360 h, mis en service en février 2025) s'affichait à 179 950 € HTVA en Allemagne[^topagrar-occ].
+Sur {{ v('heures_tracteur_an') }} (hypothèse), l'économie d'énergie atteint {{ v('tracteur_economie_an') }} avec du photovoltaïque, et encore {{ v('tracteur_economie_an', scenario='bas') }} au prix d'avant-crise. Sur le réseau, il n'y a pas d'économie : une fois les pertes de charge comptées, l'électricité du réseau revient plus cher que le gasoil, dans tous les scénarios. Le tracteur électrique n'a donc de sens que derrière ses propres panneaux. Le frein est le prix d'achat : un e107 d'occasion récente (360 h, mis en service en février 2025) s'affichait à 179 950 € HTVA en Allemagne[^topagrar-occ].
 
 Conditions : beaucoup d'heures par an en travaux légers (cour, serre, maraîchage, vigne), recharge sur photovoltaïque, et des journées compatibles avec l'autonomie.
 
@@ -72,7 +70,7 @@ Conditions : un méthaniseur avec épuration du biogaz en biométhane et compres
 
 L'huile de colza pressée à froid peut alimenter un moteur diesel adapté. Des tracteurs ont été vendus d'usine avec un double réservoir, comme le Deutz-Fahr Agrotron M650 « Natural Power » testé à Gembloux : démarrage au gasoil, puis passage à l'huile[^lumaye]. En France, une petite presse de 2 à 4 L/h coûtait de l'ordre de 5 000 à 6 000 € en 2005 (référence ancienne)[^an-presse].
 
-Avec les hypothèses du projet, un litre d'huile revient à {{ v('huile_cout_litre') }} une fois le tourteau vendu ou donné aux animaux. Ramené à l'énergie d'un litre de gasoil, cela fait {{ v('huile_cout_eq_gasoil') }}, soit un écart de {{ v('huile_ecart_gasoil') }} avec le gasoil agricole, hors accises. Pour couvrir ses besoins, une ferme en labour devrait cultiver du colza sur environ {{ v('part_surface_colza') }} de sa surface.
+Avec les hypothèses du projet, un litre d'huile revient à {{ v('huile_cout_litre') }} une fois le tourteau vendu ou donné aux animaux. Ramené à l'énergie d'un litre de gasoil, cela fait {{ v('huile_cout_eq_gasoil') }}, contre {{ v('gasoil_agricole_htva') }} pour le gasoil agricole, hors accises dans les deux cas. L'écart (huile moins gasoil) vaut {{ v('huile_ecart_gasoil') }} : un chiffre négatif signifie que l'huile revient moins cher. Le coût de l'huile comprend le pressage (hypothèse du projet), mais pas les démarches administratives décrites plus bas. Pour couvrir ses besoins, une ferme en labour devrait cultiver du colza sur environ {{ v('part_surface_colza', 0) }} de sa surface (calculé).
 
 Cet avantage dépend de la crise : au prix d'avant-crise, l'huile revient {{ v('huile_ecart_gasoil', scenario='bas') }} plus cher que le gasoil par litre équivalent. L'huile de colza est donc une assurance contre les prix hauts du gasoil, et une source d'autonomie, plus qu'une économie garantie.
 

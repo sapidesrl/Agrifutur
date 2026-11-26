@@ -5,28 +5,25 @@ domaine: élevage
 dependance_fossile: électricité
 alternatives: [Pré-refroidisseur, récupérateur de chaleur]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
 # Refroidissement du lait
 
-!!! warning "Source à relire"
-    Toutes les sources ont été relues sur la page d'origine le 26/11/2026, sauf le communiqué d'Elia sur le mix électrique 2025 (site inaccessible depuis notre outil, chiffre repris d'un extrait de moteur de recherche). Le chiffre du gaz doit être confirmé sur ce communiqué avant le passage au statut « relu ».
-
 ## En bref
 
-Le lait sort de la vache à environ 37 °C et doit être refroidi sous 4 °C dans le tank[^rundveeloket]. Le tank est le premier poste électrique du bloc traite[^reussir-mc]. Le fossile entre par l'électricité du réseau, en partie produite au gaz. Deux équipements simples et éprouvés réduisent la facture : le pré-refroidisseur, qui refroidit le lait avec l'eau d'abreuvement, et le récupérateur de chaleur, qui chauffe l'eau de lavage avec la chaleur du tank. Les deux sont rentables aujourd'hui (vague 1).
+Le lait sort de la vache à environ 37 °C et doit être refroidi sous 4 °C dans le tank[^rundveeloket]. Le tank est le premier poste électrique du bloc traite[^reussir-mc]. Le fossile entre par l'électricité du réseau, en partie produite au gaz. Deux équipements simples et éprouvés réduisent la facture : le pré-refroidisseur, qui refroidit le lait avec l'eau d'abreuvement, et le récupérateur de chaleur, qui chauffe l'eau de lavage avec la chaleur du tank. Les deux sont rentables aujourd'hui (vague 1) : un pré-refroidisseur simple se rembourse en 3 à 5 ans, le récupérateur surtout au-delà d'environ 500 000 L de lait par an.
 
 ## Comment ça marche aujourd'hui
 
-Le tank est une cuve isolée avec un groupe frigorifique : un compresseur électrique extrait la chaleur du lait et la rejette dans l'air par un condenseur. Sans pré-refroidissement, il faut environ 14 kWh d'électricité pour refroidir 1 000 L de lait selon Inagro[^inagro], 15 kWh selon Rundveeloket et une brochure du Département flamand de l'agriculture[^rundveeloket][^ilvo], 13 à 15 kWh selon un manuel néerlandais[^handboek]. Pour une exploitation qui livre {{ v('lait_livre_an') }} (hypothèse), cela fait environ 7 000 kWh par an (calculé avec 14 kWh par 1 000 L).
+Le tank est une cuve isolée avec un groupe frigorifique : un compresseur électrique extrait la chaleur du lait et la rejette dans l'air par un condenseur. Sans pré-refroidissement, il faut environ 14 kWh d'électricité pour refroidir 1 000 L de lait selon Inagro[^inagro], 15 kWh selon Rundveeloket et une brochure du Département flamand de l'agriculture[^rundveeloket][^ilvo], 13 à 15 kWh selon un manuel néerlandais[^handboek]. Pour une exploitation qui livre {{ v('lait_livre_an') }} (hypothèse), cela fait environ 7 000 kWh par an (14 kWh × 500, ordre de grandeur).
 
 L'eau chaude de lavage de la machine à traire et du tank est souvent produite par un chauffe-eau électrique, parfois par la chaudière au mazout.
 
 ## Où entrent le pétrole et le gaz
 
-- **Électricité** : en 2025, les centrales au gaz ont fourni environ 19 % de la production d'électricité en Belgique, selon le bilan annuel d'Elia, le gestionnaire du réseau de transport (chiffre à confirmer sur le communiqué)[^elia-2025]. Le prix de l'électricité suit en partie celui du gaz.
+- **Électricité** : en 2025, les centrales au gaz ont produit 12,6 TWh, soit 19 % de la production d'électricité en Belgique, selon le bilan annuel provisoire d'Elia, le gestionnaire du réseau de transport[^elia-2025]. Le prix de l'électricité suit en partie celui du gaz (voir la fiche [Électricité du réseau](../energie/electricite-reseau.md)).
 - **Eau chaude** : au mazout ou au gaz sur certaines exploitations.
 - **Fluide frigorigène** : gaz fluoré de synthèse, issu de la chimie.
 - **Collecte du lait** : camion-citerne au gasoil (hors exploitation).
@@ -42,7 +39,7 @@ Le pré-refroidisseur économise environ {{ v('prerefroidisseur_gain', 0) }} de 
 - électricité économisée : {{ v('prerefroidisseur_kwh_an') }} ;
 - économie : {{ v('prerefroidisseur_eur_an') }} au prix du réseau ({{ fourchette('prerefroidisseur_eur_an') }} selon les scénarios).
 
-Le prix d'un pré-refroidisseur va de 4 000 à 10 000 € selon l'installation (prix français)[^reussir-eco]. Rundveeloket estime l'investissement amorti en 3 à 4 ans sur la plupart des exploitations[^rundveeloket] ; des sources françaises donnent 2 à 7 ans[^reussir-mc]. Avec le calcul ci-dessus, un appareil à 4 000 € se rembourse en 3 à 4 ans au prix actuel de l'électricité, 3 à 5 ans selon les scénarios (ordre de grandeur) : le retour est plus rapide sur les grandes exploitations et quand le tank est petit pour le volume livré.
+Le prix d'un pré-refroidisseur va de 4 000 à 10 000 € selon l'installation (prix français)[^reussir-eco]. Rundveeloket estime l'investissement amorti en 3 à 4 ans sur la plupart des exploitations[^rundveeloket] ; des sources françaises donnent 2 à 7 ans[^reussir-mc]. Avec le calcul ci-dessus, un appareil à 4 000 € se rembourse en 3 à 4 ans au prix actuel de l'électricité, en 3 à 5 ans selon les scénarios (ordre de grandeur, hors entretien) : il reste rentable au prix d'avant-crise. Un appareil à 10 000 € demande en revanche 7 à 11 ans selon les scénarios. Le retour est plus rapide sur les grandes exploitations et quand le tank est petit pour le volume livré.
 
 Conditions :
 
@@ -62,9 +59,9 @@ Conditions :
 - si la laiterie est propriétaire du tank, son accord est nécessaire (pratique française, à vérifier en Belgique)[^reussir-traite] ;
 - un besoin d'eau chaude régulier.
 
-### 3. Les deux ensemble
+### 3. Les deux ensemble (vague 2)
 
-Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-15 kWh à 10-11 kWh par 1 000 L, tout en fournissant l'eau chaude préchauffée[^handboek]. Ils se pénalisent un peu : avec un pré-refroidisseur, il reste moins de chaleur à récupérer. Un conseiller français juge le couple pertinent à partir d'environ 700 000 L par an[^reussir-traite].
+Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-15 kWh à 10-11 kWh par 1 000 L, tout en fournissant l'eau chaude préchauffée[^handboek]. Ils se pénalisent un peu : avec un pré-refroidisseur, il reste moins de chaleur à récupérer. Un conseiller français juge le couple pertinent à partir d'environ 700 000 L par an[^reussir-traite] : c'est une solution pour les grands troupeaux (vague 2).
 
 ## Ce qui ferme la boucle
 
@@ -74,7 +71,6 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 
 ## À vérifier
 
-- Confirmer la part du gaz en 2025 sur le communiqué d'Elia (lu par extrait seulement ; l'extrait donne 12,6 TWh).
 - Prix belges d'un pré-refroidisseur et d'un récupérateur, posés.
 - En Belgique, le tank appartient-il en général à l'éleveur ou à la laiterie ?
 - Aide wallonne aux investissements agricoles (AII) : la liste des investissements admissibles (annexe 3 de l'arrêté ministériel du 23 février 2023, version au 1er janvier 2026) ne cite ni pré-refroidisseur ni récupérateur de chaleur ; elle prévoit un forfait « tank-refroidisseur » de 3 465 € par 1 000 L[^am-aii]. Reste à demander à l'administration si ces équipements peuvent entrer dans le forfait du tank lors d'un achat neuf.
@@ -87,7 +83,7 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 [^rundveeloket]: « Efficiëntie voorkoeler », Rundveeloket (avec Boerenbond), 12 juin 2024. https://rundveeloket.be/vraag_antwoord/voorkoelen
 [^ilvo]: « Energieke landbouw: Watt brengt dat op?! », Département Landbouw en Visserij (Vlaamse overheid), avec ILVO et Inagro, 2014, chapitre 11 « Voorkoeler ». https://rundveeloket.be/sites/default/files/inline-files/Energieke_landbouw_%20Watt_brengt_het_op.pdf
 [^handboek]: Handboek Melkveehouderij 2023-2024, chapitre 9 « Melkwinning », § 9.10, Wageningen University & Research, édition 2023-2024 (PDF de mars 2024). https://rundveeloket.be/sites/default/files/inline-files/Handboek_Melkveehouderij-H9-NL-2023.pdf
-[^elia-2025]: « Electricity mix in 2025: 21% increase in solar generation pushes renewables to new high, imports continue to rise, nuclear declines but still accounts for 34% of Belgian generation », communiqué d'Elia, 26 décembre 2025 (lu par extrait de moteur de recherche seulement). https://www.elia.be/en/newsroom/2025/12/20251226_press-release-electricity-mix
+[^elia-2025]: « Elektriciteitsmix 2025: zonneproductie stijgt met 21%… », communiqué d'Elia, 26 décembre 2025 (chiffres provisoires), version néerlandaise publiée par la VFB. https://www.vfb.be/Media/Default/pdf/20251226_Elektriciteitsmix%202025_NL.pdf
 [^reussir-eco]: « Économies d'énergie : prérefroidisseurs et récupérateurs de chaleur sont de plus en plus rentables », Réussir Lait (France), 4 octobre 2023. https://www.reussir.fr/lait/economies-denergie-prerefroidisseurs-et-recuperateurs-de-chaleur-sont-de-plus-en-plus-rentables
 [^reussir-mc]: « Traite des vaches laitières : comment optimiser sa consommation électrique », Réussir Agriculture Massif central (France), 13 avril 2026. https://www.reussir.fr/agriculture-massif-central/traite-des-vaches-laitieres-comment-optimiser-sa-consommation-electrique
 [^reussir-recup]: « Avec le récupérateur de chaleur sur notre tank à lait, nous profitons d'une énergie gratuite », Réussir Machinisme (France), 30 juillet 2026. https://www.reussir.fr/machinisme/avec-le-recuperateur-de-chaleur-sur-le-tank-nous-profitons-dune-energie-gratuite
