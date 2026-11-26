@@ -1113,3 +1113,64 @@ utilitaire_ecart_prix_occasion:
   date: 2026-02-03
   source: https://www.reussir.fr/bovins-viande/vehicule-utilitaire-electrique-les-cles-pour-trouver-les-bonnes-occasions
   note: "Réussir (3 février 2026, prix français) : l'électrique décote 20 à 25 % plus vite ; après trois ans, l'écart n'est plus que de 10 à 15 %. Haut de fourchette retenu, défavorable à l'électrique."
+
+# --- Plastiques agricoles (fiche materiaux/plastiques-agricoles) ---------------
+# Propositions à ajouter à data/hypotheses.yaml, 26/11/2026.
+# La clé collecte_plastique_agricole_t existe déjà et est réutilisée telle quelle.
+
+paillage_pe_prix_m2:
+  libelle: Film de paillage en polyéthylène noir (25 µm), prix d'achat HT
+  valeur: 0.08
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,07 à 0,09 € HT/m² (GRAB et chambre régionale d'agriculture PACA, fiche « Désherbage alternatif en maraîchage », mars 2015) ; 0,08 €/m² dans l'essai SERAIL 2014 (fiche paillages DRAAF Auvergne-Rhône-Alpes). Aucun prix belge de 2026 trouvé. La résine de polyéthylène est passée de moins de 1 €/kg à plus de 2,50 €/kg en quelques mois en 2026 selon des plasturgistes français (Techniques de l'Ingénieur, 7 mai 2026) : valeur actuelle probablement plus haute."
+  scenario: true
+
+paillage_bio_prix_m2:
+  libelle: Film de paillage biodégradable (15 µm), prix d'achat HT
+  valeur: 0.15
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,14 à 0,16 € HT/m² (même fiche GRAB). Le CTIFL (projet SOPAM, 2025) situe le prix au m² du biodégradable à deux à trois fois celui du polyéthylène. Films en partie issus du pétrole (copolyesters) : le prix suit en partie celui des polymères."
+  scenario: true
+
+toile_tissee_prix_m2:
+  libelle: Toile tissée en polypropylène (toile hors-sol), prix d'achat HT
+  valeur: 0.70
+  unite: €/m²
+  statut: estimé
+  date: 2015-03-01
+  source: https://www.grab.fr/wp-content/uploads/2015/05/fiche-ressources-d%C3%A9sherbage-maraichage-PACA-2015-2eme-partie.pdf
+  note: "Prix français de 2015 : 0,60 à 0,80 € HT/m² (même fiche GRAB) ; 0,60 €/m² dans l'essai SERAIL 2014 (fiche DRAAF Auvergne-Rhône-Alpes). Polypropylène, issu du pétrole."
+  scenario: true
+
+toile_tissee_duree:
+  libelle: Durée d'utilisation d'une toile tissée en maraîchage
+  valeur: 5
+  unite: ans
+  statut: hypothèse
+  date: 2026-11-26
+  source: ""
+  note: "Aucune source indépendante lue. Les sources disent seulement que la toile tissée est réutilisable plusieurs saisons (GRAB 2015, Recydata 2026). À remplacer par une durée mesurée."
+
+paille_prix:
+  libelle: Paille de blé pressée, départ Nord-Est (France)
+  valeur: 80
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-04
+  source: https://www.reussir.fr/articles/marche-des-oleagineux-et-coproduits-du-28-octobre-au-4-novembre-2026-les-prix-du-colza-ont
+  note: "Prix français : paille de blé et d'orge départ Nord-Est entre 75 et 85 €/t du 28 octobre au 4 novembre 2026 (La Dépêche/Réussir, publié le 6/11/2026). 80 à 100 €/t en blé début septembre 2026. Aucune cotation belge trouvée. Hors transport et pose."
+
+paille_paillage_kg_m2:
+  libelle: Quantité de paille ou de foin apportée en paillage
+  valeur: 2
+  unite: kg/m²
+  statut: estimé
+  date: 2014-12-31
+  source: https://draaf.auvergne-rhone-alpes.agriculture.gouv.fr/IMG/pdf/Fiche_paillage_cle85edc2-2.pdf
+  note: "Essai SERAIL 2014 (fiche paillages, DRAAF Auvergne-Rhône-Alpes) : foin apporté à 2 à 3 kg/m². Borne basse appliquée à la paille. Les mulchs végétaux doivent être posés en couche épaisse (GRAB 2015)."

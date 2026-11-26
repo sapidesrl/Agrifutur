@@ -442,6 +442,23 @@ CALCULS = [
     ("utilitaire_prix_max_occasion", "Prix du diesel d'occasion équivalent jusqu'auquel l'électrique d'occasion se rembourse par l'énergie", "€",
      "Surcoût remboursé ÷ écart de prix en occasion de trois ans",
      lambda h, c: c["utilitaire_surcout_rembourse"] / h["utilitaire_ecart_prix_occasion"]),
+    # Plastiques agricoles : paillage en maraîchage (fiche materiaux/plastiques-agricoles)
+    # À ajouter à la liste CALCULS de calc/couts.py. Surfaces exprimées en hectare de sol couvert (10 000 m²).
+    ("paillage_pe_ha", "Film de paillage polyéthylène : achat par hectare couvert", "€/ha",
+     "Prix au m² × 10 000",
+     lambda h, c: h["paillage_pe_prix_m2"] * 10000),
+    ("paillage_bio_ha", "Film de paillage biodégradable : achat par hectare couvert", "€/ha",
+     "Prix au m² × 10 000",
+     lambda h, c: h["paillage_bio_prix_m2"] * 10000),
+    ("paillage_toile_ha_an", "Toile tissée réutilisable : achat par hectare couvert et par an", "€/ha/an",
+     "Prix au m² × 10 000 ÷ durée d'utilisation",
+     lambda h, c: h["toile_tissee_prix_m2"] * 10000 / h["toile_tissee_duree"]),
+    ("paillage_paille_t_ha", "Paillage de paille : quantité par hectare couvert", "t/ha",
+     "kg/m² × 10 000 ÷ 1 000",
+     lambda h, c: h["paille_paillage_kg_m2"] * 10),
+    ("paillage_paille_ha", "Paillage de paille : achat de la paille par hectare couvert", "€/ha",
+     "Tonnes par hectare × prix de la paille",
+     lambda h, c: c["paillage_paille_t_ha"] * h["paille_prix"]),
 ]
 
 
