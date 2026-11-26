@@ -20,13 +20,13 @@ gasoil_kwh_utile_fev2026:
   formule: Même calcul au prix d'avant la guerre
 pv_kwh_production:
   libelle: Coût de production d'un kWh photovoltaïque
-  valeur: 0.055556
+  valeur: 0.068889
   unite: €/kWh
   formule: Prix installé × (1 + entretien) ÷ (production annuelle × durée de vie),
     sans frais financiers
 pv_kwh_utile:
   libelle: 'PV : coût du kWh utile'
-  valeur: 0.065359
+  valeur: 0.081046
   unite: €/kWh
   formule: kWh PV ÷ rendement de la chaîne électrique
 reseau_kwh_utile:
@@ -38,9 +38,9 @@ reseau_kwh_utile:
   formule: kWh réseau ÷ rendement de la chaîne électrique
 ratio_gasoil_pv:
   libelle: Le kWh utile au gasoil coûte … fois celui du PV
-  valeur: 4.989932
-  bas: 2.764477
-  haut: 6.511839
+  valeur: 4.024138
+  bas: 2.229417
+  haut: 5.251483
   unite: fois
   formule: Gasoil ÷ PV
 ratio_gasoil_reseau:
@@ -59,7 +59,7 @@ tracteur_gasoil_eur_h:
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur PV'
-  valeur: 1.960784
+  valeur: 2.431373
   unite: €/h
   formule: Consommation (côté batterie) × coût du kWh utile PV, pertes de charge comprises
 tracteur_reseau_eur_h:
@@ -72,9 +72,9 @@ tracteur_reseau_eur_h:
     comprises
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
-  valeur: 4823.703128
-  bas: 1972.794037
-  haut: 6773.336185
+  valeur: 4447.232539
+  bas: 1596.323448
+  haut: 6396.865597
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:
@@ -149,6 +149,131 @@ prerefroidisseur_eur_an:
   unite: €/an
   formule: kWh économisés × prix du réseau (la traite a lieu matin et soir, hors production
     PV)
+ratio_reseau_pv:
+  libelle: Le kWh du réseau coûte … fois le kWh photovoltaïque produit
+  valeur: 5.52629
+  bas: 4.68
+  haut: 7.184177
+  unite: fois
+  formule: Prix du réseau ÷ coût de production PV
+pv_autoconso_mini:
+  libelle: Taux d'autoconsommation à partir duquel le PV est rentable
+  valeur: 0.09803
+  bas: 0.16167
+  haut: 0.052044
+  unite: '%'
+  formule: (Coût du kWh PV − prix d'injection) ÷ (prix du réseau − prix d'injection),
+    0 si le PV coûte moins que l'injection
+pv_ferme_production_an:
+  libelle: 'Ferme type : production photovoltaïque annuelle'
+  valeur: 27000
+  unite: kWh/an
+  formule: Puissance × production par kWc
+pv_ferme_autoconso_kwh:
+  libelle: 'Ferme type : électricité PV consommée sur place'
+  valeur: 10800.0
+  unite: kWh/an
+  formule: Production × taux d'autoconsommation
+pv_ferme_injection_kwh:
+  libelle: 'Ferme type : électricité PV injectée'
+  valeur: 16200.0
+  unite: kWh/an
+  formule: Production − autoconsommation
+pv_ferme_couverture:
+  libelle: 'Ferme type : part de la consommation couverte par le PV'
+  valeur: 0.27
+  unite: '%'
+  formule: Électricité PV autoconsommée ÷ consommation de la ferme
+pv_ferme_investissement:
+  libelle: 'Ferme type : investissement photovoltaïque'
+  valeur: 30000
+  unite: €
+  formule: Puissance × prix installé
+pv_ferme_aide_aii:
+  libelle: 'Ferme type : aide AII au photovoltaïque (taux de base + architecture verte)'
+  valeur: 6138.0
+  unite: €
+  formule: Puissance × coût simplifié AII × taux, limité à l'investissement
+pv_ferme_valeur_an:
+  libelle: 'Ferme type : valeur annuelle de l''électricité PV'
+  valeur: 4678.56
+  bas: 3805.92
+  haut: 6082.128
+  unite: €/an
+  formule: kWh autoconsommés × prix du réseau + kWh injectés × prix d'injection
+pv_ferme_cout_an:
+  libelle: 'Ferme type : coût annuel du photovoltaïque (investissement et entretien
+    étalés)'
+  valeur: 1860.0
+  unite: €/an
+  formule: Production annuelle × coût de production du kWh PV, sans aide ni frais
+    financiers
+pv_ferme_gain_net_an:
+  libelle: 'Ferme type : gain net annuel du photovoltaïque'
+  valeur: 2818.56
+  bas: 1945.92
+  haut: 4222.128
+  unite: €/an
+  formule: Valeur annuelle − coût annuel, sans aide ni frais financiers
+pv_ferme_retour_ans:
+  libelle: 'Ferme type : temps de retour simple du photovoltaïque, aide AII déduite'
+  valeur: 5.937948
+  bas: 7.585063
+  haut: 4.400855
+  unite: ans
+  formule: (Investissement − aide) ÷ (valeur annuelle − entretien annuel)
+pv_ferme_valeur_an_sans_autoconso:
+  libelle: 'Ferme type : valeur annuelle si tout était injecté'
+  valeur: 945.0
+  bas: 540.0
+  haut: 1228.5
+  unite: €/an
+  formule: Production × prix d'injection
+batterie_gain_kwh_an:
+  libelle: 'Batterie : gain annuel par kWh de capacité'
+  valeur: 76.9075
+  bas: 67.54
+  haut: 99.97975
+  unite: €/kWh/an
+  formule: Cycles par an × (rendement × prix du réseau − prix d'injection)
+batterie_retour_ans:
+  libelle: 'Batterie : temps de retour simple'
+  valeur: 9.101843
+  bas: 10.364229
+  haut: 7.001418
+  unite: ans
+  formule: Prix par kWh ÷ gain annuel par kWh, hors remplacement et entretien
+microbiometh_production_an:
+  libelle: 'Micro-biométhanisation : électricité produite par an'
+  valeur: 160000
+  unite: kWh/an
+  formule: Puissance × heures de fonctionnement
+microbiometh_autoconso_kwh:
+  libelle: 'Micro-biométhanisation : électricité consommée par la ferme'
+  valeur: 40000
+  unite: kWh/an
+  formule: Plus petite valeur entre la production et la consommation de la ferme
+microbiometh_valeur_an:
+  libelle: 'Micro-biométhanisation : valeur annuelle de l''électricité, hors certificats
+    verts'
+  valeur: 19428.0
+  bas: 15296.0
+  haut: 25256.4
+  unite: €/an
+  formule: kWh autoconsommés × prix du réseau + surplus × prix d'injection
+microbiometh_investissement:
+  libelle: 'Micro-biométhanisation : investissement'
+  valeur: 400000
+  unite: €
+  formule: Puissance × coût par kW
+microbiometh_retour_ans:
+  libelle: 'Micro-biométhanisation : temps de retour simple, électricité seule'
+  valeur: 20.588841
+  bas: 26.150628
+  haut: 15.83757
+  unite: ans
+  formule: Investissement ÷ valeur annuelle, sans aide, certificats verts, chaleur
+    ni entretien
 valet_gasoil_eur_h:
   libelle: 'Chargeur de cour : énergie par heure au gasoil'
   valeur: 3.538612
@@ -158,7 +283,7 @@ valet_gasoil_eur_h:
   formule: Consommation × prix du gasoil
 valet_pv_eur_h:
   libelle: 'Chargeur de cour : énergie par heure en électrique sur PV'
-  valeur: 0.35
+  valeur: 0.434
   unite: €/h
   formule: Consommation à la borne × coût du kWh PV (pertes de charge déjà dans la
     mesure)
@@ -172,9 +297,9 @@ valet_reseau_eur_h:
     mesure)
 valet_economie_an_pv:
   libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur PV)'
-  valeur: 956.583471
-  bas: 483.128926
-  haut: 1280.361818
+  valeur: 931.383471
+  bas: 457.928926
+  haut: 1255.161818
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 valet_economie_an_reseau:
@@ -223,3 +348,92 @@ valeur_gasoil_economise:
   haut: 43.199455
   unite: €/ha/an
   formule: Litres économisés × prix du gasoil
+gasoil_eur_foin_ha:
+  libelle: 'Foin récolté au champ : gasoil par hectare'
+  valeur: 86.753058
+  bas: 48.062149
+  haut: 113.212364
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_enrubannage_ha:
+  libelle: 'Enrubannage : gasoil par hectare'
+  valeur: 139.261488
+  bas: 77.152397
+  haut: 181.735636
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_ensilage_herbe_ha:
+  libelle: 'Ensilage d''herbe : gasoil par hectare'
+  valeur: 205.467769
+  bas: 113.831405
+  haut: 268.134545
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+gasoil_eur_mais_ensilage_ha:
+  libelle: 'Maïs ensilage : gasoil par hectare'
+  valeur: 531.933223
+  bas: 294.69686
+  haut: 694.170545
+  unite: €/ha
+  formule: Litres par hectare × prix du gasoil
+sechage_grange_reseau_tms:
+  libelle: 'Séchoir en grange : électricité du réseau par tonne de MS'
+  valeur: 36.9279
+  bas: 31.2728
+  haut: 48.00627
+  unite: €/t MS
+  formule: kWh par tonne × prix du kWh réseau
+sechage_grange_pv_tms:
+  libelle: 'Séchoir en grange : électricité photovoltaïque par tonne de MS'
+  valeur: 6.682222
+  unite: €/t MS
+  formule: kWh par tonne × coût de production du kWh PV
+mais_chimique_eur_ha:
+  libelle: 'Maïs : désherbage chimique (herbicides + passages de pulvérisateur)'
+  valeur: 143
+  unite: €/ha
+  formule: Herbicides maïs + passages × coût d'un passage de pulvérisateur
+mais_mecanique_eur_ha:
+  libelle: 'Maïs : désherbage mécanique (1 herse étrille + binages)'
+  valeur: 148
+  unite: €/ha
+  formule: Passage de herse étrille + passages de bineuse × coût d'un binage
+mais_meca_gasoil_supp_l_ha:
+  libelle: 'Maïs : gasoil en plus pour le désherbage mécanique'
+  valeur: 6.96
+  unite: L/ha
+  formule: (Herse + binages) − passages de pulvérisateur
+mais_meca_gasoil_supp_eur_ha:
+  libelle: 'Maïs : coût du gasoil en plus pour le désherbage mécanique'
+  valeur: 7.944754
+  bas: 4.401481
+  haut: 10.367869
+  unite: €/ha
+  formule: Gasoil en plus × prix du gasoil agricole
+glyphosate_energie_kwh_ha:
+  libelle: Énergie de fabrication du glyphosate d'un traitement
+  valeur: 108.559167
+  unite: kWh/ha
+  formule: Énergie par kg × dose ÷ 3,6
+glyphosate_eq_gasoil_l_ha:
+  libelle: Énergie de fabrication du glyphosate d'un traitement, en litres de gasoil
+  valeur: 10.855917
+  unite: L/ha
+  formule: Énergie du traitement ÷ énergie d'un litre de gasoil
+sd_sans_glyphosate_gasoil_eur_ha:
+  libelle: 'Semis direct sans glyphosate (labour fréquent) : coût du gasoil en plus'
+  valeur: 34.872446
+  bas: 19.319719
+  haut: 45.508391
+  unite: €/ha/an
+  formule: Gasoil en plus × prix du gasoil agricole
+farmdroid_amort_eur_ha:
+  libelle: 'Robot FarmDroid : amortissement par hectare et par an'
+  valeur: 485.0
+  unite: €/ha/an
+  formule: Prix ÷ (durée × surface par an), sans frais financiers ni entretien
+farmdroid_eq_heures_ha:
+  libelle: 'Robot FarmDroid : amortissement exprimé en heures de main-d''œuvre'
+  valeur: 19.4
+  unite: h/ha/an
+  formule: Amortissement par hectare ÷ coût horaire de la main-d'œuvre
