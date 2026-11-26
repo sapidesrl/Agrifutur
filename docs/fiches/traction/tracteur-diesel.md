@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Le tracteur diesel tire, porte et entraîne presque tout sur une exploitation. Le gasoil est son seul carburant, et son prix a environ doublé en 2026. Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux, soit {{ v('ratio_gasoil_pv', 1) }} plus cher.
+Le tracteur diesel tire, porte et entraîne presque tout sur une exploitation. Le gasoil est son seul carburant, et son prix a environ doublé en 2026. Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux, soit {{ v('ratio_gasoil_pv', 1) }} plus cher. L'écart tient même au prix d'avant-crise ({{ v('ratio_gasoil_pv', 1, scenario='bas') }}).
 
 La meilleure alternative n'est pas un autre tracteur : c'est d'avoir moins besoin de traction (vague 1). Ensuite, les tracteurs légers passent à l'électrique sur photovoltaïque (vague 2) et les lourds au biométhane ou à l'huile de colza (vague 2). Le gros tracteur électrique à batterie reste à préparer (vague 3).
 
@@ -50,15 +50,15 @@ Limites :
 
 Le Fendt e107 Vario, le tracteur électrique de série de Fendt, affiche 50 kW en puissance nominale et 66 kW en pointe[^fendt], avec une batterie de 100 kWh[^fc]. Une étude de 2017 sur un tracteur électrique mesurait environ 26 kWh/h en déplacement, 32 kWh/h avec une herse rotative et 47 kWh/h avec un pulvérisateur à turbine, soit de 1,5 à 7 heures d'autonomie selon le travail[^t3n].
 
-Coût de l'énergie par heure de travail (calculé) :
+Coût de l'énergie par heure de travail (calculé, pertes de charge de la batterie comprises) :
 
-| Énergie | Coût par heure |
-|---|---|
-| Gasoil | {{ v('tracteur_gasoil_eur_h') }} |
-| Électricité du réseau | {{ v('tracteur_reseau_eur_h') }} |
-| Photovoltaïque de la ferme | {{ v('tracteur_pv_eur_h') }} |
+| Énergie | Prix actuel | Fourchette des scénarios |
+|---|---|---|
+| Gasoil | {{ v('tracteur_gasoil_eur_h') }} | {{ fourchette('tracteur_gasoil_eur_h') }} |
+| Électricité du réseau | {{ v('tracteur_reseau_eur_h') }} | {{ fourchette('tracteur_reseau_eur_h') }} |
+| Photovoltaïque de la ferme | {{ v('tracteur_pv_eur_h') }} | fixe |
 
-Sur {{ v('heures_tracteur_an') }} (hypothèse), l'économie d'énergie atteint {{ v('tracteur_economie_an') }} avec du photovoltaïque. Sur le réseau, elle est presque nulle. Le frein est le prix d'achat : un e107 d'occasion récente (125 h, mis en service en février 2025) s'affichait à 179 950 € HTVA en Allemagne[^topagrar-occ].
+Sur {{ v('heures_tracteur_an') }} (hypothèse), l'économie d'énergie atteint {{ v('tracteur_economie_an') }} avec du photovoltaïque, et encore {{ v('tracteur_economie_an', scenario='bas') }} au prix d'avant-crise. Sur le réseau, il n'y a pas d'économie : une fois les pertes de charge comptées, l'électricité du réseau revient au moins aussi cher que le gasoil, dans tous les scénarios. Le tracteur électrique n'a donc de sens que derrière ses propres panneaux. Le frein est le prix d'achat : un e107 d'occasion récente (125 h, mis en service en février 2025) s'affichait à 179 950 € HTVA en Allemagne[^topagrar-occ].
 
 Conditions : beaucoup d'heures par an en travaux légers (cour, serre, maraîchage, vigne), recharge sur photovoltaïque, et des journées compatibles avec l'autonomie.
 

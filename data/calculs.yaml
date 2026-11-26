@@ -59,21 +59,22 @@ tracteur_gasoil_eur_h:
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur PV'
-  valeur: 1.666667
+  valeur: 1.960784
   unite: €/h
-  formule: Consommation × coût du kWh PV
+  formule: Consommation (côté batterie) × coût du kWh utile PV, pertes de charge comprises
 tracteur_reseau_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur réseau'
-  valeur: 7.5
-  bas: 5.25
-  haut: 9.75
+  valeur: 8.823529
+  bas: 6.176471
+  haut: 11.470588
   unite: €/h
-  formule: Consommation × prix du réseau
+  formule: Consommation (côté batterie) × coût du kWh utile réseau, pertes de charge
+    comprises
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
-  valeur: 5513.476584
-  bas: 2197.906336
-  haut: 7609.172452
+  valeur: 5278.182466
+  bas: 1962.612218
+  haut: 7373.878334
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:

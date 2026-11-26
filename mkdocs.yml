@@ -1,6 +1,9 @@
 site_name: L'agriculture après le pétrole
 site_description: Technologies agricoles dépendantes du pétrole et du gaz, et leurs alternatives (Belgique, 2026)
 docs_dir: docs
+site_url: https://sapidesrl.github.io/Agrifutur/
+repo_url: https://github.com/sapidesrl/Agrifutur
+edit_uri: edit/main/docs/
 
 theme:
   name: material

@@ -54,6 +54,10 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 À chaque push et pull request, `.github/workflows/verifier.yml` lance le recalcul, le vérificateur et `mkdocs build --strict`. Il signale aussi quand `data/calculs.yaml` n'a pas été régénéré.
 
+## Site publié
+
+À chaque push sur `main`, `.github/workflows/publier.yml` construit le site et le publie sur https://sapidesrl.github.io/Agrifutur/. Réglage à faire une seule fois dans GitHub : *Settings → Pages → Build and deployment → Source : GitHub Actions*.
+
 ## Chantiers
 
 - Migrer de MkDocs 1.6 vers [Zensical](https://zensical.org/docs/compatibility/mkdocs/migration/), le successeur maintenu par l'équipe de Material for MkDocs. D'ici là, `requirements.txt` plafonne MkDocs sous la version 2.
