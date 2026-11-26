@@ -1368,3 +1368,90 @@ csa_surface_moyenne_2014:
   date: 2015-01-01
   source: https://publicaties.vlaanderen.be/view-file/16343
   note: "30,63 ha pour 19 fermes CSA en 2014."
+
+# --- Transformation à la ferme ------------------------------------------------
+# Proposition de la fiche transformation/transformation-industrielle.md (26/11/2026).
+
+ble_prix:
+  libelle: Blé tendre (prix de marché)
+  valeur: 240
+  unite: €/t
+  statut: estimé
+  date: 2026-11-25
+  source: https://www.reussir.fr/articles/marche-des-cereales-du-25-novembre-2026-le-prix-du-ble-recule-le-prix-du-mais-franchit-les
+  note: "Prix français. Euronext : 242 €/t sur l'échéance décembre 2026 le 25/11/2026 (La Dépêche-Le Petit Meunier, Réussir) ; rendu Rouen : 225,50 €/t le 6/11/2026 (https://www.reussir.fr/articles/baisse-des-prix-du-ble-en-france-sous-le-poids-de-loffre-mondiale). Valeur arrondie. Le prix payé départ ferme en Wallonie est plus bas : à remplacer par une cotation belge."
+  scenario: true
+  bas: 190
+  bas_note: "Février 2026 : blé tendre rendu Rouen 187,50 €/t le 16/02/2026 (https://www.reussir.fr/articles/le-prix-du-ble-tendre-gagne-3-eurt-en-une-semaine-le-mais-perd-15-eurt) ; Euronext repassé sous 195 €/t le 25/02/2026. Valeur arrondie (estimé)."
+
+farine_ferme_prix:
+  libelle: Farine sur meule vendue par un moulin à la ferme wallon
+  valeur: 1400
+  unite: €/t
+  statut: estimé
+  date: 2026-06-04
+  source: https://goodfood.brussels/sites/default/files/inline-files/Guide%20Moulins%20-%20Gids%20Molens_4.pdf
+  note: "Milieu de la fourchette 1 300 à 1 500 €/t annoncée par Les Cocottes en Ribote (Bousval, moulin sur pierre, céréales de la ferme, franco 200 kg), base de données des moulins belges 2026, Good Food B2B (Bruxelles). TVA comprise ou non : non précisé. Un seul moulin publie un prix : à confirmer auprès d'autres moulins."
+
+farine_rendement:
+  libelle: Farine obtenue par tonne de grain moulu
+  valeur: 0.75
+  unite: t/t
+  statut: sourcé
+  date: 2015-06-13
+  source: https://orbi.uliege.be/bitstream/2268/198657/1/Du%20grain%20au%20pain%20les%20outils%20de%20premi%c3%a8re%20transformation%20-%20Winandy%20S.%202015.pdf
+  note: "Meunerie wallonne : 20 000 t de grain transformées en 15 000 t de farine et 5 000 t de coproduits (Winandy, DiversiFerm, 2015, d'après le rapport ALT-4-CER de 2011). Moyenne de toute la meunerie wallonne ; une farine complète sur meule rend davantage, une farine blanche moins."
+
+moulin_investissement:
+  libelle: Investissement d'un petit moulin à meule de pierre à la ferme (exemple wallon)
+  valeur: 120000
+  unite: €
+  statut: sourcé
+  date: 2023-02-13
+  source: https://www.lalibre.be/planete/2023/02/13/le-fermier-meunier-de-corioule-EYPCH4C3KZBPBP36EREKCMXJU4/
+  note: "Ferme de Corioule (Assesse), La Libre, 13/02/2023. TVA comprise ou non : non précisé."
+
+moulin_tonnage_an:
+  libelle: Grain moulu par an dans ce moulin à la ferme
+  valeur: 80
+  unite: t/an
+  statut: estimé
+  date: 2023-02-13
+  source: https://www.lalibre.be/planete/2023/02/13/le-fermier-meunier-de-corioule-EYPCH4C3KZBPBP36EREKCMXJU4/
+  note: "Estimé : moulin dimensionné pour 20 ha de céréales panifiables ; environ 40 t moulues la première année, soit l'équivalent de 10 ha (environ 4 t/ha)."
+
+atelier_duree_amortissement:
+  libelle: Durée d'amortissement d'un équipement de transformation
+  valeur: 10
+  unite: ans
+  statut: hypothèse
+  date: ""
+  source: ""
+  note: Sans frais financiers ni valeur de revente.
+
+huile_alim_prix:
+  libelle: Huile de colza alimentaire pressée à froid, vente directe en bidon de 5 L
+  valeur: 4
+  unite: €/L
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Prix français, ferme de Corrèze-Dordogne (Terre-net, 22/05/2026), prix au client en bidon de 5 L, TVA probablement comprise. À remplacer par un prix wallon."
+
+presse_investissement:
+  libelle: Atelier de pressage à froid (trieur, presse d'occasion, filtres, équipements), hors stockage
+  valeur: 60000
+  unite: €
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Exemple français (Terre-net, 22/05/2026) ; trieur neuf de 24 000 € acheté à deux."
+
+presse_litres_an:
+  libelle: Huile vendue par an par cet atelier
+  valeur: 20000
+  unite: L/an
+  statut: sourcé
+  date: 2026-05-22
+  source: https://www.terre-net.fr/diversification-agricole/article/898662/romain-prodel-reprend-la-main-sur-la-commercialisation-de-son-colza-et-de-son-to
+  note: "Près de 20 000 L par an (colza et tournesol, 20 ha) ; objectif de 100 000 L à terme."

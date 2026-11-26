@@ -555,6 +555,25 @@ CALCULS = [
     ("csa_recette_ha", "Ferme CSA moyenne de Flandre (2014) : recette des parts par hectare", "€/ha/an",
      "Recette des parts ÷ surface",
      lambda h, c: c["csa_recette_ferme"] / h["csa_surface_moyenne_2014"]),
+    # Transformation à la ferme (fiche transformation-industrielle)
+    ("farine_valeur_tonne_ble", "Farine sur meule : chiffre d'affaires par tonne de blé moulue", "€/t de blé",
+     "Farine obtenue par tonne × prix de la farine, sans le son ni les autres issues",
+     lambda h, c: h["farine_rendement"] * h["farine_ferme_prix"]),
+    ("farine_ecart_tonne_ble", "Farine sur meule : chiffre d'affaires en plus de la vente du blé, par tonne", "€/t de blé",
+     "Chiffre d'affaires de la farine − prix du blé, avant main-d'œuvre, sacs, énergie et amortissement",
+     lambda h, c: c["farine_valeur_tonne_ble"] - h["ble_prix"]),
+    ("moulin_amortissement_t", "Moulin à la ferme : amortissement par tonne de grain moulue", "€/t de blé",
+     "Investissement ÷ durée d'amortissement ÷ tonnes moulues par an",
+     lambda h, c: h["moulin_investissement"] / h["atelier_duree_amortissement"] / h["moulin_tonnage_an"]),
+    ("huile_alim_valeur_tonne", "Huile alimentaire pressée à la ferme : chiffre d'affaires par tonne de graines", "€/t de graines",
+     "Litres d'huile × prix de vente + tourteau × prix du tourteau",
+     lambda h, c: h["huile_par_tonne"] * h["huile_alim_prix"] + h["tourteau_par_tonne"] * h["tourteau_prix"]),
+    ("huile_alim_ecart_tonne", "Huile alimentaire pressée à la ferme : chiffre d'affaires en plus de la vente des graines, par tonne", "€/t de graines",
+     "Chiffre d'affaires huile et tourteau − prix du colza, avant main-d'œuvre, emballage et amortissement",
+     lambda h, c: c["huile_alim_valeur_tonne"] - h["colza_prix"]),
+    ("presse_amortissement_litre", "Atelier de pressage : amortissement par litre d'huile vendu", "€/L",
+     "Investissement ÷ durée d'amortissement ÷ litres vendus par an",
+     lambda h, c: h["presse_investissement"] / h["atelier_duree_amortissement"] / h["presse_litres_an"]),
 ]
 
 

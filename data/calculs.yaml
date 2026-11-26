@@ -997,3 +997,45 @@ csa_recette_ha:
   valeur: 24068.322981
   unite: €/ha/an
   formule: Recette des parts ÷ surface
+farine_valeur_tonne_ble:
+  libelle: 'Farine sur meule : chiffre d''affaires par tonne de blé moulue'
+  valeur: 1050.0
+  unite: €/t de blé
+  formule: Farine obtenue par tonne × prix de la farine, sans le son ni les autres
+    issues
+farine_ecart_tonne_ble:
+  libelle: 'Farine sur meule : chiffre d''affaires en plus de la vente du blé, par
+    tonne'
+  valeur: 810.0
+  bas: 860.0
+  haut: 738.0
+  unite: €/t de blé
+  formule: Chiffre d'affaires de la farine − prix du blé, avant main-d'œuvre, sacs,
+    énergie et amortissement
+moulin_amortissement_t:
+  libelle: 'Moulin à la ferme : amortissement par tonne de grain moulue'
+  valeur: 150.0
+  unite: €/t de blé
+  formule: Investissement ÷ durée d'amortissement ÷ tonnes moulues par an
+huile_alim_valeur_tonne:
+  libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires par tonne de
+    graines'
+  valeur: 1659.05
+  bas: 1593.335
+  haut: 1724.765
+  unite: €/t de graines
+  formule: Litres d'huile × prix de vente + tourteau × prix du tourteau
+huile_alim_ecart_tonne:
+  libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires en plus de
+    la vente des graines, par tonne'
+  valeur: 1109.05
+  bas: 1108.335
+  haut: 1009.765
+  unite: €/t de graines
+  formule: Chiffre d'affaires huile et tourteau − prix du colza, avant main-d'œuvre,
+    emballage et amortissement
+presse_amortissement_litre:
+  libelle: 'Atelier de pressage : amortissement par litre d''huile vendu'
+  valeur: 0.3
+  unite: €/L
+  formule: Investissement ÷ durée d'amortissement ÷ litres vendus par an
