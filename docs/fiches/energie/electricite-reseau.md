@@ -5,7 +5,7 @@ domaine: énergie
 dependance_fossile: gaz naturel (part de la production électrique)
 alternatives: [Photovoltaïque en autoconsommation, micro-biométhanisation]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -79,7 +79,7 @@ Si toute la production était injectée, elle ne rapporterait que {{ v('pv_ferme
 
 **Aides.** L'aide wallonne aux investissements agricoles (AII) retient le photovoltaïque comme « énergie renouvelable professionnelle ». L'aide est un pourcentage du coût simplifié de {{ v('aii_pv_forfait') }}, compté sur la puissance des panneaux plafonnée à ce que l'onduleur accepte en entrée[^am-aii] [^aii-ni2]. Pour un agriculteur actif, le taux de base est de 10 %, plus 5 % pour un investissement lié à l'architecture verte ou à la résilience économique, deux critères cochés pour le photovoltaïque. D'autres majorations s'ajoutent (10 % pour un jeune agriculteur, jusqu'à 5 % en bio, 4 % en zone à contraintes ou en système herbager…), avec un plafond de 40 % et 200 000 € d'aide par bénéficiaire sur 2023-2027[^am-aii]. L'aide ne vaut que pour l'énergie produite dans le cadre de l'activité professionnelle[^aii-ni2]. Des certificats verts existent aussi pour le photovoltaïque de plus de 10 kW, sur réservation ; leur niveau pour 2026 n'a pas été trouvé (voir « À vérifier »)[^spw-cpma].
 
-**Batteries.** Une batterie stocke le surplus de midi pour la traite du soir. La CWaPE estime qu'elle peut relever le taux d'autoconsommation de 15 à 20 %[^cwape-batt]. Une batterie de 10 ou 13,5 kWh coûte environ 8 000 € installée (modèles résidentiels, janvier 2026)[^lavenir-batt]. Avec {{ v('batterie_prix_kwh') }} (estimé) et {{ v('batterie_cycles_an') }} (hypothèse), chaque kWh de capacité rapporte {{ v('batterie_gain_kwh_an', 0) }} et se rembourse en {{ v('batterie_retour_ans', 1) }} ({{ fourchette('batterie_retour_ans', 1) }} selon les scénarios, calculé, hors remplacement). En 2018, SAVE jugeait les batteries non rentables pour la seule autoconsommation, sauf si elles servent aussi de groupe de secours[^save]. Au prix de crise, elles approchent la rentabilité, mais elles ajoutent une dépendance au lithium et aux métaux importés. Avant d'en acheter, on déplace d'abord ce qui peut l'être vers la journée : chauffe-eau, pompes, ventilation, recharge des engins.
+**Batteries.** Une batterie stocke le surplus de midi pour la traite du soir. La CWaPE estime qu'elle peut relever le taux d'autoconsommation de 15 à 20 %[^cwape-batt]. Une batterie de 10 ou 13,5 kWh coûte environ 8 000 € installée (modèles résidentiels, janvier 2026)[^lavenir-batt]. Avec {{ v('batterie_prix_kwh') }} (estimé) et {{ v('batterie_cycles_an') }} (hypothèse), chaque kWh de capacité rapporte {{ v('batterie_gain_kwh_an', 0) }} et se rembourse en {{ v('batterie_retour_ans', 1) }} ({{ fourchette('batterie_retour_ans', 1) }} selon les scénarios, calculé, hors remplacement). En 2018, SAVE jugeait les batteries non rentables pour la seule autoconsommation, sauf si elles servent aussi de groupe de secours[^save]. Leur rentabilité dépend donc de leur durée de vie réelle, non chiffrée ici (voir « À vérifier »). Elles ajoutent aussi une dépendance au lithium et aux métaux importés. Avant d'en acheter, on déplace d'abord ce qui peut l'être vers la journée : chauffe-eau, pompes, ventilation, recharge des engins.
 
 Conditions :
 
@@ -138,7 +138,7 @@ Limites : la micro-biométhanisation remplace l'électricité fossile par une é
 - Certificats verts 2026 pour le photovoltaïque de plus de 10 kW et pour la micro-biométhanisation : taux d'octroi, prix, réservation (régime Cpma).
 - L'AII ne cite la biométhanisation que pour les unités de 10 kW au plus : une unité de 20 kW est-elle aidée sur 10 kW, ou pas du tout ?
 - Coût d'entretien annuel et consommation propre d'une micro-unité (chauffage du digesteur, pompes).
-- Prix d'une batterie professionnelle de 30 à 100 kWh, installée.
+- Prix d'une batterie professionnelle de 30 à 100 kWh, installée, et sa durée de vie en cycles et en années.
 - Consommation réelle de l'exploitation, qui remplace l'hypothèse de {{ v('ferme_conso_elec') }}.
 
 ## Sources

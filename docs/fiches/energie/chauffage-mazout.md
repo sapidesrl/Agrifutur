@@ -5,7 +5,7 @@ domaine: énergie
 dependance_fossile: mazout
 alternatives: [Chaudière à plaquettes, récupération de chaleur, pompe à chaleur]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -16,7 +16,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Beaucoup de fermes wallonnes chauffent au mazout l'habitation, les bureaux, l'eau chaude de la laiterie et parfois des gîtes. Au prix actuel, un kWh de mazout coûte {{ v('mazout_kwh') }}, contre {{ v('plaquettes_kwh') }} pour les plaquettes de bois, soit {{ v('ratio_mazout_plaquettes', 1) }} plus cher. La chaudière à plaquettes est rentable aujourd'hui pour une ferme qui consomme plusieurs milliers de litres par an, surtout si ses haies fournissent une partie du bois (vague 1). La récupération de chaleur sur le tank à lait réduit le besoin d'eau chaude. La pompe à chaleur convient aux petits besoins bien isolés.
+Beaucoup de fermes wallonnes chauffent au mazout l'habitation, les bureaux, l'eau chaude de la laiterie et parfois des gîtes. Au prix actuel, un kWh de mazout coûte {{ v('mazout_kwh') }} TVAC, contre {{ v('plaquettes_kwh') }} pour les plaquettes de bois, soit {{ v('ratio_mazout_plaquettes', 1) }} plus cher ({{ v('ratio_mazout_plaquettes', 1, scenario='bas') }} au prix d'avant-crise). La chaudière à plaquettes est rentable aujourd'hui pour une ferme qui consomme plusieurs milliers de litres par an, surtout si ses haies fournissent une partie du bois (vague 1) ; au prix d'avant-crise, elle ne se rembourse vite que pour les gros consommateurs. La récupération de chaleur sur le tank à lait réduit le besoin d'eau chaude, et la pompe à chaleur convient aux petits besoins bien isolés.
 
 ## Comment ça marche aujourd'hui
 
@@ -28,7 +28,7 @@ Ordres de grandeur :
 - une ferme laitière de la province de Luxembourg, qui chauffe la laiterie et trois habitations, consommait environ 8 000 L par an avant de passer aux plaquettes[^febhel] ;
 - une ferme de Meux (Namur), avec des salles de réception et des gîtes, consommait 28 000 L par an dans six anciennes chaudières[^febhel].
 
-Le SPF Économie fixe un prix maximum du mazout. En moyenne du 1er au 26 novembre 2026, ce prix maximum valait {{ v('gasoil_chauffage_2000l_tvac') }} TVAC pour au moins 2 000 L, contre {{ v('gasoil_chauffage_2000l_tvac', scenario='bas') }} en février 2026, soit près de 80 % de hausse (prix officiels, voir [les hypothèses](../../hypotheses.md)).
+Le SPF Économie fixe un prix maximum du mazout. En moyenne du 1er au 26 novembre 2026, ce prix maximum valait {{ v('gasoil_chauffage_2000l_tvac') }} TVAC pour au moins 2 000 L, contre {{ v('gasoil_chauffage_2000l_tvac', scenario='bas') }} en février 2026 (prix officiels, voir [les hypothèses](../../hypotheses.md)).
 
 La réglementation pousse aussi au changement. En Wallonie, une chaudière au mazout ne peut plus être installée dans un bâtiment neuf depuis le 1er janvier 2026[^wallonie-2031]. Dans les bâtiments existants, résidentiels ou non, il sera interdit à partir du 1er janvier 2031 d'installer une chaudière au mazout ou de remplacer un appareil de chauffage par une chaudière au mazout. Le brûleur d'une chaudière au mazout peut encore être remplacé jusqu'au 31 décembre 2034, et des dérogations sont possibles quand aucune alternative n'est réalisable techniquement, économiquement ou fonctionnellement. Le texte n'interdit pas d'utiliser une chaudière déjà en place[^decret-peb].
 
@@ -53,6 +53,8 @@ Coût du combustible (calculé) :
 | Mazout | {{ v('mazout_kwh') }} | {{ fourchette('mazout_kwh') }} |
 | Plaquettes sèches | {{ v('plaquettes_kwh') }} | {{ fourchette('plaquettes_kwh') }} |
 
+Le prix du mazout est TVA comprise : c'est ce que paie l'habitation. Une exploitation qui récupère la TVA sur le chauffage de la laiterie paie {{ v('mazout_kwh_htva') }} HTVA ({{ fourchette('mazout_kwh_htva') }}). Le relevé des plaquettes ne précise pas s'il est TVA comprise (voir « À vérifier »).
+
 Les plaquettes coûtaient {{ v('plaquettes_prix', 2) }} en octobre 2026 en Wallonie (relevé Valbiom), à peine plus qu'un an plus tôt[^callmepower]. Leur prix a peu bougé pendant la crise, contrairement au mazout. Le calcul suppose qu'un MAP (mètre cube apparent) de plaquettes contient {{ v('plaquettes_energie_map') }}. C'est l'équivalence de Valbiom : il faut en moyenne 10 MAP de plaquettes forestières séchées (20 % d'humidité) ou 1 000 L de mazout pour produire 10 000 kWh. Dans son exemple de coût annuel, Valbiom compte toutefois environ 115 MAP pour remplacer 10 000 L de mazout, soit environ 15 % de plaquettes en plus[^valbiom-guide].
 
 Valbiom a publié pour septembre 2026 un kWh de mazout 2,4 fois plus cher que celui des plaquettes[^callmepower], moins que le calcul ci-dessus. Sa méthode (énergie du MAP, prix du mazout retenu, rendements) n'a pas pu être lue : le calcul de cette fiche reste à comparer avec le sien.
@@ -66,7 +68,7 @@ Investissement et entretien :
 - dans un exemple wallon de Valbiom, un réseau de chaleur à plaquettes de 75 kW relie un gîte, une habitation et une piscine. Il a coûté 50 500 € (dont 35 000 € pour la chaudière et les sous-stations, 8 500 € pour le silo et le désilage, 7 000 € pour 60 m de réseau), avec 20 200 € de subside. Il consomme 120 MAP par an[^valbiom-guide] ;
 - il faut une chaufferie d'au moins 20 m² et un silo de 25 à 100 m³ selon le besoin. Pour 10 000 L de mazout remplacés, soit environ 100 MAP par an, un silo de 35 m³ rempli trois fois par an suffit[^febhel] [^valbiom-guide].
 
-Avec ces chiffres, l'investissement se rembourse en 4 à 6 ans au prix actuel et en plus de 10 ans au prix d'avant-crise, hors aides (ordre de grandeur, à partir des montants ci-dessus, de l'entretien et du calcul d'économie). Les deux fermes citées par la FEBHEL annoncent 6 et 8 ans, et la fédération donne 5 à 12 ans en général[^febhel]. L'exemple du gîte se rembourse en 10 ans avec les primes et en 17 ans sans, mais avec un mazout compté à 0,72 € par litre[^valbiom-guide]. La rentabilité dépend donc surtout du volume de mazout remplacé et de son prix : plus la consommation est forte, plus vite la chaudière est payée.
+Avec ces chiffres, l'investissement se rembourse en 4 à 6 ans au prix actuel, mais en plus de 10 ans au prix d'avant-crise, hors aides (ordre de grandeur calculé à partir des montants ci-dessus, de l'entretien et de l'économie de combustible). La conclusion dépend donc du scénario : hors crise, la chaudière à plaquettes se justifie surtout pour les gros consommateurs, comme la ferme de Meux et ses 28 000 L par an. Les deux fermes citées par la FEBHEL annoncent 6 et 8 ans, et la fédération donne 5 à 12 ans en général[^febhel]. L'exemple du gîte se rembourse en 10 ans avec les primes et en 17 ans sans, mais avec un mazout compté à 0,72 € par litre[^valbiom-guide]. La rentabilité dépend donc surtout du volume de mazout remplacé et de son prix : plus la consommation est forte, plus vite la chaudière est payée.
 
 Aides : Valbiom indique qu'une entreprise ou un agriculteur peut obtenir une prime allant jusqu'à 40 % de l'investissement, et que les aides régionales aux entreprises (« GREEN ») demandent depuis 2025 un audit énergétique préalable (AMUREBA)[^valbiom-guide]. En revanche, l'aide wallonne aux investissements agricoles ne finance que les investissements repris dans sa liste : dans sa version de 2026, cette liste contient des panneaux photovoltaïques, des éoliennes et la petite biométhanisation, mais ni chaudière biomasse, ni pompe à chaleur, ni récupérateur de chaleur. Elle contient en revanche un broyeur à plaquettes forestières[^am-adisa].
 
@@ -79,7 +81,7 @@ Conditions :
 
 ### 2. Récupération de chaleur (vague 1)
 
-Avant d'acheter une nouvelle chaudière, on réduit le besoin. Sur une exploitation laitière, un récupérateur branché sur le groupe froid du tank à lait préchauffe l'eau du chauffe-eau vers 55 °C et économise 60 à 90 % de sa consommation d'électricité (chiffres français)[^reussir-tank] (voir la fiche [refroidissement du lait](../elevage/tank-a-lait.md)). L'isolation des ballons et des tuyaux, et la régulation de la chaudière, vont dans le même sens.
+Avant d'acheter une nouvelle chaudière, on réduit le besoin. Sur une exploitation laitière, un récupérateur branché sur le groupe froid du tank à lait préchauffe l'eau du chauffe-eau vers 55 °C et économise 60 à 90 % de l'énergie du chauffe-eau, électrique dans l'exemple de la source (chiffres français)[^reussir-tank]. Le chauffe-eau ou la chaudière reste nécessaire en appoint pour le lavage à chaud (voir la fiche [refroidissement du lait](../elevage/tank-a-lait.md)). L'isolation des ballons et des tuyaux, et la régulation de la chaudière, vont dans le même sens.
 
 ### 3. Pompe à chaleur (vague 2)
 
@@ -90,7 +92,7 @@ Attention aux aides : depuis le 1er octobre 2026, les aides wallonnes à la rén
 ## Ce qui ferme la boucle
 
 - Les haies de la ferme produisent du bois. Selon Valbiom, 12 MAP de plaquettes pour 100 m de haie tous les dix ans est une moyenne raisonnable, soit environ 12 MAP par kilomètre et par an. Une haie récoltée tous les dix ans par la méthode Harbonnier donne 12 à 25 MAP pour 100 m, et un recépage complet peut atteindre 40 MAP[^valbiom-haies]. Pour 80 MAP par an, il faut donc de l'ordre de 3 à 7 km de haies (calculé).
-- Sur un chantier standard, Valbiom observe un coût de production de 12 à 20 € par MAP de plaquettes de haie[^valbiom-haies] : moins que le prix d'achat.
+- Sur un chantier standard, Valbiom observe un coût de production de 12 à 20 € par MAP de plaquettes de haie[^valbiom-haies] : moins que le prix d'achat ({{ v('plaquettes_prix', 2) }}).
 - Les cendres de bois retournent au champ ou au jardin (voir la fiche [engrais phosphatés et potassiques](../fertilisation/engrais-p-k.md)).
 - La chaleur du tank à lait chauffe l'eau de lavage.
 
@@ -99,6 +101,7 @@ Attention aux aides : depuis le 1er octobre 2026, les aides wallonnes à la rén
 - Lire sur la page d'origine le relevé Valbiom repris par Callmepower (prix des plaquettes d'octobre 2026 et d'octobre 2025, ratio de 2,4) et l'article Trustup (rendement et prix des pompes à chaleur) : pages inaccessibles le 26 novembre 2026.
 - L'exemption du décret PEB pour les unités agricoles non résidentielles faibles consommatrices d'énergie s'applique-t-elle à l'interdiction des chaudières au mazout de 2031 (article 71/1) ? À demander au SPW Énergie.
 - Méthode du ratio mazout/plaquettes de Valbiom (2,4 en septembre 2026) : énergie du MAP, prix du mazout retenu, rendements. Avec 10 kWh par litre et 1 000 kWh par MAP, ce ratio supposerait un mazout bien moins cher que le prix maximum de septembre 2026 rapporté par la presse (calculé).
+- Prix des plaquettes : TVA comprise ou non, et taux de TVA applicable à une exploitation agricole.
 - Rendement d'une chaudière au mazout (celui des chaudières biomasse dépasse 90 % selon Valbiom).
 - Taux et conditions des aides régionales aux entreprises (GREEN, audit AMUREBA) pour une chaudière biomasse ou une pompe à chaleur agricole.
 - Consommation réelle de mazout de l'exploitation, qui remplace l'exemple de 8 000 L.

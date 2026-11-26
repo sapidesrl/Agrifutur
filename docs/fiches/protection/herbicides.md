@@ -5,7 +5,7 @@ domaine: protection des cultures
 dependance_fossile: pétrochimie
 alternatives: [Désherbage mécanique, robot solaire de binage]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,9 @@ maj: 2026-11-26
 
 ## En bref
 
-Les herbicides de synthèse sont des molécules de la chimie organique, pulvérisées pour détruire les adventices avant ou après la levée de la culture. Le fossile entre surtout par leur fabrication : un kilo de glyphosate demande environ {{ v('glyphosate_energie_mj_kg') }} d'énergie[^ppdb], soit l'équivalent de {{ v('glyphosate_eq_gasoil_l_ha', 0) }} de gasoil pour un traitement (calculé). En Wallonie, le désherbage repose encore surtout sur la pulvérisation, et les herbicides coûtent de 63 €/ha en orge à plus de 280 €/ha en chicorée[^base1].
+Les herbicides de synthèse sont des molécules de la chimie organique, pulvérisées pour détruire les adventices avant ou après la levée de la culture. Le fossile entre surtout par leur fabrication : celle du glyphosate demande environ {{ v('glyphosate_energie_mj_kg') }}[^ppdb], soit l'équivalent de {{ v('glyphosate_eq_gasoil_l_ha', 0) }} de gasoil pour un traitement (calculé). En Wallonie, les herbicides coûtaient en 2023 de 63 €/ha en orge à plus de 280 €/ha en chicorée[^base1].
 
-La meilleure alternative est le désherbage mécanique (herse étrille, houe rotative, bineuse), seul ou combiné à un traitement localisé : il est rentable aujourd'hui dans les cultures où les herbicides coûtent cher, sur sols peu caillouteux (vague 1). Il déplace une partie de la dépendance vers le gasoil, pour un coût faible. Le robot solaire de binage supprime presque tout le fossile au champ, mais ne se rentabilise que là où il remplace du désherbage manuel, en bio ou en légumes (vague 2).
+La meilleure alternative est le désherbage mécanique (herse étrille, houe rotative, bineuse), seul ou combiné à un traitement localisé : il est rentable aujourd'hui dans les cultures où les herbicides coûtent cher, sur sols peu caillouteux (vague 1), mais il déplace une partie de la dépendance vers le gasoil. Le robot solaire de binage supprime presque tout le fossile au champ, mais ne se rentabilise que là où il remplace du désherbage manuel, en bio ou en légumes (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -50,7 +50,7 @@ L'écart entre fermes est grand : l'écart-type dépasse souvent 40 €/ha[^base
 ## Où entrent le pétrole et le gaz
 
 - **Matières actives** : ce sont des molécules de synthèse. Le glyphosate, par exemple, est fabriqué à partir de glycine (ou d'acide iminodiacétique), de formaldéhyde et d'acide phosphoreux[^ppdb].
-- **Énergie de fabrication** : environ {{ v('glyphosate_energie_mj_kg') }} de glyphosate, selon une estimation de 2009 reprise par la base de données des pesticides de l'université du Hertfordshire[^ppdb]. Aucun fabricant ne publie de données, et les estimations varient beaucoup[^ppdb]. Avec la dose moyenne d'un traitement (hypothèse française ci-dessus), cela fait {{ v('glyphosate_energie_kwh_ha', 0) }} traité, soit l'énergie de {{ v('glyphosate_eq_gasoil_l_ha', 0) }} de gasoil (calculé). Cette énergie compte toutes les sources (gaz, pétrole, électricité) ; la part fossile n'est pas connue.
+- **Énergie de fabrication** : environ {{ v('glyphosate_energie_mj_kg') }} de glyphosate, selon une estimation de 2009 reprise par la base de données des pesticides de l'université du Hertfordshire[^ppdb]. Aucun fabricant ne publie de données, et les estimations varient beaucoup[^ppdb]. Avec la dose moyenne d'un traitement (dose française citée plus haut), cela fait {{ v('glyphosate_energie_kwh_ha', 0) }} traité, soit l'énergie de {{ v('glyphosate_eq_gasoil_l_ha', 0) }} de gasoil (calculé). Cette énergie compte toutes les sources (gaz, pétrole, électricité) ; la part fossile n'est pas connue.
 - **Formulation et emballage** : solvants, adjuvants et bidons en plastique (non chiffrés ici).
 - **Pulvérisation** : environ {{ v('gasoil_passage_pulverisateur', 2) }} de gasoil par passage d'un pulvérisateur traîné de 28 m, d'après le référentiel français des coûts des opérations culturales[^coc].
 - **Transport et distribution** des produits.
@@ -82,7 +82,7 @@ Les coûts CRA-W supposent un outil utilisé sur 100 ha par an et un pulvérisat
 
 **Rentabilité.** Le passage mécanique coûte plus cher que le passage de pulvérisateur, mais il ne demande pas de produit. Le bilan dépend donc du prix des herbicides de la culture :
 
-- **Maïs** (calculé avec les références wallonnes) : le chimique, soit les herbicides de 2023 et {{ v('passages_pulverisateur_mais', 0) }} de pulvérisateur, revient à {{ v('mais_chimique_eur_ha') }} ; un programme tout mécanique d'une herse étrille et de {{ v('passages_bineuse_mais', 0) }} de bineuse à caméra (hypothèse) revient à {{ v('mais_mecanique_eur_ha') }}. Les deux sont à égalité ; avec une bineuse moins chère ou mieux utilisée, le mécanique devient le moins cher. Dans le nord de la France, une stratégie de binage demande 2 à 3 passages et une stratégie herse étrille ou houe 3 à 4 passages, contre 2 passages en chimique[^ca60-mais].
+- **Maïs** (calculé avec les références wallonnes) : le chimique, soit les herbicides de 2023 et {{ v('passages_pulverisateur_mais', 0) }} de pulvérisateur, revient à {{ v('mais_chimique_eur_ha') }} ; un programme tout mécanique d'une herse étrille et de {{ v('passages_bineuse_mais', 0) }} de bineuse à caméra (hypothèse) revient à {{ v('mais_mecanique_eur_ha') }}. Les deux sont à égalité à quelques euros près ; avec une bineuse moins chère ou mieux utilisée, le mécanique devient le moins cher. Dans le nord de la France, une stratégie de binage demande 2 à 3 passages et une stratégie herse étrille ou houe 3 à 4 passages, contre 2 passages en chimique[^ca60-mais].
 - **Betterave** : dans une étude wallonne, les herbicides représentaient 79 % du coût total du désherbage, ce qui rendait le désherbage chimique plus cher que le mécanique sur la saison[^base1]. Les herbicides y coûtent {{ v('herbicides_betterave_eur_ha') }} en moyenne (2023)[^base1].
 - **Colza** : traitement localisé sur le rang au semis, puis un binage, pour 114 €/ha, contre 144 €/ha pour un désherbage chimique en plein (Terres Inovia, prix français, herbicide à 100 €/ha). L'efficacité est équivalente, à condition de semer au monograine avec un écartement d'au moins 45 cm[^inovia].
 - **Céréales** : les herbicides coûtent moins (63 à 82 €/ha en 2023)[^base1] ; le mécanique y est surtout intéressant contre la résistance des graminées ou en bio.
@@ -101,7 +101,7 @@ Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on 
 
 **Aides.** La liste des investissements admissibles à l'aide wallonne (AII, janvier 2026) comprend la herse étrille, la houe rotative, les bineuses à guidage par caméra ou par ultrasons et les robots autonomes[^aii].
 
-**Vague 1** : rentable aujourd'hui en maïs, betterave, chicorée et colza sur les sols limoneux peu caillouteux, surtout en désherbage mixte et avec du matériel partagé. Moins intéressant en céréales, sur sols lourds ou caillouteux, et en semis direct.
+**Vague 1** : rentable aujourd'hui en betterave, chicorée et colza sur les sols limoneux peu caillouteux, surtout en désherbage mixte et avec du matériel partagé. En maïs, le coût est à égalité avec le chimique : le matériel partagé ou le désherbage mixte fait pencher la balance. Moins intéressant en céréales, sur sols lourds ou caillouteux, et en semis direct.
 
 ### 2. Robot solaire de binage (vague 2)
 

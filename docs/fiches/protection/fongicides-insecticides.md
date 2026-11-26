@@ -5,7 +5,7 @@ domaine: protection des cultures
 dependance_fossile: pétrochimie
 alternatives: [Variétés résistantes, rotations, haies et auxiliaires, biocontrôle]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,9 @@ maj: 2026-11-26
 
 ## En bref
 
-Les fongicides protègent les cultures contre les maladies (septoriose et rouilles du froment, mildiou de la pomme de terre) ; les insecticides contre les ravageurs (pucerons vecteurs de virus en betterave et en orge, insectes du colza). Ce sont des molécules de synthèse : fabriquer la matière active d'un traitement fongicide de froment demande l'énergie de {{ v('fongicide_eq_gasoil_l_ha', 1) }} de gasoil (calculé), et chaque traitement est un passage de pulvérisateur. En Wallonie, les produits phytopharmaceutiques coûtaient en 2024 {{ v('phyto_froment_eur_ha') }} en froment et {{ v('phyto_pdt_eur_ha') }} en pomme de terre[^eaw-froment][^eaw-pdt].
+Les fongicides protègent les cultures contre les maladies (septoriose et rouilles du froment, mildiou de la pomme de terre) ; les insecticides contre les ravageurs (pucerons vecteurs de virus en betterave et en orge, insectes du colza). Fabriquer la matière active d'un traitement fongicide de froment demande l'énergie de {{ v('fongicide_eq_gasoil_l_ha', 1) }} de gasoil (calculé), et chaque traitement est un passage de pulvérisateur. En Wallonie, les produits phytopharmaceutiques coûtaient en 2024 {{ v('phyto_froment_eur_ha') }} en froment et {{ v('phyto_pdt_eur_ha') }} en pomme de terre[^eaw-froment][^eaw-pdt].
 
-La meilleure alternative est la variété résistante, conduite avec les avertissements des centres pilotes : en froment, un seul traitement suffit souvent avec une variété tolérante, et en pomme de terre une variété porteuse de gènes de résistance a reçu 1 à 2 traitements contre le mildiou en 2025, au lieu de 11 à 13 pour une variété sensible[^lb-var][^viaverda25]. C'est rentable aujourd'hui (vague 1), avec une limite nette en pomme de terre : l'acheteur doit accepter la variété. La rotation est aussi de vague 1. Les haies et bandes fleuries sont rentables grâce aux aides (vague 2). Le biocontrôle reste un complément (vague 2) ; il déplace parfois la dépendance, vers le cuivre minier en bio ou vers le soufre issu du raffinage du pétrole et du gaz.
+La meilleure alternative, rentable aujourd'hui avec la rotation (vague 1), est la variété résistante conduite avec les avertissements : un seul traitement suffit souvent en froment, et en pomme de terre une variété résistante a reçu 1 à 2 traitements contre le mildiou en 2025, au lieu de 11 à 13, si l'acheteur l'accepte[^lb-var][^viaverda25]. Les haies et bandes fleuries, rentables grâce aux aides, et le biocontrôle, qui déplace parfois la dépendance vers le cuivre minier ou le soufre du raffinage, restent des compléments (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -76,6 +76,7 @@ Le calcul compte la protection complète à {{ v('fongicides_froment_protection_
 
 - quatre années sur cinq, un seul traitement rapporte autant ou plus qu'une protection complète ; en 2025, il était l'option la plus rentable quels que soient le prix et la variété[^lb-var] ;
 - en 2024, la pression de septoriose, très forte et très précoce, exigeait une protection complète. Ce sont les avertissements du CePiCOP qui permettent de repérer ces années[^lb-var] ;
+- le calcul suppose un blé à 160 €/t ; au prix actuel du blé ({{ v('ble_prix') }}), chaque tonne perdue coûte plus cher : le traitement unique ne rapporte plus rien dès qu'il fait perdre plus de {{ v('froment_perte_equilibre_t_ha', 2) }} de rendement ({{ fourchette('froment_perte_equilibre_t_ha', 2) }} selon les scénarios, calculé). L'avantage du traitement unique se réduit donc, surtout les années où il est faible (2026), alors que celui d'une variété tolérante sans fongicide reste net en 2025 et 2026 (ordre de grandeur à partir du tableau, hypothèse) ;
 - sans aucun fongicide, la perte moyenne de 2022 à 2026 va de 1,2 t/ha pour KWS Erruptium à 3,9 t/ha pour Champion[^lb-var]. Le choix variétal décide de la marge de manœuvre.
 
 Aucune variété n'est totalement résistante à la septoriose, et la sensibilité aux rouilles change avec les races de champignon qui arrivent : le CRA-W suit ces races dans 11 essais en Belgique[^lb-var]. La note d'une variété peut donc baisser d'une année à l'autre ; la surveillance de la parcelle reste indispensable.

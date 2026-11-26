@@ -5,7 +5,7 @@ domaine: énergie
 dependance_fossile: gaz; fioul
 alternatives: [Moins d'eau à retirer (variété, récolte, maïs grain humide), chaudière biomasse, chaleur d'un méthaniseur, air ambiant ou chauffé au solaire, pompe à chaleur]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -16,7 +16,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Le maïs grain se récolte en Belgique entre 25 et 38 % d'humidité et doit être ramené à 15 % pour se conserver[^cipf]. Le séchoir chauffe l'air avec du propane, du gaz naturel ou du fioul. Pour un maïs récolté à {{ v('mais_humidite_recolte', 0) }} (hypothèse), l'énergie seule coûte {{ v('sechage_propane_eur_t', 0, unite=False) }} € par tonne humide au propane, hors amortissement et main-d'œuvre (calculé). Le moyen le plus simple d'éviter ce fossile est de retirer moins d'eau : variété plus précoce, et pour un éleveur, maïs grain humide conservé sans séchage (vague 1). Pour le grain à vendre sec, la chaudière à plaquettes ou la chaleur d'un méthaniseur coûtent deux à trois fois moins cher en énergie, mais demandent un gros investissement qui ne se justifie qu'avec un gros tonnage, souvent en collectif (vague 2).
+Le maïs grain se récolte en Belgique entre 25 et 38 % d'humidité et doit être ramené à 15 % pour se conserver[^cipf] : le séchoir chauffe l'air avec du propane, du gaz naturel ou du fioul. Pour un maïs récolté à {{ v('mais_humidite_recolte', 0) }} (hypothèse), l'énergie seule coûte {{ v('sechage_propane_eur_t', 0, unite=False) }} € par tonne humide au propane, hors amortissement et main-d'œuvre (calculé). Le moyen le plus simple d'éviter ce fossile est de retirer moins d'eau : variété plus précoce, et pour un éleveur, maïs grain humide conservé sans séchage (vague 1). Pour le grain à vendre sec, l'énergie des plaquettes revient à {{ v('sechage_plaquettes_eur_t', 0, unite=False) }} € par tonne (calculé), et la chaleur d'un méthaniseur est souvent perdue en automne. Ces deux solutions demandent un gros investissement qui ne se justifie qu'avec un gros tonnage, souvent en collectif (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -40,7 +40,7 @@ Coût de l'énergie seule pour une tonne de maïs humide séchée de {{ v('secha
 | Propane en vrac | {{ v('sechage_propane_eur_t') }} | {{ fourchette('sechage_propane_eur_t') }} | {{ v('sechage_propane_eur_t_point', 2) }} |
 | Mazout (fioul) | {{ v('sechage_mazout_eur_t') }} | {{ fourchette('sechage_mazout_eur_t') }} | |
 
-Le propane en vrac (au moins 2 000 L) coûtait en moyenne {{ v('propane_vrac_tvac', 3) }} TVAC du 1er au 26 novembre 2026, contre {{ v('propane_vrac_tvac', 3, scenario='bas') }} en février 2026 : +25 %, alors que le mazout a pris près de 80 % sur la même période (prix maximums officiels, voir [les hypothèses](../../hypotheses.md)). Au prix d'avant-crise, le séchage au mazout était donc moins cher qu'au propane ; aujourd'hui, les deux se valent. Les grands séchoirs au gaz naturel paient un autre prix, non étudié ici.
+Le propane en vrac (au moins 2 000 L) coûtait en moyenne {{ v('propane_vrac_tvac', 3) }} TVAC du 1er au 26 novembre 2026, contre {{ v('propane_vrac_tvac', 3, scenario='bas') }} en février 2026 (prix maximums officiels, voir [les hypothèses](../../hypotheses.md)). Le propane a beaucoup moins augmenté que le mazout. Au prix d'avant-crise, le séchage au mazout coûtait {{ v('sechage_mazout_eur_t', scenario='bas') }}, contre {{ v('sechage_propane_eur_t', scenario='bas') }} au propane ; aujourd'hui, les deux se valent (calculé). Les grands séchoirs au gaz naturel paient un autre prix, non étudié ici.
 
 ## Où entrent le pétrole et le gaz
 
@@ -72,14 +72,14 @@ Coût de l'énergie pour une tonne de maïs humide (calculé, même séchoir, re
 | Propane | {{ v('sechage_propane_eur_t') }} | {{ fourchette('sechage_propane_eur_t') }} |
 | Plaquettes sèches | {{ v('sechage_plaquettes_eur_t') }} | {{ fourchette('sechage_plaquettes_eur_t') }} |
 
-Il faut environ {{ v('sechage_map_t', 2, unite=False) }} MAP de plaquettes par tonne humide (calculé). L'économie d'énergie atteint {{ v('sechage_economie_plaquettes_t') }} au prix actuel, et encore {{ v('sechage_economie_plaquettes_t', scenario='bas') }} au prix d'avant-crise (calculé, hors main-d'œuvre, entretien et amortissement). Face au mazout d'avant-crise, l'avantage des plaquettes fondait à quelques euros par tonne ({{ v('sechage_mazout_eur_t', scenario='bas') }} contre {{ v('sechage_plaquettes_eur_t', scenario='bas') }}). Un agriculteur landais qui sèche au bois estime que la biomasse lui coûte 25 à 30 % du prix du gaz par kWh produit[^reussir-bois], du même ordre que le calcul ci-dessus.
+Il faut environ {{ v('sechage_map_t', 2, unite=False) }} MAP de plaquettes par tonne humide (calculé). L'économie d'énergie atteint {{ v('sechage_economie_plaquettes_t') }} au prix actuel, et encore {{ v('sechage_economie_plaquettes_t', scenario='bas') }} au prix d'avant-crise (calculé, hors main-d'œuvre, entretien et amortissement). Face au mazout d'avant-crise, l'avantage des plaquettes fondait à quelques euros par tonne ({{ v('sechage_mazout_eur_t', scenario='bas') }} contre {{ v('sechage_plaquettes_eur_t', scenario='bas') }}). Un agriculteur landais qui sèche au bois estime que la biomasse lui coûte 25 à 30 % du prix du gaz par kWh produit[^reussir-bois], un peu moins que le calcul ci-dessus, qui compte aussi les pertes du générateur.
 
 L'investissement est lourd. Exemples français :
 
 - dans les Landes, deux exploitations ont investi 350 000 € dans une chaudière à plaquettes, « dix fois plus cher qu'une chaudière à gaz », avec 130 000 € d'aide régionale. Le séchoir passe 192 t de grain de 30 à 15 % en 24 heures et sèche 5 000 à 6 000 t par an pour plusieurs exploitations. Retour espéré : sept ans[^reussir-bois] ;
 - dans les Pyrénées-Atlantiques, une Cuma a étudié la biomasse puis choisi le gaz : le prix de la chaudière lui a paru rédhibitoire pour un mois d'utilisation par an[^reussir-bois].
 
-Pour une exploitation qui sèche {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an (hypothèse), l'économie d'énergie serait de {{ v('sechage_economie_plaquettes_an', 0) }} au prix actuel, {{ v('sechage_economie_plaquettes_an', 0, scenario='bas') }} au prix d'avant-crise (calculé) : trop peu pour payer seule une chaudière de cette taille. Au tonnage de l'exemple landais (5 000 à 6 000 t), la même économie par tonne donne de l'ordre de 70 000 à 85 000 € par an au prix actuel (ordre de grandeur, calculé avec {{ v('sechage_economie_plaquettes_t', 0) }}). La chaudière biomasse est donc une affaire de négoce, de coopérative ou de groupe d'agriculteurs, ou d'une exploitation qui l'utilise aussi le reste de l'année (chauffage, séchage de bois ou de foin).
+Pour une exploitation qui sèche {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an (hypothèse), l'économie d'énergie serait de {{ v('sechage_economie_plaquettes_an', 0) }} au prix actuel, {{ v('sechage_economie_plaquettes_an', 0, scenario='bas') }} au prix d'avant-crise (calculé) : trop peu pour payer seule une chaudière de cette taille. Au tonnage de l'exemple landais (5 000 à 6 000 t), la même économie par tonne est dix à douze fois plus grande (calculé). La chaudière biomasse est donc une affaire de négoce, de coopérative ou de groupe d'agriculteurs, ou d'une exploitation qui l'utilise aussi le reste de l'année (chauffage, séchage de bois ou de foin).
 
 Conditions :
 
@@ -104,7 +104,7 @@ Un ventilateur pousse de l'air extérieur à travers le grain stocké en cellule
 - **Durée** : en Ontario, un maïs à 22 % sèche en 14 jours en septembre et en 20 jours en octobre ; en décembre, il ne descend qu'à 19 % en 88 jours[^omafra-air].
 - **Air chauffé au solaire** : des capteurs à air réchauffent l'air de 5 à 6 °C en journée, mais seulement de 0,5 à 1 °C en moyenne sur 24 heures[^omafra-air]. Ils accélèrent le séchage sans le remplacer. C'est le principe du séchage du foin en grange (voir la fiche [ensilage et enrubannage](../elevage/fourrages-recoltes.md)).
 - **Finition en cellule (dryération)** : on sort le maïs du séchoir chaud à 17-18 % et on retire les derniers points en le refroidissant dans une cellule bien ventilée. Arvalis la présente comme une source d'économie d'énergie, à condition d'avoir des cellules à ventilation renforcée (40 à 50 m³ d'air par heure et par m³ de grain)[^arvalis-sobriete].
-- **Ventilation automatique** : un thermostat qui lance la ventilation de refroidissement seulement quand l'air extérieur est assez froid économise de l'électricité ; une étude du CRA de Gembloux publiée en 2011 estimait le gain à environ 48 %[^arvalis-ventilation].
+- **Ventilation automatique** : un thermostat qui lance la ventilation de refroidissement seulement quand l'air extérieur est assez froid économise de l'électricité ; une étude du CRA-W (Gembloux) publiée en 2011 estimait le gain à environ 48 %[^arvalis-ventilation].
 
 Conditions : des cellules ventilées en nombre suffisant, un grain pas trop humide, et la patience de laisser sécher plusieurs semaines.
 
@@ -116,7 +116,7 @@ Avec un rendement plus prudent de {{ v('pac_cop_sechage', 0) }} (hypothèse) et 
 
 ## Ce qui ferme la boucle
 
-- **Les haies et le bois de la ferme** : pour {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an, il faut environ {{ v('sechage_map_an', 0, unite=False) }} MAP de plaquettes par an (calculé), de l'ordre d'une dizaine de kilomètres de haies avec la productivité retenue dans la fiche [chauffage au mazout](chauffage-mazout.md) (ordre de grandeur, calculé).
+- **Les haies et le bois de la ferme** : pour {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an, il faut environ {{ v('sechage_map_an', 0, unite=False) }} MAP de plaquettes par an (calculé), de l'ordre de 5 à 10 km de haies avec les productivités citées dans la fiche [chauffage au mazout](chauffage-mazout.md) (ordre de grandeur, calculé).
 - **Les rafles de maïs** : récoltées à part, elles peuvent servir de combustible au séchoir ; un projet complet dans les Landes (récolte, transport, stockage, séchage, granulés) a coûté plus de 500 000 € en 2006[^reussir-rafles].
 - **La chaleur du méthaniseur**, perdue en automne si elle ne sèche rien.
 - **Le maïs grain humide et l'épi broyé**, mangés à la ferme, évitent le séchage et le transport de l'eau.

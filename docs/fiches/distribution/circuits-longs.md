@@ -5,7 +5,7 @@ domaine: distribution
 dependance_fossile: gasoil
 alternatives: [Vente directe groupée, points de dépôt, abonnements payés d'avance]
 vague_meilleure_alternative: 2
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -16,7 +16,7 @@ maj: 2026-11-26
 
 ## En bref
 
-La plupart des produits agricoles belges rejoignent l'assiette par une chaîne longue : collecteur ou criée, transformateur, centrale d'achat, supermarché. Cette chaîne roule au diesel, garde le froid à l'électricité et emballe dans du plastique. Le producteur n'y touche qu'une petite part du prix : 11 % de la valeur de la chaîne alimentaire reviennent aux agriculteurs en Belgique, contre 26 % en moyenne dans l'Union[^lalibre-comeos]. En circuit court, le producteur fixe son prix et garde 70 à 80 % du prix final quand une coopérative vend pour lui[^alterechos]. Ces circuits courts ne suppriment pas le pétrole : une camionnette mal remplie peut consommer plus par kilo qu'un camion plein[^ademe]. Ils sont rentables sous conditions : un collectif, des volumes réguliers, des clients proches et du temps pour vendre (vague 2).
+La plupart des produits agricoles belges rejoignent l'assiette par une chaîne longue : collecteur ou criée, transformateur, centrale d'achat, supermarché ; elle roule au diesel, garde le froid à l'électricité et emballe dans du plastique. Le producteur n'y touche qu'une petite part du prix : 11 % de la valeur de la chaîne alimentaire reviennent aux agriculteurs en Belgique, contre 26 % en moyenne dans l'Union[^lalibre-comeos]. En circuit court, le producteur fixe son prix et garde 70 à 80 % du prix final quand une coopérative vend pour lui[^alterechos]. Ces circuits courts ne suppriment pas le pétrole : une camionnette mal remplie peut consommer plus par kilo qu'un camion plein (chiffres français)[^ademe]. Ils sont rentables sous conditions : un collectif, des volumes réguliers, des clients proches et du temps pour vendre (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -37,7 +37,7 @@ Dans l'Union européenne, produire, transformer, emballer et amener la nourritur
 - **Transport et logistique** : 9,4 % de l'énergie contenue dans la nourriture consommée. Le transport routier assure 90 % des trajets de nourriture à l'intérieur de l'Union, le plus souvent au diesel ; 83 % des importations alimentaires arrivent par bateau[^jrc].
 - **Froid et magasins** : la vente au détail représente environ 12 % de l'énergie de la logistique. Dans les petits magasins, le froid peut absorber jusqu'à 60 % de l'électricité, selon une étude britannique citée par le JRC[^jrc]. L'électricité suit en partie le prix du gaz (voir la fiche [électricité du réseau](../energie/electricite-reseau.md)).
 - **Emballages** : 10,7 % de l'énergie (plastiques issus du pétrole, cartons, verre)[^jrc].
-- **Déplacement du consommateur** : la voiture jusqu'au supermarché. L'ADEME le compte parmi les postes majeurs du transport de l'alimentation[^ademe].
+- **Déplacement du consommateur** : la voiture jusqu'au supermarché. L'ADEME (France) le compte parmi les postes majeurs du transport de l'alimentation[^ademe].
 
 Ces chiffres sont européens et datent de 2013 : aucun équivalent belge n'a été trouvé (voir « À vérifier »).
 
@@ -61,7 +61,7 @@ Au même prix final, le producteur reçoit {{ v('pdt_ratio_coop_long', 1) }} plu
 
 Plusieurs producteurs vendent ensemble, sans grossiste ni centrale d'achat : magasin de producteurs, coopérative citoyenne, marché de producteurs. Le producteur fixe son prix ; la coopérative ajoute sa marge pour payer le magasin, le personnel et la logistique[^oxfam].
 
-**Le cas de Paysans-Artisans.** Cette coopérative de producteurs et de consommateurs du Namurois réunissait fin 2021 environ 120 producteurs, 8 magasins, 18 points de retrait et 5 000 consommateurs, pour un chiffre d'affaires de 7,5 millions d'euros par an. Elle employait 44 salariés et s'appuyait sur près de 500 bénévoles[^alterechos]. Sa marge est de {{ v('marge_coop_en_ligne', 0) }} en vente en ligne et de {{ v('marge_coop_magasin', 0) }} en magasin[^alterechos]. En magasin, ces 30 % se partagent entre la logistique (10 %) et les frais du magasin (20 %). La vente aux professionnels ne prend que 10 %, et les marchés organisés par la coopérative ne prennent pas de marge[^unamur].
+**Le cas de Paysans-Artisans.** Cette coopérative de producteurs et de consommateurs du Namurois réunissait fin 2021 environ 120 producteurs, 8 magasins, 18 points de retrait et 5 000 consommateurs, pour un chiffre d'affaires de 7,5 millions d'euros par an. Elle employait 44 salariés et s'appuyait sur près de 500 bénévoles[^alterechos]. Sa marge est de {{ v('marge_coop_en_ligne', 0) }} en vente en ligne et de {{ v('marge_coop_magasin', 0) }} en magasin[^alterechos]. En magasin, cette marge se partage entre la logistique (10 %) et les frais du magasin (20 %). La vente aux professionnels ne prend que 10 %, et les marchés organisés par la coopérative ne prennent pas de marge[^unamur].
 
 **Le Collectif 5C.** Fin 2022, ce collectif fédérait une quarantaine de coopératives citoyennes de circuit court en Wallonie et à Bruxelles, soit plus de 11 000 coopérateurs et 1 150 producteurs[^oxfam]. Les coopératives n'ont pas de règle commune de prix : certaines appliquent une marge unique, d'autres une marge par produit (pour couvrir les pertes en fruits et légumes), d'autres encore fixent les prix avec les maraîchers en début de saison[^oxfam]. La Wallonie a financé trois hubs logistiques à Liège, Namur et Charleroi, pour que les producteurs livrent un seul point au lieu que la coopérative fasse le tour des fermes[^oxfam] (voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md)).
 
@@ -99,9 +99,9 @@ Conditions :
 
 Limites :
 
-- **le pétrole reste dans la camionnette.** Par kilomètre et par tonne, un poids lourd de 32 tonnes émet environ dix fois moins qu'une camionnette de moins de 3,5 tonnes[^ademe]. Une camionnette peu remplie qui rentre à vide peut donc consommer plus de carburant par kilo qu'un camion plein venu de loin. À Liège, sans compter le trajet du client, la tournée de Point Ferme avait un impact plus élevé que des légumes de supermarché arrivés par bateau, mais plus faible que des légumes arrivés par avion[^pointferme] ;
+- **le pétrole reste dans la camionnette.** Par kilomètre et par tonne, un poids lourd de 32 tonnes émet environ dix fois moins qu'une camionnette de moins de 3,5 tonnes, selon l'ADEME (France)[^ademe]. Une camionnette peu remplie qui rentre à vide peut donc consommer plus de carburant par kilo qu'un camion plein venu de loin. À Liège, sans compter le trajet du client, la tournée de Point Ferme avait un impact plus élevé que des légumes de supermarché arrivés par bateau, mais plus faible que des légumes arrivés par avion[^pointferme] ;
 - seuls 8 % des Belges francophones utilisent chaque mois un groupe d'achats ou une plateforme de commande groupée, et la commande en ligne attire peu[^apaq-2026] ;
-- la camionnette elle-même : voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md), qui chiffre le diesel d'une camionnette de livraison à {{ v('utilitaire_diesel_eur_an') }} pour {{ v('utilitaire_km_an') }} (hypothèse).
+- la camionnette elle-même : voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md), qui chiffre le diesel d'une camionnette de livraison à {{ v('utilitaire_diesel_eur_an') }} (calculé) pour {{ v('utilitaire_km_an') }} (hypothèse).
 
 ### 3. Abonnements payés d'avance (vague 2)
 

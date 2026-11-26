@@ -668,6 +668,13 @@ CALCULS = [
     ("froment_semence_ferme_part_surface", "Wallonie : part de la surface de froment semée avec du grain trié à façon (ordre de grandeur)", "%",
      "Froment trié à façon ÷ dose de semis ÷ surface de froment",
      lambda h, c: h["tri_froment_wallonie_kg"] / h["semence_froment_dose"] / h["surface_froment_wallonie_ha"]),
+    # Relecture : calculs ajoutés
+    ("tank_kwh_an", "Tank à lait : électricité du refroidissement par an, sans pré-refroidisseur", "kWh/an",
+     "kWh par 1 000 L × lait livré ÷ 1 000",
+     lambda h, c: h["tank_kwh_1000l"] * h["lait_livre_an"] / 1000),
+    ("froment_perte_equilibre_t_ha", "Froment : perte de rendement qui annule l'économie du traitement unique", "t/ha",
+     "Économie du traitement unique ÷ prix du blé",
+     lambda h, c: c["froment_economie_traitement_unique"] / h["ble_prix"]),
 ]
 
 

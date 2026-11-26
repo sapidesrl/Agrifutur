@@ -5,7 +5,7 @@ domaine: traction
 dependance_fossile: gasoil
 alternatives: [Télescopique ou chargeur électrique, télescopique hybride au biométhane]
 vague_meilleure_alternative: 2
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Le télescopique et le chargeur articulé (« valet de ferme ») font la manutention quotidienne : paillage, alimentation, curage, chargement. Ils roulent au gasoil, peu d'heures par jour mais tous les jours. Leur version électrique fait le même travail et coûte beaucoup moins cher en énergie, surtout derrière ses propres panneaux. Le frein est le prix d'achat, plus élevé d'environ 35 à 60 % selon les essais. Sur une exploitation qui les utilise peu, l'économie d'énergie ne rembourse pas ce surcoût : l'électrique est rentable sous conditions (vague 2).
+Le télescopique et le chargeur articulé (« valet de ferme ») font la manutention quotidienne : paillage, alimentation, curage, chargement. Ils roulent au gasoil, peu d'heures par jour mais tous les jours. Leur version électrique fait le même travail et coûte beaucoup moins cher en énergie derrière ses propres panneaux ; sur le réseau, l'avantage n'existe qu'au prix de crise. Le frein est le prix d'achat, plus élevé d'environ 35 à 60 % selon les essais[^lwk-aide][^topagrar-h][^fwi]. Sur une exploitation qui les utilise peu, l'économie d'énergie ne rembourse pas ce surcoût : l'électrique est rentable sous conditions (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -41,7 +41,7 @@ Coût de l'énergie par heure pour un valet de ferme (calculé à partir des con
 | Électricité du réseau | {{ v('valet_reseau_eur_h') }} | {{ fourchette('valet_reseau_eur_h') }} |
 | Photovoltaïque de la ferme | {{ v('valet_pv_eur_h') }} | fixe |
 
-Sur {{ v('heures_valet_an') }}, l'économie d'énergie atteint {{ v('valet_economie_an_pv') }} sur photovoltaïque et {{ v('valet_economie_an_reseau') }} sur le réseau. Au prix d'avant-crise, elle tombe à {{ v('valet_economie_an_pv', scenario='bas') }} sur photovoltaïque. Contrairement au tracteur, l'électrique reste ici moins cher que le gasoil même sur le réseau au prix actuel, parce que le moteur diesel d'un petit engin qui tourne souvent au ralenti a un mauvais rendement[^lwk]. Au prix d'avant-crise, l'avantage sur le réseau disparaît ({{ v('valet_economie_an_reseau', scenario='bas') }}) : seul le photovoltaïque garde un gain net.
+Sur {{ v('heures_valet_an') }} (le haut de la fourchette bavaroise citée plus haut), l'économie d'énergie atteint {{ v('valet_economie_an_pv') }} sur photovoltaïque et {{ v('valet_economie_an_reseau') }} sur le réseau. Au prix d'avant-crise, elle tombe à {{ v('valet_economie_an_pv', scenario='bas') }} sur photovoltaïque. Contrairement au [tracteur](tracteur-diesel.md), l'électrique reste ici moins cher que le gasoil même sur le réseau au prix actuel, parce que le moteur diesel d'un petit engin qui tourne souvent au ralenti a un mauvais rendement[^lwk]. Au prix d'avant-crise, l'avantage sur le réseau disparaît ({{ v('valet_economie_an_reseau', scenario='bas') }}) : seul le photovoltaïque garde un gain net.
 
 Le frein est le prix d'achat :
 
@@ -51,7 +51,7 @@ Le frein est le prix d'achat :
 - chez Weidemann, les prix catalogue HTVA vont de 56 000 € pour un petit valet de ferme électrique à 90 500 € pour un télescopique[^weidemann] ;
 - la presse française cite un surcoût d'au moins 30 % (batterie au plomb) à près du double (certains modèles au lithium)[^pleinchamp].
 
-Pour un valet de ferme, le surcoût est donc d'environ 20 000 à 23 000 €[^lwk-aide][^topagrar-h]. Face à une économie d'énergie de {{ v('valet_economie_an_pv') }}, le retour sur investissement dépasse 15 ans. C'est au moins la durée de vie annoncée d'une batterie : 2 000 à 5 000 cycles selon les marques[^pleinchamp], soit environ sept ans à deux charges par jour pour les 5 000 cycles de JCB[^fwi]. Les constructeurs avancent un retour de deux à cinq ans[^pleinchamp], ce qui suppose un usage bien plus intensif que 300 heures par an. L'entretien réduit (pas de vidange moteur, pas de filtres, pas d'AdBlue) améliore le bilan, mais il n'est pas chiffré ici : sur l'exploitation bavaroise, la batterie d'origine (au gel) n'a tenu que 1 500 heures et son remplacement a coûté 4 000 €, ce qui a effacé le gain d'entretien[^topagrar-h].
+Pour un valet de ferme, le surcoût est donc d'environ 20 000 à 23 000 €[^lwk-aide][^topagrar-h]. Face à une économie d'énergie de {{ v('valet_economie_an_pv') }}, le retour sur investissement dépasse 15 ans. C'est au moins la durée de vie annoncée d'une batterie : 2 000 à 5 000 cycles selon les marques[^pleinchamp], soit environ sept ans à deux charges par jour pour les 5 000 cycles de JCB[^fwi]. Les constructeurs avancent un retour de deux à cinq ans[^pleinchamp], ce qui suppose un usage bien plus intensif que {{ v('heures_valet_an') }}. L'entretien réduit (pas de vidange moteur, pas de filtres, pas d'AdBlue) améliore le bilan, mais il n'est pas chiffré ici : sur l'exploitation bavaroise, la batterie d'origine (au gel) n'a tenu que 1 500 heures et son remplacement a coûté 4 000 €, ce qui a effacé le gain d'entretien[^topagrar-h].
 
 L'autonomie réelle est un autre point de vigilance. Les constructeurs annoncent 3,5 à 8 heures en usage classique et 2,5 à 5 heures en usage intensif[^pleinchamp]. Un exploitant autrichien obtient 2,5 à 3 heures de travail productif par charge avec un JCB 525-60E[^topagrar-jcb]. Cela suffit pour le paillage et l'alimentation du matin et du soir, avec une recharge entre les deux, mais pas pour une longue journée d'ensilage.
 
@@ -60,11 +60,11 @@ Conditions de rentabilité :
 - beaucoup d'heures par an (au-delà de 400 à 500 h, hypothèse), ce qui ne suffit pas seul à rembourser le surcoût ;
 - recharge sur son propre photovoltaïque, entre deux chantiers ;
 - travail en bâtiment fermé, où l'absence de gaz d'échappement et de bruit compte pour les animaux et les personnes ;
-- une aide à l'investissement. En Allemagne, une subvention fédérale de 20 % (programme d’efficacité énergétique, guichet fermé à l’été 2025) rendait le coût annuel total de l'électrique légèrement inférieur à celui du diesel[^topagrar-h] ; l'essai de Basse-Saxe conclut aussi que l'aide et une part de courant photovoltaïque rendent l'électrique compétitif[^lwk-aide]. En Wallonie, l'aide aux investissements (AII) prévoit une ligne « chargeur compact / nettoyeur d'étable / télescopique », classée par puissance en chevaux, avec un coût plafond de 35 387 € (moins de 50 ch) à 83 050 € (100 ch et plus). Rien n'y vise l'engin électrique, alors qu'une ligne existe pour le tracteur électrique ou au biogaz[^aii].
+- une aide à l'investissement. En Allemagne, une subvention fédérale de 20 % (programme d'efficacité énergétique, guichet fermé à l'été 2025) rendait le coût annuel total de l'électrique légèrement inférieur à celui du diesel[^topagrar-h] ; l'essai de Basse-Saxe conclut aussi que l'aide et une part de courant photovoltaïque rendent l'électrique compétitif[^lwk-aide]. En Wallonie, l'aide aux investissements (AII) prévoit une ligne « chargeur compact / nettoyeur d'étable / télescopique », classée par puissance en chevaux, avec un coût plafond de 35 387 € (moins de 50 ch) à 83 050 € (100 ch et plus). Rien n'y vise l'engin électrique, alors qu'une ligne existe pour le tracteur électrique ou au biogaz[^aii].
 
 ### 2. Télescopique hybride au biométhane (vague 3)
 
-New Holland a présenté à l'Agritechnica 2025 un prototype de télescopique hybride, le TH Hybrid Power : une batterie de 70 kWh et un moteur au gaz naturel comprimé de 75 kW (utilisable au biométhane) qui apporte la puissance des gros travaux et recharge la batterie. L'autonomie électrique annoncée est de 4 à 6 heures, pour une capacité de 4,2 t et une hauteur de levage de 7 à 9 m[^nh]. Aucun prix ni date de commercialisation n'étaient connus fin 2026.
+New Holland a présenté à l'Agritechnica 2025 un prototype de télescopique hybride, le TH Hybrid Power : une batterie de 70 kWh et un moteur au gaz naturel comprimé de 75 kW (utilisable au biométhane) qui apporte la puissance des gros travaux et recharge la batterie. L'autonomie électrique annoncée est de 4 à 6 heures, pour une capacité de 4,2 t et une hauteur de levage de 7 à 9 m[^nh]. Aucun prix ni date de commercialisation n'étaient connus en novembre 2026.
 
 C'est une piste pour les longues journées, à condition d'avoir accès à du biométhane comprimé sur la ferme ou à proximité.
 
@@ -92,7 +92,7 @@ C'est une piste pour les longues journées, à condition d'avoir accès à du bi
 [^topagrar-h]: Josef Neiber (LfL Bayern), « Hoffahrzeuge mit Strom oder Diesel antreiben », top agrar, 9 juillet 2025. https://www.topagrar.com/betriebsleitung/news/hoffahrzeuge-mit-strom-oder-diesel-antreiben-20016039.html
 [^topagrar-jcb]: « E-Lader von JCB mit leisen Sohlen und viel Kraft », top agrar Österreich, 23 février 2026. https://www.topagrar.com/oesterreich/e-lader-von-jcb-mit-leisen-sohlen-und-viel-kraft-20022753.html
 [^weidemann]: « E-Flotte von Weidemann: Strom schlägt Diesel », top agrar Österreich, 27 avril 2026. https://www.topagrar.com/oesterreich/e-flotte-von-weidemann-strom-schlagt-diesel-20025026.html
-[^dieci]: Fiche technique Dieci Mini Agri-e 26.6 (révision 04), Dieci, consultée en novembre 2026. https://dieci.com/ASSETS//Scheda_Tecnica/DOCCT0000139-EN-04.pdf
+[^dieci]: Fiche technique Dieci Mini Agri-e 26.6 (révision 04), Dieci, non datée, consultée en novembre 2026. https://dieci.com/ASSETS//Scheda_Tecnica/DOCCT0000139-EN-04.pdf
 [^fwi]: « On test : JCB's debut battery-electric Loadall, the 525-60E », Farmers Weekly, 25 octobre 2021. https://fwi.co.uk/machinery/telehandlers/on-test-jcbs-debut-battery-electric-loadall-the-525-60e
 [^pleinchamp]: « Les engins de manutention agricole se mettent à l'électrique », Pleinchamp (France), 16 juillet 2022. https://www.pleinchamp.com/actualite/les-engins-de-manutention-agricole-se-mettent-a-l-electrique
 [^aii]: Arrêté ministériel du 23 février 2023 (aides aux investissements dans les exploitations agricoles), Wallex, version consolidée (dernière modification : arrêté ministériel du 11 mai 2026), annexe des coûts plafonds. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748

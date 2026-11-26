@@ -4,8 +4,8 @@ titre: Moissonneuse et ensileuse
 domaine: traction
 dependance_fossile: gasoil
 alternatives: [mutualisation de la récolte, HVO, huile végétale, moissonneuse hybride ou électrique, biométhane]
-vague_meilleure_alternative: 2
-statut: brouillon
+vague_meilleure_alternative: 1
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 200 à plus de 500 chevaux, quelques centaines d'heures par an. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales (référence française). Au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé).
-
-Aucune machine de récolte ne roule aujourd'hui au biométhane ou à l'électricité. La seule alternative prête à l'emploi est le HVO100, un diesel tiré d'huiles et de graisses usagées, que Claas autorise dans ses machines récentes. Il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé, estimation) : vague 2, si un acheteur, un label ou les économies d'une machine partagée couvrent ce surcoût. Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé. L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
+La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 2, si un acheteur, un label ou un collectif prend ce surcoût en charge). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -38,7 +36,7 @@ Les grosses machines brûlent plus par heure mais à peu près autant par hectar
 
 **Ce qu'elles coûtent.** Ce sont des machines chères pour peu d'heures. Dans le barème, une moissonneuse de 290 à 320 ch neuve vaut 252 120 € HT[^bareme]. Le prix moyen d'une ensileuse de 500 ch était de 378 000 € en 2024 en France, selon Chambres d'agriculture France[^agreste]. Sur 576 moissonneuses de Cuma françaises, le prix de revient moyen est de 85 €/ha, hors carburant et chauffeur. L'amortissement en représente 70 %[^entraid].
 
-**Qui récolte ?** En France, en 2023, 52 % des exploitations qui utilisent une automotrice de récolte en sont propriétaires. Pour l'ensileuse, 53,2 % des utilisateurs passent par une Cuma et 13 % seulement en possèdent une[^agreste]. On n'a pas trouvé de chiffre équivalent pour la Wallonie (voir « À vérifier »). La profession y est représentée par Agro-Service (Landbouw-Service), qui regroupe plus de 800 entrepreneurs de travaux agricoles, loonsproeiers et négociants en Belgique[^agroservice].
+**Qui récolte ?** En France, en 2023, 52 % des exploitations qui utilisent une automotrice de récolte en sont propriétaires. Pour l'ensileuse, 53,2 % des utilisateurs passent par une Cuma et 13 % seulement en possèdent une[^agreste]. On n'a pas trouvé de chiffre équivalent pour la Wallonie (voir « À vérifier »). La profession y est représentée par Agro-Service (Landbouw-Service), qui regroupe plus de 800 entrepreneurs de travaux agricoles, entrepreneurs de pulvérisation et négociants en Belgique[^agroservice].
 
 ## Où entrent le pétrole et le gaz
 

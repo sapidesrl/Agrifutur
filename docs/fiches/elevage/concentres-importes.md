@@ -5,7 +5,7 @@ domaine: élevage
 dependance_fossile: gasoil (culture, transport); gaz et vapeur (trituration); hexane
 alternatives: [Pâturage, légumineuses fourragères, tourteau de colza du commerce, tourteau de colza fermier, féverole et pois]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-Le tourteau de soja est le correcteur azoté de référence des rations belges : il apporte beaucoup de protéines sous un petit volume. Il vient surtout d'Amérique du Sud[^craw-autonomie]. Le fossile entre par la culture, la trituration (extraction de l'huile à l'hexane, un solvant pétrolier, puis désolvantation à la chaleur ou à la vapeur) et le transport. Rendu en Europe, une tonne de tourteau de soja a demandé environ {{ v('soja_gasoil_eq_t', 0) }} d'équivalent gasoil en énergie non renouvelable, contre {{ v('colza_gasoil_eq_t', 0) }} pour une tonne de tourteau de colza européen (calculé d'après les tables INRAE-CIRAD-AFZ[^ft-energie]). En novembre 2026, le kg de matière azotée totale (MAT) coûte {{ v('mat_cout_soja') }} avec le tourteau de soja et {{ v('mat_cout_colza') }} avec le tourteau de colza (calculé).
-
-La meilleure alternative est de produire la protéine sur la ferme avec l'herbe : pâturage et prairies riches en trèfle ou en luzerne (vague 1). Le kg de MAT d'herbe pâturée revient à environ {{ v('mat_cout_herbe_paturee') }} (calculé, coût de l'herbe de 2021). Le tourteau de colza du commerce remplace le soja à coût égal ou inférieur (vague 1). Le tourteau de colza pressé à la ferme et les protéagineux (féverole, pois) demandent des conditions précises (vague 2).
+Le tourteau de soja, correcteur azoté de référence des rations belges, vient surtout d'Amérique du Sud[^craw-autonomie]. Le fossile entre par la culture, l'extraction de l'huile à l'hexane (un solvant pétrolier) et le transport : rendu en Europe, une tonne de tourteau de soja a demandé environ {{ v('soja_gasoil_eq_t', 0, unite=False) }} L d'équivalent gasoil en énergie non renouvelable, contre {{ v('colza_gasoil_eq_t', 0, unite=False) }} L pour le tourteau de colza européen (calculé d'après les tables INRAE-CIRAD-AFZ[^ft-energie]). La meilleure alternative est de produire la protéine sur la ferme avec l'herbe pâturée, dont le kg de matière azotée totale (MAT) revient à environ {{ v('mat_cout_herbe_paturee') }} contre {{ v('mat_cout_soja') }} pour le soja (calculé, coût de l'herbe de 2021), et avec des prairies riches en trèfle ou en luzerne (vague 1). Le tourteau de colza du commerce remplace le soja pour un coût un peu inférieur à protéines égales (vague 1). Le tourteau de colza pressé à la ferme et les protéagineux (féverole, pois) demandent des conditions précises (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -52,7 +50,7 @@ Les prix sont des prix français : soja départ Montoir[^depeche-24nov], colza d
 
 ### 1. Pâturage (vague 1)
 
-L'herbe jeune pâturée est riche en protéines : de 12 à 22 % de MAT dans la MS selon le stade[^craw-autonomie]. La vache la récolte elle-même, sans gasoil, sans plastique et sans tourteau. Avec une herbe à {{ v('herbe_mat') }} de MAT (hypothèse) et un coût de 0,05 €/kg MS cité par le CRA-W (prix de 2021)[^craw-ptd], le kg de MAT revient à environ {{ v('mat_cout_herbe_paturee') }}, contre {{ v('mat_cout_ensilage_herbe') }} pour l'ensilage d'herbe (0,15 €/kg MS[^craw-ptd]) et {{ v('mat_cout_soja') }} pour le tourteau de soja (calculé). Ce coût date de 2021 : même s'il avait doublé depuis (hypothèse), le kg de MAT d'herbe pâturée resterait environ deux fois moins cher que celui du soja.
+L'herbe jeune pâturée est riche en protéines : de 12 à 22 % de MAT dans la MS selon le stade[^craw-autonomie]. La vache la récolte elle-même, sans gasoil, sans plastique et sans tourteau. Avec une herbe à {{ v('herbe_mat') }} de MAT (hypothèse) et un coût de 0,05 €/kg MS cité par le CRA-W (prix de 2021)[^craw-ptd], le kg de MAT revient à environ {{ v('mat_cout_herbe_paturee') }}, contre {{ v('mat_cout_ensilage_herbe') }} pour l'ensilage d'herbe (0,15 €/kg MS[^craw-ptd]) et {{ v('mat_cout_soja') }} pour le tourteau de soja (calculé). Ce coût date de 2021 : même s'il avait doublé depuis (hypothèse), le kg de MAT d'herbe pâturée resterait environ deux fois moins cher que celui du soja au prix actuel, et encore moins cher qu'au prix de février 2026 ({{ v('mat_cout_soja', scenario='bas') }}).
 
 Le pâturage tournant dynamique en tire le meilleur parti. Sur 12 fermes laitières wallonnes passées à cette technique, 9 relient ce changement à la recherche d'autonomie alimentaire et 8 mettent en avant un gain économique[^craw-ptd]. La mise en place (paddocks, chemins, points d'eau) est détaillée dans la fiche [Ensilage et enrubannage](fourrages-recoltes.md).
 
@@ -66,7 +64,7 @@ Des prairies temporaires avec trèfle violet, trèfle blanc ou luzerne produisen
 
 **Résistance à la sécheresse.** Dans des essais de l'UCLouvain financés par le SPW à Corroy-le-Grand (2013-2018), luzerne et trèfle violet ont mieux résisté au manque d'eau que les graminées, sans aucun apport d'azote. En 2015, année sèche, la deuxième coupe a donné environ 2 t MS/ha pour le ray-grass anglais, 5,5 t pour le trèfle violet et 8 à 9 t pour la luzerne. En 2017-2018, la luzerne pure et l'association dactyle et luzerne ont donné les meilleurs rendements[^spw-secheresse].
 
-**Coût.** Le kg de MAT d'un ensilage d'herbe à {{ v('herbe_mat') }} de MAT (hypothèse) revient à environ {{ v('mat_cout_ensilage_herbe') }} (calculé, coût de 2021) : moins cher que le soja ({{ v('mat_cout_soja') }}) au prix actuel. Au prix de février 2026 ({{ v('mat_cout_soja', scenario='bas') }}), l'écart est faible : l'avantage vient alors surtout de l'herbe pâturée et des légumineuses qui évitent l'engrais azoté.
+**Coût.** Le kg de MAT d'un ensilage d'herbe à {{ v('herbe_mat') }} de MAT (hypothèse) revient à environ {{ v('mat_cout_ensilage_herbe') }} (calculé, coût de 2021) : moins cher que le soja ({{ v('mat_cout_soja') }}) au prix actuel. Au prix de février 2026, c'est l'inverse : le soja revient à {{ v('mat_cout_soja', scenario='bas') }}, moins cher que l'ensilage. Et le coût de l'ensilage date de 2021 : avec la hausse du gasoil et du plastique, il est sans doute plus élevé en 2026 (voir la fiche [Ensilage et enrubannage](fourrages-recoltes.md)). L'ensilage de légumineuses ne bat donc pas le soja à coup sûr sur le seul prix de la protéine. Sa rentabilité tient surtout à l'engrais azoté évité, à la résistance à la sécheresse et, quand on les fait pâturer, au faible coût de l'herbe pâturée.
 
 Conditions :
 
@@ -90,7 +88,7 @@ Limites : à poids égal, le tourteau de colza apporte moins d'énergie et de pr
 
 Une petite presse à froid sépare à la ferme l'huile et le tourteau. Il n'y a ni hexane ni vapeur, mais le tourteau reste gras : 12 à 18 % de matière grasse, contre 2 à 2,5 % pour un tourteau déshuilé du commerce (Institut de l'élevage, référence française ancienne)[^idele-presse]. Une presse fermière laisse environ 15 % d'huile dans le tourteau, contre environ 1 % en huilerie[^inrae-trituration]. Ce tourteau gras contient {{ v('tourteau_colza_gras_mat') }} de MAT sur brut[^ft-mat].
 
-**Le lien avec le carburant.** L'huile peut alimenter un tracteur adapté (voir la fiche [Tracteur diesel](../traction/tracteur-diesel.md)). Une tonne de graines donne {{ v('tourteau_par_tonne') }} de tourteau (hypothèse). Le calcul du coût de l'huile y déduit la valeur du tourteau au prix du commerce : c'est la vente ou l'usage du tourteau qui rend l'huile intéressante. Valorisé à ce prix, le kg de MAT du tourteau fermier coûte {{ v('mat_cout_colza_fermier') }} (calculé), un peu plus que le tourteau déshuilé, mais il apporte en plus de l'énergie sous forme de matière grasse.
+**Le lien avec le carburant.** L'huile peut alimenter un tracteur adapté (voir la fiche [Tracteur diesel](../traction/tracteur-diesel.md)). Une tonne de graines donne {{ v('tourteau_par_tonne', 2, unite=False) }} t de tourteau (hypothèse). Le calcul du coût de l'huile y déduit la valeur du tourteau au prix du commerce : c'est la vente ou l'usage du tourteau qui rend l'huile intéressante. Valorisé à ce prix, le kg de MAT du tourteau fermier coûte {{ v('mat_cout_colza_fermier') }} (calculé), un peu plus que le tourteau déshuilé, mais il apporte en plus de l'énergie sous forme de matière grasse.
 
 Conditions :
 
@@ -110,7 +108,7 @@ Les protéagineux se cultivent en Wallonie. La féverole contient 30 à 31 % de 
 
 Limites : rendements irréguliers, graines aussi consommables par l'homme, place à trouver dans l'assolement[^craw-autonomie]. Parmi les freins relevés par le rapport WalProt du CRA-W (2026) figurent l'instabilité des rendements, le manque d'outils de collecte et de transformation, la concurrence des produits importés à bas prix et le manque de coordination de la filière[^walprot]. Le toastage demande une installation et de la chaleur : pour que le gain soit complet, cette chaleur doit venir d'une source renouvelable (unité collective au bois, au biogaz ou à l'électricité solaire).
 
-Pourquoi vague 2 : rentable surtout avec les aides couplées aux protéagineux, un bénéfice de rotation reconnu (précédent pour le blé, économie d'azote) et un outil de toastage partagé.
+Pourquoi vague 2 : au prix du marché, le kg de MAT du pois coûte plus cher que celui du soja, avant comme pendant la crise. La culture ne devient intéressante que sous conditions : aides couplées aux protéagineux, bénéfice de rotation reconnu (précédent pour le blé, économie d'azote) et outil de toastage partagé.
 
 ## Ce qui ferme la boucle
 
@@ -154,6 +152,6 @@ Pourquoi vague 2 : rentable surtout avec les aides couplées aux protéagineux, 
 [^ec-report]: « Retard jusqu'en décembre 2026 et autres évolutions dans la mise en œuvre du règlement EUDR », Commission européenne, Access2Markets, 28 janvier 2026. https://trade.ec.europa.eu/access-to-markets/fr/news/retard-jusquen-decembre-2026-et-autres-evolutions-dans-la-mise-en-oeuvre-du-reglement-eudr
 [^craw-ptd]: Lefèvre A., « Motivations, freins et leviers face à des changements de pratiques visant à optimiser la valorisation des fourrages. Retour d'expérience d'éleveurs laitiers wallons », CRA-W, mai 2022 (coût de l'herbe d'après Glesner N., Lefèvre A., *Lettre paysanne* FUGEA, 2021). https://www.cra.wallonie.be/uploads/2022/06/delivrable-3-4-retour-dexperience-deleveurs-laitiers-wallons-motivations-freins-leviers-face-a-des-changements-de-pratiques-visant-a-ameliorer-lerf.pdf
 [^craw-luzerne]: « Récolter des feuilles de luzerne, un moyen de concentrer les protéines ! », CRA-W pour les Contrats captage, 2024 (essais 2022-2023 ; tableau de production d'après Junker, 2016). https://www.cra.wallonie.be/uploads/2024/03/recolter-des-feuilles-de-luzerne-un-moyen-de-concentrer-les-proteines.pdf
-[^spw-secheresse]: Nihoul Ph. (SPW-ARNE), Lambert R. (UCLouvain), « Production fourragère des prairies : quelles espèces traditionnelles pérennes les plus adaptées à la sécheresse ? », synthèse d'essais 2013-2018, SPW Agriculture. https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20fourrag%c3%a8re/Quelles%20esp%c3%a8ces%20traditionnelles%20p%c3%a9rennes%20les%20plus%20adapt%c3%a9es%20%c3%a0%20la%20s%c3%a9cheresse%20%20.pdf
+[^spw-secheresse]: Nihoul Ph. (SPW-ARNE), Lambert R. (UCLouvain), « Production fourragère des prairies : quelles espèces traditionnelles pérennes les plus adaptées à la sécheresse ? », synthèse d'essais 2013-2018, SPW Agriculture, document non daté, consulté le 26 novembre 2026. https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20fourrag%c3%a8re/Quelles%20esp%c3%a8ces%20traditionnelles%20p%c3%a9rennes%20les%20plus%20adapt%c3%a9es%20%c3%a0%20la%20s%c3%a9cheresse%20%20.pdf
 [^idele-presse]: F. Mechekour, « Les tourteaux pressés à la ferme ont un fort taux de matière grasse, note l'Institut de l'élevage » (entretien avec Ph. Brunschwig), Réussir Lait (France), 17 septembre 2003. https://www.reussir.fr/lait/les-tourteaux-presses-la-ferme-ont-un-fort-taux-de-matiere-grasse-note-linstitut-de-lelevage
 [^walprot]: Verhoeven C., Cassart P., Froidmont É., Van Stappen F., « Portrait de la filière des protéines végétales et alternatives en Wallonie. Analyse qualitative des barrières et leviers », CRA-W, projet Wal'Prot (IIS Protewin), juin 2026. https://www.cra.wallonie.be/uploads/2026/07/rapport-walprot-portrait-filiere-proteines-vegetales-alternatives-wallonie-2026-pdf.pdf

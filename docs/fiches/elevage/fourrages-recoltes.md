@@ -5,7 +5,7 @@ domaine: élevage
 dependance_fossile: gasoil; plastique
 alternatives: [Pâturage tournant, séchage du foin en grange]
 vague_meilleure_alternative: 1
-statut: brouillon
+statut: relu
 maj: 2026-11-26
 ---
 
@@ -13,9 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-L'ensilage et l'enrubannage conservent l'herbe et le maïs pour l'hiver par fermentation, à l'abri de l'air. Le fossile entre par le gasoil des chantiers (fauche, andainage, ensileuse, transport, tassement, distribution) et par le plastique (bâches, films, filets). Un hectare d'ensilage d'herbe consomme environ 180 L de gasoil de la récolte à l'auge selon un modèle français[^devun], soit {{ v('gasoil_eur_ensilage_herbe_ha', 0) }} au prix actuel (calculé). En Belgique, environ 14 000 t de films d'enrubannage et d'ensilage sont mises sur le marché chaque année[^recydata].
-
-La meilleure alternative est de laisser les vaches récolter elles-mêmes : le pâturage tournant dynamique donne l'herbe la moins chère, sans gasoil de récolte ni plastique (vague 1). Pour le stock d'hiver, le séchage du foin en grange supprime le plastique et la fermentation, mais demande un gros investissement et beaucoup d'électricité, à produire de préférence sur son propre toit (vague 2).
+L'ensilage et l'enrubannage conservent l'herbe et le maïs pour l'hiver par fermentation, à l'abri de l'air, sous bâche ou sous film plastique. Un hectare d'ensilage d'herbe consomme environ 180 L de gasoil de la récolte à l'auge selon un modèle français[^devun], soit {{ v('gasoil_eur_ensilage_herbe_ha', 0) }} au prix actuel ({{ fourchette('gasoil_eur_ensilage_herbe_ha', 0) }} selon les scénarios, calculé). En Belgique, environ 14 000 t de films d'enrubannage et d'ensilage sont mises sur le marché chaque année[^recydata]. La meilleure alternative est de laisser les vaches récolter elles-mêmes : le pâturage tournant dynamique donne l'herbe la moins chère, sans gasoil de récolte ni plastique (vague 1). Pour le stock d'hiver, le séchage du foin en grange supprime le plastique, mais demande un gros investissement et beaucoup d'électricité, à produire de préférence sur son propre toit (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -57,7 +55,7 @@ Les méthodes diffèrent d'une source à l'autre (avec ou sans la production de 
 
 ### 1. Pâturage tournant dynamique (vague 1)
 
-Le troupeau change de parcelle tous les 0,5 à 3 jours, avec un chargement instantané élevé (50 à 200 UGB/ha) et un repos de 20 à 40 jours entre deux passages selon la saison[^craw-poster]. L'herbe est mangée au bon stade et repousse vite. Un exemple du CRA-W découpe 19 paddocks pour 40 à 50 vaches laitières[^craw-poster]. Les vaches récoltent elles-mêmes : pas de fauche, pas de transport, pas de plastique, et les bouses restent sur la prairie.
+Le troupeau change de parcelle tous les 0,5 à 3 jours, avec un chargement instantané élevé (50 à 200 unités de gros bétail par hectare) et un repos de 20 à 40 jours entre deux passages selon la saison[^craw-poster]. L'herbe est mangée au bon stade et repousse vite. Un exemple du CRA-W découpe 19 paddocks pour 40 à 50 vaches laitières[^craw-poster]. Les vaches récoltent elles-mêmes : pas de fauche, pas de transport, pas de plastique, et les bouses restent sur la prairie.
 
 **Résultats en Wallonie.** Le CRA-W a interrogé 12 fermes laitières wallonnes passées d'un pâturage continu ou tournant long au pâturage tournant dynamique, 2 à 8 ans plus tôt[^craw-ptd]. Toutes se disent satisfaites et mieux valoriser leurs prairies ; 8 sur 12 constatent un gain économique et 8 sur 12 une production d'herbe plus élevée sur l'année ; 6 sur 12 gagnent du temps de travail, 4 sur 12 jugent en revanche que la conduite demande plus de suivi[^craw-ptd]. Le gain vient de l'écart de prix : herbe pâturée à 0,05 €/kg MS contre 0,15 €/kg MS pour l'ensilage d'herbe[^craw-ptd].
 
@@ -86,7 +84,7 @@ L'herbe est fauchée jeune, préfanée au champ, puis rentrée en vrac à l'auto
 | Réseau | {{ v('sechage_grange_reseau_tms', 0) }} | {{ fourchette('sechage_grange_reseau_tms', 0) }} |
 | Photovoltaïque de la ferme | {{ v('sechage_grange_pv_tms', 0) }} | fixe |
 
-Sur le réseau, l'électricité coûte par tonne autant que l'annuité d'un séchoir bon marché. Sur des panneaux posés sur le séchoir, elle devient marginale. On sèche pendant la saison de pousse, au printemps et en été, quand les panneaux produisent le plus : 80 % des projets de séchoir intègrent désormais du photovoltaïque, et les panneaux augmentent un peu le rendement du capteur solaire (40 % au lieu de 35 % avec un bac acier)[^segrafo]. Dans un exemple français, un toit thermovoltaïque de 45 kW alimente le séchoir avec 9 kW et vend le reste[^thermo].
+Sur le réseau, l'électricité coûte par tonne à peu près autant que l'annuité du séchoir le moins cher suivi dans les Pyrénées-Atlantiques (38 €/t MS[^ca64]). Sur des panneaux posés sur le séchoir, elle devient marginale. On sèche pendant la saison de pousse, au printemps et en été, quand les panneaux produisent le plus : 80 % des projets de séchoir intègrent désormais du photovoltaïque, et les panneaux augmentent un peu le rendement du capteur solaire (40 % au lieu de 35 % avec un bac acier)[^segrafo]. Dans un exemple français, un toit thermovoltaïque de 45 kW alimente le séchoir avec 9 kW et vend le reste[^thermo].
 
 **Travail et gasoil.** Dans les Pyrénées-Atlantiques, un éleveur passé au séchoir n'a plus de frais d'enrubannage et compte 200 heures de tracteur en moins par an[^ca64]. La fauche, le fanage, l'andainage et l'autochargeuse restent au gasoil : le séchoir supprime le plastique, pas le tracteur.
 
@@ -133,7 +131,7 @@ Pourquoi vague 2 : l'économie de plastique et de concentrés est réelle, mais 
 [^craw-poster]: Lefèvre A., Glesner N., « Le pâturage tournant dynamique, en quoi ça consiste ? Résultats d'enquêtes menées dans des fermes laitières wallonnes », poster, CRA-W et Fourrages Mieux, 2021. https://www.cra.wallonie.be/uploads/2021/09/poster_ptd1.pdf
 [^trevarez]: « La ferme expérimentale de Trévarez : 50 000 euros en cinq ans pour le système plus pâturant », Réussir Lait (France), 17 avril 2021. https://www.reussir.fr/lait/la-ferme-experimentale-de-trevarez-50-000-euros-en-cinq-ans-pour-le-systeme-plus-paturant
 [^trame]: Delaite B., « Le séchage du foin en grange, un profond changement dans la gestion d'une ferme », notice technique, Tr@me, groupe opérationnel du Réseau wallon de Développement rural, publiée sur Encyclopedia Pratensis, novembre 2019. https://www.encyclopediapratensis.eu/wp-content/uploads/2019/11/BELGIUM_TRAME_BarnDrying_SechageEnGrange_French.pdf
-[^spw-cre]: « Bovins laitiers bio avec séchage de foin en grange et transformation en circuit court », Centre de référence et d'expérimentation 2022-2024, SPW Agriculture (services extérieurs de Thuin et de Ciney). https://agriculture.wallonie.be/files/20182/21876/Bovins%20laitiers%20BIO%20avec%20s%c3%a9chage%20de%20foin%20en%20grange%20et%20transformation%20en%20circuit%20-court.pdf
+[^spw-cre]: « Bovins laitiers bio avec séchage de foin en grange et transformation en circuit court », Centre de référence et d'expérimentation 2022-2024, SPW Agriculture (services extérieurs de Thuin et de Ciney), document non daté, consulté le 26 novembre 2026. https://agriculture.wallonie.be/files/20182/21876/Bovins%20laitiers%20BIO%20avec%20s%c3%a9chage%20de%20foin%20en%20grange%20et%20transformation%20en%20circuit%20-court.pdf
 [^ademe]: « Utilisation rationnelle de l'énergie pour le séchage des grains et des fourrages. Séchage des fourrages », rapport final, ADEME, Coop de France, Arvalis et Solagro (France), septembre 2011. https://solagro.org/medias/publications/f16_utilisationrationnellesechagefourrages.pdf
 [^ca64]: « Le séchage en grange dans le 64 : témoignages d'éleveurs », projet Ô ton herbe, Chambre d'agriculture des Pyrénées-Atlantiques (France), novembre 2023. https://pa.chambres-agriculture.fr/fileadmin/user_upload/298_chambre_dagriculture_des_pyrenees-atlantiques/1-s_informer/Agir_face_au_changement_climatique/Sechage_en_grange_Temoignage_eleveurs_221123.pdf
 [^segrafo]: « Foin : concevoir son séchoir en grange en six questions », Réussir Lait (France), 29 mai 2024, entretien avec un conseiller de Segrafo. https://www.reussir.fr/lait/foin-concevoir-son-sechoir-en-grange-en-six-questions
