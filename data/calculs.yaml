@@ -111,38 +111,97 @@ mazout_kwh:
   formule: Prix TVAC ÷ énergie du litre
 plaquettes_kwh:
   libelle: 'Plaquettes sèches : prix du kWh'
-  valeur: 0.047562
-  bas: 0.033294
-  haut: 0.061831
+  valeur: 0.03805
+  bas: 0.03781
+  haut: 0.049465
   unite: €/kWh
   formule: Prix du MAP ÷ énergie du MAP
 ratio_mazout_plaquettes:
   libelle: Le kWh de mazout coûte … fois celui des plaquettes
-  valeur: 3.173509
-  bas: 2.381828
-  haut: 3.173509
+  valeur: 3.966886
+  bas: 2.097329
+  haut: 3.966886
   unite: fois
   formule: Mazout ÷ plaquettes
+chauffage_economie_an:
+  libelle: 'Ferme type : économie annuelle de combustible, plaquettes au lieu de mazout'
+  valeur: 9031.2
+  bas: 3319.2
+  haut: 11740.56
+  unite: €/an
+  formule: Litres de mazout × énergie du litre × (kWh mazout − kWh plaquettes), même
+    rendement de chaudière, hors entretien
+chauffage_map_an:
+  libelle: 'Ferme type : plaquettes nécessaires par an'
+  valeur: 80.0
+  unite: MAP/an
+  formule: Litres de mazout × énergie du litre ÷ énergie du MAP
+prerefroidisseur_kwh_an:
+  libelle: 'Pré-refroidisseur : électricité économisée par an'
+  valeur: 2800.0
+  unite: kWh/an
+  formule: kWh par 1 000 L × gain × lait livré ÷ 1 000
+prerefroidisseur_eur_an:
+  libelle: 'Pré-refroidisseur : économie par an (électricité du réseau)'
+  valeur: 700.0
+  bas: 490.0
+  haut: 910.0
+  unite: €/an
+  formule: kWh économisés × prix du réseau (la traite a lieu matin et soir, hors production
+    PV)
+valet_gasoil_eur_h:
+  libelle: 'Chargeur de cour : énergie par heure au gasoil'
+  valeur: 3.777972
+  bas: 1.948488
+  haut: 4.934347
+  unite: €/h
+  formule: Consommation × prix du gasoil
+valet_pv_eur_h:
+  libelle: 'Chargeur de cour : énergie par heure en électrique sur PV'
+  valeur: 0.413072
+  unite: €/h
+  formule: Consommation (côté batterie) × coût du kWh utile PV
+valet_reseau_eur_h:
+  libelle: 'Chargeur de cour : énergie par heure en électrique sur réseau'
+  valeur: 1.858824
+  bas: 1.301176
+  haut: 2.416471
+  unite: €/h
+  formule: Consommation (côté batterie) × coût du kWh utile réseau
+valet_economie_an_pv:
+  libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur PV)'
+  valeur: 1009.470002
+  bas: 460.624712
+  haut: 1356.382514
+  unite: €/an
+  formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
+valet_economie_an_reseau:
+  libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur réseau)'
+  valeur: 575.744511
+  bas: 194.19334
+  haut: 755.362906
+  unite: €/an
+  formule: (Gasoil − réseau) × heures par an, hors surcoût d'achat et entretien
 huile_cout_litre:
   libelle: 'Huile de colza : coût d''un litre, tourteau déduit'
-  valeur: 1.072222
-  bas: 0.765556
-  haut: 1.378889
+  valeur: 0.978333
+  bas: 0.977611
+  haut: 1.256833
   unite: €/L
   formule: (Prix de la graine − valeur du tourteau) ÷ litres d'huile + pressage, hors
     accises
 huile_cout_eq_gasoil:
   libelle: 'Huile de colza : coût ramené à l''énergie d''un litre de gasoil'
-  valeur: 1.165459
-  bas: 0.832126
-  haut: 1.498792
+  valeur: 1.063406
+  bas: 1.062621
+  haut: 1.366123
   unite: €/L
   formule: Coût du litre × énergie du gasoil ÷ énergie de l'huile
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
-  valeur: -0.057186
-  bas: 0.201547
-  haut: -0.098084
+  valeur: -0.159239
+  bas: 0.432042
+  haut: -0.230753
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:

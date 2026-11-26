@@ -13,7 +13,7 @@ maj: 2026-11-26
 
 ## En bref
 
-L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. On estime qu'environ la moitié de l'humanité est nourrie grâce à eux[^wef]. Au prix d'avril 2026, l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }}.
+L'ammonitrate, l'urée et la solution azotée sont fabriqués à partir de gaz naturel. On estime qu'environ la moitié de l'humanité est nourrie grâce à eux[^wef]. Au prix d'avril 2026 en France, l'azote de l'ammonitrate coûte {{ v('prix_kg_n') }} ({{ fourchette('prix_kg_n') }} selon les scénarios de prix).
 
 Les alternatives rentables existent déjà : les légumineuses, qui fixent l'azote de l'air, et une meilleure valorisation des effluents (vague 1). L'ammoniac « vert » fabriqué localement avec de l'électricité renouvelable reste à préparer (vague 3).
 
@@ -38,11 +38,11 @@ S'y ajoute depuis le 1er janvier 2026 le mécanisme d'ajustement carbone aux fro
 
 Les légumineuses (trèfle, luzerne, féverole, pois, lupin) vivent en symbiose avec des bactéries qui fixent l'azote de l'air dans leurs racines. Dans une prairie, le trèfle nourrit aussi la graminée voisine ; dans une rotation, la culture qui suit profite de l'azote laissé par la légumineuse.
 
-Ordre de grandeur (calculé) : si les légumineuses fixent {{ v('azote_fixe_legumineuses') }} (hypothèse, très variable selon leur part dans la prairie ou la rotation), elles évitent l'achat de {{ v('valeur_n_fixe') }} d'ammonitrate.
+Ordre de grandeur (calculé) : si les légumineuses fixent {{ v('azote_fixe_legumineuses') }} (hypothèse, très variable selon leur part dans la prairie ou la rotation), elles évitent l'achat de {{ v('valeur_n_fixe') }} d'ammonitrate, et encore {{ v('valeur_n_fixe', scenario='bas') }} si le prix de l'engrais redescend de 30 % (scénario bas, hypothèse). L'avantage des légumineuses ne dépend donc pas de la crise.
 
-Deux essais de six ans sur prairie pâturée :
+Deux essais sur prairie pâturée :
 
-- sur une prairie permanente pâturée par de jeunes bovins, la fixation symbiotique représentait 41 % des apports d'azote[^stilmant] ;
+- en Belgique, sur une prairie permanente pâturée par de jeunes bovins, la fixation symbiotique représentait 41 % des apports d'azote sur six années d'essai[^stilmant] ;
 - dans un essai publié par l'Université de Liège, sur une prairie pâturée en rotation, réduire d'un tiers la fumure azotée minérale n'a pas modifié la production de lait par vache[^dieguez].
 
 Conditions : une part suffisante de légumineuses, une rotation adaptée et un débouché pour les protéagineux. Bonus : un fourrage plus riche en protéines réduit les achats de soja importé.
@@ -55,7 +55,7 @@ Conditions : analyses d'effluents, capacité de stockage pour épandre au bon mo
 
 ### 3. Ammoniac vert produit localement (vague 3)
 
-On peut faire de l'ammoniac sans gaz : l'hydrogène vient alors de l'électrolyse de l'eau, avec de l'électricité renouvelable. Au Kenya, une petite unité solaire installée sur une ferme de noix produit une tonne d'ammoniac par jour[^yale]. Une étude publiée dans *Nature Food* estime qu'une production décentralisée à petite échelle pourrait fournir la majorité de l'azote de synthèse d'ici la fin de la décennie[^carnegie].
+On peut faire de l'ammoniac sans gaz : l'hydrogène vient alors de l'électrolyse de l'eau, avec de l'électricité renouvelable. Au Kenya, une petite unité solaire installée sur une ferme de noix produit de l'ammoniac sur place (capacité à vérifier, environ une tonne par jour)[^yale]. Une étude publiée dans *Nature Food* estime qu'une production décentralisée à petite échelle pourrait fournir la majorité de l'azote de synthèse d'ici la fin de la décennie[^carnegie].
 
 Limites : forte consommation d'électricité et rendement moindre à petite échelle[^rsc], toxicité de l'ammoniac pour le stockage et le transport[^wef]. L'échelle pertinente est probablement le territoire (coopérative, zone d'activité) plutôt que la ferme.
 
@@ -68,7 +68,10 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 
 ## À vérifier
 
-- Prix de l'ammonitrate en Belgique sur facture (ici, prix français d'avril 2026).
+- Prix de l'ammonitrate en Belgique sur facture (ici, prix français d'avril 2026). Les cotations françaises de novembre 2026 sont un peu plus hautes qu'en avril (relevés consultés par extraits seulement, voir `data/sources-collectees.md`).
+- Prix de l'ammonitrate en février 2026, pour remplacer le scénario bas à −30 %.
+- Durée de l'essai Diéguez et al. (« six ans » à confirmer pour les deux essais).
+- Plusieurs sources ne sont pas datées (World Economic Forum, Réussir, Université de Liège, Yale e360, Carnegie Science) : ajouter les dates.
 - Quantité d'azote réellement fixée sur l'exploitation, selon la part de trèfle ou de luzerne.
 - Contraintes du Programme de gestion durable de l'azote (PGDA) en Wallonie pour l'épandage des effluents.
 - Effet réel du MACF sur les prix belges en 2026 et 2027.

@@ -74,7 +74,15 @@ L'huile de colza pressée à froid peut alimenter un moteur diesel adapté. Des 
 
 Avec les hypothèses du projet, un litre d'huile revient à {{ v('huile_cout_litre') }} une fois le tourteau vendu ou donné aux animaux. Ramené à l'énergie d'un litre de gasoil, cela fait {{ v('huile_cout_eq_gasoil') }}, soit un écart de {{ v('huile_ecart_gasoil') }} avec le gasoil agricole, hors accises. Pour couvrir ses besoins, une ferme en labour devrait cultiver du colza sur environ {{ v('part_surface_colza') }} de sa surface.
 
-Le point dur est fiscal : la Belgique a exonéré d'accises l'huile de colza carburant en 2006[^be-2006], puis a suspendu cette exonération fin 2012[^be-2012]. Le régime en vigueur aujourd'hui est à vérifier.
+Cet avantage dépend de la crise : au prix d'avant-crise, l'huile revient {{ v('huile_ecart_gasoil', scenario='bas') }} plus cher que le gasoil par litre équivalent. L'huile de colza est donc une assurance contre les prix hauts du gasoil, et une source d'autonomie, plus qu'une économie garantie.
+
+**Est-ce autorisé ?** Le cadre fiscal belge a beaucoup changé, et son état actuel reste à confirmer :
+
+- la Belgique a exonéré d'accises l'huile de colza carburant en 2006[^be-2006], a suspendu l'exonération fin 2012[^be-2012], l'a rétablie en 2015, puis l'a abrogée par la loi du 25 décembre 2017, à l'expiration de l'autorisation européenne d'aide d'État[^chambre-2017]. Cette exonération visait l'huile vendue directement par l'agriculteur à l'utilisateur final ;
+- pour l'agriculteur qui presse son propre colza et utilise l'huile **dans ses propres tracteurs, sans la vendre**, l'administration des accises envisageait en 2017 l'exonération générale des produits énergétiques utilisés pour les travaux agricoles, avec une autorisation « utilisateur final » et un registre[^circ-2017]. Les circulaires de 2026 gardent une rubrique « huile de colza »[^circ-2026], ce qui laisse penser que cette voie existe toujours ;
+- vendre de l'huile carburant à ses voisins sans payer d'accise n'est plus possible depuis 2017. Sans exonération, l'huile utilisée comme carburant est taxée comme le gasoil qu'elle remplace.
+
+En résumé, l'usage circulaire sur sa propre ferme semble autorisé sous conditions (travaux agricoles uniquement, autorisation des accises, registre), mais cela doit être confirmé auprès du service des accises (SPF Finances) avant d'investir. Côté technique, l'huile doit répondre à la norme DIN 51605 et le moteur doit être prévu pour l'huile ou converti par un atelier agréé.
 
 ### 5. Gros tracteur électrique à batterie (vague 3)
 
@@ -92,7 +100,10 @@ Pistes pour contourner la batterie : alimentation par câble, batteries échange
 ## À vérifier
 
 - Prix réel du gasoil agricole sur facture (ici estimé à partir du gasoil de chauffage).
-- Régime d'accises belge actuel pour l'huile de colza carburant et pour le biométhane carburant.
+- Confirmation écrite du SPF Finances (accises) : l'huile de colza produite et utilisée sur sa propre ferme entre-t-elle dans l'exonération agricole ? Texte consolidé de l'article 429 de la loi-programme du 27 décembre 2004.
+- Régime d'accises belge pour le biométhane carburant.
+- Garantie constructeur et conformité des émissions (Stage V) d'un moteur converti à l'huile.
+- Plusieurs sources ne sont pas datées (Terre-net, Cahiers Agricultures, Chambres d'agriculture, fiche Fendt, Farm Contractor, annonce top agrar, Global Market Insights) : ajouter les dates.
 - Prix neuf d'un Fendt e107 face à un Fendt 207 diesel équivalent.
 - Résultats du test 2026 de la Landwirtschaftskammer Niedersachsen comparant e107 et 207[^topagrar].
 - Disponibilité du T7.270 Methane Power et des stations de biométhane en Belgique.
@@ -116,5 +127,8 @@ Pistes pour contourner la batterie : alimentation par câble, batteries échange
 [^an-presse]: Question écrite à l'Assemblée nationale sur l'huile végétale brute. https://questions.assemblee-nationale.fr/dyn/12/questions/QANR5L12QE70575.pdf
 [^be-2006]: « Exonération des accises en matière de biocarburants », Conseil des ministres, 24 février 2006. https://news.belgium.be/fr/node/9475/pdf
 [^be-2012]: « Suspension provisoire de l'exonération d'accises pour l'huile de colza utilisée comme carburant », Conseil des ministres, 7 décembre 2012. https://news.belgium.be/fr/node/15206/pdf
+[^chambre-2017]: Projet de loi portant des dispositions fiscales diverses IV, Chambre des représentants, doc. 54 2792/001, 2017 (consulté par extrait seulement). https://www.lachambre.be/FLWB/pdf/54/2792/54K2792001.pdf
+[^circ-2017]: Circulaire 2017/C/51 concernant le code accises produits énergétiques et électricité, SPF Finances, 1er août 2017 (consultée par extrait seulement, copie Lex.be). https://lex.be/en/doc/be/fisconet-fiscal-discipline/circulaire-2017c51-concernant-le-code-accises-produits-energetiques-et-electricite-1-august-2017-befp_201708014a3f4d58_fr
+[^circ-2026]: Circulaire 2026/C/82 concernant les produits énergétiques et l'électricité, SPF Finances, 2026 (consultée par extrait seulement, copie d'un blog). https://blog.forumforthefuture.be/fr/article/circulaire-2026c82-concernant-les-produits-energetiques-et-lelectricite/32515
 [^topagrar]: « John Deere, Fendt, China-Traktor : was neue E-Schlepper Landwirten bieten », top agrar, 2026. https://www.topagrar.com/technik/news/john-deere-fendt-china-traktor-was-neue-e-schlepper-landwirten-bieten-20026099.html
 [^gmi]: « Electric Tractor Market Size & Share 2026-2035 », Global Market Insights. https://www.gminsights.com/industry-analysis/electric-tractor-market

@@ -65,5 +65,5 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## État
 
-- 2 fiches en brouillon : `traction/tracteur-diesel`, `fertilisation/azote-synthese`.
-- 17 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.
+- 5 fiches en brouillon : `traction/tracteur-diesel`, `fertilisation/azote-synthese`, `traction/engins-de-cour`, `energie/chauffage-mazout`, `elevage/tank-a-lait`. Les trois dernières citent des sources consultées par extraits seulement : à relire avant le statut « relu ».
+- 14 fiches à rédiger (voir `data/technologies.csv`). Leurs vagues sont provisoires.
