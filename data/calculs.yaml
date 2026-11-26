@@ -608,3 +608,71 @@ moisson_huile_ecart_ha:
   unite: €/ha
   formule: 'Litres de gasoil par hectare × écart huile − gasoil (négatif : l''huile
     revient moins cher, hors accises)'
+mat_cout_soja:
+  libelle: 'Tourteau de soja 48 : coût du kg de matière azotée totale'
+  valeur: 1.038961
+  bas: 0.738095
+  haut: 1.350649
+  unite: €/kg MAT
+  formule: Prix à la tonne ÷ (1 000 × teneur en MAT sur brut)
+mat_cout_colza:
+  libelle: 'Tourteau de colza : coût du kg de matière azotée totale'
+  valeur: 0.9941
+  bas: 0.69587
+  haut: 1.29233
+  unite: €/kg MAT
+  formule: Prix à la tonne ÷ (1 000 × teneur en MAT sur brut)
+mat_cout_colza_fermier:
+  libelle: 'Tourteau de colza fermier (gras), valorisé au prix du tourteau du commerce
+    : coût du kg de MAT'
+  valeur: 1.087097
+  bas: 0.760968
+  haut: 1.413226
+  unite: €/kg MAT
+  formule: Prix du tourteau de colza ÷ (1 000 × teneur en MAT du tourteau gras)
+mat_cout_pois:
+  libelle: 'Pois fourrager : coût du kg de matière azotée totale'
+  valeur: 1.344828
+  bas: 1.073892
+  haut: 1.748276
+  unite: €/kg MAT
+  formule: Prix à la tonne ÷ (1 000 × teneur en MAT sur brut)
+mat_cout_herbe_paturee:
+  libelle: 'Herbe pâturée : coût du kg de matière azotée totale'
+  valeur: 0.277778
+  unite: €/kg MAT
+  formule: Coût de la tonne de MS ÷ (1 000 × teneur en MAT de la MS)
+mat_cout_ensilage_herbe:
+  libelle: 'Ensilage d''herbe : coût du kg de matière azotée totale'
+  valeur: 0.833333
+  unite: €/kg MAT
+  formule: Coût de la tonne de MS ÷ (1 000 × teneur en MAT de la MS)
+colza_pour_1kg_soja:
+  libelle: Tourteau de colza apportant autant de MAT qu'un kg de soja 48
+  valeur: 1.362832
+  unite: kg
+  formule: Teneur en MAT du soja ÷ teneur en MAT du colza
+ecart_colza_soja_t:
+  libelle: 'Remplacer 1 t de soja par du colza à MAT égale : écart de coût'
+  valeur: -20.725664
+  bas: -19.507965
+  haut: -26.943363
+  unite: €/t de soja remplacée
+  formule: 'Colza nécessaire × prix du colza − prix du soja ; négatif : le colza revient
+    moins cher'
+soja_gasoil_eq_t:
+  libelle: 'Tourteau de soja rendu Europe : énergie non renouvelable en litres de
+    gasoil'
+  valeur: 239.722222
+  unite: L/t
+  formule: MJ/kg × 1 000 ÷ 3,6 ÷ énergie d'un litre de gasoil
+colza_gasoil_eq_t:
+  libelle: 'Tourteau de colza européen : énergie non renouvelable en litres de gasoil'
+  valeur: 76.944444
+  unite: L/t
+  formule: MJ/kg × 1 000 ÷ 3,6 ÷ énergie d'un litre de gasoil
+ratio_energie_mat_soja_colza:
+  libelle: 'Énergie non renouvelable par kg de MAT : soja ÷ colza'
+  valeur: 2.286066
+  unite: fois
+  formule: (MJ/kg soja ÷ MAT soja) ÷ (MJ/kg colza ÷ MAT colza)

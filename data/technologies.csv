@@ -8,7 +8,7 @@ chauffage-mazout,Chauffage et eau chaude au mazout,énergie,mazout,Chaudière à
 sechage-grains,Séchage des grains au gaz ou au fioul,énergie,gaz; fioul,Moins d'eau à retirer (variété; récolte; maïs grain humide); chaudière biomasse; chaleur d'un méthaniseur; air ambiant ou chauffé au solaire; pompe à chaleur,1,energie/sechage-grains.md,brouillon
 tank-a-lait,Refroidissement du lait,élevage,électricité,Pré-refroidisseur; récupérateur de chaleur,1,elevage/tank-a-lait.md,brouillon
 fourrages-recoltes,Ensilage et enrubannage,élevage,gasoil; plastique,Pâturage tournant; séchage du foin en grange,1,elevage/fourrages-recoltes.md,brouillon
-concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Légumineuses fourragères; tourteau de colza fermier; pâturage,1,elevage/concentres-importes.md,à rédiger
+concentres-importes,Concentrés et soja importés,élevage,gasoil (transport); engrais,Pâturage; légumineuses fourragères; tourteau de colza du commerce; tourteau de colza fermier; féverole et pois,1,elevage/concentres-importes.md,brouillon
 azote-synthese,Engrais azoté de synthèse,fertilisation,gaz naturel,Légumineuses; effluents et digestat; ammoniac vert local,1,fertilisation/azote-synthese.md,brouillon
 engrais-p-k,Engrais phosphatés et potassiques,fertilisation,gasoil (mines et transport),Effluents; compost; cendres de bois; recyclage urbain,3,fertilisation/engrais-p-k.md,à rédiger
 herbicides,Herbicides de synthèse,protection des cultures,pétrochimie,Désherbage mécanique; robot solaire de binage,1,protection/herbicides.md,brouillon

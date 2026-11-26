@@ -937,3 +937,112 @@ hvo_surconsommation:
   date: 2026-11-26
   source: https://www.dlg.org/en/magazine/hvo-in-practical-dlg-testing
   note: "DLG, essai d'un tracteur Valtra Q 285 au banc de prise de force et au DLG-PowerMix : environ 3 à 4 % de litres en plus, à puissance égale (densité plus faible). Article non daté, lu le 26/11/2026. Un seul tracteur."
+
+# --- Concentrés protéiques (fiche elevage/concentres-importes) ------------------
+# Propositions à ajouter à data/hypotheses.yaml. Le prix du tourteau de colza
+# existe déjà (tourteau_prix) et est réutilisé tel quel.
+
+tourteau_soja_prix:
+  libelle: Prix du tourteau de soja 48
+  valeur: 480
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-24
+  source: https://www.reussir.fr/articles/marche-des-oleagineux-du-24-novembre-2026-le-prix-du-soja-engrange-une-troisieme-seance-de
+  note: "Départ Montoir, 48 % protéines + matières grasses, granulés du Brésil, livraison décembre, cotation du 24/11/2026 (La Dépêche/Réussir, prix français), lue le 26/11/2026. Même jour : 476 €/t délivré Montoir selon l'Argus publié par Pleinchamp. 430 €/t le 5/11, 464 €/t le 19/11, 484 €/t le 25/11."
+  scenario: true
+  bas: 341
+  bas_note: "Février 2026 (avant-crise) : 338 €/t le 20/02 et 344 €/t le 25/02, départ Montoir, 48 % Brésil, échéance mai (bulletins quotidiens La Dépêche/Réussir, lus le 26/11/2026). Moyenne des deux relevés."
+
+tourteau_soja_mat:
+  libelle: Teneur en matière azotée totale du tourteau de soja 48 (brut)
+  valeur: 0.462
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/crude-protein
+  note: "Tables INRAE-CIRAD-AFZ, tourteau de soja huile < 5 %, 48 % protéines + huile : 46,2 % sur brut (52,6 % de la MS). Le CRA-W donne 48 à 53 % de la MS (tables CVB 2018 et INRAE-CIRAD-AFZ)."
+
+tourteau_colza_mat:
+  libelle: Teneur en matière azotée totale du tourteau de colza déshuilé (brut)
+  valeur: 0.339
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/crude-protein
+  note: "Tables INRAE-CIRAD-AFZ, tourteau de colza huile < 5 % : 33,9 % sur brut (38,1 % de la MS). Le CRA-W donne 39 à 43 % de la MS."
+
+tourteau_colza_gras_mat:
+  libelle: Teneur en matière azotée totale du tourteau de colza gras pressé à froid (brut)
+  valeur: 0.31
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/crude-protein
+  note: "Tables INRAE-CIRAD-AFZ, tourteau de colza huile 5-20 % (type tourteau fermier) : 31,0 % sur brut (33,7 % de la MS)."
+
+pois_prix:
+  libelle: Prix du pois fourrager
+  valeur: 273
+  unite: €/t
+  statut: sourcé
+  date: 2026-11-18
+  source: https://www.reussir.fr/articles/marche-des-oleagineux-et-coproduits-du-11-au-18-novembre-2026-les-prix-du-colza-ont-vire
+  note: "Départ Marne, récolte 2026, semaine du 11 au 18/11/2026 (La Dépêche/Réussir, prix français), cotation reprise à 273 €/t le 24/11. Féverole non cotée. Aucun prix belge trouvé."
+  scenario: true
+  bas: 218
+  bas_note: "Février 2026 (avant-crise) : 220 €/t le 20/02 et 215 €/t le 25/02, départ Marne, récolte 2025 (bulletins quotidiens La Dépêche/Réussir). Moyenne arrondie."
+
+pois_mat:
+  libelle: Teneur en matière azotée totale du pois (brut)
+  valeur: 0.203
+  unite: "%"
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/crude-protein
+  note: "Tables INRAE-CIRAD-AFZ, pois : 20,3 % sur brut (23,3 % de la MS)."
+
+tourteau_soja_energie_nr:
+  libelle: Énergie non renouvelable pour produire et livrer 1 kg de tourteau de soja
+  valeur: 8.63
+  unite: MJ/kg
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/cumulative-energy-demand-non-renewable-fossilnuclear
+  note: "Tables INRAE-CIRAD-AFZ (données Ecoalim), demande cumulée d'énergie non renouvelable (fossile et nucléaire), tourteau de soja 48 du Brésil trituré au Brésil, déforestation moyenne, rendu port de Brest : 8,63 MJ/kg brut ; 7,08 MJ/kg sortie d'usine au Brésil."
+
+tourteau_colza_energie_nr:
+  libelle: Énergie non renouvelable pour produire 1 kg de tourteau de colza
+  valeur: 2.77
+  unite: MJ/kg
+  statut: sourcé
+  date: 2026-11-26
+  source: https://www.feedtables.com/content/cumulative-energy-demand-non-renewable-fossilnuclear
+  note: "Tables INRAE-CIRAD-AFZ (données Ecoalim), tourteau de colza huile < 5 %, origine France, sortie d'usine : 2,77 MJ/kg brut. Donnée française, pas d'équivalent belge trouvé."
+
+herbe_paturee_cout:
+  libelle: Coût de l'herbe pâturée
+  valeur: 50
+  unite: €/t MS
+  statut: sourcé
+  date: 2022-05-01
+  source: https://www.cra.wallonie.be/uploads/2022/06/delivrable-3-4-retour-dexperience-deleveurs-laitiers-wallons-motivations-freins-leviers-face-a-des-changements-de-pratiques-visant-a-ameliorer-lerf.pdf
+  note: "0,05 €/kg MS, CRA-W 2022 d'après Fourrages Mieux (prix de 2021). Référence ancienne, non actualisée aux prix de 2026."
+
+ensilage_herbe_cout:
+  libelle: Coût de l'ensilage d'herbe
+  valeur: 150
+  unite: €/t MS
+  statut: sourcé
+  date: 2022-05-01
+  source: https://www.cra.wallonie.be/uploads/2022/06/delivrable-3-4-retour-dexperience-deleveurs-laitiers-wallons-motivations-freins-leviers-face-a-des-changements-de-pratiques-visant-a-ameliorer-lerf.pdf
+  note: "0,15 €/kg MS, même source (prix de 2021). Le gasoil et le plastique ont augmenté depuis : valeur probablement basse en 2026."
+
+herbe_mat:
+  libelle: Teneur en matière azotée totale d'une herbe jeune ou d'un mélange avec légumineuses
+  valeur: 0.18
+  unite: "%"
+  statut: hypothèse
+  date: 2026-11-26
+  source: https://www.cra.wallonie.be/uploads/2022/09/2022-brochureautonomieproteique-a4-web.pdf
+  note: "Valeur prise dans la fourchette de l'herbe fraîche (12 à 22 % de la MS) donnée par le CRA-W ; les meilleurs ensilages d'herbe wallons dépassent 20 % (réseau Requasud), les plus faibles sont sous 10 %."
