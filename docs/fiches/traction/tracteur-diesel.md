@@ -6,7 +6,7 @@ dependance_fossile: gasoil
 alternatives: [réduction du travail du sol, tracteur électrique compact, tracteur au biométhane, huile de colza pure, gros tracteur électrique]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Tracteur diesel
@@ -40,9 +40,11 @@ Avec les prix de ce projet, le passage du labour au semis direct économise {{ v
 
 Limites :
 
-- le semis direct repose souvent sur le glyphosate pour détruire couverts et adventices : la dépendance fossile est déplacée vers la chimie, pas supprimée ;
+- le semis direct repose souvent sur le glyphosate pour détruire couverts et adventices : la dépendance fossile est déplacée vers la chimie, pas supprimée. À partir de 2027, le couvert de l'éco-régime « couverture longue du sol » ne pourra plus être détruit chimiquement : le semis direct qui détruit ce couvert au glyphosate perd cette aide ({{ v('er_cls_entree_eur_ha', 0) }} à {{ v('er_cls_superieur_eur_ha', 0) }} sur toute la SAU, montants prévus)[^cls]. Voir la fiche [Herbicides](../protection/herbicides.md) ;
 - il demande un semoir adapté et une bonne maîtrise technique : risque de manque d'eau pour la culture, de pullulation de limaces, de sol qui ressuie et se réchauffe plus lentement[^spw-sd] ;
 - en France, il ne couvrait qu'environ 3 % des surfaces de grandes cultures selon une enquête Agreste de 2014[^tn-temoin].
+
+**Aides.** Le semoir de semis direct ou simplifié figure dans la liste de l'aide aux investissements (AII), avec la case « architecture verte » : {{ v('aii_taux_pv', 0) }} du coût simplifié pour un agriculteur sans autre majoration, {{ v('aii_taux_cuma_av', 0) }} en CUMA d'au moins six membres (calculé)[^aii-liste][^am-aii]. La MAEC « Sol » (MR14) paie jusqu'à {{ v('maec_mr14_favorable_eur_ha', 0) }} quand le carbone du sol atteint l'état « favorable », mesuré en début et en fin de contrat[^mr14]. Ces aides confortent la vague 1 sans la conditionner. Voir [les aides publiques](../../aides.md).
 
 ### 2. Tracteur électrique compact (vague 2)
 
@@ -60,11 +62,15 @@ Sur {{ v('heures_tracteur_an') }} (hypothèse), l'économie d'énergie atteint {
 
 Conditions : beaucoup d'heures par an en travaux légers (cour, serre, maraîchage, vigne), recharge sur photovoltaïque, et des journées compatibles avec l'autonomie.
 
+**Aides.** Aucune aide ne vise le surcoût du tracteur électrique compact. La liste de l'AII n'a de ligne propre au tracteur électrique qu'au-delà de 150 ch ; en dessous, elle ne le distingue pas du diesel[^aii-liste]. Seuls les panneaux qui le rechargent sont aidés, par l'AII ({{ v('aii_taux_pv', 0) }} du coût simplifié) ; GREEN exclut le photovoltaïque[^aii-liste][^green-agw]. Voir la fiche [Électricité du réseau](../energie/electricite-reseau.md). La vague 2 est inchangée.
+
 ### 3. Tracteur au biométhane (vague 2)
 
 Le New Holland T7.270 Methane Power se commande en Europe depuis fin 2025, avec des premières livraisons au printemps 2026[^nh]. Son réservoir standard contient 657 litres de gaz, et un réservoir additionnel de 480 litres porte l'autonomie jusqu'à 11 heures en transport[^nh]. Il peut rouler au biométhane tiré des effluents d'élevage, donc avec un carburant produit sur la ferme[^nh].
 
 Conditions : un méthaniseur avec épuration du biogaz en biométhane et compression, sur la ferme ou à proximité. L'investissement se pense plutôt à plusieurs (CUMA, groupe de fermes, méthaniseur collectif) qu'à l'échelle d'une seule exploitation.
+
+**Aides.** L'AII a une ligne « tracteur électrique ou au biogaz de plus de 150 ch », au coût simplifié de {{ v('aii_tracteur_elec_forfait', 0) }}, avec les cases « architecture verte » et « résilience économique »[^aii-liste]. Un tracteur au biométhane de plus de 150 ch en relève. L'aide vaut {{ v('aii_taux_pv', 0) }} de ce coût pour un agriculteur sans autre majoration, {{ v('aii_taux_cuma_av', 0) }} pour une CUMA d'au moins six membres (calculé)[^am-aii]. La voie collective est donc aussi la mieux aidée. L'aide ne couvre ni l'épuration ni la compression du biogaz. La vague 2 est inchangée.
 
 ### 4. Huile de colza pure (vague 2)
 
@@ -84,9 +90,13 @@ Cet avantage dépend de la crise : au prix d'avant-crise, l'huile revient {{ v('
 
 En résumé, presser son colza et brûler l'huile dans ses propres tracteurs, pour des travaux agricoles, se fait sans accise. Il faut pour cela deux démarches auprès des Douanes et Accises (statut d'entrepositaire agréé pour le pressage, autorisation « utilisateur final » pour l'usage) et tenir le registre. Vendre de l'huile carburant à ses voisins sans accise n'est plus possible depuis 2018, sauf à un acheteur qui détient lui-même une autorisation « utilisateur final ». La circulaire de 2026 ne décrit plus le cas de l'agriculteur qui fait presser chez un tiers : il faut le faire confirmer par le service des accises avant d'investir. Côté technique, le moteur doit être prévu pour l'huile ou converti par un atelier spécialisé.
 
+**Aides.** Aucune : la presse à huile ne figure pas dans la liste de l'AII[^aii-liste].
+
 ### 5. Gros tracteur électrique à batterie (vague 3)
 
 Pour une journée de travail lourd, il faudrait une batterie d'environ {{ v('batterie_journee_lourde') }} (calculé), soit {{ v('batterie_masse_journee_lourde', 1) }} de batteries. Le prototype HUE-Trac 620, une conversion de Fendt série 600 par le néerlandais Humabo, embarque 400 kWh, et John Deere a présenté un tracteur électrique avec recharge rapide Kreisel à la Grüne Woche 2026[^topagrar]. L'électrique ne représentait que 0,18 % environ du marché mondial des tracteurs en 2025[^gmi].
+
+L'AII aide le tracteur électrique de plus de 150 ch : {{ v('aii_taux_pv', 0) }} d'un coût simplifié de {{ v('aii_tracteur_elec_forfait', 0) }} pour un agriculteur sans autre majoration (calculé)[^aii-liste][^am-aii]. Cela ne change pas la vague : la limite est la batterie, pas le prix.
 
 Pistes pour contourner la batterie : alimentation par câble, batteries échangeables, ou remplacement d'un gros tracteur par plusieurs petits robots.
 
@@ -111,6 +121,8 @@ Pistes pour contourner la batterie : alimentation par câble, batteries échange
 - Résultats du test 2026 de la Landwirtschaftskammer Niedersachsen comparant e107 et 207, annoncés pour octobre 2026[^topagrar].
 - Disponibilité du T7.270 Methane Power et des stations de biométhane en Belgique.
 - Consommations horaires réelles sur l'exploitation, qui remplacent les hypothèses.
+- Points de sélection AII (seuil de 15 points pour un agriculteur) : les points « architecture verte » et « résilience économique » du tracteur au biogaz s'additionnent-ils ?
+- Déduction fédérale pour investissement (40 %, régime réel) : un tracteur électrique entre-t-il dans la liste « transport zéro émission » ? Non trouvé.
 
 ## Sources
 
@@ -132,4 +144,9 @@ Pistes pour contourner la batterie : alimentation par câble, batteries échange
 [^circ-2017]: Circulaire 2017/C/51 concernant le code accises produits énergétiques et électricité, SPF Finances, 1er août 2017, §§ 307 à 318 (copie Lex.be, abrogée depuis). https://lex.be/en/doc/be/fisconet-fiscal-discipline/circulaire-2017c51-concernant-le-code-accises-produits-energetiques-et-electricite-1-august-2017-befp_201708014a3f4d58_fr
 [^circ-2026]: Circulaire 2026/C/82 concernant les produits énergétiques et l'électricité, SPF Finances (Administration générale des Douanes et Accises), 7 septembre 2026, §§ 21 à 23, 292 et 293, annexe III (registre 592 « Colza »), Fisconetplus. https://eservices.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/7c2dec9f-a0dc-4c3b-9fce-27f229f26a17
 [^topagrar]: « John Deere, Fendt, China-Traktor : was neue E-Schlepper Landwirten bieten », top agrar, 8 juin 2026. https://www.topagrar.com/technik/news/john-deere-fendt-china-traktor-was-neue-e-schlepper-landwirten-bieten-20026099.html
+[^cls]: « Eco-régime couverture longue du sol », Portail de l'agriculture wallonne (SPW), page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+[^mr14]: « MAEC Sol – MR14 », Portail de l'agriculture wallonne (SPW), page modifiée le 4 juin 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
+[^aii-liste]: « Liste des investissements admissibles » (aide aux investissements agricoles, AII), SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), articles 5 et 6, annexe 3, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), article 10, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
 [^gmi]: « Electric Tractor Market Size & Share 2026-2035 », Global Market Insights, rapport GMI8868, août 2026. https://www.gminsights.com/industry-analysis/electric-tractor-market

@@ -6,7 +6,7 @@ dependance_fossile: pétrochimie
 alternatives: [Désherbage mécanique, robot solaire de binage]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Herbicides de synthèse
@@ -15,7 +15,7 @@ maj: 2026-11-26
 
 Les herbicides de synthèse sont des molécules de la chimie organique, pulvérisées pour détruire les adventices avant ou après la levée de la culture. Le fossile entre surtout par leur fabrication : celle du glyphosate demande environ {{ v('glyphosate_energie_mj_kg') }}[^ppdb], soit l'équivalent de {{ v('glyphosate_eq_gasoil_l_ha', 0) }} de gasoil pour un traitement (calculé). En Wallonie, les herbicides coûtaient en 2023 de 63 €/ha en orge à plus de 280 €/ha en chicorée[^base1].
 
-La meilleure alternative est le désherbage mécanique (herse étrille, houe rotative, bineuse), seul ou combiné à un traitement localisé : il est rentable aujourd'hui dans les cultures où les herbicides coûtent cher, sur sols peu caillouteux (vague 1), mais il déplace une partie de la dépendance vers le gasoil. Le robot solaire de binage supprime presque tout le fossile au champ, mais ne se rentabilise que là où il remplace du désherbage manuel, en bio ou en légumes (vague 2).
+La meilleure alternative est le désherbage mécanique (herse étrille, houe rotative, bineuse), seul ou combiné à un traitement localisé : il est rentable aujourd'hui dans les cultures où les herbicides coûtent cher, sur sols peu caillouteux (vague 1), mais il déplace une partie de la dépendance vers le gasoil ; en maïs, l'éco-régime « réduction d'intrants » le rend même moins cher que le chimique, hors bio. Le robot solaire de binage supprime presque tout le fossile au champ, mais ne se rentabilise que là où il remplace du désherbage manuel, en bio ou en légumes (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -97,11 +97,16 @@ Le désherbage **mixte** (mécanique dans l'inter-rang, traitement localisé ou 
 - un couvert dense et gélif (légumineuses, avoine rude) étouffe les adventices et se roule plus facilement ; avant une culture d'hiver, un agriculteur normand en semis direct ne voyait pas d'autre solution qu'un travail du sol intensif, risqué sur ses limons battants sensibles à l'érosion[^chedru] ;
 - en France, passer une parcelle de semis direct au labour fréquent sans glyphosate coûtait environ 80 €/ha/an de plus (prix de 2020), avec {{ v('gasoil_supp_sd_sans_glyphosate', 1) }} de gasoil et 1,43 h/ha de travail en plus[^inrae]. Au prix actuel, ce gasoil vaut à lui seul {{ v('sd_sans_glyphosate_gasoil_eur_ha') }} (calculé). Le gasoil ajouté pèse alors près de trois fois l'énergie de fabrication d'un traitement au glyphosate : remplacer le glyphosate par le labour augmente le fossile au lieu de le réduire.
 
-Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on le garde à dose réduite et occasionnelle contre les graminées que le rouleau ne détruit pas.
+Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on le garde à dose réduite et occasionnelle contre les graminées que le rouleau ne détruit pas. Une aide pousse pourtant dans ce sens : à partir de 2027, le couvert de l'éco-régime « couverture longue du sol » ({{ v('er_cls_entree_eur_ha', 0) }} à {{ v('er_cls_superieur_eur_ha', 0) }} sur toute la SAU, montants prévus) ne pourra plus être détruit chimiquement[^cls]. Le semis direct qui détruit ce couvert au glyphosate perd donc cette aide.
 
-**Aides.** La liste des investissements admissibles à l'aide wallonne (AII, janvier 2026) comprend la herse étrille, la houe rotative, les bineuses à guidage par caméra ou par ultrasons et les robots autonomes[^aii].
+**Aides.** Voir [les aides publiques](../../aides.md) pour le détail et les règles de cumul.
 
-**Vague 1** : rentable aujourd'hui en betterave, chicorée et colza sur les sols limoneux peu caillouteux, surtout en désherbage mixte et avec du matériel partagé. En maïs, le coût est à égalité avec le chimique : le matériel partagé ou le désherbage mixte fait pencher la balance. Moins intéressant en céréales, sur sols lourds ou caillouteux, et en semis direct.
+- **Éco-régime « réduction d'intrants ».** Une parcelle d'au moins 1 ha qui reçoit au moins deux désherbages mécaniques pendant la culture touche {{ v('ri_eur_ha', 0) }} (montant prévu 2026 ; 16 à 150 €/ha selon la demande, 100 €/ha payés en 2024)[^ri]. Le programme de maïs ci-dessus (une herse étrille et {{ v('passages_bineuse_mais', 0) }} de bineuse) remplit cette condition. Les parcelles bio n'y ont pas droit, et l'éco-régime ne se cumule pas avec les variantes V2_A et V3 de l'éco-régime « cultures favorables »[^ri][^cumuls].
+- **Aide aux investissements (AII).** La herse étrille ({{ v('aii_herse_etrille_forfait', 0) }} de coût simplifié), la houe rotative, les bineuses et la bineuse à caméra ({{ v('aii_bineuse_camera_forfait', 0) }}) figurent dans la liste, avec la case « architecture verte »[^aii]. L'aide vaut {{ v('aii_taux_pv', 0) }} du coût simplifié pour un agriculteur sans autre majoration, et {{ v('aii_taux_cuma_av', 0) }} pour une CUMA d'au moins six membres (calculé)[^am-aii]. Une demande individuelle doit atteindre {{ v('aii_seuil_points', 0) }} ; l'investissement « architecture verte » n'en apporte que 5, il faut donc d'autres critères (jeune, bio, zone à contraintes, polyculture…)[^am-aii]. Le seuil d'une CUMA est de 5 points[^am-aii].
+
+**Avec l'aide, en maïs.** Sans aide, le désherbage mécanique coûte {{ v('mais_meca_surcout_ha', 0) }} de plus que le chimique (calculé). Avec l'éco-régime, ce surcoût net passe à {{ v('mais_meca_bilan_ri_ha', 0) }} (calculé) : négatif, il signifie que le mécanique revient moins cher que le chimique. Même au montant minimum de l'éco-régime (16 €/ha)[^ri], il reste moins cher. En bio, où le chimique n'est de toute façon pas permis, cet éco-régime ne joue pas.
+
+**Vague 1** (confirmée) : rentable aujourd'hui en betterave, chicorée et colza sur les sols limoneux peu caillouteux, surtout en désherbage mixte et avec du matériel partagé. En maïs, le coût est à égalité avec le chimique sans aide ; avec l'éco-régime « réduction d'intrants », le mécanique devient le moins cher. La conclusion ne repose pas sur l'aide seule : le matériel partagé ou le désherbage mixte fait déjà pencher la balance. Moins intéressant en céréales, sur sols lourds ou caillouteux, et en semis direct.
 
 ### 2. Robot solaire de binage (vague 2)
 
@@ -121,9 +126,9 @@ Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on 
 
 **Autres robots.** Des robots à caméra, à bras articulés ou à laser apparaissent. Les désherbeurs laser ne traitent que 0,5 à 1 ha/h[^base2]. En Flandre, Inagro teste à grande échelle des robots du commerce ; le prix d'achat reste le principal frein en agriculture conventionnelle, et Inagro travaille sur un modèle de simulation de la surface nécessaire pour rentabiliser l'achat[^vrt]. Certains robots pulvérisent un herbicide seulement sur l'adventice repérée : un FarmDroid équipé d'une caméra et d'une pulvérisation localisée a réduit de 90 % l'usage d'herbicide chez un betteravier néerlandais[^ff2023]. La dose baisse, mais la dépendance à la chimie reste.
 
-**Aides.** L'AII wallonne retient pour un robot autonome guidé par GPS RTK un coût raisonnable maximal de 30 050 € (débit jusqu'à 2,5 ha/jour) ou de 150 000 € (au-delà)[^aii]. Le taux d'aide applicable n'a pas été vérifié.
+**Aides.** L'AII wallonne retient pour un robot autonome guidé par GPS RTK un coût simplifié de {{ v('aii_robot_petit_forfait', 0) }} (débit jusqu'à 2,5 ha par jour) ou de 150 000 € (au-delà)[^aii]. La ligne coche « architecture verte » et « résilience économique »[^aii]. Sur la ligne jusqu'à 2,5 ha par jour, l'aide vaut {{ v('farmdroid_aide_aii', 0) }} pour un agriculteur seul ({{ v('aii_taux_pv', 0) }}) et {{ v('farmdroid_aide_cuma', 0) }} pour une CUMA d'au moins six membres ({{ v('aii_taux_cuma_av', 0) }}) (calculé). Avec l'aide individuelle, l'amortissement passe de {{ v('farmdroid_amort_eur_ha') }} à {{ v('farmdroid_amort_eur_ha_aii') }} (calculé) : toujours bien au-dessus des herbicides d'une betterave conventionnelle. La voie CUMA aide plus, mais un robot limité à une vingtaine d'hectares par an se partage mal. Le débit annoncé du FarmDroid dépasse 2,5 ha par jour : il relèverait alors de la ligne à 150 000 €, où l'aide porte sur le prix réel, plus élevé (non calculé, voir « À vérifier »). Dans les deux cas, la conclusion ne change pas. En bio, l'éco-régime « réduction d'intrants » n'est pas accessible[^ri] ; l'AII ajoute {{ v('aii_maj_bio_total', 0) }} pour une ferme totalement bio[^am-aii].
 
-**Vague 2** : rentable sous conditions, en bio ou en légumes, quand le robot remplace des dizaines d'heures de désherbage manuel par hectare, sur une vingtaine d'hectares de cultures semées (betterave, colza, chicorée, oignon), et sur des sols peu caillouteux.
+**Vague 2** (inchangée avec l'aide) : rentable sous conditions, en bio ou en légumes, quand le robot remplace des dizaines d'heures de désherbage manuel par hectare, sur une vingtaine d'hectares de cultures semées (betterave, colza, chicorée, oignon), et sur des sols peu caillouteux.
 
 ## Ce qui ferme la boucle
 
@@ -142,7 +147,9 @@ Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on 
 - Énergie de fabrication des herbicides autres que le glyphosate, et part du gaz et du pétrole dans cette énergie. Rapport Audsley et al. (2009, Cranfield) non lu directement : chiffre repris de la base PPDB.
 - Arrêté wallon du 30 mars 2017 sur le glyphosate : confirmer qu'il est toujours en vigueur (texte affiché sur Wallex sans mention d'annulation ; un recours au Conseil d'État a été évoqué dans la presse, non vérifié).
 - Contenu des autres arrêtés de 2026 sur les zones de captage (certains limiteraient l'emploi de pesticides en zone rapprochée : extraits non lus).
-- Taux de l'aide AII pour la herse étrille, la bineuse et les robots.
+- Points de sélection AII : un agriculteur sans autre critère que l'investissement « architecture verte » n'atteint pas le seuil de 15 points. Les points « architecture verte » et « résilience économique » du robot s'additionnent-ils ? À demander à l'Organisme payeur de Wallonie.
+- Ligne AII du FarmDroid : son débit annoncé (environ 6,5 ha par jour) le place sans doute dans la ligne au-delà de 2,5 ha par jour (150 000 €)[^aii], où l'aide se calcule sur le prix réel. Le calcul de cette fiche utilise la ligne jusqu'à 2,5 ha par jour : il sous-estime peut-être l'aide.
+- Montant payé de l'éco-régime « réduction d'intrants » en 2025 et 2026 (seul celui de 2024 est publié).
 - Résultats belges du FarmDroid (aucun essai wallon ou flamand publié trouvé) et résultats du modèle de simulation d'Inagro.
 - Destruction des couverts sans glyphosate en semis direct en Wallonie : résultats d'essais belges (Greenotec, CRA-W) non trouvés.
 - Nombre de jours favorables au désherbage mécanique par région agricole wallonne (figures de l'article du CRA-W non reprises ici).
@@ -163,6 +170,10 @@ Le semis direct sans glyphosate reste donc un chantier ouvert : en pratique, on 
 [^lavenir]: « Réduction des pesticides en Wallonie : "Ce n'est pas aux fermes d'en porter seules la responsabilité" », L'Avenir, 22 avril 2026. https://www.lavenir.net/actu/environnement/2026/04/22/reduction-des-pesticides-en-wallonie-ce-nest-pas-aux-fermes-den-porter-seules-la-responsabilite-CMISKQJ425BI3IQQWVLV7EAELE/
 [^faca]: « Le rouleau destructeur de couverts fait sa mue », Réussir, 12 février 2020. https://www.reussir.fr/le-rouleau-destructeur-de-couverts-fait-sa-mue
 [^chedru]: « Sans glyphosate, un gros point d'interrogation avant les cultures d'hiver pour Antoine Chédru », Réussir, 19 avril 2018. https://www.reussir.fr/grandes-cultures/sans-glyphosate-un-gros-point-dinterrogation-avant-les-cultures-dhiver-pour-antoine-chedru
+[^ri]: « Eco-régime réduction d'intrants », Portail de l'agriculture wallonne (SPW), page modifiée le 3 juillet 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
+[^cls]: « Eco-régime couverture longue du sol », Portail de l'agriculture wallonne (SPW), page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne (SPW), page modifiée le 18 septembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), articles 5 et 6, annexes 2 et 3, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
 [^aii]: « Liste des investissements admissibles » (aide aux investissements agricoles, AII), SPW Agriculture, Ressources naturelles et Environnement, version de janvier 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
 [^fao]: « FarmDroid FD20 », AgriTech Observatory, FAO (fiche non datée, données de septembre 2025, consultée le 26 novembre 2026). https://agritechobservatory.review.fao.org/en/farmdroid-fd20
 [^pc2020]: Lecocq R., « FarmDroid, un robot à 75 000 € pour semer et biner 20 hectares », Pleinchamp, 8 décembre 2020. https://www.pleinchamp.com/actualite/farmdroid-un-robot-a-75-000-pour-semer-et-biner-20-ha

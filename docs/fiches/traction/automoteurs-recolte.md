@@ -6,14 +6,14 @@ dependance_fossile: gasoil
 alternatives: [mutualisation de la récolte, HVO, huile végétale, moissonneuse hybride ou électrique, biométhane]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Moissonneuse et ensileuse
 
 ## En bref
 
-La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 2, si un acheteur, un label ou un collectif prend ce surcoût en charge). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
+La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé ; en Wallonie, l'aide à l'investissement pour une moissonneuse ou une ensileuse est réservée aux CUMA. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 2, si un acheteur, un label ou un collectif prend ce surcoût en charge). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -62,6 +62,8 @@ Repères de prix (prix français, faute de barème belge publié) :
 
 En Wallonie, la Cuma « Système D », créée en 1992 autour de l'achat d'une moissonneuse, estimait en 2013 ses coûts à environ 60 % de ceux d'une entreprise de travaux agricoles. Elle couvrait alors plus de 400 ha et servait aussi aux achats groupés de carburant[^sysd].
 
+**Aides.** Dans la liste de l'aide aux investissements (AII), la moissonneuse-batteuse et l'ensileuse automotrice à maïs ont chacune une ligne **réservée aux CUMA** : un agriculteur seul n'y a pas droit[^aii-liste]. Ces lignes ne cochent ni « architecture verte » ni « résilience économique »[^aii-liste]. Une CUMA touche donc le taux de base de {{ v('aii_cuma_taux_base', 0) }} du coût simplifié, plus {{ v('aii_cuma_maj_6_membres', 0) }} avec au moins six membres admissibles, sans dépasser le prix réel[^am-aii]. Le taux de {{ v('aii_taux_cuma_av', 0) }} (calculé) ne vaut que pour les lignes « architecture verte » et ne s'applique pas ici. L'aide abaisse l'amortissement, qui fait 70 % du coût de revient d'une moissonneuse de Cuma[^entraid] : elle renforce la voie collective. Aucune aide ne vise le gasoil ni le HVO. Voir [les aides publiques](../../aides.md).
+
 Pour situer l'enjeu : le gasoil de la moissonneuse ne pèse que {{ v('moisson_gasoil_eur_ha', 0) }} au prix actuel (calculé), contre 85 €/ha pour la seule détention et l'entretien de la machine[^entraid]. C'est donc sur la machine, plus que sur le carburant, que la mutualisation fait gagner.
 
 Limites :
@@ -89,6 +91,8 @@ Limites :
 | haut (+ 30 %) | {{ v('hvo_surcout_litre', 2, scenario='haut') }} | {{ v('moisson_hvo_surcout_ha', 0, scenario='haut') }} | {{ v('ensileuse_hvo_surcout_ha', 0, scenario='haut') }} | {{ v('moisson_hvo_surcout_an', 0, scenario='haut') }} |
 
 Calculé, consommation en plus de {{ v('hvo_surconsommation', 1) }} comprise. Le HVO revient à {{ v('hvo_ratio_gasoil', 1) }} le prix du gasoil agricole au prix actuel, et à {{ v('hvo_ratio_gasoil', 1, scenario='bas') }} au prix d'avant-crise. La crise a donc réduit l'écart, sans l'inverser : dans aucun scénario le HVO n'est moins cher que le gasoil.
+
+**Aides.** Aucune aide trouvée pour un carburant renouvelable : ni la PAC ni l'AII n'en paient.
 
 **Pourquoi vague 2.** Le surcoût reste modeste à l'échelle de la récolte : environ {{ v('moisson_hvo_surcout_ha', 0) }} en moisson, à comparer aux 85 €/ha que coûte la seule détention d'une moissonneuse de Cuma[^entraid]. Il devient supportable dans des conditions précises : une machine partagée sur une grande surface, dont l'économie paie le carburant ; un acheteur ou un cahier des charges qui rémunère une récolte à faible carbone ; un entrepreneur qui le refacture à ses clients. Sans l'une de ces conditions, il reste une dépense.
 
@@ -135,6 +139,7 @@ Le biométhane a pourtant une place sur le chantier : les tracteurs qui transpor
 
 ## À vérifier
 
+- **Coût simplifié AII** de la moissonneuse-batteuse et de l'ensileuse automotrice (lignes réservées aux CUMA) : à reprendre dans les données du projet pour chiffrer l'aide. Seuil de sélection d'une CUMA (5 points) pour une ligne sans case « architecture verte » ni « résilience économique » : comment le dépasser.
 - **Barèmes belges** : aucun tarif publié d'entrepreneur ni de CUMA pour la moisson ou l'ensilage en Wallonie. L'outil Mecacost du CRA-W calcule le coût d'une machine aux conditions belges, après inscription : à utiliser pour remplacer les références françaises.
 - **Part de la récolte faite par entreprise ou CUMA en Wallonie** : aucune statistique trouvée (recensement agricole, SPW, Agro-Service). Nombre de CUMA actives en Wallonie.
 - **Consommations réelles** : les valeurs du barème sont calculées à partir de la puissance. Les remplacer par des relevés de machines (ordinateur de bord, factures de l'entrepreneur), en céréales, en maïs grain et en ensilage d'herbe.
@@ -153,6 +158,8 @@ Le biométhane a pourtant une place sur le chantier : les tracteurs qui transpor
 [^pb]: « Bien choisir sa stratégie de mécanisation », Paysan Breton, 8 août 2025. https://www.paysan-breton.fr/2025/08/bien-choisir-sa-strategie-de-mecanisation/
 [^sysd]: Guilleaume L., « Fiche ressource n° 64 – Système D Scrl – Coopérative d'utilisation en commun de matériel agricole », Réseau wallon de développement rural, janvier 2013. https://reseauwallonpac.be/sites/default/files/504342_150115_fress64_systemed_cuma.pdf
 [^agroservice]: « Kerncijfers », Nationale Centrale Landbouw-Service (Agro-Service), page non datée, consultée le 26 novembre 2026. https://www.landbouwservice.be/nl/node/10
+[^aii-liste]: « Liste des investissements admissibles » (aide aux investissements agricoles, AII), SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), articles 5 et 6, annexe 3, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
 [^claas]: « CLAAS: HVO Approval and Initial Factory Fill for Tractors, Combine Harvesters and Forage Harvesters », communiqué Claas repris par Advanced BioFuels USA, 10 octobre 2023. https://advancedbiofuelsusa.info/claas-hvo-approval-and-initial-factory-fill-for-tractors-combine-harvesters-and-forage-harvesters
 [^dlg]: « HVO in practical DLG testing », DLG (Deutsche Landwirtschafts-Gesellschaft), non daté, consulté le 26 novembre 2026. https://www.dlg.org/en/magazine/hvo-in-practical-dlg-testing
 [^maes]: « HVO100 : le diesel propre du futur en Europe et en Belgique », MAES, 12 août 2024 (mis à jour le 11 juin 2025). https://www.maesmobility.be/fr/blog/maes-general/hvo100-le-diesel-propre-du-futur-en-europe-et-en-belgique/
