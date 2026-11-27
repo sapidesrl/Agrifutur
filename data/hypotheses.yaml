@@ -344,6 +344,24 @@ prerefroidisseur_gain:
   source: https://rundveeloket.be/vraag_antwoord/voorkoelen
   note: "Rundveeloket 40 % ; Handboek Melkveehouderij environ 40 % ; Inagro jusqu'à 50 % (40 % dans son exemple chiffré). Plus faible l'été, quand l'eau est plus chaude. Lu le 26/11/2026."
 
+prerefroidisseur_prix_bas:
+  libelle: Pré-refroidisseur posé, bas de la fourchette de prix
+  valeur: 4000
+  unite: €
+  statut: sourcé
+  date: 2023-10-04
+  source: https://www.reussir.fr/lait/economies-denergie-prerefroidisseurs-et-recuperateurs-de-chaleur-sont-de-plus-en-plus-rentables
+  note: "Prix français : 4 000 à 10 000 € selon l'installation (Réussir Lait, 4 octobre 2023). Voir prerefroidisseur_prix_haut."
+
+prerefroidisseur_prix_haut:
+  libelle: Pré-refroidisseur posé, haut de la fourchette de prix
+  valeur: 10000
+  unite: €
+  statut: sourcé
+  date: 2023-10-04
+  source: https://www.reussir.fr/lait/economies-denergie-prerefroidisseurs-et-recuperateurs-de-chaleur-sont-de-plus-en-plus-rentables
+  note: "Prix français, même source."
+
 lait_livre_an:
   libelle: Lait livré par an (exploitation type)
   valeur: 500000

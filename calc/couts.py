@@ -777,6 +777,28 @@ CALCULS = [
      "Surcoût remboursé par l'énergie ÷ surcoût net en part du prix ; sans limite si le surcoût net est nul ou négatif",
      lambda h, c: c["utilitaire_surcout_rembourse"] / c["utilitaire_ecart_neuf_net_dpi"]
      if c["utilitaire_ecart_neuf_net_dpi"] > 0 else float("inf")),
+    ("prerefroidisseur_retour_bas_ans", "Pré-refroidisseur au bas de la fourchette de prix : temps de retour simple", "ans",
+     "Prix ÷ économie annuelle d'électricité, hors entretien",
+     lambda h, c: h["prerefroidisseur_prix_bas"] / c["prerefroidisseur_eur_an"]),
+    ("prerefroidisseur_retour_haut_ans", "Pré-refroidisseur au haut de la fourchette de prix : temps de retour simple", "ans",
+     "Prix ÷ économie annuelle d'électricité, hors entretien",
+     lambda h, c: h["prerefroidisseur_prix_haut"] / c["prerefroidisseur_eur_an"]),
+    ("pv_ferme_retour_cv_ans", "Ferme type : temps de retour du photovoltaïque, aide AII et certificats verts compris", "ans",
+     "(Investissement − aide) ÷ (valeur annuelle + certificats verts − entretien annuel)",
+     lambda h, c: (c["pv_ferme_investissement"] - c["pv_ferme_aide_aii"])
+     / (c["pv_ferme_valeur_an"] + c["pv_ferme_cv_an"] - c["pv_ferme_investissement"] * h["pv_entretien_part"] / h["pv_duree_vie"])),
+    ("part_producteur_coop_magasin", "Part du prix final reçue par le producteur en magasin coopératif", "%",
+     "1 − marge du magasin",
+     lambda h, c: 1 - h["marge_coop_magasin"]),
+    ("part_producteur_coop_en_ligne", "Part du prix final reçue par le producteur en coopérative en ligne", "%",
+     "1 − marge de la coopérative",
+     lambda h, c: 1 - h["marge_coop_en_ligne"]),
+    ("part_producteur_ruche", "Part du prix final reçue par le producteur sur une plateforme de type La Ruche qui dit Oui", "%",
+     "1 − commission de la plateforme et du responsable",
+     lambda h, c: 1 - h["marge_plateforme_ruche"]),
+    ("pdt_recette_ruche", "Pomme de terre : recette du producteur par une plateforme de type La Ruche qui dit Oui", "€/kg",
+     "Prix final × part du producteur",
+     lambda h, c: h["pdt_prix_detail_2022"] * c["part_producteur_ruche"]),
 ]
 
 

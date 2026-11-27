@@ -50,9 +50,9 @@ Les trois alternatives raccourcissent la chaîne : au plus un intermédiaire ent
 | Canal | Part du prix final pour le producteur | Recette par kg |
 |---|---|---|
 | Chaîne longue (estimation pour la pomme de terre) | {{ v('pdt_part_agriculteur_long', 0) }} | {{ v('pdt_prix_agriculteur_2022', 2) }} |
-| Magasin coopératif (marge de {{ v('marge_coop_magasin', 0) }}) | 70 % | {{ v('pdt_recette_coop_magasin') }} |
-| Coopérative en ligne avec point de dépôt (marge de {{ v('marge_coop_en_ligne', 0) }}) | 80 % | {{ v('pdt_recette_coop_en_ligne') }} |
-| Plateforme de type La Ruche qui dit Oui (commission de {{ v('marge_plateforme_ruche', 0) }}) | 80 % | {{ v('pdt_recette_coop_en_ligne') }} |
+| Magasin coopératif (marge de {{ v('marge_coop_magasin', 0) }}) | {{ v('part_producteur_coop_magasin', 0) }} | {{ v('pdt_recette_coop_magasin') }} |
+| Coopérative en ligne avec point de dépôt (marge de {{ v('marge_coop_en_ligne', 0) }}) | {{ v('part_producteur_coop_en_ligne', 0) }} | {{ v('pdt_recette_coop_en_ligne') }} |
+| Plateforme de type La Ruche qui dit Oui (commission de {{ v('marge_plateforme_ruche', 0) }}) | {{ v('part_producteur_ruche', 0) }} | {{ v('pdt_recette_ruche') }} |
 | Abonnement ou vente à la ferme | 100 %, moins les frais de vente | prix fixé par le producteur |
 
 Au même prix final, le producteur reçoit {{ v('pdt_ratio_coop_long', 1) }} plus en vendant par une coopérative en ligne qu'en chaîne longue (calculé). **Ce rapport surestime le gain.** En circuit court, le producteur lave, trie, emballe, étiquette et livre lui-même : il fait une partie du travail que la chaîne longue payait. Les marges des coopératives et des plateformes viennent de sources de 2020 et 2021 ; le prix de la pomme de terre et l'estimation de Greenpeace datent de 2022.

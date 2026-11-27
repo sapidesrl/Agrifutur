@@ -1434,3 +1434,48 @@ utilitaire_prix_max_neuf_dpi:
   unite: €
   formule: Surcoût remboursé par l'énergie ÷ surcoût net en part du prix ; sans limite
     si le surcoût net est nul ou négatif
+prerefroidisseur_retour_bas_ans:
+  libelle: 'Pré-refroidisseur au bas de la fourchette de prix : temps de retour simple'
+  valeur: 3.752486
+  bas: 4.431053
+  haut: 2.886528
+  unite: ans
+  formule: Prix ÷ économie annuelle d'électricité, hors entretien
+prerefroidisseur_retour_haut_ans:
+  libelle: 'Pré-refroidisseur au haut de la fourchette de prix : temps de retour simple'
+  valeur: 9.381215
+  bas: 11.077632
+  haut: 7.216319
+  unite: ans
+  formule: Prix ÷ économie annuelle d'électricité, hors entretien
+pv_ferme_retour_cv_ans:
+  libelle: 'Ferme type : temps de retour du photovoltaïque, aide AII et certificats
+    verts compris'
+  valeur: 5.213857
+  bas: 6.442207
+  haut: 3.990156
+  unite: ans
+  formule: (Investissement − aide) ÷ (valeur annuelle + certificats verts − entretien
+    annuel)
+part_producteur_coop_magasin:
+  libelle: Part du prix final reçue par le producteur en magasin coopératif
+  valeur: 0.7
+  unite: '%'
+  formule: 1 − marge du magasin
+part_producteur_coop_en_ligne:
+  libelle: Part du prix final reçue par le producteur en coopérative en ligne
+  valeur: 0.8
+  unite: '%'
+  formule: 1 − marge de la coopérative
+part_producteur_ruche:
+  libelle: Part du prix final reçue par le producteur sur une plateforme de type La
+    Ruche qui dit Oui
+  valeur: 0.8
+  unite: '%'
+  formule: 1 − commission de la plateforme et du responsable
+pdt_recette_ruche:
+  libelle: 'Pomme de terre : recette du producteur par une plateforme de type La Ruche
+    qui dit Oui'
+  valeur: 1.304
+  unite: €/kg
+  formule: Prix final × part du producteur

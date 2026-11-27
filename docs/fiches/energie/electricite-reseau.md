@@ -72,6 +72,7 @@ Le taux d'autoconsommation dépend du profil de la ferme :
 | Coût annuel (investissement et entretien étalés, sans aide) | {{ v('pv_ferme_cout_an') }} |
 | Gain net annuel | {{ v('pv_ferme_gain_net_an') }} ({{ fourchette('pv_ferme_gain_net_an') }}) |
 | Temps de retour simple, aide déduite | {{ v('pv_ferme_retour_ans', 1) }} ({{ fourchette('pv_ferme_retour_ans', 1) }}) |
+| Temps de retour avec les certificats verts (au-delà de 10 kW, sur réservation) | {{ v('pv_ferme_retour_cv_ans', 1) }} ({{ fourchette('pv_ferme_retour_cv_ans', 1) }}) |
 
 Si toute la production était injectée, elle ne rapporterait que {{ v('pv_ferme_valeur_an_sans_autoconso') }} : l'électricité consommée sur place fait presque toute la rentabilité. L'installation reste rentable dans le scénario d'avant-crise. Le calcul ne compte ni les frais financiers, ni la perte de rendement des panneaux.
 
