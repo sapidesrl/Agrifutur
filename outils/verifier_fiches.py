@@ -98,6 +98,22 @@ def main() -> int:
             if MONTANT.search(ligne) and "[^" not in ligne and "{{" not in ligne:
                 avertissements.append(f"{rel}:{n} : montant sans source ni macro → {ligne.strip()[:90]}")
 
+    # Synthèse : chaque ligne doit pointer vers une alternative existante et des clés connues.
+    sys.path.insert(0, str(RACINE / "outils"))
+    from macros import lire_alternatives, trouver_alternative
+    synthese = yaml.safe_load((RACINE / "data" / "synthese.yaml").read_text(encoding="utf-8")) or []
+    for n, r in enumerate(synthese, start=1):
+        chemin = FICHES / r.get("fiche", "")
+        if not chemin.exists():
+            erreurs.append(f"synthese.yaml, ligne {n} : fiche absente {r.get('fiche')}")
+            continue
+        if trouver_alternative(lire_alternatives(chemin), r.get("alternative", "")) is None:
+            erreurs.append(f"synthese.yaml, ligne {n} : alternative introuvable ou ambiguë « {r.get('alternative')} » dans {r['fiche']}")
+        rep = r.get("repere") or {}
+        for cle in [rep.get("cle"), rep.get("compare"), r.get("retour"), r.get("retour_aide")]:
+            if cle and cle not in cles:
+                erreurs.append(f"synthese.yaml, ligne {n} : clé inconnue « {cle} »")
+
     for a in avertissements:
         print(f"AVERTISSEMENT  {a}")
     for e in erreurs:
