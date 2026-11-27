@@ -32,27 +32,27 @@ scenario_haut_facteur:
 
 gasoil_chauffage_2000l_tvac:
   libelle: Gasoil diesel application chauffage, ≥ 2 000 L, TVAC
-  valeur: 1.4042
+  valeur: 1.4009
   unite: €/L
   statut: sourcé
-  date: 2026-11-26
-  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
-  note: "Gasoil chauffage (H0/H7) ≥ 2 000 L : moyenne des prix maximums du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel), calculée dans ce projet. Le prix a baissé pendant le mois : 1,51 €/L le 4 novembre, 1,28 €/L le 26. Sert aussi de prix du mazout de chauffage."
+  date: 2026-11-27
+  source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
+  note: "Gasoil de chauffage (H0/H7), au moins 2 000 L : moyenne des prix maximums officiels de novembre 2026 (27 jours publiés, jusqu'au 27/11/2026), TVA comprise, tarif officiel du SPF Économie publié par Statbel ; calculée par outils/maj_prix.py le 27/11/2026."
   scenario: true
   bas: 0.7882
-  bas_note: "Février 2026 (avant-crise) : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+  bas_note: "Février 2026 (avant-crise) : moyenne des 28 prix maximums officiels du mois, même source (https://bestat.statbel.fgov.be/bestat/crosstable.xhtml?view=939c67bb-39fa-4f49-9d05-c446187bef1d)."
 
 ecart_gasoil_agricole_chauffage:
   libelle: Écart entre gasoil chauffage et gasoil agricole (≥ 2 000 L)
-  valeur: 0.023
+  valeur: 0.0236
   unite: €/L
   statut: sourcé
-  date: 2026-11-26
-  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
-  note: "Écart TVAC entre les moyennes du 1er au 26 novembre 2026 (chauffage 1,4042 €/L, agricole 1,3812 €/L), calculé dans ce projet. Écart observé de 2,5 à 4,2 c€ selon les jours et les mois."
+  date: 2026-11-27
+  source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
+  note: "Écart TVA comprise entre les moyennes de novembre 2026 du gasoil de chauffage (1,4009 €/L) et du gasoil agricole (1,3772 €/L), au moins 2 000 L, prix maximums officiels (SPF Économie, Statbel) ; calculé par outils/maj_prix.py le 27/11/2026."
   scenario: true
-  bas: 0.0252
-  bas_note: "Février 2026 : chauffage 0,7882 €/L TVAC (moyenne officielle) moins agricole 0,7630 €/L TVAC (0,6306 €/L HTVA, prix maximum moyen du SPF Économie), pour que le scénario bas retombe sur le prix agricole de février."
+  bas: 0.0251
+  bas_note: "Février 2026 : chauffage 0,7882 €/L moins agricole 0,7631 €/L (moyennes officielles du mois), pour que le scénario bas retombe sur le prix agricole de février."
 
 tva:
   libelle: Taux de TVA sur le gasoil
@@ -112,12 +112,12 @@ rendement_chaine_electrique:
 
 electricite_reseau_htva:
   libelle: Électricité du réseau, petit professionnel, tout compris HTVA
-  valeur: 0.3807
+  valeur: 0.4067
   unite: €/kWh
   statut: sourcé
-  date: 2026-10-31
-  source: https://www.creg.be/sites/default/files/assets/Prices/Dashboard/tableaudebord202610.pdf
-  note: "CREG, tableau de bord d'octobre 2026 : prix moyen « all in » hors TVA (énergie, réseau, surcharges) pour une PME de 50 000 kWh/an en Wallonie, offres des grands fournisseurs. Un contrat négocié peut être moins cher : remplacer par le prix de la facture."
+  date: 2026-11-01
+  source: https://www.creg.be/sites/default/files/assets/Prices/Dashboard/tableaudebord202611.pdf
+  note: "CREG, tableau de bord mensuel de novembre 2026 : prix moyen « all in » hors TVA (énergie, réseau, surcharges) pour une PME de 50 000 kWh/an en Wallonie, offres des grands fournisseurs ; lu par outils/maj_prix.py le 27/11/2026. Un contrat négocié peut être moins cher : remplacer par le prix de la facture."
   scenario: true
   bas: 0.3224
   bas_note: "Février 2026, même profil, CREG (https://www.creg.be/sites/default/files/assets/Prices/Dashboard/tableaudebord202602.pdf)."
@@ -788,15 +788,15 @@ farmdroid_duree:
 
 propane_vrac_tvac:
   libelle: Propane en vrac, ≥ 2 000 L, TVAC
-  valeur: 0.9168
+  valeur: 0.9157
   unite: €/L
   statut: sourcé
-  date: 2026-11-26
+  date: 2026-11-27
   source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
-  note: "Propane en vrac (à partir de 2 000 L) : moyenne des prix maximums du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel, vue « dernières 365 mises à jour »), calculée dans ce projet. 0,963 €/L du 1er au 6 novembre, 0,887 €/L à partir du 18. Le tarif du 27/11/2026 donne 0,7327 €/L HTVA et 0,8866 €/L TVAC (rapport 1,21)."
+  note: "Propane en vrac, au moins 2 000 L : moyenne des prix maximums officiels de novembre 2026 (27 jours publiés, jusqu'au 27/11/2026), TVA comprise, tarif officiel du SPF Économie publié par Statbel ; calculée par outils/maj_prix.py le 27/11/2026."
   scenario: true
   bas: 0.7313
-  bas_note: "Février 2026 (avant-crise) : moyenne des prix maximums journaliers du 1er au 28 février 2026 (0,721 puis 0,739 €/L), même source, calculée dans ce projet. Le propane a beaucoup moins monté que le gasoil de chauffage (+25 % contre +78 %)."
+  bas_note: "Février 2026 (avant-crise) : moyenne des 28 prix maximums officiels du mois, même source (https://bestat.statbel.fgov.be/bestat/crosstable.xhtml?view=939c67bb-39fa-4f49-9d05-c446187bef1d)."
 
 propane_energie_litre:
   libelle: Énergie d'un litre de propane liquide (PCI)
@@ -919,27 +919,27 @@ ensileuse_conso_l_ha:
 
 diesel_xtl_tvac:
   libelle: Diesel XTL (paraffinique, dont HVO100), prix maximum officiel à la pompe, TVAC
-  valeur: 3.3963
+  valeur: 3.3914
   unite: €/L
   statut: sourcé
-  date: 2026-11-26
-  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
-  note: "Moyenne des prix maximums officiels du 1er au 26 novembre 2026 (tarif officiel SPF Économie, publié par Statbel), calculée dans ce projet : 3,656 €/L le 1er novembre, 3,264 €/L le 26. Prix routier, accises comprises. Le tarif officiel ne distingue pas le HVO100 des autres diesels XTL."
+  date: 2026-11-27
+  source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
+  note: "Diesel XTL (de synthèse, dont HVO) à la pompe : moyenne des prix maximums officiels de novembre 2026 (27 jours publiés, jusqu'au 27/11/2026), TVA comprise, tarif officiel du SPF Économie publié par Statbel ; calculée par outils/maj_prix.py le 27/11/2026."
   scenario: true
   bas: 3.1996
-  bas_note: "Février 2026 : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+  bas_note: "Février 2026 (avant-crise) : moyenne des 28 prix maximums officiels du mois, même source (https://bestat.statbel.fgov.be/bestat/crosstable.xhtml?view=939c67bb-39fa-4f49-9d05-c446187bef1d)."
 
 diesel_b7_tvac:
   libelle: Diesel B7, prix maximum officiel à la pompe, TVAC
-  valeur: 2.3513
+  valeur: 2.3458
   unite: €/L
   statut: sourcé
-  date: 2026-11-26
-  source: https://bestat.statbel.fgov.be/bestat/api/views/cee4903e-c302-45be-9e43-e4b724ffb592/result/PDF
-  note: "Moyenne des prix maximums officiels du 1er au 26 novembre 2026 (SPF Économie, publié par Statbel), calculée dans ce projet : 2,452 €/L le 1er novembre, 2,203 €/L le 26. Sert seulement à estimer le poids des accises routières dans le prix du diesel XTL."
+  date: 2026-11-27
+  source: https://bestat.statbel.fgov.be/bestat/api/views/939c67bb-39fa-4f49-9d05-c446187bef1d/result/CSV
+  note: "Diesel routier B7 à la pompe : moyenne des prix maximums officiels de novembre 2026 (27 jours publiés, jusqu'au 27/11/2026), TVA comprise, tarif officiel du SPF Économie publié par Statbel ; calculée par outils/maj_prix.py le 27/11/2026."
   scenario: true
   bas: 1.7291
-  bas_note: "Février 2026 : moyenne mensuelle officielle, SPF Économie via Statbel (https://bestat.statbel.fgov.be/bestat/api/views/90a3de47-97fc-4870-9936-f55ed85f15fd/result/PDF)."
+  bas_note: "Février 2026 (avant-crise) : moyenne des 28 prix maximums officiels du mois, même source (https://bestat.statbel.fgov.be/bestat/crosstable.xhtml?view=939c67bb-39fa-4f49-9d05-c446187bef1d)."
 
 hvo_surconsommation:
   libelle: Consommation en plus, en litres, avec du HVO100 au lieu du diesel
@@ -1386,15 +1386,15 @@ csa_surface_moyenne_2014:
 
 ble_prix:
   libelle: Blé tendre standard certifié Vegaplan (cotation indicative FEGRA)
-  valeur: 207.5
+  valeur: 203.2
   unite: €/t
   statut: sourcé
-  date: 2026-11-26
+  date: 2026-11-27
   source: https://fegra.be/home/agriculturalprices?lang=fr
-  note: "Cotation indicative FEGRA/Synagra du 26/11/2026 (Belgique) : 207,50 €/t en blé standard certifié, 202,50 €/t en non certifié (malus de 5 €/t). Elle reflète les transactions physiques de la veille et ne lie pas les parties : le prix réel est fixé par le négociant. La page ne précise pas la base de livraison. Hors TVA : le Département Landbouw en Visserij reprend ces prix FEGRA comme « beursnotering (excl. btw) » (https://landbouwcijfers.vlaanderen.be/marktinformatie/prijzen-van-granen-voedertarwe-voedergerst-voedermais-triticale-en-haver). Moyenne de novembre 2026 (16 cotations, du 3 au 26/11) : 202,84 €/t (fichier CSV de la page). Remplace l'ancienne valeur française (Euronext 242 €/t le 25/11/2026)."
+  note: "Moyenne des 17 cotations indicatives FEGRA/Synagra de novembre 2026 en blé standard certifié Vegaplan (jusqu'au 27/11/2026), export CSV de la page. Prix indicatifs, hors TVA, base de livraison non précisée ; le prix réel est fixé par le négociant. Calculée par outils/maj_prix.py le 27/11/2026."
   scenario: true
-  bas: 157.5
-  bas_note: "Février 2026 (avant-crise) : moyenne des 18 cotations FEGRA du 3 au 27/02/2026 en blé standard certifié, 157,53 €/t (155,00 à 160,50 €/t ; 157,50 €/t le 26/02 et 158,00 €/t le 27/02). Même source et même base, export CSV de la page lu le 26/11/2026."
+  bas: 157.7
+  bas_note: "Février 2026 (avant-crise) : moyenne des 19 cotations FEGRA du mois, même source et même base."
 
 farine_ferme_prix:
   libelle: Farine sur meule vendue par un moulin à la ferme wallon
