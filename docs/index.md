@@ -24,3 +24,4 @@ Cet écart tient même si les prix redescendent : au prix d'avant-crise, le kWh 
 - [La méthode](methode.md) : comment lire les chiffres.
 - [Les hypothèses](hypotheses.md) : tous les prix utilisés, avec leur source et leur date.
 - [Les calculs](calculs.md) : les comparaisons, recalculées à chaque mise à jour des prix.
+- [Les aides publiques](aides.md) : PAC, aides à l'investissement et à l'énergie, et ce qu'elles changent pour chaque alternative.
