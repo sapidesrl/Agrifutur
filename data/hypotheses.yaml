@@ -514,7 +514,7 @@ pressage_cout:
   statut: estimé
   date: 2023-05-24
   source: https://www.entraid.com/articles/une-presse-a-huile-pour-le-carburant-et-lautonomie-proteique
-  note: "Tarif de la CUMA de la Verte Prairie du Lyonnais (Entraid, 24/05/2023, prix français) : 0,20 €/L d'huile, presse amortie (entretien et réparations seulement), contre 0,50 à 0,60 €/L au début, quand la presse n'était pas encore amortie. Brunschwig et Lamy (Fourrages 187, 2006) comptaient 40 à 70 € par 1 000 L selon la presse (prix de 2006). Lu le 27/11/2026. Aucune référence wallonne récente trouvée : les fiches colza de Valbiom sur energie.wallonie.be renvoient une erreur 404."
+  note: "Tarif de la CUMA de la Verte Prairie du Lyonnais (Entraid, 24/05/2023, prix français) : 0,20 €/L d'huile, presse amortie (entretien et réparations seulement), contre 0,50 à 0,60 €/L au début, quand la presse n'était pas encore amortie. Brunschwig et Lamy (Fourrages 187, 2006) comptaient 40 à 70 € par 1 000 L selon la presse (prix de 2006). Lu le 27/11/2026. Aucune référence wallonne récente trouvée : les fiches colza de ValBiom (2005) sont retirées d'energie.wallonie.be ; les n° 2, 3 et 7 sont archivées (web.archive.org), sans coût de pressage ; le n° 4 (économie) ne l'est pas. Fourrages n° 187 introuvable en ligne."
 
 energie_litre_huile:
   libelle: Énergie d'un litre d'huile de colza (PCI)
@@ -984,6 +984,33 @@ tourteau_colza_mat:
   source: https://www.feedtables.com/content/crude-protein
   note: "Tables INRAE-CIRAD-AFZ, tourteau de colza huile < 5 % : 33,9 % sur brut (38,1 % de la MS). Le CRA-W donne 39 à 43 % de la MS."
 
+colza_soja_substitution:
+  libelle: Tourteau de colza qui remplace 1 kg de tourteau de soja en ration de ruminants (règle pratique)
+  valeur: 1.5
+  unite: kg
+  statut: sourcé
+  date: 2005-10-26
+  source: https://web.archive.org/web/20240609115348/https://energie.wallonie.be/servlet/Repository/?IDR=4837
+  note: "ValBiom et CRA-W, « Fiche colza 7 : la qualité nutritive du tourteau de colza », version du 26/10/2005 (fiche retirée d'energie.wallonie.be, lue dans l'archive web le 27/11/2026) : 1 kg de tourteau de soja remplacé par 1,5 kg de tourteau de colza. Repères : rapport des PDI INRAE 2018 200 ÷ 128 = 1,56 ; rapport des DVE-91 du CVB 2018 250 ÷ 150 = 1,67 ; rapport des MAT 1,36 (colza_pour_1kg_soja)."
+
+tourteau_soja_pdi:
+  libelle: Valeur PDI du tourteau de soja 48 (INRAE 2018, sur brut)
+  valeur: 200
+  unite: g/kg
+  statut: sourcé
+  date: 2026-11-27
+  source: https://www.feedtables.com/content/soybean-meal-oil-5-48-protein-oil
+  note: "Tables INRAE-CIRAD-AFZ, tourteau de soja huile < 5 %, 48 % protéines + huile, sur brut : PDI 2018 200 g/kg (227 g/kg MS), PDIA 152 ; système 2007 : PDIE 233, PDIN 338 ; UFL 2018 1,11. CVB 2018 (sojaschroot RC 45-70, RE > 450) : DVE-91 250 g/kg, VEM 1015. Lu le 27/11/2026."
+
+tourteau_colza_pdi:
+  libelle: Valeur PDI du tourteau de colza déshuilé (INRAE 2018, sur brut)
+  valeur: 128
+  unite: g/kg
+  statut: sourcé
+  date: 2026-11-27
+  source: https://www.feedtables.com/content/rapeseed-meal-oil-5
+  note: "Tables INRAE-CIRAD-AFZ, tourteau de colza huile < 5 %, sur brut : PDI 2018 128 g/kg (144 g/kg MS), PDIA 82 ; système 2007 : PDIE 139, PDIN 221 ; UFL 2018 0,88. CVB 2018 (raapzaadschroot RE > 370) : DVE-91 150 g/kg, VEM 853. Lu le 27/11/2026."
+
 tourteau_colza_gras_mat:
   libelle: Teneur en matière azotée totale du tourteau de colza gras pressé à froid (brut)
   valeur: 0.31
@@ -1182,10 +1209,10 @@ paille_paillage_kg_m2:
   libelle: Quantité de paille ou de foin apportée en paillage
   valeur: 2
   unite: kg/m²
-  statut: estimé
-  date: 2014-12-31
-  source: https://draaf.auvergne-rhone-alpes.agriculture.gouv.fr/IMG/pdf/Fiche_paillage_cle85edc2-2.pdf
-  note: "Essai SERAIL 2014 (fiche paillages, DRAAF Auvergne-Rhône-Alpes) : foin apporté à 2 à 3 kg/m². Borne basse appliquée à la paille. Les mulchs végétaux doivent être posés en couche épaisse (GRAB 2015)."
+  statut: sourcé
+  date: 2021-12-31
+  source: https://www.grab.fr/wp-content/uploads/2022/10/L21PACA01101-Paillages-organiques.pdf
+  note: "GRAB (France), essais sur courge : paille de blé à 18 t/ha pour 8 cm (2021) et 23 t/ha pour 10 cm (2020, rapport M20-PACA-01101-03) ; poster GRAB 2025 (essais 2018-2024) : 18 t/ha pour 6 cm, et 8 à 10 cm recommandés. Ancienne référence : essai SERAIL 2014 (DRAAF Auvergne-Rhône-Alpes), foin à 2 à 3 kg/m². Aucune référence belge trouvée (lu le 27/11/2026)."
 
 # --- Irrigation et abreuvement (fiche eau/irrigation-pompes) ---------------------
 
@@ -1820,7 +1847,7 @@ er_cls_entree_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
-  note: "Page modifiée le 17/04/2026 : sol couvert du 1er janvier au 15 février sur au moins 70 % de la surface ; payé sur toute la SAU ; minimum 15, maximum 40 €/ha ; 15 €/ha payés en 2024. Destruction chimique du couvert interdite à partir de 2027."
+  note: "Page modifiée le 17/04/2026 : sol couvert du 1er janvier au 15 février sur au moins 70 % de la surface ; payé sur toute la SAU ; minimum 15, maximum 40 €/ha ; 15 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026). Destruction chimique du couvert interdite à partir de 2027."
 
 er_cls_intermediaire_eur_ha:
   libelle: "Éco-régime « Couverture longue du sol », seuil intermédiaire : montant prévu par hectare de SAU"
@@ -1829,7 +1856,7 @@ er_cls_intermediaire_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
-  note: "Même page : seuil de 80 % (avec bonus selon la part de prairies) ; minimum 20, maximum 55 €/ha ; 30 €/ha payés en 2024."
+  note: "Même page : seuil de 80 % (avec bonus selon la part de prairies) ; minimum 20, maximum 55 €/ha ; 30 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026)."
 
 er_cls_superieur_eur_ha:
   libelle: "Éco-régime « Couverture longue du sol », seuil supérieur : montant prévu par hectare de SAU"
@@ -1838,7 +1865,7 @@ er_cls_superieur_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
-  note: "Même page : seuil de 90 % ; minimum 35, maximum 80 €/ha ; 45 €/ha payés en 2024."
+  note: "Même page : seuil de 90 % ; minimum 35, maximum 80 €/ha ; 45 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026)."
 
 er_cfe_v1a_eur_ha:
   libelle: "Éco-régime « Cultures favorables », légumineuses fourragères avec zone refuge (V1_A) : montant prévu"
@@ -1847,7 +1874,7 @@ er_cfe_v1a_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
-  note: "Page modifiée le 17/04/2026 : luzerne, lupuline, sainfoin, lotier, vesce, 10 % de zone refuge ; aucun insecticide, même en enrobage ; minimum 220, maximum 420 €/ha ; 380 €/ha payés en 2024. Non cumulable avec le soutien couplé aux protéagineux sur la même parcelle ; cumulable avec le bio."
+  note: "Page modifiée le 17/04/2026 : luzerne, lupuline, sainfoin, lotier, vesce, 10 % de zone refuge ; aucun insecticide, même en enrobage ; minimum 220, maximum 420 €/ha ; 380 €/ha payés en 2024 ; 380 €/ha payés en 2025 pour la variante 1 (communiqué OPW du 24/06/2026). Non cumulable avec le soutien couplé aux protéagineux sur la même parcelle ; cumulable avec le bio."
 
 er_cfe_v1b_eur_ha:
   libelle: "Éco-régime « Cultures favorables », légumineuses fourragères avec bande bordure (V1_B, nouveau en 2026) : montant prévu"
@@ -1865,7 +1892,7 @@ er_cfe_v2_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
-  note: "Même page : V2_A céréales de printemps ; V2_B chanvre, sarrasin, quinoa, caméline, tournesol, moutarde ; minimum 220, maximum 435 €/ha ; 380 €/ha payés en 2024. La V2_A ne se cumule pas avec l'éco-régime réduction d'intrants."
+  note: "Même page : V2_A céréales de printemps ; V2_B chanvre, sarrasin, quinoa, caméline, tournesol, moutarde ; minimum 220, maximum 435 €/ha ; 380 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026). La V2_A ne se cumule pas avec l'éco-régime réduction d'intrants."
 
 er_cfe_v3a_eur_ha:
   libelle: "Éco-régime « Cultures favorables », mélange céréales-légumineuses récolté après le 31 mai (V3_A) : montant prévu"
@@ -1874,7 +1901,7 @@ er_cfe_v3a_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
-  note: "Même page : au moins 50 % de céréales et 20 % de légumineuses, ou caméline-lentille ; minimum 220, maximum 440 €/ha ; 380 €/ha payés en 2024. Pas de cumul avec l'éco-régime réduction d'intrants."
+  note: "Même page : au moins 50 % de céréales et 20 % de légumineuses, ou caméline-lentille ; minimum 220, maximum 440 €/ha ; 380 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026). Pas de cumul avec l'éco-régime réduction d'intrants."
 
 er_cfe_v3b_eur_ha:
   libelle: "Éco-régime « Cultures favorables », mélange céréales-légumineuses récolté après le 15 juin (V3_B) : montant prévu"
@@ -1883,7 +1910,7 @@ er_cfe_v3b_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
-  note: "Même page : minimum 254, maximum 449 €/ha ; 440 €/ha payés en 2024. Pas de cumul avec l'éco-régime réduction d'intrants ni avec le soutien couplé aux protéagineux sur la même parcelle."
+  note: "Même page : minimum 254, maximum 449 €/ha ; 440 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026). Pas de cumul avec l'éco-régime réduction d'intrants ni avec le soutien couplé aux protéagineux sur la même parcelle."
 
 eco_regime_maillage_eur_he:
   libelle: "Éco-régime « Maillage écologique » : montant prévu par hectare environnemental (HE), campagnes 2026-2027"
@@ -1892,7 +1919,7 @@ eco_regime_maillage_eur_he:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023 et 2024. Total plafonné à 40 % de la SAU. Bonus × 1,5 en Natura 2000 ou site de grand intérêt biologique pour les éléments ligneux, les mares et la jachère mellifère."
+  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023, 2024 et 2025 (solde final 2025, communiqué OPW du 24/06/2026). Total plafonné à 40 % de la SAU. Bonus × 1,5 en Natura 2000 ou site de grand intérêt biologique pour les éléments ligneux, les mares et la jachère mellifère."
 
 eco_regime_haie_he_m:
   libelle: Coefficient de l'éco-régime « Maillage écologique » pour un mètre de haie
@@ -1937,7 +1964,7 @@ ri_eur_ha:
   statut: sourcé
   date: 2026-07-03
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024. Par parcelle d'au moins 1 ha : aucune des 36 molécules « à substituer », ou au moins deux désherbages mécaniques pendant la culture. Non accessible aux parcelles bio ; pas de cumul avec les variantes V2_A et V3 de l'éco-régime cultures favorables ; cumulable avec le soutien couplé aux protéagineux."
+  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024 et en 2025 (solde final 2025, communiqué OPW du 24/06/2026). Par parcelle d'au moins 1 ha : aucune des 36 molécules « à substituer », ou au moins deux désherbages mécaniques pendant la culture. Non accessible aux parcelles bio ; pas de cumul avec les variantes V2_A et V3 de l'éco-régime cultures favorables ; cumulable avec le soutien couplé aux protéagineux."
 
 er_pp_base_eur_ha:
   libelle: "Éco-régime « Prairies permanentes » : aide de base prévue par hectare de prairie permanente"
@@ -1946,7 +1973,7 @@ er_pp_base_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
-  note: "Page modifiée le 17/04/2026 : garder au moins 80 % des prairies de l'année précédente, pas de phyto sauf traitement localisé ; minimum 36, maximum 80 €/ha ; 42 €/ha payés en 2024."
+  note: "Page modifiée le 17/04/2026 : garder au moins 80 % des prairies de l'année précédente, pas de phyto sauf traitement localisé ; minimum 36, maximum 80 €/ha ; 42 €/ha payés en 2024 et en 2025 (communiqué OPW du 24/06/2026)."
 
 er_pp_supp_eur_ha:
   libelle: "Éco-régime « Prairies permanentes » : aide supplémentaire prévue, charge de 0,6 à 2 UGB/ha de surface fourragère"
@@ -1955,9 +1982,36 @@ er_pp_supp_eur_ha:
   statut: sourcé
   date: 2026-04-17
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
-  note: "Même page : pas d'animaux tiers sans contrat de pâturage ; minimum 61, maximum 75 €/ha. Paliers suivants prévus : 58 (2 à 2,2 UGB/ha), 48, 38, 28 €/ha (2,6 à 2,8, supprimé en 2027). Montants payés en 2024 égaux aux montants prévus."
+  note: "Même page : pas d'animaux tiers sans contrat de pâturage ; minimum 61, maximum 75 €/ha. Paliers suivants prévus : 58 (2 à 2,2 UGB/ha), 48, 38, 28 €/ha (2,6 à 2,8, supprimé en 2027). Montants payés en 2024 égaux aux montants prévus ; en 2025 : 70 €/ha, puis 60, 50, 40 et 30 €/ha pour les paliers suivants (communiqué OPW du 24/06/2026)."
 
 # PAC, 1er pilier : aides couplées
+
+soutien_proteines_paye_2025:
+  libelle: Soutien couplé aux cultures de protéines végétales, montant payé pour la campagne 2025
+  valeur: 400
+  unite: €/ha
+  statut: sourcé
+  date: 2026-06-24
+  source: https://agriculture.wallonie.be/home/communiques/presses/paiement-du-solde-final-des-aides-directes-de-la-campagne-2025.html
+  note: "Organisme payeur de Wallonie, communiqué « Paiement du solde final des aides directes de la campagne 2025 » du 24/06/2026 (paiement du 26/06/2026) : 400 €/ha, le maximum. La première tranche (communiqué du 12/12/2025) était calculée sur 375 €/ha. Lu le 27/11/2026."
+
+ri_paye_2025:
+  libelle: "Éco-régime « Réduction d'intrants » : montant payé pour la campagne 2025"
+  valeur: 100
+  unite: €/ha
+  statut: sourcé
+  date: 2026-06-24
+  source: https://agriculture.wallonie.be/home/communiques/presses/paiement-du-solde-final-des-aides-directes-de-la-campagne-2025.html
+  note: "Même communiqué de l'OPW (solde final 2025) : 100 €/ha, comme en 2024 (rapport annuel de performance 2025). Lu le 27/11/2026."
+
+eco_regime_maillage_paye_2025:
+  libelle: "Éco-régime « Maillage écologique » : montant payé pour la campagne 2025"
+  valeur: 410
+  unite: €/HE
+  statut: sourcé
+  date: 2026-06-24
+  source: https://agriculture.wallonie.be/home/communiques/presses/paiement-du-solde-final-des-aides-directes-de-la-campagne-2025.html
+  note: "Même communiqué de l'OPW (solde final 2025) : 410 €/HE, comme en 2023 et en 2024 ; la première tranche (communiqué du 20/04/2026) était calculée sur 375 €/HE. Lu le 27/11/2026."
 
 soutien_proteines_eur_ha:
   libelle: Soutien couplé aux cultures de protéines végétales, montant prévu
@@ -1966,7 +2020,7 @@ soutien_proteines_eur_ha:
   statut: sourcé
   date: 2025-11-21
   source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Soja, pois, féverole, lupin, lentille, pois chiche, fenugrec, purs ou dominants dans un mélange ; récolte après le 15 juin. Non cumulable avec l'éco-régime cultures favorables ni avec les surfaces non productives du maillage sur la même parcelle ; cumulable avec le bio, la réduction d'intrants et la couverture longue."
+  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024 ; 400 €/ha payés en 2025 (solde final, communiqué OPW du 24/06/2026, https://agriculture.wallonie.be/home/communiques/presses/paiement-du-solde-final-des-aides-directes-de-la-campagne-2025.html). Soja, pois, féverole, lupin, lentille, pois chiche, fenugrec, purs ou dominants dans un mélange ; récolte après le 15 juin. Non cumulable avec l'éco-régime cultures favorables ni avec les surfaces non productives du maillage sur la même parcelle ; cumulable avec le bio, la réduction d'intrants et la couverture longue."
 
 couple_viandeux_eur_tete:
   libelle: Soutien couplé aux bovins femelles viandeux, montant prévu par animal
@@ -2145,7 +2199,7 @@ aii_maj_av_re:
   statut: sourcé
   date: 2026-01-01
   source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-  note: "AM du 23/02/2023, art. 5 § 2 : seulement pour les lignes de l'annexe 3 où la case est cochée (photovoltaïque, désherbage mécanique, robot, tracteur électrique de plus de 150 ch…). Donne aussi 5 points de sélection."
+  note: "AM du 23/02/2023, art. 5 § 2 : seulement pour les lignes de l'annexe 3 où la case est cochée (photovoltaïque, désherbage mécanique, robot, tracteur électrique de plus de 150 ch…). Non cumulables pour le taux (art. 5, § 2, al. 4). Points de sélection : l'annexe 2 donne 5 points à chacune sur deux lignes distinctes, l'art. 6, § 1, 6° en fait un seul critère ; addition non confirmée par l'Organisme payeur (novembre 2026)."
 
 aii_maj_jeune:
   libelle: "Aide AII : majoration jeune agriculteur"
@@ -2228,6 +2282,15 @@ aii_cuma_maj_6_membres:
   source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
   note: "AM du 23/02/2023, art. 5 § 3 : 2,5 % avec 4 ou 5 membres."
 
+aii_cuma_seuil_points:
+  libelle: "Aide AII : seuil de sélection d'une demande de CUMA"
+  valeur: 5
+  unite: points
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 6, § 2, al. 2, et annexe 2, chapitre 2 : membres admissibles X < 4 : 0 point ; 4 ≤ X < 6 : 5 ; X ≥ 6 : 10 ; investissement « architecture verte ou résilience économique » : 10. Une CUMA d'au moins 4 membres atteint le seuil sur n'importe quelle ligne ouverte aux CUMA ; une CUMA de 3 membres (minimum, AGW art. 13) seulement sur une ligne architecture verte ou résilience. Lu le 27/11/2026."
+
 aii_diversif_taux_base:
   libelle: "Aide AII à la transformation et à la diversification à la ferme : taux de base d'un agriculteur actif"
   valeur: 0.20
@@ -2235,7 +2298,7 @@ aii_diversif_taux_base:
   statut: sourcé
   date: 2026-01-01
   source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-  note: "AM du 23/02/2023, art. 15 : +10 % jeune agriculteur, +10 % produits bio ou de qualité. Coopérative de transformation (SCTC) : 20 % de base, jusqu'à 40 %, plafond 500 000 € sur 2023-2027."
+  note: "AM du 23/02/2023, art. 15 : +10 % jeune agriculteur, +10 % produits bio ou de qualité. Coopérative de transformation (SCTC) : 20 % de base, plafond 500 000 € sur 2023-2027. Taux maximal 40 % par construction (20 + 10 + 10) ; plafond écrit sur la page SPW de l'intervention 354 (17/04/2026). Pas de majoration architecture verte ni résilience : ces cases ne donnent que des points de sélection (art. 16, § 1 : seuil de 15 points comme l'investissement productif). SCTC : 35 % au plus (20 + 5 + 10), seuil de 5 points."
 
 aii_pv_forfait:
   libelle: "Aide aux investissements agricoles (AII) : coût simplifié du photovoltaïque"
@@ -2327,6 +2390,24 @@ aii_hall_sechage_forfait:
   source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
   note: "AM du 23/02/2023, annexe 3, ligne 238 (architecture verte et résilience cochées). Séchoir compact pour balles : 953 €/m² (ligne 365, résilience). Ventilateur d'au moins 450 m³/min : 540 € (ligne 465). Aide limitée aux 1 000 premiers m²."
 
+aii_moissonneuse_forfait:
+  libelle: "Aide AII : coût simplifié d'une moissonneuse-batteuse (CUMA seulement)"
+  valeur: 214983
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 264 : seule la colonne CUMA est cochée ; ni architecture verte ni résilience économique. Taux CUMA : 20 % + 5 % (au moins 6 membres) ou + 2,5 % (4 ou 5 membres), sans dépasser le prix réel. Lu le 27/11/2026."
+
+aii_ensileuse_forfait:
+  libelle: "Aide AII : coût simplifié d'une ensileuse automotrice à maïs (CUMA seulement)"
+  valeur: 250000
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 211 : seule la colonne CUMA est cochée ; ni architecture verte ni résilience économique. Lu le 27/11/2026."
+
 aii_moulin_petit_forfait:
   libelle: "Aide AII : coût simplifié d'un moulin à farine sur pierre, meule de 50 à 100 cm"
   valeur: 9460
@@ -2372,34 +2453,43 @@ green_taux_pac:
   statut: sourcé
   date: 2025-01-23
   source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
-  note: "Même page : 20 % au-delà de 45 kWth. Coût éligible plafonné à 1 760 €/kW (0-15 kWth), 1 430 €/kW (15-30), 1 320 €/kW (30-45), 1 100 €/kW au-delà. Pompe à chaleur air-air : 30 % jusqu'à 45 kWth."
+  note: "Même page : 20 % au-delà de 45 kWth. Coût éligible plafonné à 1 760 €/kW (0-15 kWth), 1 430 €/kW (15-30), 1 320 €/kW (30-45), 1 100 €/kW au-delà. Taux et plafonds confirmés par l'annexe 2 officielle de l'AGW GREEN (M.B. 08/11/2024), lue le 27/11/2026. Pompe à chaleur air-air : voir green_taux_pac_air_air."
+
+green_taux_pac_air_air:
+  libelle: "Aide GREEN : taux pour une pompe à chaleur air-air jusqu'à 45 kW thermiques (PME)"
+  valeur: 0.30
+  unite: "%"
+  statut: sourcé
+  date: 2024-05-23
+  source: https://wallex.wallonie.be/files/medias/10/ANNNXE_2_2024010181_.pdf
+  note: "AGW GREEN du 23/05/2024, annexe 2 (M.B. 08/11/2024), et brochure GREEN du SPW Économie d'octobre 2026, tableau 3 : 30 % pour une PME jusqu'à 45 kWth, 10 % au-delà ; coût éligible plafonné à 990 €/kW (0-15 kWth), 935 €/kW (15-30), 880 €/kW (30-45 et au-delà). Émetteurs (aérothermes) hors coût éligible (annexe 1). Lu le 27/11/2026."
 
 green_taux_solaire_thermique:
   libelle: "Aide GREEN : taux pour le solaire thermique (PME)"
-  valeur: 0.50
+  valeur: 0.40
   unite: "%"
   statut: sourcé
-  date: 2025-01-23
-  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
-  note: "Même page : coût éligible plafonné à 1 320 €/m² jusqu'à 20 m², 1 210 €/m² de 20 à 100 m²."
+  date: 2024-05-23
+  source: https://wallex.wallonie.be/files/medias/10/ANNNXE_2_2024010181_.pdf
+  note: "AGW GREEN du 23/05/2024, annexe 2 (M.B. 08/11/2024, p. 126700) et brochure GREEN du SPW Économie d'octobre 2026, tableau 3 : 40 % pour une PME, coût éligible plafonné à 1 320 €/m² jusqu'à 20 m², 1 210 €/m² de 20 à 100 m², 1 100 €/m² de 100 à 300 m², 990 €/m² au-delà. La page SPW de janvier 2025 indiquait 50 %. Lu le 27/11/2026."
 
 green_taux_biometh:
   libelle: "Aide GREEN : taux pour la biométhanisation avec consommation sur site, 10 à 200 kW électriques (PME)"
   valeur: 0.30
   unite: "%"
   statut: sourcé
-  date: 2025-01-23
-  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
-  note: "Même page. Biométhanisation de moins de 10 kW exclue de GREEN (AGW du 23/05/2024, art. 10 § 2) : elle relève de l'AII."
+  date: 2024-05-23
+  source: https://wallex.wallonie.be/files/medias/10/ANNNXE_2_2024010181_.pdf
+  note: "AGW GREEN du 23/05/2024, annexe 2 (M.B. 08/11/2024) : « Biométhanisation – Consommation sur site ]10-200] kW », 30 % pour une PME ; même taux sur la page SPW Économie du 23/01/2025. Biométhanisation de moins de 10 kW exclue de GREEN (AGW, art. 10 § 2) : elle relève de l'AII. Lu le 27/11/2026."
 
 green_plafond_biometh_kw:
   libelle: "Aide GREEN : coût éligible maximal de la biométhanisation de 10 à 200 kW électriques"
   valeur: 13200
   unite: €/kW
   statut: sourcé
-  date: 2025-01-23
-  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
-  note: "Même page : 9 240 €/kW de 200 à 600 kW."
+  date: 2024-05-23
+  source: https://wallex.wallonie.be/files/medias/10/ANNNXE_2_2024010181_.pdf
+  note: "AGW GREEN du 23/05/2024, annexe 2 (M.B. 08/11/2024) : 13 200 €/kW de 10 à 200 kW, consommation sur site. Page SPW Économie du 23/01/2025 : 9 240 €/kW de 200 à 600 kW. Lu le 27/11/2026."
 
 green_taux_efficacite_petite:
   libelle: "Aide GREEN : taux pour un investissement d'économie d'énergie d'une petite entreprise"
@@ -2417,7 +2507,7 @@ amureba_taux_pme:
   statut: sourcé
   date: 2024-04-01
   source: https://wallex.wallonie.be/eli/arrete/2024/02/01/2024004275
-  note: "AGW du 01/02/2024, annexe 5 : 75 % hors TVA ; étude de faisabilité plafonnée à 5 000 €, 20 000 € sur l'énergie thermique ; audit global 8 000 €. Passage à 50 % annoncé « mi-2026 au mieux » (SPW Énergie, 06/02/2026), non publié au 27/11/2026. Accès d'une exploitation agricole (règle de minimis) à vérifier."
+  note: "AGW du 01/02/2024, art. 44 et annexe 5 : 75 % hors TVA pour une PME ; étude de faisabilité plafonnée à 5 000 €, 20 000 € sur l'énergie thermique ; audit global 8 000 € ; audit de suivi performanciel 2 500 € (15 000 € pour une biométhanisation). Subvention soumise au règlement de minimis général (UE) 2023/2831, qui exclut la production agricole primaire (art. 1er § 1er c) : pas accessible pour l'activité agricole d'une ferme, seulement pour une activité séparée (transformation, gîte). Passage à 50 % annoncé « mi-2026 au mieux » (SPW Énergie, 06/02/2026) : une seule version sur Wallex au 27/11/2026, le passage n'est pas publié."
 
 cv_biogaz_taux:
   libelle: "Certificats verts : taux d'octroi de la biométhanisation jusqu'à 200 kW, plus de 50 % d'effluents d'élevage"
@@ -2426,7 +2516,7 @@ cv_biogaz_taux:
   statut: sourcé
   date: 2025-01-01
   source: https://energie.wallonie.be/files/Soutiens%20financiers/%c3%a9lectricit%c3%a9%20verte/M%c3%a9canismes%20de%20soutiens/R%c3%a9gime%20CPMA/Tableau%20nouvelles%20installations%20-%20Taux%20octrois%20et%20CPMA%20des%20cat%c3%a9gories%20-%202025.pdf
-  note: "SPW Énergie, tableau des taux d'octroi des demandes introduites en 2025 (régime Cpma) : 2,500 CV par MWh électrique net, de 0 à 10 kW (Cpma 637,26 €/MWh) comme de 10 à 200 kW (525,01 €/MWh). C'est le plafond légal. Taux 2026 et durée d'octroi : non publiés au 27/11/2026. Réservation préalable obligatoire."
+  note: "SPW Énergie, tableau des taux d'octroi des demandes introduites en 2025 (régime Cpma) : 2,500 CV par MWh électrique net, de 0 à 10 kW (Cpma 637,26 €/MWh) comme de 10 à 200 kW (525,01 €/MWh). C'est le plafond légal. La référence 10-200 kW suppose déjà 30 % de subside net à l'investissement (AM du 01/10/2025, annexe Biogaz 2025) et donne un taux de compensation de 6,662 CV/MWh : GREEN ne réduit pas le taux forfaitaire. Cumul GREEN + CV admis (brochure GREEN, oct. 2026, point 7.4). Taux 2026 et durée d'octroi : non publiés au 27/11/2026. Réservation préalable obligatoire."
 
 cv_pv_taux:
   libelle: "Certificats verts : taux d'octroi du photovoltaïque de 10 à 1 000 kW"
@@ -2455,7 +2545,7 @@ haie_subv_1rang:
   statut: sourcé
   date: 2024-04-15
   source: https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
-  note: "AGW du 08/09/2016 consolidé (version du 15/04/2024), annexe : 7 €/m pour deux rangs, 9 €/m pour trois rangs et plus. Montants × 1,5 si une entreprise spécialisée plante, sans dépasser 80 % des factures. Au moins 100 m, au moins 3 espèces, paillage biodégradable obligatoire. Cumul avec l'éco-régime maillage : non traité par l'arrêté."
+  note: "AGW du 08/09/2016 consolidé (version du 15/04/2024), annexe : 7 €/m pour deux rangs, 9 €/m pour trois rangs et plus. Montants × 1,5 si une entreprise spécialisée plante, sans dépasser 80 % des factures. Au moins 100 m, au moins 3 espèces, paillage biodégradable obligatoire. Art. 3 : une seule subvention de cet arrêté par arbre ou arbuste ; aucune interdiction de cumul avec la PAC, dans cet arrêté ni dans l'AGW éco-régimes (art. 12 à 17). Confirmation écrite du SPW non obtenue (27/11/2026)."
 
 haie_subv_2rangs:
   libelle: Subvention régionale à la plantation d'une haie vive de deux rangs
@@ -2490,8 +2580,8 @@ dpi_thematique_pp:
   unite: "%"
   statut: sourcé
   date: 2026-04-01
-  source: https://transportmedia.be/fr/2026/04/vehicules-a-zero-emissions-la-deduction-pour-investissement-est-operationnelle/
-  note: "Loi du 12/05/2024 (art. 69/1 CIR 92), applicable aux achats depuis le 01/01/2025 (Barreau de Liège-Huy, 12/06/2025) : 40 % de la valeur d'achat déduits des bénéfices imposables, 30 % pour les autres sociétés ; déduction de base 10 %. Catégories : énergie (stockage compris), transport sans émission de CO2, environnement, numérique. Camionnettes et vélos-cargo électriques neufs à usage exclusivement professionnel : attestation du SPF Mobilité ouverte en avril 2026. Ne joue que pour un exploitant imposé sur ses bénéfices réels ; agriculteur au forfait : non vérifié. Texte du SPF Finances non lu (site inaccessible)."
+  source: https://eservices.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/65b63636-1955-4c59-bac2-dd3d85db6b30
+  note: "CIR 92, art. 69 (texte coordonné Revenus 2026, Fisconetplus, 20/08/2026) : base 10 %, thématique 40 % (30 % pour les autres sociétés), technologique 13,5 %. Thèmes (art. 69/1) : énergie (stockage compris), transport sans émission de CO2, environnement, numérique. Art. 74 : au forfait, seule la déduction de base est exclue ; la thématique reste ouverte si l'immobilisation n'a reçu aucune aide publique à l'économie d'énergie. Art. 72 : report de l'excédent sur les années suivantes. Art. 69/1, § 1, al. 3 (exclusion en cas d'aide régionale) abrogé par la loi du 18/12/2025. Attestation : SPF Mobilité pour les transports (opérationnelle depuis avril 2026, Transportmedia, 01/04/2026) ; Région wallonne pour l'énergie (non délivrée au 24/11/2026, accords de coopération attendus). Lu le 27/11/2026."
 
 ipp_taux_marginal:
   libelle: Taux marginal d'imposition d'un indépendant à l'impôt des personnes physiques

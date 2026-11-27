@@ -19,7 +19,7 @@
   repere: {cle: chaudiere_gain_net_an, libelle: "de gain net, entretien déduit (ferme type de la fiche)"}
   retour: chaudiere_retour_ans
   retour_aide: chaudiere_retour_green_ans
-  note: "Rentable vite pour les gros consommateurs de mazout ; l'aide GREEN demande un audit préalable."
+  note: "Rentable vite pour les gros consommateurs de mazout ; l'aide GREEN demande un audit préalable, à la charge de l'agriculteur, et ne couvre pas la part qui chauffe des logements."
 
 - fiche: energie/chauffage-mazout.md
   alternative: Récupération de chaleur
@@ -39,7 +39,7 @@
   fermes: [lait]
   repere: {cle: prerefroidisseur_eur_an, libelle: "d'électricité économisée (ferme type de la fiche)"}
   retour: prerefroidisseur_retour_bas_ans
-  note: "Temps de retour pour un appareil au bas de la fourchette de prix ; aucune aide accessible en pratique."
+  note: "Temps de retour pour un appareil au bas de la fourchette de prix ; presque aucune aide, sauf GREEN pour un groupe de froid neuf au CO2 ou au propane, sans audit."
 
 - fiche: elevage/tank-a-lait.md
   alternative: Récupérateur de chaleur
@@ -66,8 +66,8 @@
 - fiche: elevage/concentres-importes.md
   alternative: Tourteau de colza du commerce
   fermes: [lait, viande]
-  repere: {cle: ecart_colza_soja_t, libelle: "à protéines égales (négatif : économie)"}
-  note: "Lui aussi extrait au solvant pétrolier, mais d'origine européenne et moins gourmand en énergie fossile."
+  repere: {cle: ecart_colza_soja_t, libelle: "selon la règle belge de remplacement (négatif : économie)"}
+  note: "Un peu moins cher que le soja ; lui aussi extrait au solvant pétrolier, mais d'origine européenne et moins gourmand en énergie fossile."
 
 - fiche: fertilisation/azote-synthese.md
   alternative: Légumineuses
@@ -134,7 +134,7 @@
   alternative: Utilitaire électrique
   fermes: [vente directe]
   repere: {cle: utilitaire_economie_an, libelle: "d'énergie économisés (tournée type, recharge moitié solaire)"}
-  note: "Rentable en occasion ; en neuf, surtout au régime réel grâce à la déduction fédérale."
+  note: "Rentable en occasion ; en neuf aussi grâce à la déduction fédérale, au régime réel comme au forfait."
 
 # --- Vague 2 -------------------------------------------------------------------
 
@@ -199,12 +199,7 @@
 - fiche: fertilisation/engrais-p-k.md
   alternative: Compost et digestat
   fermes: [toutes]
-  note: "Utile là où il y en a ; la MAEC Sol paie l'amélioration mesurée du sol."
-
-- fiche: fertilisation/engrais-p-k.md
-  alternative: Cendres de bois
-  fermes: [toutes]
-  note: "Petites quantités, riches en potassium ; cadre légal de l'épandage à vérifier."
+  note: "Utile là où il y en a ; la MAEC Sol, qui paie l'amélioration mesurée du sol, n'accepte plus de nouvel engagement en 2027."
 
 - fiche: materiaux/plastiques-agricoles.md
   alternative: Paillages naturels
@@ -220,7 +215,7 @@
 - fiche: protection/fongicides-insecticides.md
   alternative: Haies et auxiliaires
   fermes: [toutes]
-  repere: {cle: haie_eco_regime_eur_km, libelle: "d'éco-régime maillage"}
+  repere: {cle: haie_eco_regime_eur_km, libelle: "d'éco-régime maillage (montant prévu 2026)", compare: haie_eco_regime_2025_eur_km, compare_libelle: "au montant payé pour 2025"}
   note: "Rentable grâce aux aides ; l'effet sur les ravageurs reste partiel."
 
 - fiche: protection/fongicides-insecticides.md

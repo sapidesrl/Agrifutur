@@ -81,8 +81,8 @@ Limites :
 
 Aides (voir [les aides publiques](../../aides.md)) :
 
-- **à la ferme**, l'AII « diversification » paie {{ v('aii_diversif_taux_base', 0) }} de base d'un coût simplifié, plus 10 % pour un jeune agriculteur et 10 % en bio ou en qualité : 512 €/m² pour aménager un local de vente, 1 144 €/m² pour le construire, 1 100 € pour une balance-étiqueteuse[^am-aii]. L'AII exclut le commerce de détail, sauf la vente à la ferme de produits issus en partie de la production du demandeur[^agw-aii] : un magasin de producteurs en ville ne passe pas par l'AII d'un agriculteur seul ;
-- **en collectif**, une coopérative de transformation et de commercialisation (SCTC) peut demander l'AII ({{ v('aii_diversif_taux_base', 0) }} de base, avec des bonus selon le nombre de membres, plafond de 500 000 € d'aide sur 2023-2027)[^am-aii]. Un bâtiment de vente ou de stockage partagé peut aussi devenir un hall relais agricole : {{ v('hra_taux_base', 0) }} des investissements, plus deux bonus de 15 % au maximum, plafond de 200 000 €, pour un promoteur (commune ou structure qui valorise des produits agricoles), jamais pour un agriculteur seul. Aucun appel n'a été trouvé pour 2026[^hra] ;
+- **à la ferme**, l'AII « diversification » paie {{ v('aii_diversif_taux_base', 0) }} de base d'un coût simplifié, plus 10 % pour un jeune agriculteur et 10 % en bio ou en qualité : 512 €/m² pour aménager un local de vente, 1 144 €/m² pour le construire, 1 100 € pour une balance-étiqueteuse[^am-aii]. La demande doit atteindre {{ v('aii_seuil_points', 0, unite=False) }} points de sélection, ce qui suppose en général un critère jeune, bio, zone à contraintes ou polyculture[^am-aii]. L'AII exclut le commerce de détail, sauf la vente à la ferme de produits issus en partie de la production du demandeur[^agw-aii] : un magasin de producteurs en ville ne passe pas par l'AII, ni pour un agriculteur seul ni pour une coopérative, car l'exclusion vaut « dans tous les secteurs confondus »[^agw-aii] ;
+- **en collectif**, une coopérative de transformation et de commercialisation (SCTC) peut demander l'AII pour la transformation, le stockage ou le conditionnement, pas pour un magasin hors de la ferme ({{ v('aii_diversif_taux_base', 0) }} de base, avec des bonus selon le nombre de membres, plafond de 500 000 € d'aide sur 2023-2027)[^am-aii]. Un bâtiment de vente ou de stockage partagé peut aussi devenir un hall relais agricole : {{ v('hra_taux_base', 0) }} des investissements, plus deux bonus de 15 % au maximum, plafond de 200 000 €, pour un promoteur (commune ou structure qui valorise des produits agricoles), jamais pour un agriculteur seul. Aucun appel n'a été trouvé pour 2026[^hra] ;
 - ces aides allègent le bâtiment et le matériel, pas le salaire du personnel ni le temps de vente : la vague 2 ne change pas.
 
 ### 2. Points de dépôt (vague 2)
@@ -106,8 +106,8 @@ Conditions :
 Aides :
 
 - un **distributeur automatique** à la ferme est une variante du point de retrait sans personne : l'AII « diversification » paie {{ v('aii_diversif_taux_base', 0) }} de base d'un coût simplifié de 275 € par casier non réfrigéré, 440 € par casier réfrigéré, ou 11 000 € pour un carrousel réfrigéré[^am-aii] ;
-- pour la tournée, voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md#1-utilitaire-electrique-vague-1) : la déduction fédérale pour investissement de {{ v('dpi_thematique_pp', 0) }} vaut pour une camionnette ou un vélo-cargo électrique neuf à usage exclusivement professionnel, au régime réel seulement[^dpi-tm] ;
-- aucune aide ne paie l'outil de commande en ligne ni la tenue du point de retrait. La vague 2 ne change pas.
+- pour la tournée, voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md#1-utilitaire-electrique-vague-1) : la déduction fédérale pour investissement de {{ v('dpi_thematique_pp', 0) }} vaut pour une camionnette ou un vélo-cargo électrique neuf à usage exclusivement professionnel, au régime réel comme au forfait, si le véhicule n'a reçu aucune aide publique à l'économie d'énergie[^dpi-tm] [^cir-dpi] ;
+- aucune aide wallonne ne paie l'outil de commande en ligne ni la tenue du point de retrait. Au régime réel, la déduction fédérale de base passe de 10 à 20 % pour certains investissements numériques (présence en ligne, gestion des relations commerciales)[^cir-dpi] ; son application à un outil de commande de ferme n'a pas été vérifiée. La vague 2 ne change pas.
 
 Limites :
 
@@ -158,8 +158,8 @@ Aides : aucune aide ne vise l'abonnement lui-même. Si la ferme est certifiée b
 - Revenu et temps de travail des fermes en circuit court en Wallonie : temps de vente, de préparation des commandes et de livraison par semaine, revenu horaire.
 - Mise en service et services des hubs logistiques de Liège, Namur et Charleroi.
 - Bilan énergétique d'une tournée de points de dépôt bien remplie, comparé à la chaîne longue pour un produit belge.
-- Accès d'un magasin de producteurs ou d'un point de dépôt hors de la ferme à l'AII (exclusion du commerce de détail) ; appel 2026 aux halls relais agricoles (aucun trouvé).
-- Déduction fédérale pour investissement : cas d'un agriculteur imposé au forfait (non vérifié).
+- Déduction fédérale de base majorée (20 %) pour les investissements numériques : un outil de commande en ligne de ferme y entre-t-il (liste de l'AR/CIR 92, article 49/1) ?
+- Point de dépôt installé à la ferme d'un membre et vendant les produits de plusieurs producteurs : est-ce une « vente de détail à la ferme » admissible pour une SCTC ? Appel 2026 aux halls relais agricoles (aucun trouvé).
 
 ## Sources
 
@@ -186,3 +186,4 @@ Aides : aucune aide ne vise l'abonnement lui-même. Si la ferme est certifiée b
 [^hra]: Arrêté du Gouvernement wallon du 30 août 2018 fixant les conditions d'octroi des subventions relatives aux halls relais agricoles, version en vigueur depuis le 9 novembre 2023, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/3/3926/2.html
 [^dpi-tm]: « Véhicules à zéro émissions : la déduction pour investissement est opérationnelle », Transportmedia, 1er avril 2026, consulté le 27 novembre 2026. https://transportmedia.be/fr/2026/04/vehicules-a-zero-emissions-la-deduction-pour-investissement-est-operationnelle/
 [^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^cir-dpi]: Code des impôts sur les revenus 1992, articles 68 à 75, texte coordonné « CIR 92 – Revenus 2026 » (PDF), Fisconetplus (SPF Finances), 20 août 2026, consulté le 27 novembre 2026. https://eservices.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/65b63636-1955-4c59-bac2-dd3d85db6b30

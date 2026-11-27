@@ -658,14 +658,36 @@ colza_pour_1kg_soja:
   valeur: 1.362832
   unite: kg
   formule: Teneur en MAT du soja ÷ teneur en MAT du colza
+colza_pour_1kg_soja_pdi:
+  libelle: Tourteau de colza apportant autant de PDI qu'un kg de soja 48
+  valeur: 1.5625
+  unite: kg
+  formule: PDI du soja ÷ PDI du colza (INRAE 2018)
 ecart_colza_soja_t:
+  libelle: 'Remplacer 1 t de soja par du colza selon la règle pratique (1,5 kg pour
+    1 kg) : écart de coût'
+  valeur: -25.5
+  bas: -23.15
+  haut: -33.15
+  unite: €/t de soja remplacée
+  formule: 'Colza de remplacement (règle pratique ValBiom/CRA-W) × prix du colza −
+    prix du soja ; négatif : le colza revient moins cher'
+ecart_colza_soja_t_mat:
   libelle: 'Remplacer 1 t de soja par du colza à MAT égale : écart de coût'
   valeur: -71.725664
   bas: -55.507965
   haut: -93.243363
   unite: €/t de soja remplacée
-  formule: 'Colza nécessaire × prix du colza − prix du soja ; négatif : le colza revient
-    moins cher'
+  formule: 'Colza nécessaire à MAT égale × prix du colza − prix du soja ; négatif
+    : le colza revient moins cher'
+ecart_colza_soja_t_pdi:
+  libelle: 'Remplacer 1 t de soja par du colza à PDI égales : écart de coût'
+  valeur: -4.4375
+  bas: -8.40625
+  haut: -5.76875
+  unite: €/t de soja remplacée
+  formule: 'Colza nécessaire à PDI égales × prix du colza − prix du soja ; négatif
+    : le colza revient moins cher'
 soja_gasoil_eq_t:
   libelle: 'Tourteau de soja rendu Europe : énergie non renouvelable en litres de
     gasoil'
@@ -1184,6 +1206,12 @@ haie_eco_regime_eur_km:
   valeur: 450.0
   unite: €/km/an
   formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
+haie_eco_regime_2025_eur_km:
+  libelle: 'Éco-régime « Maillage écologique » : aide pour un kilomètre de haie au
+    montant payé pour 2025'
+  valeur: 410.0
+  unite: €/km/an
+  formule: 1 000 m × coefficient de la haie (HE/m) × montant payé par HE en 2025
 semence_ferme_froment_eur_kg:
   libelle: 'Semence de ferme de froment : coût du kg'
   valeur: 0.3712
@@ -1253,6 +1281,25 @@ aii_taux_cuma_av:
   valeur: 0.35
   unite: '%'
   formule: Taux de base CUMA + majoration architecture verte + majoration 6 membres
+aii_taux_cuma_sans_av:
+  libelle: 'Aide AII : taux d''une CUMA d''au moins 6 membres, ligne sans « architecture
+    verte » ni « résilience économique »'
+  valeur: 0.25
+  unite: '%'
+  formule: Taux de base CUMA + majoration 6 membres
+moissonneuse_aide_aii_cuma:
+  libelle: 'Moissonneuse-batteuse : aide AII maximale d''une CUMA d''au moins 6 membres'
+  valeur: 53745.75
+  unite: €
+  formule: 'Taux CUMA sans architecture verte × coût simplifié (plafond : le prix
+    réel, s''il est plus bas)'
+ensileuse_aide_aii_cuma:
+  libelle: 'Ensileuse automotrice à maïs : aide AII maximale d''une CUMA d''au moins
+    6 membres'
+  valeur: 62500.0
+  unite: €
+  formule: 'Taux CUMA sans architecture verte × coût simplifié (plafond : le prix
+    réel, s''il est plus bas)'
 microbiometh_cv_an:
   libelle: 'Micro-biométhanisation : certificats verts par an, au prix garanti'
   valeur: 26000.0
@@ -1319,7 +1366,8 @@ chaudiere_gain_net_an:
   unite: €/an
   formule: Économie de combustible − entretien en plus
 chaudiere_aide_green:
-  libelle: 'Chaufferie à plaquettes de 50 kW : aide GREEN'
+  libelle: 'Chaufferie à plaquettes de 50 kW : aide GREEN maximale (la part qui chauffe
+    des logements n''est pas aidée)'
   valeur: 15000.0
   unite: €
   formule: Taux GREEN × plus petit du prix et du coût éligible maximal (€/kW × puissance)
@@ -1369,6 +1417,13 @@ mais_meca_bilan_ri_ha:
   unite: €/ha
   formule: 'Surcoût du mécanique − éco-régime (montant prévu) ; négatif : le mécanique
     revient moins cher'
+mais_meca_bilan_ri_2025_ha:
+  libelle: 'Maïs : désherbage mécanique, surcoût net avec l''éco-régime « Réduction
+    d''intrants » au montant payé pour 2025'
+  valeur: -95
+  unite: €/ha
+  formule: 'Surcoût du mécanique − éco-régime (montant payé 2025) ; négatif : le mécanique
+    revient moins cher'
 proteagineux_aides_ha:
   libelle: 'Pois ou féverole purs : soutien couplé + éco-régime « Réduction d''intrants
     » (cumulables)'
@@ -1383,6 +1438,12 @@ proteagineux_ecart_v3b_ha:
   unite: €/ha
   formule: '(Soutien couplé + réduction d''intrants) − cultures favorables V3_B ;
     positif : la voie du soutien couplé paie plus'
+proteagineux_ecart_v3b_2025_ha:
+  libelle: Même écart aux montants payés pour 2025
+  valeur: 60
+  unite: €/ha
+  formule: '(Soutien couplé payé + réduction d''intrants payée) − V3_B (440 €/ha payés
+    en 2025, égal au montant prévu) ; positif : la voie du soutien couplé paie plus'
 farmdroid_aide_aii:
   libelle: 'Robot FarmDroid (plus de 2,5 ha par jour) : aide AII d''un agriculteur
     sans autre majoration'
