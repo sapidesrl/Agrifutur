@@ -13,7 +13,7 @@ maj: 2026-11-27
 
 ## En bref
 
-La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé ; en Wallonie, l'aide à l'investissement pour une moissonneuse ou une ensileuse est réservée aux CUMA. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 2, si un acheteur, un label ou un collectif prend ce surcoût en charge). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
+La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé ; en Wallonie, l'aide à l'investissement pour une moissonneuse ou une ensileuse est réservée aux CUMA. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 3). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -72,7 +72,7 @@ Limites :
 - Elle a un prix en organisation : la récolte se fait à la date de la machine, pas forcément au meilleur jour pour chaque parcelle. Le recours à l'entreprise pose le même problème de disponibilité en pointe[^pb].
 - Son vrai intérêt pour sortir du pétrole est indirect : un groupe qui partage une machine peut aussi partager le surcoût d'un carburant renouvelable (HVO), une cuve, ou plus tard une station de biométhane.
 
-### 2. HVO100 (vague 2)
+### 2. HVO100 (vague 3)
 
 **Ce que c'est.** Le HVO (huile végétale hydrotraitée) est un diesel paraffinique fabriqué en faisant réagir avec de l'hydrogène des huiles et graisses, surtout des déchets et résidus (huiles de friture usagées, graisses animales), avec aussi des huiles végétales[^claas]. Il relève de la norme EN 15940 des diesels paraffiniques et se mélange au gasoil en toute proportion[^claas]. Une machine Stage V autorisée n'a besoin d'aucune modification, et la cuve de la ferme reste utilisable[^claas][^dlg].
 
@@ -80,7 +80,7 @@ Limites :
 
 **Disponibilité en Belgique.** MAES vend du HVO100 dans 25 stations en Belgique (mai 2025)[^maes25]. Le tarif officiel belge des produits pétroliers ne publie pas de prix propre au HVO : il le range dans le « diesel XTL »[^carbu]. Son prix maximum à la pompe a été en moyenne de {{ v('diesel_xtl_tvac', 2) }} TVAC du 1er au 26 novembre 2026, contre {{ v('diesel_b7_tvac', 2) }} pour le diesel B7[^statbel-nov]. En février 2026, avant la crise, il était de {{ v('diesel_xtl_tvac', 2, scenario='bas') }} contre {{ v('diesel_b7_tvac', 2, scenario='bas') }}[^statbel-mois]. Le prix du XTL a donc beaucoup moins monté que celui du gasoil.
 
-**Fiscalité.** La circulaire des accises de 2026 cite les moissonneuses parmi les engins agricoles automoteurs qui peuvent rouler en exonération d'accise, et l'exonération agricole vise tous les produits énergétiques, pas seulement le gasoil rouge[^circ-2026]. Il faut, comme pour le gasoil rouge, une autorisation « utilisateur final »[^circ-2026]. Le régime général de cette exonération est décrit dans la fiche [Tracteur diesel](tracteur-diesel.md#4-huile-de-colza-pure-vague-2). Une difficulté pratique reste : un commerçant qui n'est pas entrepositaire agréé ne peut livrer en exonération agricole que du gasoil marqué (rouge), du pétrole lampant marqué, du fioul lourd ou du GPL[^circ-2026]. Le HVO exonéré doit donc probablement venir d'un entrepositaire agréé (à confirmer, voir « À vérifier »).
+**Fiscalité.** La circulaire des accises de 2026 cite les moissonneuses parmi les engins agricoles automoteurs qui peuvent rouler en exonération d'accise, et l'exonération agricole vise tous les produits énergétiques, pas seulement le gasoil rouge[^circ-2026]. Il faut, comme pour le gasoil rouge, une autorisation « utilisateur final »[^circ-2026]. Le régime général de cette exonération est décrit dans la fiche [Tracteur diesel](tracteur-diesel.md#4-huile-de-colza-pure-vague-3). Une difficulté pratique reste : un commerçant qui n'est pas entrepositaire agréé ne peut livrer en exonération agricole que du gasoil marqué (rouge), du pétrole lampant marqué, du fioul lourd ou du GPL[^circ-2026]. Le HVO exonéré doit donc probablement venir d'un entrepositaire agréé (à confirmer, voir « À vérifier »).
 
 **Ce que ça coûte.** Faute de prix publié pour le HVO agricole, on l'estime : au prix routier du XTL, on retire le même écart que celui qui sépare le diesel routier du gasoil agricole (accises et autres différences). Cela donne {{ v('hvo_agricole_htva') }} HTVA (estimation calculée, {{ fourchette('hvo_agricole_htva') }} selon les scénarios).
 
@@ -94,7 +94,7 @@ Calculé, consommation en plus de {{ v('hvo_surconsommation', 1) }} comprise. Le
 
 **Aides.** Aucune aide trouvée pour un carburant renouvelable : ni la PAC ni l'AII n'en paient.
 
-**Pourquoi vague 2.** Le surcoût reste modeste à l'échelle de la récolte : environ {{ v('moisson_hvo_surcout_ha', 0) }} en moisson, à comparer aux 85 €/ha que coûte la seule détention d'une moissonneuse de Cuma[^entraid]. Il devient supportable dans des conditions précises : une machine partagée sur une grande surface, dont l'économie paie le carburant ; un acheteur ou un cahier des charges qui rémunère une récolte à faible carbone ; un entrepreneur qui le refacture à ses clients. Sans l'une de ces conditions, il reste une dépense.
+**Pourquoi vague 3.** Le HVO100 coûte plus cher que le gasoil dans les trois scénarios de prix : il n'est rentable dans aucun cas sans que quelqu'un d'autre paie la différence. Le surcoût reste modeste à l'échelle de la récolte, environ {{ v('moisson_hvo_surcout_ha', 0) }} en moisson, à comparer aux 85 €/ha que coûte la seule détention d'une moissonneuse de Cuma[^entraid]. Il peut être supporté si un acheteur ou un cahier des charges rémunère une récolte à faible carbone, ou si un entrepreneur le refacture à ses clients. C'est une solution à préparer, pas une économie.
 
 Limites :
 
@@ -103,17 +103,17 @@ Limites :
 
 ### 3. Huile végétale pure (vague 3)
 
-L'huile de colza pressée à froid peut alimenter un moteur diesel adapté. La fiche [Tracteur diesel](tracteur-diesel.md#4-huile-de-colza-pure-vague-2) détaille la technique, le coût de l'huile et le régime d'accises (exonération agricole, entrepositaire agréé pour le pressage, autorisation « utilisateur final »). On ne le refait pas ici.
+L'huile de colza pressée à froid peut alimenter un moteur diesel adapté. La fiche [Tracteur diesel](tracteur-diesel.md#4-huile-de-colza-pure-vague-3) détaille la technique, le coût de l'huile et le régime d'accises (exonération agricole, entrepositaire agréé pour le pressage, autorisation « utilisateur final »). On ne le refait pas ici.
 
-Ramené à la moisson, l'écart est faible. L'écart entre huile et gasoil vaut {{ v('moisson_huile_ecart_ha', 1) }} au prix actuel (négatif : l'huile est moins chère) et {{ v('moisson_huile_ecart_ha', 1, scenario='bas') }} au prix d'avant-crise (calculé, hors accises et hors conversion du moteur).
+Ramenée à la moisson, l'huile coûte plus cher que le gasoil dans les trois scénarios : {{ v('moisson_huile_ecart_ha', 1) }} de plus au prix actuel, {{ v('moisson_huile_ecart_ha', 1, scenario='haut') }} au prix haut et {{ v('moisson_huile_ecart_ha', 1, scenario='bas') }} au prix d'avant-crise (calculé, pressage compris, hors accises et hors conversion du moteur). Elle reste moins chère que le HVO100.
 
-Pourquoi vague 3 pour les machines de récolte, alors que la fiche tracteur classe l'huile en vague 2 :
+Pourquoi vague 3 pour les machines de récolte, comme pour le tracteur :
 
 - l'autorisation de Claas porte sur le HVO, pas sur l'huile pure[^claas] ; convertir un moteur Stage V de 300 à 500 ch d'une machine à plus de 250 000 € pose la question de la garantie et des émissions[^bareme] ;
 - la conversion s'amortit sur peu d'heures : environ {{ v('moisson_heures_an', 0) }} de battage (calculé), contre plusieurs centaines pour un tracteur ;
-- le gain par hectare est quasi nul au prix actuel, et devient une perte au prix d'avant-crise.
+- il n'y a pas de gain par hectare à attendre : l'huile coûte un peu plus que le gasoil au prix actuel et nettement plus au prix d'avant-crise.
 
-L'huile garde un intérêt dans un système où la ferme presse déjà son colza pour ses tracteurs : le stock d'huile peut alors servir d'assurance en cas de nouvelle crise.
+L'huile garde un intérêt dans un système où la ferme presse déjà son colza pour ses tracteurs : le stock d'huile peut alors servir de réserve si le gasoil vient à manquer. Ce n'est pas une protection contre les prix hauts : même au prix haut, l'huile reste plus chère.
 
 ### 4. Moissonneuse hybride ou électrique (vague 3)
 

@@ -6,7 +6,7 @@ Le contexte est celui de la Belgique, surtout de la Wallonie, avec les prix de n
 
 ## Le constat de départ
 
-Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux : {{ v('ratio_gasoil_pv', 1) }} plus cher. L'électricité du réseau, elle, ne fait pas mieux que le gasoil : au prix d'une PME wallonne (CREG), le kWh utile coûte {{ v('reseau_kwh_utile') }}, plus cher que le gasoil. On électrifie donc derrière son propre photovoltaïque, et ce qui freine, c'est le prix d'achat du matériel plus que l'énergie.
+Au prix actuel, un kWh de travail utile coûte {{ v('gasoil_kwh_utile') }} au gasoil, contre {{ v('pv_kwh_utile') }} avec l'électricité de ses propres panneaux : {{ v('ratio_gasoil_pv', 1) }} plus cher. L'électricité du réseau, elle, ne fait pas mieux que le gasoil : au prix d'une PME wallonne (CREG), le kWh utile coûte {{ v('reseau_kwh_utile') }}, plus cher que le gasoil. Ces chiffres comptent qu'un moteur diesel au travail transforme environ {{ v('rendement_moteur_diesel', 0) }} de l'énergie du gasoil en travail (mesures DLG sur tracteurs récents), et qu'environ {{ v('rendement_chaine_electrique', 0) }} de l'électricité arrive à la roue (estimation du JRC, Commission européenne). On électrifie donc derrière son propre photovoltaïque, et ce qui freine, c'est le prix d'achat du matériel plus que l'énergie.
 
 Cet écart tient même si les prix redescendent : au prix d'avant-crise, le kWh utile au gasoil coûte encore {{ v('ratio_gasoil_pv', 1, scenario='bas') }} celui du photovoltaïque. Selon le scénario, le rapport va de {{ fourchette('ratio_gasoil_pv', 1) }} (voir [les trois scénarios](methode.md#trois-scenarios-de-prix)).
 

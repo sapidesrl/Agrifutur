@@ -8,14 +8,14 @@ gasoil_agricole_htva:
   formule: Prix saisi, sinon (gasoil chauffage TVAC − écart) ÷ (1 + TVA)
 gasoil_kwh_utile:
   libelle: 'Gasoil : coût du kWh utile (à l''arbre)'
-  valeur: 0.326139
-  bas: 0.180165
-  haut: 0.423981
+  valeur: 0.345905
+  bas: 0.191084
+  haut: 0.449677
   unite: €/kWh
   formule: Prix du litre ÷ (énergie du litre × rendement du moteur)
 gasoil_kwh_utile_fev2026:
   libelle: 'Gasoil en février 2026 : coût du kWh utile'
-  valeur: 0.180171
+  valeur: 0.191091
   unite: €/kWh
   formule: Même calcul au prix d'avant la guerre
 pv_kwh_production:
@@ -26,28 +26,28 @@ pv_kwh_production:
     sans frais financiers
 pv_kwh_utile:
   libelle: 'PV : coût du kWh utile'
-  valeur: 0.081046
+  valeur: 0.089466
   unite: €/kWh
   formule: kWh PV ÷ rendement de la chaîne électrique
 reseau_kwh_utile:
   libelle: 'Réseau : coût du kWh utile'
-  valeur: 0.447882
-  bas: 0.379294
-  haut: 0.582247
+  valeur: 0.494416
+  bas: 0.418701
+  haut: 0.64274
   unite: €/kWh
   formule: kWh réseau ÷ rendement de la chaîne électrique
 ratio_gasoil_pv:
   libelle: Le kWh utile au gasoil coûte … fois celui du PV
-  valeur: 4.024138
-  bas: 2.223007
-  haut: 5.23138
+  valeur: 3.866329
+  bas: 2.13583
+  haut: 5.026228
   unite: fois
   formule: Gasoil ÷ PV
 ratio_gasoil_reseau:
   libelle: Le kWh utile au gasoil coûte … fois celui du réseau
-  valeur: 0.728181
-  bas: 0.475002
-  haut: 0.728181
+  valeur: 0.699625
+  bas: 0.456374
+  haut: 0.699625
   unite: fois
   formule: Gasoil ÷ réseau
 tracteur_gasoil_eur_h:
@@ -59,33 +59,32 @@ tracteur_gasoil_eur_h:
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur PV'
-  valeur: 2.431373
+  valeur: 2.348485
   unite: €/h
-  formule: Consommation (côté batterie) × coût du kWh utile PV, pertes de charge comprises
+  formule: Consommation (côté batterie) × coût du kWh PV ÷ rendement de la recharge
 tracteur_reseau_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur réseau'
-  valeur: 13.436471
-  bas: 11.378824
-  haut: 17.467412
+  valeur: 12.978409
+  bas: 10.990909
+  haut: 16.871932
   unite: €/h
-  formule: Consommation (côté batterie) × coût du kWh utile réseau, pertes de charge
-    comprises
+  formule: Consommation (côté batterie) × prix du réseau ÷ rendement de la recharge
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
-  valeur: 4447.232539
-  bas: 1586.14163
-  haut: 6364.931713
+  valeur: 3949.349862
+  bas: 1445.895317
+  haut: 5627.336639
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:
   libelle: Batterie nécessaire pour une journée de travail lourd
-  valeur: 1029.411765
+  valeur: 1584.0
   unite: kWh
-  formule: Consommation × heures × énergie du litre × rendement moteur ÷ rendement
-    électrique
+  formule: Consommation × heures × énergie du litre × rendement du diesel ÷ rendement
+    batterie-moteur (chaîne ÷ recharge)
 batterie_masse_journee_lourde:
   libelle: Masse de cette batterie
-  valeur: 6.433824
+  valeur: 9.9
   unite: t
   formule: Énergie ÷ énergie massique du pack
 prix_kg_n:
@@ -318,29 +317,29 @@ valet_economie_an_reseau:
   formule: (Gasoil − réseau) × heures par an, hors surcoût d'achat et entretien
 huile_cout_litre:
   libelle: 'Huile de colza : coût d''un litre, tourteau déduit'
-  valeur: 0.969306
-  bas: 0.971292
-  haut: 1.245097
+  valeur: 1.200333
+  bas: 1.266233
+  haut: 1.500433
   unite: €/L
   formule: (Prix de la graine − valeur du tourteau) ÷ litres d'huile + pressage, hors
     accises
 huile_cout_eq_gasoil:
   libelle: 'Huile de colza : coût ramené à l''énergie d''un litre de gasoil'
-  valeur: 1.053593
-  bas: 1.055752
-  haut: 1.353367
+  valeur: 1.27695
+  bas: 1.347057
+  haut: 1.596206
   unite: €/L
   formule: Coût du litre × énergie du gasoil ÷ énergie de l'huile
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
-  valeur: -0.087895
-  bas: 0.425173
-  haut: -0.130567
+  valeur: 0.135463
+  bas: 0.716478
+  haut: 0.112272
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:
   libelle: Part de la surface en colza pour l'autonomie en carburant
-  valeur: 0.067288
+  valeur: 0.072788
   unite: '%'
   formule: Litres d'huile nécessaires par ha ÷ litres d'huile produits par ha de colza
 gasoil_economise_semis_direct:
@@ -466,9 +465,9 @@ sechage_kwh_t_point:
   formule: Énergie par tonne ÷ points retirés
 propane_kwh_htva:
   libelle: 'Propane en vrac : prix du kWh HTVA'
-  valeur: 0.114801
-  bas: 0.091573
-  haut: 0.149241
+  valeur: 0.113087
+  bas: 0.090206
+  haut: 0.147014
   unite: €/kWh
   formule: Prix TVAC ÷ (1 + TVA) ÷ énergie du litre
 mazout_kwh_htva:
@@ -480,9 +479,9 @@ mazout_kwh_htva:
   formule: Prix TVAC ÷ (1 + TVA) ÷ énergie du litre
 sechage_propane_eur_t:
   libelle: 'Maïs grain : énergie de séchage au propane par tonne humide'
-  valeur: 22.96018
-  bas: 18.31455
-  haut: 29.848234
+  valeur: 22.617491
+  bas: 18.041199
+  haut: 29.402738
   unite: €/t
   formule: Énergie par tonne × prix du kWh de propane HTVA
 sechage_mazout_eur_t:
@@ -515,9 +514,9 @@ sechage_pac_pv_eur_t:
     le PV produit pendant le séchage)
 sechage_propane_eur_t_point:
   libelle: 'Maïs grain : énergie de séchage au propane par tonne et par point'
-  valeur: 1.350599
-  bas: 1.077326
-  haut: 1.755778
+  valeur: 1.330441
+  bas: 1.061247
+  haut: 1.729573
   unite: €/t/point
   formule: Coût par tonne ÷ points retirés
 sechage_map_t:
@@ -532,16 +531,16 @@ sechage_map_an:
   formule: Plaquettes par tonne × tonnage séché
 sechage_economie_plaquettes_t:
   libelle: 'Maïs grain : économie d''énergie par tonne, plaquettes au lieu de propane'
-  valeur: 14.007239
-  bas: 9.41808
-  haut: 18.209411
+  valeur: 13.66455
+  bas: 9.144728
+  haut: 17.763915
   unite: €/t
   formule: Coût propane − coût plaquettes, hors main-d'œuvre, entretien et amortissement
 sechage_economie_plaquettes_an:
   libelle: 'Exploitation type : économie annuelle, plaquettes au lieu de propane'
-  valeur: 7003.61957
-  bas: 4709.039938
-  haut: 9104.70544
+  valeur: 6832.27494
+  bas: 4572.364188
+  haut: 8881.957422
   unite: €/an
   formule: Économie par tonne × tonnage séché
 moisson_heures_an:
@@ -609,9 +608,9 @@ moisson_hvo_surcout_an:
   formule: Surcoût par hectare × surface battue par an
 moisson_huile_ecart_ha:
   libelle: 'Moisson à l''huile de colza : écart avec le gasoil par hectare'
-  valeur: -1.832603
-  bas: 8.864863
-  haut: -2.722329
+  valeur: 2.824398
+  bas: 14.938571
+  haut: 2.340867
   unite: €/ha
   formule: 'Litres de gasoil par hectare × écart huile − gasoil (négatif : l''huile
     revient moins cher, hors accises)'
@@ -646,12 +645,12 @@ mat_cout_pois:
   formule: Prix à la tonne ÷ (1 000 × teneur en MAT sur brut)
 mat_cout_herbe_paturee:
   libelle: 'Herbe pâturée : coût du kg de matière azotée totale'
-  valeur: 0.277778
+  valeur: 0.333333
   unite: €/kg MAT
   formule: Coût de la tonne de MS ÷ (1 000 × teneur en MAT de la MS)
 mat_cout_ensilage_herbe:
   libelle: 'Ensilage d''herbe : coût du kg de matière azotée totale'
-  valeur: 0.833333
+  valeur: 0.972222
   unite: €/kg MAT
   formule: Coût de la tonne de MS ÷ (1 000 × teneur en MAT de la MS)
 colza_pour_1kg_soja:
@@ -1027,17 +1026,17 @@ moulin_amortissement_t:
 huile_alim_valeur_tonne:
   libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires par tonne de
     graines'
-  valeur: 1659.05
-  bas: 1593.335
-  haut: 1724.765
+  valeur: 1435.9
+  bas: 1365.13
+  haut: 1506.67
   unite: €/t de graines
   formule: Litres d'huile × prix de vente + tourteau × prix du tourteau
 huile_alim_ecart_tonne:
   libelle: 'Huile alimentaire pressée à la ferme : chiffre d''affaires en plus de
     la vente des graines, par tonne'
-  valeur: 1109.05
-  bas: 1108.335
-  haut: 1009.765
+  valeur: 899.9
+  bas: 880.13
+  haut: 809.87
   unite: €/t de graines
   formule: Chiffre d'affaires huile et tourteau − prix du colza, avant main-d'œuvre,
     emballage et amortissement
@@ -1344,17 +1343,17 @@ chaudiere_retour_green_ans:
 sechage_chaudiere_invest_max:
   libelle: 'Exploitation type : prix d''une installation biomasse de séchage que l''économie
     rembourse dans le temps visé, sans aide'
-  valeur: 70036.195695
-  bas: 47090.399375
-  haut: 91047.054404
+  valeur: 68322.749403
+  bas: 45723.641878
+  haut: 88819.574224
   unite: €
   formule: Économie annuelle (plaquettes au lieu de propane) × temps de retour visé,
     hors entretien et main-d'œuvre
 sechage_chaudiere_invest_max_green:
   libelle: Même prix maximal avec l'aide GREEN de 40 %
-  valeur: 116726.992826
-  bas: 78483.998959
-  haut: 151745.090673
+  valeur: 113871.249005
+  bas: 76206.069797
+  haut: 148032.623707
   unite: €
   formule: Prix maximal sans aide ÷ (1 − taux GREEN), si le coût reste sous le coût
     éligible maximal
@@ -1434,3 +1433,48 @@ utilitaire_prix_max_neuf_dpi:
   unite: €
   formule: Surcoût remboursé par l'énergie ÷ surcoût net en part du prix ; sans limite
     si le surcoût net est nul ou négatif
+prerefroidisseur_retour_bas_ans:
+  libelle: 'Pré-refroidisseur au bas de la fourchette de prix : temps de retour simple'
+  valeur: 3.752486
+  bas: 4.431053
+  haut: 2.886528
+  unite: ans
+  formule: Prix ÷ économie annuelle d'électricité, hors entretien
+prerefroidisseur_retour_haut_ans:
+  libelle: 'Pré-refroidisseur au haut de la fourchette de prix : temps de retour simple'
+  valeur: 9.381215
+  bas: 11.077632
+  haut: 7.216319
+  unite: ans
+  formule: Prix ÷ économie annuelle d'électricité, hors entretien
+pv_ferme_retour_cv_ans:
+  libelle: 'Ferme type : temps de retour du photovoltaïque, aide AII et certificats
+    verts compris'
+  valeur: 5.213857
+  bas: 6.442207
+  haut: 3.990156
+  unite: ans
+  formule: (Investissement − aide) ÷ (valeur annuelle + certificats verts − entretien
+    annuel)
+part_producteur_coop_magasin:
+  libelle: Part du prix final reçue par le producteur en magasin coopératif
+  valeur: 0.7
+  unite: '%'
+  formule: 1 − marge du magasin
+part_producteur_coop_en_ligne:
+  libelle: Part du prix final reçue par le producteur en coopérative en ligne
+  valeur: 0.8
+  unite: '%'
+  formule: 1 − marge de la coopérative
+part_producteur_ruche:
+  libelle: Part du prix final reçue par le producteur sur une plateforme de type La
+    Ruche qui dit Oui
+  valeur: 0.8
+  unite: '%'
+  formule: 1 − commission de la plateforme et du responsable
+pdt_recette_ruche:
+  libelle: 'Pomme de terre : recette du producteur par une plateforme de type La Ruche
+    qui dit Oui'
+  valeur: 1.304
+  unite: €/kg
+  formule: Prix final × part du producteur
