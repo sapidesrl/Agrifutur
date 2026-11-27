@@ -616,9 +616,9 @@ moisson_huile_ecart_ha:
     revient moins cher, hors accises)'
 mat_cout_soja:
   libelle: 'Tourteau de soja 48 : coût du kg de matière azotée totale'
-  valeur: 1.038961
-  bas: 0.738095
-  haut: 1.350649
+  valeur: 1.149351
+  bas: 0.816017
+  haut: 1.494156
   unite: €/kg MAT
   formule: Prix à la tonne ÷ (1 000 × teneur en MAT sur brut)
 mat_cout_colza:
@@ -660,9 +660,9 @@ colza_pour_1kg_soja:
   formule: Teneur en MAT du soja ÷ teneur en MAT du colza
 ecart_colza_soja_t:
   libelle: 'Remplacer 1 t de soja par du colza à MAT égale : écart de coût'
-  valeur: -20.725664
-  bas: -19.507965
-  haut: -26.943363
+  valeur: -71.725664
+  bas: -55.507965
+  haut: -93.243363
   unite: €/t de soja remplacée
   formule: 'Colza nécessaire × prix du colza − prix du soja ; négatif : le colza revient
     moins cher'
@@ -816,7 +816,7 @@ paillage_paille_t_ha:
   formule: kg/m² × 10 000 ÷ 1 000
 paillage_paille_ha:
   libelle: 'Paillage de paille : achat de la paille par hectare couvert'
-  valeur: 2300
+  valeur: 1700
   unite: €/ha
   formule: Tonnes par hectare × prix de la paille
 irr_kwh_hydro_m3:
@@ -1048,21 +1048,21 @@ presse_amortissement_litre:
 prix_kg_p2o5:
   libelle: Prix du kg de P2O5 (superphosphate triple)
   valeur: 1.5
-  bas: 1.2
+  bas: 1.311111
   haut: 1.95
   unite: €/kg P2O5
   formule: Prix de la tonne ÷ kg de P2O5 par tonne
 prix_kg_k2o:
   libelle: Prix du kg de K2O (chlorure de potassium)
   valeur: 0.6
-  bas: 0.6
+  bas: 0.575
   haut: 0.78
   unite: €/kg K2O
   formule: Prix de la tonne ÷ kg de K2O par tonne
 valeur_pk_fumier:
   libelle: Valeur du P et du K d'une tonne de fumier de bovins
   valeur: 11.04
-  bas: 9.9
+  bas: 10.099722
   haut: 14.352
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O (coefficient d'équivalence
@@ -1070,49 +1070,49 @@ valeur_pk_fumier:
 valeur_p_fumier:
   libelle: Part du phosphore dans cette valeur
   valeur: 5.7
-  bas: 4.56
+  bas: 4.982222
   haut: 7.41
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5
 valeur_k_fumier:
   libelle: Part du potassium dans cette valeur
   valeur: 5.34
-  bas: 5.34
+  bas: 5.1175
   haut: 6.942
   unite: €/t
   formule: kg K2O × prix du kg K2O
 valeur_pk_fumier_ha:
   libelle: Valeur du P et du K d'un apport de fumier de bovins par hectare
   valeur: 386.4
-  bas: 346.5
+  bas: 353.490278
   haut: 502.32
   unite: €/ha
   formule: Tonnes épandues × valeur du P et du K d'une tonne
 valeur_pk_lisier:
   libelle: Valeur du P et du K d'un m³ de lisier de bovins
   valeur: 4.17
-  bas: 3.78
+  bas: 3.831944
   haut: 5.421
   unite: €/m³
   formule: (kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O) × masse du m³
 valeur_pk_compost:
   libelle: Valeur du P et du K d'une tonne de fumier composté
   valeur: 13.44
-  bas: 11.82
+  bas: 12.1975
   haut: 17.472
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
 valeur_pk_digestat:
   libelle: Valeur du P et du K d'une tonne de digestat complet
   valeur: 3.8082
-  bas: 3.5424
+  bas: 3.537544
   haut: 4.95066
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O
 valeur_pk_cendres:
   libelle: Valeur du P et du K d'une tonne de cendres de plaquettes
   valeur: 42.6
-  bas: 37.98
+  bas: 38.878611
   haut: 55.38
   unite: €/t
   formule: kg P2O5 × prix du kg P2O5 + kg K2O × prix du kg K2O

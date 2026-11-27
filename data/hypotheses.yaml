@@ -272,7 +272,7 @@ ammonitrate_prix:
   note: "Prix français franco (Argus, Pleinchamp, 19/11/2026), même base que la borne de février (franco distributeur). Départ usine : 535 €/t (Terre-net, 25/11/2026). Seul repère belge : ammonitrate 27 % (CAN) à 445 €/t départ Gand (Agryco, page non datée, consultée le 26/11/2026), soit environ 1,65 €/kg d'azote. À remplacer par un prix belge sur facture."
   scenario: true
   bas: 500
-  bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
+  bas_note: "Février 2026, avant-crise : environ 500 €/t franco distributeur en France (D. Jouen, Réussir/La Dépêche, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé. Recoupement belge : l’indice Statbel des prix des engrais azotés (base 2020) passe de 197,7 au 4e trimestre 2025 à 224,1 au 3e trimestre 2026, soit une hausse de 13 %, la même que celle retenue ici (500 → 567,5 €/t ; https://statbel.fgov.be/fr/themes/agriculture-peche/prix-agricoles, lu le 27/11/2026)."
 
 ammonitrate_teneur_n:
   libelle: Teneur en azote de l'ammonitrate
@@ -504,7 +504,7 @@ tourteau_prix:
   statut: sourcé
   date: 2026-11-26
   source: https://www.pleinchamp.com/les-cours/aliments-du-betail/43-tourteaux-de-colza
-  note: "Départ Rouen (prix français), cotation Argus affichée le 27/11/2026 pour le 26/11/2026 : 337 €/t, variation nulle sur la veille (même niveau que le 24/11), lue le 27/11/2026. Pèse lourd dans le coût de l'huile. Prix de février 2026 non trouvé : le bulletin hebdomadaire Réussir du 18 au 25/02/2026 ne donne que la variation (0 à +1 €/t) ; la borne basse reste donc valeur × scenario_bas_facteur."
+  note: "Repère belge : tourteau d’extraction de colza 34 %, Belgique, vrac départ négoce, 345 €/t le 15/09/2026 (Le Sillon belge, marchés, lu le 27/11/2026), dernière cotation publiée. Départ Rouen (prix français), cotation Argus affichée le 27/11/2026 pour le 26/11/2026 : 337 €/t, variation nulle sur la veille (même niveau que le 24/11), lue le 27/11/2026. Pèse lourd dans le coût de l'huile. Prix de février 2026 non trouvé : le bulletin hebdomadaire Réussir du 18 au 25/02/2026 ne donne que la variation (0 à +1 €/t) ; la borne basse reste donc valeur × scenario_bas_facteur."
   scenario: true
 
 pressage_cout:
@@ -955,16 +955,16 @@ hvo_surconsommation:
 # existe déjà (tourteau_prix) et est réutilisé tel quel.
 
 tourteau_soja_prix:
-  libelle: Prix du tourteau de soja 48
-  valeur: 480
+  libelle: Prix du tourteau de soja (extraction, 49 %, Belgique)
+  valeur: 531
   unite: €/t
   statut: sourcé
-  date: 2026-11-24
-  source: https://www.reussir.fr/articles/marche-des-oleagineux-du-24-novembre-2026-le-prix-du-soja-engrange-une-troisieme-seance-de
-  note: "Départ Montoir, 48 % protéines + matières grasses, granulés du Brésil, livraison décembre, cotation du 24/11/2026 (La Dépêche/Réussir, prix français), lue le 26/11/2026. Même jour : 476 €/t délivré Montoir selon l'Argus publié par Pleinchamp. 430 €/t le 5/11, 464 €/t le 19/11, 484 €/t le 25/11."
+  date: 2026-11-23
+  source: https://www.sillonbelge.be/marches/matieres-premieres/market-tourteau-extraction-soja-49-belgique
+  note: "Le Sillon belge, marchés, alimentation animale : tourteau d’extraction de soja 49 %, Belgique, vrac départ négoce, 531 €/t le 23/11/2026 (+19 €/t sur la semaine), lu le 27/11/2026. Qualité 49 % (protéines + matières grasses), un peu plus riche que le soja 48 des tables de teneur. Repère français : 480 €/t départ Montoir pour le soja 48 le 24/11/2026 (La Dépêche/Réussir)."
   scenario: true
-  bas: 341
-  bas_note: "Février 2026 (avant-crise) : 338 €/t le 20/02 et 344 €/t le 25/02, départ Montoir, 48 % Brésil, échéance mai (bulletins quotidiens La Dépêche/Réussir, lus le 26/11/2026). Moyenne des deux relevés."
+  bas: 377
+  bas_note: "Estimé : l’historique belge est réservé aux abonnés du Sillon belge. On applique au prix belge la baisse française entre novembre et février (soja 48 départ Montoir : 341 €/t fin février 2026 contre 480 €/t le 24/11/2026, La Dépêche/Réussir), soit 531 × 341 ÷ 480."
 
 tourteau_soja_mat:
   libelle: Teneur en matière azotée totale du tourteau de soja 48 (brut)
@@ -1170,17 +1170,13 @@ toile_tissee_duree:
   note: "Aucune source indépendante lue. Les sources disent seulement que la toile tissée est réutilisable plusieurs saisons (GRAB 2015, Recydata 2026). À remplacer par une durée mesurée."
 
 paille_prix:
-  libelle: Paille de blé (cotation Boerenbond, Belgique)
-  valeur: 115
+  libelle: Paille, départ ferme (cotation belge du Sillon belge)
+  valeur: 85
   unite: €/t
   statut: sourcé
-  date: 2026-11-25
-  source: https://www.boerenbond.be/markten/akkerbouw/stro/stro-tarwestro
-  note: "Boerenbond, marktinformatie « Stro: Tarwestro » : 115 €/t le 25/11/2026 (+5 €/t sur la semaine), 110 €/t du 14/10 au 18/11/2026, lu le 26/11/2026. Le marché porte le code « LOK », que la page n'explique pas. La page ne précise ni le conditionnement, ni la base (départ ferme ou rendu), ni la TVA. La cotation est flamande : la Wallonie n'a pas de cotation publique lisible (Sillon belge bloque l'accès automatique). En février 2026 elle valait plus cher, 135 à 140 €/t (135 le 4/02, 138 le 11/02, 140 les 18 et 25/02/2026), parce que la paille de l'ancienne récolte se fait rare en fin de saison : c'est un effet de saison, pas un effet de crise. Pas de scénario de prix bas proposé, car le prix de février est plus haut que le prix actuel. Remplace l'ancienne valeur française (75 à 85 €/t départ Nord-Est, La Dépêche/Réussir, 28/10-4/11/2026)."
-  # Pour ajouter tout de même un scénario, décommenter. Attention : bas > valeur.
-  # scenario: true
-  # bas: 139
-  # bas_note: "Février 2026 : 135 à 140 €/t (Boerenbond, Tarwestro, LOK, cotations des 4, 11, 18 et 25/02/2026). Moyenne arrondie. Prix de fin de saison, plus haut que le prix actuel."
+  date: 2026-11-24
+  source: https://www.sillonbelge.be/marches/grains-et-fourrages/belgique-paille
+  note: "Le Sillon belge, marchés, « Paille, départ ferme », Belgique : 80 à 90 €/t le 24/11/2026, inchangé depuis fin septembre ; milieu de la fourchette retenu. Lu le 27/11/2026. En février 2026 : 110 à 120 €/t (paille de l’ancienne récolte, plus rare avant la moisson), d’où l’absence de scénario bas : le prix de février est plus haut que le prix actuel, par effet de saison et non de crise. La cotation flamande du Boerenbond (Tarwestro) donnait 115 €/t le 25/11/2026, sur une base non précisée."
 
 paille_paillage_kg_m2:
   libelle: Quantité de paille ou de foin apportée en paillage
@@ -1484,8 +1480,8 @@ tsp_prix:
   source: https://www.agryco.be/fr_BE/engrais/pc975
   note: "Prix belge, départ Gand, big bag 600 kg ou vrac ; « prix départ, selon disponibilités » ; TVA non précisée (Agryco Belgique, édito marché de la semaine, page non datée, consultée le 26/11/2026 ; prix stable sur la semaine). Prix rendu ferme sur saisie du code postal. Recoupement français : 675-680 €/t départ port vrac en septembre 2026, inchangé en octobre (La Dépêche Le petit meunier via Réussir, 6/11/2026). À confirmer par une facture belge."
   scenario: true
-  bas: 540
-  bas_note: "Février 2026, avant-crise : 540 €/t départ direct de bord vrac, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
+  bas: 590
+  bas_note: "Estimé à partir de l’indice belge des prix des engrais phosphatés (Statbel, indice des prix des moyens de production agricole, base 2020) : 225,2 au 4e trimestre 2025, avant la crise, contre 257,7 au 3e trimestre 2026, soit 675 × 225,2 ÷ 257,7. Lu le 27/11/2026 (https://statbel.fgov.be/fr/themes/agriculture-peche/prix-agricoles). Repère français de février 2026 : 540 €/t départ direct de bord (La Dépêche/Réussir, 9 mars 2026)."
 
 tsp_teneur_p2o5:
   libelle: Teneur en P2O5 du superphosphate triple
@@ -1505,8 +1501,8 @@ kcl_prix:
   source: https://www.agryco.be/fr_BE/engrais/pc975
   note: "Prix belge, départ Gand, big bag 600 kg ou vrac ; « prix départ, selon disponibilités » ; TVA non précisée (Agryco Belgique, édito marché de la semaine, page non datée, consultée le 26/11/2026 ; prix inchangé sur la semaine). Recoupement français : 355-360 €/t en septembre 2026, puis − 5 €/t en octobre (La Dépêche Le petit meunier, 6/11/2026). Prix payé par un agriculteur wallon en juillet 2025 : 420 €/t (Fourrages Mieux). La potasse n'a presque pas bougé pendant la crise : le scénario bas (février 2026) est égal au prix actuel."
   scenario: true
-  bas: 360
-  bas_note: "Février 2026, avant-crise : environ 360 €/t départ direct de bord, prix français (La Dépêche Le petit meunier via Réussir, 9 mars 2026, https://www.reussir.fr/articles/marche-des-engrais-la-tension-accrue-au-moyen-orient-soutient-les-engrais-azotes). Aucun prix belge de février 2026 trouvé."
+  bas: 345
+  bas_note: "Estimé à partir de l’indice belge des prix des engrais potassiques (Statbel, base 2020) : 137,8 au 4e trimestre 2025 contre 143,8 au 3e trimestre 2026, soit 360 × 137,8 ÷ 143,8. Lu le 27/11/2026 (https://statbel.fgov.be/fr/themes/agriculture-peche/prix-agricoles). Repère français de février 2026 : environ 360 €/t (La Dépêche/Réussir, 9 mars 2026)."
 
 kcl_teneur_k2o:
   libelle: Teneur en K2O du chlorure de potassium

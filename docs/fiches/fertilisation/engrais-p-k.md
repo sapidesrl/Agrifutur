@@ -25,7 +25,7 @@ Le phosphore et le potassium sont des éléments majeurs de la nutrition des pla
 - le **chlorure de potassium** (KCl, 60 % de K2O), aussi appelé potasse ;
 - les **binaires** PK (par exemple 0-25-25) et les **ternaires** NPK.
 
-Prix de référence (février : prix français au stade distributeur[^depeche-mars] ; novembre : prix belge départ Gand[^agryco]) :
+Prix de référence (novembre : prix belge départ Gand[^agryco] ; février : estimé à partir de l'indice belge des prix des engrais de Statbel[^statbel-ipa]) :
 
 | Engrais | Février 2026 (avant-crise, France) | Fin novembre 2026 (départ Gand) |
 |---|---|---|
@@ -34,7 +34,7 @@ Prix de référence (février : prix français au stade distributeur[^depeche-ma
 
 Les prix de novembre viennent de la page d'un négociant en ligne (non datée, consultée le 26/11/2026)[^agryco]. En France, au stade distributeur, le TSP valait 675 à 680 €/t et le chlorure de potassium 355 à 360 €/t en septembre 2026 : le même niveau[^depeche-nov]. Le prix payé à la ferme peut être plus élevé : un essai wallon comptait le chlorure de potassium à 420 €/t en juillet 2025[^fm-bache].
 
-Le phosphore a suivi la crise, pas la potasse. Le prix du TSP est passé de {{ v('tsp_prix', scenario='bas') }} en février à {{ v('tsp_prix') }}, une nette hausse, alors que celui de la potasse est resté stable, voire a un peu baissé[^depeche-nov]. Le kg de P2O5 coûte {{ fourchette('prix_kg_p2o5') }} selon les scénarios de prix, le kg de K2O {{ fourchette('prix_kg_k2o') }} (calculé).
+Le phosphore a suivi la crise, la potasse beaucoup moins. Selon l'indice belge de Statbel, les engrais phosphatés ont pris 14 % entre la fin 2025 et le troisième trimestre 2026, les potassiques 4 %[^statbel-ipa] : le TSP passe ainsi de {{ v('tsp_prix', scenario='bas') }} à {{ v('tsp_prix') }}, le chlorure de potassium de {{ v('kcl_prix', scenario='bas') }} à {{ v('kcl_prix') }}. Les cotations françaises montrent une hausse plus forte pour le TSP et une potasse stable[^depeche-mars][^depeche-nov]. Le kg de P2O5 coûte {{ fourchette('prix_kg_p2o5') }} selon les scénarios de prix, le kg de K2O {{ fourchette('prix_kg_k2o') }} (calculé).
 
 Les agriculteurs réagissent en réduisant la fumure de fond. En France, les livraisons d'engrais phosphatés ont reculé d'environ 30 % et celles de potassiques de 17 % au début de la campagne 2026-2027. Les distributeurs s'attendent à une baisse de 50 à 60 % de la demande en phosphore sur l'ensemble de la campagne[^depeche-nov].
 
@@ -153,7 +153,7 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 
 ## À vérifier
 
-- **Prix belges** : les prix actuels du TSP et du chlorure de potassium viennent d'une page de négociant en ligne non datée (départ Gand, TVA non précisée)[^agryco] ; les prix de février 2026 (scénario bas) sont des prix français au stade distributeur[^depeche-mars]. Les deux bases ne sont pas tout à fait comparables. Seul autre repère belge : 420 €/t pour le chlorure de potassium en juillet 2025, cité par Fourrages Mieux[^fm-bache]. À remplacer par une cotation belge datée ou une facture, et chercher un prix belge de février 2026.
+- **Prix belges** : les prix actuels du TSP et du chlorure de potassium viennent d'une page de négociant en ligne non datée (départ Gand, TVA non précisée)[^agryco] ; les prix de février 2026 (scénario bas) en sont déduits avec l'indice belge des prix des engrais de Statbel, qui est trimestriel[^statbel-ipa]. Seul autre repère belge : 420 €/t pour le chlorure de potassium en juillet 2025, cité par Fourrages Mieux[^fm-bache]. À remplacer par une cotation belge datée ou une facture, et chercher un prix belge de février 2026.
 - **Cotations Terre-net** : le 26 novembre 2026, Terre-net affichait le TSP à 567,25 €/t et le binaire PK à 517,25 €/t[^terrenet], soit les niveaux de novembre 2025 (TSP 565-567 €/t, PK 517 €/t)[^depeche-janv], bien en dessous des 675-680 €/t de septembre 2026 pour le TSP. Ces cotations semblent ne pas avoir été mises à jour et n'ont pas été retenues.
 - **Prix français de novembre 2026** : le dernier tableau de prix complet lu porte sur septembre 2026 ; pour octobre, l'article ne donne que l'évolution (phosphatés stables, potasse − 5 €/t)[^depeche-nov].
 - **Énergie fossile de l'extraction et de la fabrication** : aucune donnée lue sur l'énergie (en MJ ou en litres de gasoil) par kg de P2O5 ou de K2O, ni sur la part du soufre qui vient de la désulfuration du pétrole et du gaz.
@@ -188,3 +188,4 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 [^terrenet]: Cotations « Super Phosphate Triple » (port départ) et « PK » (silo rendu), Terre-net, consultées le 26 novembre 2026 (France). https://www.terre-net.fr/marche-agricole/super-phosphate-triple/engrais et https://www.terre-net.fr/marche-agricole/pk/engrais
 [^mr14]: « MAEC Sol – MR14 », Portail de l'agriculture wallonne, page modifiée le 4 juin 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
 [^agw-boues]: Arrêté du Gouvernement wallon du 12 janvier 1995 portant réglementation de l'utilisation sur ou dans les sols des boues d'épuration ou de boues issues de centres de traitement de gadoues de fosses septiques, article 9, Wallex, consulté le 26 novembre 2026. https://wallex.wallonie.be/contents/acts/11/11130/1.html
+[^statbel-ipa]: « Indice des prix agricoles et prix moyens (base = 2020) (01/2024-09/2026) », indice des prix des moyens de production, Statbel, publié le 10 novembre 2026, lu le 27 novembre 2026. https://statbel.fgov.be/fr/themes/agriculture-peche/prix-agricoles
