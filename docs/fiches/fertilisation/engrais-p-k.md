@@ -6,7 +6,7 @@ dependance_fossile: gasoil (mines et transport)
 alternatives: [Effluents, compost, cendres de bois, recyclage urbain]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Engrais phosphatés et potassiques
@@ -98,6 +98,8 @@ Les teneurs varient beaucoup d'une ferme à l'autre. Dans sept tas de fumier fra
 - Une ferme sans élevage dépend d'échanges avec les voisins (paille contre fumier) et du coût du transport, qui n'est pas compté ici.
 - Sur les sols déjà riches, ajouter du phosphore organique n'apporte rien et augmente les pertes vers les eaux de surface : les flux de phosphore des sols agricoles wallons vers les eaux atteignaient 2 100 t par an sur 2021-2025[^eew-sols-p].
 
+**Aides.** Aucune aide publique ne paie l'épandage ou le bâchage des effluents. La MAEC « Sol » (MR14), décrite avec le compost ci-dessous, peut récompenser l'effet des effluents sur le carbone du sol. La vague 1 tient sans aide.
+
 ### 2. Compost et digestat (vague 2)
 
 Le **compostage** du fumier réduit sa masse et concentre les éléments. Selon Protect'eau, un fumier composté contient en moyenne {{ v('fumier_composte_p2o5', 1) }} de P2O5 et {{ v('fumier_composte_k2o', 1) }} de K2O[^protecteau], soit {{ v('valeur_pk_compost') }} de P et de K (calculé). On transporte et on épand moins de tonnes pour la même quantité d'éléments. Le compostage coûte du temps et du gasoil (retournements) : ce coût n'a pas été chiffré ici. L'essai de Fourrages Mieux suggère qu'un tas bâché composte mieux, ce qui pourrait remplacer une partie des retournements (piste à confirmer)[^fm-bache].
@@ -109,6 +111,8 @@ Conditions :
 - du matériel d'épandage et de compostage, en propre ou en CUMA ;
 - pour le digestat, une unité de biométhanisation proche ;
 - des analyses du produit, car les teneurs varient selon les intrants.
+
+**Aides.** Aucune aide ne paie directement le compost ou le digestat. La MAEC « Sol » (MR14), engagement de cinq ans, paie le résultat que ces apports organiques aident à obtenir : jusqu'à {{ v('maec_mr14_favorable_eur_ha', 0) }} si le sol est en état « favorable » (rapport carbone organique sur argile, mesuré par un laboratoire au début et à la fin du contrat), jusqu'à 80 €/ha en état « transition », rien en état « défavorable »[^mr14]. Conditions : engager au moins 90 % de sa surface ; le montant est réduit quand les terres arables font moins de 60 % de la surface, et nul sous 30 %[^mr14]. Il dépend de l'état du sol, pas de la quantité de compost épandue : on ne peut pas l'inclure d'avance dans le calcul. Il ne change donc pas la vague du compost et du digestat (vague 2). Voir [les aides publiques](../../aides.md#pac-2e-pilier-maec-bio-natura-2000-installation).
 
 Comme pour le fumier, ces produits recyclent un phosphore déjà présent dans le territoire : ils ne suppriment pas l'import s'il entre par les aliments ou par les déchets de l'industrie agroalimentaire.
 
@@ -160,6 +164,8 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 - **PGDA** : vérifier la norme d'azote organique en vigueur (PGDA IV) pour les prairies et les cultures, et les règles de stockage au champ ; la fiche Protect'eau date de 2018 (PGDA III).
 - **Boues d'épuration** : vérifier que l'arrêté wallon du 12 janvier 1995 est toujours la règle en vigueur et la part des boues wallonnes épandues en agriculture.
 - **Recyclage du phosphore en Wallonie** : projets de struvite ou d'incinération des boues avec récupération du phosphore (SPGE, intercommunales) ; état actuel de l'installation d'Aquafin à Louvain (source de 2019).
+- **MAEC Sol** : montant réellement atteint selon l'état de départ des sols wallons, et effet mesurable d'apports réguliers de compost ou de digestat sur l'indicateur en cinq ans.
+- **Matériel de compostage ou d'épandage** : lignes éventuelles dans la liste AII de 2026 (non vérifié pour cette fiche).
 - **Règlement européen** : catégories de matières recyclées admises (sels de phosphate précipités, cendres) et produits à base de struvite disponibles en Belgique ; EUR-Lex n'a pas pu être lu.
 
 ## Sources
@@ -180,4 +186,5 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 [^aquafin]: B. Saerens, S. Geerts et M. Weemaes (Aquafin), « Phosphorus recovery as struvite from digested sludge: experience from the full scale », 5th European Conference on Sludge Management, 8 octobre 2019. https://vb.nweurope.eu/media/8137/bsaerens.pdf
 [^phos4you]: Partenariat Phos4You (Interreg Europe du Nord-Ouest), « Technical report on processes to recover P from wastewater », septembre 2021. https://orbi.uliege.be/bitstream/2268/266587/1/Phos4You_Technical_report_September_2021.pdf
 [^terrenet]: Cotations « Super Phosphate Triple » (port départ) et « PK » (silo rendu), Terre-net, consultées le 26 novembre 2026 (France). https://www.terre-net.fr/marche-agricole/super-phosphate-triple/engrais et https://www.terre-net.fr/marche-agricole/pk/engrais
+[^mr14]: « MAEC Sol – MR14 », Portail de l'agriculture wallonne, page modifiée le 4 juin 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
 [^agw-boues]: Arrêté du Gouvernement wallon du 12 janvier 1995 portant réglementation de l'utilisation sur ou dans les sols des boues d'épuration ou de boues issues de centres de traitement de gadoues de fosses septiques, article 9, Wallex, consulté le 26 novembre 2026. https://wallex.wallonie.be/contents/acts/11/11130/1.html

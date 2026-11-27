@@ -6,7 +6,7 @@ dependance_fossile: électricité
 alternatives: [Pré-refroidisseur, récupérateur de chaleur]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Refroidissement du lait
@@ -59,6 +59,15 @@ Conditions :
 - si la laiterie est propriétaire du tank, son accord est nécessaire (pratique française, à vérifier en Belgique)[^reussir-traite] ;
 - un besoin d'eau chaude régulier.
 
+### Aides : aucune en pratique
+
+Ni le pré-refroidisseur ni le récupérateur de chaleur n'ont d'aide accessible en pratique pour une exploitation (voir [les aides publiques](../../aides.md#ce-que-laii-ne-finance-pas)) :
+
+- **AII** : la liste des investissements admissibles de 2026 ne contient ni pré-refroidisseur ni récupérateur de chaleur[^aii-liste]. Seul le tank lui-même a une ligne, sans case « architecture verte » ni « résilience économique ». Avec le seuil de sélection de {{ v('aii_seuil_points', 0, unite=False) }} points, un éleveur herbager de moins de 60 ha, ni jeune ni bio, hors zone à contraintes, n'a que 7,5 points (calculé à partir des points de l'arrêté) et n'atteint pas le seuil pour cette ligne[^am-aii].
+- **GREEN** (économie d'énergie) : l'investissement doit atteindre au moins {{ v('green_seuil_pme', 0) }} pour une PME, un audit AMUREBA est exigé depuis 2026, et un investissement dont le temps de retour actualisé est de 3 ans ou moins est exclu[^green-agw]. Un pré-refroidisseur ou un récupérateur coûte nettement moins que ce seuil et se rembourse souvent en 3 à 5 ans : il n'entre pas dans GREEN, sauf peut-être au sein d'un programme d'économie d'énergie plus large (à vérifier).
+
+La vague 1 tient donc **sans aide** : les aides n'y changent rien.
+
 ### 3. Les deux ensemble (vague 2)
 
 Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-15 kWh à 10-11 kWh par 1 000 L, tout en fournissant l'eau chaude préchauffée[^handboek]. Ils se pénalisent un peu : avec un pré-refroidisseur, il reste moins de chaleur à récupérer. Un conseiller français juge le couple pertinent à partir d'environ 700 000 L par an[^reussir-traite] : c'est une solution pour les grands troupeaux (vague 2).
@@ -73,6 +82,8 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 
 - Prix belges d'un pré-refroidisseur et d'un récupérateur, posés.
 - En Belgique, le tank appartient-il en général à l'éleveur ou à la laiterie ?
+- Un programme GREEN plus large (pré-refroidisseur, récupérateur et autres économies d'énergie de l'étable, au-delà du seuil de {{ v('green_seuil_pme', 0) }}) serait-il recevable, et l'audit AMUREBA subventionné pour une exploitation agricole (règle *de minimis*) ?
+- Les points « architecture verte » et « résilience économique » ne jouent pas pour le tank ; d'autres critères (jeune agriculteur, bio, zone à contraintes) peuvent faire passer le seuil AII de {{ v('aii_seuil_points', 0, unite=False) }} points pour le tank lui-même.
 - Aide wallonne aux investissements agricoles (AII) : la liste des investissements admissibles (annexe 3 de l'arrêté ministériel du 23 février 2023, version au 1er janvier 2026) ne cite ni pré-refroidisseur ni récupérateur de chaleur ; elle prévoit un forfait « tank-refroidisseur » de 3 465 € par 1 000 L[^am-aii]. Reste à demander à l'administration si ces équipements peuvent entrer dans le forfait du tank lors d'un achat neuf.
 - Consommation réelle du tank sur l'exploitation (relevé du compteur ou sous-compteur).
 - Refroidissement sur photovoltaïque avec stockage de froid : coût et retours d'expérience.
@@ -88,4 +99,6 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 [^reussir-mc]: « Traite des vaches laitières : comment optimiser sa consommation électrique », Réussir Agriculture Massif central (France), 13 avril 2026. https://www.reussir.fr/agriculture-massif-central/traite-des-vaches-laitieres-comment-optimiser-sa-consommation-electrique
 [^reussir-recup]: « Avec le récupérateur de chaleur sur notre tank à lait, nous profitons d'une énergie gratuite », Réussir Machinisme (France), 30 juillet 2026. https://www.reussir.fr/machinisme/avec-le-recuperateur-de-chaleur-sur-le-tank-nous-profitons-dune-energie-gratuite
 [^reussir-traite]: « Traite : comment réaliser des économies d'énergie ? », Réussir Lait (France), 30 mars 2023. https://www.reussir.fr/lait/traite-comment-realiser-des-economies-denergie
-[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole…), annexe 3, version consolidée en vigueur au 1er janvier 2026, Wallex. https://wallex.wallonie.be/sites/wallex/contents/acts/87/87905/4.html
+[^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), en vigueur le 1er janvier 2025 : articles 7, 10, 11 et 26, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole…), article 6 et annexes 2 et 3, version consolidée en vigueur au 1er janvier 2026 (seuil de sélection : AM du 15 janvier 2026), Wallex. https://wallex.wallonie.be/sites/wallex/contents/acts/87/87905/4.html

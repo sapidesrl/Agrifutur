@@ -6,7 +6,7 @@ dependance_fossile: gasoil (culture, transport); gaz et vapeur (trituration); he
 alternatives: [Pâturage, légumineuses fourragères, tourteau de colza du commerce, tourteau de colza fermier, féverole et pois]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Concentrés et soja importés
@@ -54,6 +54,8 @@ L'herbe jeune pâturée est riche en protéines : de 12 à 22 % de MAT dans la M
 
 Le pâturage tournant dynamique en tire le meilleur parti. Sur 12 fermes laitières wallonnes passées à cette technique, 9 relient ce changement à la recherche d'autonomie alimentaire et 8 mettent en avant un gain économique[^craw-ptd]. La mise en place (paddocks, chemins, points d'eau) est détaillée dans la fiche [Ensilage et enrubannage](fourrages-recoltes.md).
 
+**Aides.** Les prairies pâturées reçoivent l'éco-régime « prairies permanentes » ({{ v('er_pp_base_eur_ha', 0) }} prévus, plus {{ v('er_pp_supp_eur_ha', 0) }} entre 0,6 et 2 UGB/ha de surface fourragère)[^er-pp] et, pour un troupeau peu chargé, la MAEC « autonomie fourragère » MB13A ({{ v('maec_mb13a_eur_ha', 0, unite=False) }} € par hectare de prairie et par an sous 1,4 UGB/ha, effluents de la ferme seulement)[^mb13]. Les deux se cumulent[^mb13]. Détails dans la fiche [Ensilage et enrubannage](fourrages-recoltes.md) et sur la page [les aides publiques](../../aides.md#pac-2e-pilier-maec-bio-natura-2000-installation). Le pâturage est rentable sans elles (vague 1).
+
 Limites : le pâturage ne couvre que la saison de pousse. L'hiver, et pour les vaches à très haut niveau de production, il faut encore des fourrages conservés et un correcteur. Il demande assez de prairies accessibles autour des bâtiments.
 
 ### 2. Légumineuses fourragères : trèfle et luzerne (vague 1)
@@ -65,6 +67,10 @@ Des prairies temporaires avec trèfle violet, trèfle blanc ou luzerne produisen
 **Résistance à la sécheresse.** Dans des essais de l'UCLouvain financés par le SPW à Corroy-le-Grand (2013-2018), luzerne et trèfle violet ont mieux résisté au manque d'eau que les graminées, sans aucun apport d'azote. En 2015, année sèche, la deuxième coupe a donné environ 2 t MS/ha pour le ray-grass anglais, 5,5 t pour le trèfle violet et 8 à 9 t pour la luzerne. En 2017-2018, la luzerne pure et l'association dactyle et luzerne ont donné les meilleurs rendements[^spw-secheresse].
 
 **Coût.** Le kg de MAT d'un ensilage d'herbe à {{ v('herbe_mat') }} de MAT (hypothèse) revient à environ {{ v('mat_cout_ensilage_herbe') }} (calculé, coût de 2021) : moins cher que le soja ({{ v('mat_cout_soja') }}) au prix actuel. Au prix de février 2026, c'est l'inverse : le soja revient à {{ v('mat_cout_soja', scenario='bas') }}, moins cher que l'ensilage. Et le coût de l'ensilage date de 2021 : avec la hausse du gasoil et du plastique, il est sans doute plus élevé en 2026 (voir la fiche [Ensilage et enrubannage](fourrages-recoltes.md)). L'ensilage de légumineuses ne bat donc pas le soja à coup sûr sur le seul prix de la protéine. Sa rentabilité tient surtout à l'engrais azoté évité, à la résistance à la sécheresse et, quand on les fait pâturer, au faible coût de l'herbe pâturée.
+
+**Aides.** La luzerne, la lupuline, le sainfoin, le lotier et la vesce cultivés sur terre arable ouvrent l'éco-régime « cultures favorables » V1_A : {{ v('er_cfe_v1a_eur_ha', 0) }} prévus (220 à 420 €/ha selon la demande), à condition de n'utiliser aucun insecticide, même en enrobage des semences, et de laisser 10 % de zone refuge[^cfe]. Le **trèfle n'est pas dans cette liste** : une prairie temporaire au trèfle violet ou blanc ne touche pas cet éco-régime[^cfe]. En bio, l'aide au maintien ajoute {{ v('bio_prairie_eur_ha', 0) }} pour les légumineuses fourragères (60 premiers hectares), cumulable avec l'éco-régime[^bio] [^cumuls].
+
+Cet éco-régime améliore la marge de la luzerne par rapport au tourteau acheté, sans changer la vague (déjà 1). Il avantage la luzerne sur le trèfle, qui n'y a pas droit. Comme tout éco-régime, c'est un engagement d'un an dont le montant payé n'est connu qu'après la campagne.
 
 Conditions :
 
@@ -108,7 +114,16 @@ Les protéagineux se cultivent en Wallonie. La féverole contient 30 à 31 % de 
 
 Limites : rendements irréguliers, graines aussi consommables par l'homme, place à trouver dans l'assolement[^craw-autonomie]. Parmi les freins relevés par le rapport WalProt du CRA-W (2026) figurent l'instabilité des rendements, le manque d'outils de collecte et de transformation, la concurrence des produits importés à bas prix et le manque de coordination de la filière[^walprot]. Le toastage demande une installation et de la chaleur : pour que le gain soit complet, cette chaleur doit venir d'une source renouvelable (unité collective au bois, au biogaz ou à l'électricité solaire).
 
-Pourquoi vague 2 : au prix du marché, le kg de MAT du pois coûte plus cher que celui du soja, avant comme pendant la crise. La culture ne devient intéressante que sous conditions : aides couplées aux protéagineux, bénéfice de rotation reconnu (précédent pour le blé, économie d'azote) et outil de toastage partagé.
+**Aides.** Deux voies existent, qui **ne se cumulent pas** sur une même parcelle[^cumuls] (voir [les aides publiques](../../aides.md#les-regles-de-cumul)) :
+
+- **pois ou féverole purs** (ou dominants dans un mélange), récoltés après le 15 juin : soutien couplé aux protéines végétales ({{ v('soutien_proteines_eur_ha', 0) }} prévus, 270 à 400 €/ha)[^couple-prot], cumulable avec l'éco-régime « réduction d'intrants » ({{ v('ri_eur_ha', 0) }} prévus) si la parcelle n'utilise aucune des 36 molécules « à substituer » ou reçoit deux désherbages mécaniques[^ri]. Ensemble : {{ v('proteagineux_aides_ha', 0) }} (calculé). Pas de réduction d'intrants en bio[^ri] ;
+- **mélange céréales-légumineuses** (au moins 50 % de céréales et 20 % de légumineuses) récolté après le 15 juin : éco-régime « cultures favorables » V3_B, {{ v('er_cfe_v3b_eur_ha', 0) }} prévus, sans insecticide[^cfe]. Il ne se cumule pas avec la réduction d'intrants[^cumuls].
+
+La voie du soutien couplé rapporte {{ v('proteagineux_ecart_v3b_ha', 0) }} de plus (calculé), mais seulement si la parcelle remplit aussi les conditions de la réduction d'intrants ; sinon le mélange en V3_B paie davantage. En bio, l'aide au maintien ({{ v('bio_autres_cultures_eur_ha', 0) }} pour les protéagineux) s'ajoute aux deux voies[^bio] [^cumuls].
+
+Ces aides sont payées à l'hectare, quel que soit le prix de la récolte : elles améliorent la marge de la culture, alors que la comparaison au kg de MAT sans aide la donne perdante face au soja. Le coût du kg de protéine aide comprise n'est pas calculé ici, faute de rendement de référence wallon pour le pois et la féverole (voir « À vérifier »).
+
+Pourquoi vague 2 : sans aide, au prix du marché, le kg de MAT du pois coûte plus cher que celui du soja, avant comme pendant la crise. La culture ne devient intéressante que sous conditions : aides PAC aux protéagineux (dont le montant payé varie chaque année), bénéfice de rotation reconnu (précédent pour le blé, économie d'azote) et outil de toastage partagé. Une alternative qui ne tient que par une aide annuelle reste en vague 2.
 
 ## Ce qui ferme la boucle
 
@@ -130,7 +145,9 @@ Pourquoi vague 2 : au prix du marché, le kg de MAT du pois coûte plus cher que
 - Résultat de la revue de simplification du RDUE prévue en 2026 et confirmation de l'application au 30 décembre 2026.
 - Coût d'un toastage à façon de féverole ou de pois en Wallonie et énergie utilisée par les unités existantes.
 - Coût d'une presse à huile fermière en 2026 et tarifs de pressage collectif en Wallonie.
-- Montant de l'aide couplée aux protéagineux de la PAC wallonne en 2026.
+- Montants **payés** en 2025 et 2026 du soutien couplé aux protéagineux, de la réduction d'intrants et des cultures favorables : seuls les montants prévus sont connus (400 €/ha de soutien couplé payés en 2024)[^couple-prot].
+- Rendement de référence wallon du pois et de la féverole, pour chiffrer le coût du kg de MAT aide comprise.
+- Un mélange où le pois ou la féverole dominent en grains/m² peut toucher le soutien couplé : à quelle limite le choix entre soutien couplé et V3_B se fait-il en pratique ?
 
 ## Sources
 
@@ -154,4 +171,11 @@ Pourquoi vague 2 : au prix du marché, le kg de MAT du pois coûte plus cher que
 [^craw-luzerne]: « Récolter des feuilles de luzerne, un moyen de concentrer les protéines ! », CRA-W pour les Contrats captage, 2024 (essais 2022-2023 ; tableau de production d'après Junker, 2016). https://www.cra.wallonie.be/uploads/2024/03/recolter-des-feuilles-de-luzerne-un-moyen-de-concentrer-les-proteines.pdf
 [^spw-secheresse]: Nihoul Ph. (SPW-ARNE), Lambert R. (UCLouvain), « Production fourragère des prairies : quelles espèces traditionnelles pérennes les plus adaptées à la sécheresse ? », synthèse d'essais 2013-2018, SPW Agriculture, document non daté, consulté le 26 novembre 2026. https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20fourrag%c3%a8re/Quelles%20esp%c3%a8ces%20traditionnelles%20p%c3%a9rennes%20les%20plus%20adapt%c3%a9es%20%c3%a0%20la%20s%c3%a9cheresse%20%20.pdf
 [^idele-presse]: F. Mechekour, « Les tourteaux pressés à la ferme ont un fort taux de matière grasse, note l'Institut de l'élevage » (entretien avec Ph. Brunschwig), Réussir Lait (France), 17 septembre 2003. https://www.reussir.fr/lait/les-tourteaux-presses-la-ferme-ont-un-fort-taux-de-matiere-grasse-note-linstitut-de-lelevage
+[^er-pp]: « Eco-régime prairies permanentes conditionné à la charge en bétail », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
+[^mb13]: « MAEC Autonomie fourragère – MB13 », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-autonomie-fourragere---mb13.html
+[^cfe]: « Eco-régime cultures favorables à l'environnement », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+[^ri]: « Eco-régime réduction d'intrants », Portail de l'agriculture wallonne, page modifiée le 3 juillet 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
+[^couple-prot]: « Soutien couplé aux cultures de protéines végétales », Portail de l'agriculture wallonne, page modifiée le 21 novembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne, page modifiée le 18 septembre 2025 (tableaux « prairie » et « culture »), consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
 [^walprot]: Verhoeven C., Cassart P., Froidmont É., Van Stappen F., « Portrait de la filière des protéines végétales et alternatives en Wallonie. Analyse qualitative des barrières et leviers », CRA-W, projet Wal'Prot (IIS Protewin), juin 2026. https://www.cra.wallonie.be/uploads/2026/07/rapport-walprot-portrait-filiere-proteines-vegetales-alternatives-wallonie-2026-pdf.pdf
