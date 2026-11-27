@@ -6,7 +6,7 @@ dependance_fossile: pétrochimie
 alternatives: [Paillages naturels, bâches réutilisables, emballages consignés]
 vague_meilleure_alternative: 2
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Plastiques agricoles
@@ -87,6 +87,15 @@ Conditions :
 - gérer la faim d'azote au début de la décomposition, et surveiller limaces et campagnols, qui aiment l'abri du paillis[^biowallonie][^craw-chanvre] ;
 - mécaniser la pose sur de grandes surfaces : le CRA-W évoque l'épandeur à fumier pour la chènevotte[^craw-chanvre].
 
+**Aides : aucune ne vise les paillages** (voir [les aides publiques](../../aides.md#ce-que-laii-ne-finance-pas)).
+
+- La liste de l'AII ne contient ni paillis, ni toile de paillage, ni film biodégradable. Elle ne compte que deux machines de pose, la dérouleuse-enrouleuse de bâches, filets et films et la butteuse-plastifieuse, sans case « architecture verte » : l'aide est le taux de base de {{ v('aii_taux_base', 0) }} de leur coût simplifié pour un agriculteur ({{ v('aii_cuma_taux_base', 0) }} en CUMA)[^aii]. Ces machines servent aussi bien au film plastique.
+- En maraîchage bio, l'aide au maintien paie {{ v('bio_maraichage_eur_ha', 0) }} sur les premiers hectares, ou un forfait de 4 000 €/ha pour le petit maraîchage diversifié[^bio]. Elle paie le système bio, que le paillage soit en paille ou en plastique.
+- Pour le petit maraîchage bio, la conditionnalité admet le paillage ou la bâche comme couverture du sol en automne, avec un seuil de 50 % au lieu de 80 %[^bcae6]. C'est une règle, pas une aide.
+- La subvention régionale à la plantation de haies ({{ v('haie_subv_1rang', 0) }} de haie d'un rang, {{ v('haie_subv_2rangs', 0) }} de deux rangs) **exige un paillage biodégradable**[^haies]. Elle ne paie pas le paillage à part, mais elle exclut le film plastique au pied des haies subventionnées.
+
+Le résultat reste donc le même avec ou sans aide.
+
 Pourquoi vague 2 : en achat de matériau, la paille du commerce coûte plus que le film plastique, et la pose est plus lourde. Elle devient intéressante quand la paille vient de la ferme, quand les cultures sont longues, et quand on compte le retrait et l'élimination du film.
 
 ### 2. Bâches réutilisables (vague 2)
@@ -103,6 +112,8 @@ Conditions :
 - un parcellaire régulier et des planches de longueur fixe ;
 - un lieu sec pour nettoyer et stocker les toiles entre deux cultures ;
 - du temps de pose et de dépose, qui reste à chiffrer en Wallonie.
+
+Aides : aucune pour la toile ou le film de tunnel ; seule la dérouleuse-enrouleuse figure dans l'AII, au taux de base : {{ v('aii_taux_base', 0) }} pour un agriculteur, {{ v('aii_cuma_taux_base', 0) }} en CUMA[^aii]. La vague ne change pas.
 
 Pourquoi vague 2 : la toile tissée est un matériel courant, mais son prix au m² et le travail de manutention ne se rentabilisent que sur plusieurs années et des surfaces bien organisées. Elle réduit la quantité de plastique jetée ; elle ne supprime pas le pétrole.
 
@@ -149,6 +160,8 @@ Pourquoi vague 3 : la reprise des bidons et des sacs fonctionne et ne coûte rie
 - Avancement du projet de responsabilité élargie des producteurs pour les plastiques agricoles (décision du Gouvernement wallon, accord interrégional).
 - Prix et tenue des ficelles et filets en fibres naturelles par rapport aux ficelles plastiques.
 - Tonnages collectés par AgriRecover en Wallonie et part réellement recyclée.
+- Coûts simplifiés de l'AII pour la dérouleuse-enrouleuse et la butteuse-plastifieuse (pas encore repris dans les données du projet).
+- Prise en compte du paillage biodégradable dans les factures admises par la subvention à la plantation de haies (plafond de 80 % des factures).
 
 ## Sources
 
@@ -166,3 +179,7 @@ Pourquoi vague 3 : la reprise des bidons et des sacs fonctionne et ne coûte rie
 [^agrirecover]: Site d'AgriRecover asbl (pages « Accueil », « À propos de nous », « Big bags », « Sacs d'engrais », « FAQ »), consulté le 26 novembre 2026. https://www.agrirecover.eu/fr
 [^vrt]: Verstuyft A., « Herbruikbare champignonbakjes in 7 supermarkten in Mechelen: "30 cent waarborg" », VRT NWS, 28 avril 2026. https://www.vrt.be/vrtnws/nl/2026/04/28/champignons-herbruikbare-bakjes-fost-plus-mechelen/
 [^fostplus]: « First large-scale reusable plastic tray for fresh fruit and vegetables launched in Belgium », communiqué de Fost Plus, 28 avril 2026. https://fostplus.prezly.com/first-large-scale-reusable-plastic-tray-for-fresh-fruit-and-vegetables-launched-in-belgium
+[^aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), article 5 et annexe 3 (lignes 113 et 184), Wallex, consulté le 27 novembre 2026 ; « Liste des investissements admissibles », SPW Agriculture, janvier 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^bcae6]: « BCAE 6 Couverture des sols minimale en vue d'éviter les sols nus dans les périodes les plus sensibles », Portail de l'agriculture wallonne, page modifiée le 7 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/conditionnalite-renforcee/bcae-6-couverture-des-sols-minimale-en-vue-d-eviter-les-sols-nus-dans-les-periodes-les-plus-sensibles.html
+[^haies]: Arrêté du Gouvernement wallon du 8 septembre 2016 relatif à l'octroi de subventions pour la plantation d'une haie vive, d'un taillis linéaire, d'un verger et d'alignements d'arbres, version en vigueur depuis le 15 avril 2024, annexe, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
