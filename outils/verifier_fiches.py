@@ -114,6 +114,29 @@ def main() -> int:
             if cle and cle not in cles:
                 erreurs.append(f"synthese.yaml, ligne {n} : clé inconnue « {cle} »")
 
+    # Diagnostic d'exploitation : chaque formule n'utilise que des noms connus,
+    # et chaque recommandation retrouve son alternative dans sa fiche.
+    from moteur_diagnostic import ErreurFormule, noms
+    diag = yaml.safe_load((RACINE / "data" / "diagnostic.yaml").read_text(encoding="utf-8")) or {}
+    connus = set(cles) | {q["id"] for q in diag.get("questions", [])} | {c["id"] for c in diag.get("consommations", [])}
+    for section, champs in (("consommations", ["estimation"]), ("postes", ["depense"]),
+                            ("recommandations", ["condition", "economie", "investissement", "aide"])):
+        for x in diag.get(section, []):
+            for champ in champs:
+                if not x.get(champ):
+                    continue
+                try:
+                    inconnus = noms(x[champ]) - connus
+                except ErreurFormule as e:
+                    erreurs.append(f"diagnostic.yaml, {section} « {x.get('id')} », {champ} : {e}")
+                    continue
+                for n in sorted(inconnus):
+                    erreurs.append(f"diagnostic.yaml, {section} « {x.get('id')} », {champ} : nom inconnu « {n} »")
+    for r in diag.get("recommandations", []):
+        chemin = FICHES / r.get("fiche", "")
+        if not chemin.exists() or trouver_alternative(lire_alternatives(chemin), r.get("alternative", "")) is None:
+            erreurs.append(f"diagnostic.yaml, recommandation « {r.get('id')} » : alternative introuvable dans {r.get('fiche')}")
+
     for a in avertissements:
         print(f"AVERTISSEMENT  {a}")
     for e in erreurs:

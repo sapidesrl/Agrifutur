@@ -1,0 +1,15 @@
+# Profil FICTIF d'une ferme laitière wallonne, pour tester l'outil de diagnostic.
+# Ce n'est pas une exploitation réelle. Les consommations absentes sont estimées.
+cereales_ha: 15
+mais_ensilage_ha: 20
+prairie_fauche_ha: 25
+prairie_paturee_ha: 35
+labour: 1
+vaches_laitieres: 70
+vaches_allaitantes: 0
+prerefroidisseur: 0
+chauffage_mazout: 1
+habitations: 2
+toiture_pv: 1
+pv_existant: 0
+chargeur_h: 300

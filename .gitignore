@@ -3,3 +3,6 @@ site/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Profils de vraies exploitations (outil de diagnostic) : jamais dans le dépôt
+profils/

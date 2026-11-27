@@ -1,0 +1,207 @@
+# Diagnostic d'exploitation : questions, consommations estimées, postes et recommandations.
+# Lu par outils/moteur_diagnostic.py (script) et docs/javascripts/diagnostic-moteur.js (page web).
+# Formules : voir l'en-tête de outils/moteur_diagnostic.py. Un nom désigne une question, une
+# consommation, ou une clé de data/hypotheses.yaml / data/calculs.yaml (prix du scénario en cours).
+# Les références moyennes utilisées pour estimer (clés ref_*) sont sourcées dans hypotheses.yaml.
+# Après modification : python calc/couts.py (régénère docs/assets/diagnostic/donnees.json).
+
+groupes:
+  - {id: cultures, titre: "Cultures et prairies"}
+  - {id: elevage, titre: "Élevage"}
+  - {id: equipements, titre: "Bâtiments, équipements et vente"}
+  - {id: consommations, titre: "Consommations annuelles (estimées, à remplacer par vos factures)"}
+
+questions:
+  # --- Cultures et prairies (hectares) ---
+  - {id: cereales_ha, groupe: cultures, libelle: "Céréales (froment, escourgeon, orge…)", unite: ha, defaut: 0}
+  - {id: mais_grain_ha, groupe: cultures, libelle: "Maïs grain", unite: ha, defaut: 0}
+  - {id: mais_ensilage_ha, groupe: cultures, libelle: "Maïs ensilage", unite: ha, defaut: 0}
+  - {id: betterave_ha, groupe: cultures, libelle: "Betterave et chicorée", unite: ha, defaut: 0}
+  - {id: pdt_ha, groupe: cultures, libelle: "Pommes de terre", unite: ha, defaut: 0}
+  - {id: colza_ha, groupe: cultures, libelle: "Colza", unite: ha, defaut: 0}
+  - {id: prairie_fauche_ha, groupe: cultures, libelle: "Prairies fauchées (ensilage, foin)", unite: ha, defaut: 0}
+  - {id: prairie_paturee_ha, groupe: cultures, libelle: "Prairies pâturées", unite: ha, defaut: 0}
+  - {id: labour, groupe: cultures, libelle: "Les cultures sont-elles labourées ?", type: oui_non, defaut: 1}
+  # --- Élevage ---
+  - {id: vaches_laitieres, groupe: elevage, libelle: "Vaches laitières", unite: têtes, defaut: 0}
+  - {id: lait_livre_l, groupe: elevage, libelle: "Lait livré par an (laisser vide pour l'estimer)", unite: L/an, defaut: 0}
+  - {id: vaches_allaitantes, groupe: elevage, libelle: "Vaches allaitantes", unite: têtes, defaut: 0}
+  - {id: mois_etable, groupe: elevage, libelle: "Mois passés en étable paillée par an", unite: mois, defaut: 6}
+  - {id: prerefroidisseur, groupe: elevage, libelle: "Le tank a-t-il déjà un pré-refroidisseur ?", type: oui_non, defaut: 0}
+  # --- Bâtiments, équipements, vente ---
+  - {id: chauffage_mazout, groupe: equipements, libelle: "Chauffage ou eau chaude au mazout ?", type: oui_non, defaut: 0}
+  - {id: habitations, groupe: equipements, libelle: "Habitations chauffées sur la ferme", unite: logements, defaut: 1}
+  - {id: toiture_pv, groupe: equipements, libelle: "Une toiture libre et bien orientée pour des panneaux ?", type: oui_non, defaut: 1}
+  - {id: pv_existant, groupe: equipements, libelle: "Panneaux déjà installés ? (saisir alors l'électricité réellement achetée)", type: oui_non, defaut: 0}
+  - {id: pdt_stockees_t, groupe: equipements, libelle: "Pommes de terre stockées en bâtiment ventilé", unite: t/an, defaut: 0}
+  - {id: mais_seche_t, groupe: equipements, libelle: "Maïs grain séché à la ferme au propane", unite: t/an, defaut: 0}
+  - {id: chargeur_h, groupe: equipements, libelle: "Heures de chargeur ou de télescopique par an", unite: h/an, defaut: 0}
+  - {id: livraison_km, groupe: equipements, libelle: "Kilomètres de livraison en utilitaire diesel par an", unite: km/an, defaut: 0}
+
+consommations:
+  - id: lait_l
+    libelle: Lait livré
+    unite: L/an
+    estimation: "si(lait_livre_l > 0, lait_livre_l, vaches_laitieres * ref_lait_vl_l_an)"
+  - id: gasoil_l
+    libelle: Gasoil agricole
+    unite: L/an
+    # Cultures de vente : références par hectare (le colza prend celle des céréales, faute de
+    # référence propre). Élevage : consommation de toute l'exploitation par vache, fourrages
+    # compris (Flandre pour les laitières ; France, par UGB, pour les allaitantes, une vache et sa
+    # suite comptées pour une UGB : estimation basse). Les fourrages ne sont comptés à part que
+    # sans animaux.
+    estimation: >-
+      cereales_ha * ref_gasoil_cereales_ha + mais_grain_ha * ref_gasoil_mais_grain_ha
+      + betterave_ha * ref_gasoil_betterave_ha + pdt_ha * ref_gasoil_pdt_ha + colza_ha * ref_gasoil_cereales_ha
+      + vaches_laitieres * ref_gasoil_ferme_laitiere_vache_an + vaches_allaitantes * ref_gasoil_ferme_bv_ugb
+      + si(vaches_laitieres + vaches_allaitantes > 0, 0,
+      mais_ensilage_ha * gasoil_mais_ensilage_ha + (prairie_fauche_ha + prairie_paturee_ha) * ref_gasoil_prairie_ha)
+  - id: mazout_l
+    libelle: Mazout de chauffage
+    unite: L/an
+    estimation: "si(chauffage_mazout, habitations * ref_mazout_habitation_l_an, 0)"
+  - id: electricite_kwh
+    libelle: Électricité achetée au réseau
+    unite: kWh/an
+    # Pas de référence pour le reste des grandes cultures (stockage des céréales…) : à saisir.
+    estimation: "lait_l / 1000 * ref_elec_lait_1000l + vaches_allaitantes * ref_elec_ferme_bv_ugb + pdt_stockees_t * ref_elec_stockage_pdt_kwh_t"
+  - id: propane_l
+    libelle: Propane de séchage
+    unite: L/an
+    estimation: "mais_seche_t * sechage_kwh_t / propane_energie_litre"
+  - id: azote_kg
+    libelle: Azote minéral acheté
+    unite: kg N/an
+    estimation: "(cereales_ha + mais_grain_ha + mais_ensilage_ha + betterave_ha + pdt_ha + colza_ha + prairie_fauche_ha + prairie_paturee_ha) * ref_n_mineral_sau_wallonie"
+  - id: p2o5_kg
+    libelle: Phosphore minéral acheté
+    unite: kg P2O5/an
+    estimation: "(cereales_ha + mais_grain_ha + mais_ensilage_ha + betterave_ha + pdt_ha + colza_ha + prairie_fauche_ha + prairie_paturee_ha) * ref_p2o5_mineral_sau_wallonie"
+  - id: k2o_kg
+    libelle: Potasse minérale achetée
+    unite: kg K2O/an
+    estimation: "(cereales_ha + mais_grain_ha + mais_ensilage_ha + betterave_ha + pdt_ha + colza_ha + prairie_fauche_ha + prairie_paturee_ha) * ref_k2o_mineral_sau_wallonie"
+  - id: soja_t
+    libelle: Tourteau de soja acheté
+    unite: t/an
+    estimation: >-
+      (vaches_laitieres * ref_concentres_vl_kg_an * ref_part_soja_concentres_vl
+      + vaches_allaitantes * ref_concentres_va_kg_an * ref_part_soja_concentres_va) / 1000
+  - id: fumier_t
+    libelle: Fumier produit en étable
+    unite: t/an
+    estimation: >-
+      (vaches_laitieres * ref_fumier_vl_m3_6mois + vaches_allaitantes * ref_fumier_va_m3_6mois)
+      * ref_fumier_bovin_densite * mois_etable / 6
+
+postes:
+  - {id: gasoil, libelle: "Gasoil agricole", depense: "gasoil_l * gasoil_agricole_htva", fiche: traction/tracteur-diesel.md}
+  - {id: mazout, libelle: "Mazout de chauffage", depense: "mazout_l * gasoil_chauffage_2000l_tvac", fiche: energie/chauffage-mazout.md}
+  - {id: electricite, libelle: "Électricité du réseau", depense: "electricite_kwh * electricite_reseau_htva", fiche: energie/electricite-reseau.md}
+  - {id: propane, libelle: "Propane de séchage", depense: "propane_l * propane_vrac_tvac", fiche: energie/sechage-grains.md}
+  - {id: azote, libelle: "Engrais azotés", depense: "azote_kg * prix_kg_n", fiche: fertilisation/azote-synthese.md}
+  - {id: pk, libelle: "Engrais phosphatés et potassiques", depense: "p2o5_kg * prix_kg_p2o5 + k2o_kg * prix_kg_k2o", fiche: fertilisation/engrais-p-k.md}
+  - {id: soja, libelle: "Tourteau de soja", depense: "soja_t * tourteau_soja_prix", fiche: elevage/concentres-importes.md}
+
+recommandations:
+  - id: labour
+    titre: Réduire le travail du sol
+    fiche: traction/tracteur-diesel.md
+    alternative: Réduire le besoin de traction
+    condition: "labour et (cereales_ha + mais_grain_ha + betterave_ha + colza_ha) > 0"
+    economie: "(cereales_ha + mais_grain_ha + betterave_ha + colza_ha) * valeur_gasoil_economise"
+    texte: "Gasoil économisé en passant du labour au semis direct ou au travail superficiel sur les cultures annuelles. Attention à la dépendance au glyphosate et à l'interdiction de la destruction chimique des couverts en 2027."
+
+  - id: prerefroidisseur
+    titre: Pré-refroidisseur sur le tank à lait
+    fiche: elevage/tank-a-lait.md
+    alternative: Pré-refroidisseur
+    condition: "lait_l > 0 et non prerefroidisseur"
+    economie: "lait_l / 1000 * tank_kwh_1000l * prerefroidisseur_gain * electricite_reseau_htva"
+    investissement: "prerefroidisseur_prix_bas"
+    texte: "Refroidit le lait avec l'eau d'abreuvement avant le tank. Il faut de l'eau en quantité et un usage pour l'eau tiède."
+
+  - id: photovoltaique
+    titre: Photovoltaïque en autoconsommation
+    fiche: energie/electricite-reseau.md
+    alternative: Photovoltaïque en autoconsommation
+    condition: "toiture_pv et non pv_existant et electricite_kwh >= 5000"
+    economie: "(pv_ferme_valeur_an - pv_ferme_investissement * pv_entretien_part / pv_duree_vie) * electricite_kwh / ferme_conso_elec"
+    investissement: "pv_ferme_investissement * electricite_kwh / ferme_conso_elec"
+    aide: "pv_ferme_aide_aii * electricite_kwh / ferme_conso_elec"
+    texte: "Installation dimensionnée comme la ferme type de la fiche, à l'échelle de votre consommation. C'est l'électricité consommée sur place qui paie l'installation : utile surtout si la ferme consomme en journée."
+
+  - id: chaudiere
+    titre: Chaudière à plaquettes au lieu du mazout
+    fiche: energie/chauffage-mazout.md
+    alternative: Chaudière à plaquettes de bois
+    condition: "mazout_l >= 3000"
+    economie: "mazout_l * energie_litre_gasoil * (mazout_kwh - plaquettes_kwh) - chaudiere_entretien_supp_an"
+    investissement: "chaudiere_plaquettes_prix"
+    aide: "chaudiere_aide_green"
+    texte: "Prix d'une chaufferie de 50 kW avec silo ; l'aide GREEN est un maximum (les logements ne sont pas aidés) et demande un audit à vos frais."
+
+  - id: sechage
+    titre: Sécher le maïs aux plaquettes plutôt qu'au propane
+    fiche: energie/sechage-grains.md
+    alternative: Chaudière biomasse
+    condition: "mais_seche_t > 0"
+    economie: "mais_seche_t * sechage_economie_plaquettes_t"
+    texte: "Économie d'énergie seule : l'investissement dans un générateur biomasse ne se justifie que sur de gros tonnages ou en groupe. Retirer moins d'eau (variété plus précoce) passe avant."
+
+  - id: legumineuses
+    titre: Trèfle dans les prairies
+    fiche: fertilisation/azote-synthese.md
+    alternative: Légumineuses
+    condition: "(prairie_fauche_ha + prairie_paturee_ha) > 0 et azote_kg > 0"
+    economie: "min(azote_kg, (prairie_fauche_ha + prairie_paturee_ha) * ref_n_mineral_sau_wallonie * trefle_part_azote_prairie) * prix_kg_n"
+    texte: "L'azote fixé par le trèfle remplace l'azote minéral épandu sur les prairies. Estimation prudente : un tiers de l'azote minéral des prairies, en dessous des essais belges sur prairie pâturée. Le gain réel dépend de la part de trèfle et de la dose épandue aujourd'hui."
+
+  - id: effluents
+    titre: Valoriser les effluents à la place des engrais P et K
+    fiche: fertilisation/engrais-p-k.md
+    alternative: Effluents d'élevage
+    condition: "fumier_t > 0 et (p2o5_kg + k2o_kg) > 0"
+    economie: "min(fumier_t * valeur_pk_fumier, p2o5_kg * prix_kg_p2o5 + k2o_kg * prix_kg_k2o)"
+    texte: "Analyser les effluents et les épandre au bon moment pour réduire les achats de phosphore et de potasse, dans les limites du PGDA."
+
+  - id: colza
+    titre: Tourteau de colza au lieu du soja
+    fiche: elevage/concentres-importes.md
+    alternative: Tourteau de colza du commerce
+    condition: "soja_t > 0"
+    economie: "- ecart_colza_soja_t * soja_t"
+    texte: "Remplacement à valeur protéique égale (1,5 kg de colza pour 1 kg de soja). Le pâturage et les légumineuses fourragères réduisent davantage le besoin."
+
+  - id: desherbage
+    titre: Désherbage mécanique du maïs avec l'éco-régime
+    fiche: protection/herbicides.md
+    alternative: Désherbage mécanique
+    condition: "(mais_grain_ha + mais_ensilage_ha) > 0"
+    economie: "- mais_meca_bilan_ri_ha * (mais_grain_ha + mais_ensilage_ha)"
+    texte: "Gain net avec l'éco-régime « réduction d'intrants » (au moins deux désherbages mécaniques, hors bio). Sans l'aide, le mécanique coûte à peine plus que le chimique."
+
+  - id: semences
+    titre: Semences de ferme en céréales
+    fiche: semences/semences-industrielles.md
+    alternative: Semences de ferme
+    condition: "cereales_ha > 0"
+    economie: "cereales_ha * semence_ferme_froment_economie_ha"
+    texte: "Grain gardé, trié et traité à façon, avec la rémunération de l'obtenteur. Pas pour les hybrides."
+
+  - id: chargeur
+    titre: Chargeur électrique rechargé sur panneaux
+    fiche: traction/engins-de-cour.md
+    alternative: Chargeur ou télescopique électrique
+    condition: "chargeur_h > 0 et (toiture_pv ou pv_existant)"
+    economie: "chargeur_h * (valet_gasoil_eur_h - valet_pv_eur_h)"
+    texte: "Économie d'énergie seule : le surcoût d'achat d'un engin électrique se rembourse lentement, sauf avec beaucoup d'heures (voir la fiche)."
+
+  - id: utilitaire
+    titre: Utilitaire électrique pour les livraisons
+    fiche: transport/vehicules-livraison.md
+    alternative: Utilitaire électrique
+    condition: "livraison_km > 0"
+    economie: "livraison_km / 100 * (utilitaire_diesel_eur_100km - utilitaire_mix_eur_100km)"
+    texte: "Recharge moitié sur panneaux, moitié sur le réseau. Rentable en occasion ; en neuf, avec la déduction fédérale de 40 %."

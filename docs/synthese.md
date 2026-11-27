@@ -1,6 +1,6 @@
 # Par où commencer sur sa ferme
 
-Cette page rassemble les alternatives des 19 fiches qui sont rentables aujourd'hui (vague 1) ou sous conditions (vague 2). Elle sert à repérer ce qui vaut la peine d'être étudié en premier. Elle ne remplace pas la fiche, qui donne les conditions, les limites et les sources.
+Cette page rassemble les alternatives des 19 fiches qui sont rentables aujourd'hui (vague 1) ou sous conditions (vague 2). Elle sert à repérer ce qui vaut la peine d'être étudié en premier. Elle ne remplace pas la fiche, qui donne les conditions, les limites et les sources. Pour chiffrer ces changements avec les surfaces et les animaux de sa propre ferme : [le diagnostic](diagnostic.md).
 
 ## Comment lire les chiffres
 

@@ -16,13 +16,15 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Recalculer
         run: python calc/couts.py
-      - name: data/calculs.yaml à jour
+      - name: Fichiers générés à jour
         run: |
-          git diff --exit-code data/calculs.yaml || {
-            echo "::error file=data/calculs.yaml::calculs.yaml n'est pas à jour : lancer python calc/couts.py et committer."
+          git diff --exit-code data/calculs.yaml docs/assets/diagnostic/donnees.json || {
+            echo "::error::calculs.yaml ou donnees.json n'est pas à jour : lancer python calc/couts.py et committer."
             exit 1
           }
       - name: Vérifier les fiches
         run: python outils/verifier_fiches.py
+      - name: "Diagnostic : moteurs Python et JavaScript identiques"
+        run: python outils/tester_diagnostic.py
       - name: Construire le site
         run: zensical build --clean --strict

@@ -24,6 +24,13 @@ plugins:
       on_error_fail: true
       on_undefined: strict
 
+extra_javascript:
+  - javascripts/diagnostic-moteur.js
+  - javascripts/diagnostic.js
+
+extra_css:
+  - stylesheets/diagnostic.css
+
 markdown_extensions:
   - footnotes
   - tables

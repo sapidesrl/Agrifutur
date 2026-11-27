@@ -860,6 +860,14 @@ def main() -> None:
         print(f"{e['libelle']:<{largeur}}  {texte}  {e['unite']}")
     print(f"\n{len(sortie)} calculs écrits dans {SORTIE.relative_to(RACINE)}")
 
+    # Données du diagnostic d'exploitation (page web et script).
+    import sys
+    sys.path.insert(0, str(RACINE / "outils"))
+    from exporter_diagnostic import exporter
+    hyp = {s: valeurs_scenario(brut, s) for s in SCENARIOS}
+    chemin = exporter(hyp, resultats)
+    print(f"Données du diagnostic écrites dans {chemin.relative_to(RACINE)}")
+
 
 if __name__ == "__main__":
     main()
