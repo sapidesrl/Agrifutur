@@ -2740,6 +2740,15 @@ ref_fumier_bovin_densite:
   source: https://www.vlm.be/nl/SiteCollectionDocuments/Publicaties/mestbank/Bemestingsnormen_2026.pdf
   note: "Source flamande : VLM (Mestbank), « Normen en richtwaarden 2026 », § 2, compositions forfaitaires : fumier (vaste mest) de bovins 0,8 t/m³, 7,1 kg N/t, 2,9 kg P2O5/t ; lisier 1,0 t/m³. Lu le 27/11/2026. Aucune densité wallonne trouvée."
 
+trefle_part_azote_prairie:
+  libelle: Part de l'azote minéral des prairies que le trèfle permet d'économiser (diagnostic)
+  valeur: 0.33
+  unite: "%"
+  statut: hypothèse
+  date: 2026-11-27
+  source: ""
+  note: "Valeur prudente, en dessous des deux essais belges cités dans la fiche azote-synthese : au CRA-W (Libramont, 1995-2000), le trèfle blanc apportait 41 % de l'azote utile d'une prairie pâturée ; à l'Université de Liège (1993-1998), réduire d'un tiers l'azote d'une prairie pâturée par des laitières (136 à 91 kg N/ha) n'a pas changé la production par vache. Elle suppose aussi que les prairies reçoivent la moyenne wallonne d'azote minéral par hectare (ref_n_mineral_sau_wallonie), alors que beaucoup en reçoivent moins. À remplacer par la dose réellement épandue sur les prairies."
+
 # --- Références du diagnostic : énergie --------------------------------------
 
 ref_gasoil_cereales_ha:

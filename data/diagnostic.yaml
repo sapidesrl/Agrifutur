@@ -155,8 +155,8 @@ recommandations:
     fiche: fertilisation/azote-synthese.md
     alternative: Légumineuses
     condition: "(prairie_fauche_ha + prairie_paturee_ha) > 0 et azote_kg > 0"
-    economie: "min(azote_kg, (prairie_fauche_ha + prairie_paturee_ha) * min(azote_fixe_legumineuses, ref_n_mineral_sau_wallonie)) * prix_kg_n"
-    texte: "L'azote fixé par le trèfle remplace l'azote minéral épandu sur les prairies. Estimation prudente : au plus la dose moyenne wallonne par hectare, faute de dose mesurée sur prairie."
+    economie: "min(azote_kg, (prairie_fauche_ha + prairie_paturee_ha) * ref_n_mineral_sau_wallonie * trefle_part_azote_prairie) * prix_kg_n"
+    texte: "L'azote fixé par le trèfle remplace l'azote minéral épandu sur les prairies. Estimation prudente : un tiers de l'azote minéral des prairies, en dessous des essais belges sur prairie pâturée. Le gain réel dépend de la part de trèfle et de la dose épandue aujourd'hui."
 
   - id: effluents
     titre: Valoriser les effluents à la place des engrais P et K
