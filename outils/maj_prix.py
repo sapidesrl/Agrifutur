@@ -12,7 +12,7 @@ Le scénario bas (février 2026, avant la crise) est recalculé avec la même m�
 Usage :
   python outils/maj_prix.py --mois 2026-11            # affiche les écarts, ne modifie rien
   python outils/maj_prix.py --mois 2026-11 --ecrire   # écrit dans data/hypotheses.yaml
-Puis : python calc/couts.py && python outils/verifier_fiches.py && mkdocs build --strict
+Puis : python calc/couts.py && python outils/verifier_fiches.py && zensical build --clean --strict
 
 Attention : les fiches parlent des « prix de novembre 2026 ». Changer de mois de référence
 demande de relire leurs textes.

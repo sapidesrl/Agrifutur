@@ -1,4 +1,4 @@
-"""Macros MkDocs (plugin mkdocs-macros).
+"""Macros du site (plugin « macros » de Zensical, compatible mkdocs-macros).
 
 Dans une page :
   {{ v('gasoil_agricole_htva') }}          -> 1,22 €/L

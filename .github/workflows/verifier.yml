@@ -7,8 +7,6 @@ on:
 jobs:
   verifier:
     runs-on: ubuntu-latest
-    env:
-      NO_MKDOCS_2_WARNING: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,4 +25,4 @@ jobs:
       - name: Vérifier les fiches
         run: python outils/verifier_fiches.py
       - name: Construire le site
-        run: mkdocs build --strict
+        run: zensical build --clean --strict

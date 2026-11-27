@@ -1,3 +1,4 @@
+# Configuration lue par Zensical (compatible avec le format MkDocs).
 site_name: L'agriculture après le pétrole
 site_description: Technologies agricoles dépendantes du pétrole et du gaz, et leurs alternatives (Belgique, 2026)
 docs_dir: docs
@@ -7,6 +8,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  variant: classic
   language: fr
   features:
     - navigation.sections
@@ -16,8 +18,7 @@ theme:
     - content.footnote.tooltips
 
 plugins:
-  - search:
-      lang: fr
+  - search
   - macros:
       module_name: outils/macros
       on_error_fail: true

@@ -44,7 +44,7 @@ Une fiche par technologie agricole utilisée aujourd'hui qui dépend du pétrole
 ```bash
 python calc/couts.py
 python outils/verifier_fiches.py
-mkdocs build --strict
+zensical build --clean --strict
 ```
 
 Le vérificateur échoue si une macro appelle une clé inconnue, si une section manque ou si une fiche de l'index n'existe pas. Il avertit quand une ligne contient un montant en euros sans note de bas de page ni macro.
