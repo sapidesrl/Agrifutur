@@ -2749,6 +2749,33 @@ trefle_part_azote_prairie:
   source: ""
   note: "Valeur prudente, en dessous des deux essais belges cités dans la fiche azote-synthese : au CRA-W (Libramont, 1995-2000), le trèfle blanc apportait 41 % de l'azote utile d'une prairie pâturée ; à l'Université de Liège (1993-1998), réduire d'un tiers l'azote d'une prairie pâturée par des laitières (136 à 91 kg N/ha) n'a pas changé la production par vache. Elle suppose aussi que les prairies reçoivent la moyenne wallonne d'azote minéral par hectare (ref_n_mineral_sau_wallonie), alors que beaucoup en reçoivent moins. À remplacer par la dose réellement épandue sur les prairies."
 
+ptd_ecart_cout_alim_1000l:
+  libelle: Coût alimentaire évité par un système laitier plus pâturant, par 1 000 L de lait
+  valeur: 21
+  unite: €/1 000 L
+  statut: sourcé
+  date: 2021-04-17
+  source: https://www.reussir.fr/lait/la-ferme-experimentale-de-trevarez-50-000-euros-en-cinq-ans-pour-le-systeme-plus-paturant
+  note: "Données françaises : ferme expérimentale de Trévarez (Bretagne, 2012-2017), Réussir Lait, 17/04/2021. Système à 40 ares pâturables par vache comparé à 15 ares et plus de maïs. Aucun chiffre wallon par 1 000 L : le CRA-W (12 fermes passées au pâturage tournant dynamique) donne l'herbe pâturée à 0,05 €/kg MS contre 0,15 pour l'ensilage d'herbe, et 8 fermes sur 12 constatent un gain économique (voir la fiche fourrages-recoltes). Ne compte pas l'aménagement (clôtures, chemins, points d'eau)."
+
+ptd_paturage_ha_vache_haut:
+  libelle: Surface pâturable par vache du système pâturant de Trévarez
+  valeur: 0.40
+  unite: ha/vache
+  statut: sourcé
+  date: 2021-04-17
+  source: https://www.reussir.fr/lait/la-ferme-experimentale-de-trevarez-50-000-euros-en-cinq-ans-pour-le-systeme-plus-paturant
+  note: "Données françaises : 40 ares pâturables par vache (Réussir Lait, 17/04/2021). Le diagnostic ne propose plus de pâturage qu'aux fermes en dessous de cette surface, avec assez de prairie au total pour l'atteindre."
+
+ptd_paturage_ha_vache_bas:
+  libelle: Surface pâturable par vache du système de comparaison de Trévarez (plus de maïs)
+  valeur: 0.15
+  unite: ha/vache
+  statut: sourcé
+  date: 2021-04-17
+  source: https://www.reussir.fr/lait/la-ferme-experimentale-de-trevarez-50-000-euros-en-cinq-ans-pour-le-systeme-plus-paturant
+  note: "Données françaises : 15 ares pâturables par vache (Réussir Lait, 17/04/2021). Le gain de ptd_ecart_cout_alim_1000l est réparti au prorata entre 15 et 40 ares (calcul du diagnostic, hypothèse de linéarité)."
+
 # --- Références du diagnostic : énergie --------------------------------------
 
 ref_gasoil_cereales_ha:

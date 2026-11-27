@@ -76,6 +76,13 @@
     "defaut": 0
    },
    {
+    "id": "fongicides_cereales_complet",
+    "groupe": "cultures",
+    "libelle": "Céréales : protection fongicide complète (deux traitements ou plus) ?",
+    "type": "oui_non",
+    "defaut": 1
+   },
+   {
     "id": "labour",
     "groupe": "cultures",
     "libelle": "Les cultures sont-elles labourées ?",
@@ -400,6 +407,42 @@
     "vague": 1,
     "lien": "fiches/protection/herbicides/#1-desherbage-mecanique-vague-1",
     "titre_fiche": "Herbicides de synthèse"
+   },
+   {
+    "id": "fongicides_cereales",
+    "titre": "Variétés résistantes et un seul fongicide en céréales",
+    "fiche": "protection/fongicides-insecticides.md",
+    "alternative": "Variétés résistantes",
+    "condition": "cereales_ha > 0 et fongicides_cereales_complet",
+    "economie": "cereales_ha * froment_economie_traitement_unique",
+    "texte": "Variété du groupe « production intégrée » suivie avec les avertissements : un seul traitement suffit souvent. Référence calculée pour le froment ; l'économie disparaît si le rendement baisse de quelques quintaux par hectare (voir la fiche).",
+    "vague": 1,
+    "lien": "fiches/protection/fongicides-insecticides/#1-varietes-resistantes-vague-1",
+    "titre_fiche": "Fongicides et insecticides de synthèse"
+   },
+   {
+    "id": "mildiou",
+    "titre": "Variétés de pommes de terre résistantes au mildiou",
+    "fiche": "protection/fongicides-insecticides.md",
+    "alternative": "Variétés résistantes",
+    "condition": "pdt_ha > 0",
+    "economie": "pdt_ha * mildiou_passages_evites_eur_ha",
+    "texte": "Passages de pulvérisateur évités ; les produits économisés ne sont pas comptés. Acquis en frais et en bio ; en pomme de terre industrielle, seulement avec un contrat qui accepte la variété.",
+    "vague": 1,
+    "lien": "fiches/protection/fongicides-insecticides/#1-varietes-resistantes-vague-1",
+    "titre_fiche": "Fongicides et insecticides de synthèse"
+   },
+   {
+    "id": "paturage",
+    "titre": "Plus de pâturage, en pâturage tournant dynamique",
+    "fiche": "elevage/fourrages-recoltes.md",
+    "alternative": "Pâturage tournant dynamique",
+    "condition": "vaches_laitieres > 0 et prairie_paturee_ha / vaches_laitieres < ptd_paturage_ha_vache_haut et (prairie_fauche_ha + prairie_paturee_ha) / vaches_laitieres >= ptd_paturage_ha_vache_haut",
+    "economie": "lait_l / 1000 * ptd_ecart_cout_alim_1000l * min(1, (ptd_paturage_ha_vache_haut - prairie_paturee_ha / vaches_laitieres) / (ptd_paturage_ha_vache_haut - ptd_paturage_ha_vache_bas))",
+    "texte": "Faire pâturer une partie des prairies fauchées. Ordre de grandeur français (Trévarez), réparti selon la surface pâturée par vache qui manque. Il faut des prairies accessibles depuis la salle de traite ; clôtures, chemins et points d'eau ne sont pas comptés.",
+    "vague": 1,
+    "lien": "fiches/elevage/fourrages-recoltes/#1-paturage-tournant-dynamique-vague-1",
+    "titre_fiche": "Ensilage et enrubannage"
    },
    {
     "id": "semences",
@@ -809,6 +852,9 @@
    "proteagineux_ecart_v3b_ha": 15.0,
    "prothioconazole_dose_kg_ha": 0.2,
    "prothioconazole_energie_mj_kg": 475.0,
+   "ptd_ecart_cout_alim_1000l": 21.0,
+   "ptd_paturage_ha_vache_bas": 0.15,
+   "ptd_paturage_ha_vache_haut": 0.4,
    "pv_autoconso_mini": 0.091173,
    "pv_autoconsommation": 0.4,
    "pv_cv_eur_mwh": 20.67,
@@ -1350,6 +1396,9 @@
    "proteagineux_ecart_v3b_ha": 15.0,
    "prothioconazole_dose_kg_ha": 0.2,
    "prothioconazole_energie_mj_kg": 475.0,
+   "ptd_ecart_cout_alim_1000l": 21.0,
+   "ptd_paturage_ha_vache_bas": 0.15,
+   "ptd_paturage_ha_vache_haut": 0.4,
    "pv_autoconso_mini": 0.16167,
    "pv_autoconsommation": 0.4,
    "pv_cv_eur_mwh": 20.67,
@@ -1891,6 +1940,9 @@
    "proteagineux_ecart_v3b_ha": 15.0,
    "prothioconazole_dose_kg_ha": 0.2,
    "prothioconazole_energie_mj_kg": 475.0,
+   "ptd_ecart_cout_alim_1000l": 21.0,
+   "ptd_paturage_ha_vache_bas": 0.15,
+   "ptd_paturage_ha_vache_haut": 0.4,
    "pv_autoconso_mini": 0.048403,
    "pv_autoconsommation": 0.4,
    "pv_cv_eur_mwh": 20.67,

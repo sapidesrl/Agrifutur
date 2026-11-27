@@ -7,7 +7,7 @@ Cet outil estime ce que les postes liés au pétrole et au gaz coûtent à votre
 
 **Comment l'utiliser.** Renseignez les surfaces, les animaux et les équipements. Les consommations (gasoil, électricité, engrais…) sont alors estimées à partir de références moyennes wallonnes ; remplacez-les par les chiffres de vos factures quand vous les avez, le diagnostic sera plus juste. Les prix sont ceux de novembre 2026 ; « avant la crise » donne le même calcul au prix de février 2026.
 
-**Ce que l'outil ne fait pas.** Il ne remplace ni un audit ni un devis. Il ne chiffre que l'énergie et les principaux intrants ; les plastiques, les produits phytosanitaires, la transformation et la vente sont traités dans leurs fiches. Les estimations valent pour une ferme moyenne de la même structure.
+**Ce que l'outil ne fait pas.** Il ne remplace ni un audit ni un devis. Il chiffre l'énergie, les engrais, le soja, quelques économies de produits phytosanitaires et le pâturage ; les plastiques, la transformation et la vente sont traités dans leurs fiches. Les estimations valent pour une ferme moyenne de la même structure.
 
 <div id="diagnostic" class="diag">Chargement du diagnostic…</div>
 

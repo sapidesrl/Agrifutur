@@ -28,8 +28,8 @@ from moteur_diagnostic import diagnostiquer  # noqa: E402
 
 PISTES_NON_CHIFFREES = [
     ("Plastiques (enrubannage, bâches, paillages)", "fiches/materiaux/plastiques-agricoles/"),
-    ("Fongicides et insecticides", "fiches/protection/fongicides-insecticides/"),
-    ("Pâturage tournant et séchage du foin en grange", "fiches/elevage/fourrages-recoltes/"),
+    ("Haies, auxiliaires et biocontrôle", "fiches/protection/fongicides-insecticides/"),
+    ("Séchage du foin en grange", "fiches/elevage/fourrages-recoltes/"),
     ("Transformation à la ferme et vente directe", "fiches/transformation/transformation-industrielle/"),
     ("Circuits courts", "fiches/distribution/circuits-longs/"),
 ]

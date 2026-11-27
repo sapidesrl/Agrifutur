@@ -1,0 +1,16 @@
+# Profil FICTIF d'une ferme de polyculture-élevage wallonne, pour tester l'outil de diagnostic.
+# Ce n'est pas une exploitation réelle. Les consommations absentes sont estimées.
+cereales_ha: 30
+pdt_ha: 8
+mais_ensilage_ha: 25
+prairie_fauche_ha: 30
+prairie_paturee_ha: 10
+vaches_laitieres: 55
+vaches_allaitantes: 20
+mois_etable: 7
+pdt_stockees_t: 350
+fongicides_cereales_complet: 1
+chauffage_mazout: 0
+toiture_pv: 1
+chargeur_h: 500
+livraison_km: 8000
