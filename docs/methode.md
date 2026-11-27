@@ -32,6 +32,12 @@ Les bornes de chaque prix figurent dans [les hypothèses](hypotheses.md), les r�
 | 2 | Rentable sous conditions précises : taille, usage, aides, organisation collective |
 | 3 | Pas encore rentable, à préparer |
 
+## Les aides
+
+Les calculs des fiches sont faits d'abord **sans aide**, puis **avec les aides accessibles** quand elles changent la rentabilité (éco-régime, aide à l'investissement, certificats verts, déduction fiscale). Les montants et les règles de cumul sont rassemblés dans [les aides publiques](aides.md).
+
+Une aide ne suffit pas à classer une alternative en vague 1. Les montants du 1er pilier de la PAC changent chaque année selon la demande, les taux des certificats verts sont revus pour chaque nouvelle demande, et une aide peut disparaître. Une alternative qui n'est rentable que grâce à une aide reste donc en vague 2 (rentable sous conditions, dont les aides), et la fiche le dit. Les scénarios bas et haut ne portent que sur les prix : pour une aide à montant variable, on retient le montant prévu, et la fiche signale le minimum quand il change la conclusion.
+
 ## Limites
 
 - Les prix sont ceux de novembre 2026, dans un contexte de crise pétrolière et gazière : ils peuvent baisser comme monter.

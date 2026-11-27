@@ -6,7 +6,7 @@ dependance_fossile: gaz naturel
 alternatives: [légumineuses, effluents et digestat, ammoniac vert local]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Engrais azoté de synthèse
@@ -47,11 +47,21 @@ Deux essais sur prairie pâturée :
 
 Conditions : une part suffisante de légumineuses, une rotation adaptée et un débouché pour les protéagineux. Bonus : un fourrage plus riche en protéines réduit les achats de soja importé.
 
+**Aides.** Plusieurs aides de la PAC s'ajoutent à l'azote évité (voir [les aides publiques](../../aides.md#pac-1er-pilier-eco-regimes-et-aides-couplees)) :
+
+- **légumineuses fourragères** (luzerne, lupuline, sainfoin, lotier, vesce) sur terre arable : éco-régime « cultures favorables » V1_A, {{ v('er_cfe_v1a_eur_ha', 0) }} prévus, sans aucun insecticide (même en enrobage) et avec 10 % de zone refuge[^cfe]. C'est plus que l'azote fixé dans l'ordre de grandeur ci-dessus ({{ v('valeur_n_fixe', 0) }}). Le trèfle n'est pas dans la liste[^cfe] ;
+- **protéagineux** (pois, féverole, lupin, soja) récoltés après le 15 juin : soutien couplé aux protéines végétales, {{ v('soutien_proteines_eur_ha', 0) }} prévus, non cumulable avec les cultures favorables sur la même parcelle[^couple-prot] [^cumuls]. Le détail et le choix entre les deux voies sont dans la fiche [Concentrés et soja importés](../elevage/concentres-importes.md) ;
+- **couverts d'interculture** (avec ou sans légumineuses) : éco-régime « couverture longue du sol », si le sol est couvert du 1er janvier au 15 février sur 70, 80 ou 90 % de la surface de la ferme. Il paie {{ v('er_cls_entree_eur_ha', 0) }}, {{ v('er_cls_intermediaire_eur_ha', 0) }} ou {{ v('er_cls_superieur_eur_ha', 0) }} prévus **sur toute la SAU**, selon le seuil atteint[^cls]. La destruction chimique du couvert y sera interdite à partir de 2027[^cls].
+
+Ce sont des montants prévus d'engagements d'un an : le montant payé est fixé après la campagne (220 à 420 €/ha pour la V1_A)[^cfe]. L'aide renforce une alternative déjà rentable sans elle : la vague 1 est confirmée.
+
 ### 2. Effluents et digestat (vague 1)
 
 Le fumier, le lisier, le compost et le digestat de méthanisation contiennent de l'azote, du phosphore et du potassium. Bien stockés et épandus au bon moment, ils remplacent une partie des engrais achetés. Dans l'essai belge sur prairie pâturée cité plus haut, la fertilisation organique (compost) apportait deux fois plus d'azote utile que la fertilisation minérale (62,4 contre 31,8 kg N/ha)[^stilmant].
 
 Conditions : analyses d'effluents, capacité de stockage pour épandre au bon moment, respect des plafonds d'épandage, et échanges paille-fumier avec les céréaliers voisins pour les fermes sans élevage.
+
+**Aides.** Aucune aide ne paie directement l'épandage d'effluents. La MAEC « Sol » (MR14) paie le résultat qu'ils contribuent à obtenir : un sol plus riche en carbone organique. Elle verse jusqu'à {{ v('maec_mr14_favorable_eur_ha', 0) }} quand le sol est en état « favorable » (rapport carbone organique sur argile mesuré par un laboratoire au début et à la fin du contrat de cinq ans), jusqu'à 80 €/ha en état « transition », rien en état « défavorable »[^mr14]. Il faut engager au moins 90 % de sa surface ; le montant est réduit, voire nul, quand les terres arables font moins de 60 % de la surface (nul sous 30 %)[^mr14]. La prime de fin de contrat exige d'avoir activé l'éco-régime couverture longue les cinq ans[^mr14]. Le montant dépend donc de l'état du sol, pas des pratiques : on ne peut pas le compter d'avance. La vague 1 tient sans aide.
 
 ### 3. Ammoniac vert produit localement (vague 3)
 
@@ -74,11 +84,18 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 - Suspension éventuelle du MACF sur les engrais : la presse évoquait en mars 2026 une possible suspension rétroactive ; vérifier ce qui s'applique réellement en 2026 et 2027, et son effet sur les prix belges.
 - Quantité d'azote réellement fixée sur l'exploitation, selon la part de trèfle ou de luzerne.
 - Contraintes du Programme de gestion durable de l'azote (PGDA) en Wallonie pour l'épandage des effluents.
-- Aides de la PAC pour les cultures protéagineuses en Wallonie.
+- Montants **payés** en 2025 et 2026 des éco-régimes cultures favorables et couverture longue : seuls les montants prévus et ceux de 2024 sont publiés.
+- Couverts de légumineuses détruits par roulage ou broyage avant le 15 février : compatibilité avec un semis de printemps sans glyphosate, à partir de 2027.
+- MAEC Sol : montant réellement atteint selon l'état de départ des sols wallons (état « transition » ou « favorable »).
 - Mise en service effective et production réelle de l'unité d'ammoniac vert au Kenya (la source de 2023 annonce la capacité prévue).
 
 ## Sources
 
+[^cfe]: « Eco-régime cultures favorables à l'environnement », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+[^couple-prot]: « Soutien couplé aux cultures de protéines végétales », Portail de l'agriculture wallonne, page modifiée le 21 novembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne, page modifiée le 18 septembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
+[^cls]: « Eco-régime couverture longue du sol », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+[^mr14]: « MAEC Sol – MR14 », Portail de l'agriculture wallonne, page modifiée le 4 juin 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
 [^wef]: « From fuel to fertilizer, how green ammonia could help curb emissions », World Economic Forum, 2023 (année tirée de l'adresse d'origine, page non lue). https://www.weforum.org/stories/nature-and-biodiversity/green-ammonia-climate-change-energy-transition/
 [^comparateur]: « Analyse du marché des engrais – Avril 2026 », Comparateur agricole, 5 mai 2026. https://res.cloudinary.com/comparateuragricole/image/upload/v1777989677/strapi/Analyse_engrais_MAI_2026_a7cff53f79.pdf
 [^spglobal]: « European nitrogen market rallies on gas price hike, Iran conflicts », S&P Global, 9 mars 2026 (page non lue). https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/030926-european-nitrogen-market-rallies-on-gas-price-hike-iran-conflicts

@@ -6,14 +6,14 @@ dependance_fossile: gasoil
 alternatives: [Télescopique ou chargeur électrique, télescopique hybride au biométhane]
 vague_meilleure_alternative: 2
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Télescopique et chargeur de cour diesel
 
 ## En bref
 
-Le télescopique et le chargeur articulé (« valet de ferme ») font la manutention quotidienne : paillage, alimentation, curage, chargement. Ils roulent au gasoil, peu d'heures par jour mais tous les jours. Leur version électrique fait le même travail et coûte beaucoup moins cher en énergie derrière ses propres panneaux ; sur le réseau, l'avantage n'existe qu'au prix de crise. Le frein est le prix d'achat, plus élevé d'environ 35 à 60 % selon les essais[^lwk-aide][^topagrar-h][^fwi]. Sur une exploitation qui les utilise peu, l'économie d'énergie ne rembourse pas ce surcoût : l'électrique est rentable sous conditions (vague 2).
+Le télescopique et le chargeur articulé (« valet de ferme ») font la manutention quotidienne : paillage, alimentation, curage, chargement. Ils roulent au gasoil, peu d'heures par jour mais tous les jours. Leur version électrique fait le même travail et coûte beaucoup moins cher en énergie derrière ses propres panneaux ; sur le réseau, l'avantage n'existe qu'au prix de crise. Le frein est le prix d'achat, plus élevé d'environ 35 à 60 % selon les essais[^lwk-aide][^topagrar-h][^fwi]. Sur une exploitation qui les utilise peu, l'économie d'énergie ne rembourse pas ce surcoût, et l'aide wallonne aux investissements paie le même montant pour l'électrique et le diesel : l'électrique est rentable sous conditions (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -60,7 +60,15 @@ Conditions de rentabilité :
 - beaucoup d'heures par an (au-delà de 400 à 500 h, hypothèse), ce qui ne suffit pas seul à rembourser le surcoût ;
 - recharge sur son propre photovoltaïque, entre deux chantiers ;
 - travail en bâtiment fermé, où l'absence de gaz d'échappement et de bruit compte pour les animaux et les personnes ;
-- une aide à l'investissement. En Allemagne, une subvention fédérale de 20 % (programme d'efficacité énergétique, guichet fermé à l'été 2025) rendait le coût annuel total de l'électrique légèrement inférieur à celui du diesel[^topagrar-h] ; l'essai de Basse-Saxe conclut aussi que l'aide et une part de courant photovoltaïque rendent l'électrique compétitif[^lwk-aide]. En Wallonie, l'aide aux investissements (AII) prévoit une ligne « chargeur compact / nettoyeur d'étable / télescopique », classée par puissance en chevaux, avec un coût plafond de 35 387 € (moins de 50 ch) à 83 050 € (100 ch et plus). Rien n'y vise l'engin électrique, alors qu'une ligne existe pour le tracteur électrique ou au biogaz[^aii].
+- une aide qui paie le surcoût. En Allemagne, une subvention fédérale de 20 % (programme d'efficacité énergétique, guichet fermé à l'été 2025) rendait le coût annuel total de l'électrique légèrement inférieur à celui du diesel[^topagrar-h] ; l'essai de Basse-Saxe conclut aussi que l'aide et une part de courant photovoltaïque rendent l'électrique compétitif[^lwk-aide]. Il n'existe pas d'aide équivalente en Wallonie (voir ci-dessous).
+
+**Aides en Wallonie.** Aucune aide accessible ne réduit l'écart de prix entre l'électrique et le diesel. Voir [les aides publiques](../../aides.md).
+
+- **AII.** La ligne « chargeur compact / nettoyeur d'étable / télescopique » est classée par puissance, avec un coût simplifié de {{ v('aii_chargeur_50ch_forfait', 0) }} sous 50 ch à 83 050 € à partir de 100 ch, quelle que soit la motorisation[^aii][^aii-liste]. L'aide se calcule sur ce coût simplifié, sans dépasser le prix réel[^aii]. Un valet de ferme de moins de 50 ch coûte plus que ce plafond en diesel comme en électrique : l'aide est donc la même pour les deux et ne paie pas le surcoût de l'électrique. La ligne ne coche ni « architecture verte » ni « résilience économique » : l'agriculteur seul touche le taux de base de {{ v('aii_taux_base', 0) }}[^aii], et l'investissement ne lui apporte aucun point pour atteindre le seuil de {{ v('aii_seuil_points', 0) }}[^aii]. Une CUMA touche {{ v('aii_cuma_taux_base', 0) }}, plus {{ v('aii_cuma_maj_6_membres', 0) }} avec au moins six membres, mais pas la majoration « architecture verte »[^aii]. Seul le tracteur électrique ou au biogaz de plus de 150 ch a une ligne propre[^aii-liste].
+- **GREEN** : ses filières d'énergie renouvelable ne visent pas les engins, et il exclut le photovoltaïque et les batteries[^green-agw]. Le volet « économie d'énergie » exige au moins {{ v('green_seuil_pme', 0) }} d'investissement et un audit AMUREBA ; son application à un engin électrique n'a pas été trouvée[^green-agw].
+- **Le photovoltaïque** qui recharge l'engin est aidé par l'AII (fiche [Électricité du réseau](../energie/electricite-reseau.md)). C'est la seule aide qui améliore le bilan, par l'énergie et non par l'achat.
+
+La vague 2 est inchangée.
 
 ### 2. Télescopique hybride au biométhane (vague 3)
 
@@ -81,7 +89,9 @@ C'est une piste pour les longues journées, à condition d'avoir accès à du bi
 - Prix belges neufs, en euros, d'un valet de ferme et d'un télescopique électriques face à leurs équivalents diesel.
 - Coût et durée de vie réelle d'une batterie lithium de remplacement (les constructeurs annoncent 2 000 à 5 000 cycles).
 - Gain d'entretien de l'électrique, en euros par an.
-- Traitement des engins électriques dans l'aide wallonne aux investissements (AII).
+- Déduction fédérale pour investissement (40 %, régime réel) : un télescopique ou un chargeur électrique entre-t-il dans la liste « transport zéro émission » ? Non trouvé.
+- Éligibilité d'un chargeur électrique au volet « économie d'énergie » de GREEN, et cumul avec l'AII (l'AII interdit les autres aides wallonnes, sauf celles à l'énergie renouvelable).
+- Points de sélection AII d'une CUMA pour une ligne sans case « architecture verte » ni « résilience économique » (seuil de 5 points).
 - Consommation réelle de l'exploitation, en litres par heure et en heures par an, pour remplacer les hypothèses.
 
 ## Sources
@@ -96,4 +106,6 @@ C'est une piste pour les longues journées, à condition d'avoir accès à du bi
 [^fwi]: « On test : JCB's debut battery-electric Loadall, the 525-60E », Farmers Weekly, 25 octobre 2021. https://fwi.co.uk/machinery/telehandlers/on-test-jcbs-debut-battery-electric-loadall-the-525-60e
 [^pleinchamp]: « Les engins de manutention agricole se mettent à l'électrique », Pleinchamp (France), 16 juillet 2022. https://www.pleinchamp.com/actualite/les-engins-de-manutention-agricole-se-mettent-a-l-electrique
 [^aii]: Arrêté ministériel du 23 février 2023 (aides aux investissements dans les exploitations agricoles), Wallex, version consolidée (dernière modification : arrêté ministériel du 11 mai 2026), annexe des coûts plafonds. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^aii-liste]: « Liste des investissements admissibles » (aide aux investissements agricoles, AII), SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), article 10, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
 [^nh]: « Ce chargeur télescopique hybride New Holland fonctionne au gaz et à l'électricité », Terre-net, 10 décembre 2025. https://www.terre-net.fr/new-holland/article/891389/ce-chargeur-telescopique-hybride-new-holland-fonctionne-au-gaz-et-a-l-electricit

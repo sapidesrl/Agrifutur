@@ -6,17 +6,17 @@ dependance_fossile: gasoil
 alternatives: [Gravité, pompe à museau, bélier hydraulique, pompe solaire, électropompe d'irrigation sur réseau ou photovoltaïque]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Pompes thermiques d'irrigation et d'abreuvement
 
 !!! warning "Sources à relire"
-    Les sources ont été lues sur la page d'origine le 26 novembre 2026. Les mesures de consommation des motopompes d'irrigation, les prix des pompes solaires et du bélier hydraulique et presque tous les exemples d'abreuvement sont français : aucune mesure ni aucun prix wallon n'a été trouvé. Ils sont signalés dans le texte et listés dans « À vérifier ».
+    Les sources ont été lues sur la page d'origine le 26 novembre 2026. Les mesures de consommation des motopompes d'irrigation, les prix des pompes solaires et du bélier hydraulique et presque tous les exemples d'abreuvement sont français : aucune mesure ni aucun prix wallon n'a été trouvé. Ils sont signalés dans le texte et listés dans « À vérifier ». Les aides publiques ont été relues le 27 novembre 2026 (voir [les aides publiques](../../aides.md)).
 
 ## En bref
 
-Deux usages de l'eau dépendent du gasoil. L'irrigation des pommes de terre et des légumes, d'abord : un enrouleur à canon est souvent alimenté par une motopompe diesel, qui brûle environ {{ v('irr_gasoil_l_m3', 2, unite=False) }} L de gasoil par m³ d'eau, soit {{ v('irr_gasoil_l_ha_mm', 1, unite=False) }} L par hectare et par millimètre (calculé à partir de mesures françaises). L'abreuvement au pâturage, ensuite, quand on apporte l'eau à la tonne tirée par un tracteur. Pour l'abreuvement, les solutions sans moteur (gravité, pompe à museau, bélier hydraulique) et la pompe solaire sont rentables aujourd'hui dans le bon contexte (vague 1) : elles économisent surtout du temps. Pour l'irrigation, une électropompe ne revient moins cher que le diesel que si elle tourne sur l'électricité de ses propres panneaux ; sur le réseau, le m³ coûte autant qu'au diesel au prix de crise et plus cher avant ; l'économie ne paie l'investissement que sur une grande surface irriguée ou au renouvellement de la pompe (vague 2).
+Deux usages de l'eau dépendent du gasoil. L'irrigation des pommes de terre et des légumes, d'abord : un enrouleur à canon est souvent alimenté par une motopompe diesel, qui brûle environ {{ v('irr_gasoil_l_m3', 2, unite=False) }} L de gasoil par m³ d'eau, soit {{ v('irr_gasoil_l_ha_mm', 1, unite=False) }} L par hectare et par millimètre (calculé à partir de mesures françaises). L'abreuvement au pâturage, ensuite, quand on apporte l'eau à la tonne tirée par un tracteur. Pour l'abreuvement, les solutions sans moteur (gravité, pompe à museau, bélier hydraulique) et la pompe solaire sont rentables aujourd'hui dans le bon contexte (vague 1) : elles économisent surtout du temps, et aucune aide publique ne les finance. Pour l'irrigation, une électropompe ne revient moins cher que le diesel que si elle tourne sur l'électricité de ses propres panneaux ; sur le réseau, le m³ coûte autant qu'au diesel au prix de crise et plus cher avant ; l'économie ne paie l'investissement que sur une grande surface irriguée ou au renouvellement de la pompe (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -40,6 +40,8 @@ Toute prise d'eau souterraine est soumise à déclaration ou à permis d'environ
 ## Les alternatives
 
 Les quatre premières alternatives concernent l'abreuvement ; la cinquième, l'irrigation. Le guide « Quel abreuvoir pour quels besoins ? » des GAL du Condroz aide à choisir selon la qualité de l'eau du ruisseau, l'existence d'une source ou d'un puits, l'accès au réseau électrique, la pente, la distance et le type de bétail[^gal-choix].
+
+Aucune des quatre solutions d'abreuvement n'est aidée en Wallonie : l'aide aux investissements agricoles (AII) ne contient ni pompe d'abreuvement, ni forage, ni réseau d'abreuvement, ni clôture de pâturage[^aii-liste]. Elles sont rentables sans aide (détail dans la pompe solaire).
 
 ### 1. Gravité (vague 1)
 
@@ -91,7 +93,15 @@ Le calcul ne compte ni l'usure du tracteur et de la tonne, ni l'entretien de la 
 
 Conditions : un point d'eau (puits, forage, source, cours d'eau) dans ou près de la parcelle ; des panneaux à l'écart de l'ombre[^solaire2007] ; une cuve ou des bacs assez grands pour passer la nuit et les jours couverts[^buvette] ; une analyse régulière de l'eau d'un puits ou d'une source privée[^finistere].
 
-Limites : la pompe solaire remplace le gasoil de la tonne, mais ajoute des panneaux, une électronique et parfois une batterie. Aucun prix belge de kit d'abreuvement solaire n'a été trouvé. L'aide wallonne aux investissements (AII) retient un coût simplifié de 6 050 € pour un tonneau à eau, mais aucune ligne de pompe d'abreuvement ou d'irrigation n'a été trouvée dans sa liste[^am-aii] (voir « À vérifier »).
+**Aides : aucune n'est accessible.** L'exemple de la Creuse a reçu une aide régionale française ; rien d'équivalent n'existe en Wallonie en 2026 :
+
+- l'AII retient un coût simplifié de 6 050 € pour un tonneau à eau[^am-aii], mais sa liste de 2026 ne contient ni pompe solaire, ni forage, ni réseau d'abreuvement ou d'irrigation, ni clôture de pâturage[^aii-liste]. L'aide va donc à la tonne, pas à ce qui la remplace ;
+- l'aide GREEN de la Région exclut le photovoltaïque[^green-agw], et un kit d'abreuvement reste loin de son seuil de {{ v('green_seuil_pme', 0) }}[^green-agw] ;
+- les investissements non productifs, payés à 100 % des forfaits jusqu'à {{ v('inp_plafond_eur', 0) }} par bénéficiaire sur 2023-2027, ne visent que des ouvrages contre l'érosion et le ruissellement (fascines, noues, mares tampons, bassins), pas l'abreuvement ni les clôtures[^inp] [^am-aii].
+
+Le temps de retour calculé plus haut est donc aussi le temps de retour réel. La vague 1 tient sans aide.
+
+Limites : la pompe solaire remplace le gasoil de la tonne, mais ajoute des panneaux, une électronique et parfois une batterie. Aucun prix belge de kit d'abreuvement solaire n'a été trouvé.
 
 ### 5. Électropompe d'irrigation sur réseau ou photovoltaïque (vague 2)
 
@@ -115,11 +125,13 @@ Conditions :
 - un pompage en journée, ou une réserve d'eau qui se remplit en journée ;
 - un investissement qui se compte en dizaines de milliers d'euros : un agriculteur du Loiret a payé 40 000 € en 2024 une pompe immergée à 40 m avec variateur de fréquence, contre 32 000 € en 2017. Le variateur règle le débit de la pompe sur le besoin de l'enrouleur et a réduit sa consommation d'électricité[^delorme].
 
+Aides : l'AII ne finance ni la pompe, ni le forage, ni l'armoire électrique[^aii-liste]. Elle finance en revanche les panneaux photovoltaïques qui alimentent la pompe, à {{ v('aii_taux_pv', 0) }} d'un coût simplifié de {{ v('aii_pv_forfait') }} pour un agriculteur sans autre majoration (calculé), et une installation de plus de 10 kW peut recevoir des certificats verts (voir la fiche [électricité du réseau](../energie/electricite-reseau.md))[^am-aii]. Ces aides allègent la part solaire, pas la pompe : l'électropompe reste en vague 2.
+
 Limites : l'économie annuelle d'une petite surface irriguée reste modeste face au prix d'un raccordement, d'une pompe et d'une armoire électrique. Sur l'exemple de {{ v('irr_surface', 0) }}, elle ne rembourserait pas une pompe du prix de celle du Loiret en moins de plusieurs dizaines d'années. Le passage à l'électrique se justifie surtout quand on renouvelle la pompe, que le forage est près de la ferme et que la toiture produit déjà. Des panneaux au sol au bord du champ sont dérogatoires au CoDT en zone agricole (voir la fiche [électricité du réseau](../energie/electricite-reseau.md)). Les pompages longs, de nuit, restent sur le réseau ou sur le diesel.
 
 ## Ce qui ferme la boucle
 
-- **Garder l'eau dans le sol.** Le SPW conseille de maximiser d'abord la capacité du sol à stocker l'eau avant de compter sur l'irrigation, qui ne convient pas à tous les contextes[^spw-resil]. Dans les essais du CRA-W de 2009 et 2010, les diguettes entre les buttes de pommes de terre ont réduit le ruissellement de 70 % en moyenne ; 10 000 diguettes par hectare retiennent environ 300 m³, l'équivalent d'une pluie de 30 mm[^spw-resil].
+- **Garder l'eau dans le sol.** Le SPW conseille de maximiser d'abord la capacité du sol à stocker l'eau avant de compter sur l'irrigation, qui ne convient pas à tous les contextes[^spw-resil]. Dans les essais du CRA-W de 2009 et 2010, les diguettes entre les buttes de pommes de terre ont réduit le ruissellement de 70 % en moyenne ; 10 000 diguettes par hectare retiennent environ 300 m³, l'équivalent d'une pluie de 30 mm[^spw-resil]. Les ouvrages qui retiennent l'eau et la terre (fascines, noues, mares tampons, bassins de rétention) sont payés à 100 % des forfaits par l'aide aux investissements non productifs, jusqu'à {{ v('inp_plafond_eur', 0) }} par bénéficiaire sur 2023-2027, avec une étude hydrologique préalable[^inp].
 - **Choisir des variétés qui supportent la sécheresse.** Dans l'essai Patat'Up, Sevilla et Fontane ont le moins perdu de rendement sans irrigation, la variété hâtive Camméo le plus[^patatup].
 - **Utiliser l'eau sur place.** Sources, puits peu profonds et eau de pluie des toitures alimentent les bacs par gravité ou par une pompe solaire, sans tonne ni tracteur. L'eau de puits qui a refroidi le lait dans le pré-refroidisseur part ensuite à l'abreuvement (voir la fiche [refroidissement du lait](../elevage/tank-a-lait.md)).
 - **Protéger les cours d'eau.** La clôture des berges, avec un cordon rivulaire, retient l'eau et stabilise les berges ; en Wallonie, une MAEC prévoit 470 € par hectare et par an pour un cordon rivulaire en prairie, sur 20 m de large (montant valable à partir du 1er janvier 2023)[^natagriwal].
@@ -134,7 +146,7 @@ Limites : l'économie annuelle d'une petite surface irriguée reste modeste face
 - Coût d'un raccordement électrique pour un forage d'irrigation, et prix d'une électropompe avec armoire et variateur en Belgique.
 - Prix belges de kits de pompage solaire pour l'abreuvement, de pompes à museau (la fiche des GAL du Condroz n'est pas datée) et de béliers hydrauliques ; exemples wallons de béliers en service.
 - Temps réel passé à la tonne à eau sur une exploitation wallonne (le projet retient {{ v('tonne_heures_jour', 0) }}, hypothèse) et consommation d'un tracteur au transport de la tonne.
-- Éligibilité à l'AII d'une pompe solaire d'abreuvement, d'un forage ou d'un réseau d'abreuvement ; aides des contrats de rivière, de Natagriwal ou du réseau Natura 2000 aux points d'abreuvement.
+- Aides des contrats de rivière, de Natagriwal, du réseau Natura 2000 ou des communes aux points d'abreuvement et aux clôtures de berges : aucune n'a été trouvée (l'AII, GREEN et les investissements non productifs ne les couvrent pas).
 - Taux 2026 de la contribution de prélèvement sur les prises d'eau souterraine (la notice lue donne les taux de 2023).
 
 ## Sources
@@ -157,8 +169,11 @@ Limites : l'économie annuelle d'une petite surface irriguée reste modeste face
 [^picaud]: « Abreuvement au pâturage : « Nous avons opté pour une pompe solaire sur un puits filtrant » », Réussir Bovins viande, 6 juin 2023. https://www.reussir.fr/bovins-viande/une-pompe-solaire-sur-un-puits-filtrant-pour-gagner-en-autonomie-pour-leau-dabreuvement
 [^picaud-ca]: « [Retour d'expérience] Pompage avec système solaire : une solution pour l'abreuvement aux champs et aux bâtiments », Pleinchamp (chambre d'agriculture de la Creuse), 23 novembre 2022. https://www.pleinchamp.com/actualite/retour-d-experience-pompage-avec-systeme-solaire-une-solution-pour-l-abreuvement-aux-champs-et-aux-batiments
 [^desbois]: « Abreuvement au pâturage : « Un gain de temps avec mon réseau d'eau, comparé à la tonne à eau » », Réussir Lait, 10 mai 2025. https://www.reussir.fr/lait/abreuvement-au-paturage-un-gain-de-temps-avec-mon-reseau-deau-compare-la-tonne-eau
-[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole), version consolidée en vigueur depuis le 1er janvier 2026, annexe 3 (ligne « Tonneau à eau »). Wallex, consulté le 26 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole), version consolidée en vigueur depuis le 1er janvier 2026 : article 5, annexe 3 (lignes « Tonneau à eau » et « panneaux photovoltaïques ») et annexe 4 (investissements non productifs). Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
 [^arvalis]: « Irrigation : réduire sa facture électrique en agissant sur la pompe », Réussir Grandes cultures, 7 mai 2024 (avec Arvalis et le constructeur Rovatti). https://www.reussir.fr/grandes-cultures/irrigation-reduire-sa-facture-electrique-en-agissant-sur-la-pompe
 [^rovatti]: « Irrigation – Des rendements supérieurs pour les pompes de surface », Réussir Grandes cultures, 14 mai 2024. https://www.reussir.fr/grandes-cultures/des-rendements-superieurs-pour-les-pompes-de-surface
 [^delorme]: « J'ai réduit ma facture d'électricité en équipant ma pompe d'irrigation d'un variateur de fréquence », Réussir Machinisme, 9 mai 2024. https://www.reussir.fr/machinisme/jai-reduit-ma-facture-delectricite-en-equipant-ma-pompe-dirrigation-dun-variateur-de-frequence
 [^spw-resil]: Nihoul P., Courtois P., Desmet F., Pochet P., « Rendre ses sols plus résilients face à la sécheresse en grandes cultures », SPW Agriculture, Ressources naturelles et Environnement, Direction de la Recherche et du Développement (non daté, cite des travaux de 2024 ; consulté le 26 novembre 2026). https://agriculture.wallonie.be/files/accueil/Recherche%20et%20d%c3%a9veloppement/Secheresse/r%c3%a9silience%20grande%20culture/Rendre%20ses%20sols%20plus%20r%c3%a9silients%20face%20%c3%a0%20la%20s%c3%a9cheresse%20en%20grandes%20cultures-1.pdf
+[^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), en vigueur le 1er janvier 2025 : articles 10 et 11. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+[^inp]: « Aides aux investissements non-productifs dans les exploitations agricoles », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/aides-aux-investissements/aides-aux-investissements-non-productifs-dans-les-exploitations-agricoles.html

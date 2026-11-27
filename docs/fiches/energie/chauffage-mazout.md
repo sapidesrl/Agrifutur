@@ -6,17 +6,17 @@ dependance_fossile: mazout
 alternatives: [Chaudière à plaquettes, récupération de chaleur, pompe à chaleur]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Chauffage et eau chaude au mazout
 
 !!! warning "Sources à relire"
-    Les sources ont été relues sur la page d'origine le 26 novembre 2026, sauf deux pages restées inaccessibles (protection anti-robots) : le relevé de prix Valbiom repris par Callmepower (prix des plaquettes) et l'article Trustup sur les pompes à chaleur. Leurs chiffres ne sont connus que par des extraits de moteur de recherche.
+    Les sources ont été relues sur la page d'origine le 26 novembre 2026, sauf deux pages restées inaccessibles (protection anti-robots) : le relevé de prix Valbiom repris par Callmepower (prix des plaquettes) et l'article Trustup sur les pompes à chaleur. Leurs chiffres ne sont connus que par des extraits de moteur de recherche. Les aides publiques ont été relues le 27 novembre 2026 (voir [les aides publiques](../../aides.md)).
 
 ## En bref
 
-Beaucoup de fermes wallonnes chauffent au mazout l'habitation, les bureaux, l'eau chaude de la laiterie et parfois des gîtes. Au prix actuel, un kWh de mazout coûte {{ v('mazout_kwh') }} TVAC, contre {{ v('plaquettes_kwh') }} pour les plaquettes de bois, soit {{ v('ratio_mazout_plaquettes', 1) }} plus cher ({{ v('ratio_mazout_plaquettes', 1, scenario='bas') }} au prix d'avant-crise). La chaudière à plaquettes est rentable aujourd'hui pour une ferme qui consomme plusieurs milliers de litres par an, surtout si ses haies fournissent une partie du bois (vague 1) ; au prix d'avant-crise, elle ne se rembourse vite que pour les gros consommateurs. La récupération de chaleur sur le tank à lait réduit le besoin d'eau chaude, et la pompe à chaleur convient aux petits besoins bien isolés.
+Beaucoup de fermes wallonnes chauffent au mazout l'habitation, les bureaux, l'eau chaude de la laiterie et parfois des gîtes. Au prix actuel, un kWh de mazout coûte {{ v('mazout_kwh') }} TVAC, contre {{ v('plaquettes_kwh') }} pour les plaquettes de bois, soit {{ v('ratio_mazout_plaquettes', 1) }} plus cher ({{ v('ratio_mazout_plaquettes', 1, scenario='bas') }} au prix d'avant-crise). La chaudière à plaquettes est rentable aujourd'hui pour une ferme qui consomme plusieurs milliers de litres par an, surtout si ses haies fournissent une partie du bois (vague 1). Pour 8 000 L de mazout par an, elle se rembourse en {{ v('chaudiere_retour_ans', 0) }} sans aide ; au prix d'avant-crise, en {{ v('chaudiere_retour_ans', 0, scenario='bas') }} sans aide et {{ v('chaudiere_retour_green_ans', 1, scenario='bas') }} avec l'aide régionale GREEN de {{ v('green_taux_chaudiere_biomasse', 0) }} (calculé). La récupération de chaleur sur le tank à lait réduit le besoin d'eau chaude, et la pompe à chaleur convient aux petits besoins bien isolés.
 
 ## Comment ça marche aujourd'hui
 
@@ -68,9 +68,23 @@ Investissement et entretien :
 - dans un exemple wallon de Valbiom, un réseau de chaleur à plaquettes de 75 kW relie un gîte, une habitation et une piscine. Il a coûté 50 500 € (dont 35 000 € pour la chaudière et les sous-stations, 8 500 € pour le silo et le désilage, 7 000 € pour 60 m de réseau), avec 20 200 € de subside. Il consomme 120 MAP par an[^valbiom-guide] ;
 - il faut une chaufferie d'au moins 20 m² et un silo de 25 à 100 m³ selon le besoin. Pour 10 000 L de mazout remplacés, soit environ 100 MAP par an, un silo de 35 m³ rempli trois fois par an suffit[^febhel] [^valbiom-guide].
 
-Avec ces chiffres, l'investissement se rembourse en 4 à 6 ans au prix actuel, mais en plus de 10 ans au prix d'avant-crise, hors aides (ordre de grandeur calculé à partir des montants ci-dessus, de l'entretien et de l'économie de combustible). La conclusion dépend donc du scénario : hors crise, la chaudière à plaquettes se justifie surtout pour les gros consommateurs, comme la ferme de Meux et ses 28 000 L par an. Les deux fermes citées par la FEBHEL annoncent 6 et 8 ans, et la fédération donne 5 à 12 ans en général[^febhel]. L'exemple du gîte se rembourse en 10 ans avec les primes et en 17 ans sans, mais avec un mazout compté à 0,72 € par litre[^valbiom-guide]. La rentabilité dépend donc surtout du volume de mazout remplacé et de son prix : plus la consommation est forte, plus vite la chaudière est payée.
+Rentabilité pour la ferme de 8 000 L par an (calculé, chaufferie de {{ v('chaudiere_plaquettes_kw', 0) }} à {{ v('chaudiere_plaquettes_prix', 0) }}, milieu de la fourchette de Valbiom, entretien de {{ v('chaudiere_entretien_supp_an', 0) }} de plus qu'une chaudière au mazout, sans frais financiers) :
 
-Aides : Valbiom indique qu'une entreprise ou un agriculteur peut obtenir une prime allant jusqu'à 40 % de l'investissement, et que les aides régionales aux entreprises (« GREEN ») demandent depuis 2025 un audit énergétique préalable (AMUREBA)[^valbiom-guide]. En revanche, l'aide wallonne aux investissements agricoles ne finance que les investissements repris dans sa liste : dans sa version de 2026, cette liste contient des panneaux photovoltaïques, des éoliennes et la petite biométhanisation, mais ni chaudière biomasse, ni pompe à chaleur, ni récupérateur de chaleur. Elle contient en revanche un broyeur à plaquettes forestières[^am-adisa].
+| Calculé | Prix actuel | Prix d'avant-crise |
+|---|---|---|
+| Gain annuel, entretien déduit | {{ v('chaudiere_gain_net_an', 0) }} | {{ v('chaudiere_gain_net_an', 0, scenario='bas') }} |
+| Temps de retour sans aide | {{ v('chaudiere_retour_ans', 1) }} | {{ v('chaudiere_retour_ans', 1, scenario='bas') }} |
+| Temps de retour avec l'aide GREEN ({{ v('chaudiere_aide_green', 0) }}) | {{ v('chaudiere_retour_green_ans', 1) }} | {{ v('chaudiere_retour_green_ans', 1, scenario='bas') }} |
+
+Sans aide, la conclusion dépend donc du scénario : au prix d'avant-crise, la chaudière à plaquettes ne se rembourse vite que pour les gros consommateurs, comme la ferme de Meux et ses 28 000 L par an. Les deux fermes citées par la FEBHEL annoncent 6 et 8 ans, et la fédération donne 5 à 12 ans en général[^febhel]. L'exemple du gîte se rembourse en 10 ans avec les primes et en 17 ans sans, mais avec un mazout compté à 0,72 € par litre[^valbiom-guide]. La rentabilité dépend surtout du volume de mazout remplacé et de son prix : plus la consommation est forte, plus vite la chaudière est payée.
+
+**Aides.** L'aide wallonne aux investissements agricoles (AII) ne finance ni chaudière biomasse, ni pompe à chaleur, ni récupérateur de chaleur : ils sont absents de sa liste de 2026, qui contient en revanche un broyeur à plaquettes forestières[^am-adisa] [^aii-liste]. L'aide utile est **GREEN**, la prime régionale aux entreprises pour l'énergie renouvelable (voir [les aides publiques](../../aides.md#green)). L'agriculture n'est pas exclue, et Valbiom écrit qu'« une entreprise ou un agriculteur » peut l'obtenir[^valbiom-guide] [^decret-2004] :
+
+- {{ v('green_taux_chaudiere_biomasse', 0) }} pour une PME, pour une chaudière biomasse jusqu'à 300 kW, sur un coût éligible plafonné à {{ v('green_plafond_chaudiere_kw') }} jusqu'à 100 kW[^green-spw]. Pour la chaufferie type de {{ v('chaudiere_plaquettes_kw', 0) }}, ce plafond dépasse le prix : l'aide porte sur tout le prix, soit {{ v('chaudiere_aide_green', 0) }} (calculé) ;
+- un investissement d'au moins {{ v('green_seuil_pme', 0) }}, une demande avant le début des travaux, et un **audit ou une étude de faisabilité AMUREBA** préalable par un auditeur agréé, exigé depuis 2026[^green-agw] [^amureba-memo]. La Région subventionne cet audit à {{ v('amureba_taux_pme', 0) }} pour une PME[^amureba] ; l'accès d'une exploitation agricole à cette subvention reste à vérifier. Le coût de l'audit n'est pas compté dans le tableau ;
+- pas de cumul avec une autre aide régionale pour le même programme d'investissements[^decret-2004].
+
+Valbiom donne un exemple proche : une chaudière à pellets de 50 kW à 35 000 €, avec 14 000 € de subside, se rembourse en 8 ans au lieu de 14[^valbiom-guide]. Avec l'aide, la chaudière à plaquettes reste rentable même au prix d'avant-crise pour la ferme de 8 000 L : la vague 1 est confirmée, et elle ne dépend pas de l'aide au prix actuel.
 
 Conditions :
 
@@ -81,13 +95,15 @@ Conditions :
 
 ### 2. Récupération de chaleur (vague 1)
 
-Avant d'acheter une nouvelle chaudière, on réduit le besoin. Sur une exploitation laitière, un récupérateur branché sur le groupe froid du tank à lait préchauffe l'eau du chauffe-eau vers 55 °C et économise 60 à 90 % de l'énergie du chauffe-eau, électrique dans l'exemple de la source (chiffres français)[^reussir-tank]. Le chauffe-eau ou la chaudière reste nécessaire en appoint pour le lavage à chaud (voir la fiche [refroidissement du lait](../elevage/tank-a-lait.md)). L'isolation des ballons et des tuyaux, et la régulation de la chaudière, vont dans le même sens.
+Avant d'acheter une nouvelle chaudière, on réduit le besoin. Sur une exploitation laitière, un récupérateur branché sur le groupe froid du tank à lait préchauffe l'eau du chauffe-eau vers 55 °C et économise 60 à 90 % de l'énergie du chauffe-eau, électrique dans l'exemple de la source (chiffres français)[^reussir-tank]. Le chauffe-eau ou la chaudière reste nécessaire en appoint pour le lavage à chaud (voir la fiche [refroidissement du lait](../elevage/tank-a-lait.md)). L'isolation des ballons et des tuyaux, et la régulation de la chaudière, vont dans le même sens. Aucune aide n'est accessible en pratique : le récupérateur est absent de la liste de l'AII[^aii-liste], et son prix reste loin du seuil de {{ v('green_seuil_pme', 0) }} de GREEN[^green-agw]. Il est rentable sans aide.
 
 ### 3. Pompe à chaleur (vague 2)
 
 La pompe à chaleur air-eau prend la chaleur de l'air extérieur avec un compresseur électrique. Elle fournit 3 à 4,5 kWh de chaleur par kWh d'électricité, et une installation pour une habitation coûte de 8 000 à 18 000 € selon la surface[^trustup-pac]. Elle convient à une habitation bien isolée avec des émetteurs basse température, et devient intéressante derrière ses propres panneaux. Elle est moins adaptée aux grands bâtiments mal isolés et à l'eau très chaude de lavage (80 à 90 °C).
 
-Attention aux aides : depuis le 1er octobre 2026, les aides wallonnes à la rénovation des logements prennent la forme de prêts à taux zéro ou réduit (Rénopack, Rénoprêt), après un audit logement, et visent les logements classés PEB E, F ou G[^renovation-2026].
+**Aides.** GREEN paie {{ v('green_taux_pac', 0) }} d'une pompe à chaleur air-eau ou eau-eau jusqu'à 45 kW thermiques, sur un coût éligible de 1 320 à 1 760 €/kW selon la puissance, et 20 % au-delà[^green-spw], avec les mêmes conditions que pour la chaudière (audit AMUREBA, demande avant travaux)[^green-agw]. Mais GREEN exige un investissement d'au moins {{ v('green_seuil_pme', 0) }}[^green-agw] : une pompe à chaleur de la taille d'une habitation reste en dessous, et n'y a donc pas droit. GREEN ne vise que les investissements d'une entreprise ; le chauffage du logement de l'exploitant relève plutôt des aides au logement. L'AII ne finance pas la pompe à chaleur[^aii-liste]. L'aide ne change rien pour les petits besoins ; elle aide une installation professionnelle plus grande (laiterie, gîtes), qui reste à chiffrer. La vague 2 est maintenue.
+
+Pour le logement, depuis le 1er octobre 2026, les aides wallonnes à la rénovation des logements prennent la forme de prêts à taux zéro ou réduit (Rénopack, Rénoprêt), après un audit logement, et visent les logements classés PEB E, F ou G[^renovation-2026].
 
 ## Ce qui ferme la boucle
 
@@ -103,7 +119,10 @@ Attention aux aides : depuis le 1er octobre 2026, les aides wallonnes à la rén
 - Méthode du ratio mazout/plaquettes de Valbiom (2,4 en septembre 2026) : énergie du MAP, prix du mazout retenu, rendements. Avec 10 kWh par litre et 1 000 kWh par MAP, ce ratio supposerait un mazout bien moins cher que le prix maximum de septembre 2026 rapporté par la presse (calculé).
 - Prix des plaquettes : TVA comprise ou non, et taux de TVA applicable à une exploitation agricole.
 - Rendement d'une chaudière au mazout (celui des chaudières biomasse dépasse 90 % selon Valbiom).
-- Taux et conditions des aides régionales aux entreprises (GREEN, audit AMUREBA) pour une chaudière biomasse ou une pompe à chaleur agricole.
+- Éligibilité à GREEN du chauffage d'habitations situées sur l'exploitation (dans l'exemple, la chaudière chauffe la laiterie et trois habitations) : GREEN vise les investissements d'une entreprise.
+- Accès d'une exploitation agricole à la subvention AMUREBA de l'audit (règle *de minimis*), passage annoncé à 50 %, et coût réel d'une étude de faisabilité pour une chaufferie de ferme.
+- Cumul de GREEN et de la déduction fédérale pour investissement (« pas encore finalisé » en février 2026)[^amureba-memo].
+- Les taux de GREEN viennent du tableau du SPW Économie : l'annexe officielle de l'arrêté n'a pas pu être lue.
 - Consommation réelle de mazout de l'exploitation, qui remplace l'exemple de 8 000 L.
 
 ## Sources
@@ -119,3 +138,9 @@ Attention aux aides : depuis le 1er octobre 2026, les aides wallonnes à la rén
 [^trustup-pac]: « Pompe à chaleur air-eau : prix et rendement », Trustup (site commercial), juillet 2026 (page inaccessible le 26 novembre 2026, lue par extrait seulement). https://blog.trustup.be/fr/pompe-a-chaleur-air-eau-prix-rendement/
 [^renovation-2026]: « Nouveau le 1er octobre : un nouveau régime pour le soutien à la rénovation en Wallonie », DH (dépêche Belga), 27 septembre 2026. https://www.dhnet.be/dernieres-depeches/2026/09/27/nouveau-le-1er-octobre-un-nouveau-regime-pour-le-soutien-a-la-renovation-en-wallonie-KVHUKGCC2RBH7MJSBO4AYPH7LA
 [^valbiom-haies]: « Entretenir et valoriser mes haies et bandes boisées en plaquettes bocagères ? J'y pense ! », Les Carnets de Valbiom n° 1, mars 2021, hébergé par le SPW Énergie. https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Plaquettes/carnet-entretenir-et-valoriser-mes-haies-mars-2021.pdf
+[^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), en vigueur le 1er janvier 2025 : articles 4 à 16 et 26. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+[^green-spw]: « Réforme des aides spécifiques à la protection de l'environnement et à l'utilisation de l'énergie », SPW Économie, Emploi, Recherche, publié le 28 novembre 2024, mis à jour le 23 janvier 2025, consulté le 27 novembre 2026. https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+[^decret-2004]: Décret du 11 mars 2004 relatif aux incitants régionaux en faveur des petites ou moyennes entreprises, version en vigueur depuis le 1er janvier 2025, articles 3 à 5. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/loi-decret/2004/03/11/2004200990
+[^amureba]: Arrêté du Gouvernement wallon du 1er février 2024 relatif à l'octroi de subventions à l'audit ou à l'étude dans le secteur non résidentiel (AMUREBA), annexe 5. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2024/02/01/2024004275
+[^amureba-memo]: « Mémo Table ronde des auditeurs du 6 février 2026 », SPW Énergie, consulté le 27 novembre 2026. https://energie.wallonie.be/files/Actualit%c3%a9s/20260206_m%c3%a9mo%20Table%20ronde%20auditeurs.pdf

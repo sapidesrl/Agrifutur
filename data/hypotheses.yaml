@@ -197,24 +197,6 @@ ferme_conso_elec:
   source: ""
   note: "Ferme laitière moyenne. Repères : 36 000 kWh/an pour 120 vaches et 1 million de litres dans le cas SAVE (2018) ; 40 000 à 50 000 kWh/an pour la ferme de Gozée équipée en micro-biométhanisation (RTBF, 2022). Remplacer par le relevé du compteur."
 
-aii_pv_forfait:
-  libelle: "Aide aux investissements agricoles (AII) : coût simplifié du photovoltaïque"
-  valeur: 1364
-  unite: €/kWc
-  statut: sourcé
-  date: 2026-01-01
-  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-  note: "AM du 23/02/2023, annexe 3, ligne 205 « Énergie renouvelable professionnelle : panneaux photovoltaïques », par kWc des panneaux plafonné aux kWc que l'onduleur accepte en entrée (version en vigueur depuis le 01/01/2026). Montant forfaitaire servant de base au calcul de l'aide, pas un prix du marché."
-
-aii_taux_pv:
-  libelle: "Aide AII : taux appliqué au forfait (agriculteur actif, sans autre majoration)"
-  valeur: 0.15
-  unite: "%"
-  statut: sourcé
-  date: 2026-01-01
-  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-  note: "AM du 23/02/2023, art. 5 § 2 : taux de base 10 %, + 5 % si l'investissement répond à l'architecture verte ou à la résilience économique (cochés pour le photovoltaïque à l'annexe 3, non cumulables). Autres majorations possibles (jeune agriculteur + 10 %, bio, zone à contraintes, herbager…), plafond 40 % (§ 4)."
-
 pv_om_annuel_spw:
   libelle: Frais annuels d'exploitation et d'entretien du photovoltaïque de 10 à 1 000 kW, référence wallonne
   valeur: 0.022
@@ -1700,15 +1682,6 @@ mildiou_traitements_evites_avertissement:
   source: https://www.boerenbond.be/node/19693
   note: "Viaverda 2025 : 4 à 5 pulvérisations économisées par rapport à un traitement chaque semaine (calendrier). On retient le bas de la fourchette."
 
-maec_parcelle_amenagee_eur_ha:
-  libelle: Aide MAEC « Parcelle aménagée » (MC7), Wallonie, à partir de 2025
-  valeur: 1800
-  unite: €/ha/an
-  statut: sourcé
-  date: 2026-04-17
-  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-parcelles-amenagees---mc7.html
-  note: "Portail de l'agriculture wallonne (SPW), page modifiée le 17/04/2026. Engagement de 5 ans, avis d'expert obligatoire, parcelles de 0,02 à 1,5 ha, sans engrais ni produits phytopharmaceutiques ; MB5, MC7 et MB12 ensemble limitées à 25 % des terres arables."
-
 marge_brute_froment_moyenne:
   libelle: Marge brute moyenne du froment d'hiver en Wallonie (produit principal, hors travaux par tiers), moyenne 2014-2023
   valeur: 1157
@@ -1717,42 +1690,6 @@ marge_brute_froment_moyenne:
   date: 2025-12-08
   source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
   note: "État de l'agriculture wallonne, fiche froment d'hiver : « environ 1 157 €/ha » sur les dix dernières années ; 738 €/ha en 2024."
-
-eco_regime_maillage_eur_he:
-  libelle: "Éco-régime « Maillage écologique » : montant prévu par hectare environnemental (HE), campagnes 2026-2027"
-  valeur: 450
-  unite: €/HE
-  statut: sourcé
-  date: 2026-04-17
-  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023 et 2024. Total plafonné à 40 % de la SAU."
-
-eco_regime_haie_he_m:
-  libelle: Coefficient de l'éco-régime « Maillage écologique » pour un mètre de haie
-  valeur: 0.001
-  unite: HE/m
-  statut: sourcé
-  date: 2026-04-17
-  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
-  note: "Même page : haies et arbres alignés, coefficient 0,001 (0,45 € par mètre sans majoration). Pas de produit phytopharmaceutique à moins d'un mètre du pied de la haie. Bande bordure de champ : 675 € par hectare ; jachère mellifère : 900 € par hectare."
-
-ri_eur_ha:
-  libelle: "Éco-régime « Réduction d'intrants » : montant prévu par hectare"
-  valeur: 80
-  unite: €/ha
-  statut: sourcé
-  date: 2026-07-03
-  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024. Engagement annuel par parcelle d'au moins 1 ha, non cumulable avec le bio."
-
-soutien_proteines_eur_ha:
-  libelle: Soutien couplé aux cultures de protéines végétales, montant prévu
-  valeur: 375
-  unite: €/ha
-  statut: sourcé
-  date: 2025-11-21
-  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
-  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Récolte après le 15 juin."
 
 # --- Semences -----------------------------------------------------------------
 # Proposition de la fiche semences/semences-industrielles.md (26/11/2026).
@@ -1822,3 +1759,769 @@ surface_froment_wallonie_ha:
   date: 2024-12-31
   source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_2.html
   note: "État de l'agriculture wallonne, fiche « Froment d'hiver », année 2024 (mise à jour du 08/12/2025)."
+
+# --- Aides publiques ----------------------------------------------------------
+# Page docs/aides.md (27/11/2026). Montants lus sur les sources le 27/11/2026.
+# Pas de `scenario: true` ici : les scénarios du projet portent sur les prix de l'énergie et des matières.
+# Aides du 1er pilier (éco-régimes, paiement redistributif, aides couplées) : `valeur` = montant prévu
+# pour la campagne 2026 ; le montant payé, fixé après la campagne selon la demande, peut aller du
+# minimum au maximum donnés dans la note. Les pages du Portail de l'agriculture wallonne n'ont pas de
+# valeur légale : seuls les arrêtés publiés font foi.
+
+# PAC, 1er pilier : aides au revenu
+
+pac_redistributif_eur_ha:
+  libelle: "Paiement redistributif : montant prévu par hectare (30 premiers hectares)"
+  valeur: 143
+  unite: €/ha
+  statut: sourcé
+  date: 2025-04-03
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/paiement-de-base-paiement-redistributif-et-paiement-jeune/paiement-redistributif1.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 3/04/2025 : minimum 132, prévu 143, maximum 154 €/ha ; 154 €/ha payés en 2024. Limité aux 30 premiers hectares admissibles."
+
+pac_jeune_eur_ha:
+  libelle: "Aide complémentaire au revenu des jeunes agriculteurs : montant prévu (0 à 50 ha)"
+  valeur: 140
+  unite: €/ha
+  statut: sourcé
+  date: 2025-04-03
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/paiement-de-base-paiement-redistributif-et-paiement-jeune/aide-complementaire-au-revenu-pour-les-jeunes-agriculteurs.html
+  note: "Page modifiée le 3/04/2025 : 0 à 50 ha, minimum 126, prévu 140, maximum 150 €/ha ; 50 à 100 ha, prévu 80 €/ha (72 à 150). 150 €/ha payés en 2024 sur les deux paliers. 100 ha au maximum."
+
+# PAC, 1er pilier : éco-régimes (engagement d'un an)
+
+er_cls_entree_eur_ha:
+  libelle: "Éco-régime « Couverture longue du sol », seuil d'entrée : montant prévu par hectare de SAU"
+  valeur: 15
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+  note: "Page modifiée le 17/04/2026 : sol couvert du 1er janvier au 15 février sur au moins 70 % de la surface ; payé sur toute la SAU ; minimum 15, maximum 40 €/ha ; 15 €/ha payés en 2024. Destruction chimique du couvert interdite à partir de 2027."
+
+er_cls_intermediaire_eur_ha:
+  libelle: "Éco-régime « Couverture longue du sol », seuil intermédiaire : montant prévu par hectare de SAU"
+  valeur: 30
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+  note: "Même page : seuil de 80 % (avec bonus selon la part de prairies) ; minimum 20, maximum 55 €/ha ; 30 €/ha payés en 2024."
+
+er_cls_superieur_eur_ha:
+  libelle: "Éco-régime « Couverture longue du sol », seuil supérieur : montant prévu par hectare de SAU"
+  valeur: 45
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-couverture-longue-du-sol.html
+  note: "Même page : seuil de 90 % ; minimum 35, maximum 80 €/ha ; 45 €/ha payés en 2024."
+
+er_cfe_v1a_eur_ha:
+  libelle: "Éco-régime « Cultures favorables », légumineuses fourragères avec zone refuge (V1_A) : montant prévu"
+  valeur: 380
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+  note: "Page modifiée le 17/04/2026 : luzerne, lupuline, sainfoin, lotier, vesce, 10 % de zone refuge ; aucun insecticide, même en enrobage ; minimum 220, maximum 420 €/ha ; 380 €/ha payés en 2024. Non cumulable avec le soutien couplé aux protéagineux sur la même parcelle ; cumulable avec le bio."
+
+er_cfe_v1b_eur_ha:
+  libelle: "Éco-régime « Cultures favorables », légumineuses fourragères avec bande bordure (V1_B, nouveau en 2026) : montant prévu"
+  valeur: 300
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+  note: "Même page : bande bordure adjacente de 10 % au lieu de la zone refuge ; minimum 173, maximum 330 €/ha, confirmés par l'arrêté ministériel du 15/01/2026 modifiant l'AM du 23/02/2023 relatif aux éco-régimes (Wallex)."
+
+er_cfe_v2_eur_ha:
+  libelle: "Éco-régime « Cultures favorables », céréales de printemps ou chanvre, sarrasin, tournesol, caméline… (V2) : montant prévu"
+  valeur: 380
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+  note: "Même page : V2_A céréales de printemps ; V2_B chanvre, sarrasin, quinoa, caméline, tournesol, moutarde ; minimum 220, maximum 435 €/ha ; 380 €/ha payés en 2024. La V2_A ne se cumule pas avec l'éco-régime réduction d'intrants."
+
+er_cfe_v3a_eur_ha:
+  libelle: "Éco-régime « Cultures favorables », mélange céréales-légumineuses récolté après le 31 mai (V3_A) : montant prévu"
+  valeur: 380
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+  note: "Même page : au moins 50 % de céréales et 20 % de légumineuses, ou caméline-lentille ; minimum 220, maximum 440 €/ha ; 380 €/ha payés en 2024. Pas de cumul avec l'éco-régime réduction d'intrants."
+
+er_cfe_v3b_eur_ha:
+  libelle: "Éco-régime « Cultures favorables », mélange céréales-légumineuses récolté après le 15 juin (V3_B) : montant prévu"
+  valeur: 440
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+  note: "Même page : minimum 254, maximum 449 €/ha ; 440 €/ha payés en 2024. Pas de cumul avec l'éco-régime réduction d'intrants ni avec le soutien couplé aux protéagineux sur la même parcelle."
+
+eco_regime_maillage_eur_he:
+  libelle: "Éco-régime « Maillage écologique » : montant prévu par hectare environnemental (HE), campagnes 2026-2027"
+  valeur: 450
+  unite: €/HE
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 17/04/2026 : minimum 350, prévu 450, maximum 600 €/HE ; 410 €/HE payés en 2023 et 2024. Total plafonné à 40 % de la SAU. Bonus × 1,5 en Natura 2000 ou site de grand intérêt biologique pour les éléments ligneux, les mares et la jachère mellifère."
+
+eco_regime_haie_he_m:
+  libelle: Coefficient de l'éco-régime « Maillage écologique » pour un mètre de haie
+  valeur: 0.001
+  unite: HE/m
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page : haies et arbres alignés, coefficient 0,001 (0,45 € par mètre sans majoration). Pas de produit phytopharmaceutique à moins d'un mètre du pied de la haie. Ne pas confondre avec la subvention régionale à la plantation (haie_subv_1rang)."
+
+er_maillage_bande_he_ha:
+  libelle: "Éco-régime « Maillage écologique » : coefficient d'un hectare de bande bordure"
+  valeur: 1.5
+  unite: HE/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page : bande de 6 à 20 m, sans intrant, maintenue jusqu'à la récolte de la parcelle voisine ; 675 € par hectare au montant prévu. Pas d'aide bio sur les bandes."
+
+er_maillage_jachere_mellifere_he_ha:
+  libelle: "Éco-régime « Maillage écologique » : coefficient d'un hectare de jachère mellifère"
+  valeur: 2
+  unite: HE/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page : au moins 5 espèces ; 900 € par hectare au montant prévu (coefficient déduit : 900 ÷ 450)."
+
+er_maillage_plafond_sau:
+  libelle: "Éco-régime « Maillage écologique » : plafond des hectares environnementaux en part de la SAU"
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
+  note: "Même page. Exclu sur les surfaces en MAEC MB5, MC7 ou MB12, sauf les éléments ligneux qui s'y trouvent."
+
+ri_eur_ha:
+  libelle: "Éco-régime « Réduction d'intrants » : montant prévu par hectare"
+  valeur: 80
+  unite: €/ha
+  statut: sourcé
+  date: 2026-07-03
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-reduction-d-intrants.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 3/07/2026 : minimum 16, prévu 80, maximum 150 €/ha selon la demande ; 100 €/ha payés en 2024. Par parcelle d'au moins 1 ha : aucune des 36 molécules « à substituer », ou au moins deux désherbages mécaniques pendant la culture. Non accessible aux parcelles bio ; pas de cumul avec les variantes V2_A et V3 de l'éco-régime cultures favorables ; cumulable avec le soutien couplé aux protéagineux."
+
+er_pp_base_eur_ha:
+  libelle: "Éco-régime « Prairies permanentes » : aide de base prévue par hectare de prairie permanente"
+  valeur: 40
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
+  note: "Page modifiée le 17/04/2026 : garder au moins 80 % des prairies de l'année précédente, pas de phyto sauf traitement localisé ; minimum 36, maximum 80 €/ha ; 42 €/ha payés en 2024."
+
+er_pp_supp_eur_ha:
+  libelle: "Éco-régime « Prairies permanentes » : aide supplémentaire prévue, charge de 0,6 à 2 UGB/ha de surface fourragère"
+  valeur: 68
+  unite: €/ha
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
+  note: "Même page : pas d'animaux tiers sans contrat de pâturage ; minimum 61, maximum 75 €/ha. Paliers suivants prévus : 58 (2 à 2,2 UGB/ha), 48, 38, 28 €/ha (2,6 à 2,8, supprimé en 2027). Montants payés en 2024 égaux aux montants prévus."
+
+# PAC, 1er pilier : aides couplées
+
+soutien_proteines_eur_ha:
+  libelle: Soutien couplé aux cultures de protéines végétales, montant prévu
+  valeur: 375
+  unite: €/ha
+  statut: sourcé
+  date: 2025-11-21
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
+  note: "Portail de l'agriculture wallonne, page modifiée le 21/11/2025 : minimum 270, prévu 375, maximum 400 €/ha ; 400 €/ha payés en 2024. Soja, pois, féverole, lupin, lentille, pois chiche, fenugrec, purs ou dominants dans un mélange ; récolte après le 15 juin. Non cumulable avec l'éco-régime cultures favorables ni avec les surfaces non productives du maillage sur la même parcelle ; cumulable avec le bio, la réduction d'intrants et la couverture longue."
+
+couple_viandeux_eur_tete:
+  libelle: Soutien couplé aux bovins femelles viandeux, montant prévu par animal
+  valeur: 178
+  unite: €/animal
+  statut: sourcé
+  date: 2025-11-21
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-bovins-femelles-viandeux.html
+  note: "Page modifiée le 21/11/2025 : minimum 160 € ; maximum porté à 215 € à partir de 2026 (PV du comité de suivi PAC d'août 2025) ; 178 € payés en 2024. 10 à 145 animaux."
+
+couple_laitiere_eur_tete:
+  libelle: Soutien couplé aux vaches laitières, montant prévu par animal
+  valeur: 25
+  unite: €/animal
+  statut: sourcé
+  date: 2025-11-21
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-vaches-laitieres.html
+  note: "Page modifiée le 21/11/2025 : minimum 23 € ; maximum porté à 29 € à partir de 2026 ; 25 € payés en 2024. 10 à 50 animaux. Vaches mixtes : 150 € prévus ; brebis : 27 € prévus."
+
+# PAC, 2e pilier : MAEC (engagement de 5 ans, montants fixes)
+
+maec_mb2_eur_ha:
+  libelle: Aide MAEC « Prairie naturelle » (MB2)
+  valeur: 220
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-prairie-naturelle---mb2.html
+  note: "Page modifiée le 17/04/2026 : aucune intervention du 1er novembre au 15 juin ; pas d'engrais minéral, de phyto, de concentré ni de fourrage apporté ; engrais de ferme autorisés. 50 % de la surface admissible au maximum (10 premiers hectares exemptés). Non cumulable avec MC4 ni Natura 2000."
+
+maec_mc4_eur_ha:
+  libelle: Aide MAEC « Prairie de haute valeur biologique » (MC4)
+  valeur: 470
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-prairie-a-haute-valeur-biologique---mc4.html
+  note: "Page modifiée le 17/04/2026 : avis d'expert, pas d'intrant ; 250 €/ha en Natura 2000 UG2, UG3 et UG temporaires 1 et 2."
+
+maec_mb5_eur_ha:
+  libelle: Aide MAEC « Tournière enherbée » (MB5)
+  valeur: 1200
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-tournieres-enherbees---mb5.html
+  note: "Page modifiée le 17/04/2026 : bande de 10 à 20 m sur terre arable, graminées et au moins 3 légumineuses, aucun intrant. MB5, MC7 et MB12 ensemble limitées à 25 % des terres arables. Pas d'aide bio sur ces surfaces."
+
+maec_parcelle_amenagee_eur_ha:
+  libelle: Aide MAEC « Parcelle aménagée » (MC7), Wallonie, à partir de 2025
+  valeur: 1800
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-parcelles-amenagees---mc7.html
+  note: "Portail de l'agriculture wallonne (SPW), page modifiée le 17/04/2026. Engagement de 5 ans, avis d'expert obligatoire, parcelles de 0,02 à 1,5 ha, sans engrais ni produits phytopharmaceutiques ; MB5, MC7 et MB12 ensemble limitées à 25 % des terres arables."
+
+maec_mb13a_eur_ha:
+  libelle: Aide MAEC « Autonomie fourragère », charge sous 1,4 UGB/ha (MB13A)
+  valeur: 60
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-autonomie-fourragere---mb13.html
+  note: "Page modifiée le 17/04/2026 : par hectare de prairie ; seuls les effluents des animaux de la ferme sont épandus ; pas d'animaux tiers ; pas de phyto sur prairie. MB13B (moins de 1,8 UGB/ha) : 30 €/ha. Cumulable avec l'éco-régime prairies permanentes et le bio."
+
+maec_mr14_favorable_eur_ha:
+  libelle: Aide MAEC « Sol » (MR14), mesure au résultat, état « favorable » (maximum)
+  valeur: 150
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-06-04
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
+  note: "Page modifiée le 4/06/2026 : au moins 90 % de la surface engagée pour 5 ans ; indicateur carbone organique / argile mesuré en début et en fin de contrat. « Transition » : jusqu'à 80 €/ha ; « défavorable » : 0. Montant multiplié par un facteur terres arables (0 sous 30 %, 1 au-delà de 60 %). Prime de fin de contrat de 200 à 280 € par nouvel hectare amélioré si l'éco-régime couverture longue a été activé les 5 ans."
+
+maec_mc10_majoration:
+  libelle: "Aide MAEC « Plan d'action agro-environnemental » (MC10) : majoration de toutes les aides environnementales"
+  valeur: 0.05
+  unite: "%"
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-plan-d-action-agro-environnemental.html
+  note: "Page modifiée le 17/04/2026 : avis d'expert et plan sur 5 ans ; 20 €/ha (50 ha au maximum, soit 1 000 €) plus 5 % des MAEC, de l'aide bio et des éco-régimes."
+
+# PAC, 2e pilier : agriculture biologique (aide au maintien, engagement de 5 ans)
+
+bio_prairie_eur_ha:
+  libelle: Aide au maintien en agriculture biologique, prairies et cultures fourragères (0 à 60 ha)
+  valeur: 280
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+  note: "Page modifiée le 17/04/2026 : prairies (charge d'au moins 0,6 UGB/ha) et cultures fourragères ; 168 €/ha au-delà de 60 ha. Pas de cumul avec l'éco-régime réduction d'intrants."
+
+bio_autres_cultures_eur_ha:
+  libelle: Aide au maintien en agriculture biologique, autres cultures (0 à 60 ha)
+  valeur: 480
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+  note: "Même page : céréales, pommes de terre, betteraves, oléagineux, protéagineux… ; 288 €/ha au-delà de 60 ha."
+
+bio_maraichage_eur_ha:
+  libelle: Aide au maintien en agriculture biologique, arboriculture, maraîchage et semences (0 à 3 ha)
+  valeur: 1310
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+  note: "Même page : 860 €/ha de 3 à 14 ha, 480 €/ha au-delà. Petit maraîchage diversifié bio (3 ha au plus sur ce code, 10 ha en tout, 12 catégories de légumes) : 4 000 €/ha forfaitaire, sans majoration."
+
+bio_conversion_majoration_eur_ha:
+  libelle: Majoration de l'aide bio pendant les deux années de conversion, à partir de 2026
+  valeur: 200
+  unite: €/ha/an
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+  note: "Même page : 150 €/ha avant 2026, 200 €/ha à partir de la campagne 2026, tous groupes sauf le petit maraîchage. Majoration zone vulnérable (nitrates) : 50 €/ha jusqu'à 60 ha, 30 €/ha au-delà."
+
+# PAC, 2e pilier : Natura 2000, zones à contraintes, installation, investissements non productifs
+
+natura2000_prairie_eur_ha:
+  libelle: Paiement Natura 2000, prairies à contraintes fortes (UG2, UG3, UG temporaires 1 et 2)
+  valeur: 460
+  unite: €/ha/an
+  statut: sourcé
+  date: 2024-12-16
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/paiements-natura-2000-nouveaute-2025/paiement-natura-2000-en-zone-agricole.html
+  note: "Page modifiée le 16/12/2024. Bandes extensives de 12 m le long des cours d'eau (UG4) : 1 200 €/ha/an."
+
+icns_eur_ha:
+  libelle: Paiement en zone soumise à contraintes naturelles (ICNS), 20 premiers hectares
+  valeur: 50
+  unite: €/ha/an
+  statut: sourcé
+  date: 2024-08-20
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/paiements-en-faveur-des-zones-soumises-a-des-contraintes-naturelles-ou-specifiques.html
+  note: "Page modifiée le 20/08/2024 (pas de version 2026 trouvée) : 30 €/ha au-delà de 20 ha, 75 ha au maximum."
+
+installation_ja_eur:
+  libelle: Aide à l'installation des jeunes agriculteurs (capital forfaitaire)
+  valeur: 70000
+  unite: €
+  statut: sourcé
+  date: 2026-02-06
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/installation-des-jeunes-agriculteurs/aides-a-l-installation-des-jeunes-agriculteurs.html
+  note: "Page modifiée le 6/02/2026 et AM du 23/02/2023, art. 18 : 40 ans au plus, plan d'entreprise sur 5 ans ; versée à 75 % puis 25 % en fin de plan. Cumulable avec l'AII."
+
+inp_plafond_eur:
+  libelle: "Investissements non productifs (fascines, noues, mares tampons…) : plafond par bénéficiaire sur 2023-2027"
+  valeur: 30000
+  unite: €
+  statut: sourcé
+  date: 2026-04-17
+  source: https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/aides-aux-investissements/aides-aux-investissements-non-productifs-dans-les-exploitations-agricoles.html
+  note: "Page modifiée le 17/04/2026 : aide à 100 % des dépenses admissibles (forfaits), plus 500 € d'étude et 150 € de permis. Ouvrages anti-érosion seulement : ni haie ni clôture."
+
+# Aide aux investissements agricoles (AII), AM du 23/02/2023 consolidé (version en vigueur en 2026)
+
+aii_taux_base:
+  libelle: "Aide AII : taux de base d'un agriculteur actif"
+  valeur: 0.10
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2. Le taux s'applique à un montant forfaitaire (coût simplifié de l'annexe 3), hors TVA, pas au prix réel. L'aide ne dépasse pas le montant réellement investi."
+
+aii_maj_av_re:
+  libelle: "Aide AII : majoration « architecture verte » ou « résilience économique » (non cumulables)"
+  valeur: 0.05
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2 : seulement pour les lignes de l'annexe 3 où la case est cochée (photovoltaïque, désherbage mécanique, robot, tracteur électrique de plus de 150 ch…). Donne aussi 5 points de sélection."
+
+aii_maj_jeune:
+  libelle: "Aide AII : majoration jeune agriculteur"
+  valeur: 0.10
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2. Donne aussi 10 points de sélection."
+
+aii_maj_bio_total:
+  libelle: "Aide AII : majoration exploitation totalement bio"
+  valeur: 0.05
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2 : 2,5 % en conversion ou partiellement bio. Points de sélection : 5 (totalement bio), 4 (partiellement ou en conversion)."
+
+aii_maj_herbager:
+  libelle: "Aide AII : majoration système herbager (prairie permanente sur au moins 50 % de la surface)"
+  valeur: 0.04
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 2 : +4 % aussi en zone à contraintes ; les deux ensemble, 6 % au plus. Autres majorations : +2,5 % sous 60 ha déclarés par membre ; +6 % polyculture (au moins 5 cultures) ou maraîchage diversifié ; +2,5 % filière de qualité."
+
+aii_plafond_taux:
+  libelle: "Aide AII : plafond du taux, toutes majorations comprises"
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 4 (sauf clôture contre la peste porcine africaine). Bâtiments au m² : aide limitée aux 1 000 premiers m² (AM du 15/01/2026)."
+
+aii_plafond_beneficiaire:
+  libelle: "Aide AII : plafond d'aide publique par bénéficiaire sur 2023-2027"
+  valeur: 200000
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 5."
+
+aii_seuil_points:
+  libelle: "Aide AII : seuil de sélection d'une demande d'un agriculteur"
+  valeur: 15
+  unite: points
+  statut: sourcé
+  date: 2026-01-15
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 6 § 2, modifié par l'AM du 15/01/2026. Points (annexe 2) : jeune 10 ; zone à contraintes 5 ; moins de 60 ha par membre 2,5 ; polyculture 5 ; bio 4 ou 5 ; investissement architecture verte 5 ; résilience économique 5 ; prairie permanente majoritaire 5. Une seule demande par trimestre. CUMA : seuil de 5 points."
+
+aii_cuma_taux_base:
+  libelle: "Aide AII : taux de base d'une CUMA"
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 3 : +10 % si la ligne coche architecture verte ou résilience économique ; +5 % avec au moins 6 membres admissibles, +2,5 % avec 4 ou 5."
+
+aii_cuma_maj_av_re:
+  libelle: "Aide AII : majoration d'une CUMA pour un investissement « architecture verte » ou « résilience économique »"
+  valeur: 0.10
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 3."
+
+aii_cuma_maj_6_membres:
+  libelle: "Aide AII : majoration d'une CUMA d'au moins 6 membres admissibles"
+  valeur: 0.05
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 5 § 3 : 2,5 % avec 4 ou 5 membres."
+
+aii_diversif_taux_base:
+  libelle: "Aide AII à la transformation et à la diversification à la ferme : taux de base d'un agriculteur actif"
+  valeur: 0.20
+  unite: "%"
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, art. 15 : +10 % jeune agriculteur, +10 % produits bio ou de qualité. Coopérative de transformation (SCTC) : 20 % de base, jusqu'à 40 %, plafond 500 000 € sur 2023-2027."
+
+aii_pv_forfait:
+  libelle: "Aide aux investissements agricoles (AII) : coût simplifié du photovoltaïque"
+  valeur: 1364
+  unite: €/kWc
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 205 « Énergie renouvelable professionnelle : panneaux photovoltaïques », par kWc des panneaux plafonné aux kWc que l'onduleur accepte en entrée (version en vigueur depuis le 01/01/2026). Montant forfaitaire servant de base au calcul de l'aide, pas un prix du marché. Cases architecture verte et résilience cochées. Le taux appliqué est le calcul aii_taux_pv."
+
+aii_biometh_forfait:
+  libelle: "Aide AII : coût simplifié de la biométhanisation de 10 kW au plus"
+  valeur: 11484
+  unite: €/kW
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 203 (inférieur ou égal à 10 kW ; architecture verte et résilience cochées). Aucune ligne AII au-delà de 10 kW : une unité plus grande relève de GREEN."
+
+aii_herse_etrille_forfait:
+  libelle: "Aide AII : coût simplifié d'une herse étrille"
+  valeur: 14597
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 241 (architecture verte cochée ; ouverte aux CUMA). Houe rotative : 13 750 € (ligne 244). Bineuse 4 à 12 éléments : 7 920 € (ligne 100) ; 12 éléments et plus : 22 000 € (ligne 101)."
+
+aii_bineuse_camera_forfait:
+  libelle: "Aide AII : coût simplifié d'une bineuse interligne à guidage par caméra"
+  valeur: 40920
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 98 (au moins 4 éléments ; architecture verte cochée ; ouverte aux CUMA). Guidage par ultrasons : 29 920 € (ligne 99)."
+
+aii_robot_petit_forfait:
+  libelle: "Aide AII : coût simplifié d'un robot autonome autoguidé pour cultures, débit jusqu'à 2,5 ha par jour"
+  valeur: 30050
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 348 (architecture verte et résilience cochées ; ouverte aux CUMA). Débit supérieur à 2,5 ha par jour : voir aii_robot_grand_forfait (ligne 349)."
+
+aii_robot_grand_forfait:
+  libelle: "Aide AII : coût simplifié d'un robot autonome autoguidé pour cultures, débit supérieur à 2,5 ha par jour"
+  valeur: 150000
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 349. L'aide porte sur le plus petit montant entre ce coût simplifié et le prix réellement payé. Le FarmDroid FD20 (environ 4 ha par jour en pratique) relève de cette ligne."
+
+aii_tracteur_elec_forfait:
+  libelle: "Aide AII : coût simplifié d'un tracteur électrique ou au biogaz de plus de 150 ch"
+  valeur: 173905
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 398 (architecture verte et résilience cochées). Aucune ligne pour un tracteur électrique compact : un tracteur de 30 à 50 ch, quelle que soit sa motorisation, a un forfait de 19 800 € sans majoration architecture verte (ligne 393)."
+
+aii_chargeur_50ch_forfait:
+  libelle: "Aide AII : coût simplifié d'un chargeur compact, nettoyeur d'étable ou télescopique de moins de 50 ch"
+  valeur: 35387
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 115 : même forfait en diesel et en électrique, aucune case architecture verte. 50 à 75 ch : 49 192 € ; 75 à 100 ch : 65 186 € ; 100 ch et plus : 83 050 €."
+
+aii_utilitaire_frigo_forfait:
+  libelle: "Aide AII : coût simplifié d'un véhicule utilitaire réfrigéré (diversification agricole)"
+  valeur: 24424
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 462 : ne distingue pas la motorisation. Remorque réfrigérée : 7 211 € (ligne 460)."
+
+aii_hall_sechage_forfait:
+  libelle: "Aide AII : coût simplifié d'un hall de séchage pour vrac"
+  valeur: 498
+  unite: €/m²
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 238 (architecture verte et résilience cochées). Séchoir compact pour balles : 953 €/m² (ligne 365, résilience). Ventilateur d'au moins 450 m³/min : 540 € (ligne 465). Aide limitée aux 1 000 premiers m²."
+
+aii_moulin_petit_forfait:
+  libelle: "Aide AII : coût simplifié d'un moulin à farine sur pierre, meule de 50 à 100 cm"
+  valeur: 9460
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 426 (diversification agricole) : meule de 100 cm et plus, 22 000 € (ligne 427). Local de transformation construit : 1 144 €/m² (ligne 450) ; aménagé : 512 €/m² (ligne 444)."
+
+# Énergie : GREEN, AMUREBA, certificats verts
+
+green_seuil_pme:
+  libelle: "Aide GREEN : investissement éligible minimal d'une PME"
+  valeur: 20000
+  unite: €
+  statut: sourcé
+  date: 2025-01-01
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+  note: "AGW du 23/05/2024 relatif aux primes à l'investissement (aides GREEN), art. 11 § 3, en vigueur le 01/01/2025 : 25 000 € pour une grande entreprise. Demande avant le début des travaux. Audit ou étude AMUREBA obligatoire pour tous les programmes depuis 2026."
+
+green_taux_chaudiere_biomasse:
+  libelle: "Aide GREEN : taux pour une chaudière biomasse de 0 à 300 kW (PME)"
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "SPW Économie, Emploi, Recherche, page mise à jour le 23/01/2025 : 40 % jusqu'à 300 kW, 30 % de 300 à 1 000 kW. Coût éligible plafonné à 1 100 €/kW jusqu'à 100 kW, 880 €/kW de 100 à 300 kW, 660 €/kW de 300 à 1 000 kW. Valbiom (juin 2025) : « jusqu'à 40 % » pour une entreprise ou un agriculteur."
+
+green_plafond_chaudiere_kw:
+  libelle: "Aide GREEN : coût éligible maximal d'une chaudière biomasse de 0 à 100 kW"
+  valeur: 1100
+  unite: €/kW
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "Même page : 880 €/kW de 100 à 300 kW."
+
+green_taux_pac:
+  libelle: "Aide GREEN : taux pour une pompe à chaleur air-eau ou eau-eau jusqu'à 45 kW thermiques (PME)"
+  valeur: 0.35
+  unite: "%"
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "Même page : 20 % au-delà de 45 kWth. Coût éligible plafonné à 1 760 €/kW (0-15 kWth), 1 430 €/kW (15-30), 1 320 €/kW (30-45), 1 100 €/kW au-delà. Pompe à chaleur air-air : 30 % jusqu'à 45 kWth."
+
+green_taux_solaire_thermique:
+  libelle: "Aide GREEN : taux pour le solaire thermique (PME)"
+  valeur: 0.50
+  unite: "%"
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "Même page : coût éligible plafonné à 1 320 €/m² jusqu'à 20 m², 1 210 €/m² de 20 à 100 m²."
+
+green_taux_biometh:
+  libelle: "Aide GREEN : taux pour la biométhanisation avec consommation sur site, 10 à 200 kW électriques (PME)"
+  valeur: 0.30
+  unite: "%"
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "Même page. Biométhanisation de moins de 10 kW exclue de GREEN (AGW du 23/05/2024, art. 10 § 2) : elle relève de l'AII."
+
+green_plafond_biometh_kw:
+  libelle: "Aide GREEN : coût éligible maximal de la biométhanisation de 10 à 200 kW électriques"
+  valeur: 13200
+  unite: €/kW
+  statut: sourcé
+  date: 2025-01-23
+  source: https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+  note: "Même page : 9 240 €/kW de 200 à 600 kW."
+
+green_taux_efficacite_petite:
+  libelle: "Aide GREEN : taux pour un investissement d'économie d'énergie d'une petite entreprise"
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2025-01-01
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+  note: "AGW du 23/05/2024, art. 13 § 1 : 30 % moyenne entreprise, 20 % grande. Exclu si le temps de retour actualisé (méthode AMUREBA) est de 3 ans ou moins (art. 10 § 2). Exclus de GREEN : photovoltaïque, batteries, équipements à combustible fossile."
+
+amureba_taux_pme:
+  libelle: "Subvention AMUREBA : part du coût d'un audit ou d'une étude énergétique prise en charge (PME)"
+  valeur: 0.75
+  unite: "%"
+  statut: sourcé
+  date: 2024-04-01
+  source: https://wallex.wallonie.be/eli/arrete/2024/02/01/2024004275
+  note: "AGW du 01/02/2024, annexe 5 : 75 % hors TVA ; étude de faisabilité plafonnée à 5 000 €, 20 000 € sur l'énergie thermique ; audit global 8 000 €. Passage à 50 % annoncé « mi-2026 au mieux » (SPW Énergie, 06/02/2026), non publié au 27/11/2026. Accès d'une exploitation agricole (règle de minimis) à vérifier."
+
+cv_biogaz_taux:
+  libelle: "Certificats verts : taux d'octroi de la biométhanisation jusqu'à 200 kW, plus de 50 % d'effluents d'élevage"
+  valeur: 2.5
+  unite: CV/MWh
+  statut: sourcé
+  date: 2025-01-01
+  source: https://energie.wallonie.be/files/Soutiens%20financiers/%c3%a9lectricit%c3%a9%20verte/M%c3%a9canismes%20de%20soutiens/R%c3%a9gime%20CPMA/Tableau%20nouvelles%20installations%20-%20Taux%20octrois%20et%20CPMA%20des%20cat%c3%a9gories%20-%202025.pdf
+  note: "SPW Énergie, tableau des taux d'octroi des demandes introduites en 2025 (régime Cpma) : 2,500 CV par MWh électrique net, de 0 à 10 kW (Cpma 637,26 €/MWh) comme de 10 à 200 kW (525,01 €/MWh). C'est le plafond légal. Taux 2026 et durée d'octroi : non publiés au 27/11/2026. Réservation préalable obligatoire."
+
+cv_pv_taux:
+  libelle: "Certificats verts : taux d'octroi du photovoltaïque de 10 à 1 000 kW"
+  valeur: 0.318
+  unite: CV/MWh
+  statut: sourcé
+  date: 2025-01-01
+  source: https://energie.wallonie.be/files/Soutiens%20financiers/%c3%a9lectricit%c3%a9%20verte/M%c3%a9canismes%20de%20soutiens/R%c3%a9gime%20CPMA/Tableau%20nouvelles%20installations%20-%20Taux%20octrois%20et%20CPMA%20des%20cat%c3%a9gories%20-%202025.pdf
+  note: "Même tableau (demandes introduites en 2025) : 0,318 CV/MWh, taux calculé de 0,491 plafonné à celui de la catégorie de plus de 1 MW. Le photovoltaïque de moins de 10 kW n'a pas de certificats verts. Taux 2026 non publié."
+
+cv_prix_garanti:
+  libelle: Prix garanti de rachat d'un certificat vert par Elia
+  valeur: 65
+  unite: €/CV
+  statut: sourcé
+  date: 2026-06-12
+  source: https://energie.wallonie.be/files/Les%20march%c3%a9s/Les%20CV/Rapports%20trimestriels/rapport-marche-cv-2025-t3_t4.pdf
+  note: "SPW Énergie, rapport sur le marché des certificats verts 2025 (T3-T4), 12/06/2026 : prix garanti de 65 €/CV, ouvert aux unités soumises à réservation. Valeur de référence du CV : 67,08 € en 2025, 67,29 € pour 2026 (AM du 01/10/2025, annexe 14, ajoutée par l'AM du 03/06/2026)."
+
+# Autres aides
+
+haie_subv_1rang:
+  libelle: Subvention régionale à la plantation d'une haie vive d'un rang
+  valeur: 5
+  unite: €/m
+  statut: sourcé
+  date: 2024-04-15
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
+  note: "AGW du 08/09/2016 consolidé (version du 15/04/2024), annexe : 7 €/m pour deux rangs, 9 €/m pour trois rangs et plus. Montants × 1,5 si une entreprise spécialisée plante, sans dépasser 80 % des factures. Au moins 100 m, au moins 3 espèces, paillage biodégradable obligatoire. Cumul avec l'éco-régime maillage : non traité par l'arrêté."
+
+haie_subv_2rangs:
+  libelle: Subvention régionale à la plantation d'une haie vive de deux rangs
+  valeur: 7
+  unite: €/m
+  statut: sourcé
+  date: 2024-04-15
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
+  note: "Même arrêté. Alignement d'arbres : 6 € par arbre ; verger haute tige : 25 € par arbre ; taille de têtard : 20 € par arbre."
+
+haie_subv_majoration_entreprise:
+  libelle: Multiplicateur de la subvention à la plantation quand une entreprise spécialisée plante
+  valeur: 1.5
+  unite: fois
+  statut: sourcé
+  date: 2024-04-15
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
+  note: "Même arrêté : sans dépasser 80 % des factures."
+
+hra_taux_base:
+  libelle: "Hall relais agricole : taux de subvention d'un promoteur privé"
+  valeur: 0.60
+  unite: "%"
+  statut: sourcé
+  date: 2023-11-09
+  source: https://wallex.wallonie.be/sites/wallex/contents/acts/3/3926/2.html
+  note: "AGW du 30/08/2018 consolidé : 60 % plus au maximum deux bonus de 15 % ; pouvoir public 80 % (+10 % si au moins deux communes). Subvention plafonnée à 200 000 €. Pas d'aide directe à un agriculteur seul. Aucun appel 2026 trouvé (derniers appels : 2015 et 2018)."
+
+dpi_thematique_pp:
+  libelle: "Déduction fédérale pour investissement thématique : taux pour une personne physique ou une petite société"
+  valeur: 0.40
+  unite: "%"
+  statut: sourcé
+  date: 2026-04-01
+  source: https://transportmedia.be/fr/2026/04/vehicules-a-zero-emissions-la-deduction-pour-investissement-est-operationnelle/
+  note: "Loi du 12/05/2024 (art. 69/1 CIR 92), applicable aux achats depuis le 01/01/2025 (Barreau de Liège-Huy, 12/06/2025) : 40 % de la valeur d'achat déduits des bénéfices imposables, 30 % pour les autres sociétés ; déduction de base 10 %. Catégories : énergie (stockage compris), transport sans émission de CO2, environnement, numérique. Camionnettes et vélos-cargo électriques neufs à usage exclusivement professionnel : attestation du SPF Mobilité ouverte en avril 2026. Ne joue que pour un exploitant imposé sur ses bénéfices réels ; agriculteur au forfait : non vérifié. Texte du SPF Finances non lu (site inaccessible)."
+
+ipp_taux_marginal:
+  libelle: Taux marginal d'imposition d'un indépendant à l'impôt des personnes physiques
+  valeur: 0.50
+  unite: "%"
+  statut: hypothèse
+  date: 2026-11-27
+  source: https://transportmedia.be/fr/2026/04/vehicules-a-zero-emissions-la-deduction-pour-investissement-est-operationnelle/
+  note: "Tranche la plus haute de l'IPP, hors additionnels communaux. Cohérent avec l'exemple du ministre de la Mobilité : pour une camionnette électrique de 40 000 €, plus de 8 000 € d'impôt en moins pour un indépendant, 4 000 € pour une société (ISOC à 25 %). À remplacer par le taux marginal réel de l'exploitant."
+
+# Hypothèses de calcul liées aux aides
+
+chaudiere_plaquettes_prix:
+  libelle: Chaufferie à plaquettes complète de 50 kW (chaudière, silo, raccordement)
+  valeur: 37500
+  unite: €
+  statut: estimé
+  date: 2025-06-01
+  source: https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Poele%20chaudiere/installer-une-chaudiere-biomasse-pour-se-chauffer-2025.pdf
+  note: "Valbiom, Carnet n° 5 (juin 2025), p. 12 : 30 000 à 45 000 € en moyenne pour 50 kW, selon le silo et le réseau. Milieu de la fourchette. La FEBHEL donne aussi 30 000 à 45 000 € pour 50 à 100 kW."
+
+chaudiere_plaquettes_kw:
+  libelle: Puissance de la chaufferie à plaquettes type
+  valeur: 50
+  unite: kW
+  statut: hypothèse
+  date: 2026-11-27
+  source: ""
+  note: "Taille de l'exemple Valbiom. Ordre de grandeur pour la ferme de 8 000 L de mazout par an (80 000 kWh, soit 1 600 heures à pleine puissance)."
+
+chaudiere_plaquettes_entretien:
+  libelle: Entretien et maintenance annuels d'une chaufferie à plaquettes de 50 kW
+  valeur: 950
+  unite: €/an
+  statut: sourcé
+  date: 2025-06-01
+  source: https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Poele%20chaudiere/installer-une-chaudiere-biomasse-pour-se-chauffer-2025.pdf
+  note: "Valbiom, Carnet n° 5 (juin 2025), p. 12 et 13."
+
+chaudiere_mazout_entretien:
+  libelle: Entretien annuel d'une chaudière au mazout de 50 kW
+  valeur: 300
+  unite: €/an
+  statut: sourcé
+  date: 2025-06-01
+  source: https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Poele%20chaudiere/installer-une-chaudiere-biomasse-pour-se-chauffer-2025.pdf
+  note: "Valbiom, Carnet n° 5 (juin 2025), p. 13, comparaison des dépenses annuelles d'une chaudière de 50 kW."
+
+duree_retour_visee:
+  libelle: Temps de retour visé pour un investissement de séchage
+  valeur: 10
+  unite: ans
+  statut: hypothèse
+  date: 2026-11-27
+  source: ""
+  note: "Sert à calculer le prix d'installation que l'économie d'énergie peut rembourser. Remplacer par la durée que l'exploitant ou le groupe accepte."

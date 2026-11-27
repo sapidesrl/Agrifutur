@@ -6,7 +6,7 @@ dependance_fossile: gasoil (transport); gaz (procédés)
 alternatives: [Atelier de découpe, presse à huile, moulin à meules, légumerie-conserverie]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Transformation industrielle centralisée
@@ -39,8 +39,9 @@ Toutes les alternatives qui suivent ont un point commun : on garde le produit pl
 
 **Les aides wallonnes à connaître :**
 
-- **Aide aux investissements (AII), transformation et diversification.** Pour un agriculteur actif, l'aide vaut 20 % d'un montant forfaitaire fixé par type d'investissement, plus 10 % pour un jeune agriculteur et 10 % pour des produits biologiques ou de qualité. Pour une coopérative de transformation et de commercialisation (SCTC), le taux de base est aussi de 20 %, avec des bonus selon le nombre de membres. Sur 2023-2027, l'aide totale est plafonnée à 200 000 € par agriculteur et à 500 000 € par SCTC ou entreprise[^am-aii].
-- **Halls relais agricoles.** Un bâtiment de stockage, de transformation, de conditionnement ou de vente partagé par des agriculteurs ou une SCTC peut recevoir une subvention de 60 % des investissements admissibles, avec au plus deux bonus de 15 % (par exemple un engagement écrit d'au moins cinq agriculteurs, ou deux emplois à temps plein créés). La subvention est plafonnée à 200 000 € ; pour un pouvoir public, elle monte à 80 %[^hra]. Une aide à la consultance (10 000 € au plus) et une aide au fonctionnement (20 000 € au plus sur trois ans) sont prévues, et le hall doit fonctionner dans les 36 mois[^hra].
+- **Aide aux investissements (AII), transformation et diversification.** Pour un agriculteur actif, l'aide vaut {{ v('aii_diversif_taux_base', 0) }} d'un montant forfaitaire fixé par type d'investissement (le « coût simplifié »), plus 10 % pour un jeune agriculteur et 10 % pour des produits biologiques ou de qualité. Ce n'est pas un pourcentage du prix réel : quand le matériel coûte bien plus que le forfait, l'aide en couvre une petite part. Pour une coopérative de transformation et de commercialisation (SCTC), le taux de base est aussi de {{ v('aii_diversif_taux_base', 0) }}, avec des bonus selon le nombre de membres et la part de production bio ou de qualité. Sur 2023-2027, l'aide totale est plafonnée à 200 000 € par agriculteur et à 500 000 € par SCTC ou entreprise[^am-aii]. La demande d'un agriculteur doit atteindre {{ v('aii_seuil_points', 0, unite=False) }} points de sélection, une seule demande par trimestre, et le matériel d'occasion est exclu[^am-aii].
+- **Halls relais agricoles.** Un bâtiment de stockage, de transformation, de conditionnement ou de vente partagé par des agriculteurs ou une SCTC peut recevoir une subvention de {{ v('hra_taux_base', 0) }} des investissements admissibles, avec au plus deux bonus de 15 % (par exemple un engagement écrit d'au moins cinq agriculteurs, ou deux emplois à temps plein créés). La subvention est plafonnée à 200 000 € ; pour un pouvoir public, elle monte à 80 %[^hra]. Une aide à la consultance (10 000 € au plus) et une aide au fonctionnement (20 000 € au plus sur trois ans) sont prévues, et le hall doit fonctionner dans les 36 mois[^hra]. L'aide va à un « promoteur » (commune, ou structure qui valorise des produits agricoles), jamais à un agriculteur seul. Le Ministre ouvre des appels à projets : aucun n'a été trouvé pour 2026, les derniers trouvés datent de 2015 et 2018[^hra].
+- Les montants et les règles de cumul sont rassemblés dans [les aides publiques](../../aides.md#les-aides-a-linvestissement-agricole-aii).
 - **Accompagnement.** La cellule DiversiFerm (Gembloux Agro-Bio Tech et Accueil Champêtre en Wallonie) conseille les agriculteurs-transformateurs sur l'hygiène, les démarches AFSCA et l'économie de leur projet[^vm2019].
 
 **La règle AFSCA de base.** La production primaire demande un simple enregistrement. La transformation (atelier de découpe, meunerie, fabrication de produits à base de fruits et légumes…) et la vente au détail demandent en général une autorisation ou un agrément[^vm2019]. Les petites structures qui vendent directement au consommateur (au plus cinq équivalents temps plein ou moins de 400 m²) bénéficient d'un autocontrôle et d'une traçabilité « assouplis », basés sur un guide sectoriel[^vm2019].
@@ -74,6 +75,8 @@ Une boucherie à la ferme coûte beaucoup plus cher : 65 000 € d'investissemen
 
 La vente directe peut inclure jusqu'à 30 % du chiffre d'affaires annuel en vente indirecte[^vm2019].
 
+**Aides.** La découpe chez un prestataire n'a presque pas d'investissement à aider. Pour un atelier à la ferme, l'AII paie {{ v('aii_diversif_taux_base', 0) }} de base de coûts simplifiés : 512 €/m² pour aménager un local de transformation, 1 144 €/m² pour le construire, 19 € par m³ de local réfrigéré pour le groupe frigorifique[^am-aii]. Pour un atelier partagé, deux voies : l'AII d'une SCTC (plafond de 500 000 € d'aide) ou un hall relais agricole porté par un promoteur ({{ v('hra_taux_base', 0) }} et plus), sous réserve d'un appel ouvert[^am-aii] [^hra]. Ces aides allègent l'atelier collectif, sans changer la vague.
+
 **Pourquoi vague 1.** La vente en colis avec découpe chez un prestataire demande peu d'investissement et dégage une marge positive en moyenne, travail payé. Elle est rentable aujourd'hui quand on a la clientèle et le temps de vendre.
 
 Limites :
@@ -100,7 +103,7 @@ Limites :
 - trouver les clients : le producteur français a distribué plus de deux mille dépliants et mis un an à construire son réseau[^tn-prodel] ;
 - des graines saines, sans échauffement, et triées pour que l'huile ne soit pas amère ; trois semaines de décantation en fûts[^tn-prodel] ;
 - un local propre ; selon le même producteur, transformer des végétaux impose moins de contraintes que le lait ou la viande[^tn-prodel] ;
-- l'AII ne prévoit pas de forfait « presse à huile » dans la liste de ses investissements admissibles, même si la fabrication d'huiles et de graisses fait partie des activités agroalimentaires visées[^am-aii].
+- **aucune aide pour un agriculteur seul** : l'AII ne prévoit pas de forfait « presse à huile » dans la liste de ses investissements admissibles, même si la fabrication d'huiles et de graisses fait partie des activités agroalimentaires visées, et elle exclut de toute façon le matériel d'occasion, comme la presse de l'exemple français[^am-aii]. La seule voie trouvée est une presse partagée dans un hall relais agricole ({{ v('hra_taux_base', 0) }} des investissements, porté par un collectif ou une commune), mais aucun appel n'a été trouvé pour 2026[^hra]. Le trieur et le local de stockage peuvent relever d'autres lignes de l'AII (non vérifié pour un usage de pressage).
 
 **Pourquoi vague 2.** La valeur ajoutée par tonne est très forte, mais tout repose sur la vente directe d'un produit que les clients achètent en petites quantités. Aucun prix wallon de l'huile de colza fermière n'a été trouvé.
 
@@ -134,7 +137,7 @@ Une présentation de DiversiFerm citait en 2015 un projet français : blé panif
 - vendre le son aux animaux d'autres éleveurs demande un enregistrement de fabricant de matières premières pour l'alimentation animale[^vm2019] ;
 - hors zone d'activité économique, des machines de 10 à 20 kW relèvent d'une déclaration de classe 3, et à partir de 20 kW d'un permis d'environnement de classe 2[^vm2019].
 
-**Aides.** L'AII prévoit un forfait de 9 460 € pour un moulin sur pierre à meules de 50 à 100 cm, de 22 000 € pour des meules d'un mètre et plus, de 18 150 € pour une ensacheuse à farine et de 14 850 € pour une tamiseuse[^am-aii]. L'aide est un pourcentage de ce forfait (voir plus haut), pas du prix réel.
+**Aides.** L'AII prévoit un forfait de {{ v('aii_moulin_petit_forfait') }} pour un moulin sur pierre à meules de 50 à 100 cm, de 22 000 € pour des meules d'un mètre et plus, de 18 150 € pour une ensacheuse à farine et de 14 850 € pour une tamiseuse[^am-aii]. L'aide vaut {{ v('aii_diversif_taux_base', 0) }} de ce forfait pour un agriculteur actif (30 à 40 % pour un jeune agriculteur, en bio ou en qualité différenciée), pas du prix réel[^am-aii]. Face aux 120 000 € investis à Corioule[^corioule], l'aide ne couvre qu'une petite part de l'investissement : elle ne change ni le calcul par tonne ni la vague. Un moulin partagé en SCTC ou dans un hall relais agricole ({{ v('hra_taux_base', 0) }} et plus, sous réserve d'un appel) est la voie où l'aide pèse le plus[^hra].
 
 **Pourquoi vague 2.** La valeur ajoutée par tonne est forte, mais il faut un blé de qualité panifiable, un investissement de plus de 100 000 €, du temps et des boulangers clients[^corioule]. « Le meilleur des investissements n'est rien sans une bonne clientèle », résume le meunier de Vencimont[^farwal]. La mouture à façon permet de tester le marché avant d'investir.
 
@@ -151,6 +154,8 @@ Limites : le moulin consomme de l'électricité (la dépendance passe du gasoil 
 - À Charleroi, le hub de la Ceinture alimentaire prévoyait en 2023 de traiter de 1 000 à 2 000 t de légumes locaux par an. Il fait partie des 57 projets de relocalisation alimentaire qui se partageaient 45 M€ de la Région[^lavenir].
 
 **À la ferme.** L'AII prévoit des forfaits pour une laveuse à légumes (5 786 €), un groupe frigorifique (19 € par m³ de local), l'aménagement d'un local de transformation (512 €/m²) ou sa construction (1 144 €/m²)[^am-aii]. Pour les produits à base de pommes de terre (4e gamme comprise), la vente directe demande une autorisation « commerce de détail avec transformation ». On peut aussi livrer d'autres magasins dans un rayon de 80 km, à condition que ces livraisons ne dépassent pas 30 % du chiffre d'affaires. Au-delà, une autorisation de fabricant est nécessaire[^vm2019].
+
+**Aides.** À la ferme, l'AII paie {{ v('aii_diversif_taux_base', 0) }} de base des forfaits ci-dessus[^am-aii]. En collectif, une SCTC peut demander l'AII (plafond de 500 000 € d'aide), et un hall relais agricole peut porter le bâtiment ({{ v('hra_taux_base', 0) }}, jusqu'à 80 % pour une commune, plafond de 200 000 €)[^am-aii] [^hra]. Ces aides ne changent pas la vague : la rentabilité dépend d'abord des contrats avec les cuisines de collectivités.
 
 **Pourquoi vague 2.** Les légumeries wallonnes existent, mais elles sont collectives, portées par l'économie sociale ou des intercommunales, et soutenues par des fonds publics. Leur rentabilité dépend de contrats réguliers avec les cuisines de collectivités. Aucun chiffre de coût ni de prix payé aux producteurs n'a été trouvé.
 
@@ -175,7 +180,9 @@ Limites : la stérilisation demande beaucoup de chaleur. Pour que le gain soit c
 - Coût d'investissement et prix payés aux producteurs par les légumeries de Chênée, Droixhe et Charleroi ; existence de conserveries partagées accessibles aux agriculteurs en Wallonie et leurs tarifs.
 - Chiffres du CRA-W sur la viande (données 2020) : à actualiser avec les prix de 2026 (carcasses, abattage, découpe).
 - Investissement et fonctionnement actuels des ateliers de Wapicowp (Ath) et d'« En direct de mon élevage » (Perwez).
-- Appels à projets « halls relais agricoles » ouverts en 2026 et forfait AII éventuel pour une presse à huile.
+- Appels à projets « halls relais agricoles » ouverts en 2026 (aucun trouvé ; derniers appels : 2015 et 2018) et forfait AII éventuel pour une presse à huile.
+- Plafond de 40 % du forfait pour l'AII à la transformation et à la diversification : écrit pour l'investissement productif, pas retrouvé à l'article 15 de l'arrêté.
+- Cumul de l'AII d'un membre et de l'aide d'une SCTC ou d'un hall relais pour un même outil partagé.
 
 ## Sources
 
@@ -186,7 +193,7 @@ Limites : la stérilisation demande beaucoup de chaleur. Pour que le gain soit c
 [^craw-viande]: Turlot A. (CRA-W), Jérôme E., Beuve-Mery J. (Accueil Champêtre en Wallonie), « Production et commercialisation de viande bovine en circuits courts. Repères socio-économiques », CRA-W, projet OTEl, avril 2021 (données 2020). https://www.cra.wallonie.be/uploads/2021/04/2021_Production_et_commercialisation_de_viande_bovine_en_circuits_courts_rep%C3%A8res_socio-%C3%A9conomiques.pdf
 [^fegra]: Cotations indicatives des produits agricoles (blé standard certifié), FEGRA (fédération belge du négoce de grains), 26 novembre 2026 ; prix hors TVA, base non précisée, non contraignants. https://fegra.be/home/agriculturalprices?lang=fr
 [^terrenet-colza]: Cotation du colza sur Euronext (échéances novembre 2026 et février 2027), article de Terre-net (France), 30 septembre 2026. https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
-[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole, coopératives et entreprises de transformation et de commercialisation), articles 13 à 15 et annexes 1 et 3, version consolidée (dernière modification lue : arrêté ministériel du 11 mai 2026), Wallex, consultée le 26 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole, coopératives et entreprises de transformation et de commercialisation), articles 3 à 5 et 13 à 16, annexes 1 et 3, version consolidée (dernière modification lue : arrêté ministériel du 11 mai 2026), Wallex, consultée le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
 [^hra]: Arrêté du Gouvernement wallon du 30 août 2018 fixant les conditions d'octroi des subventions relatives aux halls relais agricoles et déterminant les modalités de leur mise à disposition, articles 1 à 4, version en vigueur depuis le 9 novembre 2023, Wallex, consultée le 26 novembre 2026. https://wallex.wallonie.be/contents/acts/3/3926.html
 [^vm2019]: « Vade-mecum de la valorisation des produits agricoles et de leur commercialisation en circuit court », édition 2019, DiversiFerm (Gembloux Agro-Bio Tech - ULiège, Accueil Champêtre en Wallonie) pour le SPW. https://culturalite.be/wp-content/uploads/2021/10/vade-mecum-diversiferm-2019.pdf
 [^dh-wapi]: « Une salle de découpe partagée par les éleveurs et pour les éleveurs de Wapi », La DH, 5 mars 2022. https://www.dhnet.be/regions/tournai-ath-mouscron/une-salle-de-decoupe-partagee-par-les-eleveurs-et-pour-les-eleveurs-de-wapi-6223161d9978e25398e9af82

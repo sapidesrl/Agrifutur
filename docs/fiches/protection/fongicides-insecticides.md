@@ -6,7 +6,7 @@ dependance_fossile: pétrochimie
 alternatives: [Variétés résistantes, rotations, haies et auxiliaires, biocontrôle]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Fongicides et insecticides de synthèse
@@ -15,7 +15,7 @@ maj: 2026-11-26
 
 Les fongicides protègent les cultures contre les maladies (septoriose et rouilles du froment, mildiou de la pomme de terre) ; les insecticides contre les ravageurs (pucerons vecteurs de virus en betterave et en orge, insectes du colza). Fabriquer la matière active d'un traitement fongicide de froment demande l'énergie de {{ v('fongicide_eq_gasoil_l_ha', 1) }} de gasoil (calculé), et chaque traitement est un passage de pulvérisateur. En Wallonie, les produits phytopharmaceutiques coûtaient en 2024 {{ v('phyto_froment_eur_ha') }} en froment et {{ v('phyto_pdt_eur_ha') }} en pomme de terre[^eaw-froment][^eaw-pdt].
 
-La meilleure alternative, rentable aujourd'hui avec la rotation (vague 1), est la variété résistante conduite avec les avertissements : un seul traitement suffit souvent en froment, et en pomme de terre une variété résistante a reçu 1 à 2 traitements contre le mildiou en 2025, au lieu de 11 à 13, si l'acheteur l'accepte[^lb-var][^viaverda25]. Les haies et bandes fleuries, rentables grâce aux aides, et le biocontrôle, qui déplace parfois la dépendance vers le cuivre minier ou le soufre du raffinage, restent des compléments (vague 2).
+La meilleure alternative, rentable aujourd'hui avec la rotation (vague 1), est la variété résistante conduite avec les avertissements : un seul traitement suffit souvent en froment, et en pomme de terre une variété résistante a reçu 1 à 2 traitements contre le mildiou en 2025, au lieu de 11 à 13, si l'acheteur l'accepte[^lb-var][^viaverda25]. Les haies et bandes fleuries, rentables grâce aux aides (MAEC, éco-régime, subvention à la plantation), et le biocontrôle, qui déplace parfois la dépendance vers le cuivre minier ou le soufre du raffinage, restent des compléments (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -99,6 +99,8 @@ Le CRA-W sélectionne à Libramont des variétés plus résistantes au mildiou, 
 - **céréales** : le CePiCOP publie ses avertissements maladies et pucerons, et les outils Fongiblé et Cécible déclenchent un traitement seulement quand le seuil est dépassé[^gf3] ;
 - **betterave** : l'IRBAB publie chaque semaine une carte des pucerons verts. En 2025, la moitié des parcelles suivies avait dépassé le premier seuil à la mi-juin : un traitement systématique n'est donc pas la règle[^irbab-insect]. En betterave, aucune variété n'associe encore bon rendement et tolérance suffisante aux trois virus de la jaunisse[^irbab-insect].
 
+**Aides.** Une variété tolérante aide à toucher l'éco-régime « réduction d'intrants » ({{ v('ri_eur_ha', 0) }}, montant prévu 2026) : il suffit que le traitement restant n'utilise aucune des 36 substances de la liste (tébuconazole, metconazole, difénoconazole, lambda-cyhalothrine…)[^ri]. Cet éco-régime n'est pas ouvert aux parcelles bio[^ri]. Il renforce la vague 1, qui ne dépend pas de lui. Voir [les aides publiques](../../aides.md).
+
 **Vague 1** : rentable aujourd'hui en céréales, sans investissement, avec une variété du groupe « production intégrée » et les avertissements. En pomme de terre, rentable quand un acheteur prend la variété résistante. En betterave, la tolérance variétale aux jaunisses n'est pas encore disponible ; seuls les avertissements jouent.
 
 ### 2. Rotations (vague 1)
@@ -109,7 +111,7 @@ Le CRA-W sélectionne à Libramont des variétés plus résistantes au mildiou, 
 - **Pomme de terre** : le mildiou démarre sur les repousses et sur les tas de déchets de triage. En 2025, Viaverda n'a reçu aucun signalement de mildiou dans les champs, mais en a observé fin juillet sur des tas de déchets et sur les repousses autour[^viaverda25]. Détruire les repousses dans les cultures suivantes et couvrir ou éliminer les tas retarde l'épidémie[^viaverda26].
 - **Betterave** : les parcelles situées dans des régions riches en betteraves sucrières ou fourragères sont plus exposées aux virus de la jaunisse, car les champs voisins infectés servent de source[^virbicon]. La lutte se joue donc aussi à l'échelle de la région, ce qui suppose une coordination entre agriculteurs[^virbicon].
 
-**Diversifier.** Le Livre Blanc teste des cultures nouvelles pour la Wallonie : orge brassicole d'hiver, blé dur, avoine d'hiver en bio, association froment-pois d'hiver[^lb-rot]. L'association froment-pois a sécurisé le rendement en 2023 et 2024, quand le pois pur n'a rien donné[^lb-rot]. Elle touche le soutien couplé aux protéines végétales, {{ v('soutien_proteines_eur_ha', 0) }} prévus (400 €/ha payés en 2024)[^proteines]. Il faut s'assurer d'un débouché avant de semer[^lb-rot].
+**Diversifier.** Le Livre Blanc teste des cultures nouvelles pour la Wallonie : orge brassicole d'hiver, blé dur, avoine d'hiver en bio, association froment-pois d'hiver[^lb-rot]. L'association froment-pois a sécurisé le rendement en 2023 et 2024, quand le pois pur n'a rien donné[^lb-rot]. Elle touche le soutien couplé aux protéines végétales, {{ v('soutien_proteines_eur_ha', 0) }} prévus (400 €/ha payés en 2024)[^proteines]. Si le mélange compte au moins 50 % de céréales et 20 % de légumineuses, il peut toucher à la place l'éco-régime « cultures favorables » V3_B ({{ v('er_cfe_v3b_eur_ha', 0) }} prévus, récolte après le 15 juin, aucun insecticide) ; les deux aides ne se cumulent pas sur une même parcelle[^cfe]. Les céréales de printemps cultivées sans insecticide touchent la variante V2 ({{ v('er_cfe_v2_eur_ha', 0) }} prévus)[^cfe]. Il faut s'assurer d'un débouché avant de semer[^lb-rot].
 
 **Limites.** La rotation agit surtout sur les maladies qui se conservent dans le sol et les résidus. Elle ne protège pas d'un mildiou ou d'une rouille dont les spores arrivent des champs voisins. Une culture nouvelle n'est rentable qu'avec un débouché.
 
@@ -126,15 +128,17 @@ Le CRA-W sélectionne à Libramont des variétés plus résistantes au mildiou, 
 | Aménagement | Aide | Conditions principales |
 |---|---|---|
 | Parcelle aménagée (MAEC MC7) | {{ v('maec_parcelle_amenagee_eur_ha', 0) }} | 5 ans, avis d'expert, 0,02 à 1,5 ha, sans engrais ni phyto[^mc7] |
-| Tournière enherbée (MAEC MB5) | 1 200 €/ha/an | mélange de graminées et d'au moins 3 légumineuses[^mb5] |
+| Tournière enherbée (MAEC MB5) | {{ v('maec_mb5_eur_ha', 0) }} | 5 ans, bande de 10 à 20 m, mélange de graminées et d'au moins 3 légumineuses[^mb5] |
 | Jachère mellifère (éco-régime) | 900 €/ha/an (montant prévu) | au moins 5 espèces par liste, 1 an[^maillage] |
 | Bande bordure de champ (éco-régime) | 675 €/ha/an (montant prévu) | 6 à 20 m de large, 1 an[^maillage] |
 | Haie (éco-régime) | {{ v('haie_eco_regime_eur_km', 0) }} (calculé, montant prévu) | pas de phyto à moins d'1 m du pied[^maillage] |
-| Plantation d'une haie vive | 5 à 9 €/m selon le nombre de rangs, × 1,5 par une entreprise (au plus 80 % des factures) | subvention régionale à la plantation[^haie-sub] |
+| Plantation d'une haie vive | {{ v('haie_subv_1rang', 0) }} (un rang), {{ v('haie_subv_2rangs', 0) }} (deux rangs), 9 €/m (trois rangs), × {{ v('haie_subv_majoration_entreprise', 1, unite=False) }} si une entreprise plante (au plus 80 % des factures)[^haie-agw] | au moins 100 m, trois espèces, paillage biodégradable[^haie-agw][^haie-sub] |
 
-Une parcelle aménagée sur une terre à froment rapporte {{ v('parcelle_amenagee_ecart_marge_froment', 0) }} de plus que la marge brute moyenne du froment (calculé, sans compter le semis et l'entretien du couvert)[^eaw-froment][^mc7]. Les MAEC tournières, parcelles aménagées et céréales sur pied sont limitées ensemble à 25 % des terres arables[^mc7], et les montants des éco-régimes varient chaque année selon la demande (de 350 à 600 € par hectare environnemental)[^maillage].
+Une parcelle aménagée sur une terre à froment rapporte {{ v('parcelle_amenagee_ecart_marge_froment', 0) }} de plus que la marge brute moyenne du froment (calculé, sans compter le semis et l'entretien du couvert)[^eaw-froment][^mc7]. Les MAEC tournières, parcelles aménagées et céréales sur pied sont limitées ensemble à 25 % des terres arables[^mc7], et les montants des éco-régimes varient chaque année selon la demande (de 350 à 600 € par hectare environnemental)[^maillage]. L'éco-régime maillage ne paie pas les surfaces engagées en MB5 ou MC7, sauf les haies et arbres qui s'y trouvent[^maillage].
 
-**Vague 2** : rentable grâce aux aides, sous conditions (avis d'expert, engagement de 5 ans pour les MAEC, plafonds). L'effet sur les ravageurs est réel mais partiel et variable ; il réduit le nombre de traitements surtout s'il s'accompagne d'insecticides sélectifs et d'avertissements.
+**Une haie, de la plantation à l'aide annuelle.** Un kilomètre de haie vive de deux rangs reçoit {{ v('haie_plantation_subv_km', 0) }} à la plantation si l'agriculteur plante lui-même, {{ v('haie_plantation_subv_km_entreprise', 0) }} si une entreprise plante (calculé, sans dépasser 80 % des factures)[^haie-agw]. Il touche ensuite {{ v('haie_eco_regime_eur_km', 0) }} d'éco-régime maillage (calculé, montant prévu)[^maillage]. L'arrêté sur la plantation ne dit pas si les deux aides se cumulent (voir « À vérifier »). Aucune aide AII ne vise les haies, sauf les vergers[^aii-liste].
+
+**Vague 2** (confirmée) : rentable grâce aux aides, donc sous conditions (avis d'expert, engagement de 5 ans pour les MAEC, plafonds). L'effet sur les ravageurs est réel mais partiel et variable ; il réduit le nombre de traitements surtout s'il s'accompagne d'insecticides sélectifs et d'avertissements.
 
 ### 4. Biocontrôle (vague 2)
 
@@ -153,6 +157,8 @@ Une parcelle aménagée sur une terre à froment rapporte {{ v('parcelle_amenage
 - Les produits de biocontrôle agissent souvent par contact et à titre préventif. Ils demandent souvent plus de passages, donc plus de gasoil, et une bonne observation.
 
 **Coût.** Aucun prix belge publié des produits de biocontrôle n'a été trouvé (voir « À vérifier »).
+
+**Aides.** Aucune aide ne paie les produits de biocontrôle eux-mêmes. En bio, l'aide au maintien vaut {{ v('bio_autres_cultures_eur_ha', 0) }} en grandes cultures (premiers hectares), plus {{ v('bio_conversion_majoration_eur_ha', 0) }} pendant les deux années de conversion[^bio]. Elle ne se cumule pas avec l'éco-régime « réduction d'intrants »[^cumuls], dont la liste contient de toute façon le cuivre[^ri].
 
 **Vague 2** : utile en céréales comme complément (multi-sites du premier traitement), et en pomme de terre bio avec le cuivre. Pas encore de solution de biocontrôle efficace contre les pucerons de la betterave (vague 3 pour cet usage).
 
@@ -175,6 +181,8 @@ Une parcelle aménagée sur une terre à froment rapporte {{ v('parcelle_amenage
 - Date exacte de fin d'approbation du cuivre (la note de l'IFV écrit « 31/06/2029 », date impossible ; règlement d'exécution (UE) 2025/1489 non lu).
 - Statut européen de l'acétamipride après 2026 et suite de la dérogation du Durilon.
 - Chapitre « Maladies » du Livre Blanc Céréales de février 2026 (non trouvé en ligne ; on a utilisé celui de février 2025).
+- Cumul de la subvention régionale à la plantation d'une haie et de l'éco-régime maillage écologique : non traité par l'arrêté de 2016.
+- Montants payés des éco-régimes en 2025 et 2026 (seuls ceux de 2024 sont publiés).
 - Essais wallons ou flamands sur l'effet des bandes fleuries et des haies sur les pucerons et sur le nombre de traitements.
 - Énergie de fabrication des fongicides et insecticides récents (mefentrifluconazole, fenpicoxamid, flonicamide) : non publiée dans la base PPDB ; chiffres d'Audsley et al. (2009) non lus directement.
 
@@ -213,4 +221,9 @@ Une parcelle aménagée sur une terre à froment rapporte {{ v('parcelle_amenage
 [^mb5]: « MAEC Tournières enherbées – MB5 », Portail de l'agriculture wallonne (SPW), consulté le 26 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-tournieres-enherbees---mb5.html
 [^maillage]: « Éco-régime maillage écologique », Portail de l'agriculture wallonne (SPW), page modifiée le 17 avril 2026 (montants 2026-2027). https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-maillage-ecologique.html
 [^haie-sub]: « Demander une subvention pour la plantation d'une haie vive, d'un taillis linéaire, d'un verger et d'alignement d'arbres », wallonie.be, mis à jour le 25 novembre 2026. https://wallonie.be/fr/demarches/demander-une-subvention-pour-la-plantation-dune-haie-vive-dun-taillis-lineaire-dun-verger-et-dalignement-darbres-ainsi-que-pour-lentretien-des-arbres-tetards
+[^cfe]: « Eco-régime cultures favorables à l'environnement », Portail de l'agriculture wallonne (SPW), page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne (SPW), page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne (SPW), page modifiée le 18 septembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
+[^haie-agw]: Arrêté du Gouvernement wallon du 8 septembre 2016 relatif à l'octroi de subventions pour la plantation d'une haie vive, d'un taillis linéaire, d'un verger et d'alignements d'arbres, version en vigueur depuis le 15 avril 2024, annexe, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/3/3890/3.html
+[^aii-liste]: « Liste des investissements admissibles » (aide aux investissements agricoles, AII), SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
 [^proteines]: « Soutien couplé aux cultures de protéines végétales », Portail de l'agriculture wallonne (SPW), page modifiée le 21 novembre 2025 (270 à 400 €/ha selon la demande). https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html

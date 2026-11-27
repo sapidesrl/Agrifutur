@@ -6,7 +6,7 @@ dependance_fossile: transport; intrants de production
 alternatives: [Semences de ferme, semences paysannes reproductibles, sélection à la ferme]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Semences hybrides achetées chaque année
@@ -87,6 +87,13 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 - Repartir de semence certifiée de temps en temps, pour changer de variété ou rafraîchir le lot.
 - **Ce n'est pas une sortie du fossile** : la culture qui produit la semence reste la même, et le traitement de semences reste souvent chimique. On supprime surtout la marge, l'emballage et une partie du transport de la filière semencière.
 
+**Aides** (voir [les aides publiques](../../aides.md)). Ressemer son grain n'est pas aidé en soi, et le calcul ci-dessus n'en compte aucune. Deux aides touchent pourtant la semence de ferme :
+
+- **mélanges céréales-légumineuses** (comme l'association féverole-avoine ci-dessus) : l'éco-régime « cultures favorables à l'environnement », variante V3, paie {{ v('er_cfe_v3a_eur_ha', 0) }} prévus si la récolte a lieu après le 31 mai, {{ v('er_cfe_v3b_eur_ha', 0) }} après le 15 juin. Il faut au moins 50 % de céréales et 20 % de légumineuses, et **aucun insecticide, même en enrobage** : la semence de ferme ne doit donc recevoir aucun traitement insecticide[^cfe]. Le montant payé est fixé après la campagne et peut être plus bas que le montant prévu[^cfe]. Cette aide ne se cumule ni avec le soutien couplé aux protéagineux, ni avec l'éco-régime réduction d'intrants sur la même parcelle[^cumuls] ; le choix entre les deux voies est chiffré dans la fiche [concentrés et soja importés](../elevage/concentres-importes.md) ;
+- **triage en CUMA** : la liste de l'AII contient un « trieur à grains mobile pour cultures associées », réservé aux CUMA, avec la case « architecture verte » ; une CUMA de six membres ou plus reçoit {{ v('aii_taux_cuma_av', 0) }} de son coût simplifié (calculé)[^am-aii]. Un agriculteur seul n'y a pas accès.
+
+Ces aides rendent les mélanges plus intéressants ; elles ne changent pas la vague 1 de la semence de ferme, déjà rentable sans aide.
+
 ### 2. Semences paysannes reproductibles (vague 2)
 
 **Principe.** On cultive des **variétés populations** : des plantes qui se reproduisent entre elles et restent reproductibles, au lieu d'hybrides F1. Une population garde une diversité génétique qui lui permet de s'adapter, génération après génération, au sol, au climat et aux pratiques de la ferme[^cra-potager]. Pour les céréales, on parle de **populations issues de croisements multiples** (en anglais *composite cross populations*) : on croise de nombreuses variétés, puis on laisse la population évoluer.
@@ -107,6 +114,8 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 
 - **Rentable sous conditions** (vague 2) : en bio, en circuit court, pour une boulangerie paysanne ou un maraîchage diversifié qui valorise le goût et la diversité. Les maraîchers wallons interrogés par le CRA-W privilégient les populations par conviction, mais plusieurs doivent garder des hybrides F1 pour tenir les exigences d'homogénéité du marché ; ils évoquent des rendements et une tenue en culture parfois limités, faute de sélection[^cra-maraichers].
 - **Pas rentable aujourd'hui** en circuit long standardisé, où l'homogénéité est payée.
+
+**Aides.** Aucune aide ne paie le choix d'une variété population. Ces variétés sont surtout rentables en bio (voir ci-dessus), où compte l'aide au maintien en agriculture biologique : {{ v('bio_autres_cultures_eur_ha', 0) }} en grandes cultures et {{ v('bio_maraichage_eur_ha', 0) }} sur les premiers hectares du groupe « arboriculture, maraîchage et semences », où figure aussi la multiplication de semences[^bio]. Elle se cumule avec l'éco-régime « cultures favorables » pour un mélange céréales-légumineuses[^cumuls]. Elle paie le système bio, pas la population : la vague 2 ne change pas.
 
 ### 3. Sélection à la ferme (vague 3)
 
@@ -141,6 +150,8 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 - **Futur règlement sur le matériel de reproduction** : texte final sur les échanges entre agriculteurs et les variétés de conservation de céréales.
 - **Rendement des populations de froment** comparé aux lignées dans les essais belges.
 - « Biosemences » : acteur à identifier (activité, espèces, lien avec la Wallonie).
+- Éco-régime « cultures favorables », variante V3 : base des seuils de 50 % de céréales et 20 % de légumineuses (grains, poids de semence ou surface) pour une association féverole-avoine semée en semence de ferme ; montant 2026 payé (seul le montant prévu est publié).
+- Coût simplifié de l'AII pour le trieur mobile de cultures associées en CUMA (pas encore repris dans les données du projet).
 - Prix départ ferme du froment en Wallonie : le calcul utilise la cotation indicative belge de la FEGRA, dont la base de livraison n'est pas précisée.
 
 ## Sources
@@ -172,3 +183,7 @@ La semence de ferme reste moins chère dans les trois scénarios. L'écart se r�
 [^rsp]: Site du Réseau Semences Paysannes (France), page d'accueil consultée le 26 novembre 2026. https://www.semencespaysannes.org/
 [^infogm-juin]: D. Meshaka, « Veille juridique Inf'OGM du 9 au 23 juin 2026 », Inf'OGM, 22 juin 2026. https://infogm.org/juridique/veille-juridique-infogm-du-9-au-23-juin-2026/
 [^fegra]: Cotations indicatives des produits agricoles (blé standard certifié), FEGRA (fédération belge du négoce de grains), 26 novembre 2026 ; prix hors TVA, base non précisée, non contraignants. https://fegra.be/home/agriculturalprices?lang=fr
+[^cfe]: « Eco-régime cultures favorables à l'environnement », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne, page modifiée le 18 septembre 2025 (tableau « culture »), consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), article 5 et annexe 3 (ligne 457), Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748

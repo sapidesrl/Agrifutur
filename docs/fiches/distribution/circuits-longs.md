@@ -6,7 +6,7 @@ dependance_fossile: gasoil
 alternatives: [Vente directe groupée, points de dépôt, abonnements payés d'avance]
 vague_meilleure_alternative: 2
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Logistique longue et grande distribution
@@ -16,7 +16,7 @@ maj: 2026-11-26
 
 ## En bref
 
-La plupart des produits agricoles belges rejoignent l'assiette par une chaîne longue : collecteur ou criée, transformateur, centrale d'achat, supermarché ; elle roule au diesel, garde le froid à l'électricité et emballe dans du plastique. Le producteur n'y touche qu'une petite part du prix : 11 % de la valeur de la chaîne alimentaire reviennent aux agriculteurs en Belgique, contre 26 % en moyenne dans l'Union[^lalibre-comeos]. En circuit court, le producteur fixe son prix et garde 70 à 80 % du prix final quand une coopérative vend pour lui[^alterechos]. Ces circuits courts ne suppriment pas le pétrole : une camionnette mal remplie peut consommer plus par kilo qu'un camion plein (chiffres français)[^ademe]. Ils sont rentables sous conditions : un collectif, des volumes réguliers, des clients proches et du temps pour vendre (vague 2).
+La plupart des produits agricoles belges rejoignent l'assiette par une chaîne longue : collecteur ou criée, transformateur, centrale d'achat, supermarché ; elle roule au diesel, garde le froid à l'électricité et emballe dans du plastique. Le producteur n'y touche qu'une petite part du prix : 11 % de la valeur de la chaîne alimentaire reviennent aux agriculteurs en Belgique, contre 26 % en moyenne dans l'Union[^lalibre-comeos]. En circuit court, le producteur fixe son prix et garde 70 à 80 % du prix final quand une coopérative vend pour lui[^alterechos]. Ces circuits courts ne suppriment pas le pétrole : une camionnette mal remplie peut consommer plus par kilo qu'un camion plein (chiffres français)[^ademe]. Ils sont rentables sous conditions : un collectif, des volumes réguliers, des clients proches et du temps pour vendre ; les aides (AII, halls relais, bio) allègent l'investissement sans changer ce classement (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -79,6 +79,12 @@ Limites :
 - les volumes : 5 % des fruits et légumes frais seulement passent par les circuits courts[^ucl-legumes] ;
 - le temps de travail : prises de commande, livraisons, communication et comptabilité s'ajoutent à la production. L'épuisement guette, surtout les premières années[^oxfam].
 
+Aides (voir [les aides publiques](../../aides.md)) :
+
+- **à la ferme**, l'AII « diversification » paie {{ v('aii_diversif_taux_base', 0) }} de base d'un coût simplifié, plus 10 % pour un jeune agriculteur et 10 % en bio ou en qualité : 512 €/m² pour aménager un local de vente, 1 144 €/m² pour le construire, 1 100 € pour une balance-étiqueteuse[^am-aii]. L'AII exclut le commerce de détail, sauf la vente à la ferme de produits issus en partie de la production du demandeur[^agw-aii] : un magasin de producteurs en ville ne passe pas par l'AII d'un agriculteur seul ;
+- **en collectif**, une coopérative de transformation et de commercialisation (SCTC) peut demander l'AII ({{ v('aii_diversif_taux_base', 0) }} de base, avec des bonus selon le nombre de membres, plafond de 500 000 € d'aide sur 2023-2027)[^am-aii]. Un bâtiment de vente ou de stockage partagé peut aussi devenir un hall relais agricole : {{ v('hra_taux_base', 0) }} des investissements, plus deux bonus de 15 % au maximum, plafond de 200 000 €, pour un promoteur (commune ou structure qui valorise des produits agricoles), jamais pour un agriculteur seul. Aucun appel n'a été trouvé pour 2026[^hra] ;
+- ces aides allègent le bâtiment et le matériel, pas le salaire du personnel ni le temps de vente : la vague 2 ne change pas.
+
 ### 2. Points de dépôt (vague 2)
 
 Le client commande en ligne avant une date limite ; le producteur ou la coopérative livre les commandes dans un point de retrait (une salle, un commerce, une école, une ferme) à jour et heure fixes. Le producteur ne vend que ce qui est commandé.
@@ -96,6 +102,12 @@ Conditions :
 - assez de clients près du point de dépôt pour remplir la tournée ;
 - un outil de commande en ligne (souvent mutualisé : le Collectif 5C a développé un outil commun de vente en ligne[^oxfam]) ;
 - des bénévoles ou un responsable pour tenir le point de retrait.
+
+Aides :
+
+- un **distributeur automatique** à la ferme est une variante du point de retrait sans personne : l'AII « diversification » paie {{ v('aii_diversif_taux_base', 0) }} de base d'un coût simplifié de 275 € par casier non réfrigéré, 440 € par casier réfrigéré, ou 11 000 € pour un carrousel réfrigéré[^am-aii] ;
+- pour la tournée, voir la fiche [utilitaire diesel de livraison](../transport/vehicules-livraison.md#1-utilitaire-electrique-vague-1) : la déduction fédérale pour investissement de {{ v('dpi_thematique_pp', 0) }} vaut pour une camionnette ou un vélo-cargo électrique neuf à usage exclusivement professionnel, au régime réel seulement[^dpi-tm] ;
+- aucune aide ne paie l'outil de commande en ligne ni la tenue du point de retrait. La vague 2 ne change pas.
 
 Limites :
 
@@ -126,6 +138,8 @@ Limites :
 - peu de mangeurs s'engagent : l'abonnement, la prise de parts et le bénévolat attirent moins de 15 % des Belges francophones[^apaq-2026] ;
 - le paiement d'avance exclut une partie des ménages, sauf solidarité interne au groupe[^gasap].
 
+Aides : aucune aide ne vise l'abonnement lui-même. Si la ferme est certifiée bio, elle touche l'aide au maintien en bio : {{ v('bio_maraichage_eur_ha', 0) }} sur les premiers hectares de maraîchage, ou un forfait de 4 000 €/ha pour le petit maraîchage diversifié bio (3 ha au plus sur ce code, 10 ha en tout, 12 catégories de légumes)[^bio]. C'est une petite part de la recette par hectare d'une ferme en abonnement ({{ v('csa_recette_ha') }} avec les chiffres flamands de 2014, calculé) : l'aide soutient le revenu sans changer la vague.
+
 ## Ce qui ferme la boucle
 
 - Le circuit court garde la valeur sur le territoire. La part retenue par les intermédiaires paie des emplois locaux (magasins, logistique, transformation) au lieu de partir dans une chaîne nationale ou internationale.
@@ -144,6 +158,8 @@ Limites :
 - Revenu et temps de travail des fermes en circuit court en Wallonie : temps de vente, de préparation des commandes et de livraison par semaine, revenu horaire.
 - Mise en service et services des hubs logistiques de Liège, Namur et Charleroi.
 - Bilan énergétique d'une tournée de points de dépôt bien remplie, comparé à la chaîne longue pour un produit belge.
+- Accès d'un magasin de producteurs ou d'un point de dépôt hors de la ferme à l'AII (exclusion du commerce de détail) ; appel 2026 aux halls relais agricoles (aucun trouvé).
+- Déduction fédérale pour investissement : cas d'un agriculteur imposé au forfait (non vérifié).
 
 ## Sources
 
@@ -165,3 +181,8 @@ Limites :
 [^dh-gesves]: « Gesves : de l'auto-cueillette dans un grand potager », La DH, 25 avril 2024. https://www.dhnet.be/regions/namur/2024/04/25/gesves-de-lauto-cueillette-dans-un-grand-potager-VW6DEIFTMVALLHKXUDSKX4WO3E/
 [^dh-jambes]: « Les Jardins D'À Côté lancent une nouvelle saison à Jambes », La DH, 14 février 2025. https://www.dhnet.be/regions/namur/2025/02/14/les-jardins-da-cote-lancent-une-nouvelle-saison-a-jambes-EZP27TT5EREEBB6Z4LII6CVHWA/
 [^lalibre-maraicher]: Dath-Delcambe P., « "Si je compte toutes les heures que je passe à cultiver, je gagne 7-8 euros de l'heure" », La Libre, 26 juillet 2024 (titre et début de l'article, accès réservé aux abonnés). https://www.lalibre.be/economie/entreprises-startup/2024/07/26/si-je-compte-toutes-les-heures-que-je-passe-a-cultiver-je-gagne-7-8-euros-de-lheure-Z57MI3AE6ZBGXARDNP5TDONF2Q/
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026), articles 13 à 16 et annexe 3, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^agw-aii]: Arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version en vigueur depuis le 1er janvier 2026, article 6, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042313/2026/01/01
+[^hra]: Arrêté du Gouvernement wallon du 30 août 2018 fixant les conditions d'octroi des subventions relatives aux halls relais agricoles, version en vigueur depuis le 9 novembre 2023, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/3/3926/2.html
+[^dpi-tm]: « Véhicules à zéro émissions : la déduction pour investissement est opérationnelle », Transportmedia, 1er avril 2026, consulté le 27 novembre 2026. https://transportmedia.be/fr/2026/04/vehicules-a-zero-emissions-la-deduction-pour-investissement-est-operationnelle/
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html

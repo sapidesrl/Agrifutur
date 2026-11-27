@@ -6,7 +6,7 @@ dependance_fossile: gasoil; plastique
 alternatives: [Pâturage tournant, séchage du foin en grange]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Ensilage et enrubannage
@@ -67,6 +67,13 @@ Conditions :
 - aménager le parcellaire : chemins, clôtures (souvent un fil mobile), points d'eau, ombre. C'est le premier frein cité (6 fermes sur 12), mais les éleveurs jugent l'investissement rentabilisé[^craw-ptd] ;
 - accepter de moins complémenter et suivre la pousse de l'herbe, par exemple à l'herbomètre.
 
+**Aides.** Le pâturage ne reçoit pas d'aide en tant que tel, mais les prairies qu'il valorise en reçoivent chaque année (voir [les aides publiques](../../aides.md#pac-1er-pilier-eco-regimes-et-aides-couplees)) :
+
+- éco-régime « prairies permanentes » : {{ v('er_pp_base_eur_ha', 0) }} prévus si l'on garde au moins 80 % de ses prairies, plus {{ v('er_pp_supp_eur_ha', 0) }} prévus pour une charge de 0,6 à 2 UGB/ha de surface fourragère et sans animaux tiers hors contrat de pâturage[^er-pp]. Les prairies temporaires en sont exclues[^er-pp]. Ce sont des montants prévus : le montant payé est fixé après la campagne (36 à 80 €/ha pour l'aide de base)[^er-pp] ;
+- MAEC « autonomie fourragère » (MB13A) : {{ v('maec_mb13a_eur_ha', 0, unite=False) }} € par hectare de prairie et par an, pendant cinq ans, sous 1,4 UGB/ha de surface fourragère, si seuls les effluents de la ferme sont épandus et sans phyto sur prairie (30 €/ha sous 1,8 UGB/ha)[^mb13]. Elle se cumule avec l'éco-régime prairies permanentes et le bio[^mb13] [^cumuls].
+
+Ces aides récompensent un système herbager peu chargé, mais elles ne financent ni les clôtures, ni les chemins, ni l'abreuvement : la liste AII de 2026 ne contient pas de clôture de pâturage[^aii-liste]. Le pâturage tournant reste rentable sans aide (vague 1) ; les aides renforcent un résultat déjà acquis.
+
 Limites : le pâturage ne supprime pas le stock d'hiver. Il faut encore récolter les excédents de printemps et nourrir l'hiver. Pour faucher les petites parcelles en excédent, 3 des 12 fermes ont acheté une presse-enrubanneuse[^craw-ptd] : une partie de la dépendance au plastique reste.
 
 ### 2. Séchage du foin en grange (vague 2)
@@ -88,7 +95,13 @@ Sur le réseau, l'électricité coûte par tonne à peu près autant que l'annui
 
 **Travail et gasoil.** Dans les Pyrénées-Atlantiques, un éleveur passé au séchoir n'a plus de frais d'enrubannage et compte 200 heures de tracteur en moins par an[^ca64]. La fauche, le fanage, l'andainage et l'autochargeuse restent au gasoil : le séchoir supprime le plastique, pas le tracteur.
 
-**Aide wallonne.** L'aide aux investissements agricoles (AII) prévoit un forfait de 498 €/m² pour un hall de séchage en vrac et de 953 €/m² pour un séchoir compact à balles[^am-aii]. L'aide est un pourcentage de ce forfait : 10 % de base, majoré notamment pour un jeune agriculteur, un système herbager, le bio ou une filière de qualité, avec un plafond de 40 %, limité aux premiers 1 000 m², et 200 000 € d'aide au total par bénéficiaire sur 2023-2027[^am-aii].
+**Aides.** L'aide aux investissements agricoles (AII) prévoit un coût simplifié de {{ v('aii_hall_sechage_forfait') }} pour un hall de séchage en vrac, ligne qui coche « architecture verte » et « résilience économique », et de 953 €/m² pour un séchoir compact à balles (« résilience économique »)[^am-aii] [^aii-liste]. L'aide est un pourcentage de ce coût simplifié, pas du prix réel : {{ v('aii_taux_pv', 0) }} pour un agriculteur sans autre majoration (calculé), davantage pour un jeune agriculteur (+ {{ v('aii_maj_jeune', 0) }}), un système herbager (+ {{ v('aii_maj_herbager', 0) }}) ou une ferme bio, sans dépasser {{ v('aii_plafond_taux', 0) }}. Elle est limitée aux premiers 1 000 m² et à {{ v('aii_plafond_beneficiaire', 0) }} d'aide par bénéficiaire sur 2023-2027[^am-aii]. Il faut aussi passer le seuil de sélection de {{ v('aii_seuil_points', 0, unite=False) }} points, et ne pas commencer les travaux avant l'avis de recevabilité[^am-aii].
+
+Sur une installation de « plusieurs centaines de milliers d'euros », l'aide couvre une part modeste du coût réel. La ventilation par pompe à chaleur ou par chaudière biomasse pourrait relever de GREEN, mais pas pour le même programme d'investissements que l'AII (à vérifier)[^aides-invest].
+
+Côté prairies, la MAEC « prairie naturelle » (MB2) paie {{ v('maec_mb2_eur_ha', 0) }} pendant cinq ans si la parcelle n'est ni fauchée ni pâturée du 1er novembre au 15 juin, sans engrais minéral, phyto, concentré ni fourrage apporté ; les engrais de ferme restent permis[^mb2]. Elle convient aux prairies de fauche tardive qui fournissent un foin de fin de printemps, pas aux premières coupes précoces que vise le séchage en grange. Elle est limitée à la moitié de la surface admissible (les 10 premiers hectares exemptés) et ne se cumule ni avec MC4 ni avec Natura 2000[^mb2]. En bio, l'aide au maintien vaut {{ v('bio_prairie_eur_ha', 0) }} en prairie et cultures fourragères (60 premiers hectares)[^bio].
+
+Avec ou sans aide, le séchoir reste en vague 2 : l'aide AII ne change pas la conclusion.
 
 Conditions :
 
@@ -113,7 +126,10 @@ Pourquoi vague 2 : l'économie de plastique et de concentrés est réelle, mais 
 - Tarifs belges d'entreprise pour l'ensilage, le pressage et l'enrubannage (par hectare ou par balle).
 - Consommation de gasoil par chantier en Belgique ; le modèle cité est français (bassin charolais, bovins viande) et inclut la distribution.
 - Quantité de film par balle enrubannée (en kg) et prix du film : aucune source fiable lue.
-- Coût d'aménagement d'un parcellaire en pâturage tournant (clôtures, chemins, abreuvement) en Wallonie, et éligibilité à l'AII.
+- Coût d'aménagement d'un parcellaire en pâturage tournant (clôtures, chemins, abreuvement) en Wallonie. La liste AII de 2026 ne prévoit pas de clôture de pâturage ; aucune autre aide n'a été trouvée.
+- Montants payés de l'éco-régime prairies permanentes pour 2025 et 2026 : seuls ceux de 2024 sont publiés.
+- Séchoir en grange : cumul de l'AII (hall) et d'une aide GREEN pour la ventilation par pompe à chaleur ou chaudière biomasse, si les deux sont présentés comme des programmes distincts.
+- Accès au seuil de {{ v('aii_seuil_points', 0, unite=False) }} points pour un éleveur sans critère jeune, bio ou zone à contraintes : les points « architecture verte » et « résilience économique » du hall s'additionnent-ils ?
 - Investissement et consommation d'électricité de séchoirs wallons existants ; les chiffres d'énergie et d'annuité cités sont français.
 - Séchage en grange avec la chaleur d'un méthaniseur ou d'une chaudière à plaquettes.
 - Tarif de collecte des plastiques en 2026 dans chaque intercommunale wallonne, et avancement du projet de responsabilité élargie des producteurs.
@@ -136,5 +152,12 @@ Pourquoi vague 2 : l'économie de plastique et de concentrés est réelle, mais 
 [^ca64]: « Le séchage en grange dans le 64 : témoignages d'éleveurs », projet Ô ton herbe, Chambre d'agriculture des Pyrénées-Atlantiques (France), novembre 2023. https://pa.chambres-agriculture.fr/fileadmin/user_upload/298_chambre_dagriculture_des_pyrenees-atlantiques/1-s_informer/Agir_face_au_changement_climatique/Sechage_en_grange_Temoignage_eleveurs_221123.pdf
 [^segrafo]: « Foin : concevoir son séchoir en grange en six questions », Réussir Lait (France), 29 mai 2024, entretien avec un conseiller de Segrafo. https://www.reussir.fr/lait/foin-concevoir-son-sechoir-en-grange-en-six-questions
 [^thermo]: « 300 000 € investis dans un séchoir en grange thermovoltaïque », Réussir Lait (France), 18 mars 2021. https://www.reussir.fr/lait/300-000-eu-investis-dans-un-sechoir-en-grange-thermovoltaique
-[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole…), articles 4 et 5 et annexe 3, version consolidée en vigueur au 1er janvier 2026, Wallex. https://wallex.wallonie.be/sites/wallex/contents/acts/87/87905/4.html
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole…), articles 4 à 6 et annexe 3, version consolidée en vigueur au 1er janvier 2026 (seuil de sélection et limite des 1 000 m² : AM du 15 janvier 2026), Wallex. https://wallex.wallonie.be/sites/wallex/contents/acts/87/87905/4.html
+[^er-pp]: « Eco-régime prairies permanentes conditionné à la charge en bétail », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-prairies-permanentes-conditionnee-a-la-charge-en-betail.html
+[^mb13]: « MAEC Autonomie fourragère – MB13 », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-autonomie-fourragere---mb13.html
+[^mb2]: « MAEC Prairie naturelle – MB2 », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-prairie-naturelle---mb2.html
+[^bio]: « Soutien à l'agriculture biologique », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-a-l-agriculture-biologique.html
+[^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne, page modifiée le 18 septembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
+[^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^aides-invest]: Décret du 11 mars 2004 relatif aux incitants régionaux en faveur des petites ou moyennes entreprises, article 3 (pas de cumul avec une autre aide régionale pour le même programme), et arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, article 36 (engagement de ne pas demander d'autre aide wallonne pendant cinq ans, sauf soutiens à la production d'énergie renouvelable), Wallex, consultés le 27 novembre 2026. https://wallex.wallonie.be/eli/loi-decret/2004/03/11/2004200990 ; https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042313/2026/01/01
 [^reussir-2010]: « Les coûts de récolte de l'herbe à la loupe », Réussir Lait (France), 14 septembre 2010, d'après la chambre d'agriculture de la Creuse. https://www.reussir.fr/lait/les-couts-de-recolte-de-lherbe-la-loupe

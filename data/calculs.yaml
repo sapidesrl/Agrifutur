@@ -189,6 +189,13 @@ pv_ferme_investissement:
   valeur: 30000
   unite: €
   formule: Puissance × prix installé
+aii_taux_pv:
+  libelle: 'Aide AII : taux d''un agriculteur actif sans autre majoration, investissement
+    « architecture verte » (photovoltaïque, biométhanisation, désherbage mécanique,
+    robot…)'
+  valeur: 0.15
+  unite: '%'
+  formule: Taux de base + majoration architecture verte ou résilience économique
 pv_ferme_aide_aii:
   libelle: 'Ferme type : aide AII au photovoltaïque (taux de base + architecture verte)'
   valeur: 6138.0
@@ -1241,3 +1248,189 @@ froment_perte_equilibre_t_ha:
   haut: 0.296571
   unite: t/ha
   formule: Économie du traitement unique ÷ prix du blé
+aii_taux_cuma_av:
+  libelle: 'Aide AII : taux d''une CUMA d''au moins 6 membres, investissement « architecture
+    verte »'
+  valeur: 0.35
+  unite: '%'
+  formule: Taux de base CUMA + majoration architecture verte + majoration 6 membres
+microbiometh_cv_an:
+  libelle: 'Micro-biométhanisation : certificats verts par an, au prix garanti'
+  valeur: 26000.0
+  unite: €/an
+  formule: MWh produits × taux d'octroi × prix garanti du certificat (taux des demandes
+    de 2025)
+microbiometh_aide_invest:
+  libelle: 'Micro-biométhanisation : aide à l''investissement (GREEN de 10 à 200 kW,
+    AII jusqu''à 10 kW)'
+  valeur: 79200.0
+  unite: €
+  formule: 'De 10 à 200 kW : taux GREEN × plus petit de l''investissement et du coût
+    éligible maximal ; jusqu''à 10 kW : taux AII × coût simplifié AII × puissance,
+    limité à l''investissement'
+microbiometh_valeur_cv_an:
+  libelle: 'Micro-biométhanisation : valeur annuelle de l''électricité et des certificats
+    verts'
+  valeur: 45428.0
+  bas: 41296.0
+  haut: 51256.4
+  unite: €/an
+  formule: Valeur de l'électricité + certificats verts
+microbiometh_retour_cv_ans:
+  libelle: 'Micro-biométhanisation : temps de retour simple avec certificats verts,
+    sans aide à l''investissement'
+  valeur: 8.805142
+  bas: 9.686168
+  haut: 7.803904
+  unite: ans
+  formule: Investissement ÷ (électricité + certificats verts), sans chaleur ni entretien
+microbiometh_retour_aides_ans:
+  libelle: 'Micro-biométhanisation : temps de retour simple avec certificats verts
+    et aide GREEN'
+  valeur: 7.061724
+  bas: 7.768307
+  haut: 6.258731
+  unite: ans
+  formule: (Investissement − aide) ÷ (électricité + certificats verts), sans chaleur
+    ni entretien
+pv_cv_eur_mwh:
+  libelle: 'Photovoltaïque de 10 à 1 000 kW : certificats verts par MWh produit, au
+    prix garanti'
+  valeur: 20.67
+  unite: €/MWh
+  formule: Taux d'octroi × prix garanti (taux des demandes de 2025)
+pv_ferme_cv_an:
+  libelle: 'Ferme type : certificats verts du photovoltaïque par an (si plus de 10
+    kW et réservation acceptée)'
+  valeur: 558.09
+  unite: €/an
+  formule: MWh produits × certificats verts par MWh ; 0 sous 10 kW
+chaudiere_entretien_supp_an:
+  libelle: 'Chaudière à plaquettes : entretien en plus de celui d''une chaudière au
+    mazout'
+  valeur: 650
+  unite: €/an
+  formule: Entretien de la chaufferie à plaquettes − entretien de la chaudière au
+    mazout
+chaudiere_gain_net_an:
+  libelle: 'Ferme type : gain annuel de la chaudière à plaquettes, entretien déduit'
+  valeur: 7539.6
+  bas: 2630.8
+  haut: 9996.48
+  unite: €/an
+  formule: Économie de combustible − entretien en plus
+chaudiere_aide_green:
+  libelle: 'Chaufferie à plaquettes de 50 kW : aide GREEN'
+  valeur: 15000.0
+  unite: €
+  formule: Taux GREEN × plus petit du prix et du coût éligible maximal (€/kW × puissance)
+chaudiere_retour_ans:
+  libelle: 'Ferme type : temps de retour simple de la chaufferie à plaquettes, sans
+    aide'
+  valeur: 4.973739
+  bas: 14.254219
+  haut: 3.75132
+  unite: ans
+  formule: Prix ÷ gain annuel net, sans frais financiers
+chaudiere_retour_green_ans:
+  libelle: 'Ferme type : temps de retour simple de la chaufferie à plaquettes, aide
+    GREEN déduite'
+  valeur: 2.984243
+  bas: 8.552532
+  haut: 2.250792
+  unite: ans
+  formule: (Prix − aide GREEN) ÷ gain annuel net, sans frais financiers ni coût de
+    l'audit AMUREBA
+sechage_chaudiere_invest_max:
+  libelle: 'Exploitation type : prix d''une installation biomasse de séchage que l''économie
+    rembourse dans le temps visé, sans aide'
+  valeur: 70036.195695
+  bas: 47090.399375
+  haut: 91047.054404
+  unite: €
+  formule: Économie annuelle (plaquettes au lieu de propane) × temps de retour visé,
+    hors entretien et main-d'œuvre
+sechage_chaudiere_invest_max_green:
+  libelle: Même prix maximal avec l'aide GREEN de 40 %
+  valeur: 116726.992826
+  bas: 78483.998959
+  haut: 151745.090673
+  unite: €
+  formule: Prix maximal sans aide ÷ (1 − taux GREEN), si le coût reste sous le coût
+    éligible maximal
+mais_meca_surcout_ha:
+  libelle: 'Maïs : surcoût du désherbage mécanique face au désherbage chimique'
+  valeur: 5
+  unite: €/ha
+  formule: Désherbage mécanique − désherbage chimique
+mais_meca_bilan_ri_ha:
+  libelle: 'Maïs : désherbage mécanique, surcoût net avec l''éco-régime « Réduction
+    d''intrants »'
+  valeur: -75
+  unite: €/ha
+  formule: 'Surcoût du mécanique − éco-régime (montant prévu) ; négatif : le mécanique
+    revient moins cher'
+proteagineux_aides_ha:
+  libelle: 'Pois ou féverole purs : soutien couplé + éco-régime « Réduction d''intrants
+    » (cumulables)'
+  valeur: 455
+  unite: €/ha
+  formule: Soutien couplé aux protéines végétales + réduction d'intrants (montants
+    prévus)
+proteagineux_ecart_v3b_ha:
+  libelle: Écart entre le soutien couplé avec réduction d'intrants et l'éco-régime
+    « Cultures favorables » V3_B (mélange céréales-légumineuses)
+  valeur: 15
+  unite: €/ha
+  formule: '(Soutien couplé + réduction d''intrants) − cultures favorables V3_B ;
+    positif : la voie du soutien couplé paie plus'
+farmdroid_aide_aii:
+  libelle: 'Robot FarmDroid (plus de 2,5 ha par jour) : aide AII d''un agriculteur
+    sans autre majoration'
+  valeur: 14550.0
+  unite: €
+  formule: Taux × le plus petit montant entre le coût simplifié AII et le prix du
+    robot
+farmdroid_aide_cuma:
+  libelle: 'Robot FarmDroid : aide AII d''une CUMA d''au moins 6 membres'
+  valeur: 33950.0
+  unite: €
+  formule: Taux CUMA × le plus petit montant entre le coût simplifié AII et le prix
+    du robot
+farmdroid_amort_eur_ha_aii:
+  libelle: 'Robot FarmDroid : amortissement par hectare et par an, aide AII déduite'
+  valeur: 412.25
+  unite: €/ha/an
+  formule: (Prix − aide AII) ÷ (durée × surface par an)
+haie_plantation_subv_km:
+  libelle: 'Haie vive de deux rangs : subvention régionale à la plantation pour un
+    kilomètre'
+  valeur: 7000
+  unite: €/km
+  formule: 1 000 m × montant par mètre (plantation par l'agriculteur)
+haie_plantation_subv_km_entreprise:
+  libelle: Même haie plantée par une entreprise spécialisée
+  valeur: 10500.0
+  unite: €/km
+  formule: Subvention × 1,5, sans dépasser 80 % des factures
+utilitaire_dpi_part_prix:
+  libelle: 'Utilitaire électrique : impôt économisé grâce à la déduction pour investissement,
+    en part du prix (indépendant au régime réel)'
+  valeur: 0.2
+  unite: '%'
+  formule: Taux de déduction thématique × taux marginal d'impôt
+utilitaire_ecart_neuf_net_dpi:
+  libelle: 'Utilitaire électrique neuf : surcoût d''achat face au diesel, déduction
+    pour investissement déduite, en part du prix du diesel'
+  valeur: 0.08
+  unite: '%'
+  formule: Surcoût en neuf − (1 + surcoût) × impôt économisé en part du prix
+utilitaire_prix_max_neuf_dpi:
+  libelle: Prix du diesel neuf équivalent jusqu'auquel l'électrique neuf se rembourse
+    par l'énergie, avec la déduction pour investissement (régime réel)
+  valeur: 111666.645145
+  bas: 73585.743802
+  haut: 148072.888688
+  unite: €
+  formule: Surcoût remboursé par l'énergie ÷ surcoût net en part du prix ; sans limite
+    si le surcoût net est nul ou négatif
