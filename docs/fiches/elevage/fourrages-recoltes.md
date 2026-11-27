@@ -34,7 +34,7 @@ L'ensilage et l'enrubannage conservent l'herbe et le maïs pour l'hiver par ferm
 | Récolte seule, foin séché au champ | 70 €/t MS hors travail, 95 € avec | même source[^ca17] |
 | Récolte seule, enrubannage | 115 €/t MS hors travail, 140 € avec | même source[^ca17] |
 
-Les méthodes diffèrent d'une source à l'autre (avec ou sans la production de l'herbe, avec ou sans main-d'œuvre) : seul l'ordre est fiable. L'herbe pâturée est toujours la moins chère et l'enrubannage le plus cher. La même chambre d'agriculture chiffre la production de l'herbe sur pied entre 50 et 104 €/t MS selon le type de prairie, et celle du maïs ensilage entre 65 et 110 €/t MS[^ca17].
+Les méthodes diffèrent d'une source à l'autre (avec ou sans la production de l'herbe, avec ou sans main-d'œuvre) : seul l'ordre est fiable. L'herbe pâturée est toujours la moins chère et l'enrubannage le plus cher. La même chambre d'agriculture chiffre la production de l'herbe sur pied entre 50 et 104 €/t MS selon le type de prairie, et celle du maïs ensilage entre 65 et 110 €/t MS[^ca17]. Ce projet en tire ses valeurs de calcul : {{ v('herbe_paturee_cout', 0) }} pour l'herbe pâturée d'une prairie permanente, et {{ v('ensilage_herbe_cout', 0) }} pour l'ensilage d'herbe (herbe sur pied plus récolte, travail payé, hors pertes de conservation et bâche ; estimé). Ramené à la protéine, le kg de matière azotée totale coûte environ {{ v('mat_cout_herbe_paturee') }} pâturé et {{ v('mat_cout_ensilage_herbe') }} ensilé, contre {{ v('mat_cout_soja') }} dans le tourteau de soja au prix actuel et {{ v('mat_cout_soja', scenario='bas') }} au prix de février 2026 (calculé) : l'ensilage d'herbe fournit la protéine presque au prix du soja, l'herbe pâturée trois fois moins cher (voir la fiche [Concentrés et soja importés](concentres-importes.md)).
 
 ## Où entrent le pétrole et le gaz
 
@@ -122,7 +122,7 @@ Pourquoi vague 2 : l'économie de plastique et de concentrés est réelle, mais 
 
 ## À vérifier
 
-- Coûts wallons récents des fourrages par tonne de MS (herbe pâturée, ensilage d'herbe, maïs, enrubannage, foin ventilé) : la référence de Fourrages Mieux (Glesner, 2021, *Lettre paysanne* de la FUGEA) n'a été lue que par la citation du CRA-W.
+- Coûts wallons récents des fourrages par tonne de MS (herbe pâturée, ensilage d'herbe, maïs, enrubannage, foin ventilé) : les calculs du projet utilisent des repères français de 2025 ; la référence wallonne de Fourrages Mieux (Glesner, 2021, *Lettre paysanne* de la FUGEA) n'a été lue que par la citation du CRA-W.
 - Tarifs belges d'entreprise pour l'ensilage, le pressage et l'enrubannage (par hectare ou par balle).
 - Consommation de gasoil par chantier en Belgique ; le modèle cité est français (bassin charolais, bovins viande) et inclut la distribution.
 - Quantité de film par balle enrubannée (en kg) et prix du film : aucune source fiable lue.

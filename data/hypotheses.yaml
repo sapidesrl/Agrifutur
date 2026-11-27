@@ -82,33 +82,33 @@ gasoil_agricole_fev2026_htva:
   note: Prix maximums moyens SPF Économie.
 
 energie_litre_gasoil:
-  libelle: Énergie d'un litre de gasoil
+  libelle: Énergie d'un litre de gasoil (PCI)
   valeur: 10
   unite: kWh/L
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: Valeur usuelle arrondie.
+  statut: sourcé
+  date: 2018-12-11
+  source: https://www.legislation.gov.uk/eudr/2018/2001/annex/III
+  note: "Pouvoir calorifique inférieur (PCI). Directive européenne 2018/2001 (RED II), annexe III : gazole 43 MJ/kg, 36 MJ/L, soit 10,0 kWh/L (calculé : 36 ÷ 3,6). Texte lu sur legislation.gov.uk (EUR-Lex inaccessible depuis l'outil de recherche) ; à revérifier sur EUR-Lex (CELEX 32018L2001), annexe III éventuellement modifiée par la directive 2023/2413. Repère : le ministère français de la Transition écologique retient 9 711 kWh PCI/m³ pour le gazole routier (note de calcul des CEE, 6e période), soit 9,7 kWh/L. PCS (avec la chaleur de condensation de l'eau) : environ 5 à 6 % de plus selon le manuel des statistiques de l'énergie AIE/OCDE/Eurostat (2005), soit environ 10,6 kWh/L (calculé). Le PCI est la bonne base pour un moteur, qui ne récupère pas cette chaleur."
 
 rendement_moteur_diesel:
   libelle: Rendement moyen d'un moteur diesel au travail
-  valeur: 0.35
+  valeur: 0.33
   unite: "%"
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2026-03-09
+  source: https://pruefberichte.dlg.org/filestorage/PM%20Datenblatt_MF_8S265_DVT_20260309.pdf
+  note: "Calculé à partir des consommations spécifiques mesurées par la DLG (PowerMix, banc à rouleaux, puissance utile aux roues et à la prise de force) et d'un PCI de 43 MJ/kg (RED II). Travaux des champs, tracteurs de 190 à 230 kW : de 241 à 295 g/kWh selon les modèles testés depuis 2018, soit de 34,7 % à 28,4 % ; Massey Ferguson 8S.265 : 247 g/kWh (33,9 %) ; John Deere 6R 250 : 256 g/kWh (32,7 %) ; Fendt 724 : 242 g/kWh (34,6 %) ; Claas Arion 660 (144 kW) : 276 g/kWh (30,3 %). En transport, de 321 à 436 g/kWh, soit 26 % à 19 %. Valeur retenue : travaux des champs, tracteur récent. Le ralenti et le transport font baisser la moyenne annuelle réelle. Fiches DLG non datées sauf celle du MF 8S.265 (09/03/2026), lues le 27/11/2026."
 
 # --- Électricité ---------------------------------------------------------------
 
 rendement_chaine_electrique:
   libelle: Rendement de la chaîne électrique (charge, batterie, moteur)
-  valeur: 0.85
+  valeur: 0.77
   unite: "%"
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2022-10-28
+  source: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130724/jrc130724_ceto-a1-batteries-energy-report_20221028_-_pubsy_submission.pdf
+  note: "Du réseau à la roue. JRC, « Batteries for energy storage in the European Union » (EUR 31220, 2022) : rendement global des transports électriques à batterie jusqu'à 77 %. Le département américain de l'Énergie (fueleconomy.gov, consulté le 27/11/2026) donne plus de 77 % du réseau aux roues, avec une charge de 84 à 93 % et un moteur (onduleur et réduction compris) de 76 à 80 %, pertes annexes comprises. Mesures sur voitures ; aucune mesure publiée sur tracteur trouvée. Attention : si la consommation électrique d'un tracteur est déjà mesurée à la borne ou à la batterie, ne pas la diviser une deuxième fois par ce rendement."
 
 electricite_reseau_htva:
   libelle: Électricité du réseau, petit professionnel, tout compris HTVA
@@ -144,10 +144,10 @@ pv_duree_vie:
   libelle: Durée de vie d'une installation photovoltaïque
   valeur: 25
   unite: ans
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2020-07-01
+  source: https://iea-pvps.org/wp-content/uploads/2020/07/IEA_Task12_LCA_Guidelines.pdf
+  note: "AIE PVPS, tâche 12, lignes directrices pour l'analyse du cycle de vie (rapport T12-18:2020) : 30 ans pour les modules matures (verre-verre ou verre-backsheet), sur la base des garanties (20 % de perte au plus après 25 ans) ; onduleurs : 15 ans pour les petites installations ; perte de rendement de 0,7 point par an. 25 ans retenu par prudence : durée de la garantie de production et horizon de la référence wallonne SPW pour l'entretien (voir pv_entretien_part). Passer à 30 ans seulement si le remplacement de l'onduleur est bien compté dans les frais d'entretien."
 
 pv_entretien_part:
   libelle: Entretien et remplacement d'onduleur, en part du prix installé
@@ -228,10 +228,10 @@ batterie_rendement:
   libelle: Rendement aller-retour d'une batterie stationnaire
   valeur: 0.90
   unite: "%"
-  statut: hypothèse
-  date: 2026-11-26
-  source: ""
-  note: ""
+  statut: sourcé
+  date: 2024-01-01
+  source: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC136381/JRC136381_01.pdf
+  note: "JRC, « Performance and Durability Requirements in the Batteries Regulation, Part 1 » (EUR 31839, 2024) : batteries domestiques lithium-ion, rendement aller-retour neuves de 95 à 98 % (25 systèmes, un à 88 %), et de 81 à 96 % en moyenne sur leur durée de vie (systèmes hors réseau). 90 % : valeur moyenne sur la durée de vie, pertes de l'onduleur non comprises selon le type de mesure."
 
 microbiometh_kw:
   libelle: Puissance électrique de l'unité de micro-biométhanisation type
@@ -279,18 +279,18 @@ ammonitrate_teneur_n:
   valeur: 0.335
   unite: "%"
   statut: sourcé
-  date: ""
-  source: ""
-  note: ""
+  date: 2022-05-10
+  source: https://www.yara.fr/contentassets/342ccaeed52944f9adf1330d37f0dc72/livre-blanc-ammo-v2026.pdf
+  note: "Yara France, brochure « Les ammonitrates » (2022) : ammonitrate 33,5 % N, moitié nitrique, moitié ammoniacal. Le nitrate d'ammonium pur contient 35,0 % d'azote (calculé : 28 ÷ 80) ; le produit commercial en contient un peu moins (agent antimottant, stabilisant). L'ammonitrate 27 % (CAN) contient en plus de la dolomie ou du calcaire."
 
 azote_fixe_legumineuses:
   libelle: Azote fixé par les légumineuses
   valeur: 100
   unite: kg N/ha/an
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: Dépend fortement de la part de légumineuses dans la prairie ou la rotation.
+  statut: estimé
+  date: 2015-01-01
+  source: https://afpf-asso.fr/index.php?download=2149&token=c16b0ba6e27c1efb0d74a94026afe433
+  note: "Vertès et al., Fourrages 223 (2015), lu le 27/11/2026 : « lorsque la fixation est active, elle peut représenter un apport d'une centaine d'unités d'azote ». Ordres de grandeur annuels : 50 à 130 kg N/ha pour les légumineuses à graines (pois, féverole), 150 à 200 kg N/ha pour le trèfle blanc dans une association bien pourvue, 300 à 500 kg N/ha pour une luzerne ou un trèfle violet très productifs. Prairie ray-grass–trèfle blanc sans engrais (INRA Quimper) : 52 à 112 kg N/ha fixés dans les parties aériennes. Pour les protéagineux, la plus grande part part avec le grain : arrière-effet de 10 à 60 kg N/ha (trèfle blanc, pois), plus de 60 (trèfle violet), 60 à 100 (luzerne) selon la fiche Protect'eau / Fourrages Mieux / UCLouvain (2018)."
 
 # --- Chaleur ----------------------------------------------------------------
 
@@ -299,12 +299,12 @@ plaquettes_prix:
   valeur: 38.05
   unite: €/MAP
   statut: sourcé
-  date: 2026-10-31
+  date: 2026-10-29
   source: https://callmepower.be/fr/energie/actualites/prix-pellets-sac-7-euros-wallonie
-  note: Relevé Valbiom, Wallonie, octobre 2026.
+  note: "Relevé Valbiom d'octobre 2026 (suivi mensuel mis à jour le 21/10/2026), cité par Callmepower (article du 29/10/2026, lu le 27/11/2026). Prix TVAC : Valbiom relève des prix de vente au détail en Wallonie, exprimés TVAC (méthodologie de l'Observatoire des prix APERe / Énergie commune, version du 01/09/2021). TVA de 6 % : AR n° 20 du 20/07/1970, tableau A, rubrique VII, 12° (bois de chauffage, déchets de bois) ; la réforme du 1er mars 2026 ne vise pas ce poste. Soit environ 35,90 €/MAP HTVA. Un agriculteur au régime forfaitaire ne récupère pas la TVA : le prix TVAC est son coût réel, comme pour le mazout (prix TVAC)."
   scenario: true
   bas: 37.81
-  bas_note: "Octobre 2025, avant-crise (relevé Valbiom cité par la même source). Page Callmepower inaccessible le 26/11/2026, chiffres connus par extraits concordants ; prix de février 2026 non trouvé, valbiom.be injoignable."
+  bas_note: "Octobre 2025, avant-crise (relevé Valbiom cité par la même source, lu le 27/11/2026). Prix de février 2026 non trouvé, valbiom.be injoignable (certificat TLS du serveur non vérifiable)."
 
 plaquettes_energie_map:
   libelle: Énergie d'un mètre cube apparent de plaquettes sèches
@@ -406,10 +406,10 @@ tracteur_compact_conso_gasoil:
   libelle: Tracteur compact diesel, consommation moyenne
   valeur: 7
   unite: L/h
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Barème d'entraide Cuma Est 2024-2025 (France), tracteurs 4 RM : consommation spécifique de 0,24 L/ch/h sous 130 ch, taux de charge moyen du moteur de 35 %. Pour 76 à 85 ch, carburant de 8,06 €/h à 1,20 €/L, soit 6,7 L/h (calculé) ; pour 86 à 95 ch, 7,6 L/h. Un tracteur de la taille du Fendt e107 (50 kW, environ 68 ch) consommerait environ 5,7 L/h par la même formule (calculé). Moyenne annuelle tous travaux, pas en travail lourd. Référence française : Mecacost (CRA-W) donne des valeurs belges mais exige une inscription et interdit la reproduction."
 
 tracteur_compact_conso_elec:
   libelle: Tracteur électrique compact, consommation moyenne
@@ -422,21 +422,21 @@ tracteur_compact_conso_elec:
 
 heures_tracteur_an:
   libelle: Heures de tracteur par an
-  valeur: 800
+  valeur: 700
   unite: h/an
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2024-11-01
+  source: https://www.cuma.fr/app/uploads/sites/20/2024/11/bareme-entraide-2024-2025.pdf
+  note: "Barème d'entraide Cuma Est 2024-2025 (France) : coûts des tracteurs calculés sur une base de 700 h/an, avec des variantes à 500 et 900 h/an. Référence française ; aucune statistique belge publique trouvée (Mecacost, CRA-W, à consulter). Pour un petit tracteur électrique de cour ou de maraîchage, le nombre d'heures dépend surtout de l'exploitation : à remplacer par le relevé du compteur horaire."
 
 tracteur_lourd_conso_gasoil:
   libelle: Gros tracteur en travail lourd, consommation
-  valeur: 25
+  valeur: 42
   unite: L/h
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: Ordre de grandeur pour ~200 kW en travail du sol.
+  statut: sourcé
+  date: 2026-03-09
+  source: https://pruefberichte.dlg.org/filestorage/PM%20Datenblatt_MF_8S265_DVT_20260309.pdf
+  note: "Mesures DLG PowerMix, cycles « labour, décompactage » et « cultivateur, déchaumeur à disques » : Massey Ferguson 8S.265 (204 kW) 38,4 et 43,1 L/h ; John Deere 6R 250 (213 kW en boost) 41,4 et 47,2 L/h ; Fendt 724 (193 kW) 36,5 et 43,1 L/h. Moyenne de ces six mesures : environ 42 L/h (calculé). Barème Cuma 2024-2025 (France) : charrue 9-10 corps derrière 230 ch, 19,32 L/ha à 2 ha/h, soit 39 L/h (calculé). L'ancienne valeur de 25 L/h correspond à une charge moyenne (barème Cuma : 0,21 L/ch/h × 50 % de charge, environ 22 L/h pour 200-220 ch), pas à du travail du sol lourd."
 
 heures_journee_lourde:
   libelle: Durée d'une journée de travail lourd
@@ -447,83 +447,92 @@ heures_journee_lourde:
   source: ""
   note: ""
 
+rendement_charge_batterie:
+  libelle: Rendement de la recharge d'une batterie (de la prise à la batterie)
+  valeur: 0.88
+  unite: "%"
+  statut: estimé
+  date: 2026-11-27
+  source: https://www.fueleconomy.gov/feg/evtech.shtml
+  note: "Département américain de l'Énergie (fueleconomy.gov, consulté le 27/11/2026) : la recharge perd 7 à 16 % (rendement de 84 à 93 %) ; valeur centrale retenue. Sert quand une consommation est mesurée côté batterie : on ajoute seulement les pertes de recharge, pas celles du moteur."
+
 batterie_densite_pack:
   libelle: Énergie massique d'un pack de batteries
   valeur: 0.16
   unite: kWh/kg
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2022-10-28
+  source: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130724/jrc130724_ceto-a1-batteries-energy-report_20221028_-_pubsy_submission.pdf
+  note: "JRC (EUR 31220, 2022) : packs de batteries de véhicules entre 100 et 265 Wh/kg (250 à 670 Wh/L). 0,16 kWh/kg reste dans le bas de cette fourchette, raisonnable pour un pack lithium-fer-phosphate robuste d'engin agricole. Aucune masse de pack publiée trouvée pour un tracteur de série (Fendt e107 : 100 kWh, masse non publiée)."
 
 # --- Huile de colza -----------------------------------------------------------
 
 colza_prix:
   libelle: Colza (Euronext)
-  valeur: 550
+  valeur: 536
   unite: €/t
-  statut: estimé
-  date: 2026-09-30
-  source: https://www.terre-net.fr/prix-des-oleagineux/article/904153/le-colza-euronext-retombe-sous-les-540-t
-  note: "Euronext : 538,50 €/t (échéance novembre 2026) et 555 €/t (février 2027) le 30/09/2026 ; 557,75 €/t (février 2027) le 09/10/2026 (Terre-net). Aucun relevé de novembre trouvé."
+  statut: sourcé
+  date: 2026-11-24
+  source: https://www.reussir.fr/articles/marche-des-oleagineux-du-24-novembre-2026-le-prix-du-soja-engrange-une-troisieme-seance-de
+  note: "Clôture Euronext du 24/11/2026 : 536,50 €/t pour février 2027 et pour mai 2027 (Réussir / La Dépêche, lu le 27/11/2026). 20/11/2026 : 533,25 €/t (février 2027) et 535 €/t (mai 2027). Mi-séance (Terre-net) : 524,25 €/t le 06/11 et 521,25 €/t le 09/11 (février 2027). Valeur arrondie."
   scenario: true
   bas: 485
   bas_note: "Février 2026 : clôtures Euronext entre 473,75 et 492,75 €/t, 483 €/t le 25 février (bulletins Réussir/La Dépêche, lus le 26/11/2026). Valeur arrondie (estimé)."
 
 huile_par_tonne:
   libelle: Huile obtenue par tonne de graines (pressage à froid)
-  valeur: 360
+  valeur: 300
   unite: L/t
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2021-06-01
+  source: https://www.autoprot.eu/wp-content/uploads/2021/10/Fiche-C1-Production-de-tourteau-de-colza-gras-a-la-ferme.pdf
+  note: "Fiche Autoprot C1 (CRA-W et Idele, juin 2021) : 3 600 kg de graines par ha donnent 860 à 1 250 L d'huile, soit 240 à 350 L/t. Brunschwig et Lamy (Fourrages 187, 2006, afpf-asso.fr) : 300 à 400 g d'huile non filtrée par kg selon la presse, 7 % de résidus de filtration, soit environ 300 à 400 L/t d'huile filtrée. Réussir (étude de Loire-Atlantique, ancienne) : 273 L/t. CUMA du Rhône (Entraid, mai 2023) : 350 L/t. Valeur centrale retenue, lue le 27/11/2026. L'ancienne valeur de 360 L/t est dans le haut de la fourchette (presse poussée, tourteau maigre)."
 
 tourteau_par_tonne:
   libelle: Tourteau obtenu par tonne de graines
-  valeur: 0.65
+  valeur: 0.70
   unite: t/t
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2021-06-01
+  source: https://www.autoprot.eu/wp-content/uploads/2021/10/Fiche-C1-Production-de-tourteau-de-colza-gras-a-la-ferme.pdf
+  note: "Fiche Autoprot C1 (CRA-W et Idele, juin 2021) : 2,45 à 2,8 t de tourteau pour 3 600 kg de graines, soit 0,68 à 0,78 t/t, tourteau à 11 à 25 % de matière grasse selon la presse. Réussir (Loire-Atlantique) : 670 kg/t ; CUMA du Rhône (Entraid, mai 2023) : 650 kg/t. Cohérent avec 300 L d'huile par tonne. Lu le 27/11/2026."
 
 tourteau_prix:
   libelle: Prix du tourteau de colza
   valeur: 337
   unite: €/t
   statut: sourcé
-  date: 2026-11-24
+  date: 2026-11-26
   source: https://www.pleinchamp.com/les-cours/aliments-du-betail/43-tourteaux-de-colza
-  note: Départ Rouen (prix français), relevé Argus du 24/11/2026, lu le 26/11/2026. Pèse lourd dans le coût de l'huile.
+  note: "Départ Rouen (prix français), cotation Argus affichée le 27/11/2026 pour le 26/11/2026 : 337 €/t, variation nulle sur la veille (même niveau que le 24/11), lue le 27/11/2026. Pèse lourd dans le coût de l'huile. Prix de février 2026 non trouvé : le bulletin hebdomadaire Réussir du 18 au 25/02/2026 ne donne que la variation (0 à +1 €/t) ; la borne basse reste donc valeur × scenario_bas_facteur."
   scenario: true
 
 pressage_cout:
   libelle: Coût du pressage
-  valeur: 0.05
+  valeur: 0.20
   unite: €/L
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: estimé
+  date: 2023-05-24
+  source: https://www.entraid.com/articles/une-presse-a-huile-pour-le-carburant-et-lautonomie-proteique
+  note: "Tarif de la CUMA de la Verte Prairie du Lyonnais (Entraid, 24/05/2023, prix français) : 0,20 €/L d'huile, presse amortie (entretien et réparations seulement), contre 0,50 à 0,60 €/L au début, quand la presse n'était pas encore amortie. Brunschwig et Lamy (Fourrages 187, 2006) comptaient 40 à 70 € par 1 000 L selon la presse (prix de 2006). Lu le 27/11/2026. Aucune référence wallonne récente trouvée : les fiches colza de Valbiom sur energie.wallonie.be renvoient une erreur 404."
 
 energie_litre_huile:
-  libelle: Énergie d'un litre d'huile de colza
-  valeur: 9.2
+  libelle: Énergie d'un litre d'huile de colza (PCI)
+  valeur: 9.4
   unite: kWh/L
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: Valeur usuelle arrondie.
+  statut: sourcé
+  date: 2018-12-11
+  source: https://www.legislation.gov.uk/eudr/2018/2001/annex/III
+  note: "Directive 2018/2001 (RED II), annexe III : huile végétale pure 37 MJ/kg, 34 MJ/L (PCI), soit 9,4 kWh/L (calculé). Même tableau que le gazole (36 MJ/L) : un litre d'huile contient environ 6 % d'énergie en moins qu'un litre de gasoil. Mesures du TFZ Straubing (E. Remmele, thèse, 2002) : PCI médian de 38,2 MJ/kg sur 15 huiles de colza, densité entre 900 et 930 kg/m³, soit environ 9,5 à 9,9 kWh/L (calculé). L'ancienne valeur de 9,2 kWh/L est dans le bas de la fourchette."
 
 colza_rendement:
   libelle: Rendement du colza
-  valeur: 3.5
+  valeur: 3.8
   unite: t/ha
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: ""
+  statut: sourcé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-C_III_b_6.eewGeneratePdf.do
+  note: "État de l'agriculture wallonne, fiche « Colza » (SPW ARNE, mise à jour du 08/12/2025, lue le 27/11/2026) : moyenne des dix années précédant 2024 d'environ 3 815 kg/ha. Rendement 2024 : 3 213 kg/ha (3 058 kg/ha dans le Condroz) ; 2022 : 4 139 kg/ha."
 
 # --- Travail du sol -----------------------------------------------------------
 
@@ -791,12 +800,12 @@ propane_vrac_tvac:
 
 propane_energie_litre:
   libelle: Énergie d'un litre de propane liquide (PCI)
-  valeur: 6.6
+  valeur: 6.7
   unite: kWh/L
-  statut: hypothèse
-  date: ""
-  source: ""
-  note: "Valeur usuelle arrondie : environ 12,8 kWh/kg × 0,51 kg/L. Le ministère de l'Agriculture de l'Ontario compte 860 000 kJ pour 34 L, soit environ 7 kWh/L (pouvoir calorifique supérieur, calculé)."
+  statut: sourcé
+  date: 2018-12-11
+  source: https://www.legislation.gov.uk/eudr/2018/2001/annex/III
+  note: "Directive 2018/2001 (RED II), annexe III : bio-propane 46 MJ/kg, 24 MJ/L (PCI), soit 6,7 kWh/L (calculé) ; chimiquement identique au propane fossile, qui n'a pas de ligne propre dans ce tableau. Le ministère français de la Transition écologique retient 12 738 kWh PCI/t pour le GPL (note de calcul des CEE, 6e période), soit 45,9 MJ/kg, cohérent. Le ministère de l'Agriculture de l'Ontario compte 860 000 kJ pour 34 L, soit environ 7 kWh/L (PCS, calculé)."
 
 sechage_kwh_kg_eau:
   libelle: Énergie consommée par un séchoir à air chaud par kg d'eau retiré
@@ -832,7 +841,7 @@ rendement_generateur_biomasse:
   statut: hypothèse
   date: ""
   source: ""
-  note: "Le brûleur au gaz chauffe l'air directement ; la chaudière biomasse passe par un échangeur. À remplacer par la donnée du constructeur."
+  note: "AUCUNE SOURCE TROUVÉE (27/11/2026). Le brûleur au gaz chauffe l'air directement ; la chaudière biomasse passe par un échangeur fumées-air (confirmé par la brochure du constructeur ICS HotAir, sans rendement chiffré exploitable). Le LfL Bavière (séchage du houblon) relève des écarts de 20 à 80 % entre échangeurs installés selon leur conception et leur position : la donnée du constructeur et une mesure sur site sont indispensables. À remplacer par la donnée du constructeur."
 
 sechage_tonnage_ferme:
   libelle: Maïs grain humide séché par an sur une exploitation
@@ -1025,30 +1034,30 @@ tourteau_colza_energie_nr:
 
 herbe_paturee_cout:
   libelle: Coût de l'herbe pâturée
-  valeur: 50
+  valeur: 60
   unite: €/t MS
-  statut: sourcé
-  date: 2022-05-01
-  source: https://www.cra.wallonie.be/uploads/2022/06/delivrable-3-4-retour-dexperience-deleveurs-laitiers-wallons-motivations-freins-leviers-face-a-des-changements-de-pratiques-visant-a-ameliorer-lerf.pdf
-  note: "0,05 €/kg MS, CRA-W 2022 d'après Fourrages Mieux (prix de 2021). Référence ancienne, non actualisée aux prix de 2026."
+  statut: estimé
+  date: 2025-01-01
+  source: https://cmds.chambres-agriculture.fr/fileadmin/user_upload/Nouvelle-Aquitaine/Medias_Externes/Synthese_prix_fourrages_2025.pdf
+  note: "Chambres d'agriculture de Nouvelle-Aquitaine, « Fourrages 2025 : des repères de prix » (prix français, engrais de l'automne 2024, tarifs d'entraide 2025), lu le 27/11/2026 : coût de production de l'herbe sur pied de 51 à 53 €/t MS en prairie naturelle, 80 à 104 €/t MS en prairie temporaire (RGI ou 3 à 5 ans), 50 à 76 €/t MS en luzerne. Valeur retenue pour une prairie permanente pâturée, hors clôtures et abreuvement. Référence wallonne précédente : 0,05 €/kg MS (CRA-W 2022 d'après Fourrages Mieux, prix de 2021) ; aucune mise à jour belge trouvée."
 
 ensilage_herbe_cout:
   libelle: Coût de l'ensilage d'herbe
-  valeur: 150
+  valeur: 175
   unite: €/t MS
-  statut: sourcé
-  date: 2022-05-01
-  source: https://www.cra.wallonie.be/uploads/2022/06/delivrable-3-4-retour-dexperience-deleveurs-laitiers-wallons-motivations-freins-leviers-face-a-des-changements-de-pratiques-visant-a-ameliorer-lerf.pdf
-  note: "0,15 €/kg MS, même source (prix de 2021). Le gasoil et le plastique ont augmenté depuis : valeur probablement basse en 2026."
+  statut: estimé
+  date: 2025-01-01
+  source: https://cmds.chambres-agriculture.fr/fileadmin/user_upload/Nouvelle-Aquitaine/Medias_Externes/Synthese_prix_fourrages_2025.pdf
+  note: "Calcul de ce projet sur la même source (prix français 2025) : coût de production de l'herbe sur pied (51 à 94 €/t MS selon la prairie) + frais de récolte en ensilage, travail payé à 22 €/h (105 €/t MS, 95 à 115), soit 156 à 199 €/t MS, hors pertes de conservation et bâche. Référence wallonne précédente : 0,15 €/kg MS (CRA-W 2022, prix de 2021) ; aucune mise à jour belge trouvée."
 
 herbe_mat:
   libelle: Teneur en matière azotée totale d'une herbe jeune ou d'un mélange avec légumineuses
   valeur: 0.18
   unite: "%"
-  statut: hypothèse
-  date: 2026-11-26
+  statut: estimé
+  date: 2022-09-01
   source: https://www.cra.wallonie.be/uploads/2022/09/2022-brochureautonomieproteique-a4-web.pdf
-  note: "Valeur prise dans la fourchette de l'herbe fraîche (12 à 22 % de la MS) donnée par le CRA-W ; les meilleurs ensilages d'herbe wallons dépassent 20 % (réseau Requasud), les plus faibles sont sous 10 %."
+  note: "CRA-W, « Autonomie et efficience protéique des élevages laitiers » (2022), lu le 27/11/2026 : herbe fraîche 12 à 22 % de MAT dans la MS (tableau 1, tables CVB 2018 et INRAE-CIRAD-AFZ) ; la même brochure retient 18 % de MAT pour l'herbe dans son exemple d'exportations d'une première coupe (p. 17). Les meilleurs ensilages d'herbe wallons dépassent 20 % (réseau Requasud), les plus faibles sont sous 10 %."
 
 # --- Transport : utilitaire de livraison -----------------------------------
 # Entrées proposées par la fiche transport/vehicules-livraison.md (26/11/2026).

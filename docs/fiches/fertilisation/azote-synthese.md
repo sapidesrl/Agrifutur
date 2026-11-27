@@ -38,7 +38,9 @@ S'y ajoute depuis le 1er janvier 2026 le mécanisme d'ajustement carbone aux fro
 
 Les légumineuses (trèfle, luzerne, féverole, pois, lupin) vivent en symbiose avec des bactéries qui fixent l'azote de l'air dans leurs racines. Dans une prairie, le trèfle nourrit aussi la graminée voisine ; dans une rotation, la culture qui suit profite de l'azote laissé par la légumineuse.
 
-Ordre de grandeur (calculé) : si les légumineuses fixent {{ v('azote_fixe_legumineuses') }} (hypothèse, très variable selon leur part dans la prairie ou la rotation), elles évitent l'achat de {{ v('valeur_n_fixe') }} d'ammonitrate, et encore {{ v('valeur_n_fixe', scenario='bas') }} au prix d'avant-crise de l'ammonitrate ({{ v('ammonitrate_prix', scenario='bas') }} en février 2026, prix français, scénario bas). L'avantage des légumineuses ne dépend donc pas de la crise.
+Ordre de grandeur (calculé) : si les légumineuses fixent {{ v('azote_fixe_legumineuses') }}, elles évitent l'achat de {{ v('valeur_n_fixe') }} d'ammonitrate, et encore {{ v('valeur_n_fixe', scenario='bas') }} au prix d'avant-crise de l'ammonitrate ({{ v('ammonitrate_prix', scenario='bas') }} en février 2026, prix français, scénario bas). L'avantage des légumineuses ne dépend donc pas de la crise.
+
+La centaine d'unités est l'ordre de grandeur d'une fixation active selon une synthèse de la revue *Fourrages* (estimé)[^vertes]. Les écarts sont grands : environ 50 à 130 kg N/ha/an pour le pois et la féverole, 150 à 200 pour un trèfle blanc bien implanté dans une prairie d'association, 300 à 500 pour une luzerne ou un trèfle violet très productifs[^vertes]. Pour les protéagineux récoltés en grain, la plus grande part de cet azote part avec la récolte : ce qui reste pour la culture suivante est bien plus faible que l'azote fixé (voir « À vérifier »).
 
 Deux essais sur prairie pâturée :
 
@@ -83,6 +85,7 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 - Pages non lues (accès bloqué) : World Economic Forum (toxicité de l'ammoniac), S&P Global (prix du gaz et coût de l'ammoniac en mars 2026) et l'article de *Green Chemistry* (consommation d'électricité et rendement à petite échelle).
 - Suspension éventuelle du MACF sur les engrais : la presse évoquait en mars 2026 une possible suspension rétroactive ; vérifier ce qui s'applique réellement en 2026 et 2027, et son effet sur les prix belges.
 - Quantité d'azote réellement fixée sur l'exploitation, selon la part de trèfle ou de luzerne.
+- Arrière-effet azoté des légumineuses pour la culture suivante (une fiche Protect'eau, Fourrages Mieux et UCLouvain de 2018 donne 10 à 60 kg N/ha pour le trèfle blanc et le pois, 60 à 100 pour la luzerne) : fiche citée par la note de l'hypothèse, à relire et à référencer ici.
 - Contraintes du Programme de gestion durable de l'azote (PGDA) en Wallonie pour l'épandage des effluents.
 - Montants **payés** en 2025 et 2026 des éco-régimes cultures favorables et couverture longue : seuls les montants prévus et ceux de 2024 sont publiés.
 - Couverts de légumineuses détruits par roulage ou broyage avant le 15 février : compatibilité avec un semis de printemps sans glyphosate, à partir de 2027.
@@ -91,6 +94,7 @@ Limites : forte consommation d'électricité et rendement moindre à petite éch
 
 ## Sources
 
+[^vertes]: Vertès F., Jeuffroy M.-H., Louarn G., Voisin A.-S., Justes E., « Légumineuses et prairies temporaires : des fournitures d'azote pour les rotations », *Fourrages* n° 223, AFPF, 2015, lue le 27 novembre 2026. https://afpf-asso.fr/index.php?download=2149&token=c16b0ba6e27c1efb0d74a94026afe433
 [^cfe]: « Eco-régime cultures favorables à l'environnement », Portail de l'agriculture wallonne, page modifiée le 17 avril 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/eco-regimes/eco-regime-culture-favorable-a-l-environnement.html
 [^couple-prot]: « Soutien couplé aux cultures de protéines végétales », Portail de l'agriculture wallonne, page modifiée le 21 novembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/soutien-couple/soutien-couple-aux-cultures-de-proteines-vegetales.html
 [^cumuls]: « Cumuls entre les aides », Portail de l'agriculture wallonne, page modifiée le 18 septembre 2025, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/cumuls-entre-les-aides.html
