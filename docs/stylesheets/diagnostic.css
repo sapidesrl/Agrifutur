@@ -1,0 +1,23 @@
+/* Page « Diagnostic de sa ferme » */
+.diag-formulaire { display: grid; gap: 1rem; }
+.diag-groupe { border: 1px solid var(--md-default-fg-color--lightest); border-radius: .2rem; padding: .6rem .9rem; margin: 0; }
+.diag-groupe legend { font-weight: 700; padding: 0 .3rem; }
+.diag-ligne { display: grid; grid-template-columns: minmax(0, 1fr) 7.5rem 4.5rem; gap: .5rem; align-items: center; margin: .25rem 0; }
+.diag-ligne input[type=number] { width: 100%; padding: .2rem .35rem; border: 1px solid var(--md-default-fg-color--lighter); border-radius: .15rem; background: var(--md-default-bg-color); color: var(--md-default-fg-color); font: inherit; }
+.diag-case { grid-template-columns: auto 1fr; }
+.diag-unite { color: var(--md-default-fg-color--light); font-size: .85em; }
+.diag-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.diag-actions .md-button { font-size: .75rem; padding: .3em 1em; }
+.diag-total td { font-weight: 700; }
+.diag-recos { display: grid; gap: .8rem; }
+.diag-reco { border-left: .2rem solid var(--md-primary-fg-color); padding: .2rem .8rem; }
+.diag-reco p { margin: .2rem 0; }
+.diag-reco-titre { font-weight: 700; }
+.diag-reco-texte { color: var(--md-default-fg-color--light); }
+.diag-vague { font-size: .75em; font-weight: 700; border-radius: .2rem; padding: .05rem .4rem; color: #fff; }
+.diag-vague-1 { background: #2e7d32; }
+.diag-vague-2 { background: #b26a00; }
+@media screen and (max-width: 44em) {
+  .diag-ligne { grid-template-columns: minmax(0, 1fr) 6rem; }
+  .diag-ligne .diag-unite { grid-column: 2; margin-top: -.3rem; }
+}

@@ -28,15 +28,22 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
 │   ├── calculs.yaml           généré par calc/couts.py (ne pas éditer à la main)
 │   ├── technologies.csv       index des technologies actuelles
 │   ├── synthese.yaml          lignes de la page « Par où commencer sur sa ferme »
+│   ├── diagnostic.yaml        modèle du diagnostic d'exploitation (questions, estimations, changements)
 │   └── sources-collectees.md  sources déjà trouvées pour les fiches à rédiger
 ├── calc/couts.py              calculs de comparaison
 ├── outils/
 │   ├── macros.py              macros du site : {{ v('cle') }} insère une valeur
+│   ├── diagnostic.py          rapport de diagnostic d'une ferme (Markdown)
+│   ├── moteur_diagnostic.py   calcul du diagnostic (même moteur que la page web)
+│   ├── exporter_diagnostic.py écrit docs/assets/diagnostic/donnees.json
+│   ├── tester_diagnostic.py   compare les moteurs Python et JavaScript
 │   ├── nouvelle_fiche.py      crée une fiche à partir du gabarit
 │   └── verifier_fiches.py     contrôles avant commit
+├── exemples/                  profils de fermes fictives pour le diagnostic
 ├── templates/fiche.md         gabarit d'une fiche
 └── docs/                      le site (Zensical, thème Material classique)
-    ├── index.md, synthese.md, methode.md, hypotheses.md, calculs.md, aides.md
+    ├── index.md, synthese.md, diagnostic.md, methode.md, hypotheses.md, calculs.md, aides.md
+    ├── javascripts/, stylesheets/, assets/diagnostic/   page du diagnostic
     └── fiches/<domaine>/<id>.md
 ```
 
@@ -51,6 +58,19 @@ python calc/couts.py && python outils/verifier_fiches.py && zensical build --cle
 
 Le script relit les prix maximums officiels du SPF Économie publiés par Statbel (gasoil de chauffage et agricole, diesel B7 et XTL, propane), les cotations du blé de la FEGRA et le prix PME wallon du tableau de bord de la CREG. Chaque prix est la moyenne du mois demandé ; la borne d'avant-crise (février 2026) est recalculée de la même façon. Après une mise à jour, relire les phrases des fiches qui comparent deux prix proches, et changer de mois de référence demande de relire les fiches, qui parlent des « prix de novembre 2026 ».
 
+## Diagnostic d'une exploitation
+
+La page « Diagnostic de sa ferme » du site estime les dépenses liées au pétrole et au gaz d'une ferme à partir de sa structure (surfaces, animaux, équipements), puis liste les changements chiffrés qui la concernent, par vague. Les consommations estimées se remplacent par celles des factures. Le calcul se fait dans le navigateur : rien n'est envoyé.
+
+Le même calcul existe en script, pour un conseiller qui veut un rapport :
+
+```bash
+python outils/diagnostic.py exemples/ferme-laitiere.yaml                 # rapport à l'écran
+python outils/diagnostic.py profil-ferme.json --sortie rapport.md        # profil téléchargé depuis la page
+```
+
+Les profils de vraies exploitations ne vont pas dans le dépôt : les garder ailleurs ou dans `profils/` (ignoré par git). Le modèle est dans `data/diagnostic.yaml` ; les moyennes qui servent à estimer (clés `ref_*`) sont sourcées dans `data/hypotheses.yaml`. Après une modification, `python calc/couts.py` régénère les données de la page et `python outils/tester_diagnostic.py` vérifie que la page et le script donnent les mêmes résultats.
+
 ## Ajouter ou rédiger une fiche
 
 1. Ajouter une ligne dans `data/technologies.csv`.
@@ -64,7 +84,7 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## Intégration continue
 
-À chaque push et pull request, `.github/workflows/verifier.yml` lance le recalcul, le vérificateur et `zensical build --clean --strict`. Il signale aussi quand `data/calculs.yaml` n'a pas été régénéré.
+À chaque push et pull request, `.github/workflows/verifier.yml` lance le recalcul, le vérificateur et `zensical build --clean --strict`. Il signale aussi quand `data/calculs.yaml` ou les données du diagnostic n'ont pas été régénérés, et compare les moteurs Python et JavaScript du diagnostic.
 
 ## Site publié
 

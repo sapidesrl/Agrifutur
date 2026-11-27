@@ -2638,3 +2638,205 @@ duree_retour_visee:
   date: 2026-11-27
   source: ""
   note: "Sert à calculer le prix d'installation que l'économie d'énergie peut rembourser. Remplacer par la durée que l'exploitant ou le groupe accepte."
+
+# --- Références du diagnostic : intrants et élevage (data/diagnostic.yaml) ---
+
+ref_n_mineral_sau_wallonie:
+  libelle: Azote minéral appliqué, moyenne wallonne par hectare de SAU
+  valeur: 86.4
+  unite: kg N/ha SAU/an
+  statut: sourcé
+  date: 2024-12-05
+  source: https://etat.environnement.wallonie.be/contents/indicatorsheets/AGRI%205.eewGeneratePdf.do
+  note: "État de l'environnement wallon (SPW), fiche « Consommation d'engrais en agriculture », mise à jour du 05/12/2024, lue le 27/11/2026. Valeur 2023. Repères : 73,6 kg N/ha SAU en 2022 (année de crise, − 19 %), proche de 100 kg N/ha SAU de 2009 à 2017. Azote organique des effluents d'élevage : 89,6 kg N/ha SAU en 2023 ; azote total 175,9. Moyenne sur toute la SAU, prairies comprises : le diagnostic l'applique à la surface totale de la ferme, faute de moyenne mesurée par culture."
+
+ref_p2o5_mineral_sau_wallonie:
+  libelle: P2O5 minéral appliqué, moyenne wallonne par hectare de SAU
+  valeur: 9.7
+  unite: kg P2O5/ha SAU/an
+  statut: sourcé
+  date: 2024-12-05
+  source: https://etat.environnement.wallonie.be/contents/indicatorsheets/AGRI%205.eewGeneratePdf.do
+  note: "État de l'environnement wallon, fiche AGRI 5 (05/12/2024), valeur 2023, lue le 27/11/2026. 8,4 en 2022 (crise). Baisse de 76 % de 1995 à 2009, puis stable. Aucune moyenne wallonne PAR CULTURE trouvée : la fiche dit seulement que la betterave et la pomme de terre sont les plus consommatrices de potasse. En Flandre, le phosphore minéral est presque nul (interdit depuis le MAP3, 2007) : la référence flamande n'est pas transposable."
+
+ref_k2o_mineral_sau_wallonie:
+  libelle: K2O minéral appliqué, moyenne wallonne par hectare de SAU
+  valeur: 23.6
+  unite: kg K2O/ha SAU/an
+  statut: sourcé
+  date: 2024-12-05
+  source: https://etat.environnement.wallonie.be/contents/indicatorsheets/AGRI%205.eewGeneratePdf.do
+  note: "État de l'environnement wallon, fiche AGRI 5 (05/12/2024), valeur 2023, lue le 27/11/2026. Baisse de 70 % de 1995 à 2009, puis stable ; − 28 % en 2022. Aucune moyenne par culture trouvée."
+
+ref_lait_vl_l_an:
+  libelle: Lait livré par vache laitière et par an, moyenne wallonne
+  valeur: 7050
+  unite: L/vache/an
+  statut: estimé
+  date: 2025-12-08
+  source: https://etat-agriculture.wallonie.be/contents/indicatorsheets/EAW-E2a.eewGeneratePdf.do
+  note: "Estimé : lait livré en Wallonie ÷ vaches laitières = 1 275 000 000 L ÷ 180 807 ≈ 7 052 L (2024), d'après la même fiche. Le dénominateur inclut les vaches mixtes, ce qui tire la moyenne vers le bas. Repères : 6 650 L/vache en 2024 dans les exploitations laitières spécialisées de la DAEA (fiche EAW « Produits et charges – bovins laitiers », 08/12/2025) ; 6 839 L en 2023 (étude EAW « L'élevage en Wallonie : entre déclin et adaptation », juillet 2025) ; 9 170 L dans les fermes hennuyères de PROTECOW (2018-2019). Pas de moyenne du contrôle laitier Elevéo trouvée."
+
+ref_concentres_vl_kg_an:
+  libelle: Concentrés consommés par vache laitière et par an (exploitations laitières spécialisées wallonnes)
+  valeur: 1527
+  unite: kg/vache/an
+  statut: sourcé
+  date: 2020-01-01
+  source: https://agriculture.wallonie.be/files/20182/21897/performances%20et%20rentabilit%c3%a9%20en%20agriculture%20wallonne%202018.pdf
+  note: "DAEA (SPW), « Performances et rentabilité en agriculture wallonne (années 2015 à 2018) », 2020, figure 12 bis, lu le 27/11/2026. Moyenne 2018 des exploitations spécialisées (au moins 20 VL), 6 740 L/vache ; 1 272 à 1 527 kg selon l'année (2015-2018), 922 à 1 636 selon la classe de performance. Par système (Riera, Antier, Baret, UCLouvain pour le WWF, 25/09/2020, données DAEA 2014-2017, https://wwf.be/sites/default/files/articles/files/RAPPORT-POLICY/FOOD/FR/UCL-Analyse-PerformancesEnvEcon-Resume.pdf) : 793 kg (diversifié extensif, souvent bio) à 1 889 kg par vache et sa suite (herbager chargé). Donnée de 2018 : aucune valeur plus récente trouvée en kg ; la DAEA 2024 donne 1 001 €/vache d'aliments achetés (fiche EAW « Produits et charges – bovins laitiers », 08/12/2025)."
+
+ref_part_soja_concentres_vl:
+  libelle: Part de soja dans les concentrés achetés des vaches laitières
+  valeur: 0.22
+  unite: "%"
+  statut: estimé
+  date: 2020-09-25
+  source: https://wwf.be/sites/default/files/articles/files/RAPPORT-POLICY/FOOD/FR/UCL-Analyse-PerformancesEnvEcon-Resume.pdf
+  note: "Riera A., Antier C., Baret P. (UCLouvain), « Analyse des performances environnementales et économiques de différents systèmes de production bovins en Région wallonne », résumé pour le WWF Belgique, 25/09/2020, tableau 1, lu le 27/11/2026 : part constante de 22 % pour les laitières et 6 % pour les allaitantes, d'après ERM & Universiteit Gent (2011, non lu). La fiche WWF « Soja » (2021) donne 22 % (laitières) et 5 % (viandeux). Porte sur le soja, pas sur l'ensemble des correcteurs azotés (le tourteau de colza n'est pas chiffré). Le diagnostic multiplie les concentrés par vache par cette part."
+
+ref_concentres_va_kg_an:
+  libelle: Concentrés par vache allaitante et sa suite et par an (ordre de grandeur, systèmes wallons)
+  valeur: 800
+  unite: kg/vache et suite/an
+  statut: estimé
+  date: 2020-09-25
+  source: https://wwf.be/sites/default/files/articles/files/RAPPORT-POLICY/FOOD/FR/UCL-Analyse-PerformancesEnvEcon-Resume.pdf
+  note: "UCLouvain/WWF 2020 (données comptables DAEA 2014-2017, environ 100 exploitations allaitantes), tableau 5, lu le 27/11/2026. Aucune moyenne publiée : valeur arrondie au milieu des systèmes Blanc-Bleu, à affiner. Blanc-Bleu : 486 kg (herbager, chargement faible), 828 (diversifié, chargement faible), 884 (herbager, chargement élevé), 1 156 (diversifié, chargement élevé) ; races françaises : 319 à 403 kg. Comprend l'engraissement de la suite. Unité : par vache ET sa suite, pas par UGB."
+
+ref_part_soja_concentres_va:
+  libelle: Part de soja dans les concentrés achetés des vaches allaitantes
+  valeur: 0.06
+  unite: "%"
+  statut: estimé
+  date: 2020-09-25
+  source: https://wwf.be/sites/default/files/articles/files/RAPPORT-POLICY/FOOD/FR/UCL-Analyse-PerformancesEnvEcon-Resume.pdf
+  note: "Même source que ref_part_soja_concentres_vl (UCLouvain/WWF 2020, d'après ERM & UGent 2011). 5 % selon la fiche WWF « Soja » (2021)."
+
+ref_fumier_vl_m3_6mois:
+  libelle: Fumier produit par une vache laitière en stabulation paillée, par période de six mois
+  valeur: 11.7
+  unite: m³/vache/6 mois
+  statut: sourcé
+  date: 2024-09-19
+  source: https://environnement.wallonie.be/files/Images/Gestion%20environnementale/Risques%20continus%20et%20pollutions/Nitrates/PGDA-coordination-officieuse.pdf
+  note: "PGDA, annexe XXII, stabulation paillée (raclage espacé de plus de 5 jours), lue le 27/11/2026. Stabulation paillée raclée tous les 5 jours ou moins : 5,4 m³ de fumier de l'aire de couchage, 4,8 m³ de fumier raclé et 1,1 m³ de purin. En tonnes : × ref_fumier_bovin_densite (0,8 t/m³), soit environ 9,4 t par semestre."
+
+ref_fumier_va_m3_6mois:
+  libelle: Fumier produit par une vache allaitante et son veau en stabulation paillée, par période de six mois
+  valeur: 8.6
+  unite: m³/vache et veau/6 mois
+  statut: sourcé
+  date: 2024-09-19
+  source: https://environnement.wallonie.be/files/Images/Gestion%20environnementale/Risques%20continus%20et%20pollutions/Nitrates/PGDA-coordination-officieuse.pdf
+  note: "PGDA, annexe XXII, stabulation paillée, lue le 27/11/2026. Environ 6,9 t par semestre avec 0,8 t/m³."
+
+ref_fumier_bovin_densite:
+  libelle: Masse d'un m³ de fumier de bovins
+  valeur: 0.8
+  unite: t/m³
+  statut: sourcé
+  date: 2026-01-01
+  source: https://www.vlm.be/nl/SiteCollectionDocuments/Publicaties/mestbank/Bemestingsnormen_2026.pdf
+  note: "Source flamande : VLM (Mestbank), « Normen en richtwaarden 2026 », § 2, compositions forfaitaires : fumier (vaste mest) de bovins 0,8 t/m³, 7,1 kg N/t, 2,9 kg P2O5/t ; lisier 1,0 t/m³. Lu le 27/11/2026. Aucune densité wallonne trouvée."
+
+# --- Références du diagnostic : énergie --------------------------------------
+
+ref_gasoil_cereales_ha:
+  libelle: Gasoil d'une céréale d'hiver, labour, de l'implantation à la récolte
+  valeur: 91
+  unite: L/ha/an
+  statut: sourcé
+  date: 2022-05-25
+  source: https://www.inrae.fr/sites/default/files/bonnes_pratiques_economes_en_carburant.pdf
+  note: "Données françaises : APCA (Chambres d'agriculture), « Économies de carburant en agroéquipement », 25/05/2022, p. 3 : itinéraire d'une céréale d'hiver en labour, de l'implantation à la récolte, base de 91 L/ha. Lu le 27/11/2026. Repères : Arvalis Boigneville 78 L/ha (gasoil_labour) ; Drommi et Chatzimpiros (Energy Nexus, 2026), blé en France 3,4 GJ/ha, soit environ 94 L/ha ; ferme modèle WUR sur argile (Pays-Bas, 2019) : 86 L/ha de froment, travaux tiers non compris ; normes KWIN néerlandaises : 164 L/ha pour froment et orge, travaux tiers compris (Kamp et al., 2010). La moisson pèse environ 18 à 21 L/ha (ILVO en Flandre : 18,4 L/ha ; voir aussi moisson_conso_l_ha)."
+
+ref_gasoil_mais_grain_ha:
+  libelle: Gasoil du maïs grain hors séchage (tous travaux, travaux tiers compris)
+  valeur: 160
+  unite: L/ha/an
+  statut: sourcé
+  date: 2010-03-26
+  source: https://www.rvo.nl/sites/default/files/bijlagen/Rapport%20Energiebesparing%20op%20het%20agrarische%20bedrijf%20-%2026-03-2010.pdf
+  note: "Données néerlandaises : Kamp J. et al. (PPO-WUR, 26/03/2010), tableau p. 20 : maïs grain et corn-cob-mix, 160 L/ha, normes KWIN, travaux tiers compris ; séchage non compris (propane ou gaz à part). Lu le 27/11/2026. Ces normes donnent 164 L/ha au froment, presque le double de la référence française (91 L/ha) : valeur probablement haute, aucune source belge ou française par culture trouvée. Repères partiels : implantation du maïs en labour (déchaumage, ameublissement, labour, semis combiné) environ 60 L/ha (Chambre d'agriculture de la Manche, Réussir, 03/06/2008) ; en Flandre, semis 11,75 L/ha et moissonneuse 19,84 L/ha (ILVO, OFFREM)."
+
+ref_gasoil_betterave_ha:
+  libelle: Gasoil de la betterave sucrière (tous travaux, travaux tiers compris)
+  valeur: 190
+  unite: L/ha/an
+  statut: sourcé
+  date: 2010-03-26
+  source: https://www.rvo.nl/sites/default/files/bijlagen/Rapport%20Energiebesparing%20op%20het%20agrarische%20bedrijf%20-%2026-03-2010.pdf
+  note: "Données néerlandaises : Kamp J. et al. (PPO-WUR), « Energiebesparing op het agrarisch bedrijf », 26/03/2010, tableau 9 : 190 L/ha de gasoil pour la culture, travaux tiers compris, normes KWIN. Lu le 27/11/2026. Concorde avec Drommi et Chatzimpiros (2026) : 6,8 GJ/ha en France, soit environ 189 L/ha (calculé). Ferme modèle WUR (2019) : 100 L/ha seulement, car l'arrachage par l'entrepreneur n'y est pas compté. Postes d'entrepreneur en Flandre (ILVO, OFFREM) : semis 3,49 L/ha, arrachage 33,26 L/ha, transport 17,16 L/ha. Les mêmes normes KWIN donnent 164 L/ha au froment, contre 91 L/ha en France : la valeur peut être haute pour la Wallonie (à vérifier)."
+
+ref_gasoil_pdt_ha:
+  libelle: Gasoil de la pomme de terre (tous travaux, moyenne 2014-2019)
+  valeur: 244
+  unite: L/ha/an
+  statut: sourcé
+  date: 2023-03-01
+  source: https://fiwap.be/wp-content/uploads/2023/03/2303CoutProdNordPasDeCalais.pdf
+  note: "Données françaises relayées par la Fiwap (Fiwap-Info n° 177, janvier-mars 2023, Ryckmans et Dumont de Chassart) : étude coûts de production de la Chambre d'agriculture du Nord-Pas-de-Calais, outil Systerre d'Arvalis, une trentaine de producteurs (frais et industrie), 2014-2019. Récolte 82,2 L/ha (34 %), travail du sol 78,8 L/ha (32 %), traitements 34,4 L/ha (14 %) ; 32,1 passages et 17,4 h de traction par ha. Lu le 27/11/2026. Repères : Drommi et Chatzimpiros (2026) ≈ 189 L/ha (France, modèle) ; ferme modèle WUR (2019) 233 L/ha hors travaux tiers ; normes KWIN néerlandaises 319 L/ha (Kamp et al., 2010)."
+
+ref_gasoil_prairie_ha:
+  libelle: Carburant moyen des prairies (temporaires et permanentes, France)
+  valeur: 31
+  unite: L/ha/an
+  statut: estimé
+  date: 2026-03-01
+  source: https://www.veillecep.fr/2026/05/besoins-en-energies-fossiles-pour-la-conduite-des-grandes-cultures/
+  note: "Données françaises : Drommi et Chatzimpiros (Energy Nexus, 2026), via le résumé du CEP (lu le 27/11/2026) : prairies 1,1 GJ/ha. Conversion : 1 100 MJ ÷ 36 MJ/L ≈ 31 L/ha (calculé). Moyenne de toutes les prairies, pâturées et fauchées : à utiliser pour une prairie surtout pâturée. Pour une prairie fauchée, ajouter la récolte (gasoil_foin_ha, gasoil_enrubannage_ha ou gasoil_ensilage_herbe_ha). Article original non lu."
+
+ref_gasoil_ferme_laitiere_vache_an:
+  libelle: Gasoil d'une exploitation laitière spécialisée, par vache et par an, entrepreneur compris (Flandre)
+  valeur: 145
+  unite: L/vache/an
+  statut: estimé
+  date: "2015"
+  source: https://publicaties.vlaanderen.be/view-file/18704
+  note: "Données flamandes : même source, annexe 3, 2013, toute l'exploitation : 4 316 MJ de produits pétroliers par vache (dont 97 % de mazout tracteur) et 1 128 MJ de travaux d'entrepreneur. Conversion à 36,78 MJ/L (valeur du rapport) : 4 316 × 0,97 ÷ 36,78 ≈ 114 L de mazout propre + 1 128 ÷ 36,78 ≈ 31 L d'entrepreneur, soit environ 145 L (calculé). Fourrages et cultures de la ferme compris : ne pas additionner aux références par hectare. Lu le 27/11/2026."
+
+ref_gasoil_ferme_bv_ugb:
+  libelle: Carburant d'une exploitation bovin viande par UGB (médiane, France)
+  valeur: 73
+  unite: L/UGB/an
+  statut: sourcé
+  date: 2025-04-10
+  source: https://www.reussir.fr/bovins-viande/consommation-denergie-des-disparites-entre-elevages-bovins-viande
+  note: "Données françaises : référentiel Idele sur l'énergie des élevages d'herbivores (diagnostics Cap'2ER niveau 2 et réseau Inosys, 3 375 élevages bovins viande), Réussir Bovins viande, 10/04/2025 : médiane 22 L/100 kg vif, soit 73 L/UGB ; écart de 100 % entre les 20 % les plus et les moins consommateurs. Toute l'exploitation, cultures comprises. Article lu le 27/11/2026, référentiel original non lu."
+
+ref_elec_lait_1000l:
+  libelle: Électricité d'une exploitation laitière spécialisée, par 1 000 L de lait (Flandre)
+  valeur: 57
+  unite: kWh/1 000 L
+  statut: sourcé
+  date: "2015"
+  source: https://publicaties.vlaanderen.be/view-file/18704
+  note: "Données flamandes : Lenders et Deuninck (2015), tableau 10 : 5,7 kWh/100 L pour toute l'exploitation en 2013 (5,0 pour la branche laitière seule) ; électricité achetée et autoconsommée, habitation exclue. Exemple du rapport : 700 000 L → environ 40 000 kWh. Repères : Pays-Bas, près de 3 000 scans énergie, 51 kWh/t (48 en salle de traite, 66 en robot ; 10 % les plus sobres 27, 10 % les plus gourmands 88), Ruitenberg et Jacobs (2014) cités par WUR (rapport WPR-784, 2019) ; Idele (2009) 59 kWh/1 000 L en salle classique (de 27 à 101). Lu le 27/11/2026."
+
+ref_elec_stockage_pdt_kwh_t:
+  libelle: Électricité du stockage ventilé des pommes de terre, par tonne stockée et par saison
+  valeur: 21
+  unite: kWh/t
+  statut: estimé
+  date: 2019-03-01
+  source: https://edepot.wur.nl/498921
+  note: "Données néerlandaises : WUR, rapport WPR-784 (2019), tableau 5, d'après des mesures chez une quarantaine de stockeurs (Kamp et al., 2013 ; 75 % en vrac, 25 % en caisses ; 172 jours de stockage) : 0,18 kWh/t/jour les 47 premiers jours, 0,11 ensuite jusqu'au 115e jour, 0,08 jusqu'au 172e. 700 t → 14 965 kWh, soit environ 21 kWh/t (calculé). Repère : normes KWIN, stockage refroidi à l'air extérieur jusqu'en janvier, 1 000 kWh/ha (Kamp et al., 2010), soit environ 19 kWh/t à 52,4 t/ha (calculé). Tri : environ 4,8 kWh/t (DLV, cité par Kamp et al., 2010). Le froid mécanique consomme nettement plus. Lu le 27/11/2026."
+
+ref_elec_ferme_bv_ugb:
+  libelle: Électricité d'une exploitation bovin viande par UGB (médiane, France)
+  valeur: 39
+  unite: kWh/UGB/an
+  statut: sourcé
+  date: 2025-04-10
+  source: https://www.reussir.fr/bovins-viande/consommation-denergie-des-disparites-entre-elevages-bovins-viande
+  note: "Données françaises : référentiel Idele (3 375 élevages bovins viande, Cap'2ER et Inosys), Réussir Bovins viande, 10/04/2025 : médiane 12 kWh/100 kg vif, soit 39 kWh/UGB ; écart de 300 % entre les 20 % les plus et les moins consommateurs. Article lu le 27/11/2026, référentiel original non lu."
+
+ref_mazout_habitation_l_an:
+  libelle: Mazout d'un ménage wallon chauffé au mazout (chauffage et eau chaude)
+  valeur: 1940
+  unite: L/an
+  statut: estimé
+  date: 2015-11-01
+  source: https://etat.environnement.wallonie.be/files/Studies/Rapport_final_Aquawal_CEHD_VF.pdf
+  note: "Données wallonnes : AQUAWAL et CEHD pour le SPW (DGO3), « Étude sur les consommations résidentielles d'eau et d'énergie en Wallonie », novembre 2015, tableau 22 : ménages qui consomment du mazout (n = 754, année 2014) : moyenne 19 397 kWh, médiane 19 885 kWh, écart-type 9 084 kWh. Conversion à 10 kWh/L : environ 1 940 L/an (calculé), soit environ 1 030 à 2 850 L à un écart-type. Vérification : facture mazout moyenne 1 572,77 € (tableau 31) au prix de l'étude 0,8081 €/L → environ 1 946 L. Une maison quatre façades consomme 2,5 fois plus qu'un appartement (même enquête, fiche MEN Focus 1 de l'État de l'environnement wallon) : une grande ferme ancienne peut dépasser cette moyenne. Lu le 27/11/2026."

@@ -60,3 +60,11 @@ Le vérificateur échoue si une macro appelle une clé inconnue, si une section 
 7. Si une alternative de vague 1 ou 2 est ajoutée, renommée ou change de vague, mettre à jour `data/synthese.yaml` (page « Par où commencer sur sa ferme ») : le vérificateur échoue si une ligne ne retrouve plus son alternative ou une clé.
 
 Les deux fiches `traction/tracteur-diesel.md` et `fertilisation/azote-synthese.md` servent d'exemples de niveau de détail attendu.
+
+## Diagnostic d'exploitation
+
+- Modèle : `data/diagnostic.yaml`. Chaque recommandation pointe vers une alternative de fiche (`fiche` + début du titre de sous-section) : sa vague est lue dans la fiche. Si une alternative est renommée ou change de vague, vérifier la recommandation.
+- Les moyennes servant à estimer une consommation (clés `ref_*`) sont des hypothèses comme les autres : source, date, statut dans `data/hypotheses.yaml`.
+- Les textes des recommandations ne contiennent aucun chiffre : les chiffres viennent des formules.
+- Les moteurs `outils/moteur_diagnostic.py` et `docs/javascripts/diagnostic-moteur.js` doivent rester identiques ; `python outils/tester_diagnostic.py` les compare.
+- Aucun profil de vraie exploitation dans le dépôt : `exemples/` ne contient que des fermes fictives ; les vrais profils vont dans `profils/` (ignoré par git).

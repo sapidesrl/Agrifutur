@@ -1,0 +1,13 @@
+# Profil FICTIF d'une ferme de grandes cultures wallonne, pour tester l'outil de diagnostic.
+# Ce n'est pas une exploitation réelle. Les consommations absentes sont estimées.
+cereales_ha: 60
+mais_grain_ha: 20
+betterave_ha: 25
+pdt_ha: 10
+colza_ha: 15
+labour: 1
+chauffage_mazout: 1
+habitations: 1
+toiture_pv: 1
+mais_seche_t: 200
+livraison_km: 0
