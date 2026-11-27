@@ -7,11 +7,20 @@ Dans une page :
   {{ v('prix_kg_n', scenario='bas') }}    -> valeur du scénario de prix bas
   {{ fourchette('prix_kg_n') }}           -> 1,15 à 2,13 €/kg N (scénarios bas et haut)
   {{ tableau_hypotheses() }}, {{ tableau_calculs() }}, {{ index_fiches() }}
+  {{ tableau_synthese(1) }}, {{ synthese_par_ferme('lait') }}   (page docs/synthese.md)
 """
 import csv
+import re
 from pathlib import Path
 
 import yaml
+
+
+def _charger_liste(chemin: Path) -> list:
+    if not chemin.exists():
+        return []
+    with chemin.open(encoding="utf-8") as f:
+        return yaml.safe_load(f) or []
 
 
 def _charger(chemin: Path) -> dict:
@@ -35,6 +44,26 @@ def _decimales_auto(nombre: float) -> int:
     if a >= 1:
         return 2
     return 3
+
+
+def lire_alternatives(chemin: Path) -> list[dict]:
+    """Alternatives d'une fiche : numéro, titre, vague et ancre de chaque « ### n. Titre (vague X) »."""
+    from markdown.extensions.toc import slugify
+
+    out = []
+    for ligne in chemin.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^### (\d+)\. (.+?) \(vague (\d)\)\s*$", ligne)
+        if m:
+            entete = ligne[4:].strip()
+            out.append({"num": int(m.group(1)), "titre": m.group(2), "vague": int(m.group(3)),
+                        "ancre": slugify(entete, "-")})
+    return out
+
+
+def trouver_alternative(alternatives: list[dict], debut: str) -> dict | None:
+    debut = debut.strip().lower()
+    trouvees = [a for a in alternatives if a["titre"].lower().startswith(debut)]
+    return trouvees[0] if len(trouvees) == 1 else None
 
 
 def define_env(env):
@@ -132,4 +161,81 @@ def define_env(env):
                 f"| [{r['technologie_actuelle']}]({r['fiche']}) | {r['domaine']} | {r['dependance_fossile']} "
                 f"| {vague} | {r['statut']} |"
             )
+        return "\n".join(lignes)
+
+    synthese = _charger_liste(racine / "data" / "synthese.yaml")
+    fiches_dir = racine / "docs" / "fiches"
+
+    def _titre_fiche(fiche: str) -> str:
+        texte = (fiches_dir / fiche).read_text(encoding="utf-8")
+        m = re.match(r"^---\n(.*?)\n---\n", texte, re.S)
+        return (yaml.safe_load(m.group(1)) or {}).get("titre", fiche) if m else fiche
+
+    def _lignes(vague: int | None = None, ferme: str | None = None) -> list[dict]:
+        out = []
+        for r in synthese:
+            alt = trouver_alternative(lire_alternatives(fiches_dir / r["fiche"]), r["alternative"])
+            if alt is None:
+                raise KeyError(f"synthese.yaml : alternative introuvable « {r['alternative']} » dans {r['fiche']}")
+            if vague is not None and alt["vague"] != vague:
+                continue
+            fermes = r.get("fermes", [])
+            if ferme is not None and ferme not in fermes and "toutes" not in fermes:
+                continue
+            out.append({**r, **alt, "lien": f"fiches/{r['fiche']}#{alt['ancre']}"})
+        return out
+
+    def _a_un_scenario(cle: str) -> bool:
+        e = entree(cle)
+        return ("bas" in e) if cle in calculs else bool(e.get("scenario"))
+
+    def _avec_bas(cle: str, decimales: int | None = None) -> str:
+        texte = v(cle, decimales)
+        if _a_un_scenario(cle) and valeur_scenario(cle, "bas") != entree(cle).get("valeur"):
+            texte += f" ({v(cle, decimales, scenario='bas')} avant la crise)"
+        return texte
+
+    def _repere(r: dict) -> str:
+        rep = r.get("repere")
+        if not rep:
+            return "—"
+        texte = f"**{_avec_bas(rep['cle'])}** {rep['libelle']}"
+        if rep.get("compare"):
+            texte += f", contre {_avec_bas(rep['compare'])} {rep['compare_libelle']}"
+        return texte
+
+    @env.macro
+    def tableau_synthese(vague: int) -> str:
+        lignes = [
+            "| Alternative | Pour quelles fermes | Repère chiffré (prix actuel) | Temps de retour | Avec les aides |",
+            "|---|---|---|---|---|",
+        ]
+        for r in _lignes(vague=vague):
+            alt = f"[{r['titre']}]({r['lien']})<br><small>{_titre_fiche(r['fiche'])}. {r.get('note', '')}</small>"
+            retour = _avec_bas(r["retour"], 1) if r.get("retour") else "—"
+            aide = _avec_bas(r["retour_aide"], 1) if r.get("retour_aide") else "—"
+            lignes.append(f"| {alt} | {', '.join(r.get('fermes', []))} | {_repere(r)} | {retour} | {aide} |")
+        return "\n".join(lignes)
+
+    @env.macro
+    def synthese_par_ferme(ferme: str) -> str:
+        lignes = []
+        for vague in (1, 2):
+            for r in _lignes(vague=vague, ferme=ferme):
+                rep = r.get("repere")
+                chiffre = f" : {v(rep['cle'])} {rep['libelle']}" if rep else ""
+                lignes.append(f"- vague {vague} : [{r['titre']}]({r['lien']}) ({_titre_fiche(r['fiche']).lower()}){chiffre}")
+        return "\n".join(lignes) if lignes else "- Aucune alternative listée."
+
+    @env.macro
+    def liste_vague(vague: int) -> str:
+        """Toutes les alternatives d'une vague, lues dans les fiches, avec un lien."""
+        lignes = []
+        for chemin in sorted(fiches_dir.rglob("*.md")):
+            if chemin.name == "index.md":
+                continue
+            rel = chemin.relative_to(fiches_dir).as_posix()
+            for a in lire_alternatives(chemin):
+                if a["vague"] == vague:
+                    lignes.append(f"- [{a['titre']}](fiches/{rel}#{a['ancre']}) ({_titre_fiche(rel)})")
         return "\n".join(lignes)

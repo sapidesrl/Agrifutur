@@ -27,6 +27,7 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
 │   ├── hypotheses.yaml        tous les prix et paramètres, avec source et date
 │   ├── calculs.yaml           généré par calc/couts.py (ne pas éditer à la main)
 │   ├── technologies.csv       index des technologies actuelles
+│   ├── synthese.yaml          lignes de la page « Par où commencer sur sa ferme »
 │   └── sources-collectees.md  sources déjà trouvées pour les fiches à rédiger
 ├── calc/couts.py              calculs de comparaison
 ├── outils/
@@ -35,7 +36,7 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
 │   └── verifier_fiches.py     contrôles avant commit
 ├── templates/fiche.md         gabarit d'une fiche
 └── docs/                      le site (MkDocs Material)
-    ├── index.md, methode.md, hypotheses.md, calculs.md
+    ├── index.md, synthese.md, methode.md, hypotheses.md, calculs.md, aides.md
     └── fiches/<domaine>/<id>.md
 ```
 

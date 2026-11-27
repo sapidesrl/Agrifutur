@@ -20,6 +20,7 @@ Cet écart tient même si les prix redescendent : au prix d'avant-crise, le kWh 
 
 ## Par où commencer
 
+- [Par où commencer sur sa ferme](synthese.md) : les alternatives rentables, classées par type de ferme, avec leurs chiffres clés.
 - [Les fiches](fiches/index.md), une par technologie actuelle.
 - [La méthode](methode.md) : comment lire les chiffres.
 - [Les hypothèses](hypotheses.md) : tous les prix utilisés, avec leur source et leur date.

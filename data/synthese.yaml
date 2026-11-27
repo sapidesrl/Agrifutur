@@ -1,0 +1,295 @@
+# Synthèse : une ligne par alternative de vague 1 ou 2, affichée par docs/synthese.md.
+# - fiche : chemin sous docs/fiches/ ; alternative : début du titre « ### n. … » de la fiche
+#   (la vague et le lien sont lus dans la fiche, jamais recopiés ici) ;
+# - fermes : types concernés parmi lait, viande, grandes cultures, maraîchage, vente directe, toutes ;
+# - repere : clé d'hypotheses.yaml ou de calculs.yaml, avec un libellé court ; « compare » ajoute
+#   une valeur de comparaison ; la valeur d'avant-crise (février 2026) s'affiche si elle existe ;
+# - retour / retour_aide : temps de retour sans aide et avec les aides accessibles (clés) ;
+# - note : une phrase, sans chiffre (les chiffres viennent des clés).
+
+- fiche: traction/tracteur-diesel.md
+  alternative: Réduire le besoin de traction
+  fermes: [grandes cultures]
+  repere: {cle: valeur_gasoil_economise, libelle: "de gasoil économisé en passant du labour au semis direct"}
+  note: "Déplace une part de la dépendance vers le glyphosate, et la destruction chimique des couverts sera interdite en 2027 pour l'éco-régime."
+
+- fiche: energie/chauffage-mazout.md
+  alternative: Chaudière à plaquettes de bois
+  fermes: [toutes]
+  repere: {cle: chaudiere_gain_net_an, libelle: "de gain net, entretien déduit (ferme type de la fiche)"}
+  retour: chaudiere_retour_ans
+  retour_aide: chaudiere_retour_green_ans
+  note: "Rentable vite pour les gros consommateurs de mazout ; l'aide GREEN demande un audit préalable."
+
+- fiche: energie/chauffage-mazout.md
+  alternative: Récupération de chaleur
+  fermes: [lait]
+  note: "Réduire le besoin avant de changer de chaudière ; sur une ferme laitière, voir le récupérateur sur le tank."
+
+- fiche: energie/electricite-reseau.md
+  alternative: Photovoltaïque en autoconsommation
+  fermes: [toutes]
+  repere: {cle: pv_ferme_gain_net_an, libelle: "de gain net (ferme type de la fiche)"}
+  retour: pv_ferme_retour_ans
+  retour_aide: pv_ferme_retour_cv_ans
+  note: "Le temps de retour sans aide compte déjà l'aide AII ; la colonne avec aides ajoute les certificats verts. C'est l'électricité consommée sur place qui paie l'installation."
+
+- fiche: elevage/tank-a-lait.md
+  alternative: Pré-refroidisseur
+  fermes: [lait]
+  repere: {cle: prerefroidisseur_eur_an, libelle: "d'électricité économisée (ferme type de la fiche)"}
+  retour: prerefroidisseur_retour_bas_ans
+  note: "Temps de retour pour un appareil au bas de la fourchette de prix ; aucune aide accessible en pratique."
+
+- fiche: elevage/tank-a-lait.md
+  alternative: Récupérateur de chaleur
+  fermes: [lait]
+  note: "Préchauffe l'eau de lavage avec la chaleur du lait ; intéressant surtout pour les grands volumes de lait."
+
+- fiche: energie/sechage-grains.md
+  alternative: Retirer moins d'eau
+  fermes: [grandes cultures, lait]
+  note: "Variété plus précoce, bonne date de récolte, maïs grain humide pour l'éleveur ; déplace une part de la dépendance vers le plastique d'ensilage."
+
+- fiche: elevage/fourrages-recoltes.md
+  alternative: Pâturage tournant dynamique
+  fermes: [lait, viande]
+  repere: {cle: herbe_paturee_cout, libelle: "pour l'herbe pâturée", compare: ensilage_herbe_cout, compare_libelle: "en ensilage d'herbe"}
+  note: "Demande un parcellaire accessible et aménagé ; ne supprime pas le stock d'hiver."
+
+- fiche: elevage/concentres-importes.md
+  alternative: Pâturage
+  fermes: [lait, viande]
+  repere: {cle: mat_cout_herbe_paturee, libelle: "pour la protéine de l'herbe pâturée", compare: mat_cout_soja, compare_libelle: "dans le tourteau de soja"}
+  note: "La protéine la moins chère de la ferme, sans gasoil ni plastique."
+
+- fiche: elevage/concentres-importes.md
+  alternative: Tourteau de colza du commerce
+  fermes: [lait, viande]
+  repere: {cle: ecart_colza_soja_t, libelle: "à protéines égales (négatif : économie)"}
+  note: "Lui aussi extrait au solvant pétrolier, mais d'origine européenne et moins gourmand en énergie fossile."
+
+- fiche: fertilisation/azote-synthese.md
+  alternative: Légumineuses
+  fermes: [toutes]
+  repere: {cle: valeur_n_fixe, libelle: "d'engrais azoté évité"}
+  note: "L'éco-régime « cultures favorables » paie aussi la luzerne et les mélanges céréales-légumineuses."
+
+- fiche: fertilisation/engrais-p-k.md
+  alternative: Effluents d'élevage
+  fermes: [lait, viande]
+  repere: {cle: valeur_pk_fumier_ha, libelle: "de phosphore et de potassium par apport de fumier"}
+  note: "Recycle en partie le phosphore des aliments importés : la dépendance est déplacée plutôt que supprimée."
+
+- fiche: protection/herbicides.md
+  alternative: Désherbage mécanique
+  fermes: [grandes cultures, maraîchage]
+  repere: {cle: mais_meca_surcout_ha, libelle: "de surcoût en maïs face au chimique, sans aide", compare: mais_meca_bilan_ri_ha, compare_libelle: "avec l'éco-régime « réduction d'intrants » (négatif : gain)"}
+  note: "Ajoute quelques litres de gasoil par hectare ; plus intéressant en betterave, chicorée et colza."
+
+- fiche: protection/fongicides-insecticides.md
+  alternative: Variétés résistantes
+  fermes: [grandes cultures]
+  repere: {cle: mildiou_passages_evites_eur_ha, libelle: "de passages anti-mildiou évités en pomme de terre résistante"}
+  note: "L'acheteur doit accepter la variété ; en froment, un seul traitement suffit la plupart des années."
+
+- fiche: protection/fongicides-insecticides.md
+  alternative: Rotations
+  fermes: [grandes cultures]
+  note: "Allonger et diversifier la rotation coupe le cycle des maladies et des ravageurs."
+
+- fiche: semences/semences-industrielles.md
+  alternative: Semences de ferme
+  fermes: [grandes cultures]
+  repere: {cle: semence_ferme_froment_economie_ha, libelle: "économisés en froment"}
+  note: "Légal et courant pour les céréales et protéagineux de lignée ; pas pour les hybrides (maïs, betterave)."
+
+- fiche: traction/automoteurs-recolte.md
+  alternative: Mutualiser la récolte
+  fermes: [grandes cultures, lait]
+  note: "Rentable aujourd'hui mais ne retire pas de gasoil du réservoir ; les lignes AII des machines de récolte sont réservées aux CUMA."
+
+- fiche: eau/irrigation-pompes.md
+  alternative: Gravité
+  fermes: [lait, viande]
+  note: "La solution la moins chère quand un point d'eau domine la pâture."
+
+- fiche: eau/irrigation-pompes.md
+  alternative: Pompe à museau
+  fermes: [lait, viande]
+  note: "Le bétail pompe lui-même dans un cours d'eau ou un puits peu profond."
+
+- fiche: eau/irrigation-pompes.md
+  alternative: Pompe solaire
+  fermes: [lait, viande]
+  retour: abreuv_solaire_retour_ans
+  note: "Le temps de retour compte le temps de travail évité à la tonne à eau ; sur le seul gasoil, il est bien plus long. Aucune aide."
+
+- fiche: transformation/transformation-industrielle.md
+  alternative: Atelier de découpe
+  fermes: [viande, vente directe]
+  note: "Vente de viande en colis découpés chez un prestataire ou en atelier collectif ; une ferme sur sept y perd de l'argent."
+
+- fiche: transport/vehicules-livraison.md
+  alternative: Utilitaire électrique
+  fermes: [vente directe]
+  repere: {cle: utilitaire_economie_an, libelle: "d'énergie économisés (tournée type, recharge moitié solaire)"}
+  note: "Rentable en occasion ; en neuf, surtout au régime réel grâce à la déduction fédérale."
+
+# --- Vague 2 -------------------------------------------------------------------
+
+- fiche: traction/tracteur-diesel.md
+  alternative: Tracteur électrique compact
+  fermes: [maraîchage, lait]
+  repere: {cle: tracteur_economie_an, libelle: "d'énergie économisés sur ses propres panneaux"}
+  note: "Seulement derrière son photovoltaïque ; sur le réseau, il coûte plus cher que le gasoil. Le prix d'achat reste le frein."
+
+- fiche: traction/tracteur-diesel.md
+  alternative: Tracteur au biométhane
+  fermes: [lait, grandes cultures]
+  note: "Demande un méthaniseur avec épuration et compression, plutôt à plusieurs."
+
+- fiche: traction/engins-de-cour.md
+  alternative: Chargeur ou télescopique électrique
+  fermes: [lait, viande]
+  repere: {cle: valet_economie_an_pv, libelle: "d'énergie économisés sur ses propres panneaux"}
+  note: "L'économie ne rembourse pas le surcoût d'achat en moins de quinze ans ; l'AII aide autant le diesel que l'électrique."
+
+- fiche: energie/electricite-reseau.md
+  alternative: Micro-biométhanisation
+  fermes: [lait]
+  repere: {cle: microbiometh_valeur_cv_an, libelle: "d'électricité et de certificats verts (unité type de la fiche)"}
+  retour: microbiometh_retour_ans
+  retour_aide: microbiometh_retour_aides_ans
+  note: "Rentable grâce aux certificats verts et à l'aide GREEN, pas sur l'électricité seule."
+
+- fiche: energie/chauffage-mazout.md
+  alternative: Pompe à chaleur
+  fermes: [toutes]
+  note: "Pour une habitation bien isolée et derrière ses panneaux ; peu adaptée à l'eau de lavage très chaude."
+
+- fiche: energie/sechage-grains.md
+  alternative: Chaudière biomasse
+  fermes: [grandes cultures]
+  repere: {cle: sechage_economie_plaquettes_an, libelle: "d'énergie économisés face au propane (exploitation type de la fiche)"}
+  note: "L'économie ne paie seule une chaudière que sur de gros tonnages ou en groupe ; GREEN couvre une partie."
+
+- fiche: energie/sechage-grains.md
+  alternative: Air ambiant ou chauffé au solaire
+  fermes: [grandes cultures]
+  note: "Pour les céréales et le colza un peu humides et la finition du maïs, pas pour le maïs récolté très humide."
+
+- fiche: elevage/fourrages-recoltes.md
+  alternative: Séchage du foin en grange
+  fermes: [lait]
+  repere: {cle: sechage_grange_pv_tms, libelle: "d'électricité sur ses panneaux", compare: sechage_grange_reseau_tms, compare_libelle: "sur le réseau"}
+  note: "Supprime le plastique mais pas le gasoil de fauche ; rentable avec un lait de foin mieux payé, en bio ou avec l'aide AII."
+
+- fiche: elevage/concentres-importes.md
+  alternative: Tourteau de colza fermier
+  fermes: [lait, grandes cultures]
+  note: "Trop gras pour de grandes quantités ; la presse se paie surtout avec l'huile alimentaire."
+
+- fiche: elevage/concentres-importes.md
+  alternative: Féverole et pois
+  fermes: [grandes cultures, lait]
+  repere: {cle: proteagineux_aides_ha, libelle: "d'aides PAC (soutien couplé et réduction d'intrants)"}
+  note: "Au prix du marché, leur protéine coûte plus cher que celle du soja ; les aides et la rotation font la différence."
+
+- fiche: fertilisation/engrais-p-k.md
+  alternative: Compost et digestat
+  fermes: [toutes]
+  note: "Utile là où il y en a ; la MAEC Sol paie l'amélioration mesurée du sol."
+
+- fiche: fertilisation/engrais-p-k.md
+  alternative: Cendres de bois
+  fermes: [toutes]
+  note: "Petites quantités, riches en potassium ; cadre légal de l'épandage à vérifier."
+
+- fiche: materiaux/plastiques-agricoles.md
+  alternative: Paillages naturels
+  fermes: [maraîchage]
+  repere: {cle: paillage_paille_ha, libelle: "de paille achetée", compare: paillage_pe_ha, compare_libelle: "pour un film polyéthylène"}
+  note: "Intéressant quand la paille vient de la ferme ; rend de la matière organique au sol."
+
+- fiche: materiaux/plastiques-agricoles.md
+  alternative: Bâches réutilisables
+  fermes: [maraîchage]
+  note: "Réduit le plastique jeté, mais reste du polypropylène."
+
+- fiche: protection/fongicides-insecticides.md
+  alternative: Haies et auxiliaires
+  fermes: [toutes]
+  repere: {cle: haie_eco_regime_eur_km, libelle: "d'éco-régime maillage"}
+  note: "Rentable grâce aux aides ; l'effet sur les ravageurs reste partiel."
+
+- fiche: protection/fongicides-insecticides.md
+  alternative: Biocontrôle
+  fermes: [grandes cultures, maraîchage]
+  note: "Déplace une part de la dépendance (cuivre minier, soufre issu du raffinage)."
+
+- fiche: protection/herbicides.md
+  alternative: Robot solaire de binage
+  fermes: [maraîchage]
+  repere: {cle: farmdroid_amort_eur_ha_aii, libelle: "d'amortissement, aide AII déduite"}
+  note: "Rentable seulement s'il remplace du désherbage manuel ; mieux aidé en CUMA."
+
+- fiche: semences/semences-industrielles.md
+  alternative: Semences paysannes reproductibles
+  fermes: [maraîchage, grandes cultures]
+  note: "Surtout en bio et en circuit court, avec des populations adaptées au terroir."
+
+- fiche: eau/irrigation-pompes.md
+  alternative: Électropompe d'irrigation
+  fermes: [grandes cultures, maraîchage]
+  repere: {cle: irr_economie_pv_an, libelle: "d'énergie économisés sur ses panneaux (exploitation type de la fiche)"}
+  note: "Sur le réseau, elle ne fait pas mieux que le diesel ; l'économie ne paie l'investissement que sur de grandes surfaces."
+
+- fiche: transformation/transformation-industrielle.md
+  alternative: Presse à huile
+  fermes: [grandes cultures, vente directe]
+  repere: {cle: huile_alim_ecart_tonne, libelle: "de chiffre d'affaires en plus quand on presse et vend l'huile"}
+  note: "Tout repose sur la vente directe de l'huile ; aucune aide pour une presse individuelle."
+
+- fiche: transformation/transformation-industrielle.md
+  alternative: Moulin à meules
+  fermes: [grandes cultures, vente directe]
+  repere: {cle: farine_ecart_tonne_ble, libelle: "de chiffre d'affaires en plus quand on moud et vend la farine"}
+  note: "Demande un blé panifiable et des boulangers clients."
+
+- fiche: transformation/transformation-industrielle.md
+  alternative: Légumerie-conserverie
+  fermes: [maraîchage, vente directe]
+  note: "Existe en Wallonie en collectif, avec des fonds publics."
+
+- fiche: distribution/circuits-longs.md
+  alternative: Vente directe groupée
+  fermes: [vente directe]
+  repere: {cle: pdt_ratio_coop_long, libelle: "plus de recette par kg de pomme de terre en coopérative que dans la chaîne longue"}
+  note: "Le producteur fait lui-même tri, emballage et livraison : le gain réel est plus faible que ce rapport."
+
+- fiche: distribution/circuits-longs.md
+  alternative: Points de dépôt
+  fermes: [vente directe]
+  note: "Une tournée doit être bien remplie, sinon une camionnette consomme plus par kilo qu'un camion."
+
+- fiche: distribution/circuits-longs.md
+  alternative: Abonnements payés d'avance
+  fermes: [maraîchage, vente directe]
+  repere: {cle: csa_recette_ha, libelle: "de parts encaissées (fermes CSA flamandes, données de 2014)"}
+  note: "Près d'une ville, avec une communauté à animer ; le revenu horaire reste faible."
+
+- fiche: transport/vehicules-livraison.md
+  alternative: Tournées groupées
+  fermes: [vente directe]
+  note: "Demande un collectif ; les plateformes logistiques dépendent souvent d'aides publiques."
+
+- fiche: transport/vehicules-livraison.md
+  alternative: Vélo-cargo en ville
+  fermes: [vente directe]
+  note: "Selon la densité de livraisons ; le modèle reste fragile."
+
+- fiche: elevage/tank-a-lait.md
+  alternative: Les deux ensemble
+  fermes: [lait]
+  note: "Pré-refroidisseur et récupérateur combinés, pertinents surtout pour les grands volumes de lait."
