@@ -59,14 +59,15 @@ Conditions :
 - si la laiterie est propriétaire du tank, son accord est nécessaire (pratique française, à vérifier en Belgique)[^reussir-traite] ;
 - un besoin d'eau chaude régulier.
 
-### Aides : aucune en pratique
+### Aides : presque aucune
 
-Ni le pré-refroidisseur ni le récupérateur de chaleur n'ont d'aide accessible en pratique pour une exploitation (voir [les aides publiques](../../aides.md#ce-que-laii-ne-finance-pas)) :
+Le pré-refroidisseur et le récupérateur de chaleur n'ont presque pas d'aide accessible pour une exploitation (voir [les aides publiques](../../aides.md#ce-que-laii-ne-finance-pas)) :
 
 - **AII** : la liste des investissements admissibles de 2026 ne contient ni pré-refroidisseur ni récupérateur de chaleur[^aii-liste]. Seul le tank lui-même a une ligne, sans case « architecture verte » ni « résilience économique ». Avec le seuil de sélection de {{ v('aii_seuil_points', 0, unite=False) }} points, un éleveur herbager de moins de 60 ha, ni jeune ni bio, hors zone à contraintes, n'a que 7,5 points (calculé à partir des points de l'arrêté) et n'atteint pas le seuil pour cette ligne[^am-aii].
-- **GREEN** (économie d'énergie) : l'investissement doit atteindre au moins {{ v('green_seuil_pme', 0) }} pour une PME, un audit AMUREBA est exigé depuis 2026, et un investissement dont le temps de retour actualisé est de 3 ans ou moins est exclu[^green-agw]. Un pré-refroidisseur ou un récupérateur coûte nettement moins que ce seuil et se rembourse souvent en 3 à 5 ans : il n'entre pas dans GREEN, sauf peut-être au sein d'un programme d'économie d'énergie plus large (à vérifier).
+- **GREEN** (économie d'énergie) : l'investissement doit atteindre au moins {{ v('green_seuil_pme', 0) }} pour une PME, un audit AMUREBA est exigé depuis 2026, et un investissement dont le temps de retour actualisé est de 3 ans ou moins est exclu[^green-agw]. Un pré-refroidisseur ou un récupérateur coûte nettement moins que ce seuil et se rembourse souvent en 3 à 5 ans : il n'entre pas dans GREEN, sauf peut-être au sein d'un programme d'économie d'énergie plus large (à vérifier). GREEN cite pourtant la récupération de chaleur sur un processus de production comme investissement admissible[^green-brochure]. L'audit AMUREBA n'est pas subventionné pour l'activité agricole : la subvention relève du règlement *de minimis* général, qui exclut la production agricole primaire[^amureba] [^de-minimis].
+- **GREEN** (groupes de froid) : GREEN aide aussi un groupe de froid neuf de moins de 40 kW au CO2, à l'ammoniac ou au propane, sur un surcoût forfaitaire face à un groupe au R449, au taux de 30 % pour une PME. Pour ce volet, ni audit AMUREBA ni compteurs ne sont exigés[^green-brochure]. C'est une piste pour le remplacement du groupe froid du tank, mais son application au tank à lait n'est écrite nulle part, et le seuil de {{ v('green_seuil_pme', 0) }} s'applique a priori aussi[^green-agw].
 
-La vague 1 tient donc **sans aide** : les aides n'y changent rien.
+La vague 1 tient donc **sans aide** : les aides n'y changent presque rien.
 
 ### 3. Les deux ensemble (vague 2)
 
@@ -82,8 +83,8 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 
 - Prix belges d'un pré-refroidisseur et d'un récupérateur, posés.
 - En Belgique, le tank appartient-il en général à l'éleveur ou à la laiterie ?
-- Un programme GREEN plus large (pré-refroidisseur, récupérateur et autres économies d'énergie de l'étable, au-delà du seuil de {{ v('green_seuil_pme', 0) }}) serait-il recevable, et l'audit AMUREBA subventionné pour une exploitation agricole (règle *de minimis*) ?
-- Les points « architecture verte » et « résilience économique » ne jouent pas pour le tank ; d'autres critères (jeune agriculteur, bio, zone à contraintes) peuvent faire passer le seuil AII de {{ v('aii_seuil_points', 0, unite=False) }} points pour le tank lui-même.
+- Un programme GREEN plus large (pré-refroidisseur, récupérateur et autres économies d'énergie de l'étable, au-delà du seuil de {{ v('green_seuil_pme', 0) }}) serait-il recevable ?
+- Admissibilité du groupe froid d'un tank à lait (propane ou CO2) au volet « groupes de froid » de GREEN, et seuil de {{ v('green_seuil_pme', 0) }} pour ce volet. Surcoût réel d'un groupe au propane ou au CO2 pour un tank.
 - Aide wallonne aux investissements agricoles (AII) : la liste des investissements admissibles (annexe 3 de l'arrêté ministériel du 23 février 2023, version au 1er janvier 2026) ne cite ni pré-refroidisseur ni récupérateur de chaleur ; elle prévoit un forfait « tank-refroidisseur » de 3 465 € par 1 000 L[^am-aii]. Reste à demander à l'administration si ces équipements peuvent entrer dans le forfait du tank lors d'un achat neuf.
 - Consommation réelle du tank sur l'exploitation (relevé du compteur ou sous-compteur).
 - Refroidissement sur photovoltaïque avec stockage de froid : coût et retours d'expérience.
@@ -102,3 +103,6 @@ Les deux équipements se combinent. Le refroidissement passe alors d'environ 13-
 [^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
 [^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), en vigueur le 1er janvier 2025 : articles 7, 10, 11 et 26, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
 [^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements (secteurs agricole et horticole…), article 6 et annexes 2 et 3, version consolidée en vigueur au 1er janvier 2026 (seuil de sélection : AM du 15 janvier 2026), Wallex. https://wallex.wallonie.be/sites/wallex/contents/acts/87/87905/4.html
+[^green-brochure]: « Aides GREEN – Brochure explicative », SPW Économie, Emploi, Recherche, octobre 2026 : points 1.1, 3, 4 et 7.4, annexes 2 et 3, consulté le 27 novembre 2026. https://iodda.be/public/annexes/8063/document/fr
+[^amureba]: Arrêté du Gouvernement wallon du 1er février 2024 relatif à l'octroi de subventions à l'audit ou à l'étude dans le secteur non résidentiel (AMUREBA), articles 43 et 44, annexe 5, Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2024/02/01/2024004275
+[^de-minimis]: Règlement (UE) 2023/2831 de la Commission du 13 décembre 2023 relatif aux aides de minimis, article 1er, § 1er, c) et § 2, Journal officiel de l'Union européenne du 15 décembre 2023, consulté le 27 novembre 2026. http://data.europa.eu/eli/reg/2023/2831/oj

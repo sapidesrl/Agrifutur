@@ -15,7 +15,7 @@ maj: 2026-11-27
 
 Le phosphore (P) et le potassium (K) des engrais minéraux viennent de mines lointaines : phosphate du Maroc surtout, potasse du Canada, de Russie, de Biélorussie ou de Chine[^eew-engrais]. Le phosphate est attaqué à l'acide sulfurique, fait avec du soufre du Moyen-Orient. Fin novembre 2026, le kg de P2O5 du superphosphate coûte {{ v('prix_kg_p2o5') }} et le kg de K2O du chlorure de potassium {{ v('prix_kg_k2o') }} (prix départ Gand, calculés).
 
-En Wallonie, 80 % du phosphore apporté aux sols vient déjà des effluents d'élevage[^eew-sols-p] : bien gérés, ils restent la meilleure alternative, rentable crise ou pas (vague 1), car le P et le K d'une tonne de fumier de bovins valent {{ v('valeur_pk_fumier', 1) }}, et encore {{ v('valeur_pk_fumier', 1, scenario='bas') }} au prix d'avant-crise (calculé). Le compost, le digestat et les cendres de bois complètent dans certaines fermes (vague 2), et le recyclage du phosphore des eaux usées reste à préparer (vague 3).
+En Wallonie, 80 % du phosphore apporté aux sols vient déjà des effluents d'élevage[^eew-sols-p] : bien gérés, ils restent la meilleure alternative, rentable crise ou pas (vague 1), car le P et le K d'une tonne de fumier de bovins valent {{ v('valeur_pk_fumier', 1) }}, et encore {{ v('valeur_pk_fumier', 1, scenario='bas') }} au prix d'avant-crise (calculé). Le compost et le digestat complètent dans certaines fermes (vague 2). Les cendres de bois, faute de cadre légal simple pour les épandre, et le recyclage du phosphore des eaux usées restent à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -98,7 +98,7 @@ Les teneurs varient beaucoup d'une ferme à l'autre. Dans sept tas de fumier fra
 - Une ferme sans élevage dépend d'échanges avec les voisins (paille contre fumier) et du coût du transport, qui n'est pas compté ici.
 - Sur les sols déjà riches, ajouter du phosphore organique n'apporte rien et augmente les pertes vers les eaux de surface : les flux de phosphore des sols agricoles wallons vers les eaux atteignaient 2 100 t par an sur 2021-2025[^eew-sols-p].
 
-**Aides.** Aucune aide publique ne paie l'épandage ou le bâchage des effluents. La MAEC « Sol » (MR14), décrite avec le compost ci-dessous, peut récompenser l'effet des effluents sur le carbone du sol. La vague 1 tient sans aide.
+**Aides.** Aucune aide publique ne paie l'épandage ou le bâchage des effluents. La MAEC « Sol » (MR14), décrite avec le compost ci-dessous, peut récompenser l'effet des effluents sur le carbone du sol, mais seulement pour les engagements déjà en cours : elle n'en accepte pas de nouveaux en 2027[^maec-sol-2027]. La vague 1 tient sans aide.
 
 ### 2. Compost et digestat (vague 2)
 
@@ -112,11 +112,11 @@ Conditions :
 - pour le digestat, une unité de biométhanisation proche ;
 - des analyses du produit, car les teneurs varient selon les intrants.
 
-**Aides.** Aucune aide ne paie directement le compost ou le digestat. La MAEC « Sol » (MR14), engagement de cinq ans, paie le résultat que ces apports organiques aident à obtenir : jusqu'à {{ v('maec_mr14_favorable_eur_ha', 0) }} si le sol est en état « favorable » (rapport carbone organique sur argile, mesuré par un laboratoire au début et à la fin du contrat), jusqu'à 80 €/ha en état « transition », rien en état « défavorable »[^mr14]. Conditions : engager au moins 90 % de sa surface ; le montant est réduit quand les terres arables font moins de 60 % de la surface, et nul sous 30 %[^mr14]. Il dépend de l'état du sol, pas de la quantité de compost épandue : on ne peut pas l'inclure d'avance dans le calcul. Il ne change donc pas la vague du compost et du digestat (vague 2). Voir [les aides publiques](../../aides.md#pac-2e-pilier-maec-bio-natura-2000-installation).
+**Aides.** Aucune aide ne paie directement le compost ou le digestat. La MAEC « Sol » (MR14), engagement de cinq ans, paie le résultat que ces apports organiques aident à obtenir : jusqu'à {{ v('maec_mr14_favorable_eur_ha', 0) }} si le sol est en état « favorable » (rapport carbone organique sur argile, mesuré par un laboratoire au début et à la fin du contrat), jusqu'à 80 €/ha en état « transition », rien en état « défavorable »[^mr14]. Conditions : engager au moins 90 % de sa surface ; le montant est réduit quand les terres arables font moins de 60 % de la surface, et nul sous 30 %[^mr14]. Il dépend de l'état du sol, pas de la quantité de compost épandue : on ne peut pas l'inclure d'avance dans le calcul. Surtout, la mesure n'accepte plus de nouvel engagement ni de nouvelle surface en 2027 ; les engagements en cours sont maintenus jusqu'à leur terme[^maec-sol-2027]. Il ne change donc pas la vague du compost et du digestat (vague 2). Voir [les aides publiques](../../aides.md#pac-2e-pilier-maec-bio-natura-2000-installation).
 
 Comme pour le fumier, ces produits recyclent un phosphore déjà présent dans le territoire : ils ne suppriment pas l'import s'il entre par les aliments ou par les déchets de l'industrie agroalimentaire.
 
-### 3. Cendres de bois (vague 2)
+### 3. Cendres de bois (vague 3)
 
 Les cendres d'une chaudière à bois contiennent du calcium, du potassium, du magnésium et du phosphore. Leur pH très élevé (12 à 13) en fait aussi un amendement basique, qui remonte le pH du sol[^solagro]. Une étude française a mesuré, pour des cendres de plaquettes forestières, environ {{ v('cendres_bois_k2o', 1) }} de potassium et {{ v('cendres_bois_p2o5', 1) }} de phosphore, et un tiers de calcium (moyenne de 9 analyses)[^ademe-cendres]. Une tonne de cendres remplacerait ainsi environ {{ v('kcl_evite_t_cendres', 0) }} de chlorure de potassium (calculé). Son P et son K valent {{ v('valeur_pk_cendres', 0) }} (calculé, valeurs françaises de 2005 à confirmer).
 
@@ -127,7 +127,9 @@ Limites :
 - les quantités sont faibles, à la mesure de la chaudière : un appoint de potasse et de chaux, pas un remplacement de l'engrais à l'échelle de la ferme ;
 - la composition varie avec l'essence, le sol où l'arbre a poussé et le combustible. Des cendres de bois traité, de palettes ou de déchets de bois contiennent beaucoup plus de métaux lourds (plomb, chrome, zinc, cuivre) que celles de plaquettes forestières[^ademe-cendres] ;
 - la valorisation agricole se décide au cas par cas, après analyse[^solagro] ;
-- le cadre légal wallon (déchet ou produit, autorisation d'épandage) reste à vérifier (voir « À vérifier »).
+- en Wallonie, des cendres dont on se défait sont un déchet[^decret-dechets]. Aucune règle générale ne permet de les épandre : l'arrêté sur la valorisation des déchets ne prévoit ni les cendres de bois ni l'usage agricole[^agw-valorisation]. Il faut une reconnaissance individuelle comme sous-produit[^decret-dechets] ou un enregistrement accordé par le Ministre, pour cinq ans au plus, avec analyses[^agw-valorisation]. C'est lourd pour quelques tonnes par an.
+
+Pourquoi vague 3 : la valeur des cendres est réelle, mais il manque un cadre simple pour épandre celles d'une chaudière à plaquettes propres. On peut s'y préparer en faisant analyser ses cendres et en demandant la marche à suivre au SPW (Département du Sol et des Déchets).
 
 ### 4. Recyclage urbain : boues, struvite, cendres de boues (vague 3)
 
@@ -148,7 +150,7 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 - **Le stock du sol** : dans les terres riches, l'analyse de sol permet de vivre quelques années sur le phosphore accumulé avant 2000.
 - **Les effluents de la ferme et des voisins**, stockés à l'abri, analysés et épandus au bon moment, rendent au champ le P et le K des fourrages.
 - **Une alimentation du troupeau produite sur place** évite d'importer du phosphore par les concentrés.
-- **Les haies et la chaudière à bois** rendent un peu de potasse et de chaux par les cendres.
+- **Les haies et la chaudière à bois** pourraient rendre un peu de potasse et de chaux par les cendres, une fois le cadre légal de l'épandage réglé.
 - **Le territoire** : digestat des unités de biométhanisation, compost, puis demain le phosphore des stations d'épuration de la ville voisine.
 
 ## À vérifier
@@ -160,11 +162,11 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 - **Origine des engrais vendus en Belgique** : parts du Maroc, de la Russie, du Canada et de l'Allemagne dans les importations belges de phosphate et de potasse (Statbel).
 - **Teneurs du digestat** : la fiche FIWAP donne 886 mg de P2O5 par kg dans son tableau de composition, mais 2,35 kg/t dans son tableau de valorisation. Les valeurs retenues ici sont celles du tableau de composition.
 - **Teneurs des cendres de bois** : la source (ADEME, 2005) est française et ancienne ; son tableau parle de « phosphore total » et de « potassium total », ses graphiques de P2O5 et de K2O. Chercher des analyses wallonnes de cendres de chaudières à plaquettes, et la quantité de cendres produite par MAP brûlé.
-- **Statut légal des cendres de bois en Wallonie** : déchet soumis à autorisation, sous-produit ou matière fertilisante ? Conditions pour les épandre sur ses propres terres. À demander au SPW (Département du Sol et des Déchets).
+- **Cendres de bois** : existe-t-il une pratique administrative simplifiée (SPW ARNE, Département du Sol et des Déchets) pour épandre sur ses propres terres les cendres d'une chaudière à plaquettes non traitées ? Une dérogation fédérale (arrêté royal du 28 janvier 2013 sur les engrais) existe-t-elle pour des cendres de bois mises sur le marché ?
 - **PGDA** : vérifier la norme d'azote organique en vigueur (PGDA IV) pour les prairies et les cultures, et les règles de stockage au champ ; la fiche Protect'eau date de 2018 (PGDA III).
 - **Boues d'épuration** : vérifier que l'arrêté wallon du 12 janvier 1995 est toujours la règle en vigueur et la part des boues wallonnes épandues en agriculture.
 - **Recyclage du phosphore en Wallonie** : projets de struvite ou d'incinération des boues avec récupération du phosphore (SPGE, intercommunales) ; état actuel de l'installation d'Aquafin à Louvain (source de 2019).
-- **MAEC Sol** : montant réellement atteint selon l'état de départ des sols wallons, et effet mesurable d'apports réguliers de compost ou de digestat sur l'indicateur en cinq ans.
+- **MAEC Sol** : montant réellement atteint par les engagements en cours selon l'état de départ des sols wallons, et effet mesurable d'apports réguliers de compost ou de digestat sur l'indicateur en cinq ans. Suite de la mesure dans la prochaine PAC (pas de nouvel engagement en 2027).
 - **Matériel de compostage ou d'épandage** : lignes éventuelles dans la liste AII de 2026 (non vérifié pour cette fiche).
 - **Règlement européen** : catégories de matières recyclées admises (sels de phosphate précipités, cendres) et produits à base de struvite disponibles en Belgique ; EUR-Lex n'a pas pu être lu.
 
@@ -189,3 +191,6 @@ Pourquoi vague 3 : ces filières dépendent des stations d'épuration et des inc
 [^mr14]: « MAEC Sol – MR14 », Portail de l'agriculture wallonne, page modifiée le 4 juin 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/home/aides/pac-2023-2027-description-des-interventions/mesures-agro-environnementales-et-climatiques/maec-sol---mr14.html
 [^agw-boues]: Arrêté du Gouvernement wallon du 12 janvier 1995 portant réglementation de l'utilisation sur ou dans les sols des boues d'épuration ou de boues issues de centres de traitement de gadoues de fosses septiques, article 9, Wallex, consulté le 26 novembre 2026. https://wallex.wallonie.be/contents/acts/11/11130/1.html
 [^statbel-ipa]: « Indice des prix agricoles et prix moyens (base = 2020) (01/2024-09/2026) », indice des prix des moyens de production, Statbel, publié le 10 novembre 2026, lu le 27 novembre 2026. https://statbel.fgov.be/fr/themes/agriculture-peche/prix-agricoles
+[^maec-sol-2027]: « MAEC Sol : pas de nouveaux engagements en 2027, les engagements en cours maintenus jusqu'à leur terme », communiqué, Portail de l'agriculture wallonne, 18 novembre 2026, consulté le 27 novembre 2026. https://agriculture.wallonie.be/home/communiques/presses/maec-sol-pas-de-nouveaux-engagements-en-2027-les-engagements-en-cours-maintenus-jusqu-a-leur-terme.html
+[^decret-dechets]: Décret wallon du 9 mars 2023 relatif aux déchets, à la circularité des matières et à la propreté publique, version en vigueur au 1er janvier 2026 : articles 3, 5 (définition du déchet) et 8 (sous-produits, décisions individuelles). Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/loi-decret/2023/03/09/2023044053/2026/01/01
+[^agw-valorisation]: Arrêté du Gouvernement wallon du 14 juin 2001 favorisant la valorisation de certains déchets, version en vigueur depuis le 9 novembre 2023 : articles 2, 4, 6 et 13, annexe I (domaines « génie civil » et « fabrication de produits finis » seulement). Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/contents/acts/20/20211.html
