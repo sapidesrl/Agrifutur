@@ -60,6 +60,9 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 
 ## Chantiers
 
+- **Prix belges des sites protégés** (Le Sillon belge, Pleinchamp.be, Statbel) : ils refusent les accès automatiques. Les lire depuis une session Claude Code sur un poste de travail, avec l'extension Claude in Chrome (navigation dans le navigateur de l'utilisateur), ou copier leurs tableaux de cotations à la main.
+- **Mise à jour mensuelle des prix publics** : relire le tarif officiel SPF Économie (Statbel/Bestat : gasoil, mazout, propane, diesel), la CREG (électricité), la FEGRA (blé), le Boerenbond (paille) et Agryco (engrais), recalculer, puis proposer une pull request. Peut devenir une tâche planifiée.
+- **Prix locaux sur devis ou facture** (semence certifiée, triage à façon, paillages, huile fermière, tarifs d'entrepreneurs) : à noter sous la forme « relevé chez un négoce wallon, mois année », sans nom d'exploitation.
 - Migrer de MkDocs 1.6 vers [Zensical](https://zensical.org/docs/compatibility/mkdocs/migration/), le successeur maintenu par l'équipe de Material for MkDocs. D'ici là, `requirements.txt` plafonne MkDocs sous la version 2.
 - Remplacer les prix français (ammonitrate, gasoil labour / semis direct) par des sources belges.
 
