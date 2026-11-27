@@ -96,6 +96,7 @@ L'AII ne paie pas un pourcentage du prix réel. Elle paie un pourcentage d'un **
 | Herse étrille | {{ v('aii_herse_etrille_forfait') }} | architecture verte |
 | Bineuse à guidage par caméra | {{ v('aii_bineuse_camera_forfait') }} | architecture verte |
 | Robot de binage autoguidé (jusqu'à 2,5 ha par jour) | {{ v('aii_robot_petit_forfait') }} | architecture verte, résilience |
+| Robot de binage autoguidé (plus de 2,5 ha par jour) | {{ v('aii_robot_grand_forfait') }} | architecture verte, résilience |
 | Tracteur électrique ou au biogaz de plus de 150 ch | {{ v('aii_tracteur_elec_forfait') }} | architecture verte, résilience |
 | Chargeur ou télescopique de moins de 50 ch (toute motorisation) | {{ v('aii_chargeur_50ch_forfait') }} | aucune |
 | Hall de séchage pour vrac | {{ v('aii_hall_sechage_forfait') }} | architecture verte, résilience |

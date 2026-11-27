@@ -2257,7 +2257,16 @@ aii_robot_petit_forfait:
   statut: sourcé
   date: 2026-01-01
   source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
-  note: "AM du 23/02/2023, annexe 3, ligne 348 (architecture verte et résilience cochées ; ouverte aux CUMA). Débit supérieur à 2,5 ha par jour : 150 000 € (ligne 349)."
+  note: "AM du 23/02/2023, annexe 3, ligne 348 (architecture verte et résilience cochées ; ouverte aux CUMA). Débit supérieur à 2,5 ha par jour : voir aii_robot_grand_forfait (ligne 349)."
+
+aii_robot_grand_forfait:
+  libelle: "Aide AII : coût simplifié d'un robot autonome autoguidé pour cultures, débit supérieur à 2,5 ha par jour"
+  valeur: 150000
+  unite: €
+  statut: sourcé
+  date: 2026-01-01
+  source: https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+  note: "AM du 23/02/2023, annexe 3, ligne 349. L'aide porte sur le plus petit montant entre ce coût simplifié et le prix réellement payé. Le FarmDroid FD20 (environ 4 ha par jour en pratique) relève de cette ligne."
 
 aii_tracteur_elec_forfait:
   libelle: "Aide AII : coût simplifié d'un tracteur électrique ou au biogaz de plus de 150 ch"

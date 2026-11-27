@@ -1385,19 +1385,21 @@ proteagineux_ecart_v3b_ha:
   formule: '(Soutien couplé + réduction d''intrants) − cultures favorables V3_B ;
     positif : la voie du soutien couplé paie plus'
 farmdroid_aide_aii:
-  libelle: 'Robot de binage (débit jusqu''à 2,5 ha par jour) : aide AII d''un agriculteur
+  libelle: 'Robot FarmDroid (plus de 2,5 ha par jour) : aide AII d''un agriculteur
     sans autre majoration'
-  valeur: 4507.5
+  valeur: 14550.0
   unite: €
-  formule: Coût simplifié AII du robot × taux, limité au prix
+  formule: Taux × le plus petit montant entre le coût simplifié AII et le prix du
+    robot
 farmdroid_aide_cuma:
-  libelle: 'Robot de binage : aide AII d''une CUMA d''au moins 6 membres'
-  valeur: 10517.5
+  libelle: 'Robot FarmDroid : aide AII d''une CUMA d''au moins 6 membres'
+  valeur: 33950.0
   unite: €
-  formule: Coût simplifié AII du robot × taux CUMA, limité au prix
+  formule: Taux CUMA × le plus petit montant entre le coût simplifié AII et le prix
+    du robot
 farmdroid_amort_eur_ha_aii:
   libelle: 'Robot FarmDroid : amortissement par hectare et par an, aide AII déduite'
-  valeur: 462.4625
+  valeur: 412.25
   unite: €/ha/an
   formule: (Prix − aide AII) ÷ (durée × surface par an)
 haie_plantation_subv_km:
