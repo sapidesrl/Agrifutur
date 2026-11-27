@@ -13,7 +13,7 @@ maj: 2026-11-27
 
 ## En bref
 
-La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé ; en Wallonie, l'aide à l'investissement pour une moissonneuse ou une ensileuse est réservée aux CUMA. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 2, si un acheteur, un label ou un collectif prend ce surcoût en charge). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
+La moissonneuse-batteuse et l'ensileuse automotrice sont les plus gros moteurs de la ferme : de 190 à 700 chevaux selon le barème français cité plus bas, pour quelques centaines d'heures par an[^bareme]. Une moissonneuse de 300 ch brûle environ {{ v('moisson_conso_l_h', 0) }} de gasoil, soit {{ v('moisson_conso_l_ha', 0) }} de céréales : au prix actuel du gasoil agricole, cela fait {{ v('moisson_gasoil_eur_ha', 0) }} pour la moisson et {{ v('ensileuse_gasoil_eur_ha', 0) }} pour l'ensileuse en maïs (calculé). Partager la machine (CUMA, entreprise) réduit nettement le coût à l'hectare (vague 1), mais pas le gasoil brûlé ; en Wallonie, l'aide à l'investissement pour une moissonneuse ou une ensileuse est réservée aux CUMA. Le seul carburant renouvelable prêt à l'emploi est le HVO100, autorisé par Claas dans ses machines récentes : il coûte environ {{ v('hvo_surcout_litre', 2) }} de plus par litre de gasoil remplacé, soit {{ v('moisson_hvo_surcout_ha', 0) }} de plus à la moisson (calculé), et n'est moins cher que le gasoil dans aucun scénario (vague 3). L'huile végétale pure, les moissonneuses hybrides ou électriques et le biométhane restent à préparer (vague 3).
 
 ## Comment ça marche aujourd'hui
 
@@ -72,7 +72,7 @@ Limites :
 - Elle a un prix en organisation : la récolte se fait à la date de la machine, pas forcément au meilleur jour pour chaque parcelle. Le recours à l'entreprise pose le même problème de disponibilité en pointe[^pb].
 - Son vrai intérêt pour sortir du pétrole est indirect : un groupe qui partage une machine peut aussi partager le surcoût d'un carburant renouvelable (HVO), une cuve, ou plus tard une station de biométhane.
 
-### 2. HVO100 (vague 2)
+### 2. HVO100 (vague 3)
 
 **Ce que c'est.** Le HVO (huile végétale hydrotraitée) est un diesel paraffinique fabriqué en faisant réagir avec de l'hydrogène des huiles et graisses, surtout des déchets et résidus (huiles de friture usagées, graisses animales), avec aussi des huiles végétales[^claas]. Il relève de la norme EN 15940 des diesels paraffiniques et se mélange au gasoil en toute proportion[^claas]. Une machine Stage V autorisée n'a besoin d'aucune modification, et la cuve de la ferme reste utilisable[^claas][^dlg].
 
@@ -94,7 +94,7 @@ Calculé, consommation en plus de {{ v('hvo_surconsommation', 1) }} comprise. Le
 
 **Aides.** Aucune aide trouvée pour un carburant renouvelable : ni la PAC ni l'AII n'en paient.
 
-**Pourquoi vague 2.** Le surcoût reste modeste à l'échelle de la récolte : environ {{ v('moisson_hvo_surcout_ha', 0) }} en moisson, à comparer aux 85 €/ha que coûte la seule détention d'une moissonneuse de Cuma[^entraid]. Il devient supportable dans des conditions précises : une machine partagée sur une grande surface, dont l'économie paie le carburant ; un acheteur ou un cahier des charges qui rémunère une récolte à faible carbone ; un entrepreneur qui le refacture à ses clients. Sans l'une de ces conditions, il reste une dépense.
+**Pourquoi vague 3.** Le HVO100 coûte plus cher que le gasoil dans les trois scénarios de prix : il n'est rentable dans aucun cas sans que quelqu'un d'autre paie la différence. Le surcoût reste modeste à l'échelle de la récolte, environ {{ v('moisson_hvo_surcout_ha', 0) }} en moisson, à comparer aux 85 €/ha que coûte la seule détention d'une moissonneuse de Cuma[^entraid]. Il peut être supporté si un acheteur ou un cahier des charges rémunère une récolte à faible carbone, ou si un entrepreneur le refacture à ses clients. C'est une solution à préparer, pas une économie.
 
 Limites :
 
