@@ -17,6 +17,48 @@ theme:
     - search.highlight
     - content.footnote.tooltips
 
+# Menu du site. Une nouvelle fiche doit y être ajoutée (le vérificateur le contrôle).
+nav:
+  - index.md
+  - synthese.md
+  - diagnostic.md
+  - Fiches:
+      - fiches/index.md
+      - Distribution:
+          - fiches/distribution/circuits-longs.md
+      - Eau:
+          - fiches/eau/irrigation-pompes.md
+      - Élevage:
+          - fiches/elevage/concentres-importes.md
+          - fiches/elevage/fourrages-recoltes.md
+          - fiches/elevage/tank-a-lait.md
+      - Énergie:
+          - fiches/energie/chauffage-mazout.md
+          - fiches/energie/electricite-reseau.md
+          - fiches/energie/sechage-grains.md
+      - Fertilisation:
+          - fiches/fertilisation/azote-synthese.md
+          - fiches/fertilisation/engrais-p-k.md
+      - Matériaux:
+          - fiches/materiaux/plastiques-agricoles.md
+      - Protection des cultures:
+          - fiches/protection/fongicides-insecticides.md
+          - fiches/protection/herbicides.md
+      - Semences:
+          - fiches/semences/semences-industrielles.md
+      - Traction:
+          - fiches/traction/automoteurs-recolte.md
+          - fiches/traction/engins-de-cour.md
+          - fiches/traction/tracteur-diesel.md
+      - Transformation:
+          - fiches/transformation/transformation-industrielle.md
+      - Transport:
+          - fiches/transport/vehicules-livraison.md
+  - aides.md
+  - methode.md
+  - hypotheses.md
+  - calculs.md
+
 plugins:
   - search
   - macros:

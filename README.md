@@ -74,7 +74,7 @@ Les profils de vraies exploitations ne vont pas dans le dépôt : les garder ail
 ## Ajouter ou rédiger une fiche
 
 1. Ajouter une ligne dans `data/technologies.csv`.
-2. `python outils/nouvelle_fiche.py <id>` crée la fiche vide au bon endroit.
+2. `python outils/nouvelle_fiche.py <id>` crée la fiche vide au bon endroit. L'ajouter au menu (`nav` dans `mkdocs.yml`), dans son domaine.
 3. Rédiger en suivant `CLAUDE.md`. Tout nouveau prix va d'abord dans `data/hypotheses.yaml`.
 4. `python calc/couts.py && python outils/verifier_fiches.py && zensical build --clean --strict`
 
@@ -95,7 +95,7 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 - **Prix belges des sites protégés** : lus le 27/11/2026 depuis le navigateur (Claude in Chrome) pour le Sillon belge (paille, tourteaux de soja et de colza) et Statbel (indice des prix des engrais). Restent : Pleinchamp.be (site injoignable), l'historique des tourteaux du Sillon belge (réservé aux abonnés), un prix belge de l'ammonitrate.
 - **Mise à jour mensuelle des prix publics** : `outils/maj_prix.py` (voir « Mettre à jour les prix ») relit Statbel, la FEGRA et la CREG. Restent à la main : paille et tourteaux (Sillon belge, via le navigateur), engrais (Agryco, Statbel), plaquettes (Valbiom). Peut devenir une tâche planifiée.
 - **Prix locaux sur devis ou facture** (semence certifiée, triage à façon, paillages, huile fermière, tarifs d'entrepreneurs) : à noter sous la forme « relevé chez un négoce wallon, mois année », sans nom d'exploitation.
-- Remplacer les prix français (ammonitrate, gasoil labour / semis direct) par des sources belges.
+- Remplacer les prix français (ammonitrate, gasoil labour / semis direct, gasoil par culture) par des sources belges. Recherche du 27/11/2026 sans résultat par culture ni prix belge de novembre (Agryco et Sillon belge fermés aux outils automatiques) ; repères belges ajoutés dans les notes. Pistes : factures, Agryco via le navigateur, van Stappen et al. 2018 (inventaire des céréales wallonnes, accès payant).
 
 ## État
 
