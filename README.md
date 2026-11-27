@@ -74,7 +74,7 @@ Les profils de vraies exploitations ne vont pas dans le dépôt : les garder ail
 ## Ajouter ou rédiger une fiche
 
 1. Ajouter une ligne dans `data/technologies.csv`.
-2. `python outils/nouvelle_fiche.py <id>` crée la fiche vide au bon endroit.
+2. `python outils/nouvelle_fiche.py <id>` crée la fiche vide au bon endroit. L'ajouter au menu (`nav` dans `mkdocs.yml`), dans son domaine.
 3. Rédiger en suivant `CLAUDE.md`. Tout nouveau prix va d'abord dans `data/hypotheses.yaml`.
 4. `python calc/couts.py && python outils/verifier_fiches.py && zensical build --clean --strict`
 

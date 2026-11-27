@@ -56,7 +56,7 @@ Le vérificateur échoue si une macro appelle une clé inconnue, si une section 
 3. Ajouter les nouveaux prix dans `data/hypotheses.yaml`, avec source et date.
 4. Si un calcul est utile, l'ajouter dans `calc/couts.py`.
 5. Rédiger la fiche, puis lancer les trois commandes ci-dessus.
-6. Passer le statut à `brouillon` dans le CSV.
+6. Passer le statut à `brouillon` dans le CSV. Une nouvelle fiche s'ajoute aussi au menu (`nav` dans `mkdocs.yml`).
 7. Si une alternative de vague 1 ou 2 est ajoutée, renommée ou change de vague, mettre à jour `data/synthese.yaml` (page « Par où commencer sur sa ferme ») : le vérificateur échoue si une ligne ne retrouve plus son alternative ou une clé.
 
 Les deux fiches `traction/tracteur-diesel.md` et `fertilisation/azote-synthese.md` servent d'exemples de niveau de détail attendu.

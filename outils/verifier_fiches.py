@@ -137,6 +137,17 @@ def main() -> int:
         if not chemin.exists() or trouver_alternative(lire_alternatives(chemin), r.get("alternative", "")) is None:
             erreurs.append(f"diagnostic.yaml, recommandation « {r.get('id')} » : alternative introuvable dans {r.get('fiche')}")
 
+    # Menu du site : chaque page de docs/ doit figurer dans la clé nav de mkdocs.yml.
+    menu = set(re.findall(r"^\s*-\s+(?:[^:\n]+:\s+)?([\w./-]+\.md)\s*$",
+                          (RACINE / "mkdocs.yml").read_text(encoding="utf-8"), re.M))
+    for page in sorted((RACINE / "docs").rglob("*.md")):
+        rel = page.relative_to(RACINE / "docs").as_posix()
+        if rel not in menu:
+            erreurs.append(f"mkdocs.yml : page absente du menu (nav) « {rel} »")
+    for m in sorted(menu):
+        if not (RACINE / "docs" / m).exists():
+            erreurs.append(f"mkdocs.yml : le menu cite une page absente « {m} »")
+
     for a in avertissements:
         print(f"AVERTISSEMENT  {a}")
     for e in erreurs:
