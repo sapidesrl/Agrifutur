@@ -6,17 +6,17 @@ dependance_fossile: gaz; fioul
 alternatives: [Moins d'eau à retirer (variété, récolte, maïs grain humide), chaudière biomasse, chaleur d'un méthaniseur, air ambiant ou chauffé au solaire, pompe à chaleur]
 vague_meilleure_alternative: 1
 statut: relu
-maj: 2026-11-26
+maj: 2026-11-27
 ---
 
 # Séchage des grains au gaz ou au fioul
 
 !!! warning "Sources à compléter"
-    Les sources citées ont été lues sur la page d'origine le 26 novembre 2026. Plusieurs chiffres techniques viennent de France ou de l'Ontario (Canada), faute de source belge récente : consommation d'un séchoir, coût d'une chaudière biomasse, pompe à chaleur. Le barème de séchage de la FEGRA (négociants belges) est réservé à ses membres et n'a pas pu être lu.
+    Les sources citées ont été lues sur la page d'origine le 26 novembre 2026. Plusieurs chiffres techniques viennent de France ou de l'Ontario (Canada), faute de source belge récente : consommation d'un séchoir, coût d'une chaudière biomasse, pompe à chaleur. Le barème de séchage de la FEGRA (négociants belges) est réservé à ses membres et n'a pas pu être lu. Les aides publiques ont été relues le 27 novembre 2026 (voir [les aides publiques](../../aides.md)).
 
 ## En bref
 
-Le maïs grain se récolte en Belgique entre 25 et 38 % d'humidité et doit être ramené à 15 % pour se conserver[^cipf] : le séchoir chauffe l'air avec du propane, du gaz naturel ou du fioul. Pour un maïs récolté à {{ v('mais_humidite_recolte', 0) }} (hypothèse), l'énergie seule coûte {{ v('sechage_propane_eur_t', 0, unite=False) }} € par tonne humide au propane, hors amortissement et main-d'œuvre (calculé). Le moyen le plus simple d'éviter ce fossile est de retirer moins d'eau : variété plus précoce, et pour un éleveur, maïs grain humide conservé sans séchage (vague 1). Pour le grain à vendre sec, l'énergie des plaquettes revient à {{ v('sechage_plaquettes_eur_t', 0, unite=False) }} € par tonne (calculé), et la chaleur d'un méthaniseur est souvent perdue en automne. Ces deux solutions demandent un gros investissement qui ne se justifie qu'avec un gros tonnage, souvent en collectif (vague 2).
+Le maïs grain se récolte en Belgique entre 25 et 38 % d'humidité et doit être ramené à 15 % pour se conserver[^cipf] : le séchoir chauffe l'air avec du propane, du gaz naturel ou du fioul. Pour un maïs récolté à {{ v('mais_humidite_recolte', 0) }} (hypothèse), l'énergie seule coûte {{ v('sechage_propane_eur_t', 0, unite=False) }} € par tonne humide au propane, hors amortissement et main-d'œuvre (calculé). Le moyen le plus simple d'éviter ce fossile est de retirer moins d'eau : variété plus précoce, et pour un éleveur, maïs grain humide conservé sans séchage (vague 1). Pour le grain à vendre sec, l'énergie des plaquettes revient à {{ v('sechage_plaquettes_eur_t', 0, unite=False) }} € par tonne (calculé), et la chaleur d'un méthaniseur est souvent perdue en automne. Ces deux solutions demandent un gros investissement qui ne se justifie qu'avec un gros tonnage, souvent en collectif, même avec l'aide régionale GREEN de {{ v('green_taux_chaudiere_biomasse', 0) }} pour la chaudière (vague 2).
 
 ## Comment ça marche aujourd'hui
 
@@ -81,12 +81,21 @@ L'investissement est lourd. Exemples français :
 
 Pour une exploitation qui sèche {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an (hypothèse), l'économie d'énergie serait de {{ v('sechage_economie_plaquettes_an', 0) }} au prix actuel, {{ v('sechage_economie_plaquettes_an', 0, scenario='bas') }} au prix d'avant-crise (calculé) : trop peu pour payer seule une chaudière de cette taille. Au tonnage de l'exemple landais (5 000 à 6 000 t), la même économie par tonne est dix à douze fois plus grande (calculé). La chaudière biomasse est donc une affaire de négoce, de coopérative ou de groupe d'agriculteurs, ou d'une exploitation qui l'utilise aussi le reste de l'année (chauffage, séchage de bois ou de foin).
 
+**Aides.** L'aide wallonne aux investissements agricoles (AII) ne finance pas la chaudière biomasse : elle est absente de sa liste de 2026[^aii-liste]. L'aide utile est **GREEN**, la prime régionale aux entreprises pour l'énergie renouvelable, ouverte aux agriculteurs (voir [les aides publiques](../../aides.md#green))[^green-agw] [^decret-2004] :
+
+- pour une PME, {{ v('green_taux_chaudiere_biomasse', 0) }} d'une chaudière biomasse jusqu'à 300 kW, sur un coût éligible plafonné à {{ v('green_plafond_chaudiere_kw') }} jusqu'à 100 kW et 880 €/kW de 100 à 300 kW ; 30 % de 300 kW à 1 MW, sur 660 €/kW au plus[^green-spw] ;
+- un investissement d'au moins {{ v('green_seuil_pme', 0) }}, une demande avant les travaux et un audit ou une étude de faisabilité AMUREBA préalable, subventionné à {{ v('amureba_taux_pme', 0) }} pour une PME[^green-agw] [^amureba-memo] [^amureba].
+
+Effet sur la rentabilité (calculé, {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an, temps de retour visé de {{ v('duree_retour_visee', 0) }}, hypothèse, hors entretien et main-d'œuvre) : l'économie d'énergie rembourse une installation de {{ v('sechage_chaudiere_invest_max', 0) }} au plus sans aide ({{ fourchette('sechage_chaudiere_invest_max', 0) }} selon les scénarios), et de {{ v('sechage_chaudiere_invest_max_green', 0) }} avec GREEN ({{ fourchette('sechage_chaudiere_invest_max_green', 0) }}), si le coût reste sous le coût éligible maximal. L'aide relève donc nettement le prix acceptable. Mais le prix d'une installation de séchage biomasse pour ce tonnage n'est pas connu en Belgique, et l'exemple landais coûte bien plus, pour dix fois plus de grain. Le calcul ne justifie donc pas un passage en vague 1 : la chaudière biomasse reste en vague 2, à comparer avec un devis.
+
+Une coopérative ou un négoce qui est une PME peut aussi demander GREEN ; une installation plus puissante que 300 kW ne reçoit que 30 %. Un exploitant qui a reçu l'AII ne peut demander aucune autre aide wallonne pour ses investissements pendant cinq ans, sauf les soutiens à la production d'énergie renouvelable[^agw-aii] : une chaudière biomasse aidée par GREEN entre a priori dans cette exception (lecture à confirmer).
+
 Conditions :
 
 - un gros tonnage séché chaque année, ou d'autres usages de la chaleur hors saison ;
 - des plaquettes sèches et propres : sans terre, racines ni morceaux filandreux, et un bâtiment pour les stocker[^reussir-bois] ;
 - du temps : environ une heure par jour pour l'alimentation et l'entretien en saison, et un réglage plus délicat qu'au gaz[^reussir-bois] ;
-- des aides : l'aide wallonne aux investissements agricoles ne reprend pas la chaudière biomasse dans sa liste (voir la fiche [chauffage au mazout](chauffage-mazout.md)).
+- pour l'aide GREEN : un audit AMUREBA et une demande avant les travaux (voir « Aides » ci-dessus et la fiche [chauffage au mazout](chauffage-mazout.md)).
 
 ### 3. Chaleur d'un méthaniseur (vague 2)
 
@@ -95,6 +104,8 @@ Une unité de biométhanisation en cogénération produit plus de chaleur que d'
 Exemple français : une unité de 500 kWé dans les Deux-Sèvres a installé une cellule sécheuse de 180 t, alimentée par l'air chaud de son séchoir à foin. Elle a séché environ 2 000 t à l'automne 2020, à 50-60 °C, en un à trois jours par lot. Les deux séchoirs (foin et grain) ont coûté 220 000 € avec le réseau de chaleur ; le séchage est facturé au prix des coopératives locales, et l'exploitant prévoit un retour en six campagnes[^reussir-demeter].
 
 Conditions : un méthaniseur en cogénération à proximité (voir la micro-biométhanisation dans la fiche [électricité du réseau](electricite-reseau.md)), une chaleur disponible à l'automne et un séchage plus lent que dans un séchoir au gaz, qui demande de la surveillance[^reussir-demeter].
+
+Aides : un méthaniseur de 10 à 200 kW électriques qui consomme son énergie sur place peut recevoir {{ v('green_taux_biometh', 0) }} de GREEN, sur un coût éligible plafonné à {{ v('green_plafond_biometh_kw') }}[^green-spw], en plus des certificats verts sur l'électricité (voir la fiche [électricité du réseau](electricite-reseau.md)). Un méthaniseur de plus de 200 kW, comme l'exemple des Deux-Sèvres, sort de cette ligne. La chaleur elle-même n'est pas soutenue[^panorama], et aucune aide propre au réseau de chaleur ou à la cellule de séchage n'a été trouvée. La vague 2 est maintenue.
 
 ### 4. Air ambiant ou chauffé au solaire (vague 2)
 
@@ -108,11 +119,13 @@ Un ventilateur pousse de l'air extérieur à travers le grain stocké en cellule
 
 Conditions : des cellules ventilées en nombre suffisant, un grain pas trop humide, et la patience de laisser sécher plusieurs semaines.
 
+Aides : l'AII reprend le ventilateur ou extracteur d'air (coût simplifié de 540 € par ventilateur d'au moins 450 m³/min) et le hall de séchage pour vrac ({{ v('aii_hall_sechage_forfait') }})[^am-aii]. Le ventilateur ne coche ni « architecture verte » ni « résilience économique » : il est aidé au taux de base de {{ v('aii_taux_base', 0) }} et passe difficilement le seuil de {{ v('aii_seuil_points', 0, unite=False) }} points de sélection ; le hall coche les deux, soit {{ v('aii_taux_pv', 0) }} sans autre majoration (calculé)[^am-aii]. Aucune aide ne vise les capteurs solaires à air. L'aide reste modeste et ne change pas la vague.
+
 ### 5. Pompe à chaleur (vague 3)
 
 Une pompe à chaleur réchauffe l'air de séchage avec un compresseur électrique, comme un réfrigérateur qui fonctionnerait à l'envers. Dans un essai en Ontario sur un séchage en cellule à basse température, elle a fourni 6,93 kWh de chaleur par kWh d'électricité ; ses coûts de fonctionnement étaient de 60 % inférieurs à ceux d'un chauffage au propane et proches de ceux du gaz naturel, pour un investissement plus élevé[^omafra-air].
 
-Avec un rendement plus prudent de {{ v('pac_cop_sechage', 0) }} (hypothèse) et l'électricité du réseau, l'énergie coûte {{ v('sechage_pac_eur_t') }} de maïs humide (calculé), autant ou plus qu'au propane ({{ v('sechage_propane_eur_t') }}). Sur de l'électricité photovoltaïque produite sur place, ce coût tomberait à {{ v('sechage_pac_pv_eur_t') }} (calculé), mais le maïs se sèche en octobre et novembre, quand les panneaux produisent peu. Aucune référence belge de séchoir à grain par pompe à chaleur n'a été trouvée. À préparer, d'abord pour la finition à basse température et les petits lots.
+Avec un rendement plus prudent de {{ v('pac_cop_sechage', 0) }} (hypothèse) et l'électricité du réseau, l'énergie coûte {{ v('sechage_pac_eur_t') }} de maïs humide (calculé), autant ou plus qu'au propane ({{ v('sechage_propane_eur_t') }}). Sur de l'électricité photovoltaïque produite sur place, ce coût tomberait à {{ v('sechage_pac_pv_eur_t') }} (calculé), mais le maïs se sèche en octobre et novembre, quand les panneaux produisent peu. Aucune référence belge de séchoir à grain par pompe à chaleur n'a été trouvée. GREEN paie {{ v('green_taux_pac', 0) }} d'une pompe à chaleur air-eau ou eau-eau jusqu'à 45 kW thermiques et 20 % au-delà[^green-spw] ; un séchoir à grain dépasse souvent cette puissance, et son éligibilité n'est pas confirmée. L'AII ne finance pas la pompe à chaleur[^aii-liste]. L'aide ne suffit pas à rendre l'énergie moins chère que le propane : à préparer (vague 3), d'abord pour la finition à basse température et les petits lots.
 
 ## Ce qui ferme la boucle
 
@@ -133,6 +146,10 @@ Avec un rendement plus prudent de {{ v('pac_cop_sechage', 0) }} (hypothèse) et 
 - Statut TVA du prix des plaquettes du relevé Valbiom : s'il est TVAC, le coût des plaquettes est un peu surestimé face au propane et au mazout comptés HTVA.
 - Rendement réel d'un générateur d'air chaud biomasse et prix d'une installation pour un séchoir de ferme ou de coopérative en Belgique.
 - Exemples belges de séchage de grain à la chaleur d'un méthaniseur, au bois ou par pompe à chaleur.
+- Prix d'une installation de séchage biomasse pour {{ v('sechage_tonnage_ferme', 0, unite=False) }} t de maïs par an, et puissance nécessaire (au-delà de 300 kW, GREEN tombe à 30 %).
+- Éligibilité à GREEN d'un générateur d'air chaud biomasse de séchoir, d'une pompe à chaleur de séchage et d'une CUMA ; accès d'une exploitation agricole à la subvention AMUREBA (règle *de minimis*).
+- Cumul de GREEN avec l'AII reçue pour d'autres investissements (exception « énergie renouvelable » de l'AGW de 2026) et avec la déduction fédérale pour investissement.
+- Les taux de GREEN viennent du tableau du SPW Économie : l'annexe officielle de l'arrêté n'a pas pu être lue.
 - Étude du CRA-W de 2011 sur la ventilation automatisée des grains : chiffre de 48 % connu par un article d'Arvalis seulement.
 
 ## Sources
@@ -150,3 +167,11 @@ Avec un rendement plus prudent de {{ v('pac_cop_sechage', 0) }} (hypothèse) et 
 [^arvalis-sobriete]: « Économiser en séchant moins le maïs grain : attention au risque de dégradation de la qualité », K. Crépon et B. Orlando, Arvalis, publié sur Pleinchamp (France), 12 octobre 2022. https://www.pleinchamp.com/actualite/economiser-en-sechant-moins-le-mais-grain-attention-au-risque-de-degradation-de-la-qualite
 [^arvalis-ventilation]: « Conservation des stocks : refroidir rapidement les cellules de maïs grain après séchage », J.-Y. Moreau et A. Tanguy, Arvalis, publié sur Pleinchamp (France), 9 octobre 2023. https://www.pleinchamp.com/actualite/conservation-des-stocks-refroidir-rapidement-les-cellules-de-mais-grain-apres-sechage
 [^panorama]: « Panorama de la biométhanisation en Wallonie », Valbiom, édition 2025 (chiffres 2024), hébergé par le SPW Énergie. https://energie.wallonie.be/files/%c3%89nergies%20vertes/Bio%c3%a9nergie/Biom%c3%a9thanisation/panorama-biometh-2025.pdf
+[^am-aii]: Arrêté ministériel du 23 février 2023 exécutant l'arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version consolidée (modifications des 15 janvier et 11 mai 2026) : articles 5 et 6, annexes 2 et 3 (lignes 238 et 465). Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042748
+[^aii-liste]: « Liste des investissements admissibles », SPW Agriculture, janvier 2026, consultée le 27 novembre 2026. https://agriculture.wallonie.be/files/accueil/Aides/AII/outils/Liste%20des%20investissements%20admissibles.pdf
+[^agw-aii]: Arrêté du Gouvernement wallon du 23 février 2023 relatif aux aides à l'installation et aux investissements, version en vigueur depuis le 1er janvier 2026 : article 36. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2023/02/23/2023042313/2026/01/01
+[^green-agw]: Arrêté du Gouvernement wallon du 23 mai 2024 relatif aux primes à l'investissement (aides GREEN), en vigueur le 1er janvier 2025 : articles 4 à 16 et 26. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/sites/wallex/contents/acts/108/108350/1.html
+[^green-spw]: « Réforme des aides spécifiques à la protection de l'environnement et à l'utilisation de l'énergie », SPW Économie, Emploi, Recherche, publié le 28 novembre 2024, mis à jour le 23 janvier 2025, consulté le 27 novembre 2026. https://economie.wallonie.be/fr/home/actualites/actualites/reforme-des-aides-specifiques-a-la-protection-de-l-environnement-et-a-l-utilisation-de-l-energie.html
+[^decret-2004]: Décret du 11 mars 2004 relatif aux incitants régionaux en faveur des petites ou moyennes entreprises, version en vigueur depuis le 1er janvier 2025, articles 3 à 5. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/loi-decret/2004/03/11/2004200990
+[^amureba]: Arrêté du Gouvernement wallon du 1er février 2024 relatif à l'octroi de subventions à l'audit ou à l'étude dans le secteur non résidentiel (AMUREBA), annexe 5. Wallex, consulté le 27 novembre 2026. https://wallex.wallonie.be/eli/arrete/2024/02/01/2024004275
+[^amureba-memo]: « Mémo Table ronde des auditeurs du 6 février 2026 », SPW Énergie, consulté le 27 novembre 2026. https://energie.wallonie.be/files/Actualit%c3%a9s/20260206_m%c3%a9mo%20Table%20ronde%20auditeurs.pdf
