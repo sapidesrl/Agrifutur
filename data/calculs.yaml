@@ -1,16 +1,16 @@
 # Généré par calc/couts.py : ne pas éditer à la main.
 gasoil_agricole_htva:
   libelle: Gasoil agricole HTVA utilisé dans les calculs
-  valeur: 1.141488
-  bas: 0.630579
-  haut: 1.483934
+  valeur: 1.138264
+  bas: 0.630661
+  haut: 1.479744
   unite: €/L
   formule: Prix saisi, sinon (gasoil chauffage TVAC − écart) ÷ (1 + TVA)
 gasoil_kwh_utile:
   libelle: 'Gasoil : coût du kWh utile (à l''arbre)'
-  valeur: 0.345905
-  bas: 0.191084
-  haut: 0.449677
+  valeur: 0.344929
+  bas: 0.191109
+  haut: 0.448407
   unite: €/kWh
   formule: Prix du litre ÷ (énergie du litre × rendement du moteur)
 gasoil_kwh_utile_fev2026:
@@ -31,30 +31,30 @@ pv_kwh_utile:
   formule: kWh PV ÷ rendement de la chaîne électrique
 reseau_kwh_utile:
   libelle: 'Réseau : coût du kWh utile'
-  valeur: 0.494416
+  valeur: 0.528182
   bas: 0.418701
-  haut: 0.64274
+  haut: 0.686636
   unite: €/kWh
   formule: kWh réseau ÷ rendement de la chaîne électrique
 ratio_gasoil_pv:
   libelle: Le kWh utile au gasoil coûte … fois celui du PV
-  valeur: 3.866329
-  bas: 2.13583
-  haut: 5.026228
+  valeur: 3.855412
+  bas: 2.13611
+  haut: 5.012035
   unite: fois
   formule: Gasoil ÷ PV
 ratio_gasoil_reseau:
   libelle: Le kWh utile au gasoil coûte … fois celui du réseau
-  valeur: 0.699625
-  bas: 0.456374
-  haut: 0.699625
+  valeur: 0.653049
+  bas: 0.456434
+  haut: 0.653049
   unite: fois
   formule: Gasoil ÷ réseau
 tracteur_gasoil_eur_h:
   libelle: 'Tracteur compact : énergie par heure au gasoil'
-  valeur: 7.990413
-  bas: 4.41405
-  haut: 10.387537
+  valeur: 7.967851
+  bas: 4.414628
+  haut: 10.358207
   unite: €/h
   formule: Consommation × prix du gasoil
 tracteur_pv_eur_h:
@@ -64,16 +64,16 @@ tracteur_pv_eur_h:
   formule: Consommation (côté batterie) × coût du kWh PV ÷ rendement de la recharge
 tracteur_reseau_eur_h:
   libelle: 'Tracteur compact : énergie par heure en électrique sur réseau'
-  valeur: 12.978409
+  valeur: 13.864773
   bas: 10.990909
-  haut: 16.871932
+  haut: 18.024205
   unite: €/h
   formule: Consommation (côté batterie) × prix du réseau ÷ rendement de la recharge
 tracteur_economie_an:
   libelle: 'Tracteur compact : économie d''énergie par an (électrique sur PV)'
-  valeur: 3949.349862
-  bas: 1445.895317
-  haut: 5627.336639
+  valeur: 3933.556474
+  bas: 1446.300275
+  haut: 5606.805234
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 batterie_journee_lourde:
@@ -103,9 +103,9 @@ valeur_n_fixe:
   formule: kg N fixés × prix du kg N
 mazout_kwh:
   libelle: 'Mazout : prix du kWh'
-  valeur: 0.14042
+  valeur: 0.14009
   bas: 0.07882
-  haut: 0.182546
+  haut: 0.182117
   unite: €/kWh
   formule: Prix TVAC ÷ énergie du litre
 plaquettes_kwh:
@@ -117,16 +117,16 @@ plaquettes_kwh:
   formule: Prix du MAP ÷ énergie du MAP
 ratio_mazout_plaquettes:
   libelle: Le kWh de mazout coûte … fois celui des plaquettes
-  valeur: 3.690407
+  valeur: 3.681735
   bas: 2.084634
-  haut: 3.690407
+  haut: 3.681735
   unite: fois
   formule: Mazout ÷ plaquettes
 chauffage_economie_an:
   libelle: 'Ferme type : économie annuelle de combustible, plaquettes au lieu de mazout'
-  valeur: 8189.6
+  valeur: 8163.2
   bas: 3280.8
-  haut: 10646.48
+  haut: 10612.16
   unite: €/an
   formule: Litres de mazout × énergie du litre × (kWh mazout − kWh plaquettes), même
     rendement de chaudière, hors entretien
@@ -142,24 +142,24 @@ prerefroidisseur_kwh_an:
   formule: kWh par 1 000 L × gain × lait livré ÷ 1 000
 prerefroidisseur_eur_an:
   libelle: 'Pré-refroidisseur : économie par an (électricité du réseau)'
-  valeur: 1065.96
+  valeur: 1138.76
   bas: 902.72
-  haut: 1385.748
+  haut: 1480.388
   unite: €/an
   formule: kWh économisés × prix du réseau (la traite a lieu matin et soir, hors production
     PV)
 ratio_reseau_pv:
   libelle: Le kWh du réseau coûte … fois le kWh photovoltaïque produit
-  valeur: 5.52629
+  valeur: 5.90371
   bas: 4.68
-  haut: 7.184177
+  haut: 7.674823
   unite: fois
   formule: Prix du réseau ÷ coût de production PV
 pv_autoconso_mini:
   libelle: Taux d'autoconsommation à partir duquel le PV est rentable
-  valeur: 0.09803
+  valeur: 0.091173
   bas: 0.16167
-  haut: 0.052044
+  haut: 0.048403
   unite: '%'
   formule: (Coût du kWh PV − prix d'injection) ÷ (prix du réseau − prix d'injection),
     0 si le PV coûte moins que l'injection
@@ -202,9 +202,9 @@ pv_ferme_aide_aii:
   formule: Puissance × coût simplifié AII × taux, limité à l'investissement
 pv_ferme_valeur_an:
   libelle: 'Ferme type : valeur annuelle de l''électricité PV'
-  valeur: 4678.56
+  valeur: 4959.36
   bas: 3805.92
-  haut: 6082.128
+  haut: 6447.168
   unite: €/an
   formule: kWh autoconsommés × prix du réseau + kWh injectés × prix d'injection
 pv_ferme_cout_an:
@@ -216,16 +216,16 @@ pv_ferme_cout_an:
     financiers
 pv_ferme_gain_net_an:
   libelle: 'Ferme type : gain net annuel du photovoltaïque'
-  valeur: 2818.56
+  valeur: 3099.36
   bas: 1945.92
-  haut: 4222.128
+  haut: 4587.168
   unite: €/an
   formule: Valeur annuelle − coût annuel, sans aide ni frais financiers
 pv_ferme_retour_ans:
   libelle: 'Ferme type : temps de retour simple du photovoltaïque, aide AII déduite'
-  valeur: 5.937948
+  valeur: 5.550128
   bas: 7.585063
-  haut: 4.400855
+  haut: 4.12326
   unite: ans
   formule: (Investissement − aide) ÷ (valeur annuelle − entretien annuel)
 pv_ferme_valeur_an_sans_autoconso:
@@ -237,16 +237,16 @@ pv_ferme_valeur_an_sans_autoconso:
   formule: Production × prix d'injection
 batterie_gain_kwh_an:
   libelle: 'Batterie : gain annuel par kWh de capacité'
-  valeur: 76.9075
+  valeur: 82.7575
   bas: 67.54
-  haut: 99.97975
+  haut: 107.58475
   unite: €/kWh/an
   formule: Cycles par an × (rendement × prix du réseau − prix d'injection)
 batterie_retour_ans:
   libelle: 'Batterie : temps de retour simple'
-  valeur: 9.101843
+  valeur: 8.458448
   bas: 10.364229
-  haut: 7.001418
+  haut: 6.506498
   unite: ans
   formule: Prix par kWh ÷ gain annuel par kWh, hors remplacement et entretien
 microbiometh_production_an:
@@ -262,9 +262,9 @@ microbiometh_autoconso_kwh:
 microbiometh_valeur_an:
   libelle: 'Micro-biométhanisation : valeur annuelle de l''électricité, hors certificats
     verts'
-  valeur: 19428.0
+  valeur: 20468.0
   bas: 15296.0
-  haut: 25256.4
+  haut: 26608.4
   unite: €/an
   formule: kWh autoconsommés × prix du réseau + surplus × prix d'injection
 microbiometh_investissement:
@@ -274,17 +274,17 @@ microbiometh_investissement:
   formule: Puissance × coût par kW
 microbiometh_retour_ans:
   libelle: 'Micro-biométhanisation : temps de retour simple, électricité seule'
-  valeur: 20.588841
+  valeur: 19.542701
   bas: 26.150628
-  haut: 15.83757
+  haut: 15.032847
   unite: ans
   formule: Investissement ÷ valeur annuelle, sans aide, certificats verts, chaleur
     ni entretien
 valet_gasoil_eur_h:
   libelle: 'Chargeur de cour : énergie par heure au gasoil'
-  valeur: 3.538612
-  bas: 1.954793
-  haut: 4.600195
+  valeur: 3.52862
+  bas: 1.95505
+  haut: 4.587206
   unite: €/h
   formule: Consommation × prix du gasoil
 valet_pv_eur_h:
@@ -295,24 +295,24 @@ valet_pv_eur_h:
     mesure)
 valet_reseau_eur_h:
   libelle: 'Chargeur de cour : énergie par heure en électrique sur réseau'
-  valeur: 2.39841
+  valeur: 2.56221
   bas: 2.03112
-  haut: 3.117933
+  haut: 3.330873
   unite: €/h
   formule: Consommation à la borne × prix du réseau (pertes de charge déjà dans la
     mesure)
 valet_economie_an_pv:
   libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur PV)'
-  valeur: 931.383471
-  bas: 456.238017
-  haut: 1249.858512
+  valeur: 928.38595
+  bas: 456.314876
+  haut: 1245.961736
   unite: €/an
   formule: (Gasoil − PV) × heures par an, hors surcoût d'achat et entretien
 valet_economie_an_reseau:
   libelle: 'Chargeur de cour : économie d''énergie par an (électrique sur réseau)'
-  valeur: 342.060471
-  bas: -22.897983
-  haut: 444.678612
+  valeur: 289.92295
+  bas: -22.821124
+  haut: 376.899836
   unite: €/an
   formule: (Gasoil − réseau) × heures par an, hors surcoût d'achat et entretien
 huile_cout_litre:
@@ -332,9 +332,9 @@ huile_cout_eq_gasoil:
   formule: Coût du litre × énergie du gasoil ÷ énergie de l'huile
 huile_ecart_gasoil:
   libelle: 'Huile de colza : écart avec le gasoil agricole HTVA'
-  valeur: 0.135463
-  bas: 0.716478
-  haut: 0.112272
+  valeur: 0.138686
+  bas: 0.716396
+  haut: 0.116462
   unite: €/L
   formule: 'Négatif : l''huile revient moins cher (hors accises)'
 part_surface_colza:
@@ -349,44 +349,44 @@ gasoil_economise_semis_direct:
   formule: Labour − semis direct
 valeur_gasoil_economise:
   libelle: Valeur de ce gasoil
-  valeur: 33.10314
-  bas: 18.286777
-  haut: 43.034083
+  valeur: 33.009669
+  bas: 18.289174
+  haut: 42.91257
   unite: €/ha/an
   formule: Litres économisés × prix du gasoil
 gasoil_eur_foin_ha:
   libelle: 'Foin récolté au champ : gasoil par hectare'
-  valeur: 86.753058
-  bas: 47.923967
-  haut: 112.778975
+  valeur: 86.508099
+  bas: 47.930248
+  haut: 112.460529
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_enrubannage_ha:
   libelle: 'Enrubannage : gasoil par hectare'
-  valeur: 139.261488
-  bas: 76.930579
-  haut: 181.039934
+  valeur: 138.868264
+  bas: 76.940661
+  haut: 180.528744
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_ensilage_herbe_ha:
   libelle: 'Ensilage d''herbe : gasoil par hectare'
-  valeur: 205.467769
-  bas: 113.504132
-  haut: 267.108099
+  valeur: 204.887603
+  bas: 113.519008
+  haut: 266.353884
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 gasoil_eur_mais_ensilage_ha:
   libelle: 'Maïs ensilage : gasoil par hectare'
-  valeur: 531.933223
-  bas: 293.849587
-  haut: 691.51319
+  valeur: 530.43124
+  bas: 293.888099
+  haut: 689.560612
   unite: €/ha
   formule: Litres par hectare × prix du gasoil
 sechage_grange_reseau_tms:
   libelle: 'Séchoir en grange : électricité du réseau par tonne de MS'
-  valeur: 36.9279
+  valeur: 39.4499
   bas: 31.2728
-  haut: 48.00627
+  haut: 51.28487
   unite: €/t MS
   formule: kWh par tonne × prix du kWh réseau
 sechage_grange_pv_tms:
@@ -411,9 +411,9 @@ mais_meca_gasoil_supp_l_ha:
   formule: (Herse + binages) − passages de pulvérisateur
 mais_meca_gasoil_supp_eur_ha:
   libelle: 'Maïs : coût du gasoil en plus pour le désherbage mécanique'
-  valeur: 7.944754
-  bas: 4.388826
-  haut: 10.32818
+  valeur: 7.922321
+  bas: 4.389402
+  haut: 10.299017
   unite: €/ha
   formule: Gasoil en plus × prix du gasoil agricole
 glyphosate_energie_kwh_ha:
@@ -428,9 +428,9 @@ glyphosate_eq_gasoil_l_ha:
   formule: Énergie du traitement ÷ énergie d'un litre de gasoil
 sd_sans_glyphosate_gasoil_eur_ha:
   libelle: 'Semis direct sans glyphosate (labour fréquent) : coût du gasoil en plus'
-  valeur: 34.872446
-  bas: 19.264174
-  haut: 45.33418
+  valeur: 34.773979
+  bas: 19.266698
+  haut: 45.206173
   unite: €/ha/an
   formule: Gasoil en plus × prix du gasoil agricole
 farmdroid_amort_eur_ha:
@@ -465,30 +465,30 @@ sechage_kwh_t_point:
   formule: Énergie par tonne ÷ points retirés
 propane_kwh_htva:
   libelle: 'Propane en vrac : prix du kWh HTVA'
-  valeur: 0.113087
+  valeur: 0.112952
   bas: 0.090206
-  haut: 0.147014
+  haut: 0.146837
   unite: €/kWh
   formule: Prix TVAC ÷ (1 + TVA) ÷ énergie du litre
 mazout_kwh_htva:
   libelle: 'Mazout (gasoil de chauffage) : prix du kWh HTVA'
-  valeur: 0.11605
+  valeur: 0.115777
   bas: 0.06514
-  haut: 0.150864
+  haut: 0.15051
   unite: €/kWh
   formule: Prix TVAC ÷ (1 + TVA) ÷ énergie du litre
 sechage_propane_eur_t:
   libelle: 'Maïs grain : énergie de séchage au propane par tonne humide'
-  valeur: 22.617491
+  valeur: 22.590354
   bas: 18.041199
-  haut: 29.402738
+  haut: 29.36746
   unite: €/t
   formule: Énergie par tonne × prix du kWh de propane HTVA
 sechage_mazout_eur_t:
   libelle: 'Maïs grain : énergie de séchage au mazout par tonne humide'
-  valeur: 23.209917
+  valeur: 23.155372
   bas: 13.028099
-  haut: 30.172893
+  haut: 30.101983
   unite: €/t
   formule: Énergie par tonne × prix du kWh de mazout HTVA
 sechage_plaquettes_eur_t:
@@ -500,9 +500,9 @@ sechage_plaquettes_eur_t:
   formule: Énergie par tonne ÷ rendement du générateur biomasse × prix du kWh de plaquettes
 sechage_pac_eur_t:
   libelle: 'Maïs grain : électricité de séchage par pompe à chaleur par tonne humide'
-  valeur: 25.38
+  valeur: 27.113333
   bas: 21.493333
-  haut: 32.994
+  haut: 35.247333
   unite: €/t
   formule: Énergie par tonne ÷ COP × prix de l'électricité du réseau
 sechage_pac_pv_eur_t:
@@ -514,9 +514,9 @@ sechage_pac_pv_eur_t:
     le PV produit pendant le séchage)
 sechage_propane_eur_t_point:
   libelle: 'Maïs grain : énergie de séchage au propane par tonne et par point'
-  valeur: 1.330441
+  valeur: 1.328844
   bas: 1.061247
-  haut: 1.729573
+  haut: 1.727498
   unite: €/t/point
   formule: Coût par tonne ÷ points retirés
 sechage_map_t:
@@ -531,16 +531,16 @@ sechage_map_an:
   formule: Plaquettes par tonne × tonnage séché
 sechage_economie_plaquettes_t:
   libelle: 'Maïs grain : économie d''énergie par tonne, plaquettes au lieu de propane'
-  valeur: 13.66455
+  valeur: 13.637413
   bas: 9.144728
-  haut: 17.763915
+  haut: 17.728637
   unite: €/t
   formule: Coût propane − coût plaquettes, hors main-d'œuvre, entretien et amortissement
 sechage_economie_plaquettes_an:
   libelle: 'Exploitation type : économie annuelle, plaquettes au lieu de propane'
-  valeur: 6832.27494
+  valeur: 6818.706419
   bas: 4572.364188
-  haut: 8881.957422
+  haut: 8864.318345
   unite: €/an
   formule: Économie par tonne × tonnage séché
 moisson_heures_an:
@@ -550,67 +550,67 @@ moisson_heures_an:
   formule: Surface battue par an ÷ débit de chantier
 moisson_gasoil_eur_ha:
   libelle: 'Moisson : gasoil de la moissonneuse par hectare'
-  valeur: 23.800017
-  bas: 13.147562
-  haut: 30.940021
+  valeur: 23.732814
+  bas: 13.149285
+  haut: 30.852658
   unite: €/ha
   formule: Litres par hectare × prix du gasoil agricole
 ensileuse_gasoil_eur_ha:
   libelle: 'Maïs ensilage : gasoil de l''ensileuse par hectare'
-  valeur: 33.559736
-  bas: 18.539008
-  haut: 43.627656
+  valeur: 33.464975
+  bas: 18.541438
+  haut: 43.504468
   unite: €/ha
   formule: Litres par hectare × prix du gasoil agricole
 hvo_agricole_htva:
   libelle: HVO100 hors accises, HTVA (estimation)
-  valeur: 2.005124
-  bas: 1.845868
-  haut: 2.606661
+  valeur: 2.002397
+  bas: 1.84595
+  haut: 2.603116
   unite: €/L
   formule: 'Diesel XTL HTVA − (diesel B7 HTVA − gasoil agricole HTVA) : on retire
     au prix routier du XTL le même écart que celui qui sépare le diesel routier du
     gasoil agricole'
 hvo_surcout_litre:
   libelle: 'HVO100 : surcoût par litre de gasoil remplacé'
-  valeur: 0.933816
-  bas: 1.279895
-  haut: 1.21396
+  valeur: 0.934216
+  bas: 1.279898
+  haut: 1.214481
   unite: €/L
   formule: Prix du HVO × (1 + consommation en plus) − prix du gasoil agricole
 hvo_ratio_gasoil:
   libelle: 'HVO100 : coût par litre de gasoil remplacé, rapporté au gasoil agricole'
-  valeur: 1.818069
-  bas: 3.029715
-  haut: 1.818069
+  valeur: 1.820737
+  bas: 3.029454
+  haut: 1.820737
   unite: fois
   formule: Prix du HVO × (1 + consommation en plus) ÷ prix du gasoil agricole
 moisson_hvo_surcout_ha:
   libelle: 'Moisson au HVO100 : surcoût par hectare'
-  valeur: 19.470057
-  bas: 26.685803
-  haut: 25.311075
+  valeur: 19.478406
+  bas: 26.685863
+  haut: 25.321928
   unite: €/ha
   formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
 ensileuse_hvo_surcout_ha:
   libelle: 'Maïs ensilage au HVO100 : surcoût de l''ensileuse par hectare'
-  valeur: 27.454182
-  bas: 37.628902
-  haut: 35.690436
+  valeur: 27.465954
+  bas: 37.628987
+  haut: 35.70574
   unite: €/ha
   formule: Litres de gasoil par hectare × surcoût du HVO par litre remplacé
 moisson_hvo_surcout_an:
   libelle: 'Moissonneuse au HVO100 : surcoût par an'
-  valeur: 5841.017219
-  bas: 8005.740899
-  haut: 7593.322385
+  valeur: 5843.521804
+  bas: 8005.758992
+  haut: 7596.578345
   unite: €/an
   formule: Surcoût par hectare × surface battue par an
 moisson_huile_ecart_ha:
   libelle: 'Moisson à l''huile de colza : écart avec le gasoil par hectare'
-  valeur: 2.824398
-  bas: 14.938571
-  haut: 2.340867
+  valeur: 2.891601
+  bas: 14.936848
+  haut: 2.42823
   unite: €/ha
   formule: 'Litres de gasoil par hectare × écart huile − gasoil (négatif : l''huile
     revient moins cher, hors accises)'
@@ -684,32 +684,32 @@ ratio_energie_mat_soja_colza:
   formule: (MJ/kg soja ÷ MAT soja) ÷ (MJ/kg colza ÷ MAT colza)
 diesel_routier_htva:
   libelle: Diesel routier B7 HTVA (assujetti qui récupère la TVA)
-  valeur: 1.943223
+  valeur: 1.938678
   bas: 1.429008
-  haut: 2.52619
+  haut: 2.520281
   unite: €/L
   formule: Prix maximum TVAC ÷ (1 + TVA)
 utilitaire_diesel_eur_100km:
   libelle: 'Utilitaire diesel : carburant aux 100 km, HTVA'
-  valeur: 15.545785
+  valeur: 15.509421
   bas: 11.432066
-  haut: 20.209521
+  haut: 20.162248
   unite: €/100 km
   formule: Consommation × prix HTVA
 utilitaire_diesel_eur_100km_tvac:
   libelle: 'Utilitaire diesel : carburant aux 100 km, TVAC (agriculteur au régime
     forfaitaire)'
-  valeur: 18.8104
+  valeur: 18.7664
   bas: 13.8328
-  haut: 24.45352
+  haut: 24.39632
   unite: €/100 km
   formule: Consommation × prix TVAC
 utilitaire_reseau_eur_100km:
   libelle: 'Utilitaire électrique : électricité aux 100 km, recharge sur le réseau,
     HTVA'
-  valeur: 9.5175
+  valeur: 10.1675
   bas: 8.06
-  haut: 12.37275
+  haut: 13.21775
   unite: €/100 km
   formule: Consommation à la prise × prix du réseau HTVA
 utilitaire_pv_eur_100km:
@@ -719,38 +719,38 @@ utilitaire_pv_eur_100km:
   formule: Consommation à la prise × coût de production du kWh PV
 utilitaire_mix_eur_100km:
   libelle: 'Utilitaire électrique : électricité aux 100 km, recharge mixte PV et réseau'
-  valeur: 5.619861
+  valeur: 5.944861
   bas: 4.891111
-  haut: 7.047486
+  haut: 7.469986
   unite: €/100 km
   formule: Consommation × (part PV × kWh PV + (1 − part PV) × kWh réseau)
 utilitaire_diesel_eur_an:
   libelle: 'Utilitaire diesel : carburant par an, HTVA'
-  valeur: 2331.867769
+  valeur: 2326.413223
   bas: 1714.809917
-  haut: 3031.428099
+  haut: 3024.33719
   unite: €/an
   formule: Coût aux 100 km × km par an ÷ 100
 utilitaire_mix_eur_an:
   libelle: 'Utilitaire électrique : électricité par an, recharge mixte'
-  valeur: 842.979167
+  valeur: 891.729167
   bas: 733.666667
-  haut: 1057.122917
+  haut: 1120.497917
   unite: €/an
   formule: Coût aux 100 km × km par an ÷ 100
 utilitaire_economie_an:
   libelle: 'Utilitaire électrique : économie d''énergie par an face au diesel (recharge
     mixte)'
-  valeur: 1488.888602
+  valeur: 1434.684056
   bas: 981.143251
-  haut: 1974.305183
+  haut: 1903.839273
   unite: €/an
   formule: Carburant diesel − électricité, hors achat, entretien et assurance
 utilitaire_economie_an_reseau:
   libelle: 'Utilitaire électrique : économie d''énergie par an, tout sur le réseau'
-  valeur: 904.242769
+  valeur: 801.288223
   bas: 505.809917
-  haut: 1175.515599
+  haut: 1041.67469
   unite: €/an
   formule: (Diesel − réseau) aux 100 km × km par an ÷ 100
 utilitaire_litres_an:
@@ -766,26 +766,26 @@ utilitaire_kwh_an:
 utilitaire_surcout_rembourse:
   libelle: 'Utilitaire électrique : surcoût d''achat que l''économie d''énergie rembourse
     sur la durée de détention (recharge mixte)'
-  valeur: 8933.331612
+  valeur: 8608.104339
   bas: 5886.859504
-  haut: 11845.831095
+  haut: 11423.03564
   unite: €
   formule: Économie d'énergie par an × durée de détention, sans frais financiers,
     entretien ni écart de revente
 utilitaire_prix_max_neuf:
   libelle: Prix du diesel neuf équivalent jusqu'auquel l'électrique neuf se rembourse
     par l'énergie
-  valeur: 25523.804604
+  valeur: 24594.583825
   bas: 16819.598583
-  haut: 33845.2317
+  haut: 32637.244687
   unite: €
   formule: Surcoût remboursé ÷ écart de prix en neuf
 utilitaire_prix_max_occasion:
   libelle: Prix du diesel d'occasion équivalent jusqu'auquel l'électrique d'occasion
     se rembourse par l'énergie
-  valeur: 59555.544077
+  valeur: 57387.362259
   bas: 39245.730028
-  haut: 78972.2073
+  haut: 76153.570937
   unite: €
   formule: Surcoût remboursé ÷ écart de prix en occasion de trois ans
 paillage_pe_ha:
@@ -846,17 +846,17 @@ irr_elec_kwh_m3:
   formule: Énergie hydraulique ÷ rendement de l'électropompe
 irr_gasoil_eur_ha_mm:
   libelle: 'Irrigation au diesel : coût de l''énergie par hectare et par mm'
-  valeur: 1.26832
-  bas: 0.700643
-  haut: 1.648815
+  valeur: 1.264738
+  bas: 0.700735
+  haut: 1.64416
   unite: €/ha/mm
   formule: Gasoil par ha et par mm × prix du gasoil
 irr_reseau_eur_ha_mm:
   libelle: 'Irrigation électrique sur réseau : coût de l''énergie par hectare et par
     mm'
-  valeur: 1.281818
+  valeur: 1.36936
   bas: 1.085522
-  haut: 1.666364
+  haut: 1.780168
   unite: €/ha/mm
   formule: kWh par m³ × 10 m³ × prix du réseau
 irr_pv_eur_ha_mm:
@@ -867,9 +867,9 @@ irr_pv_eur_ha_mm:
   formule: kWh par m³ × 10 m³ × coût de production PV
 irr_ratio_reseau_gasoil:
   libelle: 'Irrigation : le m³ pompé sur réseau coûte … fois le m³ pompé au diesel'
-  valeur: 1.010643
-  bas: 1.549323
-  haut: 1.010643
+  valeur: 1.082722
+  bas: 1.54912
+  haut: 1.082722
   unite: fois
   formule: Coût réseau ÷ coût diesel, par m³
 irr_volume_an:
@@ -889,9 +889,9 @@ irr_gasoil_l_an:
   formule: Volume × gasoil par m³
 irr_gasoil_eur_an:
   libelle: 'Exploitation type : coût du gasoil d''irrigation par an'
-  valeur: 1268.319559
-  bas: 700.642792
-  haut: 1648.815427
+  valeur: 1264.738292
+  bas: 700.734619
+  haut: 1644.15978
   unite: €/an
   formule: Gasoil par an × prix du gasoil
 irr_elec_kwh_an:
@@ -901,9 +901,9 @@ irr_elec_kwh_an:
   formule: Volume × kWh par m³
 irr_reseau_eur_an:
   libelle: 'Exploitation type : coût de l''électricité d''irrigation par an, réseau'
-  valeur: 1281.818182
+  valeur: 1369.360269
   bas: 1085.521886
-  haut: 1666.363636
+  haut: 1780.16835
   unite: €/an
   formule: kWh par an × prix du réseau
 irr_pv_eur_an:
@@ -914,9 +914,9 @@ irr_pv_eur_an:
 irr_economie_pv_an:
   libelle: 'Exploitation type : économie d''énergie par an, électropompe sur PV au
     lieu du diesel'
-  valeur: 1036.370438
-  bas: 468.693671
-  haut: 1416.866306
+  valeur: 1032.789171
+  bas: 468.785498
+  haut: 1412.210659
   unite: €/an
   formule: Coût du gasoil − coût du PV, hors investissement
 irr_puissance_elec_kw:
@@ -941,32 +941,32 @@ tonne_gasoil_l_an:
   formule: Heures par an × consommation du tracteur
 tonne_gasoil_eur_an:
   libelle: 'Tonne à eau : coût du gasoil par an'
-  valeur: 1438.27438
-  bas: 794.528926
-  haut: 1869.756694
+  valeur: 1434.213223
+  bas: 794.633058
+  haut: 1864.47719
   unite: €/an
   formule: Gasoil par an × prix du gasoil
 tonne_cout_an:
   libelle: 'Tonne à eau : gasoil et main-d''œuvre par an'
-  valeur: 5938.27438
-  bas: 5294.528926
-  haut: 6369.756694
+  valeur: 5934.213223
+  bas: 5294.633058
+  haut: 6364.47719
   unite: €/an
   formule: Heures par an × (consommation × prix du gasoil + coût horaire de la main-d'œuvre),
     hors usure du tracteur et de la tonne
 abreuv_solaire_retour_ans:
   libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour simple'
-  valeur: 2.020789
-  bas: 2.266491
-  haut: 1.883902
+  valeur: 2.022172
+  bas: 2.266446
+  haut: 1.885465
   unite: ans
   formule: Investissement ÷ (gasoil + main-d'œuvre de la tonne), sans aide ni entretien
 abreuv_solaire_retour_gasoil_ans:
   libelle: 'Pompe solaire au lieu de la tonne à eau : temps de retour sur le seul
     gasoil'
-  valeur: 8.343332
-  bas: 15.103289
-  haut: 6.417947
+  valeur: 8.366957
+  bas: 15.10131
+  haut: 6.436121
   unite: ans
   formule: Investissement ÷ coût du gasoil de la tonne
 pdt_part_agriculteur_long:
@@ -1012,9 +1012,9 @@ farine_valeur_tonne_ble:
 farine_ecart_tonne_ble:
   libelle: 'Farine sur meule : chiffre d''affaires en plus de la vente du blé, par
     tonne'
-  valeur: 842.5
-  bas: 892.5
-  haut: 780.25
+  valeur: 846.8
+  bas: 892.3
+  haut: 785.84
   unite: €/t de blé
   formule: Chiffre d'affaires de la farine − prix du blé, avant main-d'œuvre, sacs,
     énergie et amortissement
@@ -1161,9 +1161,9 @@ mildiou_gasoil_evite_l_ha:
   formule: Traitements évités × gasoil d'un passage de pulvérisateur
 mildiou_gasoil_evite_eur_ha:
   libelle: 'Pomme de terre : valeur du gasoil évité avec une variété résistante'
-  valeur: 8.903603
-  bas: 4.918512
-  haut: 11.574684
+  valeur: 8.878463
+  bas: 4.919157
+  haut: 11.542002
   unite: €/ha
   formule: Gasoil évité × prix du gasoil agricole HTVA
 avertissement_passages_evites_eur_ha:
@@ -1186,17 +1186,17 @@ haie_eco_regime_eur_km:
   formule: 1 000 m × coefficient de la haie (HE/m) × montant par HE
 semence_ferme_froment_eur_kg:
   libelle: 'Semence de ferme de froment : coût du kg'
-  valeur: 0.3755
-  bas: 0.3255
-  haut: 0.43775
+  valeur: 0.3712
+  bas: 0.3257
+  haut: 0.43216
   unite: €/kg
   formule: Prix du grain ÷ 1 000 + triage et traitement à façon + rémunération de
     l'obtenteur
 semence_ferme_froment_eur_ha:
   libelle: 'Semence de ferme de froment : coût par hectare'
-  valeur: 56.325
-  bas: 48.825
-  haut: 65.6625
+  valeur: 55.68
+  bas: 48.855
+  haut: 64.824
   unite: €/ha
   formule: Dose de semis × coût du kg de semence de ferme
 semence_certifiee_froment_eur_ha:
@@ -1207,16 +1207,16 @@ semence_certifiee_froment_eur_ha:
 semence_ferme_froment_economie_ha:
   libelle: 'Semence de ferme au lieu de semence certifiée (froment) : économie par
     hectare'
-  valeur: 37.425
-  bas: 44.925
-  haut: 28.0875
+  valeur: 38.07
+  bas: 44.895
+  haut: 28.926
   unite: €/ha
   formule: Coût de la semence certifiée − coût de la semence de ferme
 semence_ferme_froment_economie_part:
   libelle: 'Semence de ferme de froment : économie en part du coût de la semence certifiée'
-  valeur: 0.3992
-  bas: 0.4792
-  haut: 0.2996
+  valeur: 0.40608
+  bas: 0.47888
+  haut: 0.308544
   unite: '%'
   formule: Économie ÷ coût de la semence certifiée
 semence_froment_energie_kwh_ha:
@@ -1242,9 +1242,9 @@ tank_kwh_an:
   formule: kWh par 1 000 L × lait livré ÷ 1 000
 froment_perte_equilibre_t_ha:
   libelle: 'Froment : perte de rendement qui annule l''économie du traitement unique'
-  valeur: 0.385542
-  bas: 0.507937
-  haut: 0.296571
+  valeur: 0.393701
+  bas: 0.507292
+  haut: 0.302847
   unite: t/ha
   formule: Économie du traitement unique ÷ prix du blé
 aii_taux_cuma_av:
@@ -1270,25 +1270,25 @@ microbiometh_aide_invest:
 microbiometh_valeur_cv_an:
   libelle: 'Micro-biométhanisation : valeur annuelle de l''électricité et des certificats
     verts'
-  valeur: 45428.0
+  valeur: 46468.0
   bas: 41296.0
-  haut: 51256.4
+  haut: 52608.4
   unite: €/an
   formule: Valeur de l'électricité + certificats verts
 microbiometh_retour_cv_ans:
   libelle: 'Micro-biométhanisation : temps de retour simple avec certificats verts,
     sans aide à l''investissement'
-  valeur: 8.805142
+  valeur: 8.608074
   bas: 9.686168
-  haut: 7.803904
+  haut: 7.603349
   unite: ans
   formule: Investissement ÷ (électricité + certificats verts), sans chaleur ni entretien
 microbiometh_retour_aides_ans:
   libelle: 'Micro-biométhanisation : temps de retour simple avec certificats verts
     et aide GREEN'
-  valeur: 7.061724
+  valeur: 6.903676
   bas: 7.768307
-  haut: 6.258731
+  haut: 6.097886
   unite: ans
   formule: (Investissement − aide) ÷ (électricité + certificats verts), sans chaleur
     ni entretien
@@ -1313,9 +1313,9 @@ chaudiere_entretien_supp_an:
     mazout
 chaudiere_gain_net_an:
   libelle: 'Ferme type : gain annuel de la chaudière à plaquettes, entretien déduit'
-  valeur: 7539.6
+  valeur: 7513.2
   bas: 2630.8
-  haut: 9996.48
+  haut: 9962.16
   unite: €/an
   formule: Économie de combustible − entretien en plus
 chaudiere_aide_green:
@@ -1326,34 +1326,34 @@ chaudiere_aide_green:
 chaudiere_retour_ans:
   libelle: 'Ferme type : temps de retour simple de la chaufferie à plaquettes, sans
     aide'
-  valeur: 4.973739
+  valeur: 4.991215
   bas: 14.254219
-  haut: 3.75132
+  haut: 3.764244
   unite: ans
   formule: Prix ÷ gain annuel net, sans frais financiers
 chaudiere_retour_green_ans:
   libelle: 'Ferme type : temps de retour simple de la chaufferie à plaquettes, aide
     GREEN déduite'
-  valeur: 2.984243
+  valeur: 2.994729
   bas: 8.552532
-  haut: 2.250792
+  haut: 2.258546
   unite: ans
   formule: (Prix − aide GREEN) ÷ gain annuel net, sans frais financiers ni coût de
     l'audit AMUREBA
 sechage_chaudiere_invest_max:
   libelle: 'Exploitation type : prix d''une installation biomasse de séchage que l''économie
     rembourse dans le temps visé, sans aide'
-  valeur: 68322.749403
+  valeur: 68187.064193
   bas: 45723.641878
-  haut: 88819.574224
+  haut: 88643.183451
   unite: €
   formule: Économie annuelle (plaquettes au lieu de propane) × temps de retour visé,
     hors entretien et main-d'œuvre
 sechage_chaudiere_invest_max_green:
   libelle: Même prix maximal avec l'aide GREEN de 40 %
-  valeur: 113871.249005
+  valeur: 113645.106988
   bas: 76206.069797
-  haut: 148032.623707
+  haut: 147738.639085
   unite: €
   formule: Prix maximal sans aide ÷ (1 − taux GREEN), si le coût reste sous le coût
     éligible maximal
@@ -1427,32 +1427,32 @@ utilitaire_ecart_neuf_net_dpi:
 utilitaire_prix_max_neuf_dpi:
   libelle: Prix du diesel neuf équivalent jusqu'auquel l'électrique neuf se rembourse
     par l'énergie, avec la déduction pour investissement (régime réel)
-  valeur: 111666.645145
+  valeur: 107601.304236
   bas: 73585.743802
-  haut: 148072.888688
+  haut: 142787.945506
   unite: €
   formule: Surcoût remboursé par l'énergie ÷ surcoût net en part du prix ; sans limite
     si le surcoût net est nul ou négatif
 prerefroidisseur_retour_bas_ans:
   libelle: 'Pré-refroidisseur au bas de la fourchette de prix : temps de retour simple'
-  valeur: 3.752486
+  valeur: 3.512593
   bas: 4.431053
-  haut: 2.886528
+  haut: 2.701994
   unite: ans
   formule: Prix ÷ économie annuelle d'électricité, hors entretien
 prerefroidisseur_retour_haut_ans:
   libelle: 'Pré-refroidisseur au haut de la fourchette de prix : temps de retour simple'
-  valeur: 9.381215
+  valeur: 8.781482
   bas: 11.077632
-  haut: 7.216319
+  haut: 6.754986
   unite: ans
   formule: Prix ÷ économie annuelle d'électricité, hors entretien
 pv_ferme_retour_cv_ans:
   libelle: 'Ferme type : temps de retour du photovoltaïque, aide AII et certificats
     verts compris'
-  valeur: 5.213857
+  valeur: 4.912454
   bas: 6.442207
-  haut: 3.990156
+  haut: 3.760604
   unite: ans
   formule: (Investissement − aide) ÷ (valeur annuelle + certificats verts − entretien
     annuel)

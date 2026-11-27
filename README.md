@@ -39,6 +39,17 @@ Avec Claude Code : lance `claude` à la racine du repo. Les règles de rédactio
     └── fiches/<domaine>/<id>.md
 ```
 
+## Mettre à jour les prix
+
+```bash
+pip install -r outils/requirements-maj.txt          # une fois (lecture des PDF de la CREG)
+python outils/maj_prix.py --mois 2026-11            # affiche les écarts, ne modifie rien
+python outils/maj_prix.py --mois 2026-11 --ecrire   # écrit dans data/hypotheses.yaml
+python calc/couts.py && python outils/verifier_fiches.py && mkdocs build --strict
+```
+
+Le script relit les prix maximums officiels du SPF Économie publiés par Statbel (gasoil de chauffage et agricole, diesel B7 et XTL, propane), les cotations du blé de la FEGRA et le prix PME wallon du tableau de bord de la CREG. Chaque prix est la moyenne du mois demandé ; la borne d'avant-crise (février 2026) est recalculée de la même façon. Après une mise à jour, relire les phrases des fiches qui comparent deux prix proches, et changer de mois de référence demande de relire les fiches, qui parlent des « prix de novembre 2026 ».
+
 ## Ajouter ou rédiger une fiche
 
 1. Ajouter une ligne dans `data/technologies.csv`.
@@ -61,7 +72,7 @@ Contenu (fiches, données) sous [CC BY 4.0](https://creativecommons.org/licenses
 ## Chantiers
 
 - **Prix belges des sites protégés** : lus le 27/11/2026 depuis le navigateur (Claude in Chrome) pour le Sillon belge (paille, tourteaux de soja et de colza) et Statbel (indice des prix des engrais). Restent : Pleinchamp.be (site injoignable), l'historique des tourteaux du Sillon belge (réservé aux abonnés), un prix belge de l'ammonitrate.
-- **Mise à jour mensuelle des prix publics** : relire le tarif officiel SPF Économie (Statbel/Bestat : gasoil, mazout, propane, diesel), la CREG (électricité), la FEGRA (blé), le Boerenbond (paille) et Agryco (engrais), recalculer, puis proposer une pull request. Peut devenir une tâche planifiée.
+- **Mise à jour mensuelle des prix publics** : `outils/maj_prix.py` (voir « Mettre à jour les prix ») relit Statbel, la FEGRA et la CREG. Restent à la main : paille et tourteaux (Sillon belge, via le navigateur), engrais (Agryco, Statbel), plaquettes (Valbiom). Peut devenir une tâche planifiée.
 - **Prix locaux sur devis ou facture** (semence certifiée, triage à façon, paillages, huile fermière, tarifs d'entrepreneurs) : à noter sous la forme « relevé chez un négoce wallon, mois année », sans nom d'exploitation.
 - Migrer de MkDocs 1.6 vers [Zensical](https://zensical.org/docs/compatibility/mkdocs/migration/), le successeur maintenu par l'équipe de Material for MkDocs. D'ici là, `requirements.txt` plafonne MkDocs sous la version 2.
 - Remplacer les prix français (ammonitrate, gasoil labour / semis direct) par des sources belges.
